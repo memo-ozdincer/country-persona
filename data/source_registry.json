@@ -1,0 +1,772 @@
+[
+  {
+    "id": "D01",
+    "name": "UNBench",
+    "priority": "P0",
+    "kind": "Linked diplomatic tasks",
+    "coverage": "UNSC; paper covers 1994–2024",
+    "reported_size": "GitHub: about 30 samples per task; full release separate",
+    "raw_format": "CSV + nested JSON + draft JSON/PDF folders",
+    "raw_fields_or_structure": "task2.csv: Country,Original_id,Authors,Voting,Date. task4.json: Date,ID,Title,Authors,Content,Statements[{representative,country,statement}]. Draft JSON: Date,ID,Title,Authors,Content.",
+    "inspection_level": "Raw schema inspected",
+    "recommended_use": "Vote SFT; statement SFT; frozen held-out evaluation",
+    "main_caveat": "task2 needs draft join; task4 includes post-vote speech; overlapping UN corpora. GitHub sample is not the full corpus.",
+    "rights_note": "Repo MIT; underlying UN material requires separate review.",
+    "source_url": "https://github.com/yueqingliang1/UNBench",
+    "acquisition": "Clone repo for samples. Full archive is linked from README via Google Drive.",
+    "code_or_secondary_url": "https://raw.githubusercontent.com/yueqingliang1/UNBench/main/data/task2.csv",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired_sample",
+    "acquisition_result": "GitHub sample pinned to a commit; full Google Drive release deferred. No China/Germany vote rows in this sample.",
+    "local_source_id": "unbench",
+    "observed_preparation": {
+      "parsed_records": 64,
+      "tasks": {
+        "vote_prediction": 30,
+        "statement_reconstruction": 34
+      }
+    }
+  },
+  {
+    "id": "D02",
+    "name": "UNSC Meetings and Speeches",
+    "priority": "P0",
+    "kind": "Speech/meeting corpus",
+    "coverage": "1946–2024; English official records",
+    "reported_size": "Over 160,000 statements; over 87 million words",
+    "raw_format": "meetings.tsv + speeches.tsv",
+    "raw_fields_or_structure": "Article describes 23 meeting variables and speaker/affiliation/role fields. Exact TSV headers NOT inspected.",
+    "inspection_level": "Documentation inspected",
+    "recommended_use": "Main country-conditioned speech pool; context reconstruction; optional domain adaptation",
+    "main_caveat": "Separate national representative, Council president, UN official, and organization roles. Older OCR needs checking.",
+    "rights_note": "Dataset-specific terms not verified; article licence is not sufficient.",
+    "source_url": "https://academic.oup.com/jpr/article/63/4/735/8559606",
+    "acquisition": "Harvard Dataverse DOI 10.7910/DVN/CKPTRB; automated access blocked in this inspection.",
+    "code_or_secondary_url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CKPTRB",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "access_blocked",
+    "acquisition_result": "Harvard Dataverse public API returned HTTP 403; no access control bypass attempted.",
+    "local_source_id": null
+  },
+  {
+    "id": "D03",
+    "name": "UN Security Council Debates",
+    "priority": "P1",
+    "kind": "Speech/meeting corpus",
+    "coverage": "1992–2023; English",
+    "reported_size": "106,302 speeches; 6,233 meetings",
+    "raw_format": "Author-hosted tabular corpus; raw files not opened",
+    "raw_fields_or_structure": "Speaker affiliation, date and within-meeting sequence documented; exact headers pending.",
+    "inspection_level": "Documentation inspected",
+    "recommended_use": "Alternative to D02; country coverage audit",
+    "main_caveat": "Overlaps D02 and UNBench. Do not sum counts or concatenate without deduplication.",
+    "rights_note": "Release terms pending verification.",
+    "source_url": "https://arxiv.org/html/1906.10969v3",
+    "acquisition": "Harvard Dataverse DOI 10.7910/DVN/KGVSYH.",
+    "code_or_secondary_url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/KGVSYH",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "deferred",
+    "acquisition_result": "Not acquired; retain for later UNSC corpus expansion.",
+    "local_source_id": null
+  },
+  {
+    "id": "D04",
+    "name": "UNGA Speech Corpus — Speaking Volumes",
+    "priority": "P1",
+    "kind": "General Assembly plenary speeches",
+    "coverage": "1993–2018",
+    "reported_size": "Over 34,000 speeches",
+    "raw_format": "ZIP linked from author research page; member files not inspected",
+    "raw_fields_or_structure": "Country-labelled General Assembly speech records; exact schema pending.",
+    "inspection_level": "Documentation inspected",
+    "recommended_use": "Broader institutional coverage, especially non-P5 countries",
+    "main_caveat": "Not the annual General Debate corpus; exact download structure and rights require inspection.",
+    "rights_note": "Not verified.",
+    "source_url": "https://www.linneaturco.com/research",
+    "acquisition": "Author page links UNGA-Speech-Corpus-Data.zip on Dropbox.",
+    "code_or_secondary_url": "https://www.dropbox.com/scl/fi/c4snjc6suhs35erugid4r/UNGA-Speech-Corpus-Data.zip?dl=0&rlkey=dfvwog5ovg00q1u8xipvobjek&st=due2ut8n",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired",
+    "acquisition_result": "Author-linked Dropbox archive acquired and RData schema inspected; 32,366 upstream records. Speaker-boundary and date issues measured.",
+    "local_source_id": "unga_speech_corpus",
+    "observed_preparation": {
+      "parsed_records": 33046,
+      "tasks": {
+        "unverified_speech_segment": 32366,
+        "statement_reconstruction": 680
+      }
+    }
+  },
+  {
+    "id": "D05",
+    "name": "United Nations General Debate Corpus (UNGDC)",
+    "priority": "P1",
+    "kind": "Annual national addresses",
+    "coverage": "Longitudinal from 1946; importer documents 1946–2025 release",
+    "reported_size": "Published corpus: over 10,000 speeches; exact current count not audited",
+    "raw_format": "UTF-8 TXT in tar.gz; filename convention country_session_year.txt",
+    "raw_fields_or_structure": "Example filename pattern: ISO3_session_year.txt. Country/session/year parseable; exact speech date needs a metadata join.",
+    "inspection_level": "Importer schema inspected",
+    "recommended_use": "Diplomatic language adaptation; country/topic summaries; grounded QA",
+    "main_caveat": "Annual statements are not dialogue. Do not infer precise date from year. Importer release count is not a verified download.",
+    "rights_note": "Verify exact Dataverse release terms.",
+    "source_url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/0TJX8Y",
+    "acquisition": "Dataverse; documented file ID 13591895, UNGDC_1946-2025.tar.gz; access not tested successfully.",
+    "code_or_secondary_url": "https://raw.githubusercontent.com/un-project/un-extractor/main/scripts/import_gdebate_corpus.py",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired_partial_alternative",
+    "acquisition_result": "Dataverse API returned 403. Author public website supplied 126 China/Germany speeches through 2022; not latest bulk release.",
+    "local_source_id": "ungdc",
+    "observed_preparation": {
+      "parsed_records": 126,
+      "source_documents": 126,
+      "tasks": {
+        "domain_text": 126
+      },
+      "parse_errors": []
+    }
+  },
+  {
+    "id": "D06",
+    "name": "Official UN General Assembly Voting Data",
+    "priority": "P0",
+    "kind": "Country-resolution labels",
+    "coverage": "11 Dec 1946–30 Dec 2025; V5, published 6 Feb 2026",
+    "reported_size": "947,434 country-resolution rows (publisher metadata)",
+    "raw_format": "2026_02_06_ga_voting.csv + Markdown metadata",
+    "raw_fields_or_structure": "Importer reads undl_id,ms_code,ms_name,ms_vote,meeting,draft,resolution and other metadata. Direct CSV header was not fetched.",
+    "inspection_level": "Metadata + importer inspected",
+    "recommended_use": "Recorded-vote prediction; country similarity controls; join to resolution text",
+    "main_caveat": "Only adopted resolutions with recorded votes; excludes failed drafts and paragraph votes. X/non-voting is not abstention.",
+    "rights_note": "UN metadata: non-commercial use with attribution; do not equate public access with unrestricted reuse.",
+    "source_url": "https://digitallibrary.un.org/record/4060887?ln=en",
+    "acquisition": "Official Files tab; direct CSV URL in secondary link.",
+    "code_or_secondary_url": "https://digitallibrary.un.org/record/4060887/files/2026_02_06_ga_voting.csv",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "empty_response",
+    "acquisition_result": "Official linked CSV endpoint returned a zero-byte body. Added UNGA-DM research-database extract as an explicitly separate source.",
+    "local_source_id": null
+  },
+  {
+    "id": "D07",
+    "name": "Official UN Security Council Voting Data",
+    "priority": "P1",
+    "kind": "Country-resolution labels",
+    "coverage": "Official longitudinal release; inspect current coverage metadata",
+    "reported_size": "Not independently counted",
+    "raw_format": "2026_02_06_sc_voting.csv + metadata",
+    "raw_fields_or_structure": "Importer reads vote fields analogous to D06 and permanent_member. Direct CSV header pending.",
+    "inspection_level": "Metadata + importer inspected",
+    "recommended_use": "UNSC vote labels and linked decision tasks",
+    "main_caveat": "Germany is not P5; only evaluate a country in periods where it actually has the relevant voting role. Audit coverage of failed drafts.",
+    "rights_note": "Check this release separately; do not assume terms from D06.",
+    "source_url": "https://digitallibrary.un.org/record/4055387",
+    "acquisition": "Official Files tab.",
+    "code_or_secondary_url": "https://digitallibrary.un.org/record/4055387/files/2026_02_06_sc_voting.csv",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "deferred",
+    "acquisition_result": "Official UNSC bulk CSV not acquired. Do not substitute UNSC vote patterns for German UNGA behavior.",
+    "local_source_id": null
+  },
+  {
+    "id": "D08",
+    "name": "Official General Debate speech metadata",
+    "priority": "P1",
+    "kind": "Metadata / joining keys",
+    "coverage": "Importer documents sessions 1–79; Jan 2026 file",
+    "reported_size": "Not independently counted",
+    "raw_format": "GA_debate_speech_dataset_20260129.csv",
+    "raw_fields_or_structure": "Importer documents Name,Salutation,Member State,GA Session,Meeting Date,Meeting Symbol,Agenda Items,UNDL ID,UNDL Link.",
+    "inspection_level": "Importer schema inspected",
+    "recommended_use": "Attach speaker, document and exact date to annual speeches",
+    "main_caveat": "Metadata only: not the full speech text. Check one-to-many joins.",
+    "rights_note": "Release-specific terms pending.",
+    "source_url": "https://digitallibrary.un.org/record/4067189",
+    "acquisition": "Official record; direct access failed in this environment.",
+    "code_or_secondary_url": "https://raw.githubusercontent.com/un-project/un-extractor/main/scripts/import_undl_general_debate.py",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "deferred",
+    "acquisition_result": "Not acquired. UNGA-DM meeting dates used for explicit joins where meeting IDs match.",
+    "local_source_id": null
+  },
+  {
+    "id": "D09",
+    "name": "Chinese MFA Press Conferences Corpus",
+    "priority": "P0",
+    "kind": "Authentic question–answer pairs",
+    "coverage": "15 Oct 2002–31 Dec 2020; English",
+    "reported_size": "22,946 single-topic QA dyads (paper)",
+    "raw_format": "Tabular corpus on Dataverse; file type/headers not inspected",
+    "raw_fields_or_structure": "Paper describes question, answer, date, spokesperson, original/split IDs, linguistic variants/entities. Literal header names pending.",
+    "inspection_level": "Documentation inspected",
+    "recommended_use": "Real spokesperson QA SFT; topic-conditioned responses",
+    "main_caveat": "Use original text, not lemmatized variants. Press spokesperson is not identical to UN delegate; label institutional role. Official edited records are not private deliberation.",
+    "rights_note": "Dataset terms pending; do not infer from article licence.",
+    "source_url": "https://link.springer.com/article/10.1007/s11366-021-09762-3",
+    "acquisition": "Harvard Dataverse DOI 10.7910/DVN/BAKGET; robot check prevented file inspection.",
+    "code_or_secondary_url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/BAKGET",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "access_blocked",
+    "acquisition_result": "Both public Dataverse metadata and export endpoints returned 403. Newer official MFA archive acquired separately as D10.",
+    "local_source_id": null
+  },
+  {
+    "id": "D10",
+    "name": "Chinese MFA current press-conference archive",
+    "priority": "P1",
+    "kind": "Official HTML Q&A",
+    "coverage": "Continuing dated archive; inspected September 2026",
+    "reported_size": "No audited bulk count",
+    "raw_format": "HTML archive -> individual transcripts",
+    "raw_fields_or_structure": "Page title, publication timestamp, journalist/outlet questions, spokesperson answers; requires transcript parser.",
+    "inspection_level": "Live archive inspected",
+    "recommended_use": "Extend D09 temporally; dated retrieval; real multi-turn follow-ups",
+    "main_caveat": "Deduplicate embassy/consulate mirrors. Keep questions grouped within one conference and preserve follow-up context.",
+    "rights_note": "Check source terms and permitted collection rates.",
+    "source_url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/",
+    "acquisition": "Crawl dated transcript links; do not scrape personal contact blocks.",
+    "code_or_secondary_url": "https://www.fmprc.gov.cn/eng/xw/fyrbt/lxjzh/202609/t20260902_12015070.html",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired",
+    "acquisition_result": "All 982 conference links discovered across 143 indexed pages acquired. English public transcripts; archive migration dates retained separately.",
+    "local_source_id": "mfa",
+    "observed_preparation": {
+      "parsed_records": 9987,
+      "source_documents": 982,
+      "tasks": {
+        "press_conference": 982,
+        "authentic_qa": 9005
+      },
+      "parse_errors": []
+    }
+  },
+  {
+    "id": "D11",
+    "name": "China UN Mission — Remarks",
+    "priority": "P0",
+    "kind": "Official national statements",
+    "coverage": "Dated current/historical archive",
+    "reported_size": "No audited bulk count",
+    "raw_format": "HTML",
+    "raw_fields_or_structure": "Title/date/speaker/body text, sometimes topic or meeting. No standardized export verified.",
+    "inspection_level": "Live archive inspected",
+    "recommended_use": "China role evidence and current-policy retrieval",
+    "main_caveat": "Check speaking capacity; exclude boilerplate and duplicates of UN transcripts.",
+    "rights_note": "Source terms pending.",
+    "source_url": "https://un.china-mission.gov.cn/eng/hyyfy/",
+    "acquisition": "Archive links to statement pages.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired",
+    "acquisition_result": "All 996 distinct statement links discovered across 29 indexed pages acquired. External ministerial pages require another role-specific parser.",
+    "local_source_id": "china_mission",
+    "observed_preparation": {
+      "parsed_records": 962,
+      "source_documents": 996,
+      "tasks": {
+        "statement_reconstruction": 962
+      },
+      "parse_errors": [
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919478.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919478.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.mfa.gov.cn/eng/wjbzhd/202605/t20260527_11918935.html",
+          "path": "data/raw/china_mission/pages/t20260527_11918935.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919917.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919917.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11920083.html",
+          "path": "data/raw/china_mission/pages/t20260528_11920083.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919606.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919606.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919481.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919481.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11920033.html",
+          "path": "data/raw/china_mission/pages/t20260528_11920033.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919877.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919877.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919886.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919886.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11920078.html",
+          "path": "data/raw/china_mission/pages/t20260528_11920078.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919935.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919935.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919927.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919927.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919608.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919608.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919559.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919559.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919554.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919554.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919550.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919550.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202605/t20260528_11919605.html",
+          "path": "data/raw/china_mission/pages/t20260528_11919605.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.mfa.gov.cn/eng/wjbzhd/202605/t20260527_11918969.html",
+          "path": "data/raw/china_mission/pages/t20260527_11918969.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/xw/zyxw/202509/t20250925_11716503.html",
+          "path": "data/raw/china_mission/pages/t20250925_11716503.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/xw/zyxw/202509/t20250925_11716513.html",
+          "path": "data/raw/china_mission/pages/t20250925_11716513.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjb/wjbz/hd/202502/t20250219_11558897.html",
+          "path": "data/raw/china_mission/pages/t20250219_11558897.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjb/wjbz/hd/202502/t20250219_11558898.html",
+          "path": "data/raw/china_mission/pages/t20250219_11558898.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202502/t20250219_11558555.html",
+          "path": "data/raw/china_mission/pages/t20250219_11558555.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjb/wjbz/hd/202502/t20250219_11558899.html",
+          "path": "data/raw/china_mission/pages/t20250219_11558899.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202502/t20250220_11559538.html",
+          "path": "data/raw/china_mission/pages/t20250220_11559538.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202502/t20250220_11559527.html",
+          "path": "data/raw/china_mission/pages/t20250220_11559527.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202502/t20250220_11559205.html",
+          "path": "data/raw/china_mission/pages/t20250220_11559205.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202502/t20250220_11559197.html",
+          "path": "data/raw/china_mission/pages/t20250220_11559197.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjbzhd/202502/t20250220_11559187.html",
+          "path": "data/raw/china_mission/pages/t20250220_11559187.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjb/wjbz/hd/202502/t20250219_11558896.html",
+          "path": "data/raw/china_mission/pages/t20250219_11558896.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjb/wjbz/jh/202409/t20240927_11499396.html",
+          "path": "data/raw/china_mission/pages/t20240927_11499396.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjb/wjbz/hd/202409/t20240928_11499562.html",
+          "path": "data/raw/china_mission/pages/t20240928_11499562.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://www.fmprc.gov.cn/eng/wjb/wjbz/jh/202409/t20240924_11495643.html",
+          "path": "data/raw/china_mission/pages/t20240924_11495643.html",
+          "error": "Missing China mission wrapper"
+        },
+        {
+          "url": "https://un.china-mission.gov.cn/eng/hyyfy/202406/t20240627_11442715.htm",
+          "path": "data/raw/china_mission/pages/t20240627_11442715.htm",
+          "error": "Missing China mission wrapper"
+        }
+      ]
+    }
+  },
+  {
+    "id": "D12",
+    "name": "Germany UN Mission — Speeches and Statements",
+    "priority": "P0",
+    "kind": "Official national/group statements",
+    "coverage": "Dated archive",
+    "reported_size": "No audited bulk count",
+    "raw_format": "HTML",
+    "raw_fields_or_structure": "Title/date/body text; institutional capacity may need extraction from opening statement.",
+    "inspection_level": "Live archive inspected",
+    "recommended_use": "Germany role evidence and current-policy retrieval",
+    "main_caveat": "National, EU, and other group statements must not be conflated.",
+    "rights_note": "Source terms pending.",
+    "source_url": "https://new-york-un.diplo.de/un-en/2290000-2290000",
+    "acquisition": "Archive links to statement pages.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired",
+    "acquisition_result": "Publisher sitemap yielded 453 dated speech pages; national and coalition identity retained separately.",
+    "local_source_id": "germany_mission",
+    "observed_preparation": {
+      "parsed_records": 452,
+      "source_documents": 453,
+      "tasks": {
+        "statement_reconstruction": 452
+      },
+      "parse_errors": [
+        {
+          "url": "https://new-york-un.diplo.de/un-en/2746106-2746106",
+          "path": "data/raw/germany_mission/pages/2746106-2746106.html",
+          "error": "Suspiciously short mission body"
+        }
+      ]
+    }
+  },
+  {
+    "id": "D13",
+    "name": "German government press conferences",
+    "priority": "P1",
+    "kind": "Authentic multi-spokesperson Q&A",
+    "coverage": "Dated official archive; current examples inspected",
+    "reported_size": "No audited bulk count",
+    "raw_format": "HTML transcripts in German",
+    "raw_fields_or_structure": "Question / follow-up labels and speaker-labelled answers; identify ministry, e.g. AA for Foreign Office. No bulk schema verified.",
+    "inspection_level": "Transcript inspected",
+    "recommended_use": "German foreign-policy QA; robustness to follow-up questions",
+    "main_caveat": "Do not label all government answers as Foreign Office or UN policy. Keep German distinct from any translated English derivative.",
+    "rights_note": "Verify transcript reuse terms.",
+    "source_url": "https://www.bundesregierung.de/breg-de/aktuelles/regierungspressekonferenz-vom-4-september-2026-2451572",
+    "acquisition": "Collect official transcripts; filter relevant ministry and topics.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired",
+    "acquisition_result": "179 government transcripts discovered through 39 archive pages; German Foreign Office answers isolated using AA speaker labels.",
+    "local_source_id": "germany_press",
+    "observed_preparation": {
+      "parsed_records": 1720,
+      "source_documents": 179,
+      "tasks": {
+        "press_conference": 179,
+        "authentic_qa": 1541
+      },
+      "parse_errors": []
+    }
+  },
+  {
+    "id": "D14",
+    "name": "UPR Info recommendations database",
+    "priority": "P0",
+    "kind": "Directed country-to-country recommendations + responses",
+    "coverage": "UPR cycles; live database",
+    "reported_size": "Interface displayed 122,743 recommendations; not a downloaded row count",
+    "raw_format": "Web database with CSV export button",
+    "raw_fields_or_structure": "Visible labels: Recommendation ID,Cycle,Session,State under Review,Recommendation,Recommending State,Action Category,Response,Issues,Date added. Exact CSV headers pending.",
+    "inspection_level": "Live records inspected",
+    "recommended_use": "Recommend as country A to country B; predict B’s supported/noted response; multi-agent tasks",
+    "main_caveat": "Given vs received recommendations differ. Date added is ingestion time. Supported/noted is not implementation.",
+    "rights_note": "No blanket dataset licence verified; review UPR Info terms.",
+    "source_url": "https://upr-info-database.uwazi.io/en/library",
+    "acquisition": "Use filtered export; snapshot query, export time and counts. No automated export was run.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "alternative_acquired",
+    "acquisition_result": "UPR Info export not acquired. Official UHRI bulk data acquired under D15; do not claim identical coverage or schema.",
+    "local_source_id": null
+  },
+  {
+    "id": "D15",
+    "name": "OHCHR Universal Human Rights Index (UHRI)",
+    "priority": "P0",
+    "kind": "Official recommendations export",
+    "coverage": "UPR + Treaty Bodies + Special Procedures; updated over time",
+    "reported_size": "No current count audited",
+    "raw_format": "Full JSON and Excel downloads; documented REST API access by contact",
+    "raw_fields_or_structure": "Export schemas not inspected; retain mechanism, country, originating entity, recommendation and source document.",
+    "inspection_level": "Official export documentation inspected",
+    "recommended_use": "Official alternative/addition to D14; mechanism-specific task construction",
+    "main_caveat": "Filter UPR for country-to-country tasks. Other mechanisms are not national delegates. OHCHR notes processing gaps.",
+    "rights_note": "Our Data page says freely shared; read Terms of Usage and retain provenance.",
+    "source_url": "https://uhri.ohchr.org/en/our-data-api",
+    "acquisition": "Direct JSON/Excel links on page; API documentation available from uhrisupport@ohchr.org.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "acquired",
+    "acquisition_result": "Full English JSON export: 274,991 records, including 130,991 UPR. 9,894 focus-related canonical records/derivatives.",
+    "local_source_id": "uhri",
+    "observed_preparation": {
+      "parsed_records": 9894,
+      "tasks": {
+        "human_rights_evidence": 2644,
+        "upr_recommendation": 5338,
+        "upr_response": 1912
+      },
+      "scope": "China/Germany mentioned as reviewed or recommending states; full raw export retained"
+    }
+  },
+  {
+    "id": "D16",
+    "name": "Corpus of Resolutions: UN Security Council (CR-UNSC)",
+    "priority": "P1",
+    "kind": "Resolution/draft/meeting text + graph metadata",
+    "coverage": "Latest located release 22 Dec 2025, through resolution 2798",
+    "reported_size": "82 metadata/text variables in paper; full release not downloaded",
+    "raw_format": "CSV / TXT / PDF / GraphML; latest changelog also lists Parquet",
+    "raw_fields_or_structure": "Exact field names not inspected. Includes resolution texts, drafts, meetings and citation relations.",
+    "inspection_level": "Release documentation inspected",
+    "recommended_use": "Proposal context for votes; retrieval; citation-linked hard splits; optional domain adaptation",
+    "main_caveat": "Resolution content is institutional output, not a particular country stance. Older GitHub repo archived; use maintained code location.",
+    "rights_note": "Authors describe public-domain/open release; verify release-level files and underlying terms.",
+    "source_url": "https://zenodo.org/records/15154519",
+    "acquisition": "Zenodo record; repeated full-page timeout here.",
+    "code_or_secondary_url": "https://codeberg.org/SeanFobbe/cr-unsc",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "access_failed",
+    "acquisition_result": "Zenodo metadata endpoint returned HTTP 504; bulk CR-UNSC not acquired.",
+    "local_source_id": null
+  },
+  {
+    "id": "D17",
+    "name": "UNFCCC Article 6 submissions",
+    "priority": "P2",
+    "kind": "Issue-specific negotiation positions",
+    "coverage": "Dated Party/observer submissions",
+    "reported_size": "No audited count",
+    "raw_format": "HTML submission listings + linked documents",
+    "raw_fields_or_structure": "Party or submitting group, date, agenda/topic and document text; exact export schema not verified.",
+    "inspection_level": "Official listing inspected",
+    "recommended_use": "Climate-specific held-out domain; proposal revision/evidence tasks",
+    "main_caveat": "Preserve group/coalition identity. A joint submission is not an independent statement by every member.",
+    "rights_note": "Review UNFCCC/source-specific terms.",
+    "source_url": "https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement/cooperative-implementation/submissions-A6-2_A6-4_A6-8",
+    "acquisition": "Follow topic-specific official submission links; snapshot documents and dates.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "deferred",
+    "acquisition_result": "Climate-specific expansion; not downloaded.",
+    "local_source_id": null
+  },
+  {
+    "id": "D18",
+    "name": "UN Parallel Corpus",
+    "priority": "P2",
+    "kind": "Multilingual domain text",
+    "coverage": "Published UN parallel-document corpus",
+    "reported_size": "No current release count audited",
+    "raw_format": "Aligned multilingual text; verify exact release packaging",
+    "raw_fields_or_structure": "Document/segment alignment across six official UN languages; not speaker-country labels.",
+    "inspection_level": "Paper documentation",
+    "recommended_use": "Optional multilingual domain adaptation, not persona supervision",
+    "main_caveat": "Chinese-language text is not Chinese national policy. German is not one of these six corpus languages.",
+    "rights_note": "Verify corpus release terms.",
+    "source_url": "https://aclanthology.org/L16-1561/",
+    "acquisition": "Official UN corpus site; direct download overview unavailable during this inspection.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "deferred",
+    "acquisition_result": "Optional multilingual domain adaptation; not country-persona evidence.",
+    "local_source_id": null
+  },
+  {
+    "id": "D19",
+    "name": "RoleBench",
+    "priority": "P2",
+    "kind": "Generic role-conditioned instruction data",
+    "coverage": "100 roles; fictional/persona-oriented",
+    "reported_size": "168,093 examples reported by paper",
+    "raw_format": "JSONL plus profile/dialogue files",
+    "raw_fields_or_structure": "Inspected viewer schema: role:string,question:string,generated:list[string]; role_specific files add type:string.",
+    "inspection_level": "Schema inspected",
+    "recommended_use": "Borrow grounded instruction construction; optional generic role-following comparator",
+    "main_caveat": "HF aggregate loader reports schema mismatch. Load specific subfolders. Scripts/characters are not country-policy evidence.",
+    "rights_note": "Dataset card Apache-2.0; underlying source material needs review.",
+    "source_url": "https://huggingface.co/datasets/ZenMoore/RoleBench",
+    "acquisition": "Explicit data_files for general or role_specific train.jsonl; do not mix schemas blindly.",
+    "code_or_secondary_url": "https://github.com/InteractiveNLP-Team/RoleLLM-public",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "method_only",
+    "acquisition_result": "Borrow grounded instruction construction; fictional-role training data not acquired.",
+    "local_source_id": null
+  },
+  {
+    "id": "D20",
+    "name": "OpenCharacter (not Open Character Training)",
+    "priority": "P2",
+    "kind": "Synthetic generic role-play",
+    "coverage": "English synthetic personas/dialogue",
+    "reported_size": "20,000 personas and about 306,000 dialogues reported",
+    "raw_format": "synthetic_character.jsonl; synthetic_dialogue.jsonl",
+    "raw_fields_or_structure": "Two different JSONL collections; record-level fields not inspected.",
+    "inspection_level": "File listing + card inspected",
+    "recommended_use": "Optional generic role-following reference only",
+    "main_caveat": "Not foreign-policy ground truth. Licence tag and research-only disclaimer need reconciliation.",
+    "rights_note": "HF tag Apache-2.0 but card says research usage only; resolve before use.",
+    "source_url": "https://huggingface.co/datasets/xywang1/OpenCharacter",
+    "acquisition": "HF Files tab; separate character and dialogue files.",
+    "code_or_secondary_url": "https://huggingface.co/datasets/xywang1/OpenCharacter/raw/main/README.md",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "deferred",
+    "acquisition_result": "Not needed for the initial diplomatic data pool; license ambiguity remains.",
+    "local_source_id": null
+  },
+  {
+    "id": "D21",
+    "name": "UNSC-Bench",
+    "priority": "P0",
+    "kind": "Diplomatic role evaluation",
+    "coverage": "P5; 1947–2025",
+    "reported_size": "469 resolutions/adopted or vetoed drafts (paper)",
+    "raw_format": "Release advertised on Hugging Face; raw schema unverified",
+    "raw_fields_or_structure": "Multilingual resolution inputs and P5 votes; exact field names pending.",
+    "inspection_level": "Paper documentation",
+    "recommended_use": "Frozen evaluation; country-vote fidelity and class imbalance",
+    "main_caveat": "P5 only: not a German vote benchmark. Historical pretraining contamination remains possible.",
+    "rights_note": "Dataset release terms pending.",
+    "source_url": "https://aclanthology.org/2026.mme-main.10/",
+    "acquisition": "Authors advertise UNSC-Bench/UNSC-Bench on HF; endpoint did not load here.",
+    "code_or_secondary_url": "https://huggingface.co/datasets/UNSC-Bench/UNSC-Bench",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "deferred",
+    "acquisition_result": "Future P5 evaluation source; not a Germany benchmark.",
+    "local_source_id": null
+  },
+  {
+    "id": "D22",
+    "name": "PMC-Patients",
+    "priority": "P2",
+    "kind": "Medical development data; separate project",
+    "coverage": "Published case reports; English",
+    "reported_size": "167,000 summaries; relation labels for retrieval",
+    "raw_format": "PMC-Patients.json: list of objects",
+    "raw_fields_or_structure": "patient_id,patient_uid,PMID,file_path,title,patient,age,gender,relevant_articles,similar_patients. Age is list of value/unit pairs.",
+    "inspection_level": "Author schema inspected",
+    "recommended_use": "Oncology case curation and retrieval development only",
+    "main_caveat": "Not adjudicated tumor-board therapy labels. Full summaries can expose treatment/outcome. Preserve RWTH 70-case evaluation firewall.",
+    "rights_note": "Download requires no DUA per authors; check dataset/source article permissions.",
+    "source_url": "https://github.com/pmc-patients/pmc-patients",
+    "acquisition": "HF or Figshare links from author repo.",
+    "code_or_secondary_url": "https://huggingface.co/datasets/zhengyun21/PMC-Patients",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "out_of_scope",
+    "acquisition_result": "Medical data intentionally excluded from this project.",
+    "local_source_id": null
+  },
+  {
+    "id": "D23",
+    "name": "PMC-Patients metadata / MeSH",
+    "priority": "P2",
+    "kind": "Medical selection metadata",
+    "coverage": "Companion files to D22",
+    "reported_size": "No current count audited",
+    "raw_format": "JSON dictionaries/lists",
+    "raw_fields_or_structure": "PMID2Mesh.json maps article IDs to MeSH terms; citation and human-evaluation companion files documented.",
+    "inspection_level": "Author dataset card inspected",
+    "recommended_use": "Select candidate oncology material; source tracing",
+    "main_caveat": "Article-topic tags do not by themselves certify patient eligibility or treatment correctness.",
+    "rights_note": "Check matching release terms.",
+    "source_url": "https://huggingface.co/datasets/zhengyun21/PMC-Patients-MetaData",
+    "acquisition": "Load companion files explicitly; join on PMID.",
+    "code_or_secondary_url": "",
+    "checked_on": "2026-09-09",
+    "owner": "",
+    "status": "out_of_scope",
+    "acquisition_result": "Medical metadata intentionally excluded from this project.",
+    "local_source_id": null
+  },
+  {
+    "id": "D24",
+    "name": "UNGA-DM research database",
+    "priority": "P0",
+    "kind": "Recorded decisions and votes with original/amended labels and meeting metadata",
+    "source_url": "https://unvotes.unige.ch/",
+    "status": "acquired",
+    "local_source_id": "unga_dm",
+    "checked_on": "2026-09-09",
+    "observed_raw_rows": 1205730,
+    "observed_decisions": 7509,
+    "observed_years": "1946–2023",
+    "observed_preparation": {
+      "parsed_records": 16130,
+      "tasks": {
+        "vote_label_only": 16130
+      }
+    },
+    "rights_note": "Public research download; source-level training/redistribution terms not established in this build.",
+    "acquisition_result": "All-votes and all-decisions CSV extracts acquired from publisher links. Historical China/German entities kept separate.",
+    "main_caveat": "Full proposal text still needed before vote-prediction training. Original votes, amended votes and non-voting statuses are not interchangeable."
+  }
+]

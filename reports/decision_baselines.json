@@ -1,0 +1,88 @@
+{
+  "baseline": "per-country majority response from train only",
+  "results": [
+    {
+      "country": "CHN",
+      "split": "dev",
+      "train_rows": 336,
+      "train_class_counts": {
+        "Supported": 234,
+        "Noted": 102
+      },
+      "eval_rows": 329,
+      "eval_groups": 1,
+      "eval_class_counts": {
+        "Supported": 281,
+        "Noted": 48
+      },
+      "prediction": "Supported",
+      "accuracy": 0.8541033434650456,
+      "balanced_accuracy_observed_classes": 0.5,
+      "macro_f1_fixed_3_classes": 0.307103825136612
+    },
+    {
+      "country": "CHN",
+      "split": "test",
+      "train_rows": 336,
+      "train_class_counts": {
+        "Supported": 234,
+        "Noted": 102
+      },
+      "eval_rows": 423,
+      "eval_groups": 1,
+      "eval_class_counts": {
+        "Noted": 133,
+        "Supported": 290
+      },
+      "prediction": "Supported",
+      "accuracy": 0.6855791962174941,
+      "balanced_accuracy_observed_classes": 0.5,
+      "macro_f1_fixed_3_classes": 0.2711547452080411
+    },
+    {
+      "country": "DEU",
+      "split": "dev",
+      "train_rows": 225,
+      "train_class_counts": {
+        "Noted": 35,
+        "Supported": 189,
+        "Supported/Noted": 1
+      },
+      "eval_rows": 254,
+      "eval_groups": 1,
+      "eval_class_counts": {
+        "Noted": 47,
+        "Supported": 207
+      },
+      "prediction": "Supported",
+      "accuracy": 0.8149606299212598,
+      "balanced_accuracy_observed_classes": 0.5,
+      "macro_f1_fixed_3_classes": 0.2993492407809111
+    },
+    {
+      "country": "DEU",
+      "split": "test",
+      "train_rows": 225,
+      "train_class_counts": {
+        "Noted": 35,
+        "Supported": 189,
+        "Supported/Noted": 1
+      },
+      "eval_rows": 345,
+      "eval_groups": 1,
+      "eval_class_counts": {
+        "Noted": 62,
+        "Supported": 283
+      },
+      "prediction": "Supported",
+      "accuracy": 0.8202898550724638,
+      "balanced_accuracy_observed_classes": 0.5,
+      "macro_f1_fixed_3_classes": 0.30042462845010615
+    }
+  ],
+  "limitations": [
+    "Retrospective response labels, not a prospective forecast.",
+    "Many recommendations share a small number of country-review events; row counts overstate independence.",
+    "No LLM, training run, or expert persona evaluation was performed."
+  ]
+}

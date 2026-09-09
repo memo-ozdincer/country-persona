@@ -1,0 +1,44 @@
+{
+  "status": "proposed_not_tuned",
+  "model_scale": "4\u20138B instruction backbone; same model across roles",
+  "initial_countries": [
+    "CHN",
+    "DEU"
+  ],
+  "initial_language": "en; do not mix untranslated German unknowingly",
+  "stages": [
+    "role_prompt",
+    "role_prompt_plus_dated_retrieval",
+    "shared_country_conditioned_SFT",
+    "per_country_adapter_comparator",
+    "optional_grounded_DPO",
+    "optional_interactive_filtered_SFT"
+  ],
+  "example_mixture_proposal": {
+    "grounded_qa": 0.4,
+    "speech_interventions": 0.3,
+    "votes_upr_actions": 0.2,
+    "multi_turn_updates_uncertainty": 0.1
+  },
+  "mandatory_logs": [
+    "example_counts_by_country_task_source",
+    "supervised_token_counts_by_country_task_source",
+    "source_revisions",
+    "model_revision",
+    "dependency_versions",
+    "retrieval_snapshot",
+    "split_manifest",
+    "random_seed"
+  ],
+  "sft_smoke_settings": {
+    "lora_rank": 16,
+    "epochs": 1,
+    "learning_rate": 0.0001,
+    "packing": false,
+    "completion_only_loss": true
+  },
+  "never_tune_on": [
+    "final_UN_eval",
+    "RWTH_70_cases_or_derivatives"
+  ]
+}

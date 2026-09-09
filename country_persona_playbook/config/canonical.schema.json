@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed canonical country-persona event",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "source_id",
+    "source_record_id",
+    "source_url",
+    "source_version",
+    "raw_sha256",
+    "raw_file",
+    "country_name",
+    "represented_entity",
+    "institution",
+    "speaking_capacity",
+    "language",
+    "event_date",
+    "phase",
+    "task",
+    "group_id",
+    "review_status",
+    "train_permission",
+    "approved_by",
+    "country_iso3",
+    "date_precision",
+    "split",
+    "source_verified",
+    "context_asof_verified",
+    "evidence_ids",
+    "notes",
+    "prompt_inputs",
+    "target"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_record_id": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "source_version": {
+      "type": "string"
+    },
+    "raw_sha256": {
+      "type": "string"
+    },
+    "raw_file": {
+      "type": "string"
+    },
+    "country_name": {
+      "type": "string"
+    },
+    "represented_entity": {
+      "type": "string"
+    },
+    "institution": {
+      "type": "string"
+    },
+    "speaking_capacity": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "event_date": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "group_id": {
+      "type": "string"
+    },
+    "review_status": {
+      "type": "string"
+    },
+    "train_permission": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "country_iso3": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "date_precision": {
+      "enum": [
+        "day",
+        "year"
+      ]
+    },
+    "split": {
+      "enum": [
+        "train",
+        "dev",
+        "test",
+        "quarantine"
+      ]
+    },
+    "source_verified": {
+      "type": "boolean"
+    },
+    "context_asof_verified": {
+      "type": "boolean"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prompt_inputs": {
+      "type": "object",
+      "required": [
+        "context",
+        "question"
+      ],
+      "properties": {
+        "context": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "text",
+        "kind"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
