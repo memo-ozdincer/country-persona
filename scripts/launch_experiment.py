@@ -8,7 +8,7 @@ import subprocess
 import sys
 p=argparse.ArgumentParser();p.add_argument('recipe',choices=['smoke','pilot','pilot-3epochs','balanced','CHN','DEU','all-data-ablation']);p.add_argument('--run',action='store_true');p.add_argument('--seed',type=int,default=42);p.add_argument('--output');a=p.parse_args()
 lock=json.loads(Path('configs/posttraining/model.lock.json').read_text());plan=json.loads(Path('configs/posttraining/recipes.json').read_text());r=plan['recipes'][a.recipe]
-root=Path('data/prepared/posttraining-v1');data=root/(r['dataset']+'.jsonl');manifest=data.with_suffix('.manifest.jsonl')
+root=Path('data/prepared/posttraining-qwen3-v1');data=root/(r['dataset']+'.jsonl');manifest=data.with_suffix('.manifest.jsonl')
 out=a.output or f'runs/{a.recipe}-s{a.seed}'
 if Path(out).exists() and any(Path(out).iterdir()):raise ValueError('Use a fresh output directory')
 cmd=[sys.executable,'-m','torch.distributed.run','--standalone','--nproc_per_node=4','--module','country_persona.train',

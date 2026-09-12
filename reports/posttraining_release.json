@@ -1,7 +1,10 @@
 {
-  "model": "Qwen/Qwen2.5-7B-Instruct",
-  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
   "max_length": 8192,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
   "selection": "Full previous history and literal final answer; over-length rows excluded, no truncation. Event-round-robin selection, seed 42.",
   "input_hashes": {
     "data/prepared/long-context/candidates/CHN/authentic_qa/dev.sft.jsonl": "375304231409794aae22d45550a2ecefdae53544638679b825f738521a3d6e07",
@@ -21,12 +24,12 @@
     "CHN/dev": 982,
     "CHN/test": 294,
     "CHN/train": 7679,
-    "DEU/dev": 260,
+    "DEU/dev": 259,
     "DEU/test": 45,
     "DEU/train": 416
   },
   "rejected": {
-    "over_token_budget": 821
+    "over_token_budget": 822
   },
   "outputs": {
     "shared-250.train": {
@@ -36,11 +39,11 @@
         "CHN": 250,
         "DEU": 250
       },
-      "sequence_tokens": 1571426,
+      "sequence_tokens": 1573426,
       "supervised_tokens": 73892,
-      "max_sequence_tokens": 8168,
-      "data_sha256": "58c1d7579ecca39b41484bc0b5cb5a6714f4b10c5662e4b597e02aec52bc5b61",
-      "manifest_sha256": "652ce8461fb0f60a68b915905c58ceac519f5e480f6637f0a92d03e64b7cd8e5"
+      "max_sequence_tokens": 8172,
+      "data_sha256": "2afe71259fe3912fc984f0cc017032580a7f7eabb04556dd2b45f796aaa9c2a8",
+      "manifest_sha256": "2b691e909df05452033d9210a00c3cd75725a7de481ef1616bab10142a308d03"
     },
     "shared-balanced.train": {
       "examples": 832,
@@ -49,11 +52,11 @@
         "CHN": 416,
         "DEU": 416
       },
-      "sequence_tokens": 2563544,
+      "sequence_tokens": 2566872,
       "supervised_tokens": 122657,
-      "max_sequence_tokens": 8178,
-      "data_sha256": "06cb7834a07e2584760a0403bb5e4998678346e8739dd93a84b5e2f8b5875013",
-      "manifest_sha256": "9b82462ba512f7b4ea2482544c06f00c21b0d7c7540dd52ed84b4dd81390e32b"
+      "max_sequence_tokens": 8182,
+      "data_sha256": "28a150aea1f5c3b45c2c0789e1ed5160f63d0f5bffe14502384fea00723b8d66",
+      "manifest_sha256": "5d7ce0ffd912d135367fcc48b9b4d8aba0efe2c8fb7c5ba1b0d7fece40188325"
     },
     "shared-all.train": {
       "examples": 8095,
@@ -62,11 +65,11 @@
         "CHN": 7679,
         "DEU": 416
       },
-      "sequence_tokens": 14642178,
+      "sequence_tokens": 14674558,
       "supervised_tokens": 1412944,
-      "max_sequence_tokens": 8178,
-      "data_sha256": "591980b2122884f3d4339cfa6d150117dc741c1a2f6e06a7a49a3786cc4540f0",
-      "manifest_sha256": "87b9b30fa7cd81102ae841a49e49fb5c0b6142596e908e352a9620dd7e1b91f3"
+      "max_sequence_tokens": 8182,
+      "data_sha256": "0e81675db92dd4880bc16704d043598e63051686e41984fe191f9bed0ac00e9e",
+      "manifest_sha256": "afc40aec9abeef1d3286cca1ab6cbe45ca65c4590612f7663bf77ed764ee840f"
     },
     "CHN.train": {
       "examples": 416,
@@ -74,11 +77,11 @@
       "countries": {
         "CHN": 416
       },
-      "sequence_tokens": 608983,
+      "sequence_tokens": 610647,
       "supervised_tokens": 73663,
-      "max_sequence_tokens": 6538,
-      "data_sha256": "0d9193a19ed1872a6d25518f0da8164c237540799761747d674b02d8c961ea69",
-      "manifest_sha256": "3a1b64712abfd4b73fa0465d4cb1222a7000dc629cdc998a119d3a442241b4d4"
+      "max_sequence_tokens": 6542,
+      "data_sha256": "e9f829f652d12a1ae3b5ed43c43e299fc25fe46d48467308e315b2ecd6c233fa",
+      "manifest_sha256": "dd1f415ac2ad26f0ccac2ea08d0171abf6489f47c9a5ccd5a344fd0e23388446"
     },
     "DEU.train": {
       "examples": 416,
@@ -86,11 +89,11 @@
       "countries": {
         "DEU": 416
       },
-      "sequence_tokens": 1954561,
+      "sequence_tokens": 1956225,
       "supervised_tokens": 48994,
-      "max_sequence_tokens": 8178,
-      "data_sha256": "bbbe60bdc4a2a5dc6628b53d247b0ba656bcbc59e06e960200c09cc1bec68a7b",
-      "manifest_sha256": "4c90f347bb533267d28980aa06b38cf5b2967115db588eb87f7b7eb3ab750411"
+      "max_sequence_tokens": 8182,
+      "data_sha256": "240366490cfca9307247b5e3eb410c18f5fcebd32b72394f8aea141e461e11b6",
+      "manifest_sha256": "f762baed8eb62ffe4c6645a48071b6701e372cd0d67109a80692771ca2f8c22f"
     },
     "CHN.dev": {
       "examples": 100,
@@ -98,11 +101,11 @@
       "countries": {
         "CHN": 100
       },
-      "sequence_tokens": 115152,
+      "sequence_tokens": 115552,
       "supervised_tokens": 14033,
-      "max_sequence_tokens": 3481,
-      "data_sha256": "8a708b9d108b44a74e77e555ea004fe216843cb7b515cf40af35dd85068f8928",
-      "manifest_sha256": "6151768e1a9e77f5ba747cd17ebe947dd47c40088871c3f027164a825dc23024"
+      "max_sequence_tokens": 3485,
+      "data_sha256": "e73d97f49021694a0b6d84bff0e54c989340b43b9b5ffbdcf6204bee6d20fe7f",
+      "manifest_sha256": "8d13a0fd06e5009814a9ffa512cbbaeee09319590f856ddd5cb795c86333d624"
     },
     "DEU.dev": {
       "examples": 100,
@@ -110,11 +113,11 @@
       "countries": {
         "DEU": 100
       },
-      "sequence_tokens": 507914,
+      "sequence_tokens": 508314,
       "supervised_tokens": 18163,
-      "max_sequence_tokens": 8185,
-      "data_sha256": "b936b3f94ec016517641a677c99b15f6029d517a00dc241aa4065ef696fecd64",
-      "manifest_sha256": "d47e3386dd75da3cd173a9d1e8e3420cc519ea40034013abfbd2106ae0e8ddae"
+      "max_sequence_tokens": 8189,
+      "data_sha256": "7d76f07cbce6b8415e0d9be8e6b84063661b91c575185c3f74f1965c3fa0a725",
+      "manifest_sha256": "2ffec986c471ef016a12bb9210deef1370cad9a33538e2086330d4016184e7fe"
     },
     "shared.dev": {
       "examples": 200,
@@ -123,11 +126,11 @@
         "CHN": 100,
         "DEU": 100
       },
-      "sequence_tokens": 623066,
+      "sequence_tokens": 623866,
       "supervised_tokens": 32196,
-      "max_sequence_tokens": 8185,
-      "data_sha256": "5daf724bb50331e425d206ed57b4e98fa096f3c0fe1bba1103005aff14095edd",
-      "manifest_sha256": "338477f5a79e21bf9a6d15042493c5a75eb59f9df38b3e69cf4f97f331ac68b1"
+      "max_sequence_tokens": 8189,
+      "data_sha256": "fc1f939f280319ced899f875e061a96360374bbc91b9357a4b74031ea6952095",
+      "manifest_sha256": "fc81b83b8337334edc62de4c505a9f8193b24403469f595122609e93f2fd1a24"
     },
     "CHN.test": {
       "examples": 100,
@@ -135,11 +138,11 @@
       "countries": {
         "CHN": 100
       },
-      "sequence_tokens": 115828,
+      "sequence_tokens": 116228,
       "supervised_tokens": 16539,
-      "max_sequence_tokens": 3777,
-      "data_sha256": "40dc17146c2184c53210979e30cc3c5d5cca3a133c954a66ab157ee642de64f5",
-      "manifest_sha256": "4989121e422f05e0feecdec1c15d6f3bf5af54aa506d36ab12aaf3b7cf8c02ae"
+      "max_sequence_tokens": 3781,
+      "data_sha256": "30852df6c69e17a4c8aa1cfc4de1b997b079f94e33aedd49cb4c006fa93563ee",
+      "manifest_sha256": "f3d1fea40eef9775d87d214d533791e85673b61242533eb90fbddfaebdab2c35"
     },
     "DEU.test": {
       "examples": 45,
@@ -147,11 +150,11 @@
       "countries": {
         "DEU": 45
       },
-      "sequence_tokens": 200499,
+      "sequence_tokens": 200679,
       "supervised_tokens": 7466,
-      "max_sequence_tokens": 8168,
-      "data_sha256": "145d3ebd5e3d2856bd78db3f2ab6cf69fa5783fa9e80c81635e88dff558aada4",
-      "manifest_sha256": "c7f582074ce50f1f8f100331c9bb40e4bd9f05303b4e130f79a110d4b7e637f3"
+      "max_sequence_tokens": 8172,
+      "data_sha256": "c343161427bb9bfb0b7ff64c7d546063b4c4ef128cc03217797f7a609c6b07e4",
+      "manifest_sha256": "412d9d9a3a8de918e0411f88961bbb2d8ebe2ef25682efae7cc7e8cdf6d11a9e"
     },
     "shared.test": {
       "examples": 145,
@@ -160,11 +163,11 @@
         "CHN": 100,
         "DEU": 45
       },
-      "sequence_tokens": 316327,
+      "sequence_tokens": 316907,
       "supervised_tokens": 24005,
-      "max_sequence_tokens": 8168,
-      "data_sha256": "a26c69c8d69f0fe57cfe49f08cbdfdd1445704039cb49444ffe606ad5e1920d9",
-      "manifest_sha256": "69ab9311d65ed29fa2189e77843f51e708410a20a681ddf6fdfcc5eb0ffc5474"
+      "max_sequence_tokens": 8172,
+      "data_sha256": "465c15160ffc5442ee3d0737b6d16ed613c03a0e7485991b1fbfda6ded2ec96e",
+      "manifest_sha256": "c2516156232d4da9e25c4029d64d0a90d389064269bb425180c93ea80224681d"
     }
   },
   "status": "machine_prepared_research_release; no human or source-rights clearance asserted"

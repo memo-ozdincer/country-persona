@@ -1,0 +1,171 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "max_length": 8192,
+  "selection": "Full previous history and literal final answer; over-length rows excluded, no truncation. Event-round-robin selection, seed 42.",
+  "input_hashes": {
+    "data/prepared/long-context/candidates/CHN/authentic_qa/dev.sft.jsonl": "375304231409794aae22d45550a2ecefdae53544638679b825f738521a3d6e07",
+    "data/prepared/long-context/candidates/CHN/authentic_qa/dev.manifest.jsonl": "c2176301f533bebf4030aa85a054dad1ea03252e133d5019b0477b93c7491bff",
+    "data/prepared/long-context/candidates/CHN/authentic_qa/test.sft.jsonl": "7586428272b814e6ed368f69b620227f540709e800847be79e0d8a52b2bd901e",
+    "data/prepared/long-context/candidates/CHN/authentic_qa/test.manifest.jsonl": "e169ea878125256eb6581fdd6d4799ff0cc7077b18357de6f039abe7bcead482",
+    "data/prepared/long-context/candidates/CHN/authentic_qa/train.sft.jsonl": "11bb075884bf88c61974af188793a8ac8f70008556f9747c4a164862444620fe",
+    "data/prepared/long-context/candidates/CHN/authentic_qa/train.manifest.jsonl": "9b2f55563191c03620532602a1f8089a6ce77fdac38119ce834dd6ec185472a8",
+    "data/prepared/long-context/candidates/DEU/authentic_qa/dev.sft.jsonl": "d06e21ae58e62481299809614e6ecc100a8562a79ccb6ff9e4f290183dcfd695",
+    "data/prepared/long-context/candidates/DEU/authentic_qa/dev.manifest.jsonl": "271f685c28581283be75ffb781eb4d286cbd186d4e1b4dace96881420bc53585",
+    "data/prepared/long-context/candidates/DEU/authentic_qa/test.sft.jsonl": "149e90aa0306e5e95565e5cbe87e91376adc816c4e10300f0fe23426a53dcd7d",
+    "data/prepared/long-context/candidates/DEU/authentic_qa/test.manifest.jsonl": "bbf1c13803544da1e24e48f14d38d1b0ee3415ef51b1d08f50a3060f84a3b37e",
+    "data/prepared/long-context/candidates/DEU/authentic_qa/train.sft.jsonl": "382169f9c08339d4a50a0141de8b6548ae26e0bb904c30d52a3112729b047973",
+    "data/prepared/long-context/candidates/DEU/authentic_qa/train.manifest.jsonl": "0e9bc0fa306a119b4db1ffaa3c5ef27bce978262dd6e78acdd8acc613c5f0883"
+  },
+  "eligible": {
+    "CHN/dev": 982,
+    "CHN/test": 294,
+    "CHN/train": 7679,
+    "DEU/dev": 260,
+    "DEU/test": 45,
+    "DEU/train": 416
+  },
+  "rejected": {
+    "over_token_budget": 821
+  },
+  "outputs": {
+    "shared-250.train": {
+      "examples": 500,
+      "event_groups": 325,
+      "countries": {
+        "CHN": 250,
+        "DEU": 250
+      },
+      "sequence_tokens": 1571426,
+      "supervised_tokens": 73892,
+      "max_sequence_tokens": 8168,
+      "data_sha256": "58c1d7579ecca39b41484bc0b5cb5a6714f4b10c5662e4b597e02aec52bc5b61",
+      "manifest_sha256": "652ce8461fb0f60a68b915905c58ceac519f5e480f6637f0a92d03e64b7cd8e5"
+    },
+    "shared-balanced.train": {
+      "examples": 832,
+      "event_groups": 491,
+      "countries": {
+        "CHN": 416,
+        "DEU": 416
+      },
+      "sequence_tokens": 2563544,
+      "supervised_tokens": 122657,
+      "max_sequence_tokens": 8178,
+      "data_sha256": "06cb7834a07e2584760a0403bb5e4998678346e8739dd93a84b5e2f8b5875013",
+      "manifest_sha256": "9b82462ba512f7b4ea2482544c06f00c21b0d7c7540dd52ed84b4dd81390e32b"
+    },
+    "shared-all.train": {
+      "examples": 8095,
+      "event_groups": 881,
+      "countries": {
+        "CHN": 7679,
+        "DEU": 416
+      },
+      "sequence_tokens": 14642178,
+      "supervised_tokens": 1412944,
+      "max_sequence_tokens": 8178,
+      "data_sha256": "591980b2122884f3d4339cfa6d150117dc741c1a2f6e06a7a49a3786cc4540f0",
+      "manifest_sha256": "87b9b30fa7cd81102ae841a49e49fb5c0b6142596e908e352a9620dd7e1b91f3"
+    },
+    "CHN.train": {
+      "examples": 416,
+      "event_groups": 416,
+      "countries": {
+        "CHN": 416
+      },
+      "sequence_tokens": 608983,
+      "supervised_tokens": 73663,
+      "max_sequence_tokens": 6538,
+      "data_sha256": "0d9193a19ed1872a6d25518f0da8164c237540799761747d674b02d8c961ea69",
+      "manifest_sha256": "3a1b64712abfd4b73fa0465d4cb1222a7000dc629cdc998a119d3a442241b4d4"
+    },
+    "DEU.train": {
+      "examples": 416,
+      "event_groups": 75,
+      "countries": {
+        "DEU": 416
+      },
+      "sequence_tokens": 1954561,
+      "supervised_tokens": 48994,
+      "max_sequence_tokens": 8178,
+      "data_sha256": "bbbe60bdc4a2a5dc6628b53d247b0ba656bcbc59e06e960200c09cc1bec68a7b",
+      "manifest_sha256": "4c90f347bb533267d28980aa06b38cf5b2967115db588eb87f7b7eb3ab750411"
+    },
+    "CHN.dev": {
+      "examples": 100,
+      "event_groups": 100,
+      "countries": {
+        "CHN": 100
+      },
+      "sequence_tokens": 115152,
+      "supervised_tokens": 14033,
+      "max_sequence_tokens": 3481,
+      "data_sha256": "8a708b9d108b44a74e77e555ea004fe216843cb7b515cf40af35dd85068f8928",
+      "manifest_sha256": "6151768e1a9e77f5ba747cd17ebe947dd47c40088871c3f027164a825dc23024"
+    },
+    "DEU.dev": {
+      "examples": 100,
+      "event_groups": 53,
+      "countries": {
+        "DEU": 100
+      },
+      "sequence_tokens": 507914,
+      "supervised_tokens": 18163,
+      "max_sequence_tokens": 8185,
+      "data_sha256": "b936b3f94ec016517641a677c99b15f6029d517a00dc241aa4065ef696fecd64",
+      "manifest_sha256": "d47e3386dd75da3cd173a9d1e8e3420cc519ea40034013abfbd2106ae0e8ddae"
+    },
+    "shared.dev": {
+      "examples": 200,
+      "event_groups": 153,
+      "countries": {
+        "CHN": 100,
+        "DEU": 100
+      },
+      "sequence_tokens": 623066,
+      "supervised_tokens": 32196,
+      "max_sequence_tokens": 8185,
+      "data_sha256": "5daf724bb50331e425d206ed57b4e98fa096f3c0fe1bba1103005aff14095edd",
+      "manifest_sha256": "338477f5a79e21bf9a6d15042493c5a75eb59f9df38b3e69cf4f97f331ac68b1"
+    },
+    "CHN.test": {
+      "examples": 100,
+      "event_groups": 41,
+      "countries": {
+        "CHN": 100
+      },
+      "sequence_tokens": 115828,
+      "supervised_tokens": 16539,
+      "max_sequence_tokens": 3777,
+      "data_sha256": "40dc17146c2184c53210979e30cc3c5d5cca3a133c954a66ab157ee642de64f5",
+      "manifest_sha256": "4989121e422f05e0feecdec1c15d6f3bf5af54aa506d36ab12aaf3b7cf8c02ae"
+    },
+    "DEU.test": {
+      "examples": 45,
+      "event_groups": 9,
+      "countries": {
+        "DEU": 45
+      },
+      "sequence_tokens": 200499,
+      "supervised_tokens": 7466,
+      "max_sequence_tokens": 8168,
+      "data_sha256": "145d3ebd5e3d2856bd78db3f2ab6cf69fa5783fa9e80c81635e88dff558aada4",
+      "manifest_sha256": "c7f582074ce50f1f8f100331c9bb40e4bd9f05303b4e130f79a110d4b7e637f3"
+    },
+    "shared.test": {
+      "examples": 145,
+      "event_groups": 50,
+      "countries": {
+        "CHN": 100,
+        "DEU": 45
+      },
+      "sequence_tokens": 316327,
+      "supervised_tokens": 24005,
+      "max_sequence_tokens": 8168,
+      "data_sha256": "a26c69c8d69f0fe57cfe49f08cbdfdd1445704039cb49444ffe606ad5e1920d9",
+      "manifest_sha256": "69ab9311d65ed29fa2189e77843f51e708410a20a681ddf6fdfcc5eb0ffc5474"
+    }
+  },
+  "status": "machine_prepared_research_release; no human or source-rights clearance asserted"
+}

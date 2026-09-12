@@ -23,7 +23,8 @@ for name,r in recipes.items():
         'four_H100_node_hours_low':round((tokens+eval_equivalent)/high/3600+.15,3),
         'four_H100_node_hours_high':round((tokens+eval_equivalent)/low/3600+.30,3)})
 report={'unit':'one hour of one four-H100 node = four H100 GPU-hours',
-    'hardware':'4x H100 80GB, one node; no measured cluster access',
+    'model':release['model'],'revision':release['revision'],
+    'hardware':'4x H100 80GB, one node; runtime unmeasured until pilot completes',
     'effective_sequence_tokens_per_second_per_node':[low,high],
     'assumption_status':'calibrated from supplied run, still a projection' if a.run else 'engineering planning envelope, NOT a vendor benchmark or measurement',
     'formula':'node_hours = (sequence_tokens * epochs + 0.5 * dev_sequence_tokens * eval_epochs) / effective_node_tokens_per_second / 3600 + 0.15 to 0.30 setup/checkpoint hours',

@@ -1,6 +1,6 @@
 # Run one proof of concept on four H100s
 
-Run from the repository root. The supplied snapshot and new research exports must be copied to the cluster: large files are Git-ignored and therefore do not accompany a Git clone. Minimum run payload: `data/prepared/posttraining-v1/`, `data/prepared/eval-v1/`, `configs/posttraining/`, source code/scripts, `pyproject.toml` and `uv.lock`. For full reproduction also preserve `data/raw/`, acquisition manifests and the source lock. Use your normal cluster transfer method; nothing has been uploaded by this project.
+Run from the repository root. The supplied snapshot and new research exports must be copied to the cluster: large files are Git-ignored and therefore do not accompany a Git clone. Minimum run payload: `data/prepared/posttraining-qwen3-v1/`, `data/prepared/eval-qwen3-v1/`, `configs/posttraining/`, source code/scripts, `pyproject.toml` and `uv.lock`. For full reproduction also preserve `data/raw/`, acquisition manifests and the source lock. Code is tracked in the approved private GitHub repository. Prepared data and tokenizer files are transferred directly to Trillium; raw collections remain local. On Trillium, use the verified cached checkpoint through `scripts/trillium_pilot.sbatch`; the generic download example below is for a fresh environment.
 
 ## Stage dependencies and weights before renting the training node
 
@@ -16,7 +16,7 @@ snapshot_download(lock['model'], revision=lock['revision'])
 PY
 ```
 
-No flash-attention build or bitsandbytes is required for the primary SDPA/BF16 recipe. CUDA/driver compatibility must be verified on the actual node. The pinned CPU TRL/PEFT integration passed locally; it is not a CUDA validation. Expect roughly 15GB of model weights, additional package/cache space and a small adapter per checkpoint; provision at least 50GB scratch headroom.
+No flash-attention build or bitsandbytes is required for the primary SDPA/BF16 recipe. CUDA/driver compatibility must be verified on the actual node. The pinned CPU TRL/PEFT integration passed locally; it is not a CUDA validation. Expect roughly 16.4GB of model weights, additional package/cache space and a small adapter per checkpoint; provision at least 50GB scratch headroom.
 
 ## First session: stop after the before/after proof of concept
 
@@ -32,7 +32,7 @@ python scripts/launch_experiment.py smoke --run
 # 3. Frozen base-model answers: four independent inference replicas, no tensor parallelism.
 python -m torch.distributed.run --standalone --nproc_per_node=4 \
   --module country_persona.evaluate \
-  --cases data/prepared/eval-v1/smoke_cases.jsonl --output runs/base-inspection
+  --cases data/prepared/eval-qwen3-v1/smoke_cases.jsonl --output runs/base-inspection
 
 # 4. Fresh base + LoRA, 250 examples/country, one epoch. Does not resume smoke weights.
 python scripts/launch_experiment.py pilot --run
@@ -40,11 +40,11 @@ python scripts/launch_experiment.py pilot --run
 # 5. Same prompts/evidence/decoding through the trained adapter.
 python -m torch.distributed.run --standalone --nproc_per_node=4 \
   --module country_persona.evaluate \
-  --cases data/prepared/eval-v1/smoke_cases.jsonl \
+  --cases data/prepared/eval-qwen3-v1/smoke_cases.jsonl \
   --adapter runs/pilot-s42 --output runs/pilot-inspection
 
 python scripts/compare_runs.py \
-  --cases data/prepared/eval-v1/smoke_cases.jsonl \
+  --cases data/prepared/eval-qwen3-v1/smoke_cases.jsonl \
   --before runs/base-inspection --after runs/pilot-inspection \
   --output reports/pilot_before_after.md
 
@@ -72,7 +72,7 @@ These are alternatives to select after inspection, not instructions to run both 
 For full development generation, replace `smoke_cases.jsonl` with `cases.jsonl` in the same inference commands and use fresh output directories. For formal review, randomize and blind run labels before giving outputs to reviewers; retain the hidden mapping. In `review.csv`, create a row for each case/run with an actual reviewer and completed counts/ratings, adjudicating duplicate reviews first:
 
 ```bash
-python scripts/score_reviews.py --cases data/prepared/eval-v1/cases.jsonl \
+python scripts/score_reviews.py --cases data/prepared/eval-qwen3-v1/cases.jsonl \
   --reviews /path/to/adjudicated_reviews.csv \
   --before base --after balanced --output reports/reviewed_dev_comparison.json
 ```
@@ -97,4 +97,4 @@ uv run python -m country_persona.posttraining --output data/prepared/posttrainin
 uv run pytest -q
 ```
 
-The downstream run/evaluation scripts point to the delivered `posttraining-v1` snapshot intentionally; update the paths/configs together when promoting a new release. The tokenizer cache command downloads no model weights. Check `reports/posttraining_release.json`, `reports/compute_budget.json` and `reports/posttraining_validation.json` for measured inputs and verification.
+The downstream run/evaluation scripts point to the delivered `posttraining-qwen3-v1` snapshot intentionally; update the paths/configs together when promoting a new release. The tokenizer cache command downloads no model weights. Check `reports/posttraining_release.json`, `reports/compute_budget.json` and `reports/posttraining_validation.json` for measured inputs and verification.

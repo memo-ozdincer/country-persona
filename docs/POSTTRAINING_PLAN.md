@@ -2,23 +2,23 @@
 
 Prepared 12 September 2026. **Start with one four-H100 node for approximately 1–3 hours total**, then release the allocation and inspect the actual responses. No GPU training has been run here. Token counts are measured; cluster runtimes are estimates. Three or four nodes are unnecessary for the first proof of concept.
 
-The current recommendation is a pinned **Qwen2.5-7B-Instruct + BF16 LoRA** experiment. This is a mature multilingual experimental baseline, not a claim that it is the strongest current model. Its publisher lists 7.61B parameters and English, German and Chinese support. [Model card](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct). Every substantive decision and its evidence boundary is recorded in [DECISION_REGISTER.md](DECISION_REGISTER.md).
+The user-selected model is pinned **Qwen/Qwen3-8B + BF16 LoRA, with `enable_thinking=False` throughout preparation, training and evaluation**. The publisher reports 8.2B parameters, a dense multilingual architecture and a supported hard non-thinking switch. [Model card](https://huggingface.co/Qwen/Qwen3-8B). The Trillium directory is named `Qwen3-8B-Instruct`, but its bytes match the official `Qwen/Qwen3-8B` revision. The previous Qwen2.5 job was cancelled before allocation and consumed zero node-hours. Every substantive decision and its evidence boundary is recorded in [DECISION_REGISTER.md](DECISION_REGISTER.md).
 
 ## What is prepared
 
-The new release is `data/prepared/posttraining-v1/`. It selects only authentic Foreign Ministry/Foreign Office responses, keeps each complete earlier dialogue and final answer, applies the pinned tokenizer, and excludes sequences above 8,192 tokens. The original and longer-context pools are unchanged. Nothing was translated or replaced by generated answers.
+The new release is `data/prepared/posttraining-qwen3-v1/`. It selects only authentic Foreign Ministry/Foreign Office responses, keeps each complete earlier dialogue and final answer, applies the pinned tokenizer, and excludes sequences above 8,192 tokens. The original, longer-context and earlier Qwen2.5 releases are retained. Each new row explicitly includes `chat_template_kwargs: {"enable_thinking": false}`. The native empty thinking block belongs to the masked prompt; only the literal final answer and its terminator are supervised. Nothing was translated or replaced by generated answers.
 
 | Pool | Examples / training events | Input + answer tokens per epoch | Supervised answer tokens per epoch |
 |---|---:|---:|---:|
-| First pilot: 250 China + 250 Germany | 500 / 325 | 1,571,426 | 73,892 |
-| Expanded balanced: 416 + 416 | 832 / 491 | 2,563,544 | 122,657 |
-| Separate China adapter, same subset | 416 / 416 | 608,983 | 73,663 |
-| Separate Germany adapter, same subset | 416 / 75 | 1,954,561 | 48,994 |
-| Optional all-QA skew ablation | 8,095 / 881 | 14,642,178 | 1,412,944 |
+| First pilot: 250 China + 250 Germany | 500 / 325 | 1,573,426 | 73,892 |
+| Expanded balanced: 416 + 416 | 832 / 491 | 2,566,872 | 122,657 |
+| Separate China adapter, same subset | 416 / 416 | 610,647 | 73,663 |
+| Separate Germany adapter, same subset | 416 / 75 | 1,956,225 | 48,994 |
+| Optional all-QA skew ablation | 8,095 / 881 | 14,674,558 | 1,412,944 |
 
 One epoch of the first pilot is **16 optimizer steps**, with effective batch size 32. This is deliberately a learning-signal probe. Failure to improve after 16 steps does not establish that SFT cannot work. The optional three-epoch pilot gives 48 steps from the same base. Equal examples do not mean equal supervised tokens or independent events; the report exposes all three. Long German conference histories account for much of the compute.
 
-There are 821 over-budget exclusions across train/dev/test. The eligible training pool contains 7,679 Chinese and 416 German examples. The first pilot avoids allowing the much larger Chinese pool to determine almost the entire experiment. Selection visits distinct conference groups before drawing additional answers from the same group, with deterministic seed 42.
+There are 822 over-budget exclusions across train/dev/test. The eligible training pool contains 7,679 Chinese and 416 German examples. The first pilot avoids allowing the much larger Chinese pool to determine almost the entire experiment. Selection visits distinct conference groups before drawing additional answers from the same group, with deterministic seed 42.
 
 Exports are explicitly marked `research_prepared`, with machine integrity checks and original source-use/review metadata. They are usable through the explicit research-release training option. This does **not** assert expert adjudication or grant copyright permissions. Existing manually admitted exports still work; old unprepared candidate files still fail training validation.
 
@@ -29,11 +29,11 @@ A **node-hour** below means one hour of **four H100 80GB GPUs**. Multiply by fou
 | Run | Estimated four-H100 node-hours, training + inline dev loss + load/save |
 |---|---:|
 | Three-step technical smoke | 0.17–0.41 |
-| 500-example, one-epoch pilot | 0.28–0.95 |
+| 500-example, one-epoch pilot | 0.28–0.96 |
 | Optional 500-example, three-epoch run | 0.54–2.26 |
 | 832-example, one-epoch balanced run | 0.35–1.30 |
 | Two separate country adapters, combined | 0.50–1.60 |
-| Optional 8,095-example skew ablation | 1.19–5.49 |
+| Optional 8,095-example skew ablation | 1.19–5.51 |
 
 Allow **0.15–0.35 node-hours per checkpoint** for the 56-case first inspection pack and **0.25–0.75** for the complete development pack. The first round includes base and tuned generations, smoke training, and the one-epoch pilot: budget **1–3 node-hours total** with weights/dependencies staged. A cold environment or slow downloads add time. Human review and scheduler queue time are excluded; do not leave a paid allocation idle while reviewing.
 
@@ -45,7 +45,7 @@ The 0.5 forward-evaluation factor and 9–18-minute load/save allowance are plan
 
 `run.json` now records processed sequence/target tokens, elapsed training plus inline evaluation time, maximum allocated memory and global throughput. Run `python scripts/estimate_compute.py --run runs/pilot-s42/run.json --output reports/calibrated_compute.json` after the first pilot. A calibration taken from the same data distribution is more useful than one taken only from unusually short or long examples. The estimator's calibrated throughput already includes inline eval; its additional eval allowance is conservative.
 
-BF16 base weights alone are approximately 15.2 GB decimal per GPU. Optimizer states are for adapters, but activations, vocabulary logits, gradients, allocator reserve and kernels also consume memory. The 80GB fit is a reasonable design target, **not yet measured**. Stop on OOM, inspect the longest batch, and shorten the context *selection* or use a verified memory optimization before reducing precision or scaling nodes. DDP does not pool four GPUs' memory into a 320GB model device.
+BF16 base weights alone are approximately 16.4 GB decimal per GPU. Optimizer states are for adapters, but activations, vocabulary logits, gradients, allocator reserve and kernels also consume memory. The 80GB fit is a reasonable design target, **not yet measured**. Stop on OOM, inspect the longest batch, and shorten the context *selection* or use a verified memory optimization before reducing precision or scaling nodes. DDP does not pool four GPUs' memory into a 320GB model device.
 
 ## Milestones and inspection gates
 

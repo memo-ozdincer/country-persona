@@ -1,6 +1,8 @@
 {
   "unit": "one hour of one four-H100 node = four H100 GPU-hours",
-  "hardware": "4x H100 80GB, one node; no measured cluster access",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "hardware": "4x H100 80GB, one node; runtime unmeasured until pilot completes",
   "effective_sequence_tokens_per_second_per_node": [
     800.0,
     4000.0
@@ -30,7 +32,7 @@
       "examples_per_epoch": 500,
       "epochs": 1,
       "optimizer_steps": 3,
-      "nominal_sequence_tokens": 301714,
+      "nominal_sequence_tokens": 302098,
       "supervised_tokens_per_epoch": 73892,
       "four_H100_node_hours_low": 0.171,
       "four_H100_node_hours_high": 0.405
@@ -40,47 +42,47 @@
       "examples_per_epoch": 500,
       "epochs": 1,
       "optimizer_steps": 16,
-      "nominal_sequence_tokens": 1571426,
+      "nominal_sequence_tokens": 1573426,
       "supervised_tokens_per_epoch": 73892,
       "four_H100_node_hours_low": 0.281,
-      "four_H100_node_hours_high": 0.954
+      "four_H100_node_hours_high": 0.955
     },
     {
       "recipe": "pilot-3epochs",
       "examples_per_epoch": 500,
       "epochs": 3,
       "optimizer_steps": 48,
-      "nominal_sequence_tokens": 4714278,
+      "nominal_sequence_tokens": 4720278,
       "supervised_tokens_per_epoch": 73892,
-      "four_H100_node_hours_low": 0.542,
-      "four_H100_node_hours_high": 2.261
+      "four_H100_node_hours_low": 0.543,
+      "four_H100_node_hours_high": 2.264
     },
     {
       "recipe": "balanced",
       "examples_per_epoch": 832,
       "epochs": 1,
       "optimizer_steps": 26,
-      "nominal_sequence_tokens": 2563544,
+      "nominal_sequence_tokens": 2566872,
       "supervised_tokens_per_epoch": 122657,
       "four_H100_node_hours_low": 0.35,
-      "four_H100_node_hours_high": 1.298
+      "four_H100_node_hours_high": 1.3
     },
     {
       "recipe": "CHN",
       "examples_per_epoch": 416,
       "epochs": 1,
       "optimizer_steps": 13,
-      "nominal_sequence_tokens": 608983,
+      "nominal_sequence_tokens": 610647,
       "supervised_tokens_per_epoch": 73663,
       "four_H100_node_hours_low": 0.196,
-      "four_H100_node_hours_high": 0.531
+      "four_H100_node_hours_high": 0.532
     },
     {
       "recipe": "DEU",
       "examples_per_epoch": 416,
       "epochs": 1,
       "optimizer_steps": 13,
-      "nominal_sequence_tokens": 1954561,
+      "nominal_sequence_tokens": 1956225,
       "supervised_tokens_per_epoch": 48994,
       "four_H100_node_hours_low": 0.303,
       "four_H100_node_hours_high": 1.067
@@ -90,10 +92,10 @@
       "examples_per_epoch": 8095,
       "epochs": 1,
       "optimizer_steps": 253,
-      "nominal_sequence_tokens": 14642178,
+      "nominal_sequence_tokens": 14674558,
       "supervised_tokens_per_epoch": 1412944,
-      "four_H100_node_hours_low": 1.188,
-      "four_H100_node_hours_high": 5.492
+      "four_H100_node_hours_low": 1.191,
+      "four_H100_node_hours_high": 5.504
     }
   ]
 }

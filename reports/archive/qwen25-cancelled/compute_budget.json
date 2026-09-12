@@ -1,0 +1,99 @@
+{
+  "unit": "one hour of one four-H100 node = four H100 GPU-hours",
+  "hardware": "4x H100 80GB, one node; no measured cluster access",
+  "effective_sequence_tokens_per_second_per_node": [
+    800.0,
+    4000.0
+  ],
+  "assumption_status": "engineering planning envelope, NOT a vendor benchmark or measurement",
+  "formula": "node_hours = (sequence_tokens * epochs + 0.5 * dev_sequence_tokens * eval_epochs) / effective_node_tokens_per_second / 3600 + 0.15 to 0.30 setup/checkpoint hours",
+  "limits": "No packing, microbatch 1; DDP tail repeats and slowest-rank stragglers cause small token-volume differences and potentially larger throughput differences. Long contexts, PCIe, filesystem, kernels and cold downloads may exceed this envelope. Human review and queue waits excluded. Inference budget is separate.",
+  "generation_budget": {
+    "smoke_56_cases_per_checkpoint_node_hours": [
+      0.15,
+      0.35
+    ],
+    "full_dev_up_to_416_cases_per_checkpoint_node_hours": [
+      0.25,
+      0.75
+    ],
+    "assumption": "Four independent replicas, maximum 256 generated tokens, model already staged; budget includes reload/prefill and conservative slack, not measured."
+  },
+  "first_round_including_environment_smoke_baseline_pilot_comparison_node_hours": [
+    1.0,
+    3.0
+  ],
+  "first_round_action": "Reserve at most a three-hour node session; run smoke, base 56-case diagnostic, one-epoch pilot, same 56-case diagnostic. Stop and inspect.",
+  "recipes": [
+    {
+      "recipe": "smoke",
+      "examples_per_epoch": 500,
+      "epochs": 1,
+      "optimizer_steps": 3,
+      "nominal_sequence_tokens": 301714,
+      "supervised_tokens_per_epoch": 73892,
+      "four_H100_node_hours_low": 0.171,
+      "four_H100_node_hours_high": 0.405
+    },
+    {
+      "recipe": "pilot",
+      "examples_per_epoch": 500,
+      "epochs": 1,
+      "optimizer_steps": 16,
+      "nominal_sequence_tokens": 1571426,
+      "supervised_tokens_per_epoch": 73892,
+      "four_H100_node_hours_low": 0.281,
+      "four_H100_node_hours_high": 0.954
+    },
+    {
+      "recipe": "pilot-3epochs",
+      "examples_per_epoch": 500,
+      "epochs": 3,
+      "optimizer_steps": 48,
+      "nominal_sequence_tokens": 4714278,
+      "supervised_tokens_per_epoch": 73892,
+      "four_H100_node_hours_low": 0.542,
+      "four_H100_node_hours_high": 2.261
+    },
+    {
+      "recipe": "balanced",
+      "examples_per_epoch": 832,
+      "epochs": 1,
+      "optimizer_steps": 26,
+      "nominal_sequence_tokens": 2563544,
+      "supervised_tokens_per_epoch": 122657,
+      "four_H100_node_hours_low": 0.35,
+      "four_H100_node_hours_high": 1.298
+    },
+    {
+      "recipe": "CHN",
+      "examples_per_epoch": 416,
+      "epochs": 1,
+      "optimizer_steps": 13,
+      "nominal_sequence_tokens": 608983,
+      "supervised_tokens_per_epoch": 73663,
+      "four_H100_node_hours_low": 0.196,
+      "four_H100_node_hours_high": 0.531
+    },
+    {
+      "recipe": "DEU",
+      "examples_per_epoch": 416,
+      "epochs": 1,
+      "optimizer_steps": 13,
+      "nominal_sequence_tokens": 1954561,
+      "supervised_tokens_per_epoch": 48994,
+      "four_H100_node_hours_low": 0.303,
+      "four_H100_node_hours_high": 1.067
+    },
+    {
+      "recipe": "all-data-ablation",
+      "examples_per_epoch": 8095,
+      "epochs": 1,
+      "optimizer_steps": 253,
+      "nominal_sequence_tokens": 14642178,
+      "supervised_tokens_per_epoch": 1412944,
+      "four_H100_node_hours_low": 1.188,
+      "four_H100_node_hours_high": 5.492
+    }
+  ]
+}

@@ -19,6 +19,8 @@ def main():
     if not cases:raise ValueError('Empty evaluation set')
     for case in cases:check_case(case)
     lock=json.loads(Path(a.lock).read_text());rank=int(os.environ.get('LOCAL_RANK','0'));world=int(os.environ.get('WORLD_SIZE','1'))
+    for case in cases:
+        if case.get('chat_template_kwargs')!=lock['chat_template_kwargs']:raise ValueError('Evaluation thinking mode differs from lock')
     output=Path(a.output);output.mkdir(parents=True,exist_ok=True);dest=output/f'predictions.rank{rank}.jsonl'
     if dest.exists():raise ValueError('Choose a fresh evaluation output')
     import torch
@@ -38,10 +40,11 @@ def main():
         if not run_path.exists():raise ValueError('Adapter must include its completed run.json provenance')
         run=json.loads(run_path.read_text())
         if run['arguments']['revision']!=lock['revision']:raise ValueError('Adapter/base revision mismatch')
+        if run.get('chat_template_kwargs')!=lock['chat_template_kwargs']:raise ValueError('Adapter/evaluation thinking mode mismatch')
         model=PeftModel.from_pretrained(model,a.adapter)
     model.eval();results=[];started=time.perf_counter()
     for case in cases[rank::world]:
-        ids=tokenizer.apply_chat_template(case['prompt'],tokenize=True,add_generation_prompt=True,return_tensors='pt').to(rank)
+        ids=tokenizer.apply_chat_template(case['prompt'],tokenize=True,add_generation_prompt=True,return_tensors='pt',**lock['chat_template_kwargs']).to(rank)
         if ids.shape[-1]+a.max_new_tokens>8192:raise ValueError('Evaluation case exceeds fixed context budget')
         torch.cuda.synchronize();t=time.perf_counter()
         with torch.inference_mode():
@@ -52,10 +55,11 @@ def main():
             'condition':case['condition'],'split_group':case['split_group'],
             'output':tokenizer.decode(target,skip_special_tokens=True),'prompt_tokens':ids.shape[-1],
             'generated_tokens':len(target),'seconds':time.perf_counter()-t,
+            'generated_thinking_marker':any(marker in tokenizer.decode(target,skip_special_tokens=False) for marker in ('<think>','</think>')),
             'hit_output_cap':len(target)==a.max_new_tokens and target[-1].item()!=tokenizer.eos_token_id})
         write_jsonl(dest,results)
     write_json(output/f'measurement.rank{rank}.json',{'model':lock,'adapter':a.adapter,'world_size':world,
         'cases':len(results),'inference_seconds':time.perf_counter()-started,'generated_tokens':sum(r['generated_tokens'] for r in results),
-        'decoding':{'do_sample':False,'max_new_tokens':a.max_new_tokens}})
+        'decoding':{'do_sample':False,'max_new_tokens':a.max_new_tokens,'chat_template_kwargs':lock['chat_template_kwargs']}})
 
 if __name__=='__main__':main()

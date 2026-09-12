@@ -19,8 +19,8 @@ def event_order(items, seed=42):
 
 
 def tokenize_example(tokenizer,row):
-    full=tokenizer.apply_chat_template(row['prompt']+row['completion'],tokenize=True,add_generation_prompt=False)
-    prompt=tokenizer.apply_chat_template(row['prompt'],tokenize=True,add_generation_prompt=True)
+    full=tokenizer.apply_chat_template(row['prompt']+row['completion'],tokenize=True,add_generation_prompt=False,**row.get('chat_template_kwargs',{}))
+    prompt=tokenizer.apply_chat_template(row['prompt'],tokenize=True,add_generation_prompt=True,**row.get('chat_template_kwargs',{}))
     if full[:len(prompt)]!=prompt or len(full)<=len(prompt):raise ValueError('Chat template does not support the required completion boundary')
     return len(full),len(full)-len(prompt)
 
@@ -60,6 +60,7 @@ def build_release(source,output,lock_path,max_length=8192):
             if m['source_id'] not in ('mfa','germany_press'):raise ValueError('Unexpected QA source')
             if set(m['quality_flags'])-{'event_publication_dates_differ'}:
                 rejected.append({'id':m['id'],'reason':'quality_flags','flags':m['quality_flags']});continue
+            row={**row,'chat_template_kwargs':lock['chat_template_kwargs']}
             n,target=tokenize_example(tokenizer,row)
             if n>max_length:
                 rejected.append({'id':m['id'],'reason':'over_token_budget','sequence_tokens':n});continue
@@ -82,6 +83,7 @@ def build_release(source,output,lock_path,max_length=8192):
         save('shared.'+split,sum((buckets[c,split][:limit] for c in ('CHN','DEU')),[]))
     write_jsonl(out/'excluded.jsonl',rejected)
     report={'model':lock['model'],'revision':lock['revision'],'max_length':max_length,
+        'chat_template_kwargs':lock['chat_template_kwargs'],
         'selection':'Full previous history and literal final answer; over-length rows excluded, no truncation. Event-round-robin selection, seed 42.',
         'input_hashes':inputs,'eligible':{c+'/'+s:len(v) for (c,s),v in buckets.items()},
         'rejected':dict(Counter(x['reason'] for x in rejected)),
@@ -90,5 +92,5 @@ def build_release(source,output,lock_path,max_length=8192):
     return report
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--source',default='data/prepared/long-context/candidates');p.add_argument('--output',default='data/prepared/posttraining-v1');p.add_argument('--lock',default='configs/posttraining/model.lock.json');p.add_argument('--max-length',type=int,default=8192)
+    p=argparse.ArgumentParser();p.add_argument('--source',default='data/prepared/long-context/candidates');p.add_argument('--output',default='data/prepared/posttraining-qwen3-v1');p.add_argument('--lock',default='configs/posttraining/model.lock.json');p.add_argument('--max-length',type=int,default=8192)
     a=p.parse_args();r=build_release(a.source,a.output,a.lock,a.max_length);print(json.dumps({k:v for k,v in r.items() if k!='input_hashes'},indent=2))

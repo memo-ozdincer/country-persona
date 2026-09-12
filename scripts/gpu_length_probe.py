@@ -10,7 +10,7 @@ from transformers import AutoTokenizer,AutoModelForCausalLM
 from peft import get_peft_model,LoraConfig
 
 lock=json.loads(Path('configs/posttraining/model.lock.json').read_text())
-rows,meta=validated_export('data/prepared/posttraining-v1/shared-balanced.train.jsonl','data/prepared/posttraining-v1/shared-balanced.train.manifest.jsonl','train',True)
+rows,meta=validated_export('data/prepared/posttraining-qwen3-v1/shared-balanced.train.jsonl','data/prepared/posttraining-qwen3-v1/shared-balanced.train.manifest.jsonl','train',True)
 i=max(range(len(rows)),key=lambda i:meta[i]['sequence_tokens']);row=rows[i]
 if not torch.cuda.is_available():raise RuntimeError('CUDA required')
 torch.cuda.set_device(0)
@@ -19,8 +19,8 @@ tok=AutoTokenizer.from_pretrained(model_source,revision=lock['revision'])
 model=AutoModelForCausalLM.from_pretrained(model_source,revision=lock['revision'],torch_dtype=torch.bfloat16,attn_implementation='sdpa').to(0)
 model=get_peft_model(model,LoraConfig(r=16,lora_alpha=32,lora_dropout=.05,target_modules='all-linear',task_type='CAUSAL_LM'))
 model.config.use_cache=False;model.enable_input_require_grads();model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False});model.train()
-ids=tok.apply_chat_template(row['prompt']+row['completion'],tokenize=True,return_tensors='pt').to(0)
-prompt=tok.apply_chat_template(row['prompt'],tokenize=True,add_generation_prompt=True)
+ids=tok.apply_chat_template(row['prompt']+row['completion'],tokenize=True,return_tensors='pt',**lock['chat_template_kwargs']).to(0)
+prompt=tok.apply_chat_template(row['prompt'],tokenize=True,add_generation_prompt=True,**lock['chat_template_kwargs'])
 labels=ids.clone();labels[:,:len(prompt)]=-100
 optimizer=torch.optim.AdamW([p for p in model.parameters() if p.requires_grad],lr=1e-4)
 torch.cuda.reset_peak_memory_stats();torch.cuda.synchronize();start=time.perf_counter()

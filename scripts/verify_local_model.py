@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 from huggingface_hub import HfApi
 from country_persona.io import sha256,write_json
-p=argparse.ArgumentParser();p.add_argument('--model-path',required=True);p.add_argument('--output',required=True);a=p.parse_args()
-lock=json.loads(Path('configs/posttraining/model.lock.json').read_text());root=Path(a.model_path)
+p=argparse.ArgumentParser();p.add_argument('--model-path',required=True);p.add_argument('--output',required=True);p.add_argument('--lock',default='configs/posttraining/model.lock.json');a=p.parse_args()
+lock=json.loads(Path(a.lock).read_text());root=Path(a.model_path)
 info=HfApi(token=False).model_info(lock['model'],revision=lock['revision'],files_metadata=True)
 needed={'config.json','generation_config.json','tokenizer.json','tokenizer_config.json','vocab.json','merges.txt','model.safetensors.index.json'}
 index=json.loads((root/'model.safetensors.index.json').read_text());needed.update(index['weight_map'].values())

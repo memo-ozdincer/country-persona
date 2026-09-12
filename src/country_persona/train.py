@@ -47,17 +47,20 @@ def main():
         if m.get('status')=='research_prepared' and m['model_revision']!=args.revision:raise ValueError('Prepared release/model revision mismatch')
     tokenizer=AutoTokenizer.from_pretrained(args.model,revision=args.revision)
     if not tokenizer.chat_template:raise ValueError('Model-specific chat template required')
+    if 'qwen3' in str(tokenizer.init_kwargs.get('name_or_path',args.model)).lower():
+        if any(r.get('chat_template_kwargs')!={'enable_thinking':False} for r in rows+dev):raise ValueError('Qwen3 pilot requires explicit non-thinking mode in every row')
     if tokenizer.pad_token is None:tokenizer.pad_token=tokenizer.eos_token
     lengths=[];target_lengths=[]
     for i,r in enumerate(rows+dev):
-        full=tokenizer.apply_chat_template(r['prompt']+r['completion'],tokenize=True,add_generation_prompt=False)
-        prompt=tokenizer.apply_chat_template(r['prompt'],tokenize=True,add_generation_prompt=True)
+        full=tokenizer.apply_chat_template(r['prompt']+r['completion'],tokenize=True,add_generation_prompt=False,**r.get('chat_template_kwargs',{}))
+        prompt=tokenizer.apply_chat_template(r['prompt'],tokenize=True,add_generation_prompt=True,**r.get('chat_template_kwargs',{}))
         lengths.append(len(full));target_lengths.append(len(full)-len(prompt))
         if full[:len(prompt)]!=prompt:raise ValueError(f'Chat template prompt is not a prefix at row {i}; completion masking needs model-specific handling')
         if lengths[-1]>args.max_length:raise ValueError(f'Row {i} exceeds token budget; no silent truncation')
         if target_lengths[-1]<=0:raise ValueError('No supervised target tokens')
     rank=int(os.environ.get('LOCAL_RANK','0'));world=int(os.environ.get('WORLD_SIZE','1'))
     info={'arguments':vars(args),'train_examples':len(rows),'dev_examples':len(dev),
+          'chat_template_kwargs':rows[0].get('chat_template_kwargs',{}),
           'train_sequence_tokens':sum(lengths[:len(rows)]),
           'train_supervised_tokens':sum(target_lengths[:len(rows)]),'max_sequence_tokens':max(lengths),
           'data_sha256':sha256(args.data),'manifest_sha256':sha256(args.manifest),

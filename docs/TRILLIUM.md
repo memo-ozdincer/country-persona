@@ -4,7 +4,7 @@ Workspace: `/scratch/memoozd/persona` (also `/home/memoozd/links/scratch/persona
 
 `scripts/trillium_pilot.sbatch` runs the length probe, technical smoke, fixed baseline generations, one-epoch pilot, fixed adapted generations, control scoring, answer comparison and calibrated cost report. It does not proceed to larger training recipes. Existing unrelated jobs are untouched.
 
-The cached `/scratch/memoozd/models/Qwen2.5-7B-Instruct` may be selected with `PERSONA_MODEL_PATH` only after `scripts/verify_local_model.py` has matched its model/config/tokenizer bytes to the locked Hugging Face revision. Model files are read in place and are not modified. The batch environment is offline after staging.
+The cached `/scratch/memoozd/models/Qwen3-8B-Instruct` may be selected with `PERSONA_MODEL_PATH` only after `scripts/verify_local_model.py` has matched its model/config/tokenizer bytes to the locked Hugging Face revision. Model files are read in place and are not modified. The batch environment is offline after staging.
 
 CPU environment setup uses the project-local virtual environment and locked extras. Trillium's pip may choose an unnecessary source build for the `uv` executable; use a checksum-verified official Linux uv binary if necessary. The three-hour estimate excludes staging, queue time and human review.
 
