@@ -4,6 +4,8 @@ A data-first research repository for **China and Germany as dated institutional 
 
 Start with **[the measured data report](reports/DATA_REPORT.md)**. The project contains real downloaded data, not just a source registry. Large third-party data are local under `data/` and Git-ignored; their exact download URLs and hashes are tracked in [the source lock](data/sources.lock.json).
 
+**Post-training handoff (12 September):** [four-H100 plan, costs and milestones](docs/POSTTRAINING_PLAN.md), [exact cluster commands](docs/CLUSTER_RUNBOOK.md), and [decision-by-decision evidence](docs/DECISION_REGISTER.md). A model-tokenized 500-example pilot, 832-example balanced comparator, frozen evaluation prompts and CPU-tested LoRA plumbing are prepared. Budget approximately 1–3 four-H100 node-hours for the first before/after proof of concept, then inspect before expanding.
+
 | Read | Purpose |
 |---|---|
 | [Data report](reports/DATA_REPORT.md) | Actual acquisition counts, prepared pools, quality findings and baseline results |

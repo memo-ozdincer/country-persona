@@ -1,0 +1,41 @@
+{
+  "arguments": {
+    "model": "data/metadata/qwen25-7b-tokenizer",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "data": "data/prepared/posttraining-v1/shared-250.train.jsonl",
+    "manifest": "data/prepared/posttraining-v1/shared-250.train.manifest.jsonl",
+    "dev_data": "data/prepared/posttraining-v1/shared.dev.jsonl",
+    "dev_manifest": "data/prepared/posttraining-v1/shared.dev.manifest.jsonl",
+    "output": "runs/local-token-preflight",
+    "max_length": 8192,
+    "epochs": 1,
+    "lr": 0.0001,
+    "rank": 16,
+    "grad_accum": 8,
+    "max_steps": -1,
+    "seed": 42,
+    "research_prepared": true,
+    "save_steps": 0,
+    "warmup_ratio": 0.05,
+    "qlora": false,
+    "preflight_only": true
+  },
+  "train_examples": 500,
+  "dev_examples": 200,
+  "train_sequence_tokens": 1571426,
+  "train_supervised_tokens": 73892,
+  "max_sequence_tokens": 8185,
+  "data_sha256": "58c1d7579ecca39b41484bc0b5cb5a6714f4b10c5662e4b597e02aec52bc5b61",
+  "manifest_sha256": "652ce8461fb0f60a68b915905c58ceac519f5e480f6637f0a92d03e64b7cd8e5",
+  "dev_data_sha256": "5daf724bb50331e425d206ed57b4e98fa096f3c0fe1bba1103005aff14095edd",
+  "world_size": 1,
+  "effective_examples_per_step": 8,
+  "versions": {
+    "torch": "2.8.0",
+    "datasets": "4.3.0",
+    "accelerate": "1.11.0",
+    "transformers": "4.57.6",
+    "peft": "0.17.1",
+    "trl": "0.24.0"
+  }
+}

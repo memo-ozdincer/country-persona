@@ -1,5 +1,7 @@
 # Training workflows
 
+For the concrete September 12 research release, use [CLUSTER_RUNBOOK.md](CLUSTER_RUNBOOK.md) and [POSTTRAINING_PLAN.md](POSTTRAINING_PLAN.md). They add an explicitly machine-prepared research path, tokenizer-measured budgets, frozen evaluation inputs and actual CPU TRL/PEFT integration validation. The optional manual admission workflow below remains supported; it is not the only supported research path now.
+
 The shipped data pipeline has been executed on real source files. The CUDA trainer is a modest, documented starting point; no GPU job or model-quality result is claimed. The priority is the datasets and the experiments in `RESEARCH_STRATEGY.md`.
 
 ## 1. Inspect and admit a pool

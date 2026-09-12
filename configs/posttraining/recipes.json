@@ -1,0 +1,13 @@
+{
+  "hardware": "one node, 4 H100 80GB, preferably SXM with NVLink; DDP, one full BF16 replica per GPU",
+  "defaults": {"rank": 16, "alpha": 32, "dropout": 0.05, "target_modules": "all-linear", "learning_rate": 0.0001, "microbatch": 1, "gradient_accumulation": 8, "effective_batch": 32, "max_sequence_tokens": 8192, "packing": false, "attention": "sdpa", "warmup_ratio": 0.05, "scheduler": "linear", "max_grad_norm": 1.0},
+  "recipes": {
+    "smoke": {"dataset": "shared-250.train", "epochs": 1, "max_steps": 3, "dev": null, "purpose": "Check finite loss, masking, memory, adapter save/reload; not persona quality"},
+    "pilot": {"dataset": "shared-250.train", "epochs": 1, "dev": "shared.dev", "purpose": "First proof of concept, 250 examples per country; inspect before another run"},
+    "pilot-3epochs": {"dataset": "shared-250.train", "epochs": 3, "dev": "shared.dev", "purpose": "Optional learning-curve experiment from the same base, after first-epoch review"},
+    "balanced": {"dataset": "shared-balanced.train", "epochs": 1, "dev": "shared.dev", "purpose": "Data-size comparator, 416 examples per country, matched one-epoch schedule"},
+    "CHN": {"dataset": "CHN.train", "epochs": 1, "dev": "CHN.dev", "purpose": "Separate-adapter comparator; same country subset as shared balanced"},
+    "DEU": {"dataset": "DEU.train", "epochs": 1, "dev": "DEU.dev", "purpose": "Separate-adapter comparator; same country subset as shared balanced"},
+    "all-data-ablation": {"dataset": "shared-all.train", "epochs": 1, "dev": "shared.dev", "purpose": "Optional deliberately skewed pool; not the default recommendation"}
+  }
+}
