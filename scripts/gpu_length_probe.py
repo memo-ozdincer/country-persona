@@ -1,5 +1,6 @@
 """One longest-example LoRA forward/backward pass on an H100; no training checkpoint."""
 import json
+import os
 from pathlib import Path
 import time
 from country_persona.io import read_jsonl,write_json
@@ -13,8 +14,9 @@ rows,meta=validated_export('data/prepared/posttraining-v1/shared-balanced.train.
 i=max(range(len(rows)),key=lambda i:meta[i]['sequence_tokens']);row=rows[i]
 if not torch.cuda.is_available():raise RuntimeError('CUDA required')
 torch.cuda.set_device(0)
-tok=AutoTokenizer.from_pretrained(lock['model'],revision=lock['revision'])
-model=AutoModelForCausalLM.from_pretrained(lock['model'],revision=lock['revision'],torch_dtype=torch.bfloat16,attn_implementation='sdpa').to(0)
+model_source=os.environ.get('PERSONA_MODEL_PATH',lock['model'])
+tok=AutoTokenizer.from_pretrained(model_source,revision=lock['revision'])
+model=AutoModelForCausalLM.from_pretrained(model_source,revision=lock['revision'],torch_dtype=torch.bfloat16,attn_implementation='sdpa').to(0)
 model=get_peft_model(model,LoraConfig(r=16,lora_alpha=32,lora_dropout=.05,target_modules='all-linear',task_type='CAUSAL_LM'))
 model.config.use_cache=False;model.enable_input_require_grads();model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False});model.train()
 ids=tok.apply_chat_template(row['prompt']+row['completion'],tokenize=True,return_tensors='pt').to(0)

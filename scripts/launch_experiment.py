@@ -1,6 +1,7 @@
 """Print one experiment command; --run explicitly launches it on the current node."""
 import argparse
 import json
+import os
 from pathlib import Path
 import shlex
 import subprocess
@@ -11,7 +12,7 @@ root=Path('data/prepared/posttraining-v1');data=root/(r['dataset']+'.jsonl');man
 out=a.output or f'runs/{a.recipe}-s{a.seed}'
 if Path(out).exists() and any(Path(out).iterdir()):raise ValueError('Use a fresh output directory')
 cmd=[sys.executable,'-m','torch.distributed.run','--standalone','--nproc_per_node=4','--module','country_persona.train',
-     '--model',lock['model'],'--revision',lock['revision'],'--research-prepared','--data',str(data),'--manifest',str(manifest),
+     '--model',os.environ.get('PERSONA_MODEL_PATH',lock['model']),'--revision',lock['revision'],'--research-prepared','--data',str(data),'--manifest',str(manifest),
      '--output',out,'--max-length','8192','--rank','16','--grad-accum','8','--lr','0.0001','--epochs',str(r['epochs']),'--seed',str(a.seed)]
 if r.get('max_steps'):cmd+=['--max-steps',str(r['max_steps'])]
 if r.get('dev'):

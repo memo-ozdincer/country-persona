@@ -25,8 +25,9 @@ def main():
     from transformers import AutoTokenizer,AutoModelForCausalLM
     if not torch.cuda.is_available():raise RuntimeError('This inference recipe targets CUDA')
     torch.cuda.set_device(rank)
-    tokenizer=AutoTokenizer.from_pretrained(lock['model'],revision=lock['revision'])
-    model=AutoModelForCausalLM.from_pretrained(lock['model'],revision=lock['revision'],torch_dtype=torch.bfloat16,attn_implementation='sdpa').to(rank)
+    model_source=os.environ.get('PERSONA_MODEL_PATH',lock['model'])
+    tokenizer=AutoTokenizer.from_pretrained(model_source,revision=lock['revision'])
+    model=AutoModelForCausalLM.from_pretrained(model_source,revision=lock['revision'],torch_dtype=torch.bfloat16,attn_implementation='sdpa').to(rank)
     if a.adapter:
         from peft import PeftModel
         run_path=Path(a.adapter)/'run.json'
