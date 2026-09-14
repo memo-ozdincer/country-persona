@@ -13,7 +13,7 @@ PUBLIC=CACHE/'explorer-public';PRIVATE=CACHE/'explorer-private';GITHUB=CACHE/'gi
 
 def main():
     for p in (PUBLIC,PRIVATE,GITHUB):p.mkdir(exist_ok=True)
-    for n in ['app.py','index.html','Dockerfile']:shutil.copyfile(ROOT/'explorer'/n,PUBLIC/n)
+    for n in ['app.py','index.html','advanced.html','overview.js','overview.css','overview.json','Dockerfile']:shutil.copyfile(ROOT/'explorer'/n,PUBLIC/n)
     shutil.copyfile(OUT/'stats.json',PUBLIC/'stats.json')
     with (OUT/'catalog.sqlite').open('rb') as src,gzip.open(PUBLIC/'catalog.sqlite.gz','wb',compresslevel=6) as dst:shutil.copyfileobj(src,dst)
     (PUBLIC/'README.md').write_text('---\ntitle: Country Persona Explorer\nemoji: 🌐\ncolorFrom: blue\ncolorTo: green\nsdk: docker\napp_port: 7860\npinned: false\n---\n# Country Persona Explorer\n\nCreated and maintained by **Memo Ozdincer**. Public evidence catalog and decision comparisons.\n\n[Download data](https://huggingface.co/datasets/memo-ozdincer/country-persona-data) · [GitHub](https://github.com/memo-ozdincer/country-persona-data)\n')
@@ -89,5 +89,7 @@ repository-code: "https://github.com/memo-ozdincer/country-persona-data"
     (GITHUB/'requirements.txt').write_text('pyarrow==25.0.1\nhuggingface_hub==0.36.2\n')
     (GITHUB/'.gitignore').write_text('.cache/\n.venv/\n__pycache__/\ndata/raw/\ndata/prepared/\ndata/canonical/\n*.sqlite\n*.sqlite.gz\nresearch.tar.gz\n.env*\n')
     for f in GITHUB.rglob('*.md'):f.write_text(f.read_text().rstrip()+'\n')
+    from build_explorer_overview import build, github
+    github(build())
     print({'public_space_bytes':sum(p.stat().st_size for p in PUBLIC.iterdir() if p.is_file()),'private_space_bytes':sum(p.stat().st_size for p in PRIVATE.iterdir() if p.is_file()),'github_directory':str(GITHUB)})
 if __name__=='__main__':main()

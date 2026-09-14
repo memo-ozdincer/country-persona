@@ -1,5 +1,7 @@
 # Country Persona Explorer
 
+The default page is the simple country overview; the full catalog is `advanced.html`. Rebuild UI assets and representative examples with `python scripts/build_explorer_overview.py`. See `docs/EXPLORER_PRESENTATION.md` for exact field mappings, redaction and count semantics.
+
 Created and maintained by **Memo Ozdincer**.
 
 Static hosted explorer plus a read-only local Python/SQLite explorer with a public metadata mode and an explicitly enabled full research mode. No Python server dependencies outside the standard library. Build dependencies are in `scripts/build_data_catalog.py` (PyArrow); they are not needed to serve an already built snapshot.

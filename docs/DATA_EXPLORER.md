@@ -1,8 +1,10 @@
 # Explore the country-persona data
 
+**Presentation update:** Start with the [country overview](https://memo-ozdincer-country-persona-explorer.static.hf.space/index.html). It shows characteristic policy applications, distinct record-ID counts by type, and colour-coded training fields. See [format and count definitions](EXPLORER_PRESENTATION.md). The filter-heavy catalog remains at `advanced.html`; the two-event Ukraine comparison is explicitly a limited subset. The object totals below describe the underlying catalog, not independent training traces.
+
 Project owner and publisher: **Memo Ozdincer** (`memo-ozdincer`).
 
-- [Public interactive explorer](https://huggingface.co/spaces/memo-ozdincer/country-persona-explorer): country, topic, date, language, source, collection, split and admission filters; decision comparisons; source-file inventory.
+- [Public interactive explorer](https://huggingface.co/spaces/memo-ozdincer/country-persona-explorer): a country overview with characteristic examples, counts by type and annotated training formats. The full catalog retains search, filters and file inventory.
 - [Full research explorer](https://huggingface.co/spaces/memo-ozdincer/country-persona-research): sign in as the owner to read original records and download the complete research files.
 - [Original research archive](https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files): owner-only download of all original files, with a per-file integrity inventory. It is stored separately to keep the static Space below the service’s 1 GB limit.
 - [Public Hugging Face tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data): separate subsets for each record type, including decisions, policies, statistics, evidence, training/evaluation views and file metadata.
@@ -10,9 +12,11 @@ Project owner and publisher: **Memo Ozdincer** (`memo-ozdincer`).
 
 ## How to explore
 
-Start with **Compare decisions**. Each event has the same proposal across six countries, their final votes, the statements we located and explicit missing context. Select a country to narrow the table, or open a country button inside a table to inspect its sources.
+Start with the **country overview**. Choose a country, read its characteristic policy application and inspect the prompt, evidence, target answer and review metadata. The examples are authored review candidates. Expand the JSON preview to see the actual fields; public source passages are explicitly omitted. Source links retain publisher attribution.
 
-In **Explore records**, start with policy positions, policy applications or country statistics. Use the country buttons and filters together. Search covers metadata, titles and public summaries. Select a record to see its readable fields, original publisher links, evidence pages, readiness and full structured representation. Download matching metadata exports all matching index records, not just the displayed page. The Hugging Face tables retain the full public provenance fields. Filters and selected record are encoded in the URL for sharing. Date filters include records whose known year or month overlaps the requested interval; this does not upgrade their date precision or prove contemporaneous availability.
+The secondary **Full catalog → Compare decisions** page covers only two Ukraine resolutions. Each event has six country views, final votes, located statements and explicit missing context. It is not the coverage of the whole corpus.
+
+In **Full catalog → Explore records**, start with policy positions, policy applications or country statistics. Use the country buttons and filters together. Search covers metadata, titles and public summaries. Select a record to see its readable fields, original publisher links, evidence pages, readiness and full structured representation. Download matching metadata exports all matching index records, not just the displayed page. The Hugging Face tables retain the full public provenance fields. Filters and selected record are encoded in the URL for sharing. Date filters include records whose known year or month overlaps the requested interval; this does not upgrade their date precision or prove contemporaneous availability.
 
 **All source files** inventories every file beneath raw, canonical and prepared data, including receipts and alternative training views. A file inventory entry is not a claim of unique substantive content. The full research view adds original JSON and source text on demand, plus a complete archive download of all research files. Public presentation keeps source attribution and links without redistributing third-party full text under an invented blanket license.
 

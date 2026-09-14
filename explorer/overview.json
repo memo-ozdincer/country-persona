@@ -1,0 +1,1342 @@
+{
+  "version": "country-overview-v2",
+  "owner": "Memo Ozdincer",
+  "snapshot": "2026-09-14",
+  "count_method": "Distinct record IDs within each type and country, across indexed releases. Review/lineage objects are excluded. Translations, segments and derived views can overlap: do not add the rows or treat them as independent trajectories. Shared institutional records appear under each relevant country.",
+  "totals": {
+    "policy_applications": 15,
+    "policy_positions": 20,
+    "decision_events": 2,
+    "decision_cases": 12
+  },
+  "kinds": [
+    {
+      "id": "source_records",
+      "label": "Source records",
+      "use": "Documents, authentic Q&A, speech segments and institutional records; inspect before selecting for training."
+    },
+    {
+      "id": "evidence_passages",
+      "label": "Evidence passages",
+      "use": "Context for retrieval and evidence-conditioned prompts; overlaps its parent documents."
+    },
+    {
+      "id": "observed_actions",
+      "label": "Recorded actions / responses",
+      "use": "Votes and institutional responses; a label alone does not supply a motive or training dialogue."
+    },
+    {
+      "id": "policy_positions",
+      "label": "Curated policy positions",
+      "use": "Dated, attributed claims with linked source spans; review candidates."
+    },
+    {
+      "id": "policy_applications",
+      "label": "Authored policy applications",
+      "use": "Question + supplied evidence + target answer; new review candidates, not authentic Q&A."
+    },
+    {
+      "id": "training_views",
+      "label": "Prepared prompt / completion views",
+      "use": "Alternative representations of source examples, not additional independent evidence or blanket training approval."
+    },
+    {
+      "id": "decision_cases",
+      "label": "Linked decision cases",
+      "use": "Only two Ukraine resolutions per country so far; retrospective and quarantined."
+    }
+  ],
+  "countries": [
+    {
+      "code": "CHN",
+      "name": "China",
+      "counts": {
+        "country_profiles": 1,
+        "country_statistics": 43,
+        "decision_cases": 2,
+        "evaluation": 208,
+        "evidence_passages": 6165,
+        "observed_actions": 1089,
+        "policy_applications": 1,
+        "policy_positions": 2,
+        "review_and_lineage": 12599,
+        "source_records": 34330,
+        "training_views": 20428
+      },
+      "languages": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "ru",
+        "zh"
+      ],
+      "examples": [
+        {
+          "id": "CHN-development-conditions-demo",
+          "date": "2021-01-10",
+          "language": "en",
+          "question": "A proposed development agreement requires the recipient to change its domestic political system. How does that compare with the white paper's stated approach, and can we infer that every Chinese project complies?",
+          "answer": "That requirement conflicts with the white paper's stated opposition to political strings and interference in a recipient's chosen development path. It also emphasizes recipient leadership of projects. These are published principles; they do not establish the terms or conduct of every Chinese-financed project. [CHN-development-conditions-2021; CHN-development-recipient-leadership-2021]",
+          "system": "Answer as a research simulation of the specified government at the stated policy date. Use the supplied evidence. Distinguish stated policy, recorded action and inference; acknowledge unsupported details. Do not invent private motives or fixed national traits.",
+          "context": "Country: CHN\nPolicy date: 2021-01-10",
+          "evidence": [
+            {
+              "id": "CHN-development-conditions-2021",
+              "claim": "China's 2021 white paper states that development cooperation should respect countries' chosen development paths and should not involve interference, imposed political conditions or pursuit of political self-interest. This is its stated policy, not independent verification of every project.",
+              "source_url": "https://english.mee.gov.cn/Resources/publications/Whitep/202101/P020210122374486901993.pdf",
+              "spans": [
+                {
+                  "source_id": "china_development_whitepaper",
+                  "text_file": "data/prepared/country-knowledge-20260914/source-text/china_development_whitepaper.txt",
+                  "text_sha256": "3eb25057926988699e988451b88f809d3c45226f441693a8587fb6ce0af3a8bb",
+                  "char_start": 10383,
+                  "char_end": 10677,
+                  "pdf_pages": [
+                    6
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "CHN-development-recipient-leadership-2021",
+              "claim": "The white paper describes cooperation projects as being proposed, agreed and led by recipient countries.",
+              "source_url": "https://english.mee.gov.cn/Resources/publications/Whitep/202101/P020210122374486901993.pdf",
+              "spans": [
+                {
+                  "source_id": "china_development_whitepaper",
+                  "text_file": "data/prepared/country-knowledge-20260914/source-text/china_development_whitepaper.txt",
+                  "text_sha256": "3eb25057926988699e988451b88f809d3c45226f441693a8587fb6ce0af3a8bb",
+                  "char_start": 14202,
+                  "char_end": 14268,
+                  "pdf_pages": [
+                    8
+                  ]
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Applies the stated condition to the proposal",
+            "Attributes the principle to the white paper",
+            "Does not turn a government statement into independent proof of compliance"
+          ],
+          "metadata": {
+            "id": "CHN-development-conditions-demo",
+            "date": "2021-01-10",
+            "split": "quarantine",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_ids": [
+              "policy:china_development_whitepaper_2021"
+            ],
+            "derivation": "assistant_authored_from_cited_evidence_not_authentic_QA",
+            "review_status": "author_checked_independent_review_pending"
+          },
+          "format_origin": "Conversion of existing messages to prompt/completion; not an exported training row",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified government at the stated policy date. Use the supplied evidence. Distinguish stated policy, recorded action and inference; acknowledge unsupported details. Do not invent private motives or fixed national traits."
+              },
+              {
+                "role": "user",
+                "content": "Country: CHN\nPolicy date: 2021-01-10\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: A proposed development agreement requires the recipient to change its domestic political system. How does that compare with the white paper's stated approach, and can we infer that every Chinese project complies?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "That requirement conflicts with the white paper's stated opposition to political strings and interference in a recipient's chosen development path. It also emphasizes recipient leadership of projects. These are published principles; they do not establish the terms or conduct of every Chinese-financed project. [CHN-development-conditions-2021; CHN-development-recipient-leadership-2021]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "DEU",
+      "name": "Germany",
+      "counts": {
+        "country_profiles": 1,
+        "country_statistics": 43,
+        "decision_cases": 2,
+        "evaluation": 148,
+        "evidence_passages": 1413,
+        "observed_actions": 825,
+        "policy_applications": 2,
+        "policy_positions": 3,
+        "review_and_lineage": 4964,
+        "source_records": 11273,
+        "training_views": 5473
+      },
+      "languages": [
+        "ar",
+        "de",
+        "en",
+        "es",
+        "fr",
+        "ja",
+        "pl",
+        "pt",
+        "ru",
+        "uk",
+        "zh"
+      ],
+      "examples": [
+        {
+          "id": "DEU-critical-inputs-demo",
+          "date": "2023-07-13",
+          "language": "en",
+          "question": "Assess a proposal to source all critical energy-transition inputs from a single Chinese supplier. Would the stated strategy instead require ending all economic and climate cooperation with China?",
+          "answer": "The proposal would raise a critical-dependency concern under our 2023 China Strategy: energy-transition inputs are among the areas it identifies for reducing dependence. Diversification would be consistent with that policy, but the source does not determine approval of this particular contract. The strategy seeks to preserve economic ties and cooperate on climate; it does not call for ending all cooperation with China. [DEU-china-economic-dependencies-2023; DEU-china-climate-cooperation-2023]",
+          "system": "Answer as a research simulation of the specified government at the stated policy date. Use the supplied evidence. Distinguish stated policy, recorded action and inference; acknowledge unsupported details. Do not invent private motives or fixed national traits.",
+          "context": "Country: DEU\nPolicy date: 2023-07-13",
+          "evidence": [
+            {
+              "id": "DEU-china-economic-dependencies-2023",
+              "claim": "Germany's 2023 strategy seeks to preserve economic ties with China while reducing dependencies in critical sectors. It identifies medicines, medical technology, rare earths, energy-transition inputs and semiconductor supply chains as concerns.",
+              "source_url": "https://www.auswaertiges-amt.de/resource/blob/2608580/49d50fecc479304c3da2e2079c55e106/china-strategie-en-data.pdf",
+              "spans": [
+                {
+                  "source_id": "germany_china_strategy",
+                  "text_file": "data/prepared/country-knowledge-20260914/source-text/germany_china_strategy.txt",
+                  "text_sha256": "f0f2755231f3c33330e3ec0cb394b370f21b522dcb1bfcbd85bfb0438e08333f",
+                  "char_start": 35745,
+                  "char_end": 36500,
+                  "pdf_pages": [
+                    25
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "DEU-china-climate-cooperation-2023",
+              "claim": "Germany's 2023 strategy treats cooperation with China as necessary for addressing climate change and identifies China as an important actor on biodiversity and global health.",
+              "source_url": "https://www.auswaertiges-amt.de/resource/blob/2608580/49d50fecc479304c3da2e2079c55e106/china-strategie-en-data.pdf",
+              "spans": [
+                {
+                  "source_id": "germany_china_strategy",
+                  "text_file": "data/prepared/country-knowledge-20260914/source-text/germany_china_strategy.txt",
+                  "text_sha256": "f0f2755231f3c33330e3ec0cb394b370f21b522dcb1bfcbd85bfb0438e08333f",
+                  "char_start": 5378,
+                  "char_end": 6123,
+                  "pdf_pages": [
+                    10
+                  ]
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Identifies concentration risk as an application of the strategy",
+            "Distinguishes de-risking from blanket decoupling",
+            "Preserves climate cooperation",
+            "Does not invent contract approval or a numeric concentration limit"
+          ],
+          "metadata": {
+            "id": "DEU-critical-inputs-demo",
+            "date": "2023-07-13",
+            "split": "quarantine",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_ids": [
+              "policy:germany_china_strategy"
+            ],
+            "derivation": "assistant_authored_from_cited_evidence_not_authentic_QA",
+            "review_status": "author_checked_independent_review_pending"
+          },
+          "format_origin": "Conversion of existing messages to prompt/completion; not an exported training row",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified government at the stated policy date. Use the supplied evidence. Distinguish stated policy, recorded action and inference; acknowledge unsupported details. Do not invent private motives or fixed national traits."
+              },
+              {
+                "role": "user",
+                "content": "Country: DEU\nPolicy date: 2023-07-13\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Assess a proposal to source all critical energy-transition inputs from a single Chinese supplier. Would the stated strategy instead require ending all economic and climate cooperation with China?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The proposal would raise a critical-dependency concern under our 2023 China Strategy: energy-transition inputs are among the areas it identifies for reducing dependence. Diversification would be consistent with that policy, but the source does not determine approval of this particular contract. The strategy seeks to preserve economic ties and cooperate on climate; it does not call for ending all cooperation with China. [DEU-china-economic-dependencies-2023; DEU-china-climate-cooperation-2023]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "FRA-EU-climate-2030-2023:application",
+          "date": "2023",
+          "language": "en",
+          "question": "Record the climate commitment relevant to France, preserving its institutional scope, metric and dates.",
+          "answer": "The report describes an EU collective target: at least 55% lower net greenhouse-gas emissions by 2030 relative to 1990. It is relevant context for France, but it does not establish a separate, identical French national pledge. [FRA-EU-climate-2030-2023]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: European Union\nPolicy date: 2023\nSource language: en\nScope: European Union collective target; not a separate French or German target",
+          "evidence": [
+            {
+              "id": "FRA-EU-climate-2030-2023",
+              "claim": "The EU report describes a collective target of at least 55% lower net greenhouse-gas emissions by 2030 relative to 1990.",
+              "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g442_e.pdf",
+              "spans": [
+                {
+                  "document_id": "wto_government_reports:EU-wto-2023-en",
+                  "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g442_e.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/EU-wto-2023-en.txt",
+                  "text_sha256": "5107abbb5981e9cb1284b929693118cfc325da05240061c38f00d04ce4a8bc48",
+                  "raw_sha256": "d6c44e46a10409d3480448c83938636c0d683b5a70f07647692cdb840b2aa4f1",
+                  "char_start": 69567,
+                  "char_end": 69651,
+                  "pdf_start_page": 19,
+                  "pdf_end_page": 19,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Retains EU attribution",
+            "Preserves metric, baseline and target year"
+          ],
+          "metadata": {
+            "id": "FRA-EU-climate-2030-2023:application",
+            "date": "2023",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "wto:WT/TPR/G/442",
+            "split_group": "wto:WT/TPR/G/442",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: European Union\nPolicy date: 2023\nSource language: en\nScope: European Union collective target; not a separate French or German target\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Record the climate commitment relevant to France, preserving its institutional scope, metric and dates."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The report describes an EU collective target: at least 55% lower net greenhouse-gas emissions by 2030 relative to 1990. It is relevant context for France, but it does not establish a separate, identical French national pledge. [FRA-EU-climate-2030-2023]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "FRA",
+      "name": "France",
+      "counts": {
+        "country_profiles": 1,
+        "country_statistics": 43,
+        "decision_cases": 2,
+        "evidence_passages": 746,
+        "observed_actions": 8354,
+        "policy_applications": 3,
+        "policy_positions": 4,
+        "review_and_lineage": 20,
+        "source_records": 3163,
+        "training_views": 2
+      },
+      "languages": [
+        "ar",
+        "de",
+        "en",
+        "es",
+        "fr",
+        "ru",
+        "zh"
+      ],
+      "examples": [
+        {
+          "id": "FRA-european-defence-2025:application",
+          "date": "2025-07-14",
+          "language": "en",
+          "question": "What combination of European and Atlantic defence priorities does this review support?",
+          "answer": "The review combines a stronger European pillar within the Atlantic Alliance with greater European capabilities and a preference for European-made solutions. European autonomy and Atlantic cooperation are presented together. [FRA-european-defence-2025]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: France\nPolicy date: 2025-07-14\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "FRA-european-defence-2025",
+              "claim": "France's 2025 review calls for stronger European defence capabilities within the Atlantic Alliance and prioritizing European-made solutions.",
+              "source_url": "https://www.sgdsn.gouv.fr/files/files/Publications/20250713_NP_SGDSN_RNS2025_EN_1_0.pdf",
+              "spans": [
+                {
+                  "document_id": "france_sgdsn:FRA-security-2025-en",
+                  "source_url": "https://www.sgdsn.gouv.fr/files/files/Publications/20250713_NP_SGDSN_RNS2025_EN_1_0.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/FRA-security-2025-en.txt",
+                  "text_sha256": "95ae247b517e13cee03bf258b908287d3c38b9e2daafe1223463aca4ea7903e6",
+                  "raw_sha256": "036a958fcc610c446add5cc8ee5df9af1cc06663313f2ccc146141d14d64e6ca",
+                  "char_start": 11941,
+                  "char_end": 12481,
+                  "pdf_start_page": 9,
+                  "pdf_end_page": 9,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Preserves European capability and procurement priorities",
+            "Does not equate autonomy with leaving NATO"
+          ],
+          "metadata": {
+            "id": "FRA-european-defence-2025:application",
+            "date": "2025-07-14",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "policy:france_security_2025",
+            "split_group": "policy:france_security_2025",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: France\nPolicy date: 2025-07-14\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: What combination of European and Atlantic defence priorities does this review support?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The review combines a stronger European pillar within the Atlantic Alliance with greater European capabilities and a preference for European-made solutions. European autonomy and Atlantic cooperation are presented together. [FRA-european-defence-2025]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "FRA-EU-climate-2030-2023:application",
+          "date": "2023",
+          "language": "en",
+          "question": "Record the climate commitment relevant to France, preserving its institutional scope, metric and dates.",
+          "answer": "The report describes an EU collective target: at least 55% lower net greenhouse-gas emissions by 2030 relative to 1990. It is relevant context for France, but it does not establish a separate, identical French national pledge. [FRA-EU-climate-2030-2023]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: European Union\nPolicy date: 2023\nSource language: en\nScope: European Union collective target; not a separate French or German target",
+          "evidence": [
+            {
+              "id": "FRA-EU-climate-2030-2023",
+              "claim": "The EU report describes a collective target of at least 55% lower net greenhouse-gas emissions by 2030 relative to 1990.",
+              "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g442_e.pdf",
+              "spans": [
+                {
+                  "document_id": "wto_government_reports:EU-wto-2023-en",
+                  "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g442_e.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/EU-wto-2023-en.txt",
+                  "text_sha256": "5107abbb5981e9cb1284b929693118cfc325da05240061c38f00d04ce4a8bc48",
+                  "raw_sha256": "d6c44e46a10409d3480448c83938636c0d683b5a70f07647692cdb840b2aa4f1",
+                  "char_start": 69567,
+                  "char_end": 69651,
+                  "pdf_start_page": 19,
+                  "pdf_end_page": 19,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Retains EU attribution",
+            "Preserves metric, baseline and target year"
+          ],
+          "metadata": {
+            "id": "FRA-EU-climate-2030-2023:application",
+            "date": "2023",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "wto:WT/TPR/G/442",
+            "split_group": "wto:WT/TPR/G/442",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: European Union\nPolicy date: 2023\nSource language: en\nScope: European Union collective target; not a separate French or German target\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Record the climate commitment relevant to France, preserving its institutional scope, metric and dates."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The report describes an EU collective target: at least 55% lower net greenhouse-gas emissions by 2030 relative to 1990. It is relevant context for France, but it does not establish a separate, identical French national pledge. [FRA-EU-climate-2030-2023]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "FRA-nuclear-doctrine-2025:application",
+          "date": "2025-07-14",
+          "language": "en",
+          "question": "Does this document let us specify an exact French nuclear-use threshold?",
+          "answer": "No. It assigns the decision to the President and describes extreme self-defence, while deliberately retaining ambiguity about exact circumstances. A precise trigger would go beyond the published doctrine. [FRA-nuclear-doctrine-2025]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: France\nPolicy date: 2025-07-14\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "FRA-nuclear-doctrine-2025",
+              "claim": "The review presents nuclear deterrence as an ultimate security guarantee, reserves use to the President, describes a strictly defensive purpose and retains ambiguity about exact circumstances.",
+              "source_url": "https://www.sgdsn.gouv.fr/files/files/Publications/20250713_NP_SGDSN_RNS2025_EN_1_0.pdf",
+              "spans": [
+                {
+                  "document_id": "france_sgdsn:FRA-security-2025-en",
+                  "source_url": "https://www.sgdsn.gouv.fr/files/files/Publications/20250713_NP_SGDSN_RNS2025_EN_1_0.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/FRA-security-2025-en.txt",
+                  "text_sha256": "95ae247b517e13cee03bf258b908287d3c38b9e2daafe1223463aca4ea7903e6",
+                  "raw_sha256": "036a958fcc610c446add5cc8ee5df9af1cc06663313f2ccc146141d14d64e6ca",
+                  "char_start": 87373,
+                  "char_end": 88447,
+                  "pdf_start_page": 35,
+                  "pdf_end_page": 35,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Separates published doctrine from private decision rules",
+            "Does not invent an operational trigger"
+          ],
+          "metadata": {
+            "id": "FRA-nuclear-doctrine-2025:application",
+            "date": "2025-07-14",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "policy:france_security_2025",
+            "split_group": "policy:france_security_2025",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: France\nPolicy date: 2025-07-14\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Does this document let us specify an exact French nuclear-use threshold?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "No. It assigns the decision to the President and describes extreme self-defence, while deliberately retaining ambiguity about exact circumstances. A precise trigger would go beyond the published doctrine. [FRA-nuclear-doctrine-2025]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "GBR",
+      "name": "United Kingdom",
+      "counts": {
+        "country_profiles": 1,
+        "country_statistics": 43,
+        "decision_cases": 2,
+        "evidence_passages": 520,
+        "observed_actions": 8186,
+        "policy_applications": 3,
+        "policy_positions": 4,
+        "review_and_lineage": 20,
+        "source_records": 2294,
+        "training_views": 3
+      },
+      "languages": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "ru",
+        "zh"
+      ],
+      "examples": [
+        {
+          "id": "GBR-climate-2035-2025:application",
+          "date": "2025-01-30",
+          "language": "en",
+          "question": "State the target precisely, including the baseline and exclusions. Is it a GDP-intensity target?",
+          "answer": "The target is at least an 81% reduction in greenhouse-gas emissions by 2035 relative to 1990, excluding international aviation and shipping. It is an emissions-reduction target, not a reduction in emissions per unit of GDP. [GBR-climate-2035-2025]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: United Kingdom\nPolicy date: 2025-01-30\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "GBR-climate-2035-2025",
+              "claim": "The UK's submitted target is at least an 81% reduction in greenhouse-gas emissions by 2035 relative to 1990, excluding international aviation and shipping.",
+              "source_url": "https://assets.publishing.service.gov.uk/media/679b655f6bb4c44f0805e7bc/uk-2035-nationally-determined-contribution-large-print.pdf",
+              "spans": [
+                {
+                  "document_id": "uk_desnz:GBR-ndc-2035-government-en",
+                  "source_url": "https://assets.publishing.service.gov.uk/media/679b655f6bb4c44f0805e7bc/uk-2035-nationally-determined-contribution-large-print.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/GBR-ndc-2035-government-en.txt",
+                  "text_sha256": "18deeee1a928c9c2bb505c3d0b4bedb3db5b33a67f9b77afd1bd97f95fcee114",
+                  "raw_sha256": "83049a366ec2c98dbbc2ca6d80224649c654d37c61f3f556607b9a0849b53f7c",
+                  "char_start": 1750,
+                  "char_end": 1942,
+                  "pdf_start_page": 6,
+                  "pdf_end_page": 6,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Preserves 81%, 1990 and 2035",
+            "Retains aviation/shipping exclusion",
+            "Does not confuse emissions with GDP intensity"
+          ],
+          "metadata": {
+            "id": "GBR-climate-2035-2025:application",
+            "date": "2025-01-30",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "ndc:uk_2035",
+            "split_group": "ndc:uk_2035",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: United Kingdom\nPolicy date: 2025-01-30\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: State the target precisely, including the baseline and exclusions. Is it a GDP-intensity target?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The target is at least an 81% reduction in greenhouse-gas emissions by 2035 relative to 1990, excluding international aviation and shipping. It is an emissions-reduction target, not a reduction in emissions per unit of GDP. [GBR-climate-2035-2025]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "GBR-china-engagement-2025:application",
+          "date": "2025-06-24",
+          "language": "en",
+          "question": "Describe the conditions on cooperation with China in this strategy. What should a policy simulation preserve?",
+          "answer": "The strategy supports direct engagement and pragmatic cooperation where these serve UK interests, alongside a threat-driven security response. A simulation should preserve the aim of resilient economic growth as well as continuing disagreements and protective measures. [GBR-china-engagement-2025]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: United Kingdom\nPolicy date: 2025-06-24\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "GBR-china-engagement-2025",
+              "claim": "The strategy combines high-level engagement and pragmatic cooperation with China, including trade and global challenges, with protective measures against identified security threats.",
+              "source_url": "https://assets.publishing.service.gov.uk/media/685ab0da72588f418862075c/E03360428_National_Security_Strategy_Accessible.pdf",
+              "spans": [
+                {
+                  "document_id": "uk_cabinet_office:GBR-security-2025-en",
+                  "source_url": "https://assets.publishing.service.gov.uk/media/685ab0da72588f418862075c/E03360428_National_Security_Strategy_Accessible.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/GBR-security-2025-en.txt",
+                  "text_sha256": "035d119307c7405d0d339a331e16a1ed9c7d254958e89b939c6d7d19ca102536",
+                  "raw_sha256": "e7b0d1a11c9a8a1cbc7d125cfc0d1505162f3a3af1f8ae45d124e9a9a6019e53",
+                  "char_start": 75216,
+                  "char_end": 76570,
+                  "pdf_start_page": 40,
+                  "pdf_end_page": 40,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Preserves both engagement and security concerns",
+            "Does not invent a blanket disengagement policy"
+          ],
+          "metadata": {
+            "id": "GBR-china-engagement-2025:application",
+            "date": "2025-06-24",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "policy:uk_security_2025",
+            "split_group": "policy:uk_security_2025",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: United Kingdom\nPolicy date: 2025-06-24\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Describe the conditions on cooperation with China in this strategy. What should a policy simulation preserve?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The strategy supports direct engagement and pragmatic cooperation where these serve UK interests, alongside a threat-driven security response. A simulation should preserve the aim of resilient economic growth as well as continuing disagreements and protective measures. [GBR-china-engagement-2025]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "GBR-nato-first-2025:application",
+          "date": "2025-06-24",
+          "language": "en",
+          "question": "What concrete organizational priority does the strategy's NATO-first approach establish?",
+          "answer": "It prioritizes NATO in how the armed forces plan, invest, train and equip themselves. The passage establishes that organizing priority; it does not determine the answer to every individual procurement or deployment decision. [GBR-nato-first-2025]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: United Kingdom\nPolicy date: 2025-06-24\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "GBR-nato-first-2025",
+              "claim": "The UK's 2025 strategy makes NATO foremost in armed-forces planning, investment, training and equipment.",
+              "source_url": "https://assets.publishing.service.gov.uk/media/685ab0da72588f418862075c/E03360428_National_Security_Strategy_Accessible.pdf",
+              "spans": [
+                {
+                  "document_id": "uk_cabinet_office:GBR-security-2025-en",
+                  "source_url": "https://assets.publishing.service.gov.uk/media/685ab0da72588f418862075c/E03360428_National_Security_Strategy_Accessible.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/GBR-security-2025-en.txt",
+                  "text_sha256": "035d119307c7405d0d339a331e16a1ed9c7d254958e89b939c6d7d19ca102536",
+                  "raw_sha256": "e7b0d1a11c9a8a1cbc7d125cfc0d1505162f3a3af1f8ae45d124e9a9a6019e53",
+                  "char_start": 58966,
+                  "char_end": 59201,
+                  "pdf_start_page": 31,
+                  "pdf_end_page": 31,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Names concrete planning implications",
+            "Does not invent an individual operational decision"
+          ],
+          "metadata": {
+            "id": "GBR-nato-first-2025:application",
+            "date": "2025-06-24",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "policy:uk_security_2025",
+            "split_group": "policy:uk_security_2025",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: United Kingdom\nPolicy date: 2025-06-24\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: What concrete organizational priority does the strategy's NATO-first approach establish?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "It prioritizes NATO in how the armed forces plan, invest, train and equip themselves. The passage establishes that organizing priority; it does not determine the answer to every individual procurement or deployment decision. [GBR-nato-first-2025]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "IND",
+      "name": "India",
+      "counts": {
+        "country_profiles": 1,
+        "country_statistics": 43,
+        "decision_cases": 2,
+        "evidence_passages": 272,
+        "observed_actions": 8265,
+        "policy_applications": 3,
+        "policy_positions": 5,
+        "review_and_lineage": 20,
+        "source_records": 2019,
+        "training_views": 3
+      },
+      "languages": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "ru",
+        "zh"
+      ],
+      "examples": [
+        {
+          "id": "IND-fisheries-subsidies-2020:application",
+          "date": "2020-11-25",
+          "language": "en",
+          "question": "What qualifications would India seek to preserve when considering disciplines on harmful fisheries subsidies, according to this report?",
+          "answer": "The report accepts the need for disciplines on harmful subsidies while emphasizing livelihood protections and policy space for subsistence, artisanal and small-scale fishers. A useful representation must preserve both the discipline and that qualification. [IND-fisheries-subsidies-2020]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: India\nPolicy date: 2020-11-25\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "IND-fisheries-subsidies-2020",
+              "claim": "India's report supports disciplines on harmful fisheries subsidies while demanding policy space and differential treatment for subsistence, artisanal and small-scale fishers.",
+              "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g403_e.pdf",
+              "spans": [
+                {
+                  "document_id": "wto_government_reports:IND-wto-2021-en",
+                  "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g403_e.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/IND-wto-2021-en.txt",
+                  "text_sha256": "6440f6c162cd12188cdb9788cc25c7925356c7551ab46308a19e1b49d48b64b7",
+                  "raw_sha256": "bae4c705901a78344b854ff8e1939939acb5bbc330f0ac83c840ee295e2824eb",
+                  "char_start": 56773,
+                  "char_end": 58057,
+                  "pdf_start_page": 17,
+                  "pdf_end_page": 17,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Preserves support for disciplines",
+            "Preserves the livelihood and policy-space qualification"
+          ],
+          "metadata": {
+            "id": "IND-fisheries-subsidies-2020:application",
+            "date": "2020-11-25",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "wto:WT/TPR/G/403",
+            "split_group": "wto:WT/TPR/G/403",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: India\nPolicy date: 2020-11-25\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: What qualifications would India seek to preserve when considering disciplines on harmful fisheries subsidies, according to this report?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The report accepts the need for disciplines on harmful subsidies while emphasizing livelihood protections and policy space for subsistence, artisanal and small-scale fishers. A useful representation must preserve both the discipline and that qualification. [IND-fisheries-subsidies-2020]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "IND-climate-2030-2022:application",
+          "date": "2022-08-03",
+          "language": "en",
+          "question": "Does this announcement promise 45% lower total emissions and 50% renewable electricity generation?",
+          "answer": "No. The 45% target concerns emissions intensity of GDP relative to 2005, not total emissions. The roughly 50% target concerns installed electric-power capacity from non-fossil resources, not the share of electricity generated or renewables alone. Both targets refer to 2030. [IND-climate-2030-2022]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: India\nPolicy date: 2022-08-03\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "IND-climate-2030-2022",
+              "claim": "India's announcement specifies a 45% reduction in emissions intensity of GDP by 2030 relative to 2005 and about 50% non-fossil installed electric-power capacity by 2030.",
+              "source_url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1847813&lang=2&reg=48",
+              "spans": [
+                {
+                  "document_id": "india_pib:IND-ndc-cabinet-2022-en",
+                  "source_url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1847813&lang=2&reg=48",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/IND-ndc-cabinet-2022-en.txt",
+                  "text_sha256": "238084dcb59aa0b94848c1739507415b4c74f154f2e55f8207e5212f4e0c28ed",
+                  "raw_sha256": "87fa92d7d43a2bedfdaaecf3e5bd2c373186d15b32aefb9d0f3809e2ae6ca9fc",
+                  "char_start": 1787,
+                  "char_end": 2044,
+                  "pdf_start_page": null,
+                  "pdf_end_page": null,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Distinguishes intensity from absolute emissions",
+            "Distinguishes installed capacity from actual generation",
+            "Distinguishes non-fossil from renewables-only"
+          ],
+          "metadata": {
+            "id": "IND-climate-2030-2022:application",
+            "date": "2022-08-03",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "ndc:india_updated_2022",
+            "split_group": "ndc:india_updated_2022",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: India\nPolicy date: 2022-08-03\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Does this announcement promise 45% lower total emissions and 50% renewable electricity generation?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "No. The 45% target concerns emissions intensity of GDP relative to 2005, not total emissions. The roughly 50% target concerns installed electric-power capacity from non-fossil resources, not the share of electricity generated or renewables alone. Both targets refer to 2030. [IND-climate-2030-2022]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "IND-wto-differential-treatment-2020:application",
+          "date": "2020-11-25",
+          "language": "en",
+          "question": "Would requiring every developing country to give up special treatment match this report's position?",
+          "answer": "No. The report argues that special and differential treatment should remain available to developing countries. It treats voluntary decisions by members able to forgo it as more acceptable, which is different from a universal mandatory waiver. [IND-wto-differential-treatment-2020]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: India\nPolicy date: 2020-11-25\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "IND-wto-differential-treatment-2020",
+              "claim": "India's report argues for retaining special and differential treatment for developing countries, while considering voluntary decisions to forgo it more acceptable.",
+              "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g403_e.pdf",
+              "spans": [
+                {
+                  "document_id": "wto_government_reports:IND-wto-2021-en",
+                  "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g403_e.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/IND-wto-2021-en.txt",
+                  "text_sha256": "6440f6c162cd12188cdb9788cc25c7925356c7551ab46308a19e1b49d48b64b7",
+                  "raw_sha256": "bae4c705901a78344b854ff8e1939939acb5bbc330f0ac83c840ee295e2824eb",
+                  "char_start": 55821,
+                  "char_end": 56748,
+                  "pdf_start_page": 17,
+                  "pdf_end_page": 17,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Preserves voluntary versus mandatory distinction",
+            "Attributes the position to this dated report"
+          ],
+          "metadata": {
+            "id": "IND-wto-differential-treatment-2020:application",
+            "date": "2020-11-25",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "wto:WT/TPR/G/403",
+            "split_group": "wto:WT/TPR/G/403",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: India\nPolicy date: 2020-11-25\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Would requiring every developing country to give up special treatment match this report's position?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "No. The report argues that special and differential treatment should remain available to developing countries. It treats voluntary decisions by members able to forgo it as more acceptable, which is different from a universal mandatory waiver. [IND-wto-differential-treatment-2020]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "code": "BRA",
+      "name": "Brazil",
+      "counts": {
+        "country_profiles": 1,
+        "country_statistics": 43,
+        "decision_cases": 2,
+        "evidence_passages": 611,
+        "observed_actions": 8234,
+        "policy_applications": 4,
+        "policy_positions": 5,
+        "review_and_lineage": 20,
+        "source_records": 2332,
+        "training_views": 3
+      },
+      "languages": [
+        "ar",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ru",
+        "zh"
+      ],
+      "examples": [
+        {
+          "id": "BRA-wto-differential-treatment-2022:application",
+          "date": "2022-10-19",
+          "language": "en",
+          "question": "Distinguish the position this report describes for Brazil itself from the treatment it supports for other developing members.",
+          "answer": "The report describes Brazil’s decision to begin forgoing special and differential treatment in negotiations, while retaining support for needs-based flexibility for least-developed and other developing members. This dated position should not be generalized to all countries or assumed unchanged today. [BRA-wto-differential-treatment-2022]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: Brazil\nPolicy date: 2022-10-19\nSource language: en\nScope: national public position",
+          "evidence": [
+            {
+              "id": "BRA-wto-differential-treatment-2022",
+              "claim": "Brazil's 2022 report describes its 2019 decision to begin forgoing special and differential treatment in current and future WTO negotiations while supporting needs-based flexibility for other developing members.",
+              "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g432_e.pdf",
+              "spans": [
+                {
+                  "document_id": "wto_government_reports:BRA-wto-2022-en",
+                  "source_url": "https://www.wto.org/english/tratop_e/tpr_e/g432_e.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/BRA-wto-2022-en.txt",
+                  "text_sha256": "7558db6a62b77142a2557edd7d2b15ed2728c37909cfb403e99f31e82bbd7b51",
+                  "raw_sha256": "4cbc5795cfa43ccc6cffa3e1f6aa19258eaf52ac2bfeee9d8a376904823fa623",
+                  "char_start": 75440,
+                  "char_end": 76128,
+                  "pdf_start_page": 19,
+                  "pdf_end_page": 19,
+                  "language": "en"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Distinguishes Brazil's own choice from treatment of others",
+            "Preserves negotiation scope",
+            "Avoids assuming the 2022 position is current"
+          ],
+          "metadata": {
+            "id": "BRA-wto-differential-treatment-2022:application",
+            "date": "2022-10-19",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "wto:WT/TPR/G/432",
+            "split_group": "wto:WT/TPR/G/432",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: Brazil\nPolicy date: 2022-10-19\nSource language: en\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Distinguish the position this report describes for Brazil itself from the treatment it supports for other developing members."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The report describes Brazil’s decision to begin forgoing special and differential treatment in negotiations, while retaining support for needs-based flexibility for least-developed and other developing members. This dated position should not be generalized to all countries or assumed unchanged today. [BRA-wto-differential-treatment-2022]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "BRA-climate-2035-2024:application",
+          "date": "2024-11-13",
+          "language": "pt",
+          "question": "Can the Brazilian commitment be represented as a single unqualified 67% target on the UK's 1990 baseline?",
+          "answer": "No. This NDC specifies a 59–67% range relative to 2005 for 2035. The quoted absolute level is 1.05–0.85 GtCO2e using GWP AR5. Replacing the range or the baseline changes the commitment. [BRA-climate-2035-2024]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: Brazil\nPolicy date: 2024-11-13\nSource language: pt\nScope: national public position",
+          "evidence": [
+            {
+              "id": "BRA-climate-2035-2024",
+              "claim": "Brazil's NDC states a 59–67% emissions-reduction range for 2035 relative to 2005, with an absolute level of 1.05–0.85 GtCO2e using GWP AR5.",
+              "source_url": "https://www.gov.br/mma/pt-br/assuntos/noticias/brasil-entrega-a-onu-nova-ndc-alinhada-ao-acordo-de-paris/ndc-versao-em-portugues.pdf",
+              "spans": [
+                {
+                  "document_id": "brazil_mma:BRA-ndc-2024-government-pt",
+                  "source_url": "https://www.gov.br/mma/pt-br/assuntos/noticias/brasil-entrega-a-onu-nova-ndc-alinhada-ao-acordo-de-paris/ndc-versao-em-portugues.pdf",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/BRA-ndc-2024-government-pt.txt",
+                  "text_sha256": "d348f6a804adb1309d5d978e096e52233369297e027e7f377615c2a49a342a99",
+                  "raw_sha256": "be5da304e86c320d60f791b15e6a1deef05fab1ef27986f431c25b81a0580421",
+                  "char_start": 83270,
+                  "char_end": 83593,
+                  "pdf_start_page": 36,
+                  "pdf_end_page": 36,
+                  "language": "pt"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Preserves the range rather than selecting the upper bound",
+            "Preserves 2005 baseline and 2035 target year",
+            "Keeps the stated emissions-accounting metric"
+          ],
+          "metadata": {
+            "id": "BRA-climate-2035-2024:application",
+            "date": "2024-11-13",
+            "split": "quarantine",
+            "proposed_split": "train",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "ndc:brazil_second_2024",
+            "split_group": "ndc:brazil_second_2024",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: Brazil\nPolicy date: 2024-11-13\nSource language: pt\nScope: national public position\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Can the Brazilian commitment be represented as a single unqualified 67% target on the UK's 1990 baseline?"
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "No. This NDC specifies a 59–67% range relative to 2005 for 2035. The quoted absolute level is 1.05–0.85 GtCO2e using GWP AR5. Replacing the range or the baseline changes the commitment. [BRA-climate-2035-2024]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "BRA-unilateral-sanctions-2024:application",
+          "date": "2024-10-30",
+          "language": "pt",
+          "question": "Compare the government position on unilateral national measures with its position on Security Council sanctions in this excerpt.",
+          "answer": "The attributed note objects to the Cuba embargo and extraterritorial national measures, while treating Security Council adoption differently. That is Brazil’s stated legal and diplomatic position in this source, not an independent legal ruling. [BRA-unilateral-sanctions-2024]",
+          "system": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification.",
+          "context": "Represented entity: Brazil\nPolicy date: 2024-10-30\nSource language: pt\nScope: Compendium attributes this position to foreign ministry press note 523 of 30 October 2024",
+          "evidence": [
+            {
+              "id": "BRA-unilateral-sanctions-2024",
+              "claim": "The attributed ministry note opposes the Cuba embargo and extraterritorial application of discriminatory national laws, and presents Security Council adoption as the basis for lawful sanctions.",
+              "source_url": "https://funag.gov.br/biblioteca-nova/produto/loc_pdf/1299/1/repertorio_de_politica_externa%3A_posicoes_do_brasil_2023-2024",
+              "spans": [
+                {
+                  "document_id": "brazil_funag:BRA-foreign-policy-2023-2024-pt",
+                  "source_url": "https://funag.gov.br/biblioteca-nova/produto/loc_pdf/1299/1/repertorio_de_politica_externa%3A_posicoes_do_brasil_2023-2024",
+                  "text_file": "data/prepared/country-extension-20260914/source-text/BRA-foreign-policy-2023-2024-pt.txt",
+                  "text_sha256": "98e7a44dcf00c69a8b84dd063adc5fa95970d0847c25b22eb0b13457cdfb4b97",
+                  "raw_sha256": "f96875377ba70c31451a2d8948389a8988f29931a42a427baeeaa404dc23de1e",
+                  "char_start": 144598,
+                  "char_end": 145058,
+                  "pdf_start_page": 90,
+                  "pdf_end_page": 90,
+                  "language": "pt"
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Distinguishes unilateral measures from Security Council sanctions",
+            "Attributes the legal characterization to the government",
+            "Retains the excerpt's speaker and date"
+          ],
+          "metadata": {
+            "id": "BRA-unilateral-sanctions-2024:application",
+            "date": "2024-10-30",
+            "split": "quarantine",
+            "proposed_split": "quarantine",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_id": "policy:brazil_foreign_policy_repertoire_2023_2024",
+            "split_group": "policy:brazil_foreign_policy_repertoire_2023_2024",
+            "derivation": "assistant_authored_not_authentic_QA_or_model_output",
+            "review_status": "assistant_curated_independent_review_pending"
+          },
+          "format_origin": "Existing SFT export",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified institution, using the supplied dated evidence. Preserve conditions, scope and uncertainty. Attribute government claims; do not invent private motives or confuse public statements with independent verification."
+              },
+              {
+                "role": "user",
+                "content": "Represented entity: Brazil\nPolicy date: 2024-10-30\nSource language: pt\nScope: Compendium attributes this position to foreign ministry press note 523 of 30 October 2024\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Compare the government position on unilateral national measures with its position on Security Council sanctions in this excerpt."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "The attributed note objects to the Cuba embargo and extraterritorial national measures, while treating Security Council adoption differently. That is Brazil’s stated legal and diplomatic position in this source, not an independent legal ruling. [BRA-unilateral-sanctions-2024]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        },
+        {
+          "id": "BRA-vote-reservations-demo",
+          "date": "2022-03-02",
+          "language": "en",
+          "question": "Did supporting ES-11/1 mean Brazil endorsed indiscriminate sanctions and arms deployments? Explain the recorded vote and the representative's reservation.",
+          "answer": "Brazil voted in favour. Its representative nevertheless warned against interpreting the resolution as permission for indiscriminate sanctions or arms deployments and stressed a negotiated settlement. The recorded support and the stated reservation must both be retained. [BRA-ES-11-1-20220302]",
+          "system": "Answer as a research simulation of the specified government at the stated policy date. Use the supplied evidence. Distinguish stated policy, recorded action and inference; acknowledge unsupported details. Do not invent private motives or fixed national traits.",
+          "context": "Country: BRA\nPolicy date: 2022-03-02",
+          "evidence": [
+            {
+              "id": "BRA-ES-11-1-20220302",
+              "claim": "Brazil supported the resolution's Charter and humanitarian objectives but cautioned against interpreting it as permission for indiscriminate sanctions or arms deployments, and emphasized negotiations.",
+              "source_url": "https://docs.un.org/A/ES-11/PV.5",
+              "spans": [
+                {
+                  "source_id": "es11_pv5",
+                  "text_file": "data/prepared/country-knowledge-20260914/source-text/es11_pv5.txt",
+                  "text_sha256": "5f8c2a224b5d39d3ea0253aae791778bbc8271140632be2fcf1a6b6e07c769a2",
+                  "char_start": 79589,
+                  "char_end": 82323,
+                  "pdf_pages": [
+                    17
+                  ]
+                }
+              ]
+            }
+          ],
+          "rubric": [
+            "Gets the vote right",
+            "Preserves the reservation",
+            "Does not generalize this explanation into opposition to every sanction in every conflict"
+          ],
+          "metadata": {
+            "id": "BRA-vote-reservations-demo",
+            "date": "2022-03-02",
+            "split": "quarantine",
+            "training_admitted": false,
+            "fresh_evaluation_eligible": false,
+            "group_ids": [
+              "unga:decision:A/RES/ES-11/1-FP"
+            ],
+            "derivation": "assistant_authored_from_cited_evidence_not_authentic_QA",
+            "review_status": "author_checked_independent_review_pending"
+          },
+          "format_origin": "Conversion of existing messages to prompt/completion; not an exported training row",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Answer as a research simulation of the specified government at the stated policy date. Use the supplied evidence. Distinguish stated policy, recorded action and inference; acknowledge unsupported details. Do not invent private motives or fixed national traits."
+              },
+              {
+                "role": "user",
+                "content": "Country: BRA\nPolicy date: 2022-03-02\nEvidence: [SOURCE PASSAGES OMITTED FROM PUBLIC PREVIEW; see source links and span metadata]\nQuestion: Did supporting ES-11/1 mean Brazil endorsed indiscriminate sanctions and arms deployments? Explain the recorded vote and the representative's reservation."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "Brazil voted in favour. Its representative nevertheless warned against interpreting the resolution as permission for indiscriminate sanctions or arms deployments and stressed a negotiated settlement. The recorded support and the stated reservation must both be retained. [BRA-ES-11-1-20220302]"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "private": false
+}

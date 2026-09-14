@@ -62,6 +62,8 @@ def main():
       (dest/'stats.json').write_text(json.dumps(stats,indent=2)+'\n')
       title='Country Persona Research' if is_private else 'Country Persona Explorer'
       (dest/'README.md').write_text(f'---\ntitle: {title}\nemoji: 🌐\ncolorFrom: blue\ncolorTo: green\nsdk: static\napp_file: index.html\npinned: false\n---\n# {title}\n\nCreated and maintained by **Memo Ozdincer**. '+('Account-only full original research records and files.' if is_private else 'Public metadata, factual values and source-grounded summaries.')+'\n\n[GitHub](https://github.com/memo-ozdincer/country-persona-data) · [Data tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data)\n')
+    from build_explorer_overview import build, stage, github
+    overview = build(); stage(overview); github(overview)
     report={'public_files':sum(p.is_file() for p in public.rglob('*')),'private_files':sum(p.is_file() for p in private.rglob('*')),'original_records_hash_verified':sum(map(len,buckets.values())),'index_rows':sum(map(len,indexes.values())),'public_bytes':sum(p.stat().st_size for p in public.rglob('*') if p.is_file()),'private_bytes':sum(p.stat().st_size for p in private.rglob('*') if p.is_file()),'private_host_bytes':sum(p.stat().st_size for p in private.rglob('*') if p.is_file() and p.name!='research.tar.gz'),'private_archive_bytes':(archive/'research.tar.gz').stat().st_size}
     (ROOT/'reports/static-explorer-build.json').write_text(json.dumps(report,indent=2)+'\n');print(report)
 if __name__=='__main__':main()

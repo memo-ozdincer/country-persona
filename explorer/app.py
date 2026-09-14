@@ -64,8 +64,11 @@ class Handler(BaseHTTPRequestHandler):
       except Exception:self.reply({'error':'Unable to read the catalog. Check the local server configuration.'},500)
     def route(self):
       url=urlparse(self.path);p={k:v[0] for k,v in parse_qs(url.query).items()}
-      if url.path=='/':
-        data=(HERE/'index.html').read_bytes();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(data)));self.send_header('X-Content-Type-Options','nosniff');self.end_headers();self.wfile.write(data);return
+      assets={'/':'index.html','/index.html':'index.html','/advanced.html':'advanced.html','/overview.js':'overview.js','/overview.css':'overview.css','/overview.json':'overview.json'}
+      if url.path in assets:
+        name=assets[url.path];data=(HERE/name).read_bytes()
+        mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json'}[Path(name).suffix]
+        self.send_response(200);self.send_header('Content-Type',mime+'; charset=utf-8');self.send_header('Content-Length',str(len(data)));self.send_header('X-Content-Type-Options','nosniff');self.end_headers();self.wfile.write(data);return
       if url.path=='/health':self.reply({'ok':DB.exists()});return
       with connect() as db:
         if url.path=='/api/stats':
