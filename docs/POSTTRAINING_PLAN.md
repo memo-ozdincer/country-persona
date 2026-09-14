@@ -1,5 +1,7 @@
 # Four-H100 proof-of-concept plan
 
+The next-step recommendation is now the [regression research and diagnostic sequence](REGRESSION_RESEARCH.md), which incorporates the full 500-row TRL audit and primary literature. Its proposed runs have not been submitted.
+
 Updated 13 September 2026. **The first Qwen3 pilot completed in 0.155 four-H100 node-hours (9 minutes 17 seconds).** Technical execution passed, but repetition and unsupported policy content prevent promotion. Read [the measured pilot review](../reports/trillium-910107-review.md) before selecting another experiment. The original 1–3-hour planning range below was conservative and is retained as historical planning context, not a measured runtime. No subsequent GPU run has been launched.
 
 The user-selected model is pinned **Qwen/Qwen3-8B + BF16 LoRA, with `enable_thinking=False` throughout preparation, training and evaluation**. The publisher reports 8.2B parameters, a dense multilingual architecture and a supported hard non-thinking switch. [Model card](https://huggingface.co/Qwen/Qwen3-8B). The Trillium directory is named `Qwen3-8B-Instruct`, but its bytes match the official `Qwen/Qwen3-8B` revision. The previous Qwen2.5 job was cancelled before allocation and consumed zero node-hours. Every substantive decision and its evidence boundary is recorded in [DECISION_REGISTER.md](DECISION_REGISTER.md).

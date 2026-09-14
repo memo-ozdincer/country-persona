@@ -1,0 +1,79 @@
+{
+  "status": "pass",
+  "model": "Qwen/Qwen3-8B",
+  "data_sha256": "2afe71259fe3912fc984f0cc017032580a7f7eabb04556dd2b45f796aaa9c2a8",
+  "manifest_sha256": "2b691e909df05452033d9210a00c3cd75725a7de481ef1616bab10142a308d03",
+  "tokenizer_lock_sha256": "1fae7d59c6244f62830b0807baf3fc958e03c0b32e0a6eb7025c90de6c2b07ae",
+  "real_trl_rows_checked": 500,
+  "mask_or_template_errors": [],
+  "countries": {
+    "CHN": {
+      "examples": 250,
+      "sequence_tokens": 355886,
+      "target_tokens": 43385,
+      "events": 250
+    },
+    "DEU": {
+      "examples": 250,
+      "sequence_tokens": 1217540,
+      "target_tokens": 30507,
+      "events": 75
+    }
+  },
+  "loss_configuration": {
+    "model_accepts_loss_kwargs": true,
+    "average_tokens_across_devices": true,
+    "loss_type": "nll",
+    "scope": "CPU construction/source inspection; no distributed gradient equivalence test"
+  },
+  "literal_targets_with_repetition_flag": [],
+  "literal_targets_with_special_token_text": [],
+  "unique_normalized_targets": 500,
+  "duplicate_target_rows_beyond_first": 0,
+  "most_common_target_frequencies": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "target_token_quantiles": {
+    "0.0": 6,
+    "0.25": 54,
+    "0.5": 106,
+    "0.75": 193,
+    "0.9": 318,
+    "1.0": 1158
+  },
+  "target_rows_over_256_tokens": 85,
+  "output_diagnostics": {
+    "base": {
+      "repetition_by_country": {},
+      "repetition_by_condition": {},
+      "truncated_by_country": {
+        "CHN": 2,
+        "DEU": 16
+      }
+    },
+    "after": {
+      "repetition_by_country": {
+        "CHN": 6,
+        "DEU": 7
+      },
+      "repetition_by_condition": {
+        "dated_evidence": 7,
+        "prompt_only": 6
+      },
+      "truncated_by_country": {
+        "CHN": 5,
+        "DEU": 9
+      }
+    }
+  },
+  "limits": "Mask checks do not certify source attribution, target usefulness, GPU numerical equivalence, or political correctness."
+}
