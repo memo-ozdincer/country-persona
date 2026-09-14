@@ -4,6 +4,8 @@ A data-first research repository for **China and Germany as dated institutional 
 
 Start with **[the measured data report](reports/DATA_REPORT.md)**. The project contains real downloaded data, not just a source registry. Large third-party data are local under `data/` and Git-ignored; their exact download URLs and hashes are tracked in [the source lock](data/sources.lock.json).
 
+**14 September: [see the substantive country-knowledge preview](docs/COUNTRY_KNOWLEDGE_PREVIEW.md).** It combines dated statistics, explicit policies, actual votes and public reservations for China, Germany, France, the UK, India and Brazil. It also shows three source-grounded instruction examples. The four-country expansion remains in progress; document volume alone is not evidence of useful persona supervision.
+
 **Post-training handoff (12 September):** [four-H100 plan, costs and milestones](docs/POSTTRAINING_PLAN.md), [exact cluster commands](docs/CLUSTER_RUNBOOK.md), and [decision-by-decision evidence](docs/DECISION_REGISTER.md). A model-tokenized 500-example pilot, 832-example balanced comparator, frozen evaluation prompts and CPU-tested LoRA plumbing are prepared. Budget approximately 1–3 four-H100 node-hours for the first before/after proof of concept, then inspect before expanding.
 
 | Read | Purpose |
@@ -24,7 +26,7 @@ Start with **[the measured data report](reports/DATA_REPORT.md)**. The project c
 - `data/prepared/long-context/`: 17,461 candidates with larger selection budgets, retaining all parsed German Foreign Office QA histories. This is an alternative view, not extra independent data.
 - `data/prepared/pilot/review/admission.csv`: explicit review decisions before a training run. Candidate does not mean universally rights-cleared or expert-approved.
 
-No data have been uploaded to a remote repository. No GPU job has been launched, no country model has been trained, and no multi-agent simulator is included. The dataset and preparation pipeline are the main deliverables.
+Code, manifests and reports are tracked in the private GitHub repository; raw/prepared data are private and transferred separately to Trillium. An earlier Qwen3 LoRA pilot ran; see the measured results and limitations in [the regression research](docs/REGRESSION_RESEARCH.md). No multi-agent simulator is included. The dataset and preparation pipeline are the main deliverables.
 
 ## Reproduce the preparation
 
@@ -61,7 +63,7 @@ The [13 September data expansion](docs/DATA_EXPANSION_20260913.md) adds 2,389 pa
 
 ## Experimental starting point
 
-Compare the same instruction model with a role prompt, then with dated evidence, then with shared country/institution-conditioned SFT. Genuine QA is the strongest immediate response-training signal. Keep statement reconstruction, UPR actions and historical domain text separate. Use preferences only for diagnosed source-supported errors; consider continued pretraining only after an equal-compute ablation. Multi-agent decision-making remains a later project.
+Compare the same instruction model with a role prompt, then with dated evidence, then with shared country/institution-conditioned SFT. Prioritize substantive policy application and supported decisions; genuine QA is useful when it contains relevant country information, and authenticity alone does not make it good supervision. Keep statement reconstruction, UPR actions and historical domain text separate. Use preferences only for diagnosed source-supported errors; consider continued pretraining only after an equal-compute ablation. Multi-agent decision-making remains a later project.
 
 ## Dated evidence retrieval
 

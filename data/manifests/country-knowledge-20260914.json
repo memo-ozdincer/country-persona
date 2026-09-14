@@ -1,0 +1,889 @@
+{
+  "version": "country-knowledge-20260914",
+  "sources": [
+    {
+      "id": "unga_dm_votes",
+      "raw_file": "data/raw/unga_dm/votes.csv",
+      "url": "https://unvotes.unige.ch/download_file/13/1",
+      "resolved_url": "https://unvotes.unige.ch/application/files/4917/3287/3542/votes_extr.csv",
+      "retrieved_at": "2026-09-09T18:17:42.943977+00:00",
+      "content_type": "text/csv",
+      "etag": "\"ffd0b59-6280a0ffd1c86\"",
+      "bytes": 268241753,
+      "sha256": "9ca25a9900969ff1e3d610dce93d9c63a44ddb70901a22bf09d1de87a4571b5f",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared"
+    },
+    {
+      "id": "world_bank_2024",
+      "raw_file": "data/raw/country-knowledge-20260914/world_bank_2024.json",
+      "url": "https://api.worldbank.org/v2/country/bra;chn;deu;fra;gbr;ind/indicator/SP.POP.TOTL;NY.GDP.MKTP.CD;NE.TRD.GNFS.ZS?source=2&date=2024&format=json&per_page=1000",
+      "resolved_url": "https://api.worldbank.org/v2/country/bra;chn;deu;fra;gbr;ind/indicator/SP.POP.TOTL;NY.GDP.MKTP.CD;NE.TRD.GNFS.ZS?source=2&date=2024&format=json&per_page=1000",
+      "retrieved_at": "2026-09-14T13:49:56.728831+00:00",
+      "content_type": "application/json;charset=utf-8",
+      "etag": null,
+      "bytes": 3753,
+      "sha256": "b768a6e54b7d5aab284cb5af271ec76d0b2746d2fc729be9bb806b89a1281fda",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared"
+    },
+    {
+      "id": "france_unsc",
+      "raw_file": "data/raw/country-knowledge-20260914/france_unsc.html",
+      "url": "https://www.diplomatie.gouv.fr/en/the-ministry-in-action/action-for-peace-and-respect-for-human-rights/france-and-the-united-nations/france-and-the-united-nations-security-council",
+      "resolved_url": "https://www.diplomatie.gouv.fr/en/the-ministry-in-action/action-for-peace-and-respect-for-human-rights/france-and-the-united-nations/france-and-the-united-nations-security-council",
+      "retrieved_at": "2026-09-14T13:49:57.117766+00:00",
+      "content_type": "text/html; charset=UTF-8",
+      "etag": "W/\"1789391869-gzip\"",
+      "bytes": 51886,
+      "sha256": "7bd67151757f4fc7dbf528ba43231f3cd855930ef8159574fc0d6a1dee2f5f2d",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared",
+      "extraction": "BeautifulSoup visible text; claim spans only, not whole-page training",
+      "text_file": "data/prepared/country-knowledge-20260914/source-text/france_unsc.txt",
+      "text_sha256": "c488beb5f0c6c4de95b3bded7d323bfbcbdc748c71e81c119839ed63a69714a0"
+    },
+    {
+      "id": "india_brazil_joint_2025",
+      "raw_file": "data/raw/country-knowledge-20260914/india_brazil_joint_2025.html",
+      "url": "https://www.eoibrasilia.gov.in/pr-10-07-25.php",
+      "resolved_url": "https://www.eoibrasilia.gov.in/pr-10-07-25.php",
+      "retrieved_at": "2026-09-14T13:49:59.246680+00:00",
+      "content_type": "text/html; charset=UTF-8",
+      "etag": null,
+      "bytes": 60777,
+      "sha256": "d47516cda250cfc4cb20d55947d654895fa209dd82c89c2ccccd28791dde2dc0",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared",
+      "extraction": "BeautifulSoup visible text; claim spans only, not whole-page training",
+      "text_file": "data/prepared/country-knowledge-20260914/source-text/india_brazil_joint_2025.txt",
+      "text_sha256": "7bcbe2408a6cc772f1c453e19c060e1eef51d9f0c5f42610c1a318d205d757a9"
+    },
+    {
+      "id": "uk_unsc_2024",
+      "raw_file": "data/raw/country-knowledge-20260914/uk_unsc_2024.json",
+      "url": "https://www.gov.uk/api/content/government/speeches/the-uk-remains-a-strong-supporter-of-un-security-council-reform-uk-statement-in-the-un-general-assembly",
+      "resolved_url": "https://www.gov.uk/api/content/government/speeches/the-uk-remains-a-strong-supporter-of-un-security-council-reform-uk-statement-in-the-un-general-assembly",
+      "retrieved_at": "2026-09-14T13:49:56.922023+00:00",
+      "content_type": "application/json; charset=utf-8",
+      "etag": "W/\"0106001966c7e0ae0da32c9c0ca4026b\"",
+      "bytes": 10969,
+      "sha256": "0106001966c7e0ae0da32c9c0ca4026b9dad5a3817d5ec1e51d083904ad3661e",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared",
+      "extraction": "GOV.UK Content API details.body",
+      "speech_type": "Transcript of the speech, exactly as it was delivered",
+      "event_date": "2024-11-11",
+      "available_date": "2024-11-11",
+      "text_file": "data/prepared/country-knowledge-20260914/source-text/uk_unsc_2024.txt",
+      "text_sha256": "f2aa0cdab0b0278b596023105c0f0f21babdc1716b0c0ed08911f9e8b24cd62c"
+    },
+    {
+      "id": "es11_1",
+      "raw_file": "data/raw/country-knowledge-20260914/es11_1.pdf",
+      "url": "https://documents.un.org/api/symbol/access?l=en&s=A%2FRES%2FES-11%2F1&t=pdf",
+      "resolved_url": "https://documents.un.org/doc/undoc/gen/n22/293/36/pdf/n2229336.pdf",
+      "retrieved_at": "2026-09-14T13:50:02.256510+00:00",
+      "content_type": "application/pdf",
+      "etag": "W/\"326d1-18764b6d5d4\"",
+      "bytes": 206545,
+      "sha256": "9eed871a95fb69430565e41e86d9cd4c7f992dfc223738af2cc7ed27f657fba5",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared",
+      "pages": [
+        {
+          "page": 1,
+          "start": 0,
+          "end": 2048
+        },
+        {
+          "page": 2,
+          "start": 2049,
+          "end": 5381
+        },
+        {
+          "page": 3,
+          "start": 5382,
+          "end": 8711
+        },
+        {
+          "page": 4,
+          "start": 8712,
+          "end": 9883
+        }
+      ],
+      "extraction": "pdftotext default reading order; whitespace/soft-hyphen/control normalization per page",
+      "text_file": "data/prepared/country-knowledge-20260914/source-text/es11_1.txt",
+      "text_sha256": "00eb3b8e9cd25c91338c2de0d6d6268ba4a13622ea7ec93234db501c29c43463"
+    },
+    {
+      "id": "es11_pv5",
+      "raw_file": "data/raw/country-knowledge-20260914/es11_pv5.pdf",
+      "url": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FPV.5&t=pdf",
+      "resolved_url": "https://documents.un.org/doc/undoc/gen/n22/275/23/pdf/n2227523.pdf",
+      "retrieved_at": "2026-09-14T13:50:02.292071+00:00",
+      "content_type": "application/pdf",
+      "etag": "W/\"8e789-18764ae59f6\"",
+      "bytes": 583561,
+      "sha256": "ad795e54caf498cea6a5dde0a1882c06cb5701f9aa1bda6b55709a282295a0d0",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared",
+      "pages": [
+        {
+          "page": 1,
+          "start": 0,
+          "end": 4033
+        },
+        {
+          "page": 2,
+          "start": 4034,
+          "end": 8848
+        },
+        {
+          "page": 3,
+          "start": 8849,
+          "end": 13923
+        },
+        {
+          "page": 4,
+          "start": 13924,
+          "end": 18874
+        },
+        {
+          "page": 5,
+          "start": 18875,
+          "end": 24045
+        },
+        {
+          "page": 6,
+          "start": 24046,
+          "end": 29077
+        },
+        {
+          "page": 7,
+          "start": 29078,
+          "end": 34174
+        },
+        {
+          "page": 8,
+          "start": 34175,
+          "end": 39096
+        },
+        {
+          "page": 9,
+          "start": 39097,
+          "end": 44134
+        },
+        {
+          "page": 10,
+          "start": 44135,
+          "end": 48805
+        },
+        {
+          "page": 11,
+          "start": 48806,
+          "end": 53783
+        },
+        {
+          "page": 12,
+          "start": 53784,
+          "end": 59015
+        },
+        {
+          "page": 13,
+          "start": 59016,
+          "end": 64030
+        },
+        {
+          "page": 14,
+          "start": 64031,
+          "end": 68340
+        },
+        {
+          "page": 15,
+          "start": 68341,
+          "end": 73195
+        },
+        {
+          "page": 16,
+          "start": 73196,
+          "end": 78192
+        },
+        {
+          "page": 17,
+          "start": 78193,
+          "end": 83324
+        },
+        {
+          "page": 18,
+          "start": 83325,
+          "end": 88370
+        },
+        {
+          "page": 19,
+          "start": 88371,
+          "end": 93336
+        },
+        {
+          "page": 20,
+          "start": 93337,
+          "end": 98023
+        },
+        {
+          "page": 21,
+          "start": 98024,
+          "end": 103169
+        },
+        {
+          "page": 22,
+          "start": 103170,
+          "end": 108143
+        },
+        {
+          "page": 23,
+          "start": 108144,
+          "end": 113158
+        },
+        {
+          "page": 24,
+          "start": 113159,
+          "end": 118228
+        },
+        {
+          "page": 25,
+          "start": 118229,
+          "end": 118837
+        }
+      ],
+      "extraction": "pdftotext default reading order; whitespace/soft-hyphen/control normalization per page",
+      "text_file": "data/prepared/country-knowledge-20260914/source-text/es11_pv5.txt",
+      "text_sha256": "5f8c2a224b5d39d3ea0253aae791778bbc8271140632be2fcf1a6b6e07c769a2"
+    },
+    {
+      "id": "metadata_SP.POP.TOTL",
+      "raw_file": "data/raw/country-knowledge-20260914/metadata_SP.POP.TOTL.json",
+      "url": "https://api.worldbank.org/v2/indicator/SP.POP.TOTL?source=2&format=json",
+      "resolved_url": "https://api.worldbank.org/v2/indicator/SP.POP.TOTL?source=2&format=json",
+      "retrieved_at": "2026-09-14T13:50:57.863824+00:00",
+      "content_type": "application/json;charset=utf-8",
+      "etag": null,
+      "bytes": 1099,
+      "sha256": "2f8491efc00bf2c0995112ff8e87aba69e5e9d22d0880b22f7e3a4ec757ba05c",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared"
+    },
+    {
+      "id": "metadata_NY.GDP.MKTP.CD",
+      "raw_file": "data/raw/country-knowledge-20260914/metadata_NY.GDP.MKTP.CD.json",
+      "url": "https://api.worldbank.org/v2/indicator/NY.GDP.MKTP.CD?source=2&format=json",
+      "resolved_url": "https://api.worldbank.org/v2/indicator/NY.GDP.MKTP.CD?source=2&format=json",
+      "retrieved_at": "2026-09-14T13:50:58.026255+00:00",
+      "content_type": "application/json;charset=utf-8",
+      "etag": null,
+      "bytes": 938,
+      "sha256": "51cec1e144a5bad8d92238630c0a305e20116e86d34ad95c7c315ed166255b28",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared"
+    },
+    {
+      "id": "metadata_NE.TRD.GNFS.ZS",
+      "raw_file": "data/raw/country-knowledge-20260914/metadata_NE.TRD.GNFS.ZS.json",
+      "url": "https://api.worldbank.org/v2/indicator/NE.TRD.GNFS.ZS?source=2&format=json",
+      "resolved_url": "https://api.worldbank.org/v2/indicator/NE.TRD.GNFS.ZS?source=2&format=json",
+      "retrieved_at": "2026-09-14T13:50:58.176815+00:00",
+      "content_type": "application/json;charset=utf-8",
+      "etag": null,
+      "bytes": 778,
+      "sha256": "9d62a99289a9f6dad8827991e27354173795ea0ae71a7952d24db22a41e4f442",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared"
+    },
+    {
+      "id": "germany_china_strategy",
+      "raw_file": "data/raw/expansion-20260913/national_policy_documents/germany_china_strategy-en.pdf",
+      "url": "https://www.auswaertiges-amt.de/resource/blob/2608580/49d50fecc479304c3da2e2079c55e106/china-strategie-en-data.pdf",
+      "resolved_url": "https://www.auswaertiges-amt.de/resource/blob/2608580/49d50fecc479304c3da2e2079c55e106/china-strategie-en-data.pdf",
+      "retrieved_at": "2026-09-14T01:35:53.094458+00:00",
+      "content_type": "application/pdf",
+      "etag": "\"49d50fecc479304c3da2e2079c55e106\"",
+      "bytes": 576389,
+      "sha256": "e06d0b548dbee0cfaee35582c5bee8eaffe7566ec115ce7ced0468ce2e8272a1",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared",
+      "pages": [
+        {
+          "page": 1,
+          "start": 0,
+          "end": 70
+        },
+        {
+          "page": 2,
+          "start": 71,
+          "end": 71
+        },
+        {
+          "page": 3,
+          "start": 72,
+          "end": 521
+        },
+        {
+          "page": 4,
+          "start": 522,
+          "end": 532
+        },
+        {
+          "page": 5,
+          "start": 533,
+          "end": 1234
+        },
+        {
+          "page": 6,
+          "start": 1235,
+          "end": 1252
+        },
+        {
+          "page": 7,
+          "start": 1253,
+          "end": 1744
+        },
+        {
+          "page": 8,
+          "start": 1745,
+          "end": 3549
+        },
+        {
+          "page": 9,
+          "start": 3550,
+          "end": 5240
+        },
+        {
+          "page": 10,
+          "start": 5241,
+          "end": 8269
+        },
+        {
+          "page": 11,
+          "start": 8270,
+          "end": 11367
+        },
+        {
+          "page": 12,
+          "start": 11368,
+          "end": 14760
+        },
+        {
+          "page": 13,
+          "start": 14761,
+          "end": 15317
+        },
+        {
+          "page": 14,
+          "start": 15318,
+          "end": 15391
+        },
+        {
+          "page": 15,
+          "start": 15392,
+          "end": 15394
+        },
+        {
+          "page": 16,
+          "start": 15395,
+          "end": 18768
+        },
+        {
+          "page": 17,
+          "start": 18769,
+          "end": 19747
+        },
+        {
+          "page": 18,
+          "start": 19748,
+          "end": 19784
+        },
+        {
+          "page": 19,
+          "start": 19785,
+          "end": 20607
+        },
+        {
+          "page": 20,
+          "start": 20608,
+          "end": 23468
+        },
+        {
+          "page": 21,
+          "start": 23469,
+          "end": 26733
+        },
+        {
+          "page": 22,
+          "start": 26734,
+          "end": 29490
+        },
+        {
+          "page": 23,
+          "start": 29491,
+          "end": 32599
+        },
+        {
+          "page": 24,
+          "start": 32600,
+          "end": 35595
+        },
+        {
+          "page": 25,
+          "start": 35596,
+          "end": 39036
+        },
+        {
+          "page": 26,
+          "start": 39037,
+          "end": 41881
+        },
+        {
+          "page": 27,
+          "start": 41882,
+          "end": 45324
+        },
+        {
+          "page": 28,
+          "start": 45325,
+          "end": 48456
+        },
+        {
+          "page": 29,
+          "start": 48457,
+          "end": 51570
+        },
+        {
+          "page": 30,
+          "start": 51571,
+          "end": 54900
+        },
+        {
+          "page": 31,
+          "start": 54901,
+          "end": 55854
+        },
+        {
+          "page": 32,
+          "start": 55855,
+          "end": 55893
+        },
+        {
+          "page": 33,
+          "start": 55894,
+          "end": 57122
+        },
+        {
+          "page": 34,
+          "start": 57123,
+          "end": 58841
+        },
+        {
+          "page": 35,
+          "start": 58842,
+          "end": 61447
+        },
+        {
+          "page": 36,
+          "start": 61448,
+          "end": 63897
+        },
+        {
+          "page": 37,
+          "start": 63898,
+          "end": 67178
+        },
+        {
+          "page": 38,
+          "start": 67179,
+          "end": 70421
+        },
+        {
+          "page": 39,
+          "start": 70422,
+          "end": 72585
+        },
+        {
+          "page": 40,
+          "start": 72586,
+          "end": 75903
+        },
+        {
+          "page": 41,
+          "start": 75904,
+          "end": 78998
+        },
+        {
+          "page": 42,
+          "start": 78999,
+          "end": 82132
+        },
+        {
+          "page": 43,
+          "start": 82133,
+          "end": 85226
+        },
+        {
+          "page": 44,
+          "start": 85227,
+          "end": 88409
+        },
+        {
+          "page": 45,
+          "start": 88410,
+          "end": 90230
+        },
+        {
+          "page": 46,
+          "start": 90231,
+          "end": 90262
+        },
+        {
+          "page": 47,
+          "start": 90263,
+          "end": 91228
+        },
+        {
+          "page": 48,
+          "start": 91229,
+          "end": 94013
+        },
+        {
+          "page": 49,
+          "start": 94014,
+          "end": 97258
+        },
+        {
+          "page": 50,
+          "start": 97259,
+          "end": 100236
+        },
+        {
+          "page": 51,
+          "start": 100237,
+          "end": 103324
+        },
+        {
+          "page": 52,
+          "start": 103325,
+          "end": 105835
+        },
+        {
+          "page": 53,
+          "start": 105836,
+          "end": 108442
+        },
+        {
+          "page": 54,
+          "start": 108443,
+          "end": 111626
+        },
+        {
+          "page": 55,
+          "start": 111627,
+          "end": 114471
+        },
+        {
+          "page": 56,
+          "start": 114472,
+          "end": 117854
+        },
+        {
+          "page": 57,
+          "start": 117855,
+          "end": 119558
+        },
+        {
+          "page": 58,
+          "start": 119559,
+          "end": 119616
+        },
+        {
+          "page": 59,
+          "start": 119617,
+          "end": 119881
+        },
+        {
+          "page": 60,
+          "start": 119882,
+          "end": 122106
+        },
+        {
+          "page": 61,
+          "start": 122107,
+          "end": 124768
+        },
+        {
+          "page": 62,
+          "start": 124769,
+          "end": 125076
+        },
+        {
+          "page": 63,
+          "start": 125077,
+          "end": 125077
+        },
+        {
+          "page": 64,
+          "start": 125078,
+          "end": 125233
+        }
+      ],
+      "extraction": "pdftotext default reading order; whitespace/soft-hyphen/control normalization per page",
+      "text_file": "data/prepared/country-knowledge-20260914/source-text/germany_china_strategy.txt",
+      "text_sha256": "f0f2755231f3c33330e3ec0cb394b370f21b522dcb1bfcbd85bfb0438e08333f"
+    },
+    {
+      "id": "china_development_whitepaper",
+      "raw_file": "data/raw/expansion-20260913/national_policy_documents/china_development_whitepaper_2021-en.pdf",
+      "url": "https://english.mee.gov.cn/Resources/publications/Whitep/202101/P020210122374486901993.pdf",
+      "resolved_url": "https://english.mee.gov.cn/Resources/publications/Whitep/202101/P020210122374486901993.pdf",
+      "retrieved_at": "2026-09-14T01:36:01.734999+00:00",
+      "content_type": "application/pdf",
+      "etag": "\"9c971-5b97408e31d00\"",
+      "bytes": 641393,
+      "sha256": "26741c55eeda6dcd08ab2d82be6317fb7446f589830f6e6cf260dec1bc195f04",
+      "source_language": "en",
+      "rights_status": "see_original_source_terms_not_blanket_cleared",
+      "pages": [
+        {
+          "page": 1,
+          "start": 0,
+          "end": 144
+        },
+        {
+          "page": 2,
+          "start": 145,
+          "end": 725
+        },
+        {
+          "page": 3,
+          "start": 726,
+          "end": 3159
+        },
+        {
+          "page": 4,
+          "start": 3160,
+          "end": 5585
+        },
+        {
+          "page": 5,
+          "start": 5586,
+          "end": 8472
+        },
+        {
+          "page": 6,
+          "start": 8473,
+          "end": 11381
+        },
+        {
+          "page": 7,
+          "start": 11382,
+          "end": 13816
+        },
+        {
+          "page": 8,
+          "start": 13817,
+          "end": 16336
+        },
+        {
+          "page": 9,
+          "start": 16337,
+          "end": 18492
+        },
+        {
+          "page": 10,
+          "start": 18493,
+          "end": 20794
+        },
+        {
+          "page": 11,
+          "start": 20795,
+          "end": 22033
+        },
+        {
+          "page": 12,
+          "start": 22034,
+          "end": 23235
+        },
+        {
+          "page": 13,
+          "start": 23236,
+          "end": 24796
+        },
+        {
+          "page": 14,
+          "start": 24797,
+          "end": 26292
+        },
+        {
+          "page": 15,
+          "start": 26293,
+          "end": 27646
+        },
+        {
+          "page": 16,
+          "start": 27647,
+          "end": 30181
+        },
+        {
+          "page": 17,
+          "start": 30182,
+          "end": 32534
+        },
+        {
+          "page": 18,
+          "start": 32535,
+          "end": 35287
+        },
+        {
+          "page": 19,
+          "start": 35288,
+          "end": 38102
+        },
+        {
+          "page": 20,
+          "start": 38103,
+          "end": 40784
+        },
+        {
+          "page": 21,
+          "start": 40785,
+          "end": 43346
+        },
+        {
+          "page": 22,
+          "start": 43347,
+          "end": 46144
+        },
+        {
+          "page": 23,
+          "start": 46145,
+          "end": 48967
+        },
+        {
+          "page": 24,
+          "start": 48968,
+          "end": 51577
+        },
+        {
+          "page": 25,
+          "start": 51578,
+          "end": 54383
+        },
+        {
+          "page": 26,
+          "start": 54384,
+          "end": 57143
+        },
+        {
+          "page": 27,
+          "start": 57144,
+          "end": 59821
+        },
+        {
+          "page": 28,
+          "start": 59822,
+          "end": 62750
+        },
+        {
+          "page": 29,
+          "start": 62751,
+          "end": 65425
+        },
+        {
+          "page": 30,
+          "start": 65426,
+          "end": 67824
+        },
+        {
+          "page": 31,
+          "start": 67825,
+          "end": 70203
+        },
+        {
+          "page": 32,
+          "start": 70204,
+          "end": 73035
+        },
+        {
+          "page": 33,
+          "start": 73036,
+          "end": 75086
+        },
+        {
+          "page": 34,
+          "start": 75087,
+          "end": 77536
+        },
+        {
+          "page": 35,
+          "start": 77537,
+          "end": 80004
+        },
+        {
+          "page": 36,
+          "start": 80005,
+          "end": 82873
+        },
+        {
+          "page": 37,
+          "start": 82874,
+          "end": 85243
+        },
+        {
+          "page": 38,
+          "start": 85244,
+          "end": 88126
+        },
+        {
+          "page": 39,
+          "start": 88127,
+          "end": 90901
+        },
+        {
+          "page": 40,
+          "start": 90902,
+          "end": 93665
+        },
+        {
+          "page": 41,
+          "start": 93666,
+          "end": 95978
+        },
+        {
+          "page": 42,
+          "start": 95979,
+          "end": 98767
+        },
+        {
+          "page": 43,
+          "start": 98768,
+          "end": 101771
+        },
+        {
+          "page": 44,
+          "start": 101772,
+          "end": 104383
+        },
+        {
+          "page": 45,
+          "start": 104384,
+          "end": 105311
+        }
+      ],
+      "extraction": "pdftotext default reading order; whitespace/soft-hyphen/control normalization per page",
+      "text_file": "data/prepared/country-knowledge-20260914/source-text/china_development_whitepaper.txt",
+      "text_sha256": "3eb25057926988699e988451b88f809d3c45226f441693a8587fb6ce0af3a8bb"
+    }
+  ],
+  "excluded_downloads": [
+    {
+      "file": "data/raw/country-knowledge-20260914/world_bank_indicators.json",
+      "reason": "API returned null; replaced by validated individual indicator metadata queries"
+    }
+  ]
+}
