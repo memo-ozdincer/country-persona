@@ -136,12 +136,12 @@ def github(data):
     for c in data['countries']:
         inv = inventory['countries'][c['code']]
         rows.append(f"| [{c['name']}](countries/{c['code']}.md) | {inv['count']:,} | {len(inv['sources'])} |")
-        lines = [f"# {c['name']} — {inv['count']:,} evidence record IDs", '', f"[Open source explorer]({base}#country={c['code']})", '',
+        lines = [f"# {c['name']} ({inv['count']:,} evidence record IDs)", '', f"[Open source explorer]({base}#country={c['code']})", '',
                  '## Breakdown', '', '| Record type | Distinct IDs |', '|---|---:|']
         lines += [f"| {k['label']} | {c['counts'].get(k['id'], 0):,} |" for k in data['kinds']]
         lines += ['', inventory['count_definition'], '', 'Breakdown rows include overlapping representations and must not be summed.', '', '## Data sources', '']
         for source in inv['sources']:
-            lines += [f"<details><summary>{profiles[source['id']]['name']} — {source['count']:,} records</summary>", '', profiles[source['id']]['description'], '',
+            lines += [f"<details><summary>{profiles[source['id']]['name']} ({source['count']:,} records)</summary>", '', profiles[source['id']]['description'], '',
                       'Languages: ' + ', '.join(source['languages']) + '. Recorded dates: ' + ' → '.join(source['date_range']) + '.', '',
                       '| Trace / record type | Count | Input chars, median / p95 | Target chars, median / p95 | Body chars, median / p95 |', '|---|---:|---|---|---|']
             for task in source['tasks']:
