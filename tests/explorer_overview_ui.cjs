@@ -21,7 +21,10 @@ setImmediate(()=>{
    assert(element('#countries').innerHTML.includes(inventory.countries[c.code].count.toLocaleString()));
    assert(html.indexOf('Data sources')<html.indexOf('Post-training examples using the available data'));
    assert(!html.includes('Memo Ozdincer'));
-   assert(html.includes('implemented training reward verifiers'));
+   assert(!html.includes('Environment inventory:'));
+   const page=fs.readFileSync('explorer/index.html','utf8');
+   assert(page.indexOf('id="build-guide"')>page.indexOf('class="contribute"'));
+   for(const heading of ['Interactive environments','Multi-agent trajectories','Reward verifiers and possible RLVR tasks','Preference pairs'])assert(page.includes('<h3>'+heading+'</h3>'));
  }
  location.hash='#view=compare&country=DEU';vm.runInContext('route()',context);assert.equal(location.hash,'#country=DEU');
  location.hash='#kind=policy_positions&view=explore';vm.runInContext('route()',context);assert.equal(location.redirect,'advanced.html#kind=policy_positions&view=explore');

@@ -10,6 +10,35 @@
 <p id="collection" class="note">Loading source inventory…</p>
 <section id="country-panel" aria-live="polite"></section>
 <section class="contribute"><h2>Keep this collection up to date</h2><p>Add a source, correct an attribution, document a trace format or contribute an evaluation. Source descriptions and trace recipes are editable JSON; the public explorer can run locally without cluster access.</p><p><a href="https://github.com/memo-ozdincer/country-persona-data/blob/main/CONTRIBUTING.md">Contribution guide</a> · <a href="https://github.com/memo-ozdincer/country-persona-data/issues/new/choose">Report a gap or propose a dataset</a> · <a href="https://huggingface.co/datasets/memo-ozdincer/country-persona-data">Download catalog tables</a> · <a id="research-link" href="https://huggingface.co/spaces/memo-ozdincer/country-persona-research">Full source records</a></p></section>
+<section class="methods" id="build-guide" aria-labelledby="build-guide-title">
+<h2 id="build-guide-title">How to build richer post-training data from these sources</h2>
+<p class="note">Suggested build paths for this project. The source records supply evidence; the environments, trajectories and scoring rules below would be constructed and validated separately.</p>
+<article class="method">
+<h3>Interactive environments</h3>
+<p><strong>Best source material:</strong> Linked proposal versions, amendments, procedural rules, dated positions and final decisions. A sequence showing what participants could change is more useful for interaction than an isolated speech. Start with the joined UN cases and acquire their draft/amendment histories.</p>
+<p><strong>How to build:</strong> Define an initial situation, each participant’s visible information, permitted actions (propose, amend, support, oppose, abstain), a rule for updating the situation and an ending condition. Record <code>observation → action → next observation → outcome</code>. Begin with one decision or amendment round. Implement procedural transitions from documented rules; label simulated diplomatic reactions as assumptions.</p>
+<p><strong>Make it useful for training:</strong> Include both feasible and infeasible proposals, preserve dated constraints, and keep later outcomes out of earlier observations. Test rules against held-out records before collecting rollouts. Measure valid actions and evidence-consistent behavior; reaching agreement alone is not a sufficient reward, and a historical outcome does not establish a counterfactual transition.</p>
+</article>
+<article class="method">
+<h3>Multi-agent trajectories</h3>
+<p><strong>Best source material:</strong> Chronological, speaker-attributed negotiation or meeting records, with proposal changes and responses. UN meeting records and directed UPR recommendations/responses can anchor roles and tasks; independent country speeches do not themselves form an interactive trajectory.</p>
+<p><strong>How to build:</strong> Give each agent its own dated observation and role. Log the scenario, acting agent, visible messages, action, tool results, resulting state and outcome at each turn. Retain model/simulator versions and seeds. Distinguish historical observations from generated continuations and explicitly invented private objectives.</p>
+<p><strong>Make it useful for training:</strong> Review agent turns for supported claims and retained conditions, then use selected turns for supervised training or validated trajectory rewards for RL. Hold out whole scenarios and translation families, test against different partners, and check each participant’s outcomes separately. Preserve legitimate disagreement and prevent agents from seeing information their roles should not have. <a href="https://arxiv.org/abs/2310.11667">SOTOPIA</a> provides an interactive social-evaluation reference, not a validated diplomatic simulator.</p>
+</article>
+<article class="method">
+<h3>Reward verifiers and possible RLVR tasks</h3>
+<p><strong>Best source material:</strong> Tasks with a checkable answer: verified final vote labels paired with exact proposals, UPR response labels paired with recommendations, or numeric extraction questions backed by WDI definitions and units. Open-ended claims about national motives have no comparable automatic answer key.</p>
+<p><strong>How to build:</strong> Define the question, allowed output, reference answer and a deterministic checking function. Validate parsing, label aliases, numeric tolerances, units and missing values. Keep the reference answer outside the prompt. Store the verifier version and per-criterion results alongside generated answers; an ambiguous source should trigger review rather than an invented label.</p>
+<p><strong>Make it useful for training:</strong> Test the checker on correct answers, plausible mistakes and attempts to exploit it before using rewards in training. Audit accuracy across countries and languages on held-out events. Matching a historical vote verifies that label only, not its rationale or a new scenario’s best action. Only then consider a reward-based trainer such as <a href="https://huggingface.co/docs/trl/grpo_trainer">TRL GRPO</a>; the library accepts reward functions but does not establish their validity.</p>
+</article>
+<article class="method">
+<h3>Preference pairs</h3>
+<p><strong>Best source material:</strong> Substantive authentic Q&amp;A, policy applications and decision explanations with exact supporting passages and review criteria. The current authored examples already provide useful checks for scope, dates, attribution and unsupported commitments.</p>
+<p><strong>How to build:</strong> Generate two answers to the same country/date/question/evidence prompt. Have a reviewer select the better-supported answer and record the evidence, error type and confidence. Store <code>prompt, chosen, rejected</code> plus a separate review/provenance record. Prefer actual model errors; leave ties or uncertain comparisons unlabeled.</p>
+<p><strong>Make it useful for training:</strong> Prefer substantive corrections—such as retaining a policy condition or the correct emissions baseline—over superficial style differences. Control for length and fluency, accept multiple valid answers, and keep pairs with their parent event’s split. Test whether training reduces those errors on new cases. <a href="https://huggingface.co/docs/trl/dpo_trainer">TRL DPO</a> supports this paired format without requiring an interactive environment.</p>
+</article>
+<p class="note"><strong>Efficient starting point:</strong> Review a small set of well-linked decision and policy tasks, measure the evidence-assisted baseline, and collect its actual failures. Those failures can guide preference pairs and narrow verifiers before investing in a larger interactive simulator.</p>
+</section>
 </main><footer>Source attribution and dated institutional roles are retained. Counts describe available records; they do not certify training readiness.</footer>
 <noscript><a href="https://github.com/memo-ozdincer/country-persona-data">Browse the same country and source inventory on GitHub.</a></noscript>
 </body></html>

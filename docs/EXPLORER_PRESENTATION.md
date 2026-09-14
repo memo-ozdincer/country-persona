@@ -29,7 +29,7 @@ The display reports median and nearest-rank p95 in **Unicode characters**, with 
 
 Authentic Q&A can support supervised answer adaptation. Vote and UPR-response labels can support classification and, after validating context and labels, potential offline verifiable tasks. Speech reconstruction needs correct speaker attribution and constructed prompting context. Monitoring-body reports must not be relabeled as the government’s own voice. Documents/statistics are evidence, not automatically complete tasks.
 
-No interactive environments, multi-agent trajectories, implemented training reward verifiers or preference pairs are supplied in this snapshot. An exact-match vote score would not verify a rationale or recover private motives. The interface names these gaps directly instead of presenting an RLVR or RL environment as already built.
+No interactive environments, multi-agent trajectories, implemented training reward verifiers or preference pairs are supplied in this snapshot. An exact-match vote score would not verify a rationale or recover private motives. A practical guide at the very bottom explains how to construct interactive environments, multi-agent trajectories, verifiers and preference pairs from suitable sources. It distinguishes proposed builds from existing records; the country view does not show a zero-count environment status strip.
 
 Trace templates use explicit placeholders and link an actual record. They are not exported training rows. Public sample pointers include metadata/field names, not original source bodies. The full record remains available via the hosted catalog and publisher link.
 

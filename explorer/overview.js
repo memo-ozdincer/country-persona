@@ -56,7 +56,6 @@ function render(code){
  $('#country-panel').innerHTML=`<div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.count)} evidence records</span></div>
  <div class="breakdown">${kinds.map(k=>`<div class="metric"><span>${esc(k.label)}</span><b>${number(country.counts[k.id])}</b></div>`).join('')}</div>
  <p class="note">The breakdown includes overlapping representations; do not sum it. The country badge excludes training-format copies, review/lineage and evaluation wrappers. ${number(data.sources.length)} source collections are listed below.</p>
- <div class="status-line"><strong>Environment inventory:</strong> ${inventory.environments.interactive} interactive environments · ${inventory.environments.multi_agent_trajectories} multi-agent trajectories · ${inventory.environments.implemented_verifiers} implemented training reward verifiers · ${inventory.environments.preference_pairs} preference pairs. Vote and response labels may support future verifiable tasks; those environments are not built.</div>
  <h2>Data sources</h2><p class="note">Sorted by source name. Expand a source for trace types, measured lengths, field mappings, actual record references and training options.</p>
  ${data.sources.map(s=>sourceHTML(s,country)).join('')}
  <section class="methods"><h2>Post-training examples using the available data</h2>
