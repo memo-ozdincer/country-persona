@@ -2,6 +2,8 @@
 
 The expansion adds **2,389 parsed official documents, 12,930 literal Q&A candidates, and 7,578 source-linked evidence passages**. Separately, the publisher's UN Parallel Corpus development/test sets provide **8,000 aligned segments across six languages**. Collection and preparation used CPU/network resources and **zero four-H100 node-hours**. No training job was submitted.
 
+The private raw and prepared snapshot is also available on Trillium under `/scratch/memoozd/persona/data/`. All **5,343 transferred files (372,856,747 bytes)** matched the local SHA256 manifest. See [the transfer verification](../reports/expansion-trillium-verification.json). Code, manifests and reports are tracked in GitHub; raw text remains outside Git.
+
 These are additions to the previous release, not a replacement. They are more authoritative and better documented than generic persona descriptions, but their usefulness for training still needs content review and a controlled experiment. No new examples have been marked expert-approved or automatically admitted to training.
 
 ## What was acquired
