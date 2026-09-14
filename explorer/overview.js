@@ -41,21 +41,21 @@ const simpleQuestions={
 };
 function workedExample(country){
  const e=country.examples[0];
- return `<article class="method"><h3>Evidence-conditioned answer · worked candidate</h3><p class="note">Uses existing project-curated policy evidence. The question below is a clearer illustrative rewrite; the stored original example is unchanged and remains unadmitted.</p>
- <div class="fields"><div class="field"><strong>Prompt / context</strong><p>${esc(country.name)} · policy date ${esc(e.date)}</p>${e.evidence.map(v=>`<p>${esc(v.claim)}</p>`).join('')}<p class="example-question">${esc(simpleQuestions[country.code])}</p></div><div class="field output"><strong>Candidate answer / SFT target</strong><p>${esc(e.answer)}</p></div><div class="field review"><strong>Inspect / score</strong>${list(e.rubric)}<p>Human/source review required. No RLVR verifier is supplied.</p></div></div>
- <p class="note">Blue fields are input context; green is the candidate output; review criteria stay outside the prompt. The existing SFT implementation uses completion-only loss and Qwen3 with thinking disabled.</p>
+ return `<article class="method trace-example"><h3>Evidence-conditioned answer (worked candidate)</h3><p class="note">Uses existing project-curated policy evidence. The question below is a clearer illustrative rewrite; the stored original example is unchanged and remains unadmitted.</p>
+ <div class="trace-flow" aria-label="Evidence and question flow into the prompt, which produces an SFT target, then receives inspection criteria."><section class="trace-node evidence"><span>1. Evidence + question</span>${e.evidence.map(v=>`<p>${esc(v.claim)}</p>`).join('')}<p class="example-question">${esc(simpleQuestions[country.code])}</p></section><section class="trace-node prompt"><span>2. Prompt</span><p>${esc(country.name)} (policy date ${esc(e.date)})</p><p>System instruction + dated evidence + question</p></section><section class="trace-node target"><span>3. SFT target</span><p>${esc(e.answer)}</p><small>Assistant completion only</small></section><section class="trace-node inspection"><span>4. Inspect / score</span>${list(e.rubric)}<p>Human and source review</p></section></div>
+ <p class="note">Evidence and question are model input. The assistant completion is the SFT target. Inspection criteria and provenance remain outside the prompt. The existing SFT implementation uses completion-only loss and Qwen3 with thinking disabled.</p>
  <p>${e.evidence.map(v=>`<a href="${url(v.source_url)}" target="_blank" rel="noopener">${esc(v.id)} ↗</a>`).join(' · ')}</p>
  <details><summary>Stored original candidate and provenance</summary><p class="note">${esc(e.format_origin)}. ${overview.private?'Full stored format.':'Source passages are explicitly omitted from this public format preview.'}</p><pre>${pretty(e.format)}</pre><pre>${pretty(e.metadata)}</pre></details></article>`;
 }
 function render(code){
  const country=overview.countries.find(c=>c.code===code)||overview.countries[0],data=inventory.countries[country.code];
  document.title=`${country.name} · Data explorer for persona fine-tuning`;
- $('#countries').innerHTML=overview.countries.map(c=>`<button type="button" data-country="${esc(c.code)}" aria-pressed="${c.code===country.code}" aria-label="${esc(c.name)}, ${number(inventory.countries[c.code].count)} evidence record IDs">${esc(c.name)} <span class="count">${number(inventory.countries[c.code].count)}</span></button>`).join('');
+ $('#countries').innerHTML=overview.countries.map(c=>`<button type="button" data-country="${esc(c.code)}" aria-pressed="${c.code===country.code}" aria-label="${esc(c.name)}, ${number(inventory.countries[c.code].count)} records across separate sources">${esc(c.name)} <span class="count">${number(inventory.countries[c.code].count)}</span></button>`).join('');
  $('#countries').querySelectorAll('button').forEach(b=>b.onclick=()=>{location.hash=`country=${b.dataset.country}`});
  const kinds=[...overview.kinds,{id:'country_statistics',label:'Country statistics'},{id:'evaluation',label:'Evaluation records / views'}];
- $('#country-panel').innerHTML=`<section class="catalog-summary"><div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.count)} evidence records</span></div>
+ $('#country-panel').innerHTML=`<section class="catalog-summary"><div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.sources.length)} separate sources</span></div>
  <div class="breakdown">${kinds.map(k=>`<div class="metric"><span>${esc(k.label)}</span><b>${number(country.counts[k.id])}</b></div>`).join('')}</div>
- <p class="note">The breakdown includes overlapping representations; do not sum it. The country badge excludes training-format copies, review/lineage and evaluation wrappers. ${number(data.sources.length)} source collections are listed below.</p></section>
+ </section>
  <section class="source-section"><h2>Data sources</h2><p class="note">Sorted by source name. Expand a source for trace types, measured lengths, field mappings, actual record references and training options.</p>
  ${data.sources.map(s=>sourceHTML(s,country)).join('')}</section>
  <section class="methods"><h2>Post-training examples using the available data</h2>

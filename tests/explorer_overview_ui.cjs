@@ -23,7 +23,7 @@ setImmediate(()=>{
    assert(!html.includes('Memo Ozdincer'));
    assert(!html.includes('Environment inventory:'));
    const page=fs.readFileSync('explorer/index.html','utf8');
-   assert(page.indexOf('id="build-guide"')>page.indexOf('class="contribute"'));
+   assert(page.indexOf('class="contribute"')>page.indexOf('id="build-guide"'));
    for(const heading of ['Interactive environments','Multi-agent trajectories','Reward verifiers and possible RLVR tasks','Preference pairs'])assert(page.includes('<h3>'+heading+'</h3>'));
  }
  location.hash='#view=compare&country=DEU';vm.runInContext('route()',context);assert.equal(location.hash,'#country=DEU');
