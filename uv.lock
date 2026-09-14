@@ -284,6 +284,10 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
+catalog = [
+    { name = "huggingface-hub" },
+    { name = "pyarrow" },
+]
 cuda = [
     { name = "bitsandbytes", marker = "sys_platform == 'linux'" },
 ]
@@ -313,9 +317,11 @@ requires-dist = [
     { name = "beautifulsoup4", specifier = "==4.15.0" },
     { name = "bitsandbytes", marker = "sys_platform == 'linux' and extra == 'cuda'", specifier = "==0.48.2" },
     { name = "datasets", marker = "extra == 'train'", specifier = "==4.3.0" },
+    { name = "huggingface-hub", marker = "extra == 'catalog'", specifier = "==0.36.2" },
     { name = "ijson", marker = "extra == 'data'", specifier = "==3.5.1" },
     { name = "jinja2", marker = "extra == 'tokenize'", specifier = "==3.1.6" },
     { name = "peft", marker = "extra == 'train'", specifier = "==0.17.1" },
+    { name = "pyarrow", marker = "extra == 'catalog'", specifier = "==25.0.1" },
     { name = "pyreadr", marker = "extra == 'data'", specifier = "==0.5.6" },
     { name = "pytest", marker = "extra == 'dev'", specifier = "==9.1.1" },
     { name = "torch", marker = "extra == 'train'", specifier = "==2.8.0" },
@@ -324,7 +330,7 @@ requires-dist = [
     { name = "trl", marker = "extra == 'train'", specifier = "==0.24.0" },
     { name = "truststore", specifier = "==0.10.4" },
 ]
-provides-extras = ["data", "dev", "tokenize", "train", "cuda"]
+provides-extras = ["data", "dev", "catalog", "tokenize", "train", "cuda"]
 
 [[package]]
 name = "datasets"

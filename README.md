@@ -2,6 +2,8 @@
 
 A data-first research repository for **dated institutional country representatives**. The initial China/Germany pilot is preserved, with a separate France/UK/India/Brazil extension. The repository contains the supplied playbook, acquired corpora, source-specific parsing, country/task categorization, event-group splits, provenance checks and a modest multi-GPU LoRA workflow.
 
+**Explore the collection:** [interactive browser](https://huggingface.co/spaces/memo-ozdincer/country-persona-explorer) · [full research view](https://huggingface.co/spaces/memo-ozdincer/country-persona-research) · [public GitHub catalog](https://github.com/memo-ozdincer/country-persona-data) · [Hugging Face tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data). [Exploration guide and update workflow](docs/DATA_EXPLORER.md).
+
 Start with **[the measured data report](reports/DATA_REPORT.md)**. The project contains real downloaded data, not just a source registry. Large third-party data are local under `data/` and Git-ignored; their exact download URLs and hashes are tracked in [the source lock](data/sources.lock.json).
 
 **14 September: [France, UK, India and Brazil data release](docs/COUNTRY_EXTENSION_20260914.md)** and [12 actual policy applications](docs/COUNTRY_EXTENSION_EXAMPLES.md). The extension adds strategies, climate commitments and other official evidence in eight languages, country-context statistics and newly prepared historical decisions. The earlier [six-country knowledge preview](docs/COUNTRY_KNOWLEDGE_PREVIEW.md) shows the design change. Document volume alone is not evidence of useful persona supervision; these new releases remain review candidates.
