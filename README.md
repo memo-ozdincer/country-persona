@@ -1,5 +1,7 @@
 # Country persona data and post-training
 
+See [data priorities / TODO](TODO.md) for the next decision-case acquisition step.
+
 A data-first research repository for **dated institutional country representatives**. The initial China/Germany pilot is preserved, with a separate France/UK/India/Brazil extension. The repository contains the supplied playbook, acquired corpora, source-specific parsing, country/task categorization, event-group splits, provenance checks and a modest multi-GPU LoRA workflow.
 
 **Explore the collection:** [interactive browser](https://huggingface.co/spaces/memo-ozdincer/country-persona-explorer) · [full research view](https://huggingface.co/spaces/memo-ozdincer/country-persona-research) · [public GitHub catalog](https://github.com/memo-ozdincer/country-persona-data) · [Hugging Face tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data). [Exploration guide and update workflow](docs/DATA_EXPLORER.md).

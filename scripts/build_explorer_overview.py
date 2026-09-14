@@ -169,11 +169,12 @@ def github(data):
              '- [Source descriptions](explorer/source_profiles.json)',
              '- [Trace recipes and field mappings](explorer/trace_types.json)',
              '- [Measured inventory](explorer/sources.json)',
+             '- [Data priorities / TODO](TODO.md)',
              '- [Explorer methodology](docs/EXPLORER_PRESENTATION.md)',
              '- [Attribution](ATTRIBUTION.md) · [Source registry](data/source_registry.json) · [Source-use status](data/rights_registry.json)', '',
              'Original publishers retain attribution. Public previews omit restricted source bodies; source links and record references remain available. The two-event Ukraine decision subset is one small source collection, not the whole corpus.', '']
     (dest / 'README.md').write_text('\n'.join(rows))
-    for rel in ['CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/data-source.yml', '.github/ISSUE_TEMPLATE/data-correction.yml', '.github/PULL_REQUEST_TEMPLATE.md',
+    for rel in ['TODO.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/data-source.yml', '.github/ISSUE_TEMPLATE/data-correction.yml', '.github/PULL_REQUEST_TEMPLATE.md',
                 'explorer/index.html', 'explorer/advanced.html', 'explorer/overview.js', 'explorer/overview.css', 'explorer/overview.json',
                 'explorer/sources.json', 'explorer/source_profiles.json', 'explorer/trace_types.json',
                 'explorer/app.py', 'explorer/README.md', 'tests/explorer_overview_ui.cjs', 'scripts/build_explorer_overview.py', 'scripts/stage_static_explorer.py',
