@@ -9,7 +9,7 @@ from pathlib import Path
 from huggingface_hub import HfApi, CommitOperationAdd, get_token
 
 ROOT=Path(__file__).resolve().parents[1]
-FILES=['index.html','advanced.html','overview.js','overview.css','overview.json','sources.json','source_profiles.json','trace_types.json','README.md']
+FILES=['index.html','advanced.html','overview.js','overview.css','overview-narrow.css','overview.json','sources.json','source_profiles.json','trace_types.json','README.md']
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
