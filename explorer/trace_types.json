@@ -1,0 +1,232 @@
+{
+  "authentic_qa": {
+    "label": "Authentic question → answer",
+    "availability": "Existing paired fields; candidate for supervised adaptation after source and quality review.",
+    "input": [
+      "country_iso3, event_date, speaker",
+      "question",
+      "history: only turns preceding this answer",
+      "context, when available"
+    ],
+    "target": [
+      "text: the actual spokesperson answer"
+    ],
+    "inference": "At inference: supply the date, role and a new question; generate an answer. During SFT, supervise only the recorded answer. Do not place the answer in the prompt.",
+    "scoring": "Evidence-based review of accuracy, attribution and substantive policy content. No automatic verifier or RL environment supplied.",
+    "possible_use": "SFT or supervised distillation; useful baseline for a country-conditioned adapter."
+  },
+  "press_conference": {
+    "label": "Full conference document",
+    "availability": "Source document; individual Q&A extraction exists for part of this source.",
+    "input": [
+      "date, institution and speaker boundaries",
+      "earlier turns only, if constructing a dialogue"
+    ],
+    "target": [
+      "A selected answer span after extraction; not the entire transcript by default"
+    ],
+    "inference": "At inference: generate the next answer given earlier context. Full-document continued pretraining is a separate option with text loss, not a prompt/completion trace.",
+    "scoring": "Check speaker segmentation and event/translation splits; exclude future answers from context.",
+    "possible_use": "Extract Q&A for SFT; optional continued pretraining after cleaning."
+  },
+  "statement_reconstruction": {
+    "label": "Statement / speech reconstruction",
+    "availability": "Observed statement text; an instruction may be constructed from metadata.",
+    "input": [
+      "country, institution, speaking_capacity, event_date",
+      "title / agenda and context, when present"
+    ],
+    "target": [
+      "text: attributed statement"
+    ],
+    "inference": "At inference: request a statement on an agenda with dated evidence. Reconstructing a historical speech is a supervised proxy, not observed negotiation behavior.",
+    "scoring": "Review speaker, policy fidelity and unsupported commitments. No reward verifier or transition model exists.",
+    "possible_use": "Statement SFT, retrieval evidence, or optional domain-text training."
+  },
+  "vote_label_only": {
+    "label": "Recorded vote label",
+    "availability": "Action label exists; proposal text is generally missing.",
+    "input": [
+      "country and decision date",
+      "decision / draft identifier",
+      "MISSING for most rows: actual proposal and contemporaneous context"
+    ],
+    "target": [
+      "original_vote / text: observed vote"
+    ],
+    "inference": "Potential inference task: predict a vote on a supplied proposal. Join the proposal first; the identifier alone is not adequate decision context.",
+    "scoring": "Exact-match scoring is possible only after validating labels and proposal joins. A correct historical vote does not verify a generated explanation.",
+    "possible_use": "Classification / SFT after joining context; possible offline verifiable task, not an existing RLVR environment."
+  },
+  "vote_prediction": {
+    "label": "Proposal → recorded vote",
+    "availability": "Sample has question/context fields and a recorded vote; validate joins and historical leakage.",
+    "input": [
+      "country and event_date",
+      "question",
+      "context: joined draft text"
+    ],
+    "target": [
+      "text: observed vote label"
+    ],
+    "inference": "At inference: generate one vote label for the supplied proposal. Keep post-vote statements out of forecasting inputs.",
+    "scoring": "Exact match to the recorded label, after verifying final versus procedural votes. No inference about hidden motives.",
+    "possible_use": "Label SFT or evaluation; a candidate for an offline verifier, not a prepared RL rollout environment."
+  },
+  "upr_recommendation": {
+    "label": "Recommendation from one state to another",
+    "availability": "Recommendation text and directed state roles exist; earlier review context may be incomplete.",
+    "input": [
+      "recommending_states → reviewed_states",
+      "review cycle, date and document",
+      "question / prior review evidence when available"
+    ],
+    "target": [
+      "text: recorded recommendation"
+    ],
+    "inference": "At inference: generate a recommendation for the reviewed state. Do not reverse the recommending and reviewed roles.",
+    "scoring": "Check attribution and recommendation grounding; no automatic quality reward is supplied.",
+    "possible_use": "Directed recommendation SFT or retrieval evidence."
+  },
+  "upr_response": {
+    "label": "Recommendation → reviewed-state response",
+    "availability": "Question contains recommendation; text contains the response label.",
+    "input": [
+      "reviewed_states, recommending_states, cycle and date",
+      "question: recommendation text",
+      "context: recommending-state information"
+    ],
+    "target": [
+      "text: response such as Supported or Noted"
+    ],
+    "inference": "At inference: predict a response label for a recommendation. A noted response is not proof of implementation or a private preference.",
+    "scoring": "Potential exact-match label check, subject to response-date and linkage validation; no reward implementation bundled.",
+    "possible_use": "Response classification / SFT; possible offline verifiable task after validation."
+  },
+  "human_rights_evidence": {
+    "label": "Institutional human-rights evidence",
+    "availability": "Text from a monitoring mechanism, not necessarily the country’s own voice.",
+    "input": [
+      "text as retrieved evidence, with document and institutional author",
+      "reviewed country, dates and role metadata"
+    ],
+    "target": [
+      "No ground-truth country answer is present in this record"
+    ],
+    "inference": "Use as context for a separately supported question. Do not train the model to impersonate the state using the monitor’s statements.",
+    "scoring": "Source attribution, factual consistency and temporal validity need review.",
+    "possible_use": "Retrieval / evidence-conditioned tasks after adding supported targets."
+  },
+  "unverified_speech_segment": {
+    "label": "Speech segment with unverified boundaries",
+    "availability": "Text exists; speaker attribution and segment boundaries are not confirmed.",
+    "input": [
+      "meeting/document metadata; speaker identity must be checked"
+    ],
+    "target": [
+      "No verified target until speaker segmentation is resolved"
+    ],
+    "inference": "First extract a verified speaker turn. A file named after a country can still include other speakers.",
+    "scoring": "Speaker and boundary verification is a prerequisite.",
+    "possible_use": "Evidence discovery; not a ready country-specific supervised trace."
+  },
+  "policy_evidence": {
+    "label": "Source document / evidence passage",
+    "availability": "Source evidence exists; a task and answer are not inherent in a document.",
+    "input": [
+      "text / source passage, country or institution, policy date",
+      "a separately constructed question"
+    ],
+    "target": [
+      "A reviewed, source-grounded answer must be authored or selected"
+    ],
+    "inference": "At inference: supply a dated passage and a specific policy question. Generate a supported answer, preserving conditions and uncertainty.",
+    "scoring": "Check exact source spans and institutional scope. The text itself is not an automatic reward function.",
+    "possible_use": "Retrieval first; evidence-conditioned SFT once targets exist; optional continued pretraining."
+  },
+  "country_statistics": {
+    "label": "Country–indicator–year observation",
+    "availability": "Structured values and missingness flags; not a conversational trace.",
+    "input": [
+      "indicator definition, country, reference_year, unit and database vintage",
+      "value as evidence, unless that value is the prediction target"
+    ],
+    "target": [
+      "No policy-action target; a numeric extraction task could use value as the target"
+    ],
+    "inference": "At inference: use dated facts as context. For a numeric task, withhold the target from the input and preserve units and missingness.",
+    "scoring": "Potential numeric/unit checks for newly constructed tasks. No RLVR task generator or evaluator is implemented.",
+    "possible_use": "Structured retrieval; candidate factual extraction exercises, not a country-preference reward."
+  },
+  "policy_applications": {
+    "label": "Authored evidence → policy answer",
+    "availability": "Paired messages exist as review candidates; extension also has SFT export files.",
+    "input": [
+      "messages[0]: system instruction",
+      "messages[1]: institution/date, cited evidence and question"
+    ],
+    "target": [
+      "messages[-1]: authored assistant answer"
+    ],
+    "inference": "At inference: supply a new question and dated evidence; generate a supported answer. Target text is authored, not an observed model answer.",
+    "scoring": "rubric, source spans, scope and unsupported-claim checks. Review is pending; no automated correctness oracle.",
+    "possible_use": "Evidence-conditioned SFT candidate; possible later preferences from reviewed errors."
+  },
+  "policy_positions": {
+    "label": "Curated policy claim",
+    "availability": "Attributed claim and source spans; not a complete dialogue.",
+    "input": [
+      "claim plus source passages as dated context",
+      "a separately constructed application question"
+    ],
+    "target": [
+      "No answer target in this claim record"
+    ],
+    "inference": "Use claims to assemble a dated dossier. Add a specific task and reviewed answer before supervised training.",
+    "scoring": "Verify source support and scope; published policy does not establish behavior in every real project.",
+    "possible_use": "Retrieval / dossier context; parent evidence for authored applications."
+  },
+  "decision_cases": {
+    "label": "Proposal → action + public explanation",
+    "availability": "Joined retrospective cases; some explanation fields remain missing.",
+    "input": [
+      "proposal, country and decision date",
+      "only information available before the vote for a forecasting task"
+    ],
+    "target": [
+      "observed final vote",
+      "public explanation, where available, as a separate retrospective target"
+    ],
+    "inference": "At inference: predict a vote or explain a recorded decision, with these two tasks kept separate. Post-vote explanations leak the answer in a forecasting input.",
+    "scoring": "Vote-label comparison plus evidence-based explanation review. No simulator, transitions or validated negotiation reward supplied.",
+    "possible_use": "Supervised decision/explanation tasks after review; offline evaluation, not an interactive environment."
+  },
+  "policy_evidence_document": {
+    "label": "Source document / evidence passage",
+    "availability": "Source evidence exists; a task and answer are not inherent in a document.",
+    "input": [
+      "text / source passage, country or institution, policy date",
+      "a separately constructed question"
+    ],
+    "target": [
+      "A reviewed, source-grounded answer must be authored or selected"
+    ],
+    "inference": "At inference: supply a dated passage and a specific policy question. Generate a supported answer, preserving conditions and uncertainty.",
+    "scoring": "Check exact source spans and institutional scope. The text itself is not an automatic reward function.",
+    "possible_use": "Retrieval first; evidence-conditioned SFT once targets exist; optional continued pretraining."
+  },
+  "domain_text": {
+    "label": "Whole speech / domain text",
+    "availability": "Source text exists; no instruction–answer pair is inherent in the document.",
+    "input": [
+      "text: cleaned speech or document",
+      "country, speaker, event and language as attribution metadata"
+    ],
+    "target": [
+      "Next-token text continuation if used for continued pretraining; no separate assistant answer provided"
+    ],
+    "inference": "Optional domain adaptation can train on text sequences. A dialogue task would require separate context and target construction.",
+    "scoring": "Language-model loss measures text prediction, not policy correctness or negotiation quality. Check attribution and held-out event overlap.",
+    "possible_use": "Retrieval or optional continued pretraining; construct and review tasks before SFT."
+  }
+}

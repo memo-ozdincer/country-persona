@@ -7,7 +7,7 @@ const document = {title:'',querySelector:element,createElement:()=>({click(){}})
 const location = {hash:'#view=compare',replace(value){this.redirect=value}};
 const history = {replaceState(a,b,value){location.hash=value}};
 const context = {document, location, history, window:{addEventListener(){}}, URL, URLSearchParams, Blob, setTimeout,
-  fetch: async()=>({ok:true,json:async()=>data})};
+  fetch: async path=>({ok:true,json:async()=>JSON.parse(fs.readFileSync('explorer/'+path))})};
 vm.createContext(context);
 vm.runInContext(fs.readFileSync('explorer/overview.js','utf8'),context);
 setImmediate(()=>{
@@ -15,12 +15,17 @@ setImmediate(()=>{
  for (const c of data.countries) {
    location.hash=`#country=${c.code}`;vm.runInContext('route()',context);
    const html=element('#country-panel').innerHTML;
-   assert(html.includes(c.name));assert(html.includes('completion_only_loss=True'));assert(html.includes('SOURCE PASSAGES OMITTED'));
-   assert(html.includes(c.examples[0].id));assert(html.includes('Download redacted format preview'));
+   assert(html.includes(c.name));assert(html.includes('completion-only loss'));assert(html.includes('SOURCE PASSAGES OMITTED'));
+   assert(html.includes(c.examples[0].id));assert(html.includes('Data sources'));assert(html.includes('Trace template and an actual source-record reference'));
+   const inventory=JSON.parse(fs.readFileSync('explorer/sources.json'));
+   assert(element('#countries').innerHTML.includes(inventory.countries[c.code].count.toLocaleString()));
+   assert(html.indexOf('Data sources')<html.indexOf('Post-training examples using the available data'));
+   assert(!html.includes('Memo Ozdincer'));
+   assert(html.includes('implemented training reward verifiers'));
  }
  location.hash='#view=compare&country=DEU';vm.runInContext('route()',context);assert.equal(location.hash,'#country=DEU');
  location.hash='#kind=policy_positions&view=explore';vm.runInContext('route()',context);assert.equal(location.redirect,'advanced.html#kind=policy_positions&view=explore');
  location.hash='#country=NONEXISTENT';vm.runInContext('route()',context);assert.equal(location.hash,'#country=CHN');
  assert(!element('#country-panel').innerHTML.includes('undefined'));
- console.log('All six country renders, format fields, legacy comparison routing and deep-link preservation passed.');
+ console.log('All six country counts, source inventories, trace mappings, neutral branding and legacy routes passed.');
 });

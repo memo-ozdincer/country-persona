@@ -64,7 +64,7 @@ class Handler(BaseHTTPRequestHandler):
       except Exception:self.reply({'error':'Unable to read the catalog. Check the local server configuration.'},500)
     def route(self):
       url=urlparse(self.path);p={k:v[0] for k,v in parse_qs(url.query).items()}
-      assets={'/':'index.html','/index.html':'index.html','/advanced.html':'advanced.html','/overview.js':'overview.js','/overview.css':'overview.css','/overview.json':'overview.json'}
+      assets={'/':'index.html','/index.html':'index.html','/advanced.html':'advanced.html','/overview.js':'overview.js','/overview.css':'overview.css','/overview.json':'overview.json','/sources.json':'sources.json','/source_profiles.json':'source_profiles.json','/trace_types.json':'trace_types.json'}
       if url.path in assets:
         name=assets[url.path];data=(HERE/name).read_bytes()
         mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json'}[Path(name).suffix]

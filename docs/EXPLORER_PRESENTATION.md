@@ -1,36 +1,62 @@
-# Country overview and training format
+# Source explorer: counts, trace formats and contributions
 
-The landing page shows one country selector, a characteristic policy application, counts by type, and four annotated sections of the training record. The original searchable catalog remains at `advanced.html`.
+The main interface is **Data explorer for persona fine-tuning**. Country buttons show counts immediately, followed by the record-type breakdown, source collections sorted by name, and worked post-training examples. Source sections expand to show task counts, measured field lengths, input/output mappings, available scoring evidence and an actual record reference.
 
-## Fix for the Ukraine-only view
+The interface does not display personal authorship branding. Git history, citation metadata and original-publisher attribution remain intact.
 
-The former comparison-first presentation selected twelve linked country–decision cases for two Ukraine resolutions. That small subset was correctly stored but misleading as a view of the entire collection. Legacy `#view=compare` landing-page links now open the country overview. The secondary comparison page explicitly names its limited coverage. Specific record, type and file links still open the full catalog.
+## Count definitions
 
-The six featured examples are China’s development-cooperation conditions; Germany’s critical-input dependencies and continued cooperation; France’s European defence priorities within NATO; the UK’s 2035 climate target; India’s fisheries-subsidy qualifications; and Brazil’s dated WTO special-treatment position. These are purposively selected illustrations of policy content, not statistically representative samples or model outputs. Other authored applications remain expandable under each country.
+Country badges count distinct `record_id` values across source records, passages, observed actions, statistics and curated annotations. They exclude training-format copies, review/lineage objects, evaluation wrappers and profiles. Each record ID is assigned once per country, preferring its canonical version and using a stable UID tie-breaker. Source counts partition that selected set and sum to the badge.
 
-## Counts
+The broader type breakdown preserves the earlier distinct-ID-per-type counts, including training and evaluation views. It overlaps across types and must not be summed. Translations and derived segments still have their own IDs: neither counting method estimates independent training trajectories. Country attribution follows the existing catalog; shared institutions and historical entities still need care.
 
-The overview counts distinct `record_id` values within each record type and country across indexed releases. This collapses repeated serialized versions and excludes review/lineage objects from the displayed table. Translations, speech segments, source documents and derived training views still overlap. Rows must not be summed into an independent-trace count. Shared institutional records appear under all attributed countries; country totals cannot be summed either. Missing country attribution on a serialized training view is not guessed from a joint policy parent.
+Source-ID aliases are grouped in `explorer/source_profiles.json`. Project-curated claims and applications have their own collection with upstream evidence links. UN decision cases remain a small, explicitly labeled two-event collection. No new data or decision events are claimed by this interface change.
 
-The curated collection has 15 authored policy applications and 20 policy positions. The decision subset has 12 country views of two events, with seven attributed statements and five missing statements. No multi-agent trajectories or preference-pair dataset is prepared. The new applications are review candidates, not admitted training data. This does not erase the separate earlier China/Germany pilot runs.
+## Measured lengths
 
-## Annotated format and actual source records
+The inventory reads the original object through its catalog path/byte offset and verifies its content hash. For paired records it measures stored question/context/history fields joined with newlines and the target text separately. For existing authored `messages`, preceding messages and final assistant content are measured separately. For unpaired documents/passages it measures the text body.
 
-1. **Blue / prompt:** system instruction, dated country/institution context, the question and supplied source evidence. These tokens condition the answer; the current trainer masks their supervised loss.
-2. **Green / completion:** one assistant target answer, with `completion_only_loss=True`. The prompt and completion are a conversational dataset in the [TRL SFT format](https://huggingface.co/docs/trl/sft_trainer#expected-dataset-type-and-format).
-3. **Ochre / review metadata:** provenance, admission state, source hashes/spans and split groups stay alongside the training record. Review fields are not appended as a model message. Evidence IDs and source context can already occur inside a prompt.
-4. **Mode:** `chat_template_kwargs={"enable_thinking": false}` matches the repository’s [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) recipe. Preflight verifies the tokenizer’s prompt prefix and lengths before training.
+The display reports median and nearest-rank p95 in **Unicode characters**, with the number of populated records (`n`). The JSON also contains minimum and maximum. These are not token estimates or full rendered training sequence lengths: country/date instructions and the model chat template can add input. Missing fields are not counted as zero-length examples. Whole-document length does not imply that the document is a target response.
 
-For the four-country extension, the builder asserts equality against an existing on-disk SFT export. China/Germany prototype examples are converted from their actual `messages` and labeled as conversions, not existing admitted exports. The public JSON replaces source passages with an explicit omission marker; it is a redacted format preview, not a train-ready row. Authored claims and targets remain visible, with original publisher links. The private Space shows the full original prompt and completion. No source record or training file is changed by the presentation builder.
+## Record types and possible training uses
 
-[RAFT](https://arxiv.org/abs/2403.10131) motivates supplying evidence during domain adaptation; this recipe is not a replication of its complete procedure. [PEFT LoRA](https://huggingface.co/docs/peft/conceptual_guides/lora) supplies the small-adapter implementation. [CheckList](https://aclanthology.org/2020.acl-main.442/) motivates behavioral tests: preserve supported differences and agreement, conditions, dates and attribution; do not count stylistic differences as persona success. DPO, continued pretraining and RL remain conditional future choices rather than implied available training datasets.
+`explorer/trace_types.json` documents, for every actual source task:
 
-## Update without republishing source chunks
+- Which fields would be supplied as prompt/context at inference.
+- Which answer, action, label or continuation would be generated.
+- What supervision, scoring evidence or verifier is available or missing.
+- Whether the mapping is an existing pair, a proposed conversion, or an incomplete task.
+
+Authentic Q&A can support supervised answer adaptation. Vote and UPR-response labels can support classification and, after validating context and labels, potential offline verifiable tasks. Speech reconstruction needs correct speaker attribution and constructed prompting context. Monitoring-body reports must not be relabeled as the government’s own voice. Documents/statistics are evidence, not automatically complete tasks.
+
+No interactive environments, multi-agent trajectories, implemented training reward verifiers or preference pairs are supplied in this snapshot. An exact-match vote score would not verify a rationale or recover private motives. The interface names these gaps directly instead of presenting an RLVR or RL environment as already built.
+
+Trace templates use explicit placeholders and link an actual record. They are not exported training rows. Public sample pointers include metadata/field names, not original source bodies. The full record remains available via the hosted catalog and publisher link.
+
+The worked policy example uses existing evidence and a **clearly labeled question rewrite** for readability; original candidates are unchanged and remain unadmitted. China’s question now names the 2021 development-cooperation white paper and asks directly whether its stated policy permits political-system conditions on aid. It does not ask the reader to infer an unspecified hypothetical situation. The stored original candidate and redacted/full format remain inspectable.
+
+## Research and library basis
+
+[TRL conversational SFT](https://huggingface.co/docs/trl/sft_trainer#expected-dataset-type-and-format) supplies the prompt/completion representation. The existing trainer uses completion-only loss and the [Qwen3](https://huggingface.co/Qwen/Qwen3-8B) non-thinking chat template, with prompt-prefix/length verification. [PEFT LoRA](https://huggingface.co/docs/peft/conceptual_guides/lora) supplies the adapter mechanism.
+
+[RAFT](https://arxiv.org/abs/2403.10131) motivates evidence-conditioned adaptation; the examples do not reproduce its full method. [CheckList](https://aclanthology.org/2020.acl-main.442/) motivates tests of supported policy differences, agreement, conditions and attribution. No paper makes these source records automatically valid environments; task construction and evaluation remain empirical work.
+
+## Living repository workflow
+
+The public overview runs from committed static files. Contributors can edit source descriptions, trace recipes and the interface without Trillium access; see [CONTRIBUTING.md](../CONTRIBUTING.md). Source proposals and corrections have GitHub issue templates.
+
+```bash
+python3 -m http.server 8000 --directory explorer
+python3 scripts/validate_source_inventory.py
+node tests/explorer_overview_ui.cjs
+```
+
+Maintainers with the frozen data can regenerate the inventory and stage both existing Spaces:
 
 ```bash
 .venv/bin/python scripts/build_explorer_overview.py
 .venv/bin/python -m pytest -q
-node tests/explorer_overview_ui.cjs
+.venv/bin/python scripts/publish_explorer_ui.py --publish
 ```
 
-This regenerates `explorer/overview.json`, the public/private static UI staging folders, and the GitHub country pages from the catalog plus the frozen candidate releases. Public output is explicitly projected; the full private format is never written into tracked overview files. Full static staging also invokes this builder. UI publication updates only `index.html`, `advanced.html`, `overview.js`, `overview.css`, and `overview.json`, preserving the existing source indexes, record buckets and archive.
+Publishing uses the existing owner login and preserves public/private visibility. It updates only UI, metadata and documentation assets; the original record buckets and archive are unchanged. Cluster synchronization is not required to work on this public explorer.

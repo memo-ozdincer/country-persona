@@ -1,10 +1,10 @@
 # Explore the country-persona data
 
-**Presentation update:** Start with the [country overview](https://memo-ozdincer-country-persona-explorer.static.hf.space/index.html). It shows characteristic policy applications, distinct record-ID counts by type, and colour-coded training fields. See [format and count definitions](EXPLORER_PRESENTATION.md). The filter-heavy catalog remains at `advanced.html`; the two-event Ukraine comparison is explicitly a limited subset. The object totals below describe the underlying catalog, not independent training traces.
+**Current interface:** The [source explorer](https://memo-ozdincer-country-persona-explorer.static.hf.space/index.html) shows country counts, a type breakdown, expandable data sources, measured character lengths and possible trace/environment mappings. See [count and format definitions](EXPLORER_PRESENTATION.md) and the [contribution guide](../CONTRIBUTING.md). The larger filterable catalog remains at `advanced.html`.
 
 Project owner and publisher: **Memo Ozdincer** (`memo-ozdincer`).
 
-- [Public interactive explorer](https://huggingface.co/spaces/memo-ozdincer/country-persona-explorer): a country overview with characteristic examples, counts by type and annotated training formats. The full catalog retains search, filters and file inventory.
+- [Public interactive explorer](https://huggingface.co/spaces/memo-ozdincer/country-persona-explorer): a source-oriented explorer with country counts, trace field mappings and measured lengths. The full catalog retains search, filters and file inventory.
 - [Full research explorer](https://huggingface.co/spaces/memo-ozdincer/country-persona-research): sign in as the owner to read original records and download the complete research files.
 - [Original research archive](https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files): owner-only download of all original files, with a per-file integrity inventory. It is stored separately to keep the static Space below the service’s 1 GB limit.
 - [Public Hugging Face tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data): separate subsets for each record type, including decisions, policies, statistics, evidence, training/evaluation views and file metadata.
@@ -12,7 +12,7 @@ Project owner and publisher: **Memo Ozdincer** (`memo-ozdincer`).
 
 ## How to explore
 
-Start with the **country overview**. Choose a country, read its characteristic policy application and inspect the prompt, evidence, target answer and review metadata. The examples are authored review candidates. Expand the JSON preview to see the actual fields; public source passages are explicitly omitted. Source links retain publisher attribution.
+Choose a **country**, then expand a **data source**. The source table shows actual task counts and field lengths. Each task explains its available inputs, generated output, possible supervision or scoring and missing pieces. Trace templates are explicitly illustrative and link real records. Worked policy examples appear after the source inventory.
 
 The secondary **Full catalog → Compare decisions** page covers only two Ukraine resolutions. Each event has six country views, final votes, located statements and explicit missing context. It is not the coverage of the whole corpus.
 

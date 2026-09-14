@@ -1,79 +1,80 @@
 'use strict';
-const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const $ = selector => document.querySelector(selector);
-const pretty = value => esc(JSON.stringify(value, null, 2));
-const number = value => Number(value || 0).toLocaleString();
-const url = value => { try { const u = new URL(value); return /^https?:$/.test(u.protocol) ? esc(u.href) : ''; } catch { return ''; } };
-const languageNames = {en:'English',zh:'Chinese',de:'German',fr:'French',pt:'Portuguese',es:'Spanish',ru:'Russian',ar:'Arabic',ja:'Japanese',pl:'Polish',uk:'Ukrainian'};
-let overview;
-function sourceLinks(example) {
-  return example.evidence.map(e => `<a href="${url(e.source_url)}" target="_blank" rel="noopener">${esc(e.id)} ↗</a>`).join(' · ');
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=s=>document.querySelector(s),number=n=>Number(n||0).toLocaleString(),pretty=x=>esc(JSON.stringify(x,null,2));
+const url=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)?esc(u.href):''}catch{return ''}};
+const languageNames={en:'English',zh:'Chinese',de:'German',fr:'French',pt:'Portuguese',es:'Spanish',ru:'Russian',ar:'Arabic',ja:'Japanese',pl:'Polish',uk:'Ukrainian'};
+let overview,inventory,profiles,recipes;
+const lang=values=>values.map(l=>esc(languageNames[l]||l)).join(', ')||'Not recorded';
+const list=values=>`<ul>${values.map(v=>`<li>${esc(v)}</li>`).join('')}</ul>`;
+function lengths(value){return value?`${number(value.median)} / ${number(value.p95)} <small>(n=${number(value.n)})</small>`:'Not present / not measured'}
+function template(task,country){
+  const r=recipes[task.id];
+  if(['domain_text','press_conference'].includes(task.id))return {format_status:'Illustrative text-training representation; not an exported training row',text:'<cleaned and correctly attributed record.text>',metadata:{country:country.code,event_group:'<group_id>',task:task.id}};
+  if(['policy_evidence','policy_evidence_document','policy_positions','human_rights_evidence','unverified_speech_segment'].includes(task.id))return {format_status:'Evidence record; no complete supervised target supplied',context_fields:r.input,missing_target:r.target,next_step:r.possible_use};
+  return {format_status:'Illustrative field mapping, not a ready training row',prompt:[{role:'system',content:`Represent the specified institutional role for ${country.name} at the record date. Preserve attribution and uncertainty.`},{role:'user',content:r.input.map(v=>`<${v}>`).join('\n')}],completion:[{role:'assistant',content:r.target.map(v=>`<${v}>`).join('\n')}],metadata:{record_id:task.sample.id,source_task:task.id,review_status:task.sample.review_status}};
 }
-function render(code) {
-  const country = overview.countries.find(c => c.code === code) || overview.countries[0];
-  const example = country.examples[0];
-  document.title = `${country.name} · Country Persona data`;
-  $('#countries').innerHTML = overview.countries.map(c => `<button type="button" data-country="${esc(c.code)}" aria-pressed="${c.code === country.code}">${esc(c.name)}</button>`).join('');
-  $('#countries').querySelectorAll('button').forEach(button => button.onclick = () => { location.hash = `country=${button.dataset.country}`; });
-  const countRows = overview.kinds.map(k => `<tr><td>${esc(k.label)}</td><td>${number(country.counts[k.id])}</td></tr>`).join('');
-  const evidence = example.evidence.map(e => `<p class="source-claim">${esc(e.claim)}</p>`).join('');
-  const more = country.examples.slice(1).map(e => `<article><h3>${esc(e.question)}</h3><p class="muted">${esc(e.date)} · Authored target</p><p>${esc(e.answer)}</p><p class="evidence-links">${sourceLinks(e)}</p></article>`).join('');
-  const privateNote = overview.private ? 'Full prompt and completion from the research record. See the format origin below.' : 'Public preview: source passages are omitted in the JSON; the claims below are authored paraphrases. Target answers are shown in full. The owner view contains the full source text.';
-  $('#country-panel').innerHTML = `
-    <div class="country-heading"><h2>${esc(country.name)}</h2><span class="status">Shown examples: review pending · not admitted</span></div>
-    <div class="country-grid">
-      <aside class="counts"><table><caption>Available records by type</caption><tbody>${countRows}</tbody></table>
-        <p>Counts use distinct record IDs within each type. Rows overlap; they are <strong>not a total of independent training traces</strong>. No multi-agent trajectories have been collected.</p>
-        <p><strong>Source languages:</strong> ${country.languages.map(l => esc(languageNames[l] || l)).join(', ')}. These examples use English answers; source coverage is uneven.</p>
-        <details><summary>What is counted, and how it is used</summary><p>${esc(overview.count_method)}</p>${overview.kinds.map(k => `<p><strong>${esc(k.label)}.</strong> ${esc(k.use)}</p>`).join('')}</details>
-      </aside>
-      <article class="example"><span class="eyebrow">Characteristic policy application</span><p class="date">Policy date ${esc(example.date)} · Source language: ${esc(languageNames[example.language] || example.language)}</p>
-        <h3>${esc(example.question)}</h3><div class="label">Authored target answer · not a model output</div><p class="answer">${esc(example.answer)}</p>
-        <p class="evidence-links">${sourceLinks(example)}</p>
-        <div class="inspect"><strong>What to inspect in a model’s answer</strong><ul>${example.rubric.map(r => `<li>${esc(r)}</li>`).join('')}</ul></div>
-      </article>
-    </div>
-    ${more ? `<details><summary>${country.examples.length - 1} more authored example${country.examples.length > 2 ? 's' : ''} for ${esc(country.name)}</summary>${more}</details>` : ''}
-    <section class="format" aria-labelledby="format-title"><div class="format-header"><div><span class="eyebrow">The same example, as training data</span><h2 id="format-title">What goes into the recipe</h2></div><a href="#" id="download">Download ${overview.private ? 'record format' : 'redacted format preview'} ↓</a></div>
-      <p class="format-note">${esc(privateNote)}</p>
-      <div class="format-grid">
-        <div class="part"><h3>01 · prompt → system + user context</h3><small>Model input · no supervised loss on these tokens</small><p class="system">${esc(example.system)}</p><pre>${esc(example.context)}</pre><p><strong>Question:</strong> ${esc(example.question)}</p></div>
-        <div class="part"><h3>02 · prompt → user evidence</h3><small>Context supplied to the model · no supervised loss here</small>${evidence}<p class="note">Authored summaries shown here. The stored user message supplies the cited source passages. Evidence is context, not a separate target.</p></div>
-        <div class="part target"><h3>03 · completion → assistant answer</h3><small>Supervised target · completion_only_loss=True</small><p>${esc(example.answer)}</p><p class="note">One assistant completion. The trainer applies Qwen3’s chat template with enable_thinking=False; it also verifies the prompt boundary and sequence length.</p></div>
-        <div class="part metadata"><h3>04 · review metadata → selection & evaluation</h3><small>Kept beside the training row · not appended as a model message</small><pre>${pretty(example.metadata)}</pre><p class="note">Review status gates selection. Source hashes and spans support verification; event groups keep related records together when splitting. The inspection rubric scores answers separately.</p></div>
-      </div>
-      <details><summary>Inspect the actual JSON fields and source spans</summary><p class="note">${esc(example.format_origin)}. ${overview.private ? '' : 'This downloadable public version is redacted and is not a train-ready row.'}</p><pre>${pretty(example.format)}</pre><h3>Source provenance (sidecar)</h3><pre>${pretty(example.evidence)}</pre></details>
-    </section>`;
-  $('#download').onclick = e => {
-    e.preventDefault();
-    const blob = new Blob([JSON.stringify(example.format, null, 2) + '\n'], {type:'application/json'});
-    const href = URL.createObjectURL(blob), a = document.createElement('a');
-    a.href = href; a.download = `${example.id}${overview.private ? '' : '-REDACTED-PREVIEW'}.json`;
-    a.click(); setTimeout(() => URL.revokeObjectURL(href), 1000);
-  };
+function traceHTML(task,country){
+ const recipe=recipes[task.id];
+ if(!recipe)throw Error(`Missing trace definition: ${task.id}`);
+ const sample=task.sample;
+ return `<article class="trace"><header><h3>${esc(recipe.label)}</h3><span class="tag">${number(task.count)} records</span></header><p>${esc(recipe.availability)}</p>
+ <div class="fields"><div class="field"><strong>Prompt / context — supplied at inference</strong>${list(recipe.input)}</div><div class="field output"><strong>Output / target — generated at inference</strong>${list(recipe.target)}</div><div class="field review"><strong>Scoring / environment</strong><p>${esc(recipe.scoring)}</p></div></div>
+ <p>${esc(recipe.inference)}</p><p><strong>Possible training use:</strong> ${esc(recipe.possible_use)}</p>
+ <details><summary>Trace template and an actual source-record reference</summary><p class="note">Templates describe how the available fields could be used. Placeholders are not completed training data; source text is not replaced by an invented answer.</p><pre>${pretty(template(task,country))}</pre><p><strong>Actual record:</strong> ${esc(sample.title||sample.id)} · ${esc(sample.date||'date not recorded')}</p><p><a href="advanced.html#view=explore&id=${encodeURIComponent(sample.uid)}">Inspect this record</a>${url(sample.source_url)?` · <a href="${url(sample.source_url)}" target="_blank" rel="noopener">Publisher / dataset</a>`:''}</p><pre>${pretty(sample)}</pre></details></article>`;
 }
-function route() {
-  const hash = new URLSearchParams(location.hash.slice(1));
-  // Old comparison links must never select the Ukraine subset on the landing page.
-  // Preserve specific record/filter links in the secondary catalog.
-  if (hash.has('id') || hash.has('kind') || hash.get('view') === 'files') {
-    location.replace(`advanced.html${location.hash}`); return;
-  }
-  const country = overview.countries.find(c => c.code === hash.get('country')) || overview.countries[0];
-  history.replaceState(null, '', `#country=${country.code}`);
-  render(country.code);
+function sourceHTML(source,country){
+ const profile=profiles[source.id];
+ return `<details class="source" id="source-${esc(source.id)}"><summary><div><span class="name">${esc(profile.name)}</span><span class="sub">${source.tasks.map(t=>`${number(t.count)} ${esc(recipes[t.id]?.label||t.id).toLowerCase()}`).join(' · ')}</span></div><span class="count">${number(source.count)}</span></summary>
+ <div class="source-body"><p>${esc(profile.description)}</p><div class="source-meta"><span><strong>Languages:</strong> ${lang(source.languages)}</span><span><strong>Recorded dates:</strong> ${esc(source.date_range.join(' → ')||'Not recorded')}</span><span><strong>Source IDs:</strong> ${esc(source.source_ids.join(', '))}</span></div>
+ ${source.missing_values?`<p class="note">${number(source.missing_values)} missing-value cells are included in this source count.</p>`:''}
+ <div class="scroll"><table><thead><tr><th>Stored record / trace type</th><th>Count</th><th>Input chars<br>median / p95</th><th>Target chars<br>median / p95</th><th>Body chars<br>median / p95</th></tr></thead><tbody>${source.tasks.map(t=>`<tr><td>${esc(recipes[t.id]?.label||t.id)}</td><td class="num">${number(t.count)}</td><td>${lengths(t.lengths.input)}</td><td>${lengths(t.lengths.target)}</td><td>${lengths(t.lengths.body)}</td></tr>`).join('')}</tbody></table></div>
+ <p class="note">Character lengths of stored fields, before adding role/date instructions and the chat template. n counts populated fields; document bodies are not automatically training targets. Token lengths are not measured in this inventory.</p>
+ ${source.tasks.map(t=>traceHTML(t,country)).join('')}</div></details>`;
 }
-async function start() {
-  try {
-    const response = await fetch('overview.json');
-    if (!response.ok) throw new Error(`Overview could not be loaded (${response.status}).`);
-    overview = await response.json();
-    $('#collection').innerHTML = `<strong>${overview.totals.policy_applications}</strong> authored policy applications · <strong>${overview.totals.policy_positions}</strong> curated policy positions · <strong>${overview.totals.decision_events}</strong> linked decision events <span class="muted">(${overview.totals.decision_cases} country views)</span> · broader source counts below`;
-    if (overview.private) { $('#research-link').textContent = 'Download original research archive ↗'; $('#research-link').href = 'https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files/resolve/main/research.tar.gz?download=true'; }
-    window.addEventListener('hashchange', route); route();
-  } catch (error) {
-    $('#collection').textContent = 'Unable to load the overview.';
-    $('#country-panel').innerHTML = `<p class="error">${esc(error.message)} <a href="https://github.com/memo-ozdincer/country-persona-data">Read the country pages on GitHub.</a></p>`;
-  }
+const simpleQuestions={
+ CHN:"Under China’s 2021 development-cooperation white paper, should aid require the recipient country to change its political system?",
+ DEU:"Under Germany’s 2023 China Strategy, should Germany depend on one Chinese supplier for all critical energy-transition inputs?",
+ FRA:"Does France’s 2025 strategic review support stronger European defence within NATO?",
+ GBR:"What is the UK’s 2035 emissions target, including its baseline and exclusions?",
+ IND:"What protections for small-scale fishers does India’s 2020 WTO report seek when discussing fisheries-subsidy rules?",
+ BRA:"What did Brazil’s 2022 WTO report say about its own use of special treatment and flexibility for other developing members?"
+};
+function workedExample(country){
+ const e=country.examples[0];
+ return `<article class="method"><h3>Evidence-conditioned answer · worked candidate</h3><p class="note">Uses existing project-curated policy evidence. The question below is a clearer illustrative rewrite; the stored original example is unchanged and remains unadmitted.</p>
+ <div class="fields"><div class="field"><strong>Prompt / context</strong><p>${esc(country.name)} · policy date ${esc(e.date)}</p>${e.evidence.map(v=>`<p>${esc(v.claim)}</p>`).join('')}<p class="example-question">${esc(simpleQuestions[country.code])}</p></div><div class="field output"><strong>Candidate answer / SFT target</strong><p>${esc(e.answer)}</p></div><div class="field review"><strong>Inspect / score</strong>${list(e.rubric)}<p>Human/source review required. No RLVR verifier is supplied.</p></div></div>
+ <p class="note">Blue fields are input context; green is the candidate output; review criteria stay outside the prompt. The existing SFT implementation uses completion-only loss and Qwen3 with thinking disabled.</p>
+ <p>${e.evidence.map(v=>`<a href="${url(v.source_url)}" target="_blank" rel="noopener">${esc(v.id)} ↗</a>`).join(' · ')}</p>
+ <details><summary>Stored original candidate and provenance</summary><p class="note">${esc(e.format_origin)}. ${overview.private?'Full stored format.':'Source passages are explicitly omitted from this public format preview.'}</p><pre>${pretty(e.format)}</pre><pre>${pretty(e.metadata)}</pre></details></article>`;
 }
+function render(code){
+ const country=overview.countries.find(c=>c.code===code)||overview.countries[0],data=inventory.countries[country.code];
+ document.title=`${country.name} · Data explorer for persona fine-tuning`;
+ $('#countries').innerHTML=overview.countries.map(c=>`<button type="button" data-country="${esc(c.code)}" aria-pressed="${c.code===country.code}" aria-label="${esc(c.name)}, ${number(inventory.countries[c.code].count)} evidence record IDs">${esc(c.name)} <span class="count">${number(inventory.countries[c.code].count)}</span></button>`).join('');
+ $('#countries').querySelectorAll('button').forEach(b=>b.onclick=()=>{location.hash=`country=${b.dataset.country}`});
+ const kinds=[...overview.kinds,{id:'country_statistics',label:'Country statistics'},{id:'evaluation',label:'Evaluation records / views'}];
+ $('#country-panel').innerHTML=`<div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.count)} evidence records</span></div>
+ <div class="breakdown">${kinds.map(k=>`<div class="metric"><span>${esc(k.label)}</span><b>${number(country.counts[k.id])}</b></div>`).join('')}</div>
+ <p class="note">The breakdown includes overlapping representations; do not sum it. The country badge excludes training-format copies, review/lineage and evaluation wrappers. ${number(data.sources.length)} source collections are listed below.</p>
+ <div class="status-line"><strong>Environment inventory:</strong> ${inventory.environments.interactive} interactive environments · ${inventory.environments.multi_agent_trajectories} multi-agent trajectories · ${inventory.environments.implemented_verifiers} implemented training reward verifiers · ${inventory.environments.preference_pairs} preference pairs. Vote and response labels may support future verifiable tasks; those environments are not built.</div>
+ <h2>Data sources</h2><p class="note">Sorted by source name. Expand a source for trace types, measured lengths, field mappings, actual record references and training options.</p>
+ ${data.sources.map(s=>sourceHTML(s,country)).join('')}
+ <section class="methods"><h2>Post-training examples using the available data</h2>
+ <div class="method"><h3>Choose the task from the source fields</h3><div class="scroll"><table><thead><tr><th>Available data</th><th>Possible trace</th><th>What is still needed</th></tr></thead><tbody>${data.sources.map(s=>`<tr><td>${esc(profiles[s.id].name)}<br><small>${number(s.count)} record IDs</small></td><td>${s.tasks.map(t=>esc(recipes[t.id].label)).join('<br>')}</td><td>${s.tasks.map(t=>esc(recipes[t.id].availability)).join('<br>')}</td></tr>`).join('')}</tbody></table></div></div>
+ ${workedExample(country)}
+ <p class="refs">Implementation references: <a href="https://huggingface.co/docs/trl/sft_trainer#expected-dataset-type-and-format">TRL conversational SFT formats</a> · <a href="https://huggingface.co/docs/peft/conceptual_guides/lora">PEFT LoRA</a> · <a href="https://huggingface.co/Qwen/Qwen3-8B">Qwen3 mode</a>. Research motivation: <a href="https://arxiv.org/abs/2403.10131">RAFT</a> for evidence-conditioned adaptation; <a href="https://aclanthology.org/2020.acl-main.442/">CheckList</a> for behavioral evaluation. These are options to test, not claims of completed RL/SFT environments.</p></section>`;
+}
+function route(){
+ const hash=new URLSearchParams(location.hash.slice(1));
+ if(hash.has('id')||hash.has('kind')||hash.get('view')==='files'){location.replace(`advanced.html${location.hash}`);return}
+ const country=overview.countries.find(c=>c.code===hash.get('country'))||overview.countries[0];
+ history.replaceState(null,'',`#country=${country.code}`);render(country.code);
+}
+async function start(){try{
+ const load=async path=>{const r=await fetch(path);if(!r.ok)throw Error(`Unable to load ${path} (${r.status}).`);return r.json()};
+ [overview,inventory,profiles,recipes]=await Promise.all(['overview.json','sources.json','source_profiles.json','trace_types.json'].map(load));
+ $('#collection').textContent=`Country numbers = evidence record IDs, not independent traces. Snapshot ${inventory.snapshot}. Translations, document segments and annotations can overlap.`;
+ if(overview.private){$('#research-link').textContent='Original research archive';$('#research-link').href='https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files/resolve/main/research.tar.gz?download=true'}
+ window.addEventListener('hashchange',route);route();
+ }catch(error){$('#collection').textContent='Inventory unavailable.';$('#country-panel').innerHTML=`<p class="error">${esc(error.message)} <a href="https://github.com/memo-ozdincer/country-persona-data">Browse the repository.</a></p>`}}
 start();

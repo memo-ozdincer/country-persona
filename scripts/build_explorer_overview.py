@@ -52,7 +52,7 @@ def build(db_path=None):
     examples = read('data/prepared/country-knowledge-20260914/examples.jsonl') + read('data/prepared/country-extension-20260914/policy-applications.candidates.jsonl')
     # Keep the exact on-disk SFT rows for extension examples; assert the displayed conversion matches.
     exports = read('data/prepared/country-extension-20260914/sft-candidates/train.jsonl') + read('data/prepared/country-extension-20260914/sft-candidates/quarantine.jsonl')
-    result = {'version': 'country-overview-v2', 'owner': 'Memo Ozdincer', 'snapshot': '2026-09-14',
+    result = {'version': 'country-sources-v3', 'owner': 'Memo Ozdincer', 'snapshot': '2026-09-14',
               'count_method': 'Distinct record IDs within each type and country, across indexed releases. Review/lineage objects are excluded. Translations, segments and derived views can overlap: do not add the rows or treat them as independent trajectories. Shared institutional records appear under each relevant country.',
               'totals': {'policy_applications': len(examples), 'policy_positions': len(policies), 'decision_events': 2, 'decision_cases': 12},
               'kinds': [{'id': k, 'label': label, 'use': use} for k, label, use in KINDS], 'countries': []}
@@ -106,7 +106,7 @@ def stage(data):
             for c, original in zip(view['countries'], data['countries']):
                 for e, source in zip(c['examples'], original['examples']): e['format'] = source['_private_format']
         (dst / 'overview.json').write_text(json.dumps(view, ensure_ascii=False, indent=2) + '\n')
-        for name in ('index.html', 'overview.js', 'overview.css', 'data-client.js'):
+        for name in ('index.html', 'overview.js', 'overview.css', 'data-client.js', 'sources.json', 'source_profiles.json', 'trace_types.json'):
             shutil.copyfile(ROOT / 'explorer' / name, dst / name)
         # Retain the complete catalog as a secondary screen, with its static adapter.
         html = (ROOT / 'explorer/advanced.html').read_text()
@@ -118,49 +118,66 @@ def stage(data):
         html = html.replace('<h2>The same proposal, different decisions</h2>', '<h2>Limited decision subset: two Ukraine resolutions</h2>')
         html = html.replace('Retrospective cases with actual draft text, final votes and attributed statements.', 'Only 12 country views of two events have been joined so far. This is not the topic coverage of the wider corpus. Retrospective cases with actual draft text, final votes and attributed statements.')
         (dst / 'advanced.html').write_text(html)
+        (dst / 'README.md').write_text('---\ntitle: Persona fine-tuning data explorer\nemoji: 🌐\ncolorFrom: blue\ncolorTo: gray\nsdk: static\napp_file: index.html\npinned: false\n---\n# Data explorer for persona fine-tuning\n\nCountry and source inventories, trace formats and training possibilities.\n\n[Repository](https://github.com/memo-ozdincer/country-persona-data) · [Contribute](https://github.com/memo-ozdincer/country-persona-data/blob/main/CONTRIBUTING.md)\n')
     # Keep a public projection beside the authored assets for local use and GitHub.
     (ROOT / 'explorer/overview.json').write_text(json.dumps(public_copy(data), ensure_ascii=False, indent=2) + '\n')
 
 def github(data):
     dest = CACHE / 'github-data-catalog'
     if not (dest / '.git').exists(): return
+    inventory = json.loads((ROOT / 'explorer/sources.json').read_text())
+    profiles = json.loads((ROOT / 'explorer/source_profiles.json').read_text())
+    recipes = json.loads((ROOT / 'explorer/trace_types.json').read_text())
     base = 'https://memo-ozdincer-country-persona-explorer.static.hf.space/index.html'
-    rows = ['# Country Persona Data', '', '**Created and maintained by Memo Ozdincer.**', '',
-            'Dated government positions, concrete policy questions and the evidence behind each answer.', '',
-            f'**[Open the country overview]({base})** · [Download public tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data) · [Full research view (owner login)](https://huggingface.co/spaces/memo-ozdincer/country-persona-research)', '',
-            '## Characteristic examples', '',
-            '| Country | Featured policy question | Authored application records |', '|---|---|---:|']
+    rows = ['# Data explorer for persona fine-tuning', '',
+            'A living inventory of country-attributed sources, available trace types and possible training uses.', '',
+            f'**[Open the explorer]({base})** · [Contribute](CONTRIBUTING.md) · [Download catalog tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data)', '',
+            '| Country | Evidence record IDs | Source collections |', '|---|---:|---:|']
     for c in data['countries']:
-        e = c['examples'][0]
-        rows.append(f"| [{c['name']}](countries/{c['code']}.md) | {e['question']} | {c['counts']['policy_applications']} |")
-        lines = [f"# {c['name']}: data and training examples", '', f"[Open annotated example]({base}#country={c['code']})", '',
-                 '## Available records by type', '', '| Type | Distinct record IDs |', '|---|---:|']
+        inv = inventory['countries'][c['code']]
+        rows.append(f"| [{c['name']}](countries/{c['code']}.md) | {inv['count']:,} | {len(inv['sources'])} |")
+        lines = [f"# {c['name']} — {inv['count']:,} evidence record IDs", '', f"[Open source explorer]({base}#country={c['code']})", '',
+                 '## Breakdown', '', '| Record type | Distinct IDs |', '|---|---:|']
         lines += [f"| {k['label']} | {c['counts'].get(k['id'], 0):,} |" for k in data['kinds']]
-        lines += ['', data['count_method'], '', 'Source languages: ' + ', '.join(c['languages']) + '.', '',
-                  '## Actual authored applications', '', 'These are dated, source-grounded review candidates, not authentic historical Q&A or model outputs. None of these new applications is admitted to training.']
-        for e in c['examples']:
-            lines += ['', f"### {e['question']}", '', f"Policy date: {e['date']}. Source language: {e['language']}.", '',
-                      '**Authored target:** ' + e['answer'], '', '**Inspect:** ' + '; '.join(e['rubric']) + '.', '']
-            lines += [f"[Official source for {ev['id']}]({ev['source_url']})" for ev in e['evidence']]
-        lines += ['', '## Training representation', '',
-                  '[Inspect the field-by-field training format](../docs/EXPLORER_PRESENTATION.md): blue prompt and evidence provide context, green completion receives supervised loss, and review metadata stays alongside the example. Public JSON previews omit source passages; full originals remain in the owner view.', '']
+        lines += ['', inventory['count_definition'], '', 'Breakdown rows include overlapping representations and must not be summed.', '', '## Data sources', '']
+        for source in inv['sources']:
+            lines += [f"<details><summary>{profiles[source['id']]['name']} — {source['count']:,} records</summary>", '', profiles[source['id']]['description'], '',
+                      'Languages: ' + ', '.join(source['languages']) + '. Recorded dates: ' + ' → '.join(source['date_range']) + '.', '',
+                      '| Trace / record type | Count | Input chars, median / p95 | Target chars, median / p95 | Body chars, median / p95 |', '|---|---:|---|---|---|']
+            for task in source['tasks']:
+                def length(key):
+                    v=task['lengths'][key]
+                    return f"{v['median']:g} / {v['p95']} (n={v['n']})" if v else 'Not present / measured'
+                lines.append(f"| {recipes[task['id']]['label']} | {task['count']:,} | {length('input')} | {length('target')} | {length('body')} |")
+            lines += ['', inventory['length_definition'], '']
+            for task in source['tasks']:
+                recipe=recipes[task['id']]
+                lines += [f"### {recipe['label']}", '', recipe['availability'], '', '**Prompt/context:** ' + '; '.join(recipe['input']), '',
+                          '**Output/target:** ' + '; '.join(recipe['target']), '', '**Use:** ' + recipe['possible_use'], '',
+                          '**Scoring/environment:** ' + recipe['scoring'], '',
+                          f"[Actual record reference]({base.replace('index.html','advanced.html')}#view=explore&id={task['sample']['uid']})", '']
+            lines += ['</details>', '']
+        lines += ['## Post-training examples', '', f"[Inspect task templates and a worked evidence-conditioned candidate]({base}#country={c['code']})", '',
+                  'No interactive environments, multi-agent trajectories, training reward verifiers or preference pairs are prepared. Some vote/response labels can support future verifiable tasks after validation. New curated applications remain review candidates.', '']
         (dest / 'countries' / f"{c['code']}.md").write_text('\n'.join(lines))
-    rows += ['', 'There are **15 distinct authored applications** and **20 policy positions** across the six countries. A joint EU application appears under both France and Germany; do not sum country rows. More authored examples appear on each country page.', '',
-             '## What is ready, and what is missing', '',
-             'Source records, evidence passages, observed actions and prepared training views have different units and overlap. The country pages show distinct record IDs by type, excluding review/lineage objects from the displayed counts. They are not counts of independent training trajectories.', '',
-             '**The Ukraine-only comparison was a presentation problem:** only 12 fully joined country–decision cases exist, covering two Ukraine resolutions. That limited subset no longer defines the landing page. It remains available in the full catalog with explicit coverage labeling. No additional decision events are claimed.', '',
-             'The new authored examples are not admitted to training. No preference pairs or multi-agent trajectories are prepared. The next evidence-conditioned LoRA experiment should follow review, a retrieval baseline, and evaluation on separate event families. The earlier China/Germany pilot is a separate release.', '',
-             '## Inspect the recipe and data', '',
-             '- [Annotated training fields and count definitions](docs/EXPLORER_PRESENTATION.md)',
-             '- [Public overview JSON, including redacted format previews](explorer/overview.json)',
-             f'- [Full searchable catalog]({base.replace("index.html", "advanced.html")})',
-             '- [Exploration guide](docs/DATA_EXPLORER.md)',
-             '- [Four-country authored examples](docs/COUNTRY_EXTENSION_EXAMPLES.md)',
+    rows += ['', inventory['count_definition'], '',
+             '## Trace and environment inventory', '',
+             'Sources include authentic Q&A, full transcripts, statements, policy evidence, directed UPR recommendations/responses, vote labels and statistics. Expand a source to see its actual field structure and character-length distribution.', '',
+             '**Available:** source records, some question–answer pairs, observed labels, source-grounded authored candidates and sample linked decision cases. **Not built:** interactive environments, multi-agent trajectories, training reward verifiers and preference pairs. A proposed SFT or RLVR mapping is not a ready environment.', '',
+             '## Contribute without cluster access', '',
+             'The public overview runs from committed static files. Source descriptions and trace mappings are editable JSON; generated counts retain their definitions and provenance. See [CONTRIBUTING.md](CONTRIBUTING.md) for local preview, source proposals, corrections and validation.', '',
+             '- [Source descriptions](explorer/source_profiles.json)',
+             '- [Trace recipes and field mappings](explorer/trace_types.json)',
+             '- [Measured inventory](explorer/sources.json)',
+             '- [Explorer methodology](docs/EXPLORER_PRESENTATION.md)',
              '- [Attribution](ATTRIBUTION.md) · [Source registry](data/source_registry.json) · [Source-use status](data/rights_registry.json)', '',
-             'Public downloads contain metadata, factual values and project-authored summaries. Original source bodies remain in the account-only research view where reuse is unresolved or reserved. Publisher links remain visible. Static hosting uses no GPU compute.', '']
+             'Original publishers retain attribution. Public previews omit restricted source bodies; source links and record references remain available. The two-event Ukraine decision subset is one small source collection, not the whole corpus.', '']
     (dest / 'README.md').write_text('\n'.join(rows))
-    for rel in ['explorer/index.html', 'explorer/advanced.html', 'explorer/overview.js', 'explorer/overview.css', 'explorer/overview.json',
+    for rel in ['CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/data-source.yml', '.github/ISSUE_TEMPLATE/data-correction.yml', '.github/PULL_REQUEST_TEMPLATE.md',
+                'explorer/index.html', 'explorer/advanced.html', 'explorer/overview.js', 'explorer/overview.css', 'explorer/overview.json',
+                'explorer/sources.json', 'explorer/source_profiles.json', 'explorer/trace_types.json',
                 'explorer/app.py', 'explorer/README.md', 'tests/explorer_overview_ui.cjs', 'scripts/build_explorer_overview.py', 'scripts/stage_static_explorer.py',
+                'scripts/build_source_inventory.py', 'scripts/validate_source_inventory.py', 'scripts/publish_explorer_ui.py',
                 'scripts/stage_data_publication.py', 'docs/EXPLORER_PRESENTATION.md', 'docs/DATA_EXPLORER.md']:
         target = dest / rel
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -170,6 +187,8 @@ def github(data):
 
 
 def main():
+    from build_source_inventory import build_inventory
+    build_inventory()
     data = build()
     stage(data)
     github(data)
