@@ -6,6 +6,8 @@ Updated 13 September 2026. **The first Qwen3 pilot completed in 0.155 four-H100 
 
 The user-selected model is pinned **Qwen/Qwen3-8B + BF16 LoRA, with `enable_thinking=False` throughout preparation, training and evaluation**. The publisher reports 8.2B parameters, a dense multilingual architecture and a supported hard non-thinking switch. [Model card](https://huggingface.co/Qwen/Qwen3-8B). The Trillium directory is named `Qwen3-8B-Instruct`, but its bytes match the official `Qwen/Qwen3-8B` revision. The previous Qwen2.5 job was cancelled before allocation and consumed zero node-hours. Every substantive decision and its evidence boundary is recorded in [DECISION_REGISTER.md](DECISION_REGISTER.md).
 
+The [multilingual data expansion](DATA_EXPANSION_20260913.md) now supplies additional official evidence and a balanced 100-record content-review packet. It is not admitted to the existing training export. Review source attribution and build matched grounded evaluations before increasing training volume.
+
 ## What is prepared
 
 The new release is `data/prepared/posttraining-qwen3-v1/`. It selects only authentic Foreign Ministry/Foreign Office responses, keeps each complete earlier dialogue and final answer, applies the pinned tokenizer, and excludes sequences above 8,192 tokens. The original, longer-context and earlier Qwen2.5 releases are retained. Each new row explicitly includes `chat_template_kwargs: {"enable_thinking": false}`. The native empty thinking block belongs to the masked prompt; only the literal final answer and its terminator are supervised. Nothing was translated or replaced by generated answers.

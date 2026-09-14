@@ -248,7 +248,8 @@
         "authentic_qa": 9005
       },
       "parse_errors": []
-    }
+    },
+    "expansion_registry": "data/expansion_source_registry.json"
   },
   {
     "id": "D11",
@@ -449,7 +450,8 @@
           "error": "Missing China mission wrapper"
         }
       ]
-    }
+    },
+    "expansion_registry": "data/expansion_source_registry.json"
   },
   {
     "id": "D12",
@@ -624,18 +626,20 @@
     "reported_size": "No current release count audited",
     "raw_format": "Aligned multilingual text; verify exact release packaging",
     "raw_fields_or_structure": "Document/segment alignment across six official UN languages; not speaker-country labels.",
-    "inspection_level": "Paper documentation",
+    "inspection_level": "Publisher archive and disclaimer inspected; structural parsing verified",
     "recommended_use": "Optional multilingual domain adaptation, not persona supervision",
     "main_caveat": "Chinese-language text is not Chinese national policy. German is not one of these six corpus languages.",
-    "rights_note": "Verify corpus release terms.",
+    "rights_note": "Publisher DISCLAIMER and attribution requirement retained alongside prepared dev/test files",
     "source_url": "https://aclanthology.org/L16-1561/",
     "acquisition": "Official UN corpus site; direct download overview unavailable during this inspection.",
     "code_or_secondary_url": "",
-    "checked_on": "2026-09-09",
+    "checked_on": "2026-09-13",
     "owner": "",
-    "status": "deferred",
-    "acquisition_result": "Optional multilingual domain adaptation; not country-persona evidence.",
-    "local_source_id": null
+    "status": "partially_acquired",
+    "acquisition_result": "Official UNv1.0.testsets.tar.gz acquired; dev/test preserved for evaluation only",
+    "local_source_id": "un_parallel_eval",
+    "acquired_size": "4,000 dev + 4,000 test aligned segments; six languages; no full training corpus acquired",
+    "expansion_registry": "data/expansion_source_registry.json"
   },
   {
     "id": "D19",
@@ -768,5 +772,47 @@
     "rights_note": "Public research download; source-level training/redistribution terms not established in this build.",
     "acquisition_result": "All-votes and all-decisions CSV extracts acquired from publisher links. Historical China/German entities kept separate.",
     "main_caveat": "Full proposal text still needed before vote-prediction training. Original votes, amended votes and non-voting statuses are not interchangeable."
+  },
+  {
+    "id": "D25",
+    "name": "German Federal Foreign Office bilingual newsroom",
+    "priority": "P1",
+    "kind": "Official country policy evidence",
+    "source_url": "https://www.auswaertiges-amt.de/en/newsroom/news",
+    "local_source_id": "germany_aa",
+    "checked_on": "2026-09-13",
+    "status": "acquired_candidates",
+    "recommended_use": "Dated policy evidence; direct speech and coalition attribution require review",
+    "rights_note": "See expansion source registry; no blanket reuse grant inferred",
+    "inspection_level": "Downloaded, hash-verified, parsed; expert review pending",
+    "expansion_registry": "data/expansion_source_registry.json"
+  },
+  {
+    "id": "D26",
+    "name": "Official strategies, white paper, and WTO government report",
+    "priority": "P1",
+    "kind": "Official country policy evidence",
+    "source_url": "https://www.nationalesicherheitsstrategie.de/en.html",
+    "local_source_id": "national_policy_documents",
+    "checked_on": "2026-09-13",
+    "status": "acquired_candidates",
+    "recommended_use": "Policy evidence across eleven languages; full documents and summaries distinguished",
+    "rights_note": "See expansion source registry; no blanket reuse grant inferred",
+    "inspection_level": "Downloaded, hash-verified, parsed; expert review pending",
+    "expansion_registry": "data/expansion_source_registry.json"
+  },
+  {
+    "id": "D27",
+    "name": "UPR cycle-4 national reports in six UN languages",
+    "priority": "P1",
+    "kind": "Official country policy evidence",
+    "source_url": "https://documents.un.org/",
+    "local_source_id": "upr_national_reports",
+    "checked_on": "2026-09-13",
+    "status": "acquired_candidates",
+    "recommended_use": "National self-reports for heldout grounded evaluation; not independent findings",
+    "rights_note": "See expansion source registry; no blanket reuse grant inferred",
+    "inspection_level": "Downloaded, hash-verified, parsed; expert review pending",
+    "expansion_registry": "data/expansion_source_registry.json"
   }
 ]

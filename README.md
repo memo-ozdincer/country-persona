@@ -55,6 +55,10 @@ uv run persona normalize
 
 Fresh archive collectors live in `scripts/collect_*.py`. They retain download receipts, bounded collection limits and explicit failures. The current snapshot's discovered archive pages are recorded in the manifests. The original source registry's inaccessible sources remain listed, with their actual failure modes and next acquisition steps.
 
+## Multilingual data expansion
+
+The [13 September data expansion](docs/DATA_EXPANSION_20260913.md) adds 2,389 parsed source documents, 12,930 literal QA candidates and 7,578 evidence passages across eleven languages, plus a separate six-language UN evaluation corpus. These remain review candidates; the original training exports are unchanged. See the report for source scope, actual counts, review milestones and frozen-manifest reproduction.
+
 ## Experimental starting point
 
 Compare the same instruction model with a role prompt, then with dated evidence, then with shared country/institution-conditioned SFT. Genuine QA is the strongest immediate response-training signal. Keep statement reconstruction, UPR actions and historical domain text separate. Use preferences only for diagnosed source-supported errors; consider continued pretraining only after an equal-compute ablation. Multi-agent decision-making remains a later project.
