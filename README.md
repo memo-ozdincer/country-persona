@@ -1,10 +1,10 @@
 # Country persona data and post-training
 
-A data-first research repository for **China and Germany as dated institutional representatives**. It preserves the supplied playbook and adds acquired corpora, source-specific parsing, country/task categorization, event-group splits, provenance checks and a modest multi-GPU LoRA workflow.
+A data-first research repository for **dated institutional country representatives**. The initial China/Germany pilot is preserved, with a separate France/UK/India/Brazil extension. The repository contains the supplied playbook, acquired corpora, source-specific parsing, country/task categorization, event-group splits, provenance checks and a modest multi-GPU LoRA workflow.
 
 Start with **[the measured data report](reports/DATA_REPORT.md)**. The project contains real downloaded data, not just a source registry. Large third-party data are local under `data/` and Git-ignored; their exact download URLs and hashes are tracked in [the source lock](data/sources.lock.json).
 
-**14 September: [see the substantive country-knowledge preview](docs/COUNTRY_KNOWLEDGE_PREVIEW.md).** It combines dated statistics, explicit policies, actual votes and public reservations for China, Germany, France, the UK, India and Brazil. It also shows three source-grounded instruction examples. The four-country expansion remains in progress; document volume alone is not evidence of useful persona supervision.
+**14 September: [France, UK, India and Brazil data release](docs/COUNTRY_EXTENSION_20260914.md)** and [12 actual policy applications](docs/COUNTRY_EXTENSION_EXAMPLES.md). The extension adds strategies, climate commitments and other official evidence in eight languages, country-context statistics and newly prepared historical decisions. The earlier [six-country knowledge preview](docs/COUNTRY_KNOWLEDGE_PREVIEW.md) shows the design change. Document volume alone is not evidence of useful persona supervision; these new releases remain review candidates.
 
 **Post-training handoff (12 September):** [four-H100 plan, costs and milestones](docs/POSTTRAINING_PLAN.md), [exact cluster commands](docs/CLUSTER_RUNBOOK.md), and [decision-by-decision evidence](docs/DECISION_REGISTER.md). A model-tokenized 500-example pilot, 832-example balanced comparator, frozen evaluation prompts and CPU-tested LoRA plumbing are prepared. Budget approximately 1–3 four-H100 node-hours for the first before/after proof of concept, then inspect before expanding.
 

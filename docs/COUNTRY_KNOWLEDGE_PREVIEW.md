@@ -2,7 +2,7 @@
 
 The previous examples exposed a real weakness: authentic ministry Q&A can still contain almost no useful policy information. More languages and more transcripts do not fix that. The project needs country knowledge that helps answer a concrete proposal, explain an observed choice, or identify where the evidence is insufficient.
 
-This small release provides **six country profiles, 18 statistics, eight policy records, six votes on one resolution, three public explanations of those votes, and three authored instruction examples**. It is a working demonstration of the revised data structure, not a comprehensive six-country dataset or a validated training set. The broader France/UK/India/Brazil expansion remains in progress.
+This small release provides **six country profiles, 18 statistics, eight policy records, six votes on one resolution, three public explanations of those votes, and three authored instruction examples**. It is a working demonstration of the revised data structure, not a comprehensive six-country dataset or a validated training set. The subsequent [France/UK/India/Brazil data release](COUNTRY_EXTENSION_20260914.md) adds broader country evidence and 12 further policy applications.
 
 ## What the data actually contains
 

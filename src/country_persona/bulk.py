@@ -9,15 +9,16 @@ from .schema import record, topics
 from .io import sha256
 
 
-def parse_unga_rdata(path, url, meeting_dates=None, dates_source=None):
+def parse_unga_rdata(path, url, meeting_dates=None, dates_source=None, *, country_map=None):
     import pyreadr
     path=Path(path);file_hash=sha256(path)
     date_provenance={'raw_file':str(dates_source),'raw_sha256':sha256(dates_source)} if dates_source else None
+    country_map = country_map if country_map is not None else {'China':'CHN','Germany':'DEU'}
     table=pyreadr.read_r(str(path))['txtstatesyears']
     required={'doc_id','text','country','meeting','session','year','stateabb','words_spoken'}
     if set(table.columns)!=required:raise ValueError('UNGA RData schema changed')
     for raw in table.to_dict('records'):
-        country={'China':'CHN','Germany':'DEU'}.get(raw['country'])
+        country=country_map.get(raw['country'])
         year=str(raw['year']);session=int(raw['session']);meeting=int(raw['meeting'])
         group=f'unga:meeting:{session}:{meeting}'
         symbol=f'A/{session}/PV.{meeting}'
@@ -62,23 +63,24 @@ def parse_unga_rdata(path, url, meeting_dates=None, dates_source=None):
             yield derived
 
 
-def parse_uhri(path, countries_only=False):
+def parse_uhri(path, countries_only=False, *, country_map=None):
     import ijson
     path=Path(path);file_hash=sha256(path)
+    country_map = country_map if country_map is not None else {'China':'CHN','Germany':'DEU'}
     with path.open('rb') as f:
         for raw in ijson.items(f,'item'):
             required={'AnnotationId','Symbol','Text','DocumentId','PublicationDate','AnnotationType','Countries',
                       'UprPositions','UprSession','UprRecommendingCountry','UprCycle','Body'}
             if not required.issubset(raw):raise ValueError('UHRI export schema changed')
             reviewed=raw['Countries'];authors=raw['UprRecommendingCountry']
-            if countries_only and not {'China','Germany'}.intersection(reviewed+authors):continue
+            if countries_only and not set(country_map).intersection(reviewed+authors):continue
             text=BeautifulSoup(raw['Text'], 'html.parser').get_text(' ', strip=True) if re.search(r'</?(?:p|div|br|span|strong)\b',raw['Text']) else raw['Text']
             if not text.strip():continue
             when=(raw['PublicationDate'] or '')[:10]
             available=(raw.get('PublicationDateOnUhri') or '')[:10] or None
             body=raw['Body'];upr=bool(raw['UprCycle'] is not None or raw['UprSession'] or authors)
             # Keep non-UPR material as institutional evidence. It is not a country's voice.
-            country={'China':'CHN','Germany':'DEU'}.get(authors[0]) if len(authors)==1 else None
+            country=country_map.get(authors[0]) if len(authors)==1 else None
             task='upr_recommendation' if upr and authors else 'human_rights_evidence'
             flags=['document_date_not_review_date','recommendation_context_missing'] if task=='upr_recommendation' else []
             if len(authors)>1:flags.append('multiple_recommending_states')
@@ -97,7 +99,7 @@ def parse_uhri(path, countries_only=False):
             labels=raw['UprPositions']
             if upr and len(reviewed)==1 and len(authors)==1 and len(labels)==1:
                 label=labels[0]
-                target={'China':'CHN','Germany':'DEU'}.get(reviewed[0])
+                target=country_map.get(reviewed[0])
                 if target:
                     response=record('uhri',raw['AnnotationId']+':response',path,r['source_url'],target,when,
                                     r['date_precision'],'UN_Human_Rights_Council_UPR','state_under_review',
@@ -162,14 +164,15 @@ def unga_meeting_dates(votes_path):
     return {key:next(iter(values)) for key,values in dates.items()}
 
 
-def parse_unga_dm(path):
+def parse_unga_dm(path, *, country_map=None):
     import csv
     path=Path(path);hash_=sha256(path)
+    country_map = country_map if country_map is not None else {'China':'CHN','Germany':'DEU'}
     labels={'in favor','against','abstaining','not voting','not voting (suspended)'}
     with path.open(encoding='utf-8-sig',newline='') as f:
         for raw in csv.DictReader(f):
-            if raw['current_seat_name'] not in ('China','Germany'):continue
-            country={'China':'CHN','Germany':'DEU','West Germany':'DEU','East Germany':'DDR'}.get(raw['member_state'])
+            if raw['current_seat_name'] not in country_map:continue
+            country=({**country_map,'West Germany':'DEU','East Germany':'DDR'}).get(raw['member_state'])
             flags=['proposal_text_missing']
             if raw['member_state']=='Republic of China':flags+=['not_PRC_training','historical_entity_review']
             if raw['member_state'] in ('West Germany','East Germany'):flags.append('historical_entity_review')

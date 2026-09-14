@@ -5,7 +5,8 @@ from datetime import date
 from pathlib import Path
 from .io import digest, sha256
 
-COUNTRIES = {'CHN': 'China', 'DEU': 'Germany'}
+COUNTRIES = {'CHN': 'China', 'DEU': 'Germany', 'FRA': 'France',
+             'GBR': 'United Kingdom', 'IND': 'India', 'BRA': 'Brazil'}
 TOPICS = {
     'peace_security': r'\b(?:security council|ceasefire|conflict|peacekeeping|sicherheitsrat|waffenstillstand)\b',
     'human_rights': r'\b(?:human rights|menschenrecht\w*|torture|discrimination)\b',
