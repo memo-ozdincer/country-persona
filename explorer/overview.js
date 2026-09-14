@@ -53,11 +53,11 @@ function render(code){
  $('#countries').innerHTML=overview.countries.map(c=>`<button type="button" data-country="${esc(c.code)}" aria-pressed="${c.code===country.code}" aria-label="${esc(c.name)}, ${number(inventory.countries[c.code].count)} evidence record IDs">${esc(c.name)} <span class="count">${number(inventory.countries[c.code].count)}</span></button>`).join('');
  $('#countries').querySelectorAll('button').forEach(b=>b.onclick=()=>{location.hash=`country=${b.dataset.country}`});
  const kinds=[...overview.kinds,{id:'country_statistics',label:'Country statistics'},{id:'evaluation',label:'Evaluation records / views'}];
- $('#country-panel').innerHTML=`<div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.count)} evidence records</span></div>
+ $('#country-panel').innerHTML=`<section class="catalog-summary"><div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.count)} evidence records</span></div>
  <div class="breakdown">${kinds.map(k=>`<div class="metric"><span>${esc(k.label)}</span><b>${number(country.counts[k.id])}</b></div>`).join('')}</div>
- <p class="note">The breakdown includes overlapping representations; do not sum it. The country badge excludes training-format copies, review/lineage and evaluation wrappers. ${number(data.sources.length)} source collections are listed below.</p>
- <h2>Data sources</h2><p class="note">Sorted by source name. Expand a source for trace types, measured lengths, field mappings, actual record references and training options.</p>
- ${data.sources.map(s=>sourceHTML(s,country)).join('')}
+ <p class="note">The breakdown includes overlapping representations; do not sum it. The country badge excludes training-format copies, review/lineage and evaluation wrappers. ${number(data.sources.length)} source collections are listed below.</p></section>
+ <section class="source-section"><h2>Data sources</h2><p class="note">Sorted by source name. Expand a source for trace types, measured lengths, field mappings, actual record references and training options.</p>
+ ${data.sources.map(s=>sourceHTML(s,country)).join('')}</section>
  <section class="methods"><h2>Post-training examples using the available data</h2>
  <div class="method"><h3>Choose the task from the source fields</h3><div class="scroll"><table><thead><tr><th>Available data</th><th>Possible trace</th><th>What is still needed</th></tr></thead><tbody>${data.sources.map(s=>`<tr><td>${esc(profiles[s.id].name)}<br><small>${number(s.count)} record IDs</small></td><td>${s.tasks.map(t=>esc(recipes[t.id].label)).join('<br>')}</td><td>${s.tasks.map(t=>esc(recipes[t.id].availability)).join('<br>')}</td></tr>`).join('')}</tbody></table></div></div>
  ${workedExample(country)}
@@ -72,8 +72,7 @@ function route(){
 async function start(){try{
  const load=async path=>{const r=await fetch(path);if(!r.ok)throw Error(`Unable to load ${path} (${r.status}).`);return r.json()};
  [overview,inventory,profiles,recipes]=await Promise.all(['overview.json','sources.json','source_profiles.json','trace_types.json'].map(load));
- $('#collection').textContent=`Country numbers = evidence record IDs, not independent traces. Snapshot ${inventory.snapshot}. Translations, document segments and annotations can overlap.`;
  if(overview.private){$('#research-link').textContent='Original research archive';$('#research-link').href='https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files/resolve/main/research.tar.gz?download=true'}
  window.addEventListener('hashchange',route);route();
- }catch(error){$('#collection').textContent='Inventory unavailable.';$('#country-panel').innerHTML=`<p class="error">${esc(error.message)} <a href="https://github.com/memo-ozdincer/country-persona-data">Browse the repository.</a></p>`}}
+ }catch(error){$('#country-panel').innerHTML=`<p class="error">${esc(error.message)} <a href="https://github.com/memo-ozdincer/country-persona-data">Browse the repository.</a></p>`}}
 start();
