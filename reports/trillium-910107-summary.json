@@ -1,0 +1,82 @@
+{
+  "job_id": "910107",
+  "slurm_state": "COMPLETED",
+  "exit_code": "0:0",
+  "start_local": "2026-09-13T01:42:11-04:00",
+  "end_local": "2026-09-13T01:51:28-04:00",
+  "elapsed_seconds": 557,
+  "four_H100_node_hours": 0.15472222222222223,
+  "H100_GPU_hours": 0.6188888888888889,
+  "review_status": "preliminary assistant inspection; not human-expert validation",
+  "milestone_decision": "M1 technical success; M2 not promoted due to repetition and unsupported content",
+  "repetition_heuristic": "Split output on [.!?] followed by whitespace, or newlines; normalize whitespace and lowercase; flag if any exact sentence with at least six whitespace-separated words appears at least three times. Debugging heuristic, not validated quality score.",
+  "runs": {
+    "base": {
+      "cases": 56,
+      "output_cap_hits": 18,
+      "thinking_marker_outputs": 0,
+      "generated_tokens": 9158,
+      "repetition_flag_cases": [],
+      "repetition_flag_count": 0,
+      "prediction_file_hashes": {
+        "runs/trillium-910107-base/predictions.rank0.jsonl": "b9780f10ea79086f53815e310d56e008f8cba3edcedc579849f8e3387dfe5e99",
+        "runs/trillium-910107-base/predictions.rank1.jsonl": "4ce0b134c5554484f9b0319b4e94080ffa50298b891faf5e95e5a470e41bc642",
+        "runs/trillium-910107-base/predictions.rank2.jsonl": "869ca2c4bd34a67bb68fd75565a9a8e1766a5e4b2d3267464a3adfed17b0c679",
+        "runs/trillium-910107-base/predictions.rank3.jsonl": "5e7a6926bd0529e1d4b33f1c475f3d33f74cf63463de27d870013453aec569b4"
+      }
+    },
+    "after": {
+      "cases": 56,
+      "output_cap_hits": 14,
+      "thinking_marker_outputs": 0,
+      "generated_tokens": 8307,
+      "repetition_flag_cases": [
+        "probe:humanitarian_access:DEU:question:prompt_only",
+        "mfa:t20260626_11953253:qa:9:prompt_only",
+        "mfa:t20260304_11868733:qa:5:prompt_only",
+        "germany_press:regierungspressekonferenz-vom-16-februar-2026-2407306:qa:26:prompt_only",
+        "mfa:t20260626_11953253:qa:9:dated_evidence",
+        "mfa:t20260526_11918267:qa:8:dated_evidence",
+        "germany_press:regierungspressekonferenz-vom-9-januar-2026-2402152:qa:30:dated_evidence",
+        "germany_press:regierungspressekonferenz-vom-12-juni-2026-2440082:qa:6:dated_evidence",
+        "germany_press:regierungspressekonferenz-vom-4-maerz-2026-2409600:qa:18:prompt_only",
+        "germany_press:regierungspressekonferenz-vom-13-februar-2026-2407264:qa:30:prompt_only",
+        "mfa:t20260206_11852932:qa:1:dated_evidence",
+        "mfa:t20260429_11902761:qa:2:dated_evidence",
+        "germany_press:regierungspressekonferenz-vom-26-januar-2026-2404026:qa:55:dated_evidence"
+      ],
+      "repetition_flag_count": 13,
+      "prediction_file_hashes": {
+        "runs/trillium-910107-after/predictions.rank0.jsonl": "c0e1a3a2b3a6435b27fc90e7e1f919053806bd61c21162b774fa21fdb0c25490",
+        "runs/trillium-910107-after/predictions.rank1.jsonl": "a3b9b84bcec3a419ad627847e6b2ba2cfb1fa165e4df415cbcf3fa5376316944",
+        "runs/trillium-910107-after/predictions.rank2.jsonl": "c023c15f6ecc923ed0dbea2ad4be8cb5e546e1fee260162837f05a7c1c2eaf73",
+        "runs/trillium-910107-after/predictions.rank3.jsonl": "3f2bd7f3a3f6f77b95c513dc9d11b75d1fc100c1cf03b1fb3922e295b103f00c"
+      }
+    }
+  },
+  "identical_output_cases": [
+    "control:0",
+    "control:1",
+    "control:2",
+    "control:3",
+    "control:4",
+    "control:5",
+    "control:6",
+    "control:7"
+  ],
+  "pilot_training": {
+    "training_and_inline_eval_seconds": 156.35203552246094,
+    "actual_global_sequence_tokens": 1573426,
+    "actual_global_target_tokens": 73892,
+    "effective_node_tokens_per_second": 10063.354754175667,
+    "peak_allocated_GiB_per_GPU": 32.38409423828125,
+    "trainer_metrics": {
+      "train_runtime": 153.6821,
+      "train_samples_per_second": 3.253,
+      "train_steps_per_second": 0.104,
+      "total_flos": 7.186200713284813e+16,
+      "train_loss": 2.3099823892116547,
+      "epoch": 1.0
+    }
+  }
+}

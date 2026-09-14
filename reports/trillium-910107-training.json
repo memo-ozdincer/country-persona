@@ -1,0 +1,61 @@
+{
+  "arguments": {
+    "model": "/scratch/memoozd/models/Qwen3-8B-Instruct",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "data": "data/prepared/posttraining-qwen3-v1/shared-250.train.jsonl",
+    "manifest": "data/prepared/posttraining-qwen3-v1/shared-250.train.manifest.jsonl",
+    "dev_data": "data/prepared/posttraining-qwen3-v1/shared.dev.jsonl",
+    "dev_manifest": "data/prepared/posttraining-qwen3-v1/shared.dev.manifest.jsonl",
+    "output": "runs/trillium-910107-pilot",
+    "max_length": 8192,
+    "epochs": 1.0,
+    "lr": 0.0001,
+    "rank": 16,
+    "grad_accum": 8,
+    "max_steps": -1,
+    "seed": 42,
+    "research_prepared": true,
+    "save_steps": 0,
+    "warmup_ratio": 0.05,
+    "qlora": false,
+    "preflight_only": false
+  },
+  "train_examples": 500,
+  "dev_examples": 200,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "train_sequence_tokens": 1573426,
+  "train_supervised_tokens": 73892,
+  "max_sequence_tokens": 8189,
+  "data_sha256": "2afe71259fe3912fc984f0cc017032580a7f7eabb04556dd2b45f796aaa9c2a8",
+  "manifest_sha256": "2b691e909df05452033d9210a00c3cd75725a7de481ef1616bab10142a308d03",
+  "dev_data_sha256": "fc1f939f280319ced899f875e061a96360374bbc91b9357a4b74031ea6952095",
+  "world_size": 4,
+  "effective_examples_per_step": 32,
+  "versions": {
+    "accelerate": "1.11.0",
+    "datasets": "4.3.0",
+    "peft": "0.17.1",
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "trl": "0.24.0"
+  },
+  "measurement": {
+    "training_and_inline_eval_seconds": 156.35203552246094,
+    "actual_global_sequence_tokens": 1573426,
+    "actual_global_target_tokens": 73892,
+    "effective_node_tokens_per_second": 10063.354754175667,
+    "peak_allocated_GiB_per_GPU": 32.38409423828125,
+    "trainer_metrics": {
+      "train_runtime": 153.6821,
+      "train_samples_per_second": 3.253,
+      "train_steps_per_second": 0.104,
+      "total_flos": 7.186200713284813e+16,
+      "train_loss": 2.3099823892116547,
+      "epoch": 1.0
+    }
+  },
+  "resolved_model_revision": null,
+  "status": "training_completed"
+}

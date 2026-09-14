@@ -1,6 +1,6 @@
 # Four-H100 proof-of-concept plan
 
-Prepared 12 September 2026. **Start with one four-H100 node for approximately 1–3 hours total**, then release the allocation and inspect the actual responses. No GPU training has been run here. Token counts are measured; cluster runtimes are estimates. Three or four nodes are unnecessary for the first proof of concept.
+Updated 13 September 2026. **The first Qwen3 pilot completed in 0.155 four-H100 node-hours (9 minutes 17 seconds).** Technical execution passed, but repetition and unsupported policy content prevent promotion. Read [the measured pilot review](../reports/trillium-910107-review.md) before selecting another experiment. The original 1–3-hour planning range below was conservative and is retained as historical planning context, not a measured runtime. No subsequent GPU run has been launched.
 
 The user-selected model is pinned **Qwen/Qwen3-8B + BF16 LoRA, with `enable_thinking=False` throughout preparation, training and evaluation**. The publisher reports 8.2B parameters, a dense multilingual architecture and a supported hard non-thinking switch. [Model card](https://huggingface.co/Qwen/Qwen3-8B). The Trillium directory is named `Qwen3-8B-Instruct`, but its bytes match the official `Qwen/Qwen3-8B` revision. The previous Qwen2.5 job was cancelled before allocation and consumed zero node-hours. Every substantive decision and its evidence boundary is recorded in [DECISION_REGISTER.md](DECISION_REGISTER.md).
 
@@ -22,7 +22,7 @@ There are 822 over-budget exclusions across train/dev/test. The eligible trainin
 
 Exports are explicitly marked `research_prepared`, with machine integrity checks and original source-use/review metadata. They are usable through the explicit research-release training option. This does **not** assert expert adjudication or grant copyright permissions. Existing manually admitted exports still work; old unprepared candidate files still fail training validation.
 
-## Compute budget
+## Original compute planning envelope — see measured pilot review first
 
 A **node-hour** below means one hour of **four H100 80GB GPUs**. Multiply by four to obtain GPU-hours. Two such nodes running for an hour cost two node-hours; parallelism reduces elapsed time, not total work. Estimates assume one full BF16 model replica per GPU, SDPA, activation checkpointing, microbatch one, and no packing. Prefer a node with fast GPU interconnects.
 
@@ -45,7 +45,7 @@ The 0.5 forward-evaluation factor and 9–18-minute load/save allowance are plan
 
 `run.json` now records processed sequence/target tokens, elapsed training plus inline evaluation time, maximum allocated memory and global throughput. Run `python scripts/estimate_compute.py --run runs/pilot-s42/run.json --output reports/calibrated_compute.json` after the first pilot. A calibration taken from the same data distribution is more useful than one taken only from unusually short or long examples. The estimator's calibrated throughput already includes inline eval; its additional eval allowance is conservative.
 
-BF16 base weights alone are approximately 16.4 GB decimal per GPU. Optimizer states are for adapters, but activations, vocabulary logits, gradients, allocator reserve and kernels also consume memory. The 80GB fit is a reasonable design target, **not yet measured**. Stop on OOM, inspect the longest batch, and shorten the context *selection* or use a verified memory optimization before reducing precision or scaling nodes. DDP does not pool four GPUs' memory into a 320GB model device.
+BF16 base weights alone are approximately 16.4 GB decimal per GPU. Optimizer states are for adapters, but activations, vocabulary logits, gradients, allocator reserve and kernels also consume memory. The first pilot measured 32.38 GiB peak allocated memory per GPU; larger batches and contexts still need separate measurement. Stop on OOM, inspect the longest batch, and shorten the context *selection* or use a verified memory optimization before reducing precision or scaling nodes. DDP does not pool four GPUs' memory into a 320GB model device.
 
 ## Milestones and inspection gates
 
