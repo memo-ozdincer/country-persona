@@ -186,6 +186,24 @@
     "scoring": "Verify source support and scope; published policy does not establish behavior in every real project.",
     "possible_use": "Retrieval / dossier context; parent evidence for authored applications."
   },
+  "vote_reconstruction": {
+    "label": "Draft-only historical vote baseline",
+    "availability": "Eight-task demonstration release; four vote rows are quarantined and not training-admitted.",
+    "input": ["country, date, meeting setting and project-paraphrased draft provisions"],
+    "target": ["verified recorded final vote label"],
+    "inference": "A deliberately limited historical baseline. Public statements and roll-call labels are withheld from the prompt.",
+    "scoring": "Exact roll-call label only; this does not validate diplomatic judgment or causal reasoning.",
+    "possible_use": "Retrospective format and leakage checks; expand to more events before model training."
+  },
+  "grounded_decision_report": {
+    "label": "Evidence-grounded decision report",
+    "availability": "Four quarantined, project-authored report rows with clause-level context and sourced public positions.",
+    "input": ["draft provisions, observed vote, Assembly result and attributed national statement with timing"],
+    "target": ["clause-linked report distinguishing public position, action and uncertainty"],
+    "inference": "Retrospective reporting task; the supplied vote and public statement must not leak into a pre-vote prediction task.",
+    "scoring": "Human review of clause support, speaker, timing, outcome and limits of inference.",
+    "possible_use": "SFT candidate after independent source and quality review; not an interactive environment."
+  },
   "decision_cases": {
     "label": "Proposal → vote + optional statement",
     "availability": "Joined retrospective cases; some explanation fields remain missing.",

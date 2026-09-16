@@ -23,6 +23,10 @@ def test_quarantined_rows_and_no_vote_leakage():
             prompt = row['prompt'][1]['content']
             assert 'Recorded final vote' not in prompt and 'Public statement' not in prompt
             assert row['completion'][0]['content'] in builder.VOTES
-    assert 'explanation of vote' in rows[1]['completion'][0]['content'].lower()
-    assert 'does not explicitly explain' in rows[5]['completion'][0]['content']
-    assert all('No attributed explanation' in rows[i]['completion'][0]['content'] for i in (3, 7))
+    assert 'post-vote explanation' in rows[1]['completion'][0]['content']
+    assert 'announced an intended abstention' in rows[5]['completion'][0]['content']
+    assert 'asked for a yes vote' in rows[3]['completion'][0]['content']
+    assert 'urged a yes vote' in rows[7]['completion'][0]['content']
+    assert all('OP2' in rows[i]['prompt'][1]['content'] for i in (0, 2, 4, 6))
+    assert all('would abstain' not in rows[i]['prompt'][1]['content'] for i in (0, 2, 4, 6))
+    assert all(c['national_position']['source_url'].startswith('https://') for c in showcase['cases'])

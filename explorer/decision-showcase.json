@@ -1,6 +1,7 @@
 {
-  "version": "decision-posttraining-candidates-v1",
-  "source_sha256": "8d3900aff8a56c567d77b174a7cf85b983bef2638700551fc926948eef8cef58",
+  "version": "decision-posttraining-candidates-v2",
+  "source_sha256": "dbbd3020a023235ff15d70d221936eed40aed7c78ee31316a3e2ee5330c59c63",
+  "dossier_sha256": "03d2356358dd958eb3552e8f9cb14865f11c867db28e0bb0900430aea4a193e1",
   "case_count": 4,
   "task_count": 8,
   "event_count": 2,
@@ -18,6 +19,43 @@
       "observed_action": "abstaining",
       "statement_kind": "explanation_of_vote",
       "statement_summary": "China said the resolution lacked sufficient consultation and attention to security concerns and diplomatic settlement; it abstained. It also affirmed respect for sovereignty and territorial integrity.",
+      "setting": "The General Assembly's eleventh emergency special session considered a draft on Russia's use of force against Ukraine after the Security Council referred the issue to the Assembly under the Uniting for Peace procedure.",
+      "decision_rule": "Recorded General Assembly vote on the draft; the resolution is a collective Assembly decision, not a treaty or a negotiated bilateral agreement.",
+      "assembly_result": "Adopted 141 in favor, 5 against, 35 abstaining.",
+      "clauses": [
+        {
+          "id": "OP1",
+          "text": "Reaffirms Ukraine's sovereignty and territorial integrity within its internationally recognized borders."
+        },
+        {
+          "id": "OP2-4",
+          "text": "Deplores Russia's aggression and demands an immediate end to force and a complete, unconditional withdrawal."
+        },
+        {
+          "id": "OP5-6",
+          "text": "Rejects Russia's recognition of separatist areas in Donetsk and Luhansk and demands reversal."
+        },
+        {
+          "id": "OP9-12",
+          "text": "Calls for civilian protection, safe passage, humanitarian access and observance of humanitarian law."
+        },
+        {
+          "id": "OP14-15",
+          "text": "Urges political dialogue, negotiation and mediation to resolve the conflict peacefully."
+        }
+      ],
+      "national_position": {
+        "statement_time": "after_vote",
+        "speaker": "Zhang Jun, China",
+        "source_url": "https://docs.un.org/A/ES-11/PV.5",
+        "positions": [
+          "Affirmed respect for sovereignty and territorial integrity.",
+          "Said the draft had not received full membership consultation and did not sufficiently address the crisis's history and complexity.",
+          "Argued that indivisible security and diplomatic settlement deserved more emphasis; explicitly linked these concerns to China's abstention."
+        ],
+        "synthesis": "China affirmed the sovereignty principle in OP1 and supported diplomatic settlement in OP14–15, but its post-vote explanation objected to consultation and to the draft's treatment of security concerns. It explicitly connected those stated objections to abstaining; it did not reject every provision.",
+        "evidence_limit": "This is a post-vote explanation of China's stated reasons. It cannot be placed in a pre-vote prediction prompt. It does not establish a private bargaining threshold."
+      },
       "group_id": "unga:meeting:ES-11:5",
       "tasks": [
         {
@@ -30,7 +68,7 @@
               },
               {
                 "role": "user",
-                "content": "Country: China\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+                "content": "Country: China\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nMeeting setting: The General Assembly's eleventh emergency special session considered a draft on Russia's use of force against Ukraine after the Security Council referred the issue to the Assembly under the Uniting for Peace procedure.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within its internationally recognized borders.\nOP2-4: Deplores Russia's aggression and demands an immediate end to force and a complete, unconditional withdrawal.\nOP5-6: Rejects Russia's recognition of separatist areas in Donetsk and Luhansk and demands reversal.\nOP9-12: Calls for civilian protection, safe passage, humanitarian access and observance of humanitarian law.\nOP14-15: Urges political dialogue, negotiation and mediation to resolve the conflict peacefully.\nUsing this draft-only context, which recorded final vote matches the country? Answer with only: in favor, against, or abstaining."
               }
             ],
             "completion": [
@@ -43,7 +81,7 @@
               "enable_thinking": false
             }
           },
-          "inspection": "Exact observed vote label; does not verify a motive."
+          "inspection": "Exact roll-call label. Draft-only baseline; no claimed causal or predictive validity."
         },
         {
           "id": "grounded_decision_report",
@@ -55,20 +93,20 @@
               },
               {
                 "role": "user",
-                "content": "Country: China\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nRecorded final vote: abstaining\nPublic statement status: explanation of vote\nProject-authored statement summary: China said the resolution lacked sufficient consultation and attention to security concerns and diplomatic settlement; it abstained. It also affirmed respect for sovereignty and territorial integrity.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+                "content": "Country: China\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nMeeting setting: The General Assembly's eleventh emergency special session considered a draft on Russia's use of force against Ukraine after the Security Council referred the issue to the Assembly under the Uniting for Peace procedure.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within its internationally recognized borders.\nOP2-4: Deplores Russia's aggression and demands an immediate end to force and a complete, unconditional withdrawal.\nOP5-6: Rejects Russia's recognition of separatist areas in Donetsk and Luhansk and demands reversal.\nOP9-12: Calls for civilian protection, safe passage, humanitarian access and observance of humanitarian law.\nOP14-15: Urges political dialogue, negotiation and mediation to resolve the conflict peacefully.\nRecorded final vote: abstaining\nAssembly result: Adopted 141 in favor, 5 against, 35 abstaining.\nAttributed public position by Zhang Jun, China (after vote):\n- Affirmed respect for sovereignty and territorial integrity.\n- Said the draft had not received full membership consultation and did not sufficiently address the crisis's history and complexity.\n- Argued that indivisible security and diplomatic settlement deserved more emphasis; explicitly linked these concerns to China's abstention.\nSource-status note: This is a post-vote explanation of China's stated reasons. It cannot be placed in a pre-vote prediction prompt. It does not establish a private bargaining threshold.\nWrite an evidence-grounded decision report connecting specific proposal provisions to the attributed public position. State the observed outcome and the limits of inference."
               }
             ],
             "completion": [
               {
                 "role": "assistant",
-                "content": "Observed vote: abstaining.\nAttributed explanation of vote: China said the resolution lacked sufficient consultation and attention to security concerns and diplomatic settlement; it abstained. It also affirmed respect for sovereignty and territorial integrity.\nEvidence limit: This is the public explanation, not proof of a private motive or a necessary condition for agreement."
+                "content": "Observed action: China voted abstaining on A/ES-11/L.1. The Assembly adopted 141 in favor, 5 against, 35 abstaining.\nPublic position and proposal relationship: China affirmed the sovereignty principle in OP1 and supported diplomatic settlement in OP14–15, but its post-vote explanation objected to consultation and to the draft's treatment of security concerns. It explicitly connected those stated objections to abstaining; it did not reject every provision.\nEvidence limit: This is a post-vote explanation of China's stated reasons. It cannot be placed in a pre-vote prediction prompt. It does not establish a private bargaining threshold."
               }
             ],
             "chat_template_kwargs": {
               "enable_thinking": false
             }
           },
-          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+          "inspection": "Check clause references, vote, speaker, temporal status, source support and uncertainty."
         }
       ],
       "sources": {
@@ -90,6 +128,43 @@
       "observed_action": "in favor",
       "statement_kind": "not_acquired",
       "statement_summary": null,
+      "setting": "The General Assembly's eleventh emergency special session considered a draft on Russia's use of force against Ukraine after the Security Council referred the issue to the Assembly under the Uniting for Peace procedure.",
+      "decision_rule": "Recorded General Assembly vote on the draft; the resolution is a collective Assembly decision, not a treaty or a negotiated bilateral agreement.",
+      "assembly_result": "Adopted 141 in favor, 5 against, 35 abstaining.",
+      "clauses": [
+        {
+          "id": "OP1",
+          "text": "Reaffirms Ukraine's sovereignty and territorial integrity within its internationally recognized borders."
+        },
+        {
+          "id": "OP2-4",
+          "text": "Deplores Russia's aggression and demands an immediate end to force and a complete, unconditional withdrawal."
+        },
+        {
+          "id": "OP5-6",
+          "text": "Rejects Russia's recognition of separatist areas in Donetsk and Luhansk and demands reversal."
+        },
+        {
+          "id": "OP9-12",
+          "text": "Calls for civilian protection, safe passage, humanitarian access and observance of humanitarian law."
+        },
+        {
+          "id": "OP14-15",
+          "text": "Urges political dialogue, negotiation and mediation to resolve the conflict peacefully."
+        }
+      ],
+      "national_position": {
+        "statement_time": "before_vote",
+        "speaker": "Annalena Baerbock, German Foreign Minister",
+        "source_url": "https://new-york-un.diplo.de/un-en/2515120-2515120",
+        "positions": [
+          "In her 1 March General Assembly speech, called Russia's invasion an attack on the Charter-based order and asked members to vote yes on the draft.",
+          "Connected support for Ukraine to Germany's historical responsibility, humanitarian assistance and Ukraine's right of self-defence.",
+          "Also affirmed commitment to diplomacy and peaceful solutions."
+        ],
+        "synthesis": "Germany's minister asked for a yes vote before the ballot. Her stated Charter and sovereignty concerns align with OP1–4, while her support for humanitarian relief and diplomacy is consistent with OP9–15. The recorded in-favor vote confirms the action, not a complete account of private deliberation.",
+        "evidence_limit": "This is an attributed pre-vote public position from Germany's UN mission, not an explanation of vote after the recorded ballot or evidence of a private motive."
+      },
       "group_id": "unga:meeting:ES-11:5",
       "tasks": [
         {
@@ -102,7 +177,7 @@
               },
               {
                 "role": "user",
-                "content": "Country: Germany\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+                "content": "Country: Germany\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nMeeting setting: The General Assembly's eleventh emergency special session considered a draft on Russia's use of force against Ukraine after the Security Council referred the issue to the Assembly under the Uniting for Peace procedure.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within its internationally recognized borders.\nOP2-4: Deplores Russia's aggression and demands an immediate end to force and a complete, unconditional withdrawal.\nOP5-6: Rejects Russia's recognition of separatist areas in Donetsk and Luhansk and demands reversal.\nOP9-12: Calls for civilian protection, safe passage, humanitarian access and observance of humanitarian law.\nOP14-15: Urges political dialogue, negotiation and mediation to resolve the conflict peacefully.\nUsing this draft-only context, which recorded final vote matches the country? Answer with only: in favor, against, or abstaining."
               }
             ],
             "completion": [
@@ -115,7 +190,7 @@
               "enable_thinking": false
             }
           },
-          "inspection": "Exact observed vote label; does not verify a motive."
+          "inspection": "Exact roll-call label. Draft-only baseline; no claimed causal or predictive validity."
         },
         {
           "id": "grounded_decision_report",
@@ -127,26 +202,26 @@
               },
               {
                 "role": "user",
-                "content": "Country: Germany\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nRecorded final vote: in favor\nPublic statement status: not acquired\nProject-authored statement summary: No attributed statement acquired for this case.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+                "content": "Country: Germany\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nMeeting setting: The General Assembly's eleventh emergency special session considered a draft on Russia's use of force against Ukraine after the Security Council referred the issue to the Assembly under the Uniting for Peace procedure.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within its internationally recognized borders.\nOP2-4: Deplores Russia's aggression and demands an immediate end to force and a complete, unconditional withdrawal.\nOP5-6: Rejects Russia's recognition of separatist areas in Donetsk and Luhansk and demands reversal.\nOP9-12: Calls for civilian protection, safe passage, humanitarian access and observance of humanitarian law.\nOP14-15: Urges political dialogue, negotiation and mediation to resolve the conflict peacefully.\nRecorded final vote: in favor\nAssembly result: Adopted 141 in favor, 5 against, 35 abstaining.\nAttributed public position by Annalena Baerbock, German Foreign Minister (before vote):\n- In her 1 March General Assembly speech, called Russia's invasion an attack on the Charter-based order and asked members to vote yes on the draft.\n- Connected support for Ukraine to Germany's historical responsibility, humanitarian assistance and Ukraine's right of self-defence.\n- Also affirmed commitment to diplomacy and peaceful solutions.\nSource-status note: This is an attributed pre-vote public position from Germany's UN mission, not an explanation of vote after the recorded ballot or evidence of a private motive.\nWrite an evidence-grounded decision report connecting specific proposal provisions to the attributed public position. State the observed outcome and the limits of inference."
               }
             ],
             "completion": [
               {
                 "role": "assistant",
-                "content": "Observed vote: in favor.\nNo attributed explanation is available in this case.\nEvidence limit: Do not supply a rationale from the proposal or vote alone."
+                "content": "Observed action: Germany voted in favor on A/ES-11/L.1. The Assembly adopted 141 in favor, 5 against, 35 abstaining.\nPublic position and proposal relationship: Germany's minister asked for a yes vote before the ballot. Her stated Charter and sovereignty concerns align with OP1–4, while her support for humanitarian relief and diplomacy is consistent with OP9–15. The recorded in-favor vote confirms the action, not a complete account of private deliberation.\nEvidence limit: This is an attributed pre-vote public position from Germany's UN mission, not an explanation of vote after the recorded ballot or evidence of a private motive."
               }
             ],
             "chat_template_kwargs": {
               "enable_thinking": false
             }
           },
-          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+          "inspection": "Check clause references, vote, speaker, temporal status, source support and uncertainty."
         }
       ],
       "sources": {
         "draft": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FL.1&t=pdf",
         "vote": "https://docs.un.org/A/ES-11/PV.5",
-        "statement": null
+        "statement": "https://new-york-un.diplo.de/un-en/2515120-2515120"
       },
       "status": "Source checked; independent review pending. Quarantined; not admitted to training or fresh evaluation."
     },
@@ -161,7 +236,44 @@
       "proposal_summary": "The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.",
       "observed_action": "abstaining",
       "statement_kind": "pre_vote_statement",
-      "statement_summary": "China emphasized negotiations, humanitarian relief and limiting spillover harms. This statement is context, not an explicit explanation of its recorded abstention.",
+      "statement_summary": "Before the vote, China argued that the draft would not advance de-escalation, resumed dialogue or a political settlement, and explicitly said it would abstain. It also called for humanitarian relief and attention to spillover harms, especially for developing countries.",
+      "setting": "The resumed emergency special session considered a draft after Russia's September 2022 referendums and attempted annexation of four Ukrainian regions.",
+      "decision_rule": "The Assembly applied a two-thirds majority of members present and voting to this recorded vote.",
+      "assembly_result": "Adopted 143 in favor, 5 against, 35 abstaining.",
+      "clauses": [
+        {
+          "id": "OP1",
+          "text": "Reaffirms Ukraine's sovereignty and territorial integrity within internationally recognized borders."
+        },
+        {
+          "id": "OP2-3",
+          "text": "Condemns the referendums and attempted annexation, declaring the acts invalid as a basis for changing regional status."
+        },
+        {
+          "id": "OP4",
+          "text": "Calls on states and organizations not to recognize any altered status of Donetsk, Kherson, Luhansk or Zaporizhzhia."
+        },
+        {
+          "id": "OP5",
+          "text": "Demands reversal of the status decisions and complete, unconditional withdrawal of Russian forces."
+        },
+        {
+          "id": "OP6-7",
+          "text": "Supports humanitarian response and de-escalation through dialogue, negotiation and other peaceful means."
+        }
+      ],
+      "national_position": {
+        "statement_time": "before_vote",
+        "speaker": "Geng Shuang, China",
+        "source_url": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FPV.14&t=pdf",
+        "positions": [
+          "Called for resumed talks, humanitarian protection and relief, and limits on food, energy and economic spillovers affecting developing countries.",
+          "Said Assembly action should help de-escalation and political settlement; explicitly said this draft would not do so and China would abstain.",
+          "Reaffirmed respect for sovereignty and territorial integrity while raising procedural fairness and security concerns."
+        ],
+        "synthesis": "China's representative affirmed sovereignty but said the October draft would not advance de-escalation and resumed talks, then announced an intended abstention. OP6–7 do include humanitarian and diplomatic language; the public objection therefore concerns the draft's overall effect as China stated it, not the total absence of those topics.",
+        "evidence_limit": "This pre-vote statement explicitly announces and explains the intended abstention. It is therefore outcome-leaking evidence for a vote-prediction task, though valid context for a retrospective report."
+      },
       "group_id": "unga:meeting:ES-11:14",
       "tasks": [
         {
@@ -174,7 +286,7 @@
               },
               {
                 "role": "user",
-                "content": "Country: China\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+                "content": "Country: China\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nMeeting setting: The resumed emergency special session considered a draft after Russia's September 2022 referendums and attempted annexation of four Ukrainian regions.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within internationally recognized borders.\nOP2-3: Condemns the referendums and attempted annexation, declaring the acts invalid as a basis for changing regional status.\nOP4: Calls on states and organizations not to recognize any altered status of Donetsk, Kherson, Luhansk or Zaporizhzhia.\nOP5: Demands reversal of the status decisions and complete, unconditional withdrawal of Russian forces.\nOP6-7: Supports humanitarian response and de-escalation through dialogue, negotiation and other peaceful means.\nUsing this draft-only context, which recorded final vote matches the country? Answer with only: in favor, against, or abstaining."
               }
             ],
             "completion": [
@@ -187,7 +299,7 @@
               "enable_thinking": false
             }
           },
-          "inspection": "Exact observed vote label; does not verify a motive."
+          "inspection": "Exact roll-call label. Draft-only baseline; no claimed causal or predictive validity."
         },
         {
           "id": "grounded_decision_report",
@@ -199,20 +311,20 @@
               },
               {
                 "role": "user",
-                "content": "Country: China\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nRecorded final vote: abstaining\nPublic statement status: pre vote statement\nProject-authored statement summary: China emphasized negotiations, humanitarian relief and limiting spillover harms. This statement is context, not an explicit explanation of its recorded abstention.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+                "content": "Country: China\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nMeeting setting: The resumed emergency special session considered a draft after Russia's September 2022 referendums and attempted annexation of four Ukrainian regions.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within internationally recognized borders.\nOP2-3: Condemns the referendums and attempted annexation, declaring the acts invalid as a basis for changing regional status.\nOP4: Calls on states and organizations not to recognize any altered status of Donetsk, Kherson, Luhansk or Zaporizhzhia.\nOP5: Demands reversal of the status decisions and complete, unconditional withdrawal of Russian forces.\nOP6-7: Supports humanitarian response and de-escalation through dialogue, negotiation and other peaceful means.\nRecorded final vote: abstaining\nAssembly result: Adopted 143 in favor, 5 against, 35 abstaining.\nAttributed public position by Geng Shuang, China (before vote):\n- Called for resumed talks, humanitarian protection and relief, and limits on food, energy and economic spillovers affecting developing countries.\n- Said Assembly action should help de-escalation and political settlement; explicitly said this draft would not do so and China would abstain.\n- Reaffirmed respect for sovereignty and territorial integrity while raising procedural fairness and security concerns.\nSource-status note: This pre-vote statement explicitly announces and explains the intended abstention. It is therefore outcome-leaking evidence for a vote-prediction task, though valid context for a retrospective report.\nWrite an evidence-grounded decision report connecting specific proposal provisions to the attributed public position. State the observed outcome and the limits of inference."
               }
             ],
             "completion": [
               {
                 "role": "assistant",
-                "content": "Observed vote: abstaining.\nAttributed pre-vote statement: China emphasized negotiations, humanitarian relief and limiting spillover harms.\nEvidence limit: The statement does not explicitly explain the recorded abstention; a causal rationale remains unestablished."
+                "content": "Observed action: China voted abstaining on A/ES-11/L.5. The Assembly adopted 143 in favor, 5 against, 35 abstaining.\nPublic position and proposal relationship: China's representative affirmed sovereignty but said the October draft would not advance de-escalation and resumed talks, then announced an intended abstention. OP6–7 do include humanitarian and diplomatic language; the public objection therefore concerns the draft's overall effect as China stated it, not the total absence of those topics.\nEvidence limit: This pre-vote statement explicitly announces and explains the intended abstention. It is therefore outcome-leaking evidence for a vote-prediction task, though valid context for a retrospective report."
               }
             ],
             "chat_template_kwargs": {
               "enable_thinking": false
             }
           },
-          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+          "inspection": "Check clause references, vote, speaker, temporal status, source support and uncertainty."
         }
       ],
       "sources": {
@@ -234,6 +346,43 @@
       "observed_action": "in favor",
       "statement_kind": "not_acquired",
       "statement_summary": null,
+      "setting": "The resumed emergency special session considered a draft after Russia's September 2022 referendums and attempted annexation of four Ukrainian regions.",
+      "decision_rule": "The Assembly applied a two-thirds majority of members present and voting to this recorded vote.",
+      "assembly_result": "Adopted 143 in favor, 5 against, 35 abstaining.",
+      "clauses": [
+        {
+          "id": "OP1",
+          "text": "Reaffirms Ukraine's sovereignty and territorial integrity within internationally recognized borders."
+        },
+        {
+          "id": "OP2-3",
+          "text": "Condemns the referendums and attempted annexation, declaring the acts invalid as a basis for changing regional status."
+        },
+        {
+          "id": "OP4",
+          "text": "Calls on states and organizations not to recognize any altered status of Donetsk, Kherson, Luhansk or Zaporizhzhia."
+        },
+        {
+          "id": "OP5",
+          "text": "Demands reversal of the status decisions and complete, unconditional withdrawal of Russian forces."
+        },
+        {
+          "id": "OP6-7",
+          "text": "Supports humanitarian response and de-escalation through dialogue, negotiation and other peaceful means."
+        }
+      ],
+      "national_position": {
+        "statement_time": "before_vote",
+        "speaker": "Michael Geisler, German Mission to the UN",
+        "source_url": "https://new-york-un.diplo.de/un-en/2557788-2557788",
+        "positions": [
+          "In his 12 October emergency-session statement, rejected the referendums and attempted annexations and argued that states must not recognize them.",
+          "Linked support for the draft to sovereignty, territorial integrity and the UN Charter; urged members to vote in favor.",
+          "Acknowledged diplomatic settlement and described that aim as reflected in the draft."
+        ],
+        "synthesis": "Germany's representative rejected the attempted annexations and urged a yes vote. That public stance aligns especially with OP2–5 on invalidity, non-recognition and withdrawal, while his speech also acknowledged diplomacy reflected in OP7. The final in-favor vote is independently recorded.",
+        "evidence_limit": "This is an attributed same-day pre-vote public position, not an acquired post-vote explanation or proof of a private motive."
+      },
       "group_id": "unga:meeting:ES-11:14",
       "tasks": [
         {
@@ -246,7 +395,7 @@
               },
               {
                 "role": "user",
-                "content": "Country: Germany\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+                "content": "Country: Germany\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nMeeting setting: The resumed emergency special session considered a draft after Russia's September 2022 referendums and attempted annexation of four Ukrainian regions.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within internationally recognized borders.\nOP2-3: Condemns the referendums and attempted annexation, declaring the acts invalid as a basis for changing regional status.\nOP4: Calls on states and organizations not to recognize any altered status of Donetsk, Kherson, Luhansk or Zaporizhzhia.\nOP5: Demands reversal of the status decisions and complete, unconditional withdrawal of Russian forces.\nOP6-7: Supports humanitarian response and de-escalation through dialogue, negotiation and other peaceful means.\nUsing this draft-only context, which recorded final vote matches the country? Answer with only: in favor, against, or abstaining."
               }
             ],
             "completion": [
@@ -259,7 +408,7 @@
               "enable_thinking": false
             }
           },
-          "inspection": "Exact observed vote label; does not verify a motive."
+          "inspection": "Exact roll-call label. Draft-only baseline; no claimed causal or predictive validity."
         },
         {
           "id": "grounded_decision_report",
@@ -271,26 +420,26 @@
               },
               {
                 "role": "user",
-                "content": "Country: Germany\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nRecorded final vote: in favor\nPublic statement status: not acquired\nProject-authored statement summary: No attributed statement acquired for this case.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+                "content": "Country: Germany\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nMeeting setting: The resumed emergency special session considered a draft after Russia's September 2022 referendums and attempted annexation of four Ukrainian regions.\nProposal provisions (project paraphrases):\nOP1: Reaffirms Ukraine's sovereignty and territorial integrity within internationally recognized borders.\nOP2-3: Condemns the referendums and attempted annexation, declaring the acts invalid as a basis for changing regional status.\nOP4: Calls on states and organizations not to recognize any altered status of Donetsk, Kherson, Luhansk or Zaporizhzhia.\nOP5: Demands reversal of the status decisions and complete, unconditional withdrawal of Russian forces.\nOP6-7: Supports humanitarian response and de-escalation through dialogue, negotiation and other peaceful means.\nRecorded final vote: in favor\nAssembly result: Adopted 143 in favor, 5 against, 35 abstaining.\nAttributed public position by Michael Geisler, German Mission to the UN (before vote):\n- In his 12 October emergency-session statement, rejected the referendums and attempted annexations and argued that states must not recognize them.\n- Linked support for the draft to sovereignty, territorial integrity and the UN Charter; urged members to vote in favor.\n- Acknowledged diplomatic settlement and described that aim as reflected in the draft.\nSource-status note: This is an attributed same-day pre-vote public position, not an acquired post-vote explanation or proof of a private motive.\nWrite an evidence-grounded decision report connecting specific proposal provisions to the attributed public position. State the observed outcome and the limits of inference."
               }
             ],
             "completion": [
               {
                 "role": "assistant",
-                "content": "Observed vote: in favor.\nNo attributed explanation is available in this case.\nEvidence limit: Do not supply a rationale from the proposal or vote alone."
+                "content": "Observed action: Germany voted in favor on A/ES-11/L.5. The Assembly adopted 143 in favor, 5 against, 35 abstaining.\nPublic position and proposal relationship: Germany's representative rejected the attempted annexations and urged a yes vote. That public stance aligns especially with OP2–5 on invalidity, non-recognition and withdrawal, while his speech also acknowledged diplomacy reflected in OP7. The final in-favor vote is independently recorded.\nEvidence limit: This is an attributed same-day pre-vote public position, not an acquired post-vote explanation or proof of a private motive."
               }
             ],
             "chat_template_kwargs": {
               "enable_thinking": false
             }
           },
-          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+          "inspection": "Check clause references, vote, speaker, temporal status, source support and uncertainty."
         }
       ],
       "sources": {
         "draft": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FL.5&t=pdf",
         "vote": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FPV.14&t=pdf",
-        "statement": null
+        "statement": "https://new-york-un.diplo.de/un-en/2557788-2557788"
       },
       "status": "Source checked; independent review pending. Quarantined; not admitted to training or fresh evaluation."
     }

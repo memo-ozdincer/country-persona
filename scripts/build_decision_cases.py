@@ -46,7 +46,7 @@ def main():
       'FRA':('Mr. De Rivière (France)','Mr. Geng Shuang (China)', 'pre_vote_statement',
              'France rejected recognition of annexation and urged support for the text as a defence of Charter principles.', ['Non-recognition of annexation and defence of territorial integrity.'],[]),
       'CHN':('Mr. Geng Shuang (China)','Mrs. Thomas-Greenfield', 'pre_vote_statement',
-             'China emphasized negotiations, humanitarian relief and limiting spillover harms. This statement is context, not an explicit explanation of its recorded abstention.', ['Diplomatic settlement, civilian protection and effects on developing countries.'],[]),
+             'Before the vote, China argued that the draft would not advance de-escalation, resumed dialogue or a political settlement, and explicitly said it would abstain. It also called for humanitarian relief and attention to spillover harms, especially for developing countries.', ['Draft not conducive to de-escalation or resumed talks; civilian protection and spillover effects on developing countries.'],[]),
       'IND':('Mrs. Kamboj (India)','I wish to make one final point', 'explanation_of_vote',
              'India explained its abstention through diplomacy and concerns about food, fuel and fertilizer impacts on developing countries.', ['Avoid measures that further complicate the global economy.'],[]),
       'BRA':('Mr. De Almeida Filho (Brazil)','Mr. Pedroso Cuesta (Cuba)', 'explanation_of_vote',

@@ -172,6 +172,7 @@ def github(data):
              '- [Data priorities / TODO](TODO.md)',
              '- [Explorer methodology](docs/EXPLORER_PRESENTATION.md)',
              '- [Decision post-training format](docs/DECISION_POSTTRAINING_FORMAT.md)',
+             '- [Decision dossier annotations](data/curation/decision_dossiers_v2.json)',
              '- [Attribution](ATTRIBUTION.md) · [Source registry](data/source_registry.json) · [Source-use status](data/rights_registry.json)', '',
              'Original publishers retain attribution. Public previews omit restricted source bodies; source links and record references remain available. The two-event Ukraine decision subset is one small source collection, not the whole corpus.', '']
     (dest / 'README.md').write_text('\n'.join(rows))
@@ -179,8 +180,9 @@ def github(data):
                 'explorer/index.html', 'explorer/advanced.html', 'explorer/overview.js', 'explorer/overview.css', 'explorer/overview-narrow.css', 'explorer/overview.json',
                 'explorer/sources.json', 'explorer/source_profiles.json', 'explorer/trace_types.json', 'explorer/decision-showcase.json',
                 'explorer/app.py', 'explorer/README.md', 'tests/explorer_overview_ui.cjs', 'scripts/build_explorer_overview.py', 'scripts/stage_static_explorer.py',
-                'scripts/build_source_inventory.py', 'scripts/validate_source_inventory.py', 'scripts/publish_explorer_ui.py', 'scripts/build_decision_posttraining.py',
-                'scripts/stage_data_publication.py', 'docs/EXPLORER_PRESENTATION.md', 'docs/DATA_EXPLORER.md', 'docs/DECISION_POSTTRAINING_FORMAT.md']:
+                'scripts/build_source_inventory.py', 'scripts/validate_source_inventory.py', 'scripts/publish_explorer_ui.py', 'scripts/build_decision_posttraining.py', 'scripts/build_decision_cases.py',
+                'scripts/stage_data_publication.py', 'docs/EXPLORER_PRESENTATION.md', 'docs/DATA_EXPLORER.md', 'docs/DECISION_POSTTRAINING_FORMAT.md',
+                'data/curation/decision_dossiers_v2.json', 'data/manifests/decision-cases-20260914.json', 'reports/data-catalog.json']:
         target = dest / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / rel, target)
