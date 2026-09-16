@@ -3,7 +3,7 @@ const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;
 const $=s=>document.querySelector(s),number=n=>Number(n||0).toLocaleString(),pretty=x=>esc(JSON.stringify(x,null,2));
 const url=value=>{try{const u=new URL(value);return /^https?:$/.test(u.protocol)?esc(u.href):''}catch{return ''}};
 const languageNames={en:'English',zh:'Chinese',de:'German',fr:'French',pt:'Portuguese',es:'Spanish',ru:'Russian',ar:'Arabic',ja:'Japanese',pl:'Polish',uk:'Ukrainian'};
-let overview,inventory,profiles,recipes;
+let overview,inventory,profiles,recipes,decisionShowcase;
 const lang=values=>values.map(l=>esc(languageNames[l]||l)).join(', ')||'Not recorded';
 const list=values=>`<ul>${values.map(v=>`<li>${esc(v)}</li>`).join('')}</ul>`;
 function lengths(value){return value?`${number(value.median)} / ${number(value.p95)} <small>(n=${number(value.n)})</small>`:'Not present / not measured'}
@@ -47,21 +47,34 @@ function workedExample(country){
  <p>${e.evidence.map(v=>`<a href="${url(v.source_url)}" target="_blank" rel="noopener">${esc(v.id)} ↗</a>`).join(' · ')}</p>
  <details><summary>Stored original candidate and provenance</summary><p class="note">${esc(e.format_origin)}. ${overview.private?'Full stored format.':'Source passages are explicitly omitted from this public format preview.'}</p><pre>${pretty(e.format)}</pre><pre>${pretty(e.metadata)}</pre></details></article>`;
 }
+function decisionHTML(country){
+ if(!decisionShowcase||!['CHN','DEU'].includes(country.code))return '';
+ const cases=decisionShowcase.cases.filter(c=>c.country_iso3===country.code);
+ return `<section class="decision-section" id="decision-cases"><div class="decision-heading"><div><span class="section-label">Worked decision records</span><h2>From observed decision to post-training trace</h2></div><span class="count">${cases.length} case views · 2 shared events</span></div>
+ <p class="note">These historical cases are source checked but await independent review. All eight prompt/completion views are quarantined; they are examples of the format, not an admitted training set or fresh evaluation. Both events concern Ukraine, so they do not establish a general national persona.</p>
+ ${cases.map(c=>`<article class="decision-card"><div class="decision-card-head"><div><small>${esc(c.event_date)} · ${esc(c.proposal_symbol)}</small><h3>${esc(c.title)}</h3></div><strong class="vote ${c.observed_action==='abstaining'?'abstain':'favor'}">${esc(c.observed_action)}</strong></div>
+ <div class="decision-facts"><div><span>Draft (project summary)</span><p>${esc(c.proposal_summary)}</p></div><div><span>Public statement</span><p>${c.statement_summary?esc(c.statement_summary):'No attributed explanation acquired for this case.'}</p><small>${esc(c.statement_kind.replaceAll('_',' '))}</small></div></div>
+ <div class="decision-flow" aria-label="Decision training trace: source evidence, prompt, assistant target, then inspection">${c.tasks.map((t,i)=>`<div class="decision-task"><div class="decision-task-title"><b>${i+1}. ${t.id==='vote_reconstruction'?'Recorded vote reconstruction':'Evidence-grounded decision report'}</b><span>${t.id==='vote_reconstruction'?'Label task':'Calibrated account'}</span></div><div class="decision-steps"><div><span>Prompt / context</span><p>${t.id==='vote_reconstruction'?'Country, date, draft symbol and project-authored draft summary. The vote and statement are withheld.':'Country, date, draft summary, recorded vote and statement status / summary.'}</p></div><div><span>Assistant completion (SFT target)</span><p>${esc(t.format.completion[0].content).replaceAll('\n','<br>')}</p></div><div><span>Inspect / score</span><p>${esc(t.inspection)}</p></div></div><details><summary>Exact conversational prompt / completion JSON</summary><pre>${pretty(t.format)}</pre></details></div>`).join('')}</div>
+ <div class="decision-foot"><span>${esc(c.status)}</span><span><a href="${url(c.sources.draft)}" target="_blank" rel="noopener">Draft ↗</a> · <a href="${url(c.sources.vote)}" target="_blank" rel="noopener">Vote record ↗</a>${c.sources.statement?` · <a href="${url(c.sources.statement)}" target="_blank" rel="noopener">Statement ↗</a>`:''}</span></div></article>`).join('')}
+ <p class="refs">Same draft, different recorded votes: China abstained and Germany voted in favor on both events. Their rows share event groups, so a future split must keep each event together. <a href="https://github.com/memo-ozdincer/country-persona-data/blob/main/docs/DECISION_POSTTRAINING_FORMAT.md">Format and admission rules ↗</a></p></section>`;
+}
 function render(code){
  const country=overview.countries.find(c=>c.code===code)||overview.countries[0],data=inventory.countries[country.code];
  document.title=`${country.name} · Data explorer for persona fine-tuning`;
  $('#countries').innerHTML=overview.countries.map(c=>`<button type="button" data-country="${esc(c.code)}" aria-pressed="${c.code===country.code}" aria-label="${esc(c.name)}, ${number(inventory.countries[c.code].count)} records across separate sources">${esc(c.name)} <span class="count">${number(inventory.countries[c.code].count)}</span></button>`).join('');
  $('#countries').querySelectorAll('button').forEach(b=>b.onclick=()=>{location.hash=`country=${b.dataset.country}`});
  const kinds=[...overview.kinds,{id:'country_statistics',label:'Country statistics'},{id:'evaluation',label:'Evaluation records / views'}];
- $('#country-panel').innerHTML=`<section class="catalog-summary"><div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.sources.length)} separate sources</span></div>
+ $('#country-panel').innerHTML=`<section class="catalog-summary"><div class="country-title"><h1>${esc(country.name)}</h1><span class="count">${number(data.sources.length)} separate sources</span>${['CHN','DEU'].includes(country.code)?'<button class="decision-jump" type="button">Explore 2 decision cases ↓</button>':''}</div>
  <div class="breakdown">${kinds.map(k=>`<div class="metric"><span>${esc(k.label)}</span><b>${number(country.counts[k.id])}</b></div>`).join('')}</div>
  </section>
  <section class="source-section"><h2>Data sources</h2><p class="note">Sorted by source name. Expand a source for trace types, measured lengths, field mappings, actual record references and training options.</p>
  ${data.sources.map(s=>sourceHTML(s,country)).join('')}</section>
+ ${decisionHTML(country)}
  <section class="methods"><h2>Post-training examples using the available data</h2>
  <div class="method"><h3>Choose the task from the source fields</h3><div class="scroll"><table><thead><tr><th>Available data</th><th>Possible trace</th><th>What is still needed</th></tr></thead><tbody>${data.sources.map(s=>`<tr><td>${esc(profiles[s.id].name)}<br><small>${number(s.count)} record IDs</small></td><td>${s.tasks.map(t=>esc(recipes[t.id].label)).join('<br>')}</td><td>${s.tasks.map(t=>esc(recipes[t.id].availability)).join('<br>')}</td></tr>`).join('')}</tbody></table></div></div>
  ${workedExample(country)}
  <p class="refs">Implementation references: <a href="https://huggingface.co/docs/trl/sft_trainer#expected-dataset-type-and-format">TRL conversational SFT formats</a> · <a href="https://huggingface.co/docs/peft/conceptual_guides/lora">PEFT LoRA</a> · <a href="https://huggingface.co/Qwen/Qwen3-8B">Qwen3 mode</a>. Research motivation: <a href="https://arxiv.org/abs/2403.10131">RAFT</a> for evidence-conditioned adaptation; <a href="https://aclanthology.org/2020.acl-main.442/">CheckList</a> for behavioral evaluation. These are options to test, not claims of completed RL/SFT environments.</p></section>`;
+ const jump=$('.decision-jump');if(jump)jump.onclick=()=>$('#decision-cases').scrollIntoView({behavior:'smooth'});
 }
 function route(){
  const hash=new URLSearchParams(location.hash.slice(1));
@@ -71,7 +84,7 @@ function route(){
 }
 async function start(){try{
  const load=async path=>{const r=await fetch(path);if(!r.ok)throw Error(`Unable to load ${path} (${r.status}).`);return r.json()};
- [overview,inventory,profiles,recipes]=await Promise.all(['overview.json','sources.json','source_profiles.json','trace_types.json'].map(load));
+ [overview,inventory,profiles,recipes,decisionShowcase]=await Promise.all(['overview.json','sources.json','source_profiles.json','trace_types.json','decision-showcase.json'].map(load));
  if(overview.private){$('#research-link').textContent='Original research archive';$('#research-link').href='https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files/resolve/main/research.tar.gz?download=true'}
  window.addEventListener('hashchange',route);route();
  }catch(error){$('#country-panel').innerHTML=`<p class="error">${esc(error.message)} <a href="https://github.com/memo-ozdincer/country-persona-data">Browse the repository.</a></p>`}}

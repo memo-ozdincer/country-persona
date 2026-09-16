@@ -1,0 +1,298 @@
+{
+  "version": "decision-posttraining-candidates-v1",
+  "source_sha256": "8d3900aff8a56c567d77b174a7cf85b983bef2638700551fc926948eef8cef58",
+  "case_count": 4,
+  "task_count": 8,
+  "event_count": 2,
+  "training_admitted": 0,
+  "cases": [
+    {
+      "case_id": "decision:CHN-ES-11-1-20220302",
+      "country": "China",
+      "country_iso3": "CHN",
+      "event_date": "2022-03-02",
+      "title": "Aggression against Ukraine — March 2022",
+      "proposal_symbol": "A/ES-11/L.1",
+      "resolution_symbol": "A/RES/ES-11/1",
+      "proposal_summary": "The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.",
+      "observed_action": "abstaining",
+      "statement_kind": "explanation_of_vote",
+      "statement_summary": "China said the resolution lacked sufficient consultation and attention to security concerns and diplomatic settlement; it abstained. It also affirmed respect for sovereignty and territorial integrity.",
+      "group_id": "unga:meeting:ES-11:5",
+      "tasks": [
+        {
+          "id": "vote_reconstruction",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: China\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "abstaining"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Exact observed vote label; does not verify a motive."
+        },
+        {
+          "id": "grounded_decision_report",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: China\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nRecorded final vote: abstaining\nPublic statement status: explanation of vote\nProject-authored statement summary: China said the resolution lacked sufficient consultation and attention to security concerns and diplomatic settlement; it abstained. It also affirmed respect for sovereignty and territorial integrity.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "Observed vote: abstaining.\nAttributed explanation of vote: China said the resolution lacked sufficient consultation and attention to security concerns and diplomatic settlement; it abstained. It also affirmed respect for sovereignty and territorial integrity.\nEvidence limit: This is the public explanation, not proof of a private motive or a necessary condition for agreement."
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+        }
+      ],
+      "sources": {
+        "draft": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FL.1&t=pdf",
+        "vote": "https://docs.un.org/A/ES-11/PV.5",
+        "statement": "https://docs.un.org/A/ES-11/PV.5"
+      },
+      "status": "Source checked; independent review pending. Quarantined; not admitted to training or fresh evaluation."
+    },
+    {
+      "case_id": "decision:DEU-ES-11-1-20220302",
+      "country": "Germany",
+      "country_iso3": "DEU",
+      "event_date": "2022-03-02",
+      "title": "Aggression against Ukraine — March 2022",
+      "proposal_symbol": "A/ES-11/L.1",
+      "resolution_symbol": "A/RES/ES-11/1",
+      "proposal_summary": "The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.",
+      "observed_action": "in favor",
+      "statement_kind": "not_acquired",
+      "statement_summary": null,
+      "group_id": "unga:meeting:ES-11:5",
+      "tasks": [
+        {
+          "id": "vote_reconstruction",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: Germany\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "in favor"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Exact observed vote label; does not verify a motive."
+        },
+        {
+          "id": "grounded_decision_report",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: Germany\nDecision date: 2022-03-02\nDraft: A/ES-11/L.1\nProject-authored draft summary: The draft condemns the aggression against Ukraine and demands that Russia end its use of force and withdraw its forces.\nRecorded final vote: in favor\nPublic statement status: not acquired\nProject-authored statement summary: No attributed statement acquired for this case.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "Observed vote: in favor.\nNo attributed explanation is available in this case.\nEvidence limit: Do not supply a rationale from the proposal or vote alone."
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+        }
+      ],
+      "sources": {
+        "draft": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FL.1&t=pdf",
+        "vote": "https://docs.un.org/A/ES-11/PV.5",
+        "statement": null
+      },
+      "status": "Source checked; independent review pending. Quarantined; not admitted to training or fresh evaluation."
+    },
+    {
+      "case_id": "decision:CHN-ES-11-4-20221012",
+      "country": "China",
+      "country_iso3": "CHN",
+      "event_date": "2022-10-12",
+      "title": "Territorial integrity of Ukraine — October 2022",
+      "proposal_symbol": "A/ES-11/L.5",
+      "resolution_symbol": "A/RES/ES-11/4",
+      "proposal_summary": "The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.",
+      "observed_action": "abstaining",
+      "statement_kind": "pre_vote_statement",
+      "statement_summary": "China emphasized negotiations, humanitarian relief and limiting spillover harms. This statement is context, not an explicit explanation of its recorded abstention.",
+      "group_id": "unga:meeting:ES-11:14",
+      "tasks": [
+        {
+          "id": "vote_reconstruction",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: China\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "abstaining"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Exact observed vote label; does not verify a motive."
+        },
+        {
+          "id": "grounded_decision_report",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: China\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nRecorded final vote: abstaining\nPublic statement status: pre vote statement\nProject-authored statement summary: China emphasized negotiations, humanitarian relief and limiting spillover harms. This statement is context, not an explicit explanation of its recorded abstention.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "Observed vote: abstaining.\nAttributed pre-vote statement: China emphasized negotiations, humanitarian relief and limiting spillover harms.\nEvidence limit: The statement does not explicitly explain the recorded abstention; a causal rationale remains unestablished."
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+        }
+      ],
+      "sources": {
+        "draft": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FL.5&t=pdf",
+        "vote": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FPV.14&t=pdf",
+        "statement": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FPV.14&t=pdf"
+      },
+      "status": "Source checked; independent review pending. Quarantined; not admitted to training or fresh evaluation."
+    },
+    {
+      "case_id": "decision:DEU-ES-11-4-20221012",
+      "country": "Germany",
+      "country_iso3": "DEU",
+      "event_date": "2022-10-12",
+      "title": "Territorial integrity of Ukraine — October 2022",
+      "proposal_symbol": "A/ES-11/L.5",
+      "resolution_symbol": "A/RES/ES-11/4",
+      "proposal_summary": "The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.",
+      "observed_action": "in favor",
+      "statement_kind": "not_acquired",
+      "statement_summary": null,
+      "group_id": "unga:meeting:ES-11:14",
+      "tasks": [
+        {
+          "id": "vote_reconstruction",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: Germany\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nWhich recorded final vote matches this country and draft? Answer with only: in favor, against, or abstaining."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "in favor"
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Exact observed vote label; does not verify a motive."
+        },
+        {
+          "id": "grounded_decision_report",
+          "format": {
+            "prompt": [
+              {
+                "role": "system",
+                "content": "Report only what the supplied historical evidence establishes. Do not infer private motives or bargaining conditions."
+              },
+              {
+                "role": "user",
+                "content": "Country: Germany\nDecision date: 2022-10-12\nDraft: A/ES-11/L.5\nProject-authored draft summary: The draft rejects the referendums and attempted annexation, calls for non-recognition, demands reversal and withdrawal, and supports peaceful resolution.\nRecorded final vote: in favor\nPublic statement status: not acquired\nProject-authored statement summary: No attributed statement acquired for this case.\nWrite a short decision record. Distinguish a recorded action from an attributed statement and mark any missing rationale."
+              }
+            ],
+            "completion": [
+              {
+                "role": "assistant",
+                "content": "Observed vote: in favor.\nNo attributed explanation is available in this case.\nEvidence limit: Do not supply a rationale from the proposal or vote alone."
+              }
+            ],
+            "chat_template_kwargs": {
+              "enable_thinking": false
+            }
+          },
+          "inspection": "Check vote, statement type, attribution and explicit uncertainty."
+        }
+      ],
+      "sources": {
+        "draft": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FL.5&t=pdf",
+        "vote": "https://documents.un.org/api/symbol/access?l=en&s=A%2FES-11%2FPV.14&t=pdf",
+        "statement": null
+      },
+      "status": "Source checked; independent review pending. Quarantined; not admitted to training or fresh evaluation."
+    }
+  ]
+}

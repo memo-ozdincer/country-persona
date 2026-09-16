@@ -9,7 +9,7 @@ from pathlib import Path
 from huggingface_hub import HfApi, CommitOperationAdd, get_token
 
 ROOT=Path(__file__).resolve().parents[1]
-FILES=['index.html','advanced.html','overview.js','overview.css','overview-narrow.css','overview.json','sources.json','source_profiles.json','trace_types.json','README.md']
+FILES=['index.html','advanced.html','overview.js','overview.css','overview-narrow.css','overview.json','sources.json','source_profiles.json','trace_types.json','decision-showcase.json','README.md']
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -18,11 +18,11 @@ def main():
     if not args.publish:
         print('Staged assets:', ', '.join(FILES));print('Use --publish after staging and validation.');return
     api=HfApi();assert api.whoami()['name']=='memo-ozdincer'
-    report={'version':'country-sources-v3','files':FILES,'spaces':[]}
+    report={'version':'decision-posttraining-v1','files':FILES,'spaces':[]}
     for mode,name in [('public','country-persona-explorer'),('private','country-persona-research')]:
         repo='memo-ozdincer/'+name;folder=ROOT/'.cache'/f'explorer-{mode}-static'
         info=api.repo_info(repo,repo_type='space');assert info.private==(mode=='private')
-        commit=api.create_commit(repo,repo_type='space',operations=[CommitOperationAdd(path_in_repo=n,path_or_fileobj=str(folder/n)) for n in FILES],commit_message='Organize persona data by source and document available training traces')
+        commit=api.create_commit(repo,repo_type='space',operations=[CommitOperationAdd(path_in_repo=n,path_or_fileobj=str(folder/n)) for n in FILES],commit_message='Show source-grounded decision post-training examples')
         item={'repo':repo,'private':info.private,'commit':commit.oid,'assets':{}}
         # HTML contains a small HF-injected configuration script; verify authored bytes after removing it.
         host='https://'+repo.replace('/','-')+'.static.hf.space/'

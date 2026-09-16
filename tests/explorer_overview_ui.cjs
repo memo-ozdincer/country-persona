@@ -20,6 +20,12 @@ setImmediate(()=>{
    const inventory=JSON.parse(fs.readFileSync('explorer/sources.json'));
    assert(element('#countries').innerHTML.includes(inventory.countries[c.code].count.toLocaleString()));
    assert(html.indexOf('Data sources')<html.indexOf('Post-training examples using the available data'));
+   if (['CHN','DEU'].includes(c.code)) {
+     assert(html.includes('From observed decision to post-training trace'));
+     assert(html.includes('Exact conversational prompt / completion JSON'));
+     assert(html.includes('2 shared events'));
+     assert(html.indexOf('From observed decision to post-training trace')<html.indexOf('Post-training examples using the available data'));
+   } else assert(!html.includes('From observed decision to post-training trace'));
    assert(!html.includes('Memo Ozdincer'));
    assert(!html.includes('Environment inventory:'));
    const page=fs.readFileSync('explorer/index.html','utf8');

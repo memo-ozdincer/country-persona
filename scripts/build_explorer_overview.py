@@ -106,7 +106,7 @@ def stage(data):
             for c, original in zip(view['countries'], data['countries']):
                 for e, source in zip(c['examples'], original['examples']): e['format'] = source['_private_format']
         (dst / 'overview.json').write_text(json.dumps(view, ensure_ascii=False, indent=2) + '\n')
-        for name in ('index.html', 'overview.js', 'overview.css', 'overview-narrow.css', 'data-client.js', 'sources.json', 'source_profiles.json', 'trace_types.json'):
+        for name in ('index.html', 'overview.js', 'overview.css', 'overview-narrow.css', 'data-client.js', 'sources.json', 'source_profiles.json', 'trace_types.json', 'decision-showcase.json'):
             shutil.copyfile(ROOT / 'explorer' / name, dst / name)
         # Retain the complete catalog as a secondary screen, with its static adapter.
         html = (ROOT / 'explorer/advanced.html').read_text()
@@ -171,15 +171,16 @@ def github(data):
              '- [Measured inventory](explorer/sources.json)',
              '- [Data priorities / TODO](TODO.md)',
              '- [Explorer methodology](docs/EXPLORER_PRESENTATION.md)',
+             '- [Decision post-training format](docs/DECISION_POSTTRAINING_FORMAT.md)',
              '- [Attribution](ATTRIBUTION.md) · [Source registry](data/source_registry.json) · [Source-use status](data/rights_registry.json)', '',
              'Original publishers retain attribution. Public previews omit restricted source bodies; source links and record references remain available. The two-event Ukraine decision subset is one small source collection, not the whole corpus.', '']
     (dest / 'README.md').write_text('\n'.join(rows))
     for rel in ['TODO.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/data-source.yml', '.github/ISSUE_TEMPLATE/data-correction.yml', '.github/PULL_REQUEST_TEMPLATE.md',
                 'explorer/index.html', 'explorer/advanced.html', 'explorer/overview.js', 'explorer/overview.css', 'explorer/overview-narrow.css', 'explorer/overview.json',
-                'explorer/sources.json', 'explorer/source_profiles.json', 'explorer/trace_types.json',
+                'explorer/sources.json', 'explorer/source_profiles.json', 'explorer/trace_types.json', 'explorer/decision-showcase.json',
                 'explorer/app.py', 'explorer/README.md', 'tests/explorer_overview_ui.cjs', 'scripts/build_explorer_overview.py', 'scripts/stage_static_explorer.py',
-                'scripts/build_source_inventory.py', 'scripts/validate_source_inventory.py', 'scripts/publish_explorer_ui.py',
-                'scripts/stage_data_publication.py', 'docs/EXPLORER_PRESENTATION.md', 'docs/DATA_EXPLORER.md']:
+                'scripts/build_source_inventory.py', 'scripts/validate_source_inventory.py', 'scripts/publish_explorer_ui.py', 'scripts/build_decision_posttraining.py',
+                'scripts/stage_data_publication.py', 'docs/EXPLORER_PRESENTATION.md', 'docs/DATA_EXPLORER.md', 'docs/DECISION_POSTTRAINING_FORMAT.md']:
         target = dest / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / rel, target)
@@ -189,6 +190,8 @@ def github(data):
 
 def main():
     from build_source_inventory import build_inventory
+    from build_decision_posttraining import main as build_decision_posttraining
+    build_decision_posttraining()
     build_inventory()
     data = build()
     stage(data)
