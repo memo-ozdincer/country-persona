@@ -1,0 +1,31 @@
+{
+  "status": "inference_not_run",
+  "parent_pack_manifest_sha256": "5c5e3bae85354e9ce8b5ef4f080887b810965daa439d082299cce95936bd27a6",
+  "selection": "Three action pairs spanning Y/N/A (FRA Ukraine, IND climate, BRA Ukraine), and the IND climate qualification policy pair. Diagnostic selection, not prevalence estimation.",
+  "case_count": 8,
+  "pair_count": 4,
+  "event_count": 2,
+  "planned_model_lock_sha256": "1fae7d59c6244f62830b0807baf3fc958e03c0b32e0a6eb7025c90de6c2b07ae",
+  "planned_generation": {
+    "do_sample": false,
+    "max_new_tokens": 384,
+    "total_context_budget": 8192,
+    "eos_policy": "model generation_config defaults; record all effective EOS IDs and compare a bounded legacy single-EOS replay separately"
+  },
+  "required_trace_fields": [
+    "full prompt token IDs or pinned reproducible input hash and count",
+    "raw generated token IDs",
+    "decoded text with and without special tokens",
+    "stop reason and effective EOS IDs",
+    "max output cap",
+    "repeated token/phrase diagnostics",
+    "seconds and input/output counts",
+    "next-token Y/N/A probabilities conditional on legal labels plus total legal-label mass, for action tasks only"
+  ],
+  "compute_status": "Trillium authentication required; no job submitted",
+  "files_sha256": {
+    "policy.references.jsonl": "9f7f5085d52d16459c33b73441de990a728ace78e211ec16f785bc189729375e",
+    "cases.jsonl": "bf7edeb47d71669e2b461d4afe193492e346bcee639c7eff35de84d432509edb",
+    "action.references.jsonl": "4f4f89d9a3b7e3b728418f4598e52771a88d29272217a5395454618710d431a1"
+  }
+}

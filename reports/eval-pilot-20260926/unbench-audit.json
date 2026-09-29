@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "scope": "locally_acquired_author_release",
+  "source_files_sha256": {
+    "task1_train.json": "692a2dd5e4f6dc3cefc6a443312f7e8915238ad8ab26a0a9dd8f3469641ee86f",
+    "task1_test.json": "07b834d903f0984d7167b9ee862f3e6761777f4db5f7ecfdee56bcb579f8d8bf",
+    "task2_train_author.csv": "693af4e958b691747a5bf098d53c30edd95e9ed93957b36901551f1ae9304d14",
+    "task2_test_author.csv": "20aa44851cadb1728e9f1e32c7e50821b1ba10d34f50907596c66acc2b86814f",
+    "task3_train.json": "d92964b2d8c081c6a055912eefe394acce21cc693775109cfe6391871b4afff1",
+    "task3_test.json": "f5c3db12e167b78cae1e0f32a2a694d206fbfad596fed423e9e72c7128047733",
+    "run_task1.ipynb": "d51c0f918902df069990312f38b3c47ec0e7a8476ac7f6232dc3ad4e02359ece",
+    "run_task2.ipynb": "04ac2da97881fa664d39edac26455c1a15f91539d077cc0139217366e532cefa",
+    "run_task3.ipynb": "09f6f5afc080ec3b0352654238bfa587ac5e30c279fda0f6f8658123240aa4ad"
+  },
+  "english_drafts": {
+    "all_drafts": 1978,
+    "drafts_adopted": 2383
+  },
+  "limitations": [
+    "Exact whitespace-normalized text and document-ID checks do not identify all related event families.",
+    "A document date is not proof of pre-vote public availability; timestamps require review.",
+    "Archive metadata and labels have not been independently verified against UN primary records.",
+    "Folder IDs are directory-local: all_drafts and drafts_adopted have different namespaces.",
+    "Examining label distributions does not establish a sealed final test or eliminate model pretraining contamination."
+  ],
+  "task1": {
+    "train": {
+      "rows": 1000,
+      "events": 155,
+      "first_date": "1994-03-11",
+      "last_date": "2023-10-16",
+      "join": {
+        "issues": [
+          {
+            "event_id": "1265",
+            "kind": "draft_after_event",
+            "event_date": "2013-10-10",
+            "draft_date": "18 October 2013"
+          },
+          {
+            "event_id": "1159",
+            "kind": "draft_after_event",
+            "event_date": "2011-10-21",
+            "draft_date": "21 December 2011"
+          },
+          {
+            "event_id": "1658",
+            "kind": "draft_after_event",
+            "event_date": "2019-09-03",
+            "draft_date": "3 October 2019"
+          }
+        ],
+        "unique_texts": 155,
+        "unique_documents": 155,
+        "joined_file_manifest_sha256": "ea42ad289c7d2088f581c8e8480f9ae0a3b195457d73587c5df4798aeeee1ba0"
+      }
+    },
+    "test": {
+      "rows": 1000,
+      "events": 7,
+      "first_date": "2023-12-08",
+      "last_date": "2024-11-20",
+      "join": {
+        "issues": [],
+        "unique_texts": 7,
+        "unique_documents": 7,
+        "joined_file_manifest_sha256": "0116d6b12b493cab3553d3c63ddc5b9c8e13318453f3f038d870047791c1d3a8"
+      }
+    }
+  },
+  "task2": {
+    "train": {
+      "rows": 11010,
+      "events": 734,
+      "labels": {
+        "Y": 10810,
+        "A": 182,
+        "Non-Voting": 3,
+        "N": 15
+      },
+      "countries": 92,
+      "first_date": "1994-03-04",
+      "last_date": "2016-11-09",
+      "rows_per_event": {
+        "15": 734
+      },
+      "duplicate_country_event_pairs": 0,
+      "target_countries": {
+        "CHINA": {
+          "Y": 692,
+          "A": 42
+        },
+        "GERMANY": {
+          "Y": 183,
+          "A": 2
+        },
+        "FRANCE": {
+          "Y": 729,
+          "A": 5
+        },
+        "UNITED KINGDOM": {
+          "Y": 734
+        },
+        "INDIA": {
+          "Y": 113,
+          "A": 1
+        },
+        "BRAZIL": {
+          "Y": 208,
+          "A": 9,
+          "N": 1
+        }
+      },
+      "join": {
+        "issues": [
+          {
+            "event_id": "802",
+            "kind": "draft_after_event",
+            "event_date": "1994-09-29",
+            "draft_date": "30 September 1994"
+          },
+          {
+            "event_id": "803",
+            "kind": "draft_after_event",
+            "event_date": "1994-09-29",
+            "draft_date": "30 September 1994"
+          },
+          {
+            "event_id": "864",
+            "kind": "draft_after_event",
+            "event_date": "1995-08-25",
+            "draft_date": "28 August 1995"
+          },
+          {
+            "event_id": "1463",
+            "kind": "draft_after_event",
+            "event_date": "2005-11-08",
+            "draft_date": "9 November 2005"
+          },
+          {
+            "event_id": "1489",
+            "kind": "draft_after_event",
+            "event_date": "2006-03-24",
+            "draft_date": "28 March 2006"
+          },
+          {
+            "event_id": "1606",
+            "kind": "draft_after_event",
+            "event_date": "2007-10-31",
+            "draft_date": "2 November 2007"
+          },
+          {
+            "event_id": "1615",
+            "kind": "draft_after_event",
+            "event_date": "2007-12-21",
+            "draft_date": "31 December 2007"
+          }
+        ],
+        "unique_texts": 734,
+        "unique_documents": 734,
+        "joined_file_manifest_sha256": "2f0b368ec9597c889096d7c40b783d587ec4a1e89756e6263253f78c93fbf812"
+      },
+      "nonstandard_labels": [
+        {
+          "Country": "RWANDA",
+          "Original_id": "793",
+          "Authors": "['France', 'Germany', 'Russian Federation', 'United Kingdom', 'United States']",
+          "Voting": "Non-Voting",
+          "Date": "1994-07-21"
+        },
+        {
+          "Country": "RWANDA",
+          "Original_id": "796",
+          "Authors": "['Argentina', 'Canada', 'France', 'United States']",
+          "Voting": "Non-Voting",
+          "Date": "1994-07-31"
+        },
+        {
+          "Country": "ARAB REPUBLIC",
+          "Original_id": "1313",
+          "Authors": "['Spain', 'United Kingdom', 'United States']",
+          "Voting": "Non-Voting",
+          "Date": "2003-05-22"
+        }
+      ]
+    },
+    "test": {
+      "rows": 6420,
+      "events": 428,
+      "labels": {
+        "A": 209,
+        "Y": 6210,
+        "N": 1
+      },
+      "countries": 55,
+      "first_date": "2016-11-10",
+      "last_date": "2024-11-01",
+      "rows_per_event": {
+        "15": 428
+      },
+      "duplicate_country_event_pairs": 0,
+      "target_countries": {
+        "CHINA": {
+          "A": 50,
+          "Y": 378
+        },
+        "GERMANY": {
+          "Y": 108
+        },
+        "FRANCE": {
+          "Y": 425,
+          "A": 3
+        },
+        "UNITED KINGDOM": {
+          "Y": 425,
+          "A": 3
+        },
+        "INDIA": {
+          "Y": 102,
+          "A": 6
+        },
+        "BRAZIL": {
+          "Y": 100,
+          "A": 1
+        }
+      },
+      "join": {
+        "issues": [
+          {
+            "event_id": "2339",
+            "kind": "draft_after_event",
+            "event_date": "2020-07-11",
+            "draft_date": "13 July 2020"
+          }
+        ],
+        "unique_texts": 427,
+        "unique_documents": 428,
+        "joined_file_manifest_sha256": "db4ca83098e549b1eb99cf1464989d64bcede48d0e123dd1ac7bab4e647bedd9"
+      },
+      "nonstandard_labels": []
+    }
+  },
+  "task3": {
+    "train": {
+      "rows": 989,
+      "labels": {
+        "1": 944,
+        "0": 45
+      },
+      "unique_texts": 989,
+      "nonunique_draft_match_row_indexes": [],
+      "conflicting_labels_for_same_text": [],
+      "matched_draft_date_range": [
+        "1994-01-06",
+        "2024-12-06"
+      ],
+      "unparsed_matched_dates": 0
+    },
+    "test": {
+      "rows": 989,
+      "labels": {
+        "1": 936,
+        "0": 53
+      },
+      "unique_texts": 988,
+      "nonunique_draft_match_row_indexes": [
+        422,
+        427
+      ],
+      "conflicting_labels_for_same_text": [],
+      "matched_draft_date_range": [
+        "1994-01-27",
+        "2024-11-14"
+      ],
+      "unparsed_matched_dates": 0
+    }
+  },
+  "within_task_event_overlap": {
+    "task1": 0,
+    "task2": 0
+  },
+  "exact_overlap": [
+    {
+      "left": "task1_train",
+      "right": "task2_train",
+      "shared_texts": 94,
+      "shared_document_ids": 94
+    },
+    {
+      "left": "task1_train",
+      "right": "task3_train",
+      "shared_texts": 75,
+      "shared_document_ids": 75
+    },
+    {
+      "left": "task1_train",
+      "right": "task1_test",
+      "shared_texts": 0,
+      "shared_document_ids": 0
+    },
+    {
+      "left": "task1_train",
+      "right": "task2_test",
+      "shared_texts": 43,
+      "shared_document_ids": 43
+    },
+    {
+      "left": "task1_train",
+      "right": "task3_test",
+      "shared_texts": 80,
+      "shared_document_ids": 80
+    },
+    {
+      "left": "task2_train",
+      "right": "task3_train",
+      "shared_texts": 378,
+      "shared_document_ids": 378
+    },
+    {
+      "left": "task2_train",
+      "right": "task1_test",
+      "shared_texts": 0,
+      "shared_document_ids": 0
+    },
+    {
+      "left": "task2_train",
+      "right": "task2_test",
+      "shared_texts": 0,
+      "shared_document_ids": 0
+    },
+    {
+      "left": "task2_train",
+      "right": "task3_test",
+      "shared_texts": 356,
+      "shared_document_ids": 356
+    },
+    {
+      "left": "task3_train",
+      "right": "task1_test",
+      "shared_texts": 4,
+      "shared_document_ids": 4
+    },
+    {
+      "left": "task3_train",
+      "right": "task2_test",
+      "shared_texts": 214,
+      "shared_document_ids": 214
+    },
+    {
+      "left": "task3_train",
+      "right": "task3_test",
+      "shared_texts": 0,
+      "shared_document_ids": 0
+    },
+    {
+      "left": "task1_test",
+      "right": "task2_test",
+      "shared_texts": 3,
+      "shared_document_ids": 3
+    },
+    {
+      "left": "task1_test",
+      "right": "task3_test",
+      "shared_texts": 3,
+      "shared_document_ids": 3
+    },
+    {
+      "left": "task2_test",
+      "right": "task3_test",
+      "shared_texts": 213,
+      "shared_document_ids": 212
+    }
+  ],
+  "task2_test_negative_rows": [
+    {
+      "Country": "RUSSIAN FEDERATION",
+      "Original_id": "2427",
+      "Authors": "['Albania', 'United States']",
+      "Voting": "N",
+      "Date": "2022-02-27"
+    }
+  ],
+  "notebook_reproduction_flags": {
+    "task2": [
+      "Invalid outputs replaced with random.choice(valid_votes).",
+      "Prompt uses country and Content, omitting Date and Authors.",
+      "AUC/AP calculated from binarized hard labels; metric class set inferred from observed labels and predictions."
+    ],
+    "task3": [
+      "Invalid outputs replaced with random 0/1.",
+      "Labels and predictions flipped before binary F1: non-adoption is positive.",
+      "ROC/PR AUC calculated from hard labels; ROC exception returns zero."
+    ],
+    "status": "Manually inspected notebook source, never executed; paper table discrepancies remain unresolved."
+  }
+}

@@ -1,0 +1,836 @@
+{
+  "status": "completed_targeted_failure_analysis",
+  "diagnostic_generations": 34,
+  "independent_action_cases": 4,
+  "action_events": 2,
+  "policy_cases": 4,
+  "adaptive_followup": true,
+  "runs": [
+    {
+      "path": "runs/failure-diagnostics-996664-v1",
+      "run_sha256": "c323c2281fb64643fb00731a4ac130241d4245ae48883c0761eba72eb07f83c5",
+      "predictions_sha256": "8a6a2fcd5fdc9f40bbad3b074dca2cf28b111554ca2d61ab71edd0080d9bdbd5",
+      "manifest_sha256": "b3284b1335246b428f8708eee7ea6758d1d8a3fd9a3613027bf932781d2beb3d",
+      "cases": 24,
+      "generation_seconds": 20.97605893132277,
+      "generated_tokens": 854,
+      "prompt_tokens": 57974,
+      "peak_gpu_gib": 16.493667125701904
+    },
+    {
+      "path": "runs/failure-diagnostics-996664-v2",
+      "run_sha256": "31e7ff04e8b957ba6950da4200c90e8eee19037de368b9752a867785c2c3bcae",
+      "predictions_sha256": "6537c83fa00ee467884b065b46dcf0453b4fe36f47b9366ffb91001d8550576a",
+      "manifest_sha256": "040b6deb82768237b27dcacb9ba670a4d456a58b732cc99652d167becf1d6b11",
+      "cases": 10,
+      "generation_seconds": 1.532985083758831,
+      "generated_tokens": 20,
+      "prompt_tokens": 25215,
+      "peak_gpu_gib": 16.482864379882812
+    }
+  ],
+  "action_matrix": {
+    "43cabbaa4d1c8898547e0f92": {
+      "country": "IND",
+      "event": "unsc-meeting:9143:2022-09-30",
+      "reference": "A",
+      "variants": {
+        "baseline_replay": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.0027042462402736916,
+          "oracle": false
+        },
+        "full_country_name": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.00011583109271064215,
+          "oracle": false
+        },
+        "clarify_vote_target": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.0175801996335735,
+          "oracle": false
+        },
+        "remove_abstention_warning": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.004901689049672922,
+          "oracle": false
+        },
+        "word_labels": {
+          "output": "AGAINST",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "full_name_natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "explicit_record_oracle": {
+          "output": "A",
+          "decoded_vote": "A",
+          "p_recorded_vote": 0.9999999998681905,
+          "oracle": true
+        }
+      }
+    },
+    "11a6f6e8b3e105a875a847ca": {
+      "country": "BRA",
+      "event": "unsc-meeting:9143:2022-09-30",
+      "reference": "A",
+      "variants": {
+        "baseline_replay": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.00039908402129544833,
+          "oracle": false
+        },
+        "full_country_name": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.0003520401310870997,
+          "oracle": false
+        },
+        "clarify_vote_target": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.006680038478854118,
+          "oracle": false
+        },
+        "remove_abstention_warning": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.0006578080119658906,
+          "oracle": false
+        },
+        "word_labels": {
+          "output": "AGAINST",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "full_name_natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "explicit_record_oracle": {
+          "output": "A",
+          "decoded_vote": "A",
+          "p_recorded_vote": 0.9999999122412432,
+          "oracle": true
+        }
+      }
+    },
+    "9572de56abd38603c867a0e7": {
+      "country": "IND",
+      "event": "unsc-meeting:8926:2021-12-13",
+      "reference": "N",
+      "variants": {
+        "baseline_replay": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.474969301942296,
+          "oracle": false
+        },
+        "full_country_name": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.435704329226812,
+          "oracle": false
+        },
+        "clarify_vote_target": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.07572305485128351,
+          "oracle": false
+        },
+        "remove_abstention_warning": {
+          "output": "N",
+          "decoded_vote": "N",
+          "p_recorded_vote": 0.530729219800871,
+          "oracle": false
+        },
+        "word_labels": {
+          "output": "AGAINST",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "full_name_natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        }
+      }
+    },
+    "f0ffe7d64cdfa7cb984f1eb3": {
+      "country": "FRA",
+      "event": "unsc-meeting:9143:2022-09-30",
+      "reference": "Y",
+      "variants": {
+        "baseline_replay": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.9994458519211212,
+          "oracle": false
+        },
+        "full_country_name": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.9994469833894781,
+          "oracle": false
+        },
+        "clarify_vote_target": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.9999247610450841,
+          "oracle": false
+        },
+        "remove_abstention_warning": {
+          "output": "Y",
+          "decoded_vote": "Y",
+          "p_recorded_vote": 0.9999723960566151,
+          "oracle": false
+        },
+        "word_labels": {
+          "output": "AGAINST",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        },
+        "full_name_natural_word_labels": {
+          "output": "No",
+          "decoded_vote": "N",
+          "p_recorded_vote": null,
+          "oracle": false
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "43cabbaa4d1c8898547e0f92",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "baseline_replay",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.1476468419530292,
+        "N": 0.8496489118066971,
+        "A": 0.0027042462402736916
+      }
+    },
+    {
+      "id": "e2a208df81889fb67aee5e28",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "full_country_name",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.7309738993160066,
+        "N": 0.26891026959128267,
+        "A": 0.00011583109271064215
+      }
+    },
+    {
+      "id": "04c27eb75b299f432e6f111d",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "clarify_vote_target",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.022573423159952897,
+        "N": 0.9598463772064735,
+        "A": 0.0175801996335735
+      }
+    },
+    {
+      "id": "ed9517cade62beab25ebbfc7",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "remove_abstention_warning",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.2676231541498624,
+        "N": 0.7274751568004648,
+        "A": 0.004901689049672922
+      }
+    },
+    {
+      "id": "1962c234075c8d6e2b6e5205",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "word_labels",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "AGAINST",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "75fa320bb3e684bfe6fa9c36f0d5179176508084b6638019ad860650542f161b",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "11a6f6e8b3e105a875a847ca",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "baseline_replay",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.4376487707515577,
+        "N": 0.5619521452271468,
+        "A": 0.00039908402129544833
+      }
+    },
+    {
+      "id": "845d7a3caa73f71220787f2a",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "full_country_name",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.817286657167871,
+        "N": 0.1823613027010419,
+        "A": 0.0003520401310870997
+      }
+    },
+    {
+      "id": "349fa660a28c2bc21e58d4f4",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "clarify_vote_target",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.22121249332870963,
+        "N": 0.7721074681924363,
+        "A": 0.006680038478854118
+      }
+    },
+    {
+      "id": "2d346ad19b8fb1960755ff7c",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "remove_abstention_warning",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.4375354953086576,
+        "N": 0.5618066966793764,
+        "A": 0.0006578080119658906
+      }
+    },
+    {
+      "id": "4501a1c1ae3a3ecdbcd993bc",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "word_labels",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "AGAINST",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "75fa320bb3e684bfe6fa9c36f0d5179176508084b6638019ad860650542f161b",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "9572de56abd38603c867a0e7",
+      "parent_id": "9572de56abd38603c867a0e7",
+      "variant": "baseline_replay",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "N",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 0.474969301942296,
+        "N": 0.474969301942296,
+        "A": 0.050061396115408
+      }
+    },
+    {
+      "id": "c3f8dae8a70a4bfffcfd9303",
+      "parent_id": "9572de56abd38603c867a0e7",
+      "variant": "full_country_name",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "N",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.5594554328881102,
+        "N": 0.435704329226812,
+        "A": 0.004840237885077841
+      }
+    },
+    {
+      "id": "740de1b32fc4a6a83eb4eb2e",
+      "parent_id": "9572de56abd38603c867a0e7",
+      "variant": "clarify_vote_target",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "N",
+      "correct": false,
+      "canonical_probabilities": {
+        "Y": 0.7184403411510649,
+        "N": 0.07572305485128351,
+        "A": 0.20583660399765152
+      }
+    },
+    {
+      "id": "11d377e5ac1eafa2b66b7774",
+      "parent_id": "9572de56abd38603c867a0e7",
+      "variant": "remove_abstention_warning",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "N",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "f9dfd61493ca94a454a5eed57383fda3e8c36afd6315c3aa952415d6f2637cdb",
+      "decoded_vote": "N",
+      "recorded_vote": "N",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 0.4133323319797941,
+        "N": 0.530729219800871,
+        "A": 0.05593844821933505
+      }
+    },
+    {
+      "id": "dcda7b3f284f5bfa0344728f",
+      "parent_id": "9572de56abd38603c867a0e7",
+      "variant": "word_labels",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "AGAINST",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "75fa320bb3e684bfe6fa9c36f0d5179176508084b6638019ad860650542f161b",
+      "decoded_vote": "N",
+      "recorded_vote": "N",
+      "correct": true,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "f0ffe7d64cdfa7cb984f1eb3",
+      "parent_id": "f0ffe7d64cdfa7cb984f1eb3",
+      "variant": "baseline_replay",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "Y",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 0.9994458519211212,
+        "N": 0.0005527778795066583,
+        "A": 1.370199372040143e-06
+      }
+    },
+    {
+      "id": "f3d92b15e844876d9b9c5fc4",
+      "parent_id": "f0ffe7d64cdfa7cb984f1eb3",
+      "variant": "full_country_name",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "Y",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 0.9994469833894781,
+        "N": 0.0005527785053041219,
+        "A": 2.381052177503286e-07
+      }
+    },
+    {
+      "id": "3af17252b35b93e7797a152b",
+      "parent_id": "f0ffe7d64cdfa7cb984f1eb3",
+      "variant": "clarify_vote_target",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "Y",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 0.9999247610450841,
+        "N": 7.48461981142463e-05,
+        "A": 3.927568017132825e-07
+      }
+    },
+    {
+      "id": "fcbbcc7b2e2c724cb0a1f63c",
+      "parent_id": "f0ffe7d64cdfa7cb984f1eb3",
+      "variant": "remove_abstention_warning",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "Y",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "db5b9a971cd33ab6d8daa0e11bb224bf35a913cea3007e99b103b04a5f4b1068",
+      "decoded_vote": "Y",
+      "recorded_vote": "Y",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 0.9999723960566151,
+        "N": 2.753568923515829e-05,
+        "A": 6.825414962765702e-08
+      }
+    },
+    {
+      "id": "cd2aa13cded92805403065d7",
+      "parent_id": "f0ffe7d64cdfa7cb984f1eb3",
+      "variant": "word_labels",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "AGAINST",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "75fa320bb3e684bfe6fa9c36f0d5179176508084b6638019ad860650542f161b",
+      "decoded_vote": "N",
+      "recorded_vote": "Y",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "b155fe0c5816405b056a300c",
+      "parent_id": "c38042eddde9d1ef2cbca5cc",
+      "variant": "quote_bound_policy",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "The 27 September 2022 Council President’s closing national statement attributed to France does not reflect a unanimous Security Council position. The statement, from Source: S/PV.9138, explicitly outlines France’s position on annexation and support for Ukraine. France rejects Russia’s “sham referendums” in occupied Ukrainian territories, calling them a “farce” with “no legal basis or legitimacy.” It reaffirms that “any annexation of a State’s territory by another State resulting from the use or threat of use of force is a violation of the Charter of the United Nations and international law.” France “will never recognize those illegal annexation attempts by Russia.” The statement also affirms France’s continued support for Ukraine, stating it will “provide Ukraine with the support it needs for as long as is necessary” to ensure “respect for its independence, sovereignty and territorial integrity.” However, the statement does not specify an exact financial pledge.",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "71da51a4f83f2d70967e3b90a258d53473ec78a443b64e90776b34c0ac54ecfb"
+    },
+    {
+      "id": "f3c1d695868b2daf6906f5fa",
+      "parent_id": "ac1e72a1d2b7c03758ad7237",
+      "variant": "quote_bound_policy",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "India's 27 September 2022 statement outlines its proposed way forward for resolving the Ukraine conflict, emphasizing the need for an immediate cessation of hostilities and a return to dialogue and diplomacy. It underscores India's commitment to international law, the UN Charter, and respect for state sovereignty and territorial integrity. India's approach is described as human-centric, with a focus on humanitarian assistance to Ukraine and economic support for South Asian countries facing economic distress. The statement does not explicitly state a vote on S/2022/720, nor does it provide a definitive Y, N, or A. The text only references prior statements and does not mention a specific vote on the document three days later. \n\n\"India has repeatedly called for an immediate cessation of hostilities and has underscored the need to resolve the ongoing conflict through dialogue and diplomacy.\" (S/PV.9138)",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "73eb54b357d2dc2a3e4b915ed592a0f9c208e43d9cef4d7e542814c6713f2f2e"
+    },
+    {
+      "id": "87a24286858980f49acaeab6",
+      "parent_id": "7f61e110dae98dac7bec78e1",
+      "variant": "quote_bound_policy",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "Brazil’s 27 September 2022 statement does not automatically recognize the result of a future referendum with independent observers and unrestricted expression. The statement emphasizes that referendums on sovereignty must meet specific conditions, including transparency, freedom of expression, and independent monitoring, to be legitimate. Brazil criticizes the referendums in Ukraine’s regions for failing these conditions, noting that populations in conflict zones may not freely express their will. The country upholds the principles of territorial integrity and political unity of sovereign states, as outlined in the UN Charter and international covenants. While Brazil supports the idea of referendums as a means for self-determination, it stresses that their validity depends on meeting these criteria. The statement does not determine whether such features alone would suffice for recognition, as it remains contingent on broader conditions and the context of the conflict. Source: S/PV.9138.",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "0d659e9debe070c10b47677d2634b1d9bd8be7e2d37fea61ca1188d60a94eaff"
+    },
+    {
+      "id": "7cb5ccaf3b2868281b9ee2af",
+      "parent_id": "70380b733032cf5c3eda9512",
+      "variant": "quote_bound_policy",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "India’s 9 December 2021 statement to the UN Security Council clarifies its position on climate change and security, countering the analyst’s characterization that India “denied that climate change could exacerbate conflict.” India acknowledged that climate change has impacted people’s lives and “exacerbated conflicts in many places,” but emphasized that “viewing conflicts only through the prism of climate change presents a misleading perspective.” It cited the Intergovernmental Panel on Climate Change (IPCC), noting that “the effect of climate variability on violence is contested” and there is “no clear scientific pronouncement directly equating climate change with security concerns.” India argued that climate matters should be addressed under the UNFCCC, not the Security Council, to avoid disrupting the inclusive, consensus-driven process of the climate regime. The country expressed support for the Glasgow Climate Pact and reaffirmed its commitment to the Paris Agreement, including its 2030 and 2070 climate targets. India’s institutional preference is to maintain the existing UNFCCC framework for climate action, rather than creating a new Security Council mechanism. (S/PV.8923, 2021-12-09)",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v1",
+      "output_sha256": "9515bf5db6640a369be8dec54dc3ef739ea0139a092c7b0914ab16a2a6a39e9f"
+    },
+    {
+      "id": "bc0ef3a32541ed24e890a4d5",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "natural_word_labels",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "6d6d270201743f4bd01c3f21",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "full_name_natural_word_labels",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "59fc63092a06d149eb64e494",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "natural_word_labels",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "e0cae2946fbd6067652c0ddb",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "full_name_natural_word_labels",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "A",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "dad874f8f3e672fd2271a866",
+      "parent_id": "9572de56abd38603c867a0e7",
+      "variant": "natural_word_labels",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "N",
+      "correct": true,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "8ad26e35366dce549acb4261",
+      "parent_id": "9572de56abd38603c867a0e7",
+      "variant": "full_name_natural_word_labels",
+      "country": "IND",
+      "split_group": "unsc-meeting:8926:2021-12-13",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "N",
+      "correct": true,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "d6d2bed76affdb8d64b70e15",
+      "parent_id": "f0ffe7d64cdfa7cb984f1eb3",
+      "variant": "natural_word_labels",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "Y",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "37214a5f68c91cfdc8d52084",
+      "parent_id": "f0ffe7d64cdfa7cb984f1eb3",
+      "variant": "full_name_natural_word_labels",
+      "country": "FRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "No",
+      "contains_outcome_evidence": false,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "b2cbc4e2e5545a6c43f6f8cc8f0e4766773fa6c83d238076313b6fa1e349caf6",
+      "decoded_vote": "N",
+      "recorded_vote": "Y",
+      "correct": false,
+      "canonical_probabilities": null
+    },
+    {
+      "id": "2a386338585aec1206adf5d3",
+      "parent_id": "43cabbaa4d1c8898547e0f92",
+      "variant": "explicit_record_oracle",
+      "country": "IND",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "A",
+      "contains_outcome_evidence": true,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "798640599597df7a8daa32b1132f07850a68b5e71bd295650399a38074f52804",
+      "decoded_vote": "A",
+      "recorded_vote": "A",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 4.4202281030585447e-14,
+        "N": 1.3176514268358676e-10,
+        "A": 0.9999999998681905
+      }
+    },
+    {
+      "id": "3eace431f93645ced1dd4cf3",
+      "parent_id": "11a6f6e8b3e105a875a847ca",
+      "variant": "explicit_record_oracle",
+      "country": "BRA",
+      "split_group": "unsc-meeting:9143:2022-09-30",
+      "output": "A",
+      "contains_outcome_evidence": true,
+      "source_run": "runs/failure-diagnostics-996664-v2",
+      "output_sha256": "798640599597df7a8daa32b1132f07850a68b5e71bd295650399a38074f52804",
+      "decoded_vote": "A",
+      "recorded_vote": "A",
+      "correct": true,
+      "canonical_probabilities": {
+        "Y": 1.1628232009741695e-10,
+        "N": 8.764247450304107e-08,
+        "A": 0.9999999122412432
+      }
+    }
+  ],
+  "findings": {
+    "baseline_replays_identical": 4,
+    "full_country_name_vote_flips": 3,
+    "missed_abstentions_fixed_without_outcome_evidence": 0,
+    "oracle_abstentions_extracted_correctly": 2,
+    "natural_word_outputs": "No for all four cases, with both country codes and full names",
+    "quote_policy_france": "Unsupported assistance types removed; duration qualification restored; seven quoted spans literally match supplied source.",
+    "quote_policy_limit": "India/Ukraine still narrows global South to South Asia and omits food/fuel/fertilizer; Brazil supplies no exact quotations."
+  },
+  "hypothesis_assessment": {
+    "simple_inability_to_output_abstention": "Not supported: explicit outcome controls produce A.",
+    "abstention_warning_is_sufficient_cause": "Not supported by removal intervention; both errors remain.",
+    "country_name_invariance": "Fails on three of four selected cases under letter labels.",
+    "answer_format_invariance": "Fails even on the France positive control.",
+    "missing_prevote_draft_specific_information": "Supported as an evidence limitation by comparison with later public explanations; not a complete causal account of model decisions.",
+    "source_grounding_instruction_always_fixes_policy": "Not supported; fixes the selected France error but coverage remains inconsistent.",
+    "gpu_or_output_truncation_explains_errors": "No evidence in these traces: all inputs retained, all outputs end at EOS, memory well below capacity, sampled ECC count zero."
+  },
+  "limits": [
+    "Selected after observing errors; do not report this as a fresh benchmark score.",
+    "Two oracle controls intentionally reveal the outcome and measure extraction only.",
+    "Observed prompt effects do not identify the internal neural cause or prove shared latent values.",
+    "Post-vote explanations are public justifications, not independently established private causal motives.",
+    "Word-label outputs use different tokenizations; canonical Y/N/A probabilities cannot be compared to them.",
+    "No new training or independent human ratings."
+  ]
+}

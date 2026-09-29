@@ -1,0 +1,1022 @@
+                                                Benchmarking LLMs for Political Science: A United Nations Perspective
+                                                          Yueqing Liang1 , Liangwei Yang2 , Chen Wang3 , Congying Xia4 , Rui Meng2 * ,
+                                                                   Xiongxiao Xu1 , Haoran Wang6 , Ali Payani5 , Kai Shu6†
+                                                             1
+                                                            Illinois Institute of Technology 2 Salesforce Research 3 University of Illinois Chicago
+                                                                               4
+                                                                                 Meta GenAI 5 Cisco Research 6 Emory University
+                                                  {yliang40, xxu85}@hawk.illinoistech.edu, {liangwei.yang, ruimeng}@salesforce.com, cwang266@uic.edu,
+                                                               congyingxia@meta.com, apayani@cisco.com, {haoran.wang, kai.shu}@emory.edu
+
+
+                                                                     Abstract                                                             Stages
+
+
+
+
+arXiv:2502.14122v2 [cs.CL] 23 Jan 2026
+                                           Large Language Models (LLMs) have achieved significant
+                                           advances in natural language processing, yet their potential
+                                           for high-stakes political decision-making remains largely un-                                 Drafting
+                                           explored. This paper addresses the gap by focusing on the
+                                           application of LLMs to the United Nations (UN) decision-
+                                           making process, where the stakes are particularly high and
+                                           political decisions can have far-reaching consequences. We
+                                                                                                                                          Voting
+                                           introduce a novel dataset comprising publicly available UN
+                                           Security Council (UNSC) records from 1994 to 2024, in-
+                                           cluding draft resolutions, voting records, and diplomatic
+                                           speeches. Using this dataset, we propose the United Nations                                                                  ....................................
+                                           Benchmark (UNBench), the first comprehensive benchmark                                       Discussing
+                                           designed to evaluate LLMs across four interconnected po-                                                        ....................................
+                                           litical science tasks: co-penholder judgment, representative
+                                           voting simulation, draft adoption prediction, and representa-
+                                                                                                                           ...
+                                           tive statement generation. These tasks span the three stages
+                                           of the UN decision-making process—drafting, voting, and
+                                           discussing—and aim to assess LLMs’ ability to understand                Figure 1: Three key stages of the United Nations decision-
+                                           and simulate political dynamics. Our experimental analysis              making, where LLMs can simulate an individual member.
+                                           demonstrates the potential and challenges of applying LLMs
+                                           in this domain, providing insights into their strengths and lim-
+                                           itations in political science. To the best of our knowledge, this
+                                           is the first benchmark to systematically evaluate LLMs in UN            diplomatic language, and navigating the tension between na-
+                                           decision-making, contributing to the growing intersection of            tional interests and global norms. These challenges unfold
+                                           AI and political science.                                               within the United Nations (UN), where a single draft reso-
+                                                                                                                   lution, once adopted, becomes binding international law un-
+                                         UNBench — https://github.com/yueqingliang1/UNBench                        der Chapter VII of the UN Charter, with cascading impacts
+                                         Extended version — https://arxiv.org/abs/2502.14122                       on global security, trade, and human rights (e.g., Resolution
+                                                                                                                   1973’s no-fly zone over Libya in 2011). Studying the appli-
+                                                                                                                   cation of LLMs in political science represents both a techni-
+                                                                 1   Introduction                                  cal frontier and a critical societal challenge.
+                                         Large Language Models (LLMs) such as GPT-4 (OpenAI                           The scope of UN resolutions is extensive, extending far
+                                         2023), Llama (Dubey et al. 2024), and DeepSeek (Liu et al.                beyond political statements. Adopted resolutions can autho-
+                                         2024) have achieved unprecedented proficiency in language                 rize military interventions (such as Resolution 678 in 1990),
+                                         tasks and are increasingly under development tailored for                 impose sanctions that cripple national economies (e.g., Res-
+                                         different domains (Cheng, Huang, and Wei 2023). Yet, their                olution 1718 on North Korea in 2006), or redefine global pri-
+                                         adaptation to high-stakes political decision-making remains               orities (e.g., Resolution 2341 on critical infrastructure pro-
+                                         underexplored—particularly in scenarios where model out-                  tection in 2017). By analyzing the open-access data from
+                                         puts could influence real-world governance. Political sci-                draft resolutions and meeting records, we can explore how
+                                         ence demands capabilities beyond semantic understand-                     current LLMs understand the critical issues facing the in-
+                                         ing: predicting coalition dynamics, interpreting ambiguous                ternational community and assess their ability to interpret
+                                            * Now at Google Cloud AI Research.                                     bilateral and multilateral relations. This extends LLM’s ap-
+                                            †
+                                              Corresponding author
+                                                                                                                   plication toward political science, enhancing the analysis of
+                                         Copyright © 2026, Association for the Advancement of Artificial           international policies and diplomacy.
+                                         Intelligence (www.aaai.org). All rights reserved.                            Currently, there is no comprehensive benchmark designed
+
+
+                                                                                                               1
+specifically for LLM applications in political science. Exist-         et al. 2023), PerSenT (Bastan et al. 2020), and GermEval-
+ing benchmarks (e.g., MMLU (Hendrycks et al. 2021b,a),                 2017 (Wojatzki et al. 2017) evaluate LLMs on classifying
+BIG-Bench (Suzgun et al. 2022)) with related tasks remain              sentiments or identifying topics within political texts. These
+fragmented, and their designs may not adequately reflect               benchmarks primarily emphasize static text understanding.
+LLMs’ understanding of political science. Such fragmented              BillSum (Kornilova and Eidelman 2019) and CaseLaw (Shu
+evaluation overlooks the interconnected nature of real-world           et al. 2024) specialize in summarization or analysis of leg-
+political decision-making, particularly in high-stakes multi-          islative documents. Datasets like PolitiFact (Shu et al. 2020),
+lateral settings like the UN. Figure 1 shows the stages of             GossipCop (Grover et al. 2022), and Weibo (Jin et al.
+each UN draft resolution. It consists of three stages. (1)             2017) focus on detecting misinformation. Election predic-
+Drafting: The creation of the resolution’s text, involving the         tion and voting behavior datasets, such as U.S. Senate Re-
+collaboration among member states. (2) Voting: The process             turns 2020 (Data and Lab 2022b) and State Precinct-Level
+in which the resolution is formally adopted or rejected by             Returns 2018 (Data and Lab 2022a) evaluate models’ ca-
+voting from the UN members. (3) Discussing: Each member                pabilities in statistical pattern recognition and forecasting.
+states the rationality of their voting. Different tasks occur in       These tasks often rely on structured data and focus on
+different stages and also interconnected with each other.              predictive performance related to electoral outcomes. Our
+   To fill the benchmark gap in political science, we in-              benchmark is the first to unify these diverse political sci-
+troduce United Nations Benchmark (UNBench), the first                  ence tasks within a single, end-to-end benchmark grounded
+comprehensive benchmark to evaluate LLMs’ ability across               in real-world multilateral decision-making process in the
+four distinct yet interconnected political science tasks               United Nations scenario.
+of different stages: (a) Co-Penholder Judgement: Given
+anonymized draft content, identify optimal co-author na-               2.2   United Nations-Related Datasets
+tions, simulating coalition-building strategies in multilat-           The United Nations has long been a focal institution for
+eral diplomacy. (b) Representatives Voting Simulation: In-             global politics, attracting extensive study in political science
+struct an LLM to act as a national agent (e.g., ”As the U.S.           (Bailey, Strezhnev, and Voeten 2017; Voeten 2013). While
+representative”) and output voting decisions ([’In favour’,            various publicly available datasets shed partial light on UN
+’Against’, etc.]), testing contextual understanding of na-             processes, they typically focus on limited aspects of the or-
+tional interests. (c) Draft Adoption Prediction: Input a               ganization. Harvard Dataverse UN Voting Dataset (Voeten,
+draft resolution to LLM and ask it to predict the draft adop-          Strezhnev, and Bailey 2009) compiles pairwise country vot-
+tion probability, which requires analysis of historical vot-           ing statistics, offering quantitative insights but lacking tex-
+ing patterns and geopolitical alignments. (d) Representative           tual data such as draft resolutions or debate transcripts. UN-
+Statement Generation: Generate country-specific speeches               SCR.com (i Redondo and Llovera 2025) collects mainly
+justifying voting positions, evaluating persuasive language            adopted Security Council resolutions, providing topic labels
+generation under political constraints. The tasks are de-              and related resolutions but minimal coverage of draft con-
+signed from different UN stages, varying across predictive             tent. UNSCdeb8 (Kohlenberg et al. 2019) includes verba-
+and generative tasks. Our benchmark is built from publicly             tim debate transcripts from 2010 to 2017, capturing real-
+available UNSC official records (1994-2024), comprising                time deliberation but omitting links to draft texts or vot-
+draft resolutions, voting records, and diplomatic speeches             ing outcomes. Lastly, the UN Parallel Corpus (United Na-
+which are extracted from meeting records. In summary, our              tions 2025) supplies multilingual final resolutions and meet-
+work makes the following contributions:                                ing records (1994–2014), yet lacks draft-stage materials and
+ • Systematically curated and processed United Nations                 detailed metadata to trace evolving negotiations. In this pa-
+   data from 1994 to 2024, including draft resolutions, vot-           per, we present the first LLM benchmark covering the full
+   ing records, and diplomatic speeches, to provide a new              UN resolution process—combining draft texts, debates, and
+   and comprehensive dataset that facilitates LLM applica-             voting records from 1994–2024 to capture the complete
+   tions in political science.                                         decision-making trajectory.
+ • Introduce the first comprehensive benchmark in politi-
+   cal science, designed to assess LLM performance across                     3    The United Nations Benchmark
+   various real-world tasks in different stages of the UN              UNBench is extracted from United Nations resolution deci-
+   decision-making process.                                            sions. It consists of four tasks, covering three distinct stages
+ • Conduct extensive experimental analysis on the bench-               (Drafting, Voting, Discussing) before the adoption/rejection
+   mark, demonstrating the effectiveness and limitations of            of each resolution.
+   current LLMs in handling complex political tasks.
+                                                                       3.1   Benchmark Notation Definition
+                   2    Related Works                                  To formalize our benchmark and the tasks, we introduce the
+2.1   LLMs in Political Science                                        following notations:
+Existing benchmark datasets have played a critical role                 • R = {r1 , r2 , . . . , rN }: The set of all draft resolutions.
+in advancing Large Language Models (LLMs) in politi-                      Each resolution ri contains proposed actions, mandates,
+cal science tasks. Datasets such as OpinionQA (Santurkar                  and contextual details (e.g., sponsoring countries).
+
+
+                                                                   2
+                    Stage 1:                                          Stage 2:                                       Stage 3:
+                    Drafting                                           Voting                                       Discussing
+
+  Task 1: Co-penholder Choosing                    Task 2: Representatives Vote                     Task 4: Representatives Speech
+
+  Prompt: You are representing                     Prompt: You are a diplomat of                    Prompt: Assume you are the
+  France and are drafting a                        United Kindom participating in                   representative of China, given
+  resolution about climate change,                 UNSC’s meeting. Read the                         the content of a UNSC draft
+  which country will you choose to                 draft the cast your vote:                        resolution, generate a
+  be your co-penholder?                            [Yes, No, Abstention].                           statement that you would
+                                                                                                    make in the meeting to justify
+                                                    Collected Labels:                               your vote and stance.
+                   Co-penholder Candidates:                                 …
+                                                                                                   Generated Response:
+                   1/2:
+                                                                                                     China welcomes the unanimous
+                   1/3:
+        Draft                                                                                        adoption of resolution xxx.
+      Resolution   1/4:                            Task 3: Draft Adoption Prediction
+                   1/5:                                                                                            Compare
+                                                    Prompt: The provided
+                                                    document is a UNSC's draft                     Ground Truth:
+                      LLM
+                     Parsing                        resolution. Predict whether the
+                                                                                                    China expresses its sincere appreciation
+                                                    draft resolution will be adopted
+                                                                                                    for the adoption of resolution xxx.
+                                                    or not: [Yes, No].
+
+
+                                         Resolution ID                                 Meeting Record ID
+               Draft Resolutions                               Voting Records                                 Meeting Records
+
+
+
+
+              Figure 2: The proposed UNBench. It consists of 4 tasks extracted from different stages of a UN draft.
+
+
+ • C = {c1 , c2 , . . . , cM }: The set of all UN members, in-               Task 1: Co-Penholder Judgement. Formally, let ri be
+   cluding both permanent and non-permanent members.                         a draft resolution authored by country ca . We sample
+ • For each resolution ri ∈ R, Ccandidate (ri ) ⊆ C denotes                  Ccandidate (ri ) ⊆ C as a set of co-penholders candidates,
+   the candidate co-penholder countries—those likely to                      each representing a different country. The LLM is prompted
+   sponsor or support ri during the drafting process.                        to assume the role of the author country ca , given the text of
+                                                                             ri , and asked to choose exactly one co-penholder from the
+ • V(ri ) = {vi,1 , vi,2 , . . . , vi,15 }: The votes of the 15 Se-          set Ccandidate (ri ). In practice, we vary the number of candi-
+   curity Council members on ri . Each vote vi,j is one of                   dates from 2 to 5, making this task a multi-choice setup with
+   {[In Favour], [Against], [Abstention]}.                                   a single correct answer.
+ • Result(ri ) ∈ {A DOPTED, N OTA DOPTED}: The deci-                             Co-penholdership reflects shared strategic interests,
+   sion on ri . It is N OTA DOPTED if it fails to secure the                 diplomatic partnerships, or specialized expertise on the is-
+   necessary majority or is vetoed by a permanent member.                    sue at hand. Identifying a suitable co-penholder requires the
+                                                                             model to have the following ability:
+ • S(ri , cj ): The official statement (speech) of country cj
+                                                                              • Comprehend Contextual Information: Understand the
+   regarding ri , delivered during the discussion stage. This
+                                                                                  resolution’s key themes (e.g., conflict prevention, sanc-
+   typically includes the country’s rationale, policy con-
+                                                                                  tions regime, peacekeeping mandates), and recognize
+   cerns, and diplomatic stance.
+                                                                                  which policy domains (e.g., human rights, climate, nu-
+                                                                                  clear disarmament) are relevant. This tests the model’s
+3.2    Stage 1: Drafting                                                          ability to integrate textual comprehension of policy con-
+Drafting is the initial phase in the lifecycle of a resolution.                   tent with broader geopolitical and diplomatic reasoning.
+Typically, one or more countries—often referred to as pen-                    • Infer Diplomatic Alignments: Analyze historical or im-
+holders—take the lead in preparing a draft text, outlining                        plied alignments and identify country pairings likely
+the resolution’s objectives, scope, and operative clauses. The                    to co-sponsor a resolution. This evaluates whether the
+draft is then refined through closed-door consultations, cir-                     model can correlate textual cues with knowledge of past
+culated informally among Council members. A unique fea-                           collaborations or alliances, and navigate multi-choice
+ture of drafting is the practice of co-penholdership, wherein                     questions where the differences between candidate coun-
+multiple countries jointly sponsor or “own” the resolution                        tries may be subtle or context-dependent.
+from its inception. We design a task focusing on identifying                  • Reason About Multilateral Cooperation: Weigh fac-
+the most suitable co-penholder.                                                   tors such as a candidate country’s veto power (if perma-
+
+
+                                                                        3
+    nent), geopolitical priorities, and regional interests to rec-       3.4   Stage 3: Discussing
+    ommend a co-penholder that maximizes the resolution’s                Once the voting concludes, each member typically delivers
+    likelihood of success.                                               a statement clarifying the vote and articulating national po-
+   Hence, Task 1 offers a focused measure of the model’s                 sitions or broader policy perspectives. These statements re-
+capacity to perform political and textual reasoning in a con-            veal the rationale behind each country’s stance—whether In
+trolled, multi-choice format, laying the groundwork for sub-             Favour, Against, or Abstention. Since these statements are
+sequent stages involving voting and post-vote deliberation.              given in an open discussion format, countries may engage
+                                                                         in debates, directly addressing or countering the arguments
+3.3   Stage 2: Voting                                                    made by other members. This final discussion phase can
+In the second stage of the resolution lifecycle, each of the             shape diplomatic narratives surrounding the resolution’s im-
+15 Council members casts a vote to determine whether a                   plications and signal future policy directions. We design a
+draft resolution is adopted or rejected. Permanent members               task that evaluates an LLM’s ability to generate representa-
+wield veto power, meaning a single “Against” vote from                   tive statements aligned with national interests, voting behav-
+any of the five permanent countries can block the resolution,            ior, and diplomatic discourse norms.
+regardless of overall support. Non-permanent members, on
+the other hand, primarily influence the outcome through col-             Task 4: Representative Statement Generation For-
+lective consensus and persuasive negotiation. Based on this              mally, for a draft resolution ri , let S(ri , cj ) denote the of-
+voting mechanism, we define two tasks that capture different             ficial statement made by country cj . In this task, the LLM
+facets of decision-making at this stage.                                 receives the text of ri alongside contextual details, includ-
+                                                                         ing the outcome of the vote, each country’s voting decision,
+Task 2: Representatives Voting Simulation. Formally,                     and any prior statements made in the discussion (if available,
+for a draft resolution ri , let V(ri ) = {vi,1 , . . . , vi,15 }         in the order they were delivered). The model is then asked to
+denote the votes cast by each of the 15 Council mem-                     generate the statement that cj would deliver. This statement
+bers. In this task, the LLM is given the content of ri                   should reflect:
+and prompted to assume the role of a specific represen-
+tative cj (where cj ∈ C) to determine how that coun-                      • National Interests and Policies: How does cj ’s geopo-
+try would vote on ri . Each vote vi,j must be one of                        litical position shape its response to the resolution (e.g.,
+{[In Favour], [Against], [Abstention]}.                                     security concerns, regional dynamics)?
+                                                                          • Vote Justification: If cj voted [In Favour],
+Objective and Challenges. Effective voting simulation
+                                                                            [Against], or [Abstention], the statement
+requires the model to:
+                                                                            should provide a coherent rationale for the decision.
+ • Comprehend the Resolution: Interpret the text of ri in
+    light of its subject matter (e.g., conflict prevention).              • Diplomatic Tone and Style: UNSC discourse follows
+                                                                            a formal, measured tone. The model should generate text
+ • Incorporate National Interests: Weigh a representative                   that aligns with the conventions of diplomatic statements.
+    country’s known priorities and geopolitical alignments
+    (e.g., historical alliances, regional blocs).                           By prompting the model to produce country-specific state-
+ • Account for Veto Power: Recognize whether cj is a per-                ments, Task 4 evaluates higher-level language generation
+    manent member with veto ability.                                     skills in a multi-faceted political context. The ability to in-
+                                                                         corporate historical alliances, policy priorities, and rhetori-
+These dimensions test not only the model’s text understand-
+                                                                         cal conventions into coherent and persuasive statements in-
+ing but also its ability in political and strategic reasoning,
+                                                                         dicates an advanced understanding of both textual composi-
+reflecting real-world complexities in UN negotiations.
+                                                                         tion and global political dynamics.
+Task 3: Draft Adoption Prediction. Once the votes V(ri )
+are cast, the resolution is adopted if it secures the necessary                         4    Dataset Construction
+majority (i.e., at least nine [In Favour] votes) and no
+permanent member exercises a veto. In this task, the LLM                 Our dataset D is constructed from United Nations Security
+receives the text of ri and predict the final outcome, denoted           Council (UNSC) meeting records, draft resolutions, and vot-
+                                                                         ing histories spanning the years 1994 to 2024. The resulting
+        Result(ri ) ∈ {A DOPTED, N OTA DOPTED}.                          corpus not only includes the textual content of each draft
+Unlike Task 2, which focuses on individual country votes,                resolution but also contextual metadata such as voting out-
+this task tests whether the model can account for the collec-            comes, sponsoring nations, meeting transcripts, and the tem-
+tive dynamics of all 15 Council members. Key factors in-                 poral sequence of events.
+clude but are not limited to overall council sentiment, poten-              The overarching goal of this work is to provide a uni-
+tial veto threats, historical precedents, etc. Accurate adop-            fied and extensive collection of the decision-making pro-
+tion prediction thus demands higher-level inference about                cess, thereby enabling evaluation of multiple LLM capa-
+the distribution of possible votes, the interplay of veto                bilities in a single benchmark. To achieve this, we collect
+power, and the delicate balancing of geopolitical interests.             multi-perspective data from the official website and digi-
+Together, Tasks 2 and 3 provide complementary perspectives               tal library(United Nations Security Council 2024), which
+on an LLM’s capacity to model real-world decision-making                 archive draft resolutions, voting records, and meeting min-
+under complex international relations.                                   utes. Below, we highlight key challenges and our corre-
+
+
+                                                                     4
+sponding strategies in constructing D in the different stages          each instance corresponds to an author country selecting a
+of our benchmark construction.                                         co-penholder. Task 2 contains 17,430 instances of individ-
+                                                                       ual votes for each country that participating in the voting,
+Data Collection. In the data collection stage, we have
+                                                                       while Task 3 comprises 1,978 draft resolutions with both
+three challenges: (1) Fragmented Records. Draft resolu-
+                                                                       [Adopted] and [NotAdopted] labels. Finally, Task 4
+tions, voting logs, and meeting transcripts reside in separate
+                                                                       includes 7,394 statements from 1,752 UNSC meetings, test-
+sections of the UN database. We utilize shared identifiers
+                                                                       ing the ability to generate coherent speeches that align with
+(e.g., resolution numbers, meeting record IDs) to link these
+                                                                       national stances. More data analysis can be found at Ap-
+sources. As illustrated schematically in Figure 2, we first
+                                                                       pendix A in the extended version (Liang et al. 2025).
+retrieve all draft resolutions, then query corresponding vot-
+ing records by resolution ID (when applicable), and finally
+map meeting transcripts via the meeting record ID. (2) Miss-            Task      Statistic                           Value
+ing or Incomplete Metadata. Despite the UN’s comprehen-                           # Drafts                            1,300
+sive record-keeping, certain entries contain missing fields                       # Unique Draft Authors                209
+(e.g., sponsor lists), inconsistent data formats, or broken             Task 1
+                                                                                  Avg. # Authors per Draft                7
+links. We mitigate these issues by cross-referencing multi-                       # Total Instances                 355,126
+ple UN repositories, manually curating ambiguous entries,
+and applying standardized naming conventions for country                          # Drafts                            1,162
+references. (3) Historical Document Diversity. The official                       # Total Instances                  17,430
+document formats and website structures vary considerably               Task 2    # [In Favour]                      17,020
+across decades, complicating automated crawling and pars-                         # [Against]                            16
+ing. We address this by implementing adaptive web-scraping                        # [Abstention]                        391
+scripts that detect layout differences and by performing iter-                    # Drafts                            1,978
+ative quality checks to ensure data consistency.                        Task 3    # [Adopted]                         1,880
+                                                                                  # [NotAdopted]                         98
+Data Conversion. UN documents are primarily stored in
+PDF format, making direct ingestion by current LLMs in-                           # Meetings (Drafts)                 1,752
+feasible. We therefore extract and convert the content into                       # Statements                        7,394
+                                                                        Task 4
+plain text. Early attempts using generic Python PDF li-                           # Countries                           204
+braries yielded mixed accuracy due to the unstructured,                           Avg. # Tokens per Statement           450
+domain-specific nature of political documents. We applied a
+LLM-based parser (LlamaParse(LlamaIndex 2024)) to han-                             Table 1: Statistics for our UNBench.
+dle complex formatting (e.g., multi-column layouts, foot-
+notes, multilingual text).
+                                                                       5.2   Experimental Setup
+Data Processing. (1) Labeling Adopted vs. Unadopted
+Drafts. Some drafts never become official resolutions (i.e.,           Models. Tasks 1, 2, and 3 are classification-oriented.
+“unadopted”), lacking a formal resolution ID. We thus in-              We compare two traditional text classification models
+spect the official notes in each draft’s record and cross-verify       (BERT (Devlin 2018) and DeBERTa (He et al. 2020))
+with the final resolution index to categorize them correctly.          against several instruction-tuned LLMs: Llama-3.2-1B-
+(2) Country Name Normalization. Different records refer to             Instruct (Dubey et al. 2024), Llama-3.2-3B-Instruct, Llama-
+the same country with variations (e.g., “United Kingdom”               3.1-8B-Instruct, Mistral-7B-Instruct (Jiang et al. 2023),
+vs. “Kingdom”). We employ the official name to unify ref-              DeepSeek-V3 (Liu et al. 2024), Qwen2.5-7B-Instruct (Yang
+erences to the same country entity. (3) Metadata Alignment.            et al. 2024), and GPT-4o via the Azure API. BERT and De-
+For each draft ri , we compile the relevant information: au-           BERTa are fine-tuned for three epochs with a learning rate of
+thor/sponsor countries, date, issue category, voting break-            5 × 10−5 . Llama models run on an 8×A6000 GPU server,
+down, and meeting transcripts into a structured format com-            while Mistral and DeepSeek are accessed through the To-
+patible with modern NLP frameworks.                                    getherAI platform. Since Task 4 (representatives statement
+   Through these steps, UNBench incorporates the entire                generation) is inherently a generative task, we only evaluate
+lifecycle of each UNSC draft resolution, from initial spon-            LLMs on it, setting a temperature of 0.0 for consistent com-
+sorship and negotiations to final votes and discussions, en-           parisons and adjusting maximum output lengths per task.
+suring comprehensive coverage for our benchmark tasks.                 Settings. For each classification-oriented task, we employ
+                                                                       a time-based train/test split. Specifically, we reserve half
+                    5    Experiments                                   of the samples from the less frequent labels (according to
+5.1   Dataset Statistics                                               chronological order) as the test set, ensuring the training set
+                                                                       remains balanced and temporally earlier. This protocol sim-
+Our UNBench covers a broad range of draft resolutions, vot-
+                                                                       ulates real-world scenarios where future events must be pre-
+ing records, and meeting transcripts, providing diverse sce-
+                                                                       dicted from past data.
+narios for evaluating multiple LLM capabilities. As shown
+in Table 1, Task 1 features 1,300 draft resolutions with a total       Metrics. Task 1 is a multiple-choice question with k
+of 355,126 instances—reflecting a multi-choice setup where             ranging from 2 to 5. We calculate accuracy by check-
+
+
+                                                                   5
+                                                               Llama-3.2-1B         PR AUC), demonstrating a strong ability to model nuanced
+                    0.7                                        Llama-3.2-3B         trade-offs. DeepSeek-V3 (0.724 Bal. ACC, 0.655 PR AUC)
+                                                               Llama-3.1-8B
+
+
+
+
+Performance Score
+                                                               GPT-4o
+                                                                                    and Llama-3.2-3B (0.597 Bal. ACC) show moderate success
+                    0.6                                        Deepseek-V3          but struggle with ambiguous cases, while Mistral-7B (0.426
+                                                               Mistral-7B           Bal. ACC) performs poorly, reflecting its inability to sys-
+                    0.5                                        Qwen2.5-7B
+                                                                                    tematically weigh competing factors. The results highlight
+                                                                                    LLMs’ potential to simulate diplomatic behavior but reveal
+                    0.4                                                             significant variance in their capacity to reason about issue-
+                                                                                    specific voting dynamics. We also assess whether model per-
+                    0.3                                                             formance varies with respect to recency, potential geopolit-
+                      2 choices      3 choices     4 choices        5 choices       ical disparities, and different contextual metadata. Detailed
+                                       Number of Choices                            results are provided at Appendix C.1, C.2, and C.3.
+
+Figure 3: Models performance in Task 1 by varying the num-                          5.5   Task 3: Draft Adoption Prediction
+ber of choices.
+                                                                                    Whereas Task 2 centers on individual votes, Task 3 measures
+                                                                                    document-level outcome prediction, requiring holistic rea-
+ing whether the model identifies the single valid co-                               soning about all 15 Council members to predict whether a
+penholder. Tasks 2 and 3 are classification problems (multi-                        resolution is eventually [Adopted] or [NotAdopted].
+class and binary, respectively), so we report metrics ro-                           GPT-4o shows the best Bal. ACC (0.677) and a competitive
+bust to class imbalance, including F1-score, balanced accu-                         macro-F1 (0.363), while Llama-3.2-3B surpasses others in
+racy (Bal. ACC), and PR AUC. Task 4 is evaluated using                              macro-F1 (0.402) but has lower Bal. ACC (0.597). The di-
+text-generation metrics (ROUGE) and semantic similarity                             vergence between Bal. ACC and F1 metrics reveals the chal-
+(Sentence-BERT (Reimers 2019)) to measure how closely                               lenge of modeling adoption mechanics, where understand-
+the generated statements match ground truth in style and                            ing Council-wide political dynamics, potential veto threats,
+content. For brevity, we present only two primary metrics                           and support coalitions play roles. In addition, we analyze
+per task in Table 2, with detailed breakdowns available at                          GPT-4o’s robustness across time, regional authorship, and
+Appendix B.                                                                         metadata conditions for this task. The corresponding evalu-
+                                                                                    ations are detailed at Appendix C.1, C.2, and C.3.
+5.3                       Task 1: Co-Penholder Judgement
+This task evaluates LLMs’ ability to identify strategic                             5.6   Task 4: Representatives Statement
+geopolitical alliances by selecting co-penholders for UNSC                                Generation
+draft resolutions, requiring nuanced understanding of inter-                        This task evaluates LLMs’ ability to generate style-sensitive
+national relations and procedural norms. GPT-4o (0.726)                             diplomatic statements that align with country-specific
+and DeepSeek-V3 (0.695) dominate, demonstrating superior                            rhetoric and protocol. Qwen2.5-7B and DeepSeek-V3 tie
+contextual reasoning and geopolitical knowledge. Smaller                            for semantic fidelity (0.623 Cosine), demonstrating strong
+LLMs (e.g., Llama-3.2-1B: 0.581) lag significantly, while                           alignment with the intended meaning and tone of diplo-
+traditional models (BERT: 0.011) fail entirely, underscoring                        matic statements. DeepSeek-V3 also leads in lexical over-
+the necessity of LLM-scale architectures for complex polit-                         lap (0.207 ROUGE), suggesting better adherence to precise
+ical inference. In addition, we vary the number of candidate                        terminological requirements. Mistral-7B achieves high Co-
+choices (2–5) to test models’ robustness under increasing                           sine similarity (0.575) but modest ROUGE (0.194), indi-
+complexity. As shown in Figure 3, all models exhibit de-                            cating strength in paraphrasing and conceptual alignment
+clining accuracy as choices increase, with GPT-4o maintain-                         rather than verbatim replication. All models underperform
+ing dominance across all levels. The widening performance                           in ROUGE, exposing limitations in precise terminological
+gaps as choices increase highlight the divergent capacities                         alignment—a critical requirement for diplomatic drafting.
+of LLMs to resolve ambiguity, validating that large, mod-                           This highlights the unresolved challenge of balancing cre-
+ern LLMs excel at synthesizing latent political knowledge,                          ativity and protocol adherence in LLM-generated diplomatic
+while smaller or traditional models lack the representational                       text, particularly in capturing the formal and nuanced lan-
+capacity for such nuanced reasoning.                                                guage of international diplomacy.
+5.4                       Task 2: Representatives Voting Simulation                 Cross-Task Summary. Each task targets a distinct facet
+Focused on simulating country-specific voting behavior, this                        of UNSC decision-making. Task 1 primarily tests textual
+task tests models’ ability to infer issue-specific voting pat-                      and geopolitical reasoning in a multi-choice format, Task 2
+terns by analyzing how nations prioritize resolution content                        and Task 3 emphasize political prediction capabilities (from
+and contextual geopolitical dynamics. Unlike Task 1, which                          simulating individual votes to forecasting final outcomes),
+evaluates proactive alliance-building, Task 2 emphasizes re-                        and Task 4 stresses diplomatic language generation, requir-
+active decision-making based on the interplay of national in-                       ing alignment with formal protocols and country-specific
+terests, ideological alignment, and external pressures. GPT-                        rhetoric. Performance gaps across tasks and models high-
+4o achieves the highest performance (0.823 Bal. ACC, 0.696                          light both the promise and complexity of applying LLMs to
+
+
+                                                                                6
+                                    Task 1                Task 2                  Task 3                   Task 4
+        Model               (1/2)       (1/5)      Bal.         PR         Bal.        Mac.        ROUGE Cosine
+                                                   ACC          AUC        ACC         F1                Sim.
+        BERT                0.011       0.010      0.537        0.396      0.333       0.328       /             /
+        DeBERTa             0.010       0.011      0.500        0.527      0.333       0.328       /             /
+        Llama-3.2-1B        0.581       0.269      0.546        0.185      0.320       0.326       0.033         0.329
+        Llama-3.2-3B        0.578       0.297      0.597        0.385      0.597       0.402       0.041         0.290
+        Llama-3.1-8B        0.665       0.379      0.530        0.168      0.357       0.359       0.039         0.355
+        Mistral-7B          0.563       0.281      0.426        0.268      0.529       0.140       0.194         0.575
+        GPT-4o              0.726       0.464      0.823        0.696      0.677       0.363       0.199         0.619
+        Qwen2.5-7B          0.642       0.293      0.699        0.375      0.578       0.241       0.201         0.623
+        DeepSeek-V3         0.695       0.422      0.724        0.655      0.668       0.351       0.207         0.623
+
+Table 2: Our UNBench contains four tasks. For each task, we choose two metrics to show. (1/k) means choosing 1 from k
+choices, Bal. ACC is balance accuracy, PR AUC is precision-recall AUC. The best results for each metric are highlighted in
+bold, while the second-best results are underlined. More results could be found at Appendix B.
+
+
+real-world international governance, reinforcing the need for       whether a draft resolution will be adopted (Task 3), stake-
+dedicated benchmarks as UNBench.                                    holders can proactively adjust negotiation strategies, allo-
+                                                                    cate resources more effectively, and build coalitions to max-
+             6    Potential Applications                            imize the likelihood of success. For example, knowing that
+The UNBench offers significant value to both LLM re-                a climate resolution is unlikely to pass could prompt earlier
+searchers and stakeholders in international governance, en-         lobbying efforts or revisions to the draft. (2) Voting Behav-
+abling practical applications and advancing research in             ior Simulation: Simulating country-specific voting behavior
+geopolitical AI. Below, we outline potential use cases for          (Task 2) allows stakeholders to anticipate the positions of
+different stakeholders.                                             key nations, identify potential allies or opponents, and tailor
+                                                                    diplomatic outreach accordingly. This could be particularly
+For LLM Researchers: UNBench provides a rich testbed                useful for smaller nations or NGOs seeking to navigate com-
+for advancing research in LLMs, particularly in the con-            plex geopolitical landscapes.
+text of geopolitical reasoning and time-series analysis: (1)
+Geopolitical Reasoning: The tasks in the benchmark span
+a wide range of capabilities, from alliance identification
+(Task 1) to issue-specific voting prediction (Task 2), of-                   7     Conclusion and Future Work
+fering researchers a comprehensive framework for evalu-
+ating and improving LLMs’ understanding of international            This paper introduces UNBench, the first comprehensive
+relations. (2) Temporal Analysis: With data spanning 30             benchmark for evaluating LLMs’ capabilities in political
+years, UNBench enables time-series tasks such as predict-           science through UN Security Council records (1994-2024).
+ing trends in diplomatic behavior, forecasting shifts in in-        By designing four interconnected tasks spanning the com-
+ternational alliances, or analyzing the impact of historical        plete UN resolution lifecycle, we provide a more authentic
+events (e.g., the end of the Cold War) on UNSC dynam-               framework for assessing LLMs’ understanding of complex
+ics. For instance, researchers could use the dataset to pre-        diplomatic dynamics. It not only addresses the current gap in
+dict how emerging global issues (e.g., climate change) will         LLM evaluation frameworks but also establishes a founda-
+influence future resolutions. (3) Fine-Grained Prediction:          tion for future research between artificial intelligence and in-
+The benchmark’s focus on multi-choice and generative tasks          ternational relations, demonstrating how LLMs could poten-
+challenges researchers to develop models that balance preci-        tially assist in analyzing global governance processes. More
+sion and creativity. For example, improving ROUGE scores            detailed analyses can be found at Appendix in the extended
+in Task 4 could lead to breakthroughs in generating protocol-       version (Liang et al. 2025).
+compliant diplomatic text. (4) Bias Analysis: UNBench pro-
+                                                                       Future work can extend UNBench to multilingual settings
+vides an opportunity to study biases in LLMs’ geopolitical
+                                                                    for evaluating models across diverse diplomatic languages.
+reasoning, ensuring that models do not perpetuate stereo-
+                                                                    Researchers may also use UNBench to study more realis-
+types or oversimplify complex international dynamics.
+                                                                    tic multi-agent simulations where LLMs act as countries,
+For UN Stakeholders: The ability to predict and ana-                as well as multimodal inputs that incorporate maps, time-
+lyze UNSC decision-making using LLMs also has impli-                lines, or historical context. Another direction is Constructing
+cations for diplomats, policymakers, and international or-          richer country profiles to enhance grounding and strategic
+ganizations: (1) Draft Adoption Forecasting: By predicting          consistency when models simulate state behavior.
+
+
+                                                                7
+                   Acknowledgments                                    Kohlenberg, P. J.; Godehardt, N.; Aris, S.; Sündermann, F.;
+This material is based upon work supported by NSF                     Snetkov, A.; and Fall, J. 2019. Introducing UNSCdeb8
+awards (SaTC-2241068, IIS-2506643, and POSE-2346158),                 (beta). A Database for Corpus-Driven Research on the
+a Cisco Research Award, and a Microsoft Accelerate Foun-              United Nations Security Council.
+dation Models Research Award. The views and conclusions               Kornilova, A.; and Eidelman, V. 2019. BillSum: A cor-
+contained in this document are those of the authors and               pus for automatic summarization of US legislation. arXiv
+should not be interpreted as necessarily representing the of-         preprint arXiv:1910.00523.
+ficial policies, either expressed or implied, of the National         Liang, Y.; Yang, L.; Wang, C.; Xia, C.; Meng, R.; Xu, X.;
+Science Foundation.                                                   Wang, H.; Payani, A.; and Shu, K. 2025. Benchmarking llms
+                                                                      for political science: A united nations perspective. arXiv
+                        References                                    preprint arXiv:2502.14122.
+Bailey, M. A.; Strezhnev, A.; and Voeten, E. 2017. Estimat-           Liu, A.; Feng, B.; Xue, B.; Wang, B.; Wu, B.; Lu, C.; Zhao,
+ing dynamic state preferences from United Nations voting              C.; Deng, C.; Zhang, C.; Ruan, C.; et al. 2024. Deepseek-v3
+data. Journal of Conflict Resolution, 61(2): 430–456.                 technical report. arXiv preprint arXiv:2412.19437.
+Bastan, M.; Koupaee, M.; Son, Y.; Sicoli, R.; and Balasub-            LlamaIndex. 2024. LlamaParse. Open-source document
+ramanian, N. 2020. Author’s sentiment prediction. arXiv               parsing tool.
+preprint arXiv:2011.06128.                                            OpenAI. 2023. GPT-4 Technical Report. arXiv preprint
+Cheng, D.; Huang, S.; and Wei, F. 2023. Adapting large                arXiv:2303.08774.
+language models via reading comprehension. In The Twelfth             Reimers, N. 2019. Sentence-BERT: Sentence Embed-
+International Conference on Learning Representations.                 dings using Siamese BERT-Networks.           arXiv preprint
+Data, M. E.; and Lab, S. 2022a. State Precinct-Level Returns          arXiv:1908.10084.
+2018.                                                                 Santurkar, S.; Durmus, E.; Ladhak, F.; Lee, C.; Liang, P.; and
+Data, M. E.; and Lab, S. 2022b. U.S. Senate Precinct-Level            Hashimoto, T. 2023. Whose opinions do language models
+Returns 2020.                                                         reflect? In International Conference on Machine Learning,
+Devlin, J. 2018. Bert: Pre-training of deep bidirectional             29971–30004. PMLR.
+transformers for language understanding. arXiv preprint               Shu, D.; Zhao, H.; Liu, X.; Demeter, D.; Du, M.; and Zhang,
+arXiv:1810.04805.                                                     Y. 2024. LawLLM: Law large language model for the US
+Dubey, A.; Jauhri, A.; Pandey, A.; Kadian, A.; Al-Dahle, A.;          legal system. In Proceedings of the 33rd ACM International
+Letman, A.; Mathur, A.; Schelten, A.; Yang, A.; Fan, A.;              Conference on Information and Knowledge Management,
+et al. 2024. The llama 3 herd of models. arXiv preprint               4882–4889.
+arXiv:2407.21783.                                                     Shu, K.; Mahudeswaran, D.; Wang, S.; Lee, D.; and Liu, H.
+Grover, K.; Angara, S.; Akhtar, M. S.; and Chakraborty, T.            2020. Fakenewsnet: A data repository with news content,
+2022. Public wisdom matters! discourse-aware hyperbolic               social context, and spatiotemporal information for studying
+fourier co-attention for social text classification. Advances         fake news on social media. Big data, 8(3): 171–188.
+in Neural Information Processing Systems, 35: 9417–9431.              Suzgun, M.; Scales, N.; Schärli, N.; Gehrmann, S.; Tay, Y.;
+He, P.; Liu, X.; Gao, J.; and Chen, W. 2020. Deberta:                 Chung, H. W.; Chowdhery, A.; Le, Q. V.; Chi, E. H.; Zhou,
+Decoding-enhanced bert with disentangled attention. arXiv             D.; ; and Wei, J. 2022. Challenging BIG-Bench Tasks and
+preprint arXiv:2006.03654.                                            Whether Chain-of-Thought Can Solve Them. arXiv preprint
+                                                                      arXiv:2210.09261.
+Hendrycks, D.; Burns, C.; Basart, S.; Critch, A.; Li, J.; Song,
+D.; and Steinhardt, J. 2021a. Aligning AI With Shared Hu-             United Nations. 2025. UN Parallel Corpus. Accessed: 2025-
+man Values. Proceedings of the International Conference               02-15.
+on Learning Representations (ICLR).                                   United Nations Security Council. 2024. United Nations Se-
+Hendrycks, D.; Burns, C.; Basart, S.; Zou, A.; Mazeika, M.;           curity Council Official Digital Library. Accessed: 14 Feb.
+Song, D.; and Steinhardt, J. 2021b. Measuring Massive Mul-            2025.
+titask Language Understanding. Proceedings of the Interna-            Voeten, E. 2013. Data and analyses of voting in the United
+tional Conference on Learning Representations (ICLR).                 Nations: General Assembly. Routledge handbook of inter-
+i Redondo, M. C.; and Llovera, G. C. 2025. United Nations             national organization, 54–66.
+Security Council Resolutions. Accessed: 2025-02-15.                   Voeten, E.; Strezhnev, A.; and Bailey, M. 2009. United Na-
+Jiang, A. Q.; Sablayrolles, A.; Mensch, A.; Bamford, C.;              tions General Assembly Voting Data.
+Chaplot, D. S.; Casas, D. d. l.; Bressand, F.; Lengyel, G.;           Wojatzki, M.; Ruppert, E.; Holschneider, S.; Zesch, T.; and
+Lample, G.; Saulnier, L.; et al. 2023. Mistral 7B. arXiv              Biemann, C. 2017. Germeval 2017: Shared task on aspect-
+preprint arXiv:2310.06825.                                            based sentiment in social media customer feedback. Pro-
+Jin, Z.; Cao, J.; Guo, H.; Zhang, Y.; and Luo, J. 2017. Mul-          ceedings of the GermEval, 1–12.
+timodal fusion with recurrent neural networks for rumor de-           Yang, A.; Yang, B.; Zhang, B.; Hui, B.; Zheng, B.; Yu, B.;
+tection on microblogs. In Proceedings of the 25th ACM in-             Li, C.; Liu, D.; Huang, F.; Wei, H.; et al. 2024. Qwen2. 5
+ternational conference on Multimedia, 795–816.                        technical report. arXiv preprint arXiv:2412.15115.
+
+
+                                                                  8
+                   A    Data Analysis                                 efforts to address global stability, protect human rights, and
+This section introduces our data analysis on the collected            resolve conflicts. These persistent topics suggest a sustained,
+datasets from United Nation.                                          long-term commitment to addressing the most pressing and
+                                                                      enduring global challenges. On the other hand, there are top-
+A.1    Subjects Analysis                                              ics that have emerged briefly and faded over time, often in
+                                                                      response to specific events or crises. For example, resolu-
+Author-subject Co-occurrence Analysis                                 tions related to regional conflicts or emergency sanctions
+                                                                      have been intermittently, typically tied to short-lived geopo-
+Controversial Subjects in UN The author-subjects co-
+                                                                      litical developments such as military interventions or eco-
+occurrence matrix is shown in Figure 4, which reveals
+                                                                      nomic sanctions. These topics highlight the UN’s responsive
+distinct patterns in UN Security Council draft resolution
+                                                                      nature, focusing on immediate crises that do not necessarily
+authorship. Permanent members of the Security Coun-
+                                                                      remain central once the situation is resolved. This pattern
+cil—particularly the United States, United Kingdom, and
+                                                                      underscores the dynamic balance between the UN’s long-
+France—demonstrate high engagement across most subject
+                                                                      standing priorities and its flexibility in addressing emerging
+areas, with notably strong involvement in peacekeeping op-
+                                                                      global issues as they arise. Our benchmark collects all res-
+erations and humanitarian assistance. This pattern under-
+                                                                      olutions from this period, making it both challenging and
+scores their important role in global governance while re-
+                                                                      comprehensive, capturing the full scope of the UN’s evolv-
+flecting Western powers’ emphasis on human rights and
+                                                                      ing focus on global governance.
+humanitarian interventions. From a thematic perspective,
+peacekeeping operations, humanitarian assistance, and hu-
+man rights in armed conflicts emerge as the most promi-               A.2    National-Wised Analysis
+nent subjects across member states, forming an intercon-              Voting Frequency Figure 8 shows the vote frequency of
+nected core of Security Council priorities. This pattern sug-         Top-30 countries. It reveals a clear dominance by the five
+gests a holistic approach to global security challenges, where        permanent members of the UN Security Council (UNSC),
+military peacekeeping efforts are consistently coupled with           namely China, France, Russia, the United Kingdom, and the
+humanitarian considerations. The strong co-occurrence be-             United States. These countries consistently hold the highest
+tween sanctions-related topics and peacekeeping operations            number of votes, reflecting their influential roles in shaping
+indicates that the Council frequently employs a dual strategy         international decisions and maintaining global security. In
+of enforcement and intervention. Notably, the emergence               addition to the permanent members, other non-permanent
+of terrorism and counter-terrorism as significant themes re-          members such as Japan, Brazil, Argentina, Germany, and
+flects the evolving nature of global security threats. The            Nigeria also appear prominently on the list, highlighting
+data also reveals that technical cooperation and peacebuild-          their significant involvement in global governance. Their
+ing subjects often appear alongside humanitarian assistance,          high voting frequencies may reflect their strategic interests,
+suggesting a long-term approach to crisis resolution that ex-         regional influence, and active participation in international
+tends beyond immediate security concerns.                             diplomacy. The presence of these countries, along with the
+   The Top-30 subjects that at least one country did not              permanent members, underscores the UN Security Council’s
+vote ’Yes’ is shown in Figure 5. It reveals that enforcement-         complex decision-making process, where both major powers
+related topics—particularly sanctions, peacekeeping opera-            and key regional players contribute to shaping resolutions
+tions, and humanitarian assistance—generate the most dis-             and global policies.
+agreement in Security Council voting. The high frequency                 The distribution of the number of votes each country par-
+of non-affirmative votes on these subjects suggests per-              ticipated in, as shown in Figure 9, reveals that most countries
+sistent tensions between international intervention and na-           have participated in fewer than 250 votes. This suggests that
+tional sovereignty. Additionally, the presence of interna-            the majority of countries engage in voting on a limited num-
+tional criminal courts and human rights matters among fre-            ber of resolutions, likely reflecting their geopolitical priori-
+quently contested subjects highlights the ongoing challenges          ties and areas of influence within the UN. While some coun-
+in balancing international justice with state sovereignty con-        tries may focus on specific regional or issue-based resolu-
+cerns.                                                                tions, others may be more passive in their participation, con-
+                                                                      tributing to fewer votes overall. The relatively small number
+Trend in UN Resolutions The trends in UN resolution                   of countries with more than 250 votes highlights the most
+topics are also changing over time. The Top-10 subjects per           active players in UN decision-making, likely including key
+5-year period from 1994 to 2024 are shown in Figure 6. Be-            international powers and nations with significant stakes in
+sides, we also show the distribution of the duration of each          global governance. This distribution underscores the varied
+subject in Figure 7. Most subjects last for 1 to 5 years, while       levels of involvement in the UN’s voting process, with cer-
+a few last for more than 30 years. The two figures reveal             tain countries playing a consistently active role while others
+two key patterns in the United Nations’ focus on global is-           engage more selectively.
+sues. First, certain topics have consistently appeared over
+the years, indicating the UN’s ongoing attention to these is-         Country Relationships revealed within UN Resolutions
+sues. Topics such as international peace and security, human          Table 3 presents the top 10 pairs of authors and countries
+rights, and conflict resolution have remained at the forefront        that most frequently voted ”No” or abstained on draft res-
+of UN resolutions, reflecting the organization’s continuous           olutions. The data reveals that the United States has the
+
+
+                                                                  9
+                         PEACEKEEPING OPERATIONS                                                                     300
+                         HUMANITARIAN ASSISTANCE
+                  HUMAN RIGHTS IN ARMED CONFLICTS
+                                        SANCTIONS                                                                    250
+                                 INTERNAL SECURITY
+                                     PEACEBUILDING                                                                   200
+                                        TERRORISM
+       Subjects
+                               COUNTER-TERRORISM
+                                                                                                                     150
+                                    STAFF SECURITY
+                                    ARMS EMBARGO
+                               MILITARY PERSONNEL                                                                    100
+                                        CEASEFIRES
+                            FREEDOM OF MOVEMENT                                                                      50
+                            SANCTIONS COMPLIANCE
+                           TECHNICAL COOPERATION
+                                                          United States
+                                                       United Kingdom
+                                                                 France
+                                                              Germany
+                                                     Russian Federation
+                                                                    Italy
+                                                                  Spain
+                                                                  Japan
+                                                               Portugal
+                                                                Canada
+                                                               Belgium
+                                                              Argentina
+                                                           Luxembourg
+                                                               Australia
+                                                              Denmark
+                                                                              Authors
+
+Figure 4: Author-Subjects Relationships. This figure shows the co-occurrence matrix of the top 15 authors and subjects. Each
+cell represents the number of times an author has written about a topic. The darker the cell, the more the author has written
+about the topic.
+
+
+highest number of rejections, with Russia rejecting 68 times           ”Yes” votes), and France and the United States (1,142 joint
+and China 52 times. This indicates a consistent divide be-             ”Yes” votes), consistently align on many resolutions, re-
+tween the U.S. and these two powers, likely reflecting on-             flecting their close diplomatic and strategic cooperation.
+going geopolitical tensions. Similarly, the United Kingdom             In contrast, China and the Western powers also exhibit
+and France also show high rejection rates from both Russia             frequent collaboration, with the China-United Kingdom,
+and China, suggesting a shared stance among Western pow-               China-France, and China-United States pairs each voting
+ers in opposition to certain resolutions proposed by these             together over 1,000 times, indicating areas of common in-
+countries. On the other hand, countries like Germany, Japan,           terest despite occasional political differences. On the other
+and Italy appear less frequently in the table, with rejections         hand, Table 5 reveals country pairs that most often did not
+ranging from 13 to 22 times. These smaller states seem to              vote ”Yes” together. The China-Russia pair stands out with
+align more often with the major powers but still demonstrate           69 instances of disagreement, indicating that the two coun-
+some differences, particularly with China and Russia. Over-            tries share some geopolitical interests. Other pairs, such as
+all, the table highlights significant diplomatic rifts between         Algeria-China (8 times) and Russia-South Africa (6 times),
+the Western powers and Russia/China, with frequent rejec-              also display divergent voting patterns, reflecting how na-
+tions indicating key areas of contention in international rela-        tional and regional interests can influence voting behavior
+tions.                                                                 at the UN. These tables underscore the complex dynamics
+   Table 4 and Table 5 provide insights into the voting pat-           of international diplomacy, where countries may cooperate
+terns of country pairs within the United Nations, highlight-           on certain issues while diverging on others based on their
+ing both strong collaboration and significant divergence in            specific interests and priorities.
+voting behaviors. Table 4 shows that certain country pairs,
+such as France and the United Kingdom (1,153 joint ”Yes”
+votes), United Kingdom and the United States (1,147 joint
+
+
+                                                                  10
+                                            SANCTIONS
+                           PEACEKEEPING OPERATIONS
+                           HUMANITARIAN ASSISTANCE
+                                    INTERNAL SECURITY
+                                        ARMS EMBARGO
+                               SANCTIONS COMPLIANCE
+                                          NEGOTIATION
+                  HUMAN RIGHTS IN ARMED CONFLICTS
+                                        FROZEN ASSETS
+                                                SUDAN
+                                  TRAVEL RESTRICTIONS
+                                      SPECIAL MISSIONS
+                                            CEASEFIRES
+                      FORMER YUGOSLAVIA SITUATION
+       Subjects
+                                   DISPUTE SETTLEMENT
+                                           YUGOSLAVIA
+                                   MILITARY PERSONNEL
+                                         SOUTH SUDAN
+                                MIDDLE EAST SITUATION
+                                  REPORT PREPARATION
+                               FREEDOM OF MOVEMENT
+                                        STAFF SECURITY
+                           BOSNIA AND HERZEGOVINA
+                                 POLITICAL CONDITIONS
+                             UN Mission in South Sudan
+                                    PEACE AGREEMENTS
+                    INTERNATIONAL CRIMINAL COURTS
+                                               SOMALIA
+                                                  LIBYA
+                   Charter of the United Nations (1945)
+                                                          0        10        20         30     40            50           60
+                                                                                        Counts
+
+                       Figure 5: This figure shows the top 30 subjects that at least one country did not vote ’Yes’ on.
+
+
+          B         Detailed Results of UNBench                           rics, especially in precision (0.828), suggesting it excels in
+In this section, we present the detailed results of the UN-               tasks where false positives need to be minimized.
+Bench benchmark, evaluating multiple models across four                      Task 3 (Table 9) focuses on multi-class classification
+distinct tasks. The tables provide comprehensive perfor-                  tasks, where GPT-4o again stands out with the highest ac-
+mance metrics for each model on various tasks, including                  curacy (0.968) and balanced performance across other met-
+accuracy, precision, recall, AUC, F1 score, and other rele-               rics like recall, F1, and G-Mean. DeepSeek-V3 shows strong
+vant evaluation metrics.                                                  performance in precision (0.828) and recall (0.453), which
+   Task 1 (Table 6) evaluates the models’ performance across              may indicate a more specialized capability in identifying
+multiple-choice tasks with varying numbers of choices (2 to               specific class instances.
+5). The results indicate that GPT-4o outperforms the other                   Task 4 (Table 7) assesses the models’ ability to gener-
+models across all choice levels, particularly excelling in the            ate meaningful representations and comparisons between
+2-choice and 3-choice tasks, where it maintains the highest               text using various similarity measures like ROUGE, Jaccard,
+scores in terms of accuracy. Models like Llama-3.1-8B and                 and cosine similarity. DeepSeek-V3 performs best across
+DeepSeek-V3 also show competitive results, especially for                 multiple metrics, particularly in cosine similarity (0.8012
+more complex tasks (4 and 5 choices), though they trail be-               with TF-IDF and 0.6225 with SentBERT), demonstrating its
+hind GPT-4o.                                                              strength in textual similarity and comparison tasks. GPT-
+   Task 2 (Table 8) presents a set of metrics evaluating                  4o also shows strong performance, particularly with co-
+model performance on binary classification tasks. Here,                   sine similarity (0.7958 with TF-IDF and 0.6188 with Sent-
+Qwen2.5-7B leads with the highest accuracy (0.935) and                    BERT).
+AUC (0.719), indicating its strong ability to differentiate                  Overall, the results demonstrate the competitive nature of
+between classes. However, GPT-4o shows superior perfor-                   current models, with GPT-4o leading in several tasks due to
+mance in other metrics such as F1 (0.686) and G-Mean                      its balanced performance across various metrics. However,
+(0.807), making it the most balanced model for this task.                 other models like DeepSeek-V3 and Qwen2.5-7B also show
+DeepSeek-V3 also performs strongly across multiple met-                   strong results in specific areas, such as precision and text
+
+
+                                                                     11
+                                                  PEACEKEEPING OPERATIONS                                                                        Year Range
+                                                             STAFF SECURITY
+                                                  HUMANITARIAN ASSISTANCE                                                                         1994-1998
+                                                        MILITARY PERSONNEL                                                                        1999-2003
+                                                                 CEASEFIRES                                                                       2004-2008
+                                                           SPECIAL MISSIONS
+                                                               NEGOTIATION                                                                        2009-2013
+                                                    FREEDOM OF MOVEMENT                                                                           2014-2018
+                                                  BOSNIA AND HERZEGOVINA                                                                          2019-2024
+                                                                 SANCTIONS
+                                                  PEACEKEEPING OPERATIONS
+                                                             STAFF SECURITY
+                                                    FREEDOM OF MOVEMENT
+                                                       REPORT PREPARATION
+                                                  HUMANITARIAN ASSISTANCE
+                                                         INTERNAL SECURITY
+                                                       DISPUTE SETTLEMENT
+                                                                 SANCTIONS
+                                                               NEGOTIATION
+                                                                 CEASEFIRES
+                                                  PEACEKEEPING OPERATIONS
+                                                       REPORT PREPARATION
+
+
+
+
+Top Subjects (Grouped by 5-Year Period)
+                                                         INTERNAL SECURITY
+                                                        MILITARY PERSONNEL
+                                                             STAFF SECURITY
+                                               TROOP-CONTRIBUTING STATES
+                                                    FREEDOM OF MOVEMENT
+                                                             ARMS EMBARGO
+                                                             CONSULTATIONS
+                                                                     POLICE
+                                                         INTERNAL SECURITY
+                                                  PEACEKEEPING OPERATIONS
+                                                  HUMANITARIAN ASSISTANCE
+                                                             STAFF SECURITY
+                                                             PEACEBUILDING
+                                                        MILITARY PERSONNEL
+                                          HUMAN RIGHTS IN ARMED CONFLICTS
+                                            POST-CONFLICT RECONSTRUCTION
+                                                    FREEDOM OF MOVEMENT
+                                                               RULE OF LAW
+                                                  PEACEKEEPING OPERATIONS
+                                                         INTERNAL SECURITY
+                                                                 SANCTIONS
+                                                  HUMANITARIAN ASSISTANCE
+                                          HUMAN RIGHTS IN ARMED CONFLICTS
+                                                             ARMS EMBARGO
+                                                             PEACEBUILDING
+                                                      SYRIAN ARAB REPUBLIC
+                                                      POLITICAL CONDITIONS
+                                                    SANCTIONS COMPLIANCE
+                                                  PEACEKEEPING OPERATIONS
+                                                                 SANCTIONS
+                                                             ARMS EMBARGO
+                                                           SPECIAL MISSIONS
+                                                             PEACEBUILDING
+                                                    SANCTIONS COMPLIANCE
+                                                         INTERNAL SECURITY
+                                          HUMAN RIGHTS IN ARMED CONFLICTS
+                                                  HUMANITARIAN ASSISTANCE
+                                                             FROZEN ASSETS
+                                                                              0   25     50     75     100     125    150     175    200
+                                                                                                     Frequency
+                                                          Figure 6: This figure shows the top 10 subjects per 5-year period from 1994 to 2024.
+
+
+
+
+                                                                                                  12
+         1400                                                                      UNITED KINGDOM
+                                                                                               CHINA
+         1200                                                                                FRANCE
+                                                                                     UNITED STATES
+                                                                                RUSSIAN FEDERATION
+         1000                                                                                  JAPAN
+                                                                                              BRAZIL
+         800                                                                             ARGENTINA
+                                                                                           GERMANY
+Counts                                                                                       NIGERIA
+         600                                                                                  GABON
+                                                                                               CHILE
+                                                                                         INDONESIA
+         400                                                                                 MEXICO
+                                                                      Country
+                                                                                      SOUTH AFRICA
+         200                                                                                    SPAIN
+                                                                                                 ITALY
+                                                                                           PAKISTAN
+           0                                                                                ANGOLA
+                0       5      10     15      20     25    30                    REPUBLIC OF KOREA
+                                     Duration                                              MALAYSIA
+                                                                                            RWANDA
+                                                                                                PERU
+Figure 7: Distribution of the duration of each subject. We                                     EGYPT
+                                                                                          PORTUGAL
+can observe that most subjects last for 1 to 5 years, while a                                 GHANA
+few last for more than 30 years.                                                            SWEDEN
+                                                                                        COSTA RICA
+                                                                                               KENYA
+                                                                                            UKRAINE
+                    Author           Rejection     Count                                                 0   250   500   750 1000 1250 1500 1750
+                                                                                                                           Vote Count
+                    United States    RUSSIAN          68
+                    United States      CHINA          52
+                                                                      Figure 8: The top 30 countries that participated in voting the
+                    United Kingdom   RUSSIAN          47
+                                                                      most.
+                    France           RUSSIAN          45
+                    France             CHINA          39
+                    United Kingdom     CHINA          39                                  Country Pair                            Count
+                    Germany          RUSSIAN          22                                  (FRANCE, UK)                             1,153
+                    Germany            CHINA          21                                  (UK, US)                                 1,147
+                    Japan              CHINA          15                                  (FRANCE, US)                             1,142
+                    Italy              CHINA          13                                  (CHINA, UK)                              1,068
+                                                                                          (CHINA, FRANCE)                          1,064
+                                                                                          (CHINA, US)                              1,058
+Table 3: This table shows the top 10 pairs of authors and                                 (RUSSIAN, UK)                            1,035
+countries that vote not ’Yes’ the most. The “Rejection”                                   (FRANCE, RUSSIAN)                        1,031
+                                                                                          (RUSSIAN, US)                            1,024
+means receiving either a ’No’ or ’Abstention’ vote. The                                   (CHINA, RUSSIAN)                         1,013
+’Count’ column represents the number of times the author’s
+draft was not voted ’Yes’ by the country.
+                                                                      Table 4: This table shows the top 10 pairs of countries that
+                                                                      voted ’Yes’ together the most. ’US’ and ’UK’ are the ab-
+similarity. These findings highlight the strengths and limita-        breviations for ’UNITED STATES’ and ’UNITED KING-
+tions of each model, offering valuable insights for selecting         DOM’. The ’Count’ column represents the number of times
+the most suitable model for specific tasks within the UN-             the two countries voted ’Yes’ together.
+Bench framework.
+                                                                                          Country Pair                            Count
+
+                       C     Additional Analyses                                          (CHINA, RUSSIAN)                            69
+                                                                                          (ALGERIA, CHINA)                             8
+C.1         Temporal Robustness Evaluation                                                (ALGERIA, RUSSIAN)                           7
+                                                                                          (RUSSIAN, SOUTH AFRICA)                      6
+To assess the temporal generalization of language models,                                 (GABON, RUSSIAN)                             6
+we divide the test set based on GPT-4o’s training cutoff                                  (CHINA, GABON)                               6
+                                                                                          (RUSSIAN, VENEZUELA                          6
+(October 2023) into pre-2023 (seen) and post-2023 (un-                                    (KENYA, RUSSIAN)                             5
+seen) subsets. This helps us evaluate whether models per-                                 (EGYPT, RUSSIAN)                             5
+form worse when facing emerging, unseen geopolitical de-                                  (CHINA, INDIA)                               5
+velopments.
+   Task 2: Voting Simulation. GPT-4o shows strong per-
+formance overall, but drops notably on unseen (post-2023)             Table 5: This table shows the top 10 pairs of countries that
+data. Balanced accuracy falls from 0.675 on seen examples             did not vote ’Yes’ together the most. The ’Count’ column
+to 0.528 on unseen ones, highlighting the challenge of tem-           represents the number of times the two countries did not vote
+poral generalization.                                                 ’Yes’ together.
+
+
+                                                                 13
+                                                                                                                  ROUGE       Jaccard    TF-IDF        SentBERT
+                      40                                                                          Llama-3.2-1B      0.0328     0.0304       0.3666        0.3293
+                      35                                                                          Llama-3.2-3B      0.0407     0.0341       0.4287        0.2902
+                                                                                                  Llama-3.1-8B      0.0394     0.0363       0.4021        0.3553
+                      30
+
+
+
+Number of Countries
+                                                                                                  GPT-4o            0.1985     0.1837       0.7958        0.6188
+                      25                                                                          DeepSeek-V3       0.2069     0.1876       0.8012        0.6225
+                                                                                                  Mistral-7B        0.1935     0.1688       0.7522        0.5750
+                      20                                                                          Qwen2.5-7B        0.2008     0.1761       0.7842        0.6229
+                      15
+                      10                                                                         Table 7: Comprehensive results for Task 4. Similarity of IT-
+                      5                                                                          IDF and SentBert are calculated by cosine similarity.
+                      0
+                            0    250      500      750     1000   1250   1500     1750
+                                                     Vote Count
+                                                                                                 (0.537). The discrepancy suggests that the model may strug-
+                                                                                                 gle to simulate diplomatic reactions to Western-sponsored
+Figure 9: Distribution of the number of votes each country                                       resolutions.
+participated
+                                                                                                  Group           Bal. ACC      Precision     Recall     PR AUC
+                                       2 choices    3 choices     4 choices     5 choices
+                                                                                                  WEOG              0.537        0.441         0.358      0.524
+         Llama-3.2-1B                     0.581         0.394        0.312         0.269
+         Llama-3.2-3B                     0.578         0.393        0.328         0.297          Non-WEOG          0.690        0.384         0.690      0.346
+         Llama-3.1-8B                     0.665         0.507        0.408         0.379
+         GPT-4o                           0.726         0.613        0.511         0.464
+                                                                                                    Task 3: Draft Adoption Prediction. Results are more
+         DeepSeek-V3                      0.695         0.555        0.443         0.422         stable across regions for adoption outcomes, with GPT-4o
+         Mistral-7B                       0.563         0.407        0.335         0.281         achieving comparable balanced accuracy on WEOG (0.815)
+         Qwen2.5-7B                       0.642         0.478        0.353         0.293         and non-WEOG (0.824) drafts.
+
+                            Table 6: Comprehensive results for Task 1.                            Group           Bal. ACC      Precision     Recall     PR AUC
+                                                                                                  WEOG              0.815        0.778         0.636      0.714
+                                                                                                  Non-WEOG          0.824        0.700         0.667      0.693
+
+       Model                              Accuracy        Bal. ACC       AUC         F1          C.3    Contextual Input Variation
+       GPT-4o                               0.922           0.677        0.731      0.363        We test whether including metadata like dates or authorship
+       GPT-4o-seen                          0.924           0.675        0.727      0.360        improves LLM decision-making. This is especially relevant
+       GPT-4o-unseen                        0.907           0.528        0.640      0.376        for interpreting real-world diplomatic context.
+                                                                                                    Task 2: Voting Simulation. Adding author metadata im-
+   Task 3: Draft Adoption Prediction. In contrast, GPT-                                          proves balanced accuracy (from 0.677 to 0.684) and G-Mean
+4o maintains high accuracy across time splits, suggesting                                        (from 0.729 to 0.753), suggesting model predictions benefit
+the model’s adoption reasoning is less sensitive to temporal                                     from geopolitical signaling embedded in authorship.
+shifts.
+                                                                                                       Setting           Bal. ACC       Recall       G-Mean
+       Model                              Accuracy        Bal. ACC       AUC         F1                GPT-4o                0.677      0.677        0.729
+                                                                                                       GPT-4o-dates          0.673      0.673        0.719
+       GPT-4o                               0.968           0.823        0.823      0.686              GPT-4o-authors        0.684      0.684        0.753
+       GPT-4o-seen                          0.976           0.816        0.816      0.737
+       GPT-4o-unseen                        0.962           0.828        0.828      0.656           Task 3: Draft Adoption Prediction. Adding date or
+                                                                                                 author metadata boosts both recall and G-Mean, with the
+C.2                        Geopolitical Group Analysis                                           strongest performance under the date-enhanced setting.
+We further investigate whether model behavior differs de-                                              Setting           Bal. ACC       Recall       G-Mean
+pending on the geopolitical affiliation of draft resolution au-
+thors, specifically contrasting Western European and Oth-                                              GPT-4o                0.823      0.660        0.807
+ers Group (WEOG) members with non-WEOG states. This                                                    GPT-4o-dates          0.888      0.811        0.885
+evaluation provides a fairness-oriented lens on LLM behav-                                             GPT-4o-authors        0.859      0.769        0.854
+ior.
+   Task 2: Voting Simulation. GPT-4o performs better on                                          C.4    Model Scaling Analysis
+resolutions drafted by non-WEOG countries (balanced ac-                                          We compare performance across models of increasing pa-
+curacy: 0.690) than on those authored by WEOG states                                             rameter scale to assess how size correlates with capability
+
+
+                                                                                            14
+                     Accuracy          AUC       Bal. ACC      Precision        Recall     F1         PR AUC      MCC     G-Mean
+  Llama-3.2-1B         0.898           0.497       0.320         0.332          0.320     0.326        0.334      0.006       0.464
+  Llama-3.2-3B         0.523           0.597       0.597         0.520          0.597     0.402        0.956      0.087       0.597
+  Llama-3.1-8B         0.917           0.532       0.357         0.360          0.357     0.359        0.338      0.079       0.502
+  GPT-4o               0.922           0.731       0.677         0.400          0.677     0.363        0.343      0.162       0.729
+  DeepSeek-V3          0.931           0.720       0.668         0.464          0.668     0.351        0.343      0.151       0.718
+  Mistral-7B           0.557           0.593       0.426         0.345          0.426     0.268        0.341      0.100       0.569
+  Qwen2.5-7B           0.935           0.719       0.699         0.373          0.699     0.375        0.344      0.141       0.719
+
+                                               Table 8: Comprehensive results for Task 2.
+
+                     Accuracy          AUC       Bal. ACC      Precision        Recall     F1         PR AUC      MCC     G-Mean
+  Llama-3.2-1B         0.815           0.546       0.546         0.083          0.245     0.124        0.185      0.057       0.456
+  Llama-3.2-3B         0.523           0.597       0.597         0.073          0.679     0.132        0.385      0.087       0.591
+  Llama-3.1-8B         0.935           0.530       0.530         0.211          0.076     0.111        0.168      0.098       0.273
+  GPT-4o               0.968           0.823       0.823         0.714          0.660     0.686        0.696      0.670       0.807
+  DeepSeek-V3          0.966           0.724       0.724         0.828          0.453     0.585        0.655      0.597       0.671
+  Mistral-7B           0.867           0.529       0.529         0.084          0.151     0.108        0.140      0.044       0.370
+  Qwen2.5-7B           0.926           0.578       0.578         0.250          0.189     0.215        0.241      0.179       0.427
+
+                                               Table 9: Comprehensive results for Task 3.
+
+                                  Task 1                   Task 2                    Task 3                      Task 4
+       Model                   (1/2)     (1/5)     Bal. ACC     PR AUC         Bal. ACC    Mac. F1     ROUGE       Cosine Sim.
+       Llama-3.2-1B            0.581     0.269       0.546          0.185        0.320        0.326      0.033        0.329
+       Llama-3.2-3B            0.578     0.297       0.597          0.385        0.597        0.402      0.041        0.290
+       Qwen2.5-7B              0.642     0.293       0.699          0.375        0.578        0.241      0.201        0.623
+       Mistral-7B              0.563     0.281       0.426          0.268        0.529        0.140      0.194        0.575
+       Llama-3.1-8B            0.665     0.379       0.530          0.168        0.357        0.359      0.039        0.355
+       DeepSeek-V3-70B         0.695     0.422       0.724          0.655        0.668        0.351      0.207        0.623
+       GPT-4o ( 200B)          0.726     0.464       0.823          0.696        0.677        0.363      0.199        0.619
+
+Table 10: Model scaling comparison across four tasks. Metrics match those in Table 2. Best results are in bold, second-best are
+underlined.
+
+
+across tasks. While model size generally aligns with stronger               • Expert Review: Human evaluators from political sci-
+performance, architectural design and training data also have                 ence backgrounds will provide qualitative ratings and
+noticeable effects.                                                           thematic annotations.
+   Larger models, particularly GPT-4o and DeepSeek-V3,
+                                                                           These strategies offer richer insights beyond n-gram or
+show consistent strength across tasks, with notable gains in
+                                                                         embedding-based overlap, and will be used to further bench-
+political reasoning, coherence, and generation fidelity. How-
+                                                                         mark models on Task 4 in future iterations of UNBench.
+ever, smaller models like Qwen2.5-7B occasionally match
+or outperform larger models (e.g., in embedding-based sim-
+ilarity), indicating that scale alone does not guarantee task
+superiority.
+
+C.5   Evaluation Strategy Enhancements (Task 4)
+To supplement automatic metrics (e.g., ROUGE, cosine sim-
+ilarity), we can incorporate enhanced qualitative assess-
+ments like:
+ • LLM-as-a-Judge: GPT-4 evaluates outputs on tone, co-
+   herence, justification quality, and alignment with national
+   interests.
+
+
+                                                                    15
+

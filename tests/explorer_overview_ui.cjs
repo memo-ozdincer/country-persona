@@ -15,8 +15,8 @@ setImmediate(()=>{
  for (const c of data.countries) {
    location.hash=`#country=${c.code}`;vm.runInContext('route()',context);
    const html=element('#country-panel').innerHTML;
-   assert(html.includes(c.name));assert(html.includes('completion-only loss'));assert(html.includes('SOURCE PASSAGES OMITTED'));
-   assert(html.includes(c.examples[0].id));assert(html.includes('Data sources'));assert(html.includes('Trace template and an actual source-record reference'));
+   assert(html.includes(c.name));assert(html.includes('Completion-only')||html.includes('completion-only loss')||html.includes('Supervise assistant')); assert(!html.includes('SOURCE PASSAGES OMITTED'));
+   assert(html.includes('Complete worked examples')); assert(html.includes('Data sources'));assert(html.includes('Complete worked examples'));assert(html.includes('What an actual record looks like'));assert(html.includes('Research connection'));assert(!html.includes('Illustrative field mapping'));
    const inventory=JSON.parse(fs.readFileSync('explorer/sources.json'));
    assert(element('#countries').innerHTML.includes(inventory.countries[c.code].count.toLocaleString()));
    assert(html.indexOf('Data sources')<html.indexOf('Post-training examples using the available data'));

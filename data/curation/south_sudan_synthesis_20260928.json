@@ -1,0 +1,44 @@
+{
+  "source_id": "record-9067",
+  "source_pdf_sha256": "412a4d805830420e2c6045c98368fdabd48e5e7f2cdbd4133f658db0951450b6",
+  "source_directory": "data/raw/ledger-eval-sources-20260928-expansion",
+  "visual_review": {
+    "status": "assistant_checked; independent_review_pending",
+    "pages": [8, 9, 12, 13, 14, 18, 19],
+    "renders": "tmp/pdfs/south-sudan-9067/page-{page}.png",
+    "checks": ["Two-column body reading order", "Speaker start and next-speaker end", "Whole national statement retained"],
+    "limitation": "Public English meeting record, including translated speeches; not a timeless national ideal or private preference."
+  },
+  "excluded_candidate": {
+    "source_id": "record-9070",
+    "path": "data/raw/ledger-eval-sources-20260928/record-9070.pdf",
+    "reason": "FRA/GBR/IND/BRA are in the attendance roster but have no attributed speeches in this record. Roster presence cannot establish a position."
+  },
+  "speeches": [
+    {"id": "south-sudan-fra", "country": "FRA", "start_anchor": "Mrs. Gasri (France) (spoke in French):", "end_anchor": "The President: I shall now make a statement in my capacity as the representative of Albania.", "pages": [18, 19]},
+    {"id": "south-sudan-gbr", "country": "GBR", "start_anchor": "Ms. Jacobs (United Kingdom):", "end_anchor": "Ms. Heimerback (Norway):", "pages": [12, 13]},
+    {"id": "south-sudan-ind", "country": "IND", "start_anchor": "Mr. Raguttahalli (India):", "end_anchor": "Ms. Moran (Ireland):", "pages": [8, 9]},
+    {"id": "south-sudan-bra", "country": "BRA", "start_anchor": "Mr. De Almeida Filho (Brazil):", "end_anchor": "Mrs. Alhefeiti (United Arab Emirates) (spoke in Arabic):", "pages": [14]}
+  ],
+  "questions": {
+    "FRA": "What did France prioritize on security arrangements, elections and civilian protection on 20 June 2022? Does its statement establish an unconditional immediate end to the arms embargo or a French national pledge of EUR 72 million? Preserve the institutional attribution of the funding.",
+    "GBR": "How did the UK assess progress and remaining obstacles in South Sudan on 20 June 2022, including humanitarian access and accountability? Does the statement establish that the critical benchmarks had all been met or that an election date had been agreed?",
+    "IND": "What further security and electoral steps, international support and sanctions-related action did India advocate on 20 June 2022? Distinguish addressing South Sudan's concerns from an explicit unconditional commitment to lift all sanctions immediately.",
+    "BRA": "What were Brazil's three priorities for South Sudan on 20 June 2022, including UNMISS's contribution? Does its statement establish Brazilian endorsement of an arms-embargo lifting timetable?"
+  },
+  "criteria": [
+    {"id": "fra-security-elections", "country": "FRA", "requirement": "Link security arrangements to the peace process, elections and embargo revision; retain unfinished election preparations.", "quotes": ["The entire peace process depends on security arrangements, in particular the holding of elections, as well as the revision of the arms embargo.", "we regret the lack of progress in adopting the constitutional and legal framework for the elections and in establishing the National Elections Commission."]},
+    {"id": "fra-protection", "country": "FRA", "requirement": "Civilian/humanitarian protection, accountability and necessary Council sanctions remain priorities.", "quotes": ["Thirdly, the authorities must protect civilians and humanitarian workers.", "All the perpetrators must be brought to justice, and the Security Council must adopt the necessary sanctions."]},
+    {"id": "fra-eu-attribution", "country": "FRA", "requirement": "EUR 72 million is EU humanitarian assistance for 2022, increased from EUR 42 million; do not assign it to a French national pledge.", "quotes": ["the European Union has increased its humanitarian assistance to South Sudan from €42 million to €72 million in 2022."]},
+    {"id": "fra-no-unconditional-end", "country": "FRA", "kind": "bounded_absence", "requirement": "The supplied full statement does not establish an unconditional immediate end to the arms embargo. Do not turn this into a claim that France categorically opposed any revision.", "quotes": []},
+    {"id": "gbr-progress", "country": "GBR", "requirement": "Welcome concrete progress but retain slow/limited implementation and unmet critical benchmarks.", "quotes": ["including the unified command structure.", "However, it is regrettable that overall progress remains too slow and limited, and that critical benchmarks have not been met."]},
+    {"id": "gbr-access-accountability", "country": "GBR", "requirement": "Reduce physical/bureaucratic barriers for unhindered humanitarian access and hold perpetrators accountable.", "quotes": ["We urge the Government of South Sudan to reduce the physical and bureaucratic obstructions and meet its obligations under the peace agreement to allow unhindered humanitarian access.", "We call on the Government of South Sudan to hold the perpetrators accountable."]},
+    {"id": "gbr-election-date", "country": "GBR", "kind": "bounded_absence", "requirement": "The full UK statement does not establish an agreed election date. Preserve the need for concrete steps, priorities and timelines.", "quotes": ["It is clear that the parties have to demonstrate leadership and engage in an honest discussion about priorities and timelines."]},
+    {"id": "ind-remaining-steps", "country": "IND", "requirement": "Retain graduation/operationalization of unified forces, election legislation and finalization of electoral calendar.", "quotes": ["the South Sudan authorities need to make further progress on the graduation of the forces, the operationalization of the necessary unified forces, and legislation concerning elections and the finalization of electoral calendar."]},
+    {"id": "ind-support", "country": "IND", "requirement": "International/regional and humanitarian support, including UNMISS's practical contribution, accompany the institutional steps.", "quotes": ["We believe that at this transformative phase, South Sudan requires the wholehearted support of the international community, including from IGAD, the AU and the United Nations.", "We appreciate the efforts of the United Nations Mission in South Sudan (UNMISS) towards the delivery of humanitarian assistance to those in need, particularly in flood-affected areas."]},
+    {"id": "ind-sanctions-scope", "country": "IND", "kind": "bounded_absence", "requirement": "Address concerns about sanctions, the arms embargo and targeted measures; the full statement does not explicitly commit to an unconditional immediate lifting of all sanctions.", "quotes": ["The international community, including the Council, needs to make every effort to address the concerns repeatedly raised by South Sudan regarding the sanctions, including on the arms embargo and targeted measures."]},
+    {"id": "bra-three-priorities", "country": "BRA", "requirement": "Cover security/civilian protection, humanitarian needs/access and implementation of the peace process, rather than inferring a sanctions position.", "quotes": ["First, regarding security, we are concerned at the increasing cattle-related violence in Eastern Equatoria, Unity and Jonglei.", "improved humanitarian access is indispensable to address the urgent needs of millions of South Sudanese citizens.", "implementation of the Revitalized Agreement on the Resolution of the Conflict in South Sudan as its most powerful tool to mitigate persistent intercommunal violence."]},
+    {"id": "bra-unmiss", "country": "BRA", "requirement": "Attribute improved civilian protection to UNMISS personnel deployment and mobility.", "quotes": ["we acknowledge and commend UNMISS’s efforts to spread its personnel throughout South Sudan and enhance the Mission’s mobility, thereby improving its cornerstone goal of providing protection for civilians."]},
+    {"id": "bra-no-embargo-date", "country": "BRA", "kind": "bounded_absence", "requirement": "The supplied full Brazilian statement does not establish endorsement of an embargo-lifting timetable; absence is not opposition.", "quotes": []}
+  ]
+}

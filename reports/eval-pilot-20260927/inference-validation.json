@@ -1,0 +1,53 @@
+{
+  "status": "engineering_checks_passed; production_probe_pending",
+  "previous_goal_turn_classification": "progress: source-linked cases/rubrics and calibration artifacts were created and tested",
+  "current_goal_turn_classification": "progress: inference instrumentation and isolated payload implemented; CPU integration verified",
+  "targeted_tests": {
+    "passed": 55,
+    "failed": 0,
+    "new_inference_tests": 12,
+    "command": ".venv/bin/python -m pytest -q tests/test_action_eval.py tests/test_action_review_pack.py tests/test_unsc_bench.py tests/test_eval_evidence.py tests/test_policy_eval.py tests/test_inference_probe.py"
+  },
+  "probe_selector_rebuild": "all four frozen files matched byte-for-byte",
+  "isolated_payload_preflight": "identical to repository preflight",
+  "eos_ablation_preflight": {
+    "changed_generation_fields": [
+      "eos_token_id"
+    ],
+    "same_input_token_digests": true,
+    "model_eos": [
+      151645,
+      151643
+    ],
+    "legacy_eos": [
+      151645
+    ]
+  },
+  "cpu_smoke_report_sha256": "077801d2a5c1dd906339fca947ec7e911127c8877429cd74b818292463adf8f7",
+  "staging_path": "runs/eval-probe-staging-20260927-v2",
+  "staging_manifest_sha256": "b2513d5ad9b88f3717ac80eba83719daeac91109d968d29ee8b17656db789bb3",
+  "script_syntax": "bash -n passed; Slurm validation is pending",
+  "code_sha256": {
+    "src/country_persona/inference_probe.py": "010338d5ec6d6cb9385b4ff809e8543c9f6fde0486936e7e6e08cdb87bba4ba4",
+    "scripts/run_eval_probe.py": "817f8cda826db1b3cdc536cc46235fa2b989a306969d0d077fbf4ac4bc0bfc08",
+    "scripts/cpu_inference_smoke.py": "33533d254012675830645ccf9dcff9271d8626ce960652852709a168281db3dd",
+    "scripts/select_eval_probe.py": "b35afa48e6c3e548f0ad634dda47caecab6951daa78dc95fbff4c3a852eeee54",
+    "scripts/stage_eval_probe.py": "181bb821f006488d1f4428b02764d203c00bfecdab60923e4cb2824af06de558",
+    "scripts/trillium_eval_probe.sbatch": "0e89fda50be840c63dd55f4bb17ebf899137b77a264b00239acab2df5fd6baef",
+    "tests/test_inference_probe.py": "313b42d30a1415615ae4fbbf51fad1def9a7e66a026518e40494f908eb9d9361"
+  },
+  "real_pretrained_model_generations": 0,
+  "new_training_runs": 0,
+  "independent_human_reviews": 0,
+  "current_external_dependency": {
+    "trillium_ssh": "Permission denied (keyboard-interactive,hostbased)",
+    "inference_job_submitted_by_this_work": false,
+    "user_reconnection_request": "pending"
+  },
+  "remaining_gates": [
+    "Run and inspect the real eight-output Qwen3/CUDA probe.",
+    "Replay the historical EOS discrepancy before interpreting a new adapter.",
+    "Obtain two independent rubric ratings; preserve disagreements.",
+    "Complete real A/B action and policy comparison before expanding training."
+  ]
+}

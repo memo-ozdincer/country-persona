@@ -1,0 +1,77 @@
+{
+  "status": "prepared_gpu_training_not_launched",
+  "cpu_check": {
+    "status": "passed_random_tiny_cpu_model_not_persona_training",
+    "world_size": 1,
+    "backend": "single_cpu",
+    "actual_trl_rows_audited_per_rank": 10,
+    "actual_supervised_tokens_audited_once": 502,
+    "rank_checks_rows_changed_tensors": [
+      [
+        10,
+        14
+      ]
+    ],
+    "steps": 2,
+    "finite_loss": 11.924396514892578,
+    "adapter_reload_equal": true,
+    "same_base_reloaded_logits_equal": true,
+    "base_weights_source": "random_initialization_not_the_pinned_8B_checkpoint",
+    "source_sha256": "e6b0014cd4bd8639ca89b493f972806e46358a5365cb0c85e4ced78cff8d3bfc",
+    "data_sha256": "127f35ff89d7a84e7099bb32dc172996ad86a1c14aa8e2d8b54a0191ed08a3f8",
+    "limitations": [
+      "CPU/Gloo does not validate CUDA, NCCL, H100 memory, throughput or cluster allocation.",
+      "Two steps and a tiny random network establish software behavior, not persona quality."
+    ]
+  },
+  "deliberation_preflight": {
+    "path": "runs/deliberation-20260928-preflight-v1/run.json",
+    "sha256": "42dea8bc2f2ddc36f5a8ede7ff357b62414c5a6bdbeb5db9faaaf6b6d0a66037",
+    "calls": 42,
+    "maximum_illustrative_prompt_tokens": 5175,
+    "model_inference": false
+  },
+  "focused_tests": {
+    "passed": 53,
+    "command": "pytest -q tests/test_deliberation.py tests/test_deliberation_review.py tests/test_posttraining.py tests/test_policy_workshop.py tests/test_policy_eval.py tests/test_inference_probe.py"
+  },
+  "frozen_pack_review_integration": {
+    "response_bindings": 42,
+    "revision_pairs": 18,
+    "quality_scores": "null_without_reviews",
+    "model_inference": false
+  },
+  "cpu_distributed_check": "failed_on_macOS_Accelerate_barrier_selecting_MPS; Linux_GPU_NCCL_pending",
+  "independent_semantic_review": "pending",
+  "production_training_runs": 0,
+  "training_data_release_sha256": "eb406f97323aebf09bf460772deb621596c068bdb190f205695f8176182d8900",
+  "deliberation_manifest_sha256": "2e3e33797b5fef865a87fd08ad3d9bfaeab5d6b27537d21d30ba60db11e0b8f6",
+  "local_staging_manifest_sha256": "c533a1a60f4d210181a875d3ee328f488a41c454523abe36b84e104d1a40e5fe",
+  "updated_at": "2026-09-28T22:06:37.462090+00:00",
+  "remote": {
+    "path": "/scratch/memoozd/persona/research-readiness-20260928-v2",
+    "ssh": "restored",
+    "uploaded_files_verified": 33,
+    "dependency_check": "No broken requirements found",
+    "versions": {
+      "torch": "2.8.0+cu128",
+      "cuda": "12.8",
+      "transformers": "4.57.6",
+      "trl": "0.24.0",
+      "peft": "0.17.1",
+      "accelerate": "1.11.0"
+    },
+    "scheduler_test_only": "passed; no allocation submitted",
+    "scheduler_requested_account": "def-zhijing",
+    "scheduler_requested_gpus": 4,
+    "wall_limit_hours": 1,
+    "maximum_gpu_hours": 4,
+    "rejected_initial_request": "Two GPUs and explicit --mem are not allowed on Trillium",
+    "queue_at_final_check": "empty",
+    "gpu_health": "no allocated GPU; utilization, memory and NCCL unverified",
+    "tokenizer_preflight_sha256": "03b8dcea44d3ab87e386deb4755ff9a221a3594b0b09454c3c5a07f5809ffe7e",
+    "tokenizer_calls": 42,
+    "validation_log_sha256": "5c525567a06366b5d2cbb09e830009aa402885bbafab2f337eff03f1e5342a89",
+    "snapshot_note": "Staged runbook predates completed validation; this receipt supersedes its pending status."
+  }
+}

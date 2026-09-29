@@ -1,0 +1,52 @@
+{
+  "status": "fixed_and_verified_on_pinned_model_gpu",
+  "first_failed_run": "runs/probe-996664-base-v1/run.json",
+  "slurm_step_id": "996664.0",
+  "failed_run_sha256": "1f77ce678ca2474a9fcdb34eea389f98f2d495a8374f58e68d22f55fb7958192",
+  "checkpoint": "1D",
+  "problem": "Transformers 4.57.6 defaults fallback overrides explicit GenerationConfig global-default values with checkpoint sampling settings when use_model_defaults is omitted. The runtime guard rejected the result.",
+  "intended_decoding": {
+    "do_sample": false,
+    "temperature": 1.0,
+    "top_k": 50,
+    "top_p": 1.0
+  },
+  "checkpoint_fallback_logged": {
+    "do_sample": true,
+    "temperature": 0.6,
+    "top_k": 20,
+    "top_p": 0.95
+  },
+  "fix": "Pass use_model_defaults=False to model.generate; retain exact raw/processed equality and greedy argmax checks. Record the call override in preflight/run metadata.",
+  "regression_test": "test_checkpoint_sampling_defaults_cannot_override_greedy_probe",
+  "before_fix": "FAILED: sampled token 4 instead of greedy EOS token 0 under controlled tied logits",
+  "after_fix": {
+    "tests_passed": 56,
+    "pytest_runtime_seconds": 2.4,
+    "files": [
+      "tests/test_action_eval.py",
+      "tests/test_action_review_pack.py",
+      "tests/test_unsc_bench.py",
+      "tests/test_eval_evidence.py",
+      "tests/test_policy_eval.py",
+      "tests/test_inference_probe.py"
+    ]
+  },
+  "failed_attempt_is_not_a_scored_model_result": true,
+  "failed_run_generation_config_represents_intent_not_actual_decoding": true,
+  "original_guard_retained": true,
+  "allocation_survived_failure": true,
+  "replay_payload": "runs/eval-probe-staging-20260927-v5",
+  "source_sha256": {
+    "src/country_persona/inference_probe.py": "b2c9d24bc5f5d62125bef15c0f22091d61e8594605990a8afd2ec85c839b7cd4",
+    "scripts/run_eval_probe.py": "80519ffba04c31b6d44193e5279d497a1aa5609e2ab5823bfef7759e45eedd8f",
+    "tests/test_inference_probe.py": "85a2df7cedd4299b42219c858b6571c7081c43332afd3fe8b6c1cae6bebb7b43"
+  },
+  "gpu_replay": {
+    "path": "runs/probe-996664-base-v2",
+    "completed_cases": 8,
+    "generated_tokens": 486,
+    "run_sha256": "709fb5689c623477e4cc60bf44c0e3bd8df18353102aa11cfe39d29e996fc468",
+    "actual_raw_logits_and_greedy_selection_checks": "passed_every_token"
+  }
+}

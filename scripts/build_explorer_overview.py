@@ -106,7 +106,7 @@ def stage(data):
             for c, original in zip(view['countries'], data['countries']):
                 for e, source in zip(c['examples'], original['examples']): e['format'] = source['_private_format']
         (dst / 'overview.json').write_text(json.dumps(view, ensure_ascii=False, indent=2) + '\n')
-        for name in ('index.html', 'overview.js', 'overview.css', 'overview-narrow.css', 'data-client.js', 'sources.json', 'source_profiles.json', 'trace_types.json', 'decision-showcase.json'):
+        for name in ('index.html', 'overview.js', 'reddit-coverage.js', 'overview.css', 'overview-narrow.css', 'data-client.js', 'sources.json', 'source_profiles.json', 'trace_types.json', 'decision-showcase.json'):
             shutil.copyfile(ROOT / 'explorer' / name, dst / name)
         # Retain the complete catalog as a secondary screen, with its static adapter.
         html = (ROOT / 'explorer/advanced.html').read_text()
@@ -197,6 +197,8 @@ def main():
     build_inventory()
     data = build()
     stage(data)
+    from build_training_examples import build as build_training_examples
+    build_training_examples()
     github(data)
     print(json.dumps({c['code']: {'counts': c['counts'], 'featured': c['examples'][0]['id'], 'languages': c['languages']} for c in data['countries']}, indent=2))
 

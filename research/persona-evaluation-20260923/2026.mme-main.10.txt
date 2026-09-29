@@ -1,0 +1,886 @@
+    UNSC-Bench: Evaluating LLM Diplomatic Role-Playing Through UN
+                   Security Council Vote Prediction
+
+                  Ayush Nangia1 , Aman Gokrani1 , Ruggero Marino Lazzaroni2
+                                       1
+                                           Aasra Inc., 2 University of Graz
+     ayushnangia16@gmail.com, amaan.gokrani@gmail.com, ruggero.lazzaroni@uni-graz.at
+
+
+
+
+                      Abstract                               geopolitical interests, historical relationships, and
+                                                             policy priorities. Successfully predicting how each
+    This paper introduces UNSC-Bench, a bench-
+    mark for evaluating Large Language Mod-                  country would vote on a given resolution requires
+    els (LLMs) in simulating diplomatic decision-            understanding these varied perspectives, making it
+    making through United Nations Security Coun-             a challenging test of diplomatic reasoning.
+    cil (UNSC) vote prediction. The dataset in-                 First, LLMs have been shown to encode geopolit-
+    cludes 469 UNSC resolutions from 1947 to                 ical biases correlated with training data distribution
+    2025, with voting records for the five permanent         and country of origin (Li et al., 2024a; Salnikov
+    members (P5) (United States, China, France,              et al., 2025), suggesting regional models might bet-
+    Russia, United Kingdom) and translations in
+                                                             ter reproduce their home state’s diplomatic behav-
+    four languages. We analyze 26 LLMs, along
+    with thinking variants, across multiple P5 roles         ior. Second, multilingual evaluations find that per-
+    and find that (1) without explicit role assign-          formance and behavior shift with input language
+    ment, models are diplomatically unaligned, de-           (Bang et al., 2023; Tam et al., 2025), raising the
+    faulting to high yes rates and failing to match          possibility of a “native language advantage” for
+    any P5 voting pattern, indicating they lack in-          country-specific reasoning. Third, work on LLM-
+    herent diplomatic identity; (2) model capability         based simulations emphasizes the importance of
+    (as measured by MMLU-Pro) is strongly corre-
+                                                             explicit personas for obtaining realistic responses
+    lated with role-playing accuracy; (3) regional
+    models do not outperform others in predicting            (Aher et al., 2023; Hu and Collier, 2024; Li et al.,
+    their home country’s votes; and (4) multilin-            2024b), motivating comparison between neutral
+    gual evaluation reveals that prompt language             and role-play prompting. Finally, documented re-
+    impacts model predictions, particularly for mi-          lationships between model capability and complex
+    nority vote outcomes.                                    task performance (Kaplan et al., 2020; Wang et al.,
+                                                             2024a; Brown et al., 2020) suggest that diplomatic
+1   Introduction
+                                                             role-playing ability may scale with general intelli-
+The application of Large Language Models (LLMs)              gence.
+to geopolitical analysis and diplomatic simulation              In this work, we present UNSC-Bench, a bench-
+represents an emerging frontier in AI research               mark designed to evaluate LLMs’ diplomatic role-
+(Ziems et al., 2024; Qi et al., 2025; Rivera et al.,         playing capabilities through the task of predicting
+2024). As these models become increasingly so-               P5 voting behavior. Specifically, our paper makes
+phisticated, understanding their ability to adopt and        three key contributions:
+maintain country-specific perspectives becomes
+                                                                1. We construct and release a multilingual
+crucial for applications ranging from policy sim-
+                                                                   dataset of 469 UNSC resolutions spanning
+ulation to international relations education. The
+                                                                   1947–2025, including full draft resolution text
+United Nations Security Council (UNSC), with its
+                                                                   and voting records.
+formalized voting procedures and documented his-
+tory spanning decades, provides an ideal testbed for            2. We evaluate 26 frontier and open-source
+evaluating such capabilities.                                      LLMs across five country roles, revealing
+   The Security Council’s five permanent members                   that general intelligence critically determines
+(P5): the United States, Russia, China, France,                    role-playing ability and that regional mod-
+and the United Kingdom, possess veto power and                     els exhibit no advantage when role-playing
+demonstrate distinct voting patterns shaped by their               their home country, challenging assumptions
+                                                         162
+               Proceedings of the First Workshop on Multilingual Multicultural Evaluation, pages 162–176
+                           March 28, 2026 ©2026 Association for Computational Linguistics
+      about cultural proximity and training-data bias.    et al. (2025) demonstrate that 28% of MMLU ques-
+      Additionally, we evaluate models under neu-         tions require culturally sensitive knowledge, and
+      tral prompting to measure their default align-      that “progress on MMLU predominantly reflects
+      ment with P5 voting patterns without explicit       knowledge of Western-centric cultural knowledge.”
+      country-roles in order to check their individual,   This finding motivates evaluation frameworks that
+      default, diplomatic alignment.                      disentangle models’ ability from their western cul-
+                                                          tural competence.
+    3. We conduct a multilingual analysis show-               Chen et al. (2024) question whether current mul-
+       ing that prompt language dramatically affects      tilingual evaluation practices are sound, showing
+       model predictions, with some models exhibit-       that translated benchmarks cannot capture language-
+       ing major performance degradation while oth-       specific knowledge and may introduce artifacts that
+       ers remain comparatively stable across lan-        distort assessment. They demonstrate notable differ-
+       guages.                                            ences between native-written and translated instruc-
+                                                          tion data, particularly for high-performing models
+2     Related Work                                        and in generative tasks. This methodological con-
+                                                          cern underscores the importance of evaluation tasks
+We situate UNSC-Bench at the intersection of two
+                                                          (such as predicting documented diplomatic posi-
+research areas: specifically, LLM evaluation on
+                                                          tions) that do not rely on translation.
+diplomatic and geopolitical tasks; and more broadly,
+                                                              Adilazuarda et al. (2024) provide a comprehen-
+cultural knowledge and value alignment in language
+                                                          sive survey of approaches to measuring culture in
+models.
+                                                          LLMs, identifying key challenges including the
+2.1 LLM Evaluation on UN and Diplomatic                   conflation of language with culture and the lack
+    Tasks                                                 of behavioral evaluations grounded in real-world
+                                                          outcomes. Our work tries to partially address this
+Two concurrent works evaluate LLMs using UN               gap by using actual voting records as behavioral
+Security Council data. Liang et al. (2025) intro-         ground truth.
+duce UNBench, a four-task benchmark covering
+co-penholder judgment, voting simulation, draft           2.3   Cultural Knowledge Benchmarks
+adoption prediction, and statement generation us-         At the same time, results on whether regional mod-
+ing UNSC records from 1994–2024. They find that           els possess “home advantage” remain contested.
+GPT-4o achieves 0.726 accuracy on co-penholder               Chiu et al. (2025) introduce CulturalBench, com-
+identification, with performance declining as choice      prising 1,227 human-verified questions across 45
+complexity increases.                                     global regions. They find GPT-4o (61.5%) outper-
+   Choi et al. (2025) examine nation-level bias in        forms the best Chinese model Qwen-2-72B (58.8%)
+UNSC voting prediction through explicit bias tests,       even on East Asian cultural questions, conclud-
+persona-assigned voting, and accuracy analysis            ing that “model providers based out of specific re-
+across nations. They find biases are “fundamen-           gions do not necessarily have advantages in cultural
+tally multidimensional,” with GPT models showing          knowledge of their regions.”
+consistent negative bias toward Russia. Their RAG-           In contrast, Myung et al. (2024) report home ad-
+based debiasing framework reduces but does not            vantage in BLEnD, a benchmark of 52,600 everyday
+eliminate these biases. Notably, they report that         knowledge questions across 16 countries. Qwen1.5-
+Western-developed models do not uniformly favor           72B achieves highest performance on Chinese ques-
+Western nations, partially anticipating our finding.      tions, and HyperCLOVA-X outperforms GPT-4 on
+However, neither work compares regional models            Korean culture. We hypothesize that the key dis-
+(e.g., Qwen, DeepSeek) against Western models on          tinction appears to be knowledge type: BLEnD
+predictions for their “home” countries, nor do they       tests tacit everyday knowledge (food, holidays, fam-
+quantify the relationship between general model           ily customs) requiring region-specific training data,
+capability and diplomatic role-playing ability.           while CulturalBench tests factual knowledge avail-
+                                                          able in globalized corpora. We set out to investigate
+2.2    Multilingual Evaluation and Cultural Bias          this other kind of knowledge through the analysis
+Recent work has highlighted that multilingual capa-       of diplomatic position documents.
+bility does not imply cultural understanding. Singh          Durmus et al. (2023) demonstrate that LLM de-
+                                                       163
+fault responses align most closely with opinions         vey questions, finding it improves alignment for
+from the United States, Canada, Australia, and West-     71–81% of countries. However, they do not system-
+ern Europe, with significant divergence from Mid-        atically investigate capability thresholds.
+dle Eastern, African, and Asian populations. Zhao
+et al. (2024) extend this using World Values Sur-        3       UNSC-Bench: Task and Dataset
+vey data across 64 countries, finding larger models
+substantially outperform smaller ones but without        3.1      Data Sources and Collection
+testing regional model comparisons.                      We construct UNSC-Bench from official United
+                                                         Nations Security Council documentation spanning
+2.4 Regional Models and Value Alignment
+                                                         1947–2025. The benchmark compiles data from
+Furthermore, recent work challenges the assump-          three sources: (i) the Corpus of Resolutions: UN
+tion that regional models better represent the values    Security Council (CR-UNSC) for adopted resolu-
+of their home cultures.                                  tions and structured metadata (Fobbe et al., 2024);
+   Naous et al. (2024) report a pattern of this kind     (ii) the UN Department of Political and Peacebuild-
+for Arabic: even Arabic-specific LLMs exhibit bias       ing Affairs (DPPA) dataset of all Security Council
+towards Western cultural entities. When asked in         vetoes since 1946 for vetoed drafts and veto meta-
+Arabic for food suggestions, the models chose “ravi-     data (United Nations Department of Political and
+oli” over Arabic dishes; when asked for women’s          Peacebuilding Affairs, 2025); and (iii) the UN Dig-
+names in Arabic, the models chose “Roseanne” over        ital Library for resolution PDFs, draft texts, and
+Arab names. This Western default in regional mod-        meeting records containing official voting tallies1 .
+els helps explain why training country of origin         For a small number of older documents, the avail-
+may not confer a role-playing advantage.                 able PDF text was incomplete or corrupted in the
+   Most directly relevant to our work, Rystrøm et al.    archived versions, so we recovered the document
+(2025) find that “the ability to communicate across      text using DeepSeek-OCR (Wei et al., 2025). For
+languages does not necessarily translate to appropri-    a small set of cases (fewer than 20) where official
+ate cultural representations.” Testing Gemma and         translations could not be retrieved, we generated
+OpenAI models against World Values Survey data           translations using DeepSeek V3.2-exp (DeepSeek-
+across four languages, they find no consistent rela-     AI et al., 2025) and used these to complete the
+tionship between language capability and cultural        multilingual inputs.
+alignment. This dissociation between linguistic and         From these sources, we select resolutions that
+cultural competence provides theoretical ground-         meet two criteria: (1) the full text of the proposal
+ing for our finding that Chinese models’ linguistic      voted on is available in at least English, and (2)
+capabilities do not translate to superior China role-    complete voting records exist for all five permanent
+playing.                                                 members (P5). After cross-validating voting tal-
+   Li et al. (2024a) evaluate geopolitical bias          lies against the Security Council Report, the final
+through 251 territorial disputes across 49 languages,    dataset contains 469 resolutions and 2,345 P5 vote
+finding LLMs answer differently depending on             instances.
+query language. In particular, they report that larger      Resolutions can be divided into two partitions
+models improve factual accuracy but not cross-           of similar size: 211 vetoed drafts (45%) and 258
+lingual consistency and that geopolitical bias can be    adopted resolutions (55%). Vetoed drafts are pro-
+“amplified in stronger models,” contrasting with our     posals blocked by at least one P5 veto and thus corre-
+finding that capability correlates with role-playing     spond to the most contentious issues, where perma-
+ability. This suggests our benchmark measures a          nent members fundamentally disagreed. Adopted
+distinct construct: the skill of adopting a consis-      resolutions passed without veto and typically reflect
+tent perspective rather than the default perspective     either consensus or cases where P5 members chose
+a model holds.                                           to abstain.
+2.5 Role-Playing and Cultural Prompting                     A key design choice is to use, wherever possible,
+                                                         the draft text actually voted on. For vetoed reso-
+The effectiveness of role-playing instructions for       lutions this is the only available text. For adopted
+cultural alignment has received limited system-          resolutions, we use the draft text whenever it is
+atic study. Tao et al. (2024) test cultural prompt-
+ing across 107 countries using World Values Sur-             1
+                                                                 https://digitallibrary.un.org/
+
+                                                     164
+available, and exclude resolutions without an avail-                Country YES NO ABS Total NO%
+                                                                    China    348 21 100 469    4.5
+able draft. This approximates the realistic setting                 France   374 17  78 469    3.6
+where a model must assess the draft resolution be-                  Russia   279 106 84 469 22.6
+fore knowing the outcome.                                           UK       351 30  88 469    6.4
+                                                                    US       312 91  66 469 19.4
+   UN Security Council documents are officially
+translated into six languages; in UNSC-Bench we             Table 1: Ground-truth vote counts for the five perma-
+include four: English (EN), Chinese (ZH), French            nent members (P5) across the 469 resolutions in UNSC-
+(FR), and Russian (RU), representative of the P5            Bench. “ABS” = abstain. “Russia” aggregates USSR
+members.                                                    (pre-1991) and Russian Federation (post-1991). “NO%”
+                                                            is the share of no votes.
+3.2 Task Definition
+Each instance i of our benchmark contains two               3.3   Dataset Statistics
+                                      (`)
+components: a draft resolution text ri written
+in language ` ∈ {EN, ZH, FR, RU}—the main                   Table 1 summarizes ground-truth voting patterns
+languages of P5 countries— and the correspond-              for each P5 member in UNSC-Bench. Votes
+ing ground-truth votes vi,c ∈ {yes, no, abstain}            are imbalanced: all P5 members vote yes much
+cast by each of the five permanent members                  more frequently than no or abstain, reflecting the
+(P5) of the Security Council, where c ∈ C =                 consensus-seeking nature of the Security Council.
+{CN, FR, RU, UK, US}.                                          Across countries, yes votes account for roughly
+   We evaluate model behavior under two distinct            60–80% of decisions, while no votes are rare except
+prompting settings:                                         for Russia and the United States. Abstentions serve
+                                                            as another option, allowing states to note reserva-
+Role-Play Setting: In this configuration, we ex-            tions without blocking a resolution.
+plicitly instruct the model to adopt the perspective
+of a specific P5 country c. The model then predicts         4 Experimental Setup
+how that country would vote on the given resolution.
+Formally, this mapping can be expressed as:                 4.1   Models
+                                                            We evaluated 26 base LLMs from four of the five P5
+                   (`)               (`)
+                 (ri , c, `) 7→ v̂i,c               (1)     countries: the US (GPT-5 (OpenAI, 2025), Claude
+                                                            Sonnet 4.5 (Anthropic, 2025), Llama (Dubey et al.,
+Neutral Setting: In this configuration, the model           2024)), China (Qwen (Yang et al., 2025), DeepSeek
+is not conditioned to behave as any country. The            (DeepSeek-AI et al., 2025), Kimi (Kimi Team et al.,
+model simply receives the draft resolution text and         2025)), France (the Mistral family (Jiang et al.,
+produces a vote as output:                                  2023, 2024)), and Russia (GigaChat (GigaChat
+                  (`)          (`)                          Team et al., 2025), Vistral from the Vikhr model
+                (ri , `) 7→ v̂i,neutral             (2)     family (Nikolich et al., 2024)).
+                                              (`)
+                                                               For Claude, DeepSeek, and Kimi, we evaluate
+We then compare this neutral prediction v̂i,neutral         both standard and thinking variants to test whether
+against the actual votes of all five P5 members. This       step-by-step reasoning helps diplomatic simula-
+allows us to measure which country’s voting pattern         tion. We then compared those performances against
+the model most closely aligns with from its own             MMLU-Pro scores (Wang et al., 2024b)2 ; by adopt-
+perspective. We characterize this as a proxy for how        ing this as a capability proxy, we attempt to separate
+the model would behave in normal use, when asked            the effects of raw intelligence from geographic ori-
+to complete a task as an assistant chatbot without          gin. Full model details appear in Appendix B.
+role-play instructions.
+                                                            4.2   Prompting Conditions
+Multilingual Evaluation: Unless otherwise spec-
+ified, all experiments were conducted in English            As previously stated in Section 3.2, we evaluate
+(` = EN). However, to investigate whether a                 each model under two conditions to isolate the effect
+model’s default alignment shifts depending on the           of explicit role assignment.
+input language, we repeated both the role-play and            2
+                                                                MMLU-Pro scores were sourced from Artificial
+neutral evaluations in Chinese, French, and Russian         Analysis   (https://artificialanalysis.ai/
+(` ∈ {ZH, FR, RU}) for a subset of models.                  evaluations/mmlu-pro)
+
+                                                          165
+                                                               Neutral Prompting (Macro F1)
+                     Model                          YES%       CN       FR    RU     UK     US
+                     Closed-Source
+                     GPT-5                          95%        0.27    0.36   0.25   0.33   0.28
+                     Claude Sonnet 4.5              85%        0.35    0.37   0.34   0.41   0.32
+                     Claude Sonnet 4.5 [thinking]   83%        0.34    0.33   0.32   0.36   0.35
+                     Open-Source
+                     DeepSeek V3.2-exp              99%        0.28    0.29   0.26   0.28   0.26
+                     DeepSeek V3.2-exp [thinking]   99%        0.28    0.29   0.25   0.28   0.29
+                     Kimi K2 [instruct]             70%        0.35    0.35   0.37   0.36   0.36
+                     Kimi K2 [thinking]             87%        0.33    0.33   0.36   0.35   0.32
+
+Table 2: Macro F1 for P5 vote prediction under neutral prompting on UNSC-Bench (English prompts). yes% is the
+neutral prediction rate. Bold indicates best per model.
+
+
+   Neutral prompting provides only the resolution          more relevant training data in that language. In
+text. The model predicts P5 votes without being            such cases, inconsistency reflects language-specific
+told which country’s perspective to adopt. This            competence rather than instability.
+tests whether models have any internal diplomatic
+bias and which country they align with the most by         5     Results
+default.                                                   We organize our findings around four questions: (i)
+   Role-playing prompting assigns a country-               Are models diplomatically aligned without explicit
+specific role, instructing the model to reason from        roles? (ii) How does general capability relate to
+that country’s geopolitical interests and historical       diplomatic role-playing? (iii) Do regional models
+positions.                                                 enjoy a home-country advantage? (iv) How sensi-
+   For multilingual analysis, we tested four models        tive are predictions to prompt language?
+with the same prompts translated in English, Chi-
+nese, French, and Russian. The translated prompts          5.1        Raw Models Are Diplomatically
+were populated with the translation of the resolution                 Unaligned
+text in the specific language. These configurations        Our first experiment examines whether models in-
+let us test whether prompting in a country’s native        herently align with the voting patterns of specific
+language helps model predict that country’s votes.         countries when not explicitly instructed to adopt
+For prompt templates, refer to Appendix D.                 any role. Table 2 presents neutral prompting results
+                                                           across frontier models.
+4.3 Evaluation Metrics                                        Under neutral prompting, models exhibit no con-
+We report Macro F1 and per-class F1 scores. The            sistent diplomatic alignment. Instead, they default
+per-class breakdown is important given class imbal-        to a high yes rate (70–99%), effectively behaving as
+ance: most resolutions pass, so high yes-class F1          agreeable but generic delegates. Macro F1 scores
+is relatively easy to achieve. The more informative        remain low and vary only narrowly across the five
+signal lies in minority classes: correctly predicting      P5 countries within each model, indicating that
+when a country will vote no or abstain suggests            models do not reliably recover distinct national po-
+the model captures something about that country’s          sitions from draft resolution text alone. Notably, the
+diplomatic boundaries, rather than simply learning         country with the highest alignment differs across
+overall class distribution.                                models; GPT-5 aligns most with France, Claude
+   For multilingual evaluation, we measure cross-          Sonnet 4.5 with the UK, and Kimi K2 with Rus-
+language consistency: how often a model pro-               sia, suggesting these slight variations reflect noise
+duces identical predictions across prompt lan-             rather than systematic diplomatic orientation.
+guages. High consistency suggests robust reasoning            These results suggest that without explicit role
+that generalizes across languages. However, low            assignment, frontier models lack inherent diplo-
+consistency is not necessarily a failure: a model          matic alignment. They do not consistently match
+might reason more accurately about Russian diplo-          any country’s viewpoint and do not automatically
+macy when prompted in Russian, perhaps due to              vote like a specific P5 member, instead defaulting
+                                                     166
+Figure 1: General capability (MMLU-Pro; x-axis) vs. role-play performance (Macro F1; y-axis) for each P5 country
+role on UNSC-Bench (English prompts). Each point is a model; stars denote thinking variants. Curves show
+exponential fits; R2 values are reported per role.
+
+
+to consensus-seeking behavior that does not fit the      of the form y = a · exp(bx) + c. The exponential
+voting record of any individual P5 member.               model achieves higher R2 than a linear fit for all
+                                                         five countries (e.g., UK: 0.83 vs 0.54; Russia: 0.76
+5.2 Diplomatic Role-Playing Scales With                  vs 0.51), consistent with a capability threshold ef-
+    General Model Capability                             fect where diplomatic role-playing ability emerges
+Figure 1 relates general capability (MMLU-Pro)           more strongly beyond a certain level of general in-
+to role-play performance (Macro F1), shown sepa-         telligence.
+rately for each P5 role. Each point corresponds to          The figure also suggests that additional inference-
+a model configuration (including base and thinking       time computation often helps in this task. Thinking
+variants), and the curve shows an exponential fit.       variants (stars) tend to appear among the highest-
+Across all five roles, the main pattern is non-linear:   scoring points and frequently sit above nearby non-
+many lower- and mid-capability systems fall into         thinking counterparts from the same family. Over-
+a relatively narrow performance band, while the          all, Figure 1 supports the interpretation that effec-
+strongest models separate more clearly and achieve       tive diplomatic role-playing is closely tied to gen-
+substantially higher Macro F1. This separation is        eral capability, with the most visible gains concen-
+especially clear for the UK and Russia roles, where      trated among the highest-performing systems.
+performance increases rapidly at the upper end of
+capability, while China shows more variance among         5.3   Regional Models Do Not Have a
+similarly capable models, indicating that simulating            Home-Country Advantage
+China is less predictable from general capability        We might expect models to perform best when pre-
+alone.                                                   dicting the votes of their home country, since their
+   We first compute Pearson correlations to confirm      training data may include more text from that coun-
+that a positive relationship exists for all roles (r =   try’s media and public sources. Table 3 tests this
+0.55–0.80, all p < 0.01). Because the trend is visibly   hypothesis by showing Macro F1 scores for each
+non-linear, flat among weaker models, then rising        model on all five P5 countries, with the models’
+steeply at the top, we also fit an exponential curve     home countries highlighted.
+                                                      167
+                                                                       Macro F1
+                      Model                          CN           FR      RU      UK     US
+                      US Models — Home country: US
+                      GPT-5                          0.68         0.57    0.79    0.75   0.77
+                      Claude Sonnet 4.5              0.46         0.41    0.63    0.55   0.67
+                      Claude Sonnet 4.5 [thinking]   0.57         0.55    0.71    0.66   0.69
+                      Llama 3.1-70B                  0.46         0.33    0.50    0.41   0.55
+                      GPT-OSS-120B                   0.40         0.45    0.49    0.51   0.60
+
+                      Chinese Models — Home country: CN
+                      Qwen3-32B                      0.44         0.34    0.50    0.40   0.58
+                      DeepSeek V3.2-exp              0.46         0.44    0.44    0.53   0.56
+                      DeepSeek V3.2-exp [thinking]   0.53         0.51    0.66    0.60   0.67
+                      Kimi K2 [instruct]             0.37         0.35    0.48    0.50   0.52
+                      Kimi K2 [thinking]             0.51         0.54    0.65    0.61   0.66
+
+                      French Models — Home country: FR
+                      Mistral Large                  0.46         0.32    0.49    0.36   0.48
+                      Mistral Small 24B              0.37         0.36    0.38    0.38   0.40
+                      Mistral Nemo 12B               0.42         0.30    0.36    0.34   0.36
+                      Ministral 8B                   0.32         0.34    0.34    0.38   0.42
+                      Mistral 7B-v0.3                0.33         0.31    0.32    0.30   0.27
+                      Magistral Small                0.37         0.32    0.39    0.41   0.46
+
+                      Russian Models — Home country: RU
+                      GigaChat-20B-A3B               0.33         0.37    0.30    0.35   0.30
+                      Vistral-24B                    0.39         0.36    0.35    0.42   0.43
+
+Table 3: Role-play Macro F1 by P5 country role. Boxed = home country; bold = best score. Most models perform
+best on non-home countries.
+
+
+   Instead, we do not observe a consistent home-            outside their home role: GigaChat-20B-A3B per-
+country advantage in Table 3. Within the US group,          forms best on France, and Vistral-24B performs
+models generally score strongly on the US role,             best on the United States. Taken together, these re-
+but the US role is not always the single best (e.g.,        sults suggest that diplomatic role-play performance
+GPT-5 is slightly higher on Russia than on the US).         is not reliably predicted by a model’s geographic
+The clearest deviation from the home-advantage              origin.
+expectation appears for the Chinese models: all                Finally, the China column illustrates the same
+five have their highest Macro F1 on the US role             point: the highest China-role score in Table 3 is
+rather than the China role. For instance, Qwen3-            achieved by GPT-5, exceeding the best China-role
+32B, DeepSeek V3.2-exp [thinking], and Kimi K2              score among the listed Chinese models. Overall,
+[thinking] each score higher on the US column than          Table 3 seems to indicate that geographical home
+on the China column, indicating that Chinese origin         region is secondary to other factors when evaluating
+does not necessarily translate into superior China-         performance for this task.
+role prediction on this benchmark.
+                                                            5.4     Prompt Language Can Dramatically
+   French and Russian models show a similar pat-
+                                                                    Distort Predictions
+tern. None of the French models achieve their best
+score on France; each performs better on a non-             Finally, we examine whether prompt language
+home role, most often the United States, Russia, or         changes model predictions. We evaluate Claude
+China (e.g., Mistral Large peaks on Russia rather           Sonnet 4.5, DeepSeek V3.2-exp (and its thinking
+than France). The two Russian models also peak              variant), and Kimi K2 (instruct and thinking) across
+                                                     168
+                                           NO F1                  ABSTAIN F1                  Macro F1
+    Model                       EN    ZH    FR     RU   ∆   EN   ZH    FR   RU    ∆    EN   ZH    FR   RU    ∆
+    DeepSeek V3.2-exp            0.67 0.64 0.70 0.68 0.06 0.19 0.14 0.12 0.32 0.20 0.57 0.54 0.56 0.62 0.08
+    DeepSeek V3.2-exp [thinking] 0.67 0.68 0.73 0.72 0.06 0.28 0.18 0.24 0.29 0.11 0.60 0.57 0.61 0.63 0.06
+    Claude Sonnet 4.5            0.77 0.55 0.78 0.72 0.23 0.37 0.17 0.38 0.23 0.21 0.67 0.52 0.69 0.61 0.17
+    Kimi K2 [thinking]           0.76 0.47 0.77 0.32 0.45 0.34 0.26 0.30 0.23 0.11 0.67 0.46 0.65 0.39 0.28
+    Kimi K2 [instruct]           0.61 0.30 0.69 0.00 0.69 0.27 0.21 0.24 0.19 0.08 0.58 0.35 0.60 0.27 0.33
+
+            Table 4: F1 scores for predicting US votes across prompt languages. ∆ = max − min (range).
+
+
+four languages (English, Chinese, French, and Rus-          multilingual draft resolutions in English, Chinese,
+sian). Table 4 presents no F1 scores for the US role,       French, and Russian. We evaluated 26 models (29
+where the effect is most pronounced.                        configurations including thinking variants) under
+   Table 4 shows that language sensitivity varies           both neutral prompting and explicit country role-
+substantially across models. DeepSeek V3.2-exp              play. Under neutral prompting, models are diplo-
+is comparatively stable across languages on the no          matically unaligned, defaulting to high yes rates
+class, with a small range, and its thinking variant         and failing to match any P5 voting pattern. When
+shows similar stability with slightly higher scores.        engaging in diplomatic role-play, performances are
+In contrast, Claude Sonnet 4.5 exhibits a larger drop       strongly tied to general model capability, with think-
+in Chinese relative to English and French, and its          ing variants providing further improvements. No-
+performance varies more across prompt languages             tably, regional origin does not confer an advantage:
+than DeepSeek on all three metrics.                         models developed in a P5 country do not predict
+   The largest variation is observed for Kimi K2            their home country’s votes more accurately than
+[instruct]. For the US role, its no F1 ranges from          other roles. Finally, prompt language affects pre-
+0.00 under Russian prompts to 0.69 under French             dictions, particularly for minority outcomes like no
+prompts (∆ = 0.69), indicating a substantial degra-         and abstain, though the magnitude varies across
+dation in identifying no outcomes in Russian. In            models.
+contrast, variation in the abstain class is compara-
+tively small (0.19–0.27; ∆ = 0.08), suggesting that
+the language sensitivity is concentrated in no pre-         7 Limitations
+diction rather than reflecting a uniform shift across
+all classes. The thinking variant partially mitigates
+                                                            Our benchmark evaluates diplomatic role-playing
+this effect: Kimi K2 [thinking] increases no F1
+                                                            through vote prediction, which cannot capture the
+in Russian to 0.32, although it remains below the
+                                                            reasoning behind a decision or the negotiations that
+model’s English and French performance.
+                                                            precede it. Additionally, the benchmark covers only
+   Overall, these results indicate that multilingual
+                                                            P5 members and resolutions with available text and
+prompting can meaningfully change performance
+                                                            voting records, and models see only the draft res-
+in this diplomatic modeling task, and that this ef-
+                                                            olution itself, without access to past votes, stated
+fect is strongly model-dependent. For multilingual
+                                                            policy positions, or surrounding debate that real
+deployments of diplomatic role-play, it is therefore
+                                                            diplomats would draw on. We also explore a lim-
+important to evaluate not only average performance
+                                                            ited prompting setup: all experiments are zero-shot
+but also cross-language stability, particularly for the
+                                                            with a single template per condition, and few-shot
+minority vote types (no and abstain), where we
+                                                            examples or chain-of-thought prompting might im-
+observe the largest performance differences across
+                                                            prove results. On the multilingual side, translation
+languages.
+                                                            quality and prompt wording may affect predictions,
+                                                            so language effects could reflect linguistic factors
+6     Conclusion
+                                                            beyond country perspective. Finally, because histor-
+We introduced UNSC-Bench, a benchmark for eval-             ical votes are likely present in training data, we can-
+uating LLM diplomatic role-playing through UN               not fully rule out memorization, though our results
+Security Council P5 vote prediction. The dataset            suggest models do not simply recall ground-truth
+covers 469 draft resolutions spanning 1947–2025             outcomes.
+with ground-truth voting records, and provides
+                                                        169
+References                                                   Jonghyeon Choi, Yeonjun Choi, Hyun chul Kim, and
+                                                               Beakcheol Jang. 2025. “As Eastern Powers, I Will
+Muhammad Farid Adilazuarda, Sagnik Mukherjee,                  Veto”: An investigation of nation-level bias of large
+ Pradhyumna Lavania, Siddhant Shivdutt Singh, Al-              language models in international relations. Preprint,
+ ham Fikri Aji, Jacki O’Neill, Ashutosh Modi, and              arXiv:2511.10695.
+ Monojit Choudhury. 2024. Towards measuring and
+ modeling “culture” in LLMs: A survey. In Proceed-           DeepSeek-AI, Aixin Liu, Aoxue Mei, Bangcai Lin, Bing
+ ings of the 2024 Conference on Empirical Methods in           Xue, Bingxuan Wang, Bingzheng Xu, Bochao Wu,
+ Natural Language Processing, pages 15763–15784,               Bowei Zhang, Chaofan Lin, Chen Dong, Chengda
+ Miami, Florida, USA. Association for Computational            Lu, Chenggang Zhao, Chengqi Deng, Chenhao
+ Linguistics.                                                  Xu, Chong Ruan, Damai Dai, Daya Guo, Dejian
+                                                               Yang, et al. 2025. DeepSeek-v3.2: Pushing the
+Gati V Aher, Rosa I. Arriaga, and Adam Tauman Kalai.           frontier of open large language models. Preprint,
+  2023. Using large language models to simulate mul-           arXiv:2512.02556.
+  tiple humans and replicate human subject studies. In
+  Proceedings of the 40th International Conference on        Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey,
+  Machine Learning, volume 202 of Proceedings of               Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman,
+  Machine Learning Research, pages 337–371. PMLR.              Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan,
+                                                               et al. 2024. The Llama 3 herd of models. Preprint,
+Anthropic. 2025. Claude sonnet 4.5 system card. Tech-          arXiv:2407.21783.
+  nical Report.
+                                                             Esin Durmus, Karina Nyugen, Thomas I. Liao, Nicholas
+                                                               Schiefer, Amanda Askell, Anton Bakhtin, Carol Chen,
+Yejin Bang, Samuel Cahyawijaya, Nayeon Lee, Wen-
+                                                               Zac Hatfield-Dodds, Danny Hernandez, Nicholas
+  liang Dai, Dan Su, Bryan Wilie, Holy Lovenia, Ziwei
+                                                               Joseph, Liane Lovitt, Sam McCandlish, Orowa Sikder,
+  Ji, Tiezheng Yu, Willy Chung, Quyet V. Do, Yan Xu,
+                                                               Alex Tamkin, Janel Thamkul, Jared Kaplan, Jack
+  and Pascale Fung. 2023. A multitask, multilingual,
+                                                               Clark, and Deep Ganguli. 2023. Towards measur-
+  multimodal evaluation of ChatGPT on reasoning, hal-
+                                                               ing the representation of subjective global opinions
+  lucination, and interactivity. In Proceedings of the
+                                                               in language models. Preprint, arXiv:2306.16388.
+  13th International Joint Conference on Natural Lan-
+  guage Processing and the 3rd Conference of the Asia-       Seán Fobbe, Lorenzo Gasbarri, and Niccolò Ridi. 2024.
+  Pacific Chapter of the Association for Computational         Corpus of resolutions: Un security council (cr- unsc).
+  Linguistics (Volume 1: Long Papers), pages 675–718,
+  Nusa Dua, Bali. Association for Computational Lin-         GigaChat Team, Valentin Mamedov, et al. 2025. Gi-
+  guistics.                                                    gaChat family: Efficient Russian language modeling
+                                                               through mixture of experts architecture. Preprint,
+Tom Brown, Benjamin Mann, Nick Ryder, Melanie                  arXiv:2506.09440.
+  Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind
+  Neelakantan, Pranav Shyam, Girish Sastry, Amanda           Tiancheng Hu and Nigel Collier. 2024. Quantifying the
+  Askell, Sandhini Agarwal, Ariel Herbert-Voss,                 persona effect in LLM simulations. In Proceedings
+  Gretchen Krueger, Tom Henighan, Rewon Child,                  of the 62nd Annual Meeting of the Association for
+  Aditya Ramesh, Daniel Ziegler, Jeffrey Wu, Clemens            Computational Linguistics (Volume 1: Long Papers),
+  Winter, et al. 2020. Language models are few-shot             pages 10289–10307, Bangkok, Thailand. Association
+  learners. In Advances in Neural Information Process-          for Computational Linguistics.
+  ing Systems, volume 33, pages 1877–1901. Curran
+  Associates, Inc.                                           Albert Q. Jiang, Alexandre Sablayrolles, Arthur Men-
+                                                               sch, Chris Bamford, Devendra Singh Chaplot, Diego
+Pinzhen Chen, Simon Yu, Zhicheng Guo, and Barry                de las Casas, Florian Bressand, Gianna Lengyel, Guil-
+  Haddow. 2024. Is it good data for multilingual in-           laume Lample, Lucile Saulnier, et al. 2023. Mistral
+  struction tuning or just bad multilingual evaluation for     7B. Preprint, arXiv:2310.06825.
+  large language models? In Proceedings of the 2024          Albert Q. Jiang, Alexandre Sablayrolles, Antoine Roux,
+  Conference on Empirical Methods in Natural Lan-              Arthur Mensch, Blanche Savary, Chris Bamford, De-
+  guage Processing, pages 9706–9726, Miami, Florida,           vendra Singh Chaplot, Diego de las Casas, Emma Bou
+  USA. Association for Computational Linguistics.              Hanna, Florian Bressand, et al. 2024. Mixtral of ex-
+                                                               perts. Preprint, arXiv:2401.04088.
+Yu Ying Chiu, Liwei Jiang, Bill Yuchen Lin,
+  Chan Young Park, Shuyue Stella Li, Sahithya Ravi,          Jared Kaplan, Sam McCandlish, Tom Henighan, Tom B.
+  Mehar Bhatia, Maria Antoniak, Yulia Tsvetkov, Vered           Brown, Benjamin Chess, Rewon Child, Scott Gray,
+  Shwartz, and Yejin Choi. 2025. CulturalBench: A ro-           Alec Radford, Jeffrey Wu, and Dario Amodei. 2020.
+  bust, diverse and challenging benchmark for measur-           Scaling laws for neural language models. Preprint,
+  ing LMs’ cultural knowledge through human-AI red-             arXiv:2001.08361.
+  teaming. In Proceedings of the 63rd Annual Meeting
+  of the Association for Computational Linguistics (Vol-     Kimi Team, Yifan Bai, Yiping Bao, Guanduo Chen,
+  ume 1: Long Papers), pages 25663–25701, Vienna,              Jiahao Chen, Ningxin Chen, Ruijue Chen, Yanru
+  Austria. Association for Computational Linguistics.          Chen, Yuankun Chen, Yutian Chen, et al. 2025.
+                                                         170
+  Kimi k2: Open agentic intelligence.           Preprint,         2024. Escalation risks from language models in mili-
+  arXiv:2507.20534.                                               tary and diplomatic decision-making. In Proceedings
+                                                                  of the 2024 ACM Conference on Fairness, Account-
+Bryan Li, Samar Haider, and Chris Callison-Burch.                 ability, and Transparency (FAccT ’24), Rio de Janeiro,
+  2024a. This land is Your, My land: Evaluating geopo-            Brazil. Association for Computing Machinery.
+  litical bias in language models through territorial dis-
+  putes. In Proceedings of the 2024 Conference of             Jonathan Rystrøm, Hannah Rose Kirk, and Scott A. Hale.
+  the North American Chapter of the Association for             2025. Multilingual != multicultural: Evaluating gaps
+  Computational Linguistics: Human Language Tech-               between multilingual capabilities and cultural align-
+  nologies (Volume 1: Long Papers), pages 3855–3871,            ment in LLMs. In Proceedings of the First Interdis-
+  Mexico City, Mexico. Association for Computational            ciplinary Workshop on Observations of Misunder-
+  Linguistics.                                                  stood, Misguided and Malicious Use of Language
+                                                                Models (OMMM 2025), associated with the Interna-
+Junyi Li, Charith Peris, Ninareh Mehrabi, Palash Goyal,         tional Conference RANLP 2025, pages 74–85, Varna,
+  Kai-Wei Chang, Aram Galstyan, Richard Zemel, and              Bulgaria.
+  Rahul Gupta. 2024b. The steerability of large lan-
+  guage models toward data-driven personas. In Pro-           Mikhail Salnikov, Dmitrii Korzh, Ivan Lazichny, Elvir
+  ceedings of the 2024 Conference of the North Amer-            Karimov, Artyom Iudin, Ivan Oseledets, Oleg Y. Ro-
+  ican Chapter of the Association for Computational             gov, Alexander Panchenko, Natalia Loukachevitch,
+  Linguistics: Human Language Technologies (Volume              and Elena Tutubalina. 2025. Geopolitical biases in
+  1: Long Papers), pages 7290–7305, Mexico City,                LLMs: what are the “good” and the “bad” coun-
+  Mexico. Association for Computational Linguistics.            tries according to contemporary language models.
+                                                                Preprint, arXiv:2506.06751.
+Yueqing Liang, Liangwei Yang, Chen Wang, Congying
+  Xia, Rui Meng, Xiongxiao Xu, Haoran Wang, Ali               Shivalika Singh, Angelika Romanou, Clémentine Four-
+  Payani, and Kai Shu. 2025. Benchmarking LLMs                  rier, David Ifeoluwa Adelani, Jian Gang Ngui, Daniel
+  for political science: A United Nations perspective.          Vila-Suero, Peerat Limkonchotiwat, Kelly Marchi-
+  Preprint, arXiv:2502.14122.                                   sio, Wei Qi Leong, Yosephine Susanto, Raymond Ng,
+                                                                Shayne Longpre, Sebastian Ruder, Wei-Yin Ko, An-
+Junho Myung, Nayeon Lee, Yi Zhou, Jiho Jin,                     toine Bosselut, Alice Oh, Andre Martins, Leshem
+  Rifki Afina Putri, Dimosthenis Antypas, Hsuvas                Choshen, Daphne Ippolito, et al. 2025. Global
+  Borkakoty, Eunsu Kim, Carla Perez-Almendros,                  MMLU: Understanding and addressing cultural and
+  Abinew Ali Ayele, Víctor Gutiérrez-Basulto, Yazmín            linguistic biases in multilingual evaluation. In Pro-
+  Ibáñez García, Hwaran Lee, Shamsuddeen Hassan                 ceedings of the 63rd Annual Meeting of the Associa-
+  Muhammad, Kiwoong Park, Anar Sabuhi Rzayev,                   tion for Computational Linguistics (Volume 1: Long
+  Nina White, Seid Muhie Yimam, Mohammad Taher                  Papers), pages 18761–18799, Vienna, Austria. Asso-
+  Pilehvar, et al. 2024. Blend: A benchmark for llms            ciation for Computational Linguistics.
+  on everyday knowledge in diverse cultures and lan-
+  guages. In Advances in Neural Information Process-          Zhi Rui Tam, Cheng-Kuang Wu, Yu Ying Chiu, Chieh-
+  ing Systems, volume 37, pages 78104–78146. Curran             Yen Lin, Yun-Nung Chen, and Hung-yi Lee. 2025.
+  Associates, Inc.                                              Language matters: How do multilingual input and rea-
+                                                                soning paths affect large reasoning models? Preprint,
+Tarek Naous, Michael J Ryan, Alan Ritter, and Wei Xu.           arXiv:2505.17407.
+  2024. Having beer after prayer? measuring cultural
+  bias in large language models. In Proceedings of the        Yan Tao, Olga Viberg, Ryan S Baker, and René F Kizil-
+  62nd Annual Meeting of the Association for Compu-             cec. 2024. Cultural bias and cultural alignment of
+  tational Linguistics (Volume 1: Long Papers), pages           large language models. PNAS Nexus, 3(9).
+  16366–16393, Bangkok, Thailand. Association for
+  Computational Linguistics.                                  United Nations Department of Political and Peacebuild-
+                                                                ing Affairs. 2025. Security Council Data: Ve-
+Aleksandr Nikolich, Konstantin Korolev, Artem Shel-             toes Since 1946. https://psdata.un.org/
+  manov, and Igor Yaroslavtsev. 2024. Vikhr: The fam-           dataset/DPPA-SCVETOES. Open dataset of all
+  ily of open-source instruction-tuned large language           vetoes cast by permanent members of the UN Security
+  models for Russian. Preprint, arXiv:2405.13929.               Council.
+
+OpenAI. 2025. GPT-5 system card. Technical Report.            Siqi Wang, Zhengyu Chen, Bei Li, Keqing He, Min
+                                                                Zhang, and Jingang Wang. 2024a. Scaling laws
+Weihong Qi, Hanjia Lyu, and Jiebo Luo. 2025. Rep-               across model architectures: A comparative analysis
+ resentation bias in political sample simulations with          of dense and MoE models in large language models.
+ large language models. In Companion Proceedings of             In Proceedings of the 2024 Conference on Empiri-
+ the ACM on Web Conference 2025, pages 1264–1267,               cal Methods in Natural Language Processing, pages
+ Sydney, NSW, Australia. Association for Computing              5583–5595, Miami, Florida, USA. Association for
+ Machinery.                                                     Computational Linguistics.
+Juan-Pablo Rivera, Gabriel Mukobi, Anka Reuel, Max            Yubo Wang, Xueguang Ma, Ge Zhang, Yuansheng Ni,
+  Lamparth, Chandler Smith, and Jacquelyn Schneider.            Abhranil Chandra, Shiguang Guo, Weiming Ren,
+                                                            171
+  Aaran Arulraj, Xuan He, Ziyan Jiang, Tianle Li, Max        A.3    P5 Veto Patterns
+  Ku, Kai Wang, Alex Zhuang, Rongqi Fan, Xiang Yue,
+  and Wenhu Chen. 2024b. MMLU-pro: A more robust             Table 6 shows how often each permanent member
+  and challenging multi-task language understanding
+  benchmark. In Advances in Neural Information Pro-          vetoed a draft in our collection. Since multiple
+  cessing Systems 37, pages 95266–95290, Vancouver,          P5 members can veto the same draft, these counts
+  Canada.                                                    reflect veto occurrences by country rather than dis-
+                                                             tinct vetoed resolutions.
+Haoran Wei, Yaofeng Sun, and Yukun Li. 2025.
+  DeepSeek-OCR: Contexts optical compression.
+  Preprint, arXiv:2510.18234.                                      Country            Vetoes     %     Per Decade
+                                                                   Russia/USSR            106   40.0         13.3
+An Yang, Anfeng Yang, Baosong Yang, Beichen Hui,                   United States           91   34.3         11.4
+  Bo Zheng, Bowen Chang, Chengen Peng, Cheng-                      United Kingdom          30   11.3          3.8
+  peng Chen, Dayiheng Li, Haoran Huang, et al. 2025.               China                   21    7.9          2.6
+  Qwen3 technical report. Preprint, arXiv:2505.09388.              France                  17    6.4          2.1
+
+Wenlong Zhao, Debanjan Mondal, Niket Tandon, Dan-            Table 6: Veto frequency by P5 country. Multiple coun-
+ ica Dillion, Kurt Gray, and Yuling Gu. 2024. World-         tries may veto the same draft.
+ ValuesBench: A large-scale benchmark dataset for
+ multi-cultural value awareness of language models.
+ In Proceedings of the 2024 Joint International Con-
+ ference on Computational Linguistics, Language
+ Resources and Evaluation (LREC-COLING 2024),                A.4    Class Imbalance Analysis
+ pages 17696–17706, Torino, Italia. ELRA and ICCL.
+                                                             Table 7 reports the distribution of yes, no, and
+Caleb Ziems, William Held, Omar Shaikh, Jiaao Chen,
+  Zhehao Zhang, and Diyi Yang. 2024. Can large               abstain votes for each P5 member, showing sub-
+  language models transform computational social sci-        stantial class imbalance across countries. Yes is
+  ence? Computational Linguistics, 50(1):237–291.            the most common outcome for all members; for
+                                                             example, France votes yes on nearly 80% of items,
+Appendix A. Dataset Statistics                               making no prediction especially challenging. By
+                                                             contrast, Russia has the most balanced distribution
+The UNSC-Bench dataset is available at
+                                                             (59.5% yes), which helps explain why models typi-
+https://huggingface.co/datasets/
+                                                             cally achieve higher no F1 for Russia than for other
+UNSC-Bench/UNSC-Bench.
+                                                             countries. This imbalance also affects evaluation:
+                                                             a model can obtain high overall accuracy by over-
+A.1   License
+                                                             predicting yes, whereas strong performance on no
+UNSC-Bench is released under CC0-1.0.                        and abstain requires correctly identifying the small
+                                                             number of no and abstain votes.
+A.2   Temporal Distribution
+Table 5 reports the number of adopted resolutions
+and vetoed drafts by decade.                                 Appendix B. Complete Model Results
+
+        Decade    Adopted     Vetoed    Veto %               Table 8 presents Macro F1 scores for all 26 LLMs,
+        1940s        12         17         58.6              along with the thinking variants across the five P5
+        1950s        16         29         64.4              country roles, ranked by overall performance.
+        1960s        23         16         41.0
+        1970s        26         32         55.2
+        1980s        27         48         64.0
+        1990s        43         10         18.9                      Country    YES       NO    ABS     YES%
+        2000s        44         14         24.1
+        2010s        45         21         31.8                      France         374    17     78      79.7
+        2020s        22         24         52.2                      UK             351    30     88      74.8
+                                                                     China          348    21    100      74.2
+        Total        258       211         45.0                      US             312    91     66      66.5
+                                                                     Russia         279   106     84      59.5
+Table 5: Counts of adopted resolutions and vetoed drafts
+in UNSC-Bench by decade (1947–2025).                         Table 7: Distribution of yes/no/abstain votes for each
+                                                             P5 member across the 469 resolutions in UNSC-Bench.
+
+                                                           172
+Appendix C. Per-Class Performance
+Analysis
+C.1 Capability and Minority-Class Prediction
+Table 9 breaks Macro F1 into per-class F1 scores
+for a subset of representative models, showing
+that most gains come from the minority outcomes.
+Across countries, GPT-5 achieves consistently high
+yes F1, only slightly above weaker models. In con-
+trast, its no F1 ranges from 0.40 (France) to 0.79
+(Russia), substantially higher than Kimi K2’s no
+F1 (0.08 – 0.48). This pattern matches the label
+imbalance in Table 7: because yes is the dominant
+label, differences in Macro F1 are driven mainly by
+how well models identify the relatively rare no and
+abstain votes.
+
+C.2 Country Difficulty Ranking
+Averaging across all models, we observe a consis-
+tent difficulty ordering: Russia (easiest) > US >
+UK > China > France (hardest). This ordering is
+strongly related to the frequency of no votes across
+the P5 members. Russia has 106 no votes in our
+dataset, whereas France has 17, which is 3.6% of
+French votes. The small number of French no votes
+makes this class difficult to predict. In Table 9,
+even GPT-5 reaches only 0.40 no F1 for France,
+and Kimi K2 reaches 0.08. More broadly, countries
+with fewer minority outcomes (no and abstain)
+tend to be harder to simulate in a way that improves
+minority-class F1, while countries with more fre-
+quent no votes, especially Russia and the United
+States, more often yield higher no F1. This helps
+explain why a given model can score much higher
+on some country roles than on others under the
+same prompting condition.
+
+Appendix D. Prompt Templates
+This section presents the prompt templates used
+in our experiments. The English country role-play
+prompt is shown in Figure 2, and the English neu-
+tral prompt is shown in Figure 3. The multilingual
+prompts used for Chinese, French, and Russian eval-
+uations are shown in Figures 4, 5, and 6, respec-
+tively.
+
+Appendix E. Example Input and Output
+Tables 10 and 11 show example resolutions from the
+two dataset partitions. Table 12 shows an example
+prompt-response pair for the country role-play task.
+
+
+                                                   173
+Prompt 1: Country Role-Play (English)
+
+System: You are the representative of {country} in the United Nations Security Council. You will evaluate draft
+resolutions and provide votes (YES, NO, or ABSTAIN) with detailed justification based on {country}’s perspective.
+Important: Please use English voting options (YES, NO, or ABSTAIN) in your JSON response.
+User: Draft Resolution: {draft_text}
+Please provide your vote (YES, NO, or ABSTAIN) along with a detailed justification.
+
+
+                      Figure 2: English prompt template for country role-play experiments.
+
+
+
+Prompt 2: Neutral Baseline
+
+System: You are evaluating United Nations Security Council draft resolutions. You will provide votes (YES, NO, or
+ABSTAIN) with reasoning based on your own judgment.
+Important: Please use English voting options (YES, NO, or ABSTAIN) in your JSON response.
+User: Draft Resolution: {draft_text}
+Please provide your vote (YES, NO, or ABSTAIN) along with your reasoning.
+
+
+                      Figure 3: Neutral prompt template without country role instructions.
+
+
+
+Prompt 3: Chinese Language (ZH)
+
+System: 您是联合国安全理事会中{country}的代表。您将评估决议草案，并根据{country}的立场提
+供投票（赞成、反对或弃权）及详细理由。
+重要：请在 JSON 响应中使用中文投票选项（赞成、反对或弃权）。
+User: 决议草案：{draft_text}
+请提供您的投票（赞成、反对或弃权）及详细理由。
+
+
+                        Figure 4: Chinese prompt template for multilingual experiments.
+
+
+
+Prompt 4: French Language (FR)
+
+System: Vous êtes le représentant de {country} au Conseil de sécurité des Nations Unies. Vous évaluerez les projets
+de résolution et fournirez des votes (POUR, CONTRE ou ABSTENTION) avec une justification détaillée basée sur la
+perspective de {country}.
+Important : Veuillez utiliser les options de vote en français (POUR, CONTRE ou ABSTENTION) dans votre réponse JSON.
+User: Projet de résolution : {draft_text}
+Veuillez fournir votre vote (POUR, CONTRE ou ABSTENTION) ainsi qu’une justification détaillée.
+
+
+                         Figure 5: French prompt template for multilingual experiments.
+
+
+
+Prompt 5: Russian Language (RU)
+
+System: Вы являетесь представителем {country} в Совете Безопасности Организации Объединённых Наций. Вы
+будете оценивать проекты резолюций и предоставлять голоса (ЗА, ПРОТИВ или ВОЗДЕРЖАЛСЯ) с подробным
+обоснованием с точки зрения {country}.
+Важно: Пожалуйста, используйте варианты голосования на русском языке (ЗА, ПРОТИВ или ВОЗДЕРЖАЛСЯ) в
+вашем JSON-ответе.
+User: Проект резолюции: {draft_text}
+Пожалуйста, предоставьте ваш голос (ЗА, ПРОТИВ или ВОЗДЕРЖАЛСЯ) вместе с подробным обоснованием.
+
+
+                        Figure 6: Russian prompt template for multilingual experiments.
+
+
+                                                         174
+                     Rank       Model                               US      RU      CN         UK       FR
+                          1     GPT-5                               0.77   0.79    0.68     0.75        0.57
+                          2     Claude Sonnet 4.5 [thinking]        0.69   0.71    0.57     0.66        0.55
+                          3     DeepSeek V3.2-exp [thinking]        0.67   0.66    0.53     0.60        0.51
+                          4     Kimi K2 [thinking]                  0.66   0.65    0.51     0.61        0.54
+                          5     Claude Sonnet 4.5                   0.67   0.63    0.46     0.55        0.41
+                          6     GPT-OSS-120B                        0.60   0.49    0.40     0.51        0.45
+                          7     DeepSeek V3.2-exp                   0.56   0.44    0.46     0.53        0.44
+                          8     Qwen3-32B                           0.58   0.50    0.44     0.40        0.34
+                          9     Llama-3.1-70B                       0.55   0.50    0.46     0.41        0.33
+                         10     Kimi K2                             0.52   0.48    0.37     0.50        0.35
+                         11     Qwen3-14B                           0.52   0.44    0.36     0.48        0.36
+                         12     Gemma-3-12B                         0.53   0.40    0.35     0.47        0.41
+                         13     GPT-OSS-20B                         0.54   0.39    0.38     0.42        0.40
+                         14     Mistral-Large                       0.48   0.49    0.46     0.36        0.32
+                         15     Gemma-3-27B                         0.49   0.43    0.46     0.35        0.33
+                         16     Magistral-Small                     0.46   0.39    0.37     0.41        0.32
+                         17     Vistral-24B                         0.43   0.35    0.39     0.42        0.36
+                         18     Qwen3-8B                            0.46   0.37    0.37     0.34        0.40
+                         19     Mistral-Small-24B                   0.40   0.38    0.37     0.38        0.36
+                         20     Ministral-8B                        0.42   0.34    0.32     0.38        0.34
+                         21     Mistral-Nemo                        0.36   0.36    0.42     0.34        0.30
+                         22     Qwen2.5-14B                         0.37   0.30    0.38     0.35        0.31
+                         23     Qwen2.5-7B                          0.35   0.33    0.30     0.32        0.39
+                         24     Gemma-3-4B                          0.36   0.28    0.33     0.36        0.33
+                         25     Qwen3-4B                            0.36   0.27    0.25     0.39        0.38
+                         26     GigaChat-20B-A3B                    0.30   0.30    0.33     0.35        0.37
+                         27     Qwen3-1.7B                          0.30   0.38    0.30     0.31        0.35
+                         28     Mistral-7B-v0.3                     0.27   0.32    0.33     0.30        0.31
+                         29     Qwen3-0.6B                          0.30   0.32    0.28     0.29        0.33
+
+Table 8: Macro F1 scores for country role-playing across all 26 models (29 configurations including thinking
+variants), ranked by overall performance. Each model was prompted to role-play as a P5 country representative.
+
+
+
+                                 US                   RU                   CN                    UK                     FR
+ Model                    Y       N      A      Y      N      A      Y      N      A       Y        N      A      Y      N      A
+ GPT-5                   0.90    0.71   0.70   0.90   0.79   0.68   0.87   0.65   0.52    0.91   0.65     0.69   0.92   0.40   0.39
+ Claude Sonnet 4.5 [T]   0.88    0.64   0.54   0.86   0.73   0.55   0.83   0.45   0.42    0.87   0.58     0.54   0.89   0.38   0.37
+ DeepSeek V3.2-exp [T]   0.87    0.63   0.52   0.83   0.67   0.48   0.83   0.41   0.36    0.86   0.48     0.46   0.90   0.29   0.35
+ Kimi K2 [T]             0.85    0.60   0.53   0.82   0.66   0.46   0.79   0.37   0.36    0.84   0.50     0.50   0.88   0.36   0.39
+ Claude Sonnet 4.5       0.84    0.63   0.54   0.81   0.62   0.46   0.72   0.28   0.38    0.81   0.40     0.43   0.87   0.18   0.18
+ DeepSeek V3.2-exp       0.81    0.54   0.33   0.72   0.43   0.16   0.76   0.35   0.28    0.82   0.44     0.33   0.88   0.24   0.21
+ Kimi K2                 0.78    0.44   0.33   0.71   0.48   0.24   0.62   0.23   0.27    0.79   0.35     0.35   0.86   0.08   0.11
+
+               Table 9: Per-class F1 scores (Y=YES, N=NO, A=ABSTAIN). [T]=thinking mode
+
+
+
+Vetoed Draft Resolution Example (1 of 211)
+Document                 S/2022/431
+Date                     2022-05-26
+Agenda                   Non-proliferation / Democratic People’s Republic of Korea
+Vote Tally               In Favour (13): Albania, Brazil, France, Gabon, Ghana, India, Ireland, Kenya, Mexico, Norway,
+                         United Arab Emirates, United Kingdom, United States
+                         Against (2): China, Russian Federation
+                         Abstaining (0): None
+P5 Votes                 US: YES UK: YES FR: YES CN: NO (veto) RU: NO (veto)
+Summary                  Draft resolution to strengthen sanctions on North Korea following ballistic missile tests. China and
+                         Russia jointly vetoed, marking the first double P5 veto on DPRK sanctions since 2006.
+
+                         Table 10: Example vetoed draft resolution with dual P5 vetoes.
+
+
+                                                             175
+Adopted Resolution Example (1 of 258)
+Document               S/RES/43(1948)
+Date                   1948-04-01
+Agenda                 The Palestine Question
+Vote Tally             In Favour (5): China, France, USSR, United Kingdom, United States
+                       Against (0): None
+                       Abstaining (0): None
+P5 Votes               US: YES UK: YES FR: YES CN: YES RU: YES
+Summary                The Security Council notes increasing violence in Palestine and believes an immediate truce is
+                       urgently needed. Calls upon the Jewish Agency and Arab Higher Committee to arrange a truce; calls
+                       upon armed groups to cease violence immediately.
+
+                                      Table 11: Example adopted resolution.
+
+
+
+
+Model Prompt-Response Example
+Document                S/2023/970
+Date                    2023-12-08
+Agenda                  Middle East, including the Palestinian question
+Country Role           Russian Federation
+Ground Truth           YES
+Prompt                 You are a representative of “Russian Federation” in United Nations Security Council (UNSC). You
+                       have to decide to vote on the following context of resolution “S/2023/970” in UNSC. You only choose
+                       the vote among three options: YES, NO, or ABSTAIN. Choose the best option considering your
+                       country’s interest.
+
+                        Context: Expressing grave concern over the catastrophic humanitarian situation in the Gaza Strip... 1.
+                        Demands an immediate humanitarian ceasefire; 2. Reiterates its demand that all parties comply with
+                        their obligations under international law; 3. Demands the immediate and unconditional release of all
+                        hostages... (omitted)
+Response               Vote: YES
+
+                        Rationale: The Russian Federation supports the draft resolution as it aligns with its commitment to
+                        international humanitarian law and the protection of civilians in conflict zones. The demand for an
+                        immediate humanitarian ceasefire is crucial in addressing the catastrophic humanitarian situation in
+                        the Gaza Strip, which resonates with Russia’s historical stance on humanitarian access.
+
+                      Table 12: Example prompt-response pair for country role-play task.
+
+
+
+
+                                                          176
+

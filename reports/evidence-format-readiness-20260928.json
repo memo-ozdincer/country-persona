@@ -1,0 +1,68 @@
+{
+  "created_at": "2026-09-29T00:05:15.537258+00:00",
+  "status": "locally_prepared_and_tested_gpu_execution_pending",
+  "cases": 9,
+  "contexts": 3,
+  "conditions": [
+    "prose_control",
+    "evidence_prose",
+    "evidence_json"
+  ],
+  "source_statements": 12,
+  "new_full_speeches": 4,
+  "new_source_linked_proposed_criteria": 13,
+  "semantic_review_status": "assistant_source_checked; independent_review_pending",
+  "new_model_generations": 0,
+  "new_training_runs": 0,
+  "semantic_quality_scores": null,
+  "preflight": {
+    "status": "tokenizer_only_no_model_inference",
+    "cases": 9,
+    "input_tokens": 37823,
+    "maximum_input_tokens": 5669,
+    "context_budget": 8192
+  },
+  "maximum_output_tokens_per_call": 2048,
+  "maximum_input_plus_output_tokens": 7717,
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/pytest -q tests/test_evidence_ledger.py tests/test_eval_evidence.py tests/test_deliberation.py tests/test_deliberation_review.py tests/test_policy_eval.py tests/test_inference_probe.py",
+    "passed": 81,
+    "failed": 0,
+    "scope": "Software behavior and frozen-source integration, not semantic quality calibration"
+  },
+  "staging": {
+    "files": 17,
+    "bytes": 16128010,
+    "all_staged_hashes_rechecked": true,
+    "references_in_inference_payload": false,
+    "remote_uploaded": false,
+    "job_submitted": false
+  },
+  "connectivity": {
+    "last_socket_check_local": "2026-09-28 20:04:30 America/Toronto",
+    "socket_status": "absent",
+    "fresh_connection_attempt": "timed out earlier in this checkpoint",
+    "previous_job": "999389",
+    "recorded_deadline_local": "2026-09-28 19:08:16 America/Toronto",
+    "final_scheduler_state": null,
+    "current_gpu_health": null
+  },
+  "files_sha256": {
+    "data/prepared/evidence-format-20260928-v1/manifest.json": "15104cadf758148bd3f70907660555992c3c2681c477237936fb18ec9ed892ad",
+    "runs/evidence-format-20260928-preflight-v1/preflight.json": "9e6511fb592e23834cc634a6dc5d0dde16355541501feffd0106c9c05778fa53",
+    "runs/evidence-format-staging-20260928-v1/staging-manifest.json": "87189a01b98b98af1d77fecf0b205c77ea11f6ac86ba75ae5b33e89525055512",
+    "data/review/evidence-format-20260928-v1/source-review.md": "4623a2d450a444e1e47ef684f4b6fb344a3cec3b4deeb87263513b6293c2c63e",
+    "scripts/build_evidence_format_probe.py": "53d260cd0d4b4e5f08d0b8a67a824256bdbf994b1ed9c57808856c43a3a209ef",
+    "scripts/audit_evidence_format_probe.py": "9d7d77fd94dbac46664ec5c185b0091b589a7df683a3abaee72a160ecc8471c3",
+    "src/country_persona/evidence_ledger.py": "ec9d429262abbe96efd051017e86d8efe846a64d6c4ab58c35081a43e3287e7e",
+    "tests/test_evidence_ledger.py": "08ca2d2a89c22d1b3b8c64b456f3daea2005a65f0a8786ca15c45c83989827ac"
+  },
+  "limitations": [
+    "Two contexts selected after inspecting errors; all outputs will be development results.",
+    "South Sudan is a new issue but the same UN-record genre, model and four-country set, with no generated notes; not a held-out transfer benchmark.",
+    "Common 300-to-700-word limit change means the prose control is not the original prompt byte for byte.",
+    "Equal output caps, not equal actual compute; input tokens and schema overhead differ.",
+    "Quote lookup validates source location and country, not entailment, full-answer correctness or completeness.",
+    "Independent rubric review pending; no training admission or quality scores."
+  ]
+}

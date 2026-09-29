@@ -1,0 +1,43 @@
+{
+  "status": "engineering_checks_passed_model_robustness_failed",
+  "targeted_tests": 68,
+  "test_sets": {
+    "action_inference_evidence_policy": 65,
+    "reviewer_agreement": 3
+  },
+  "original_replays_identical": true,
+  "synthetic_controls_correct_under_all_mappings": 18,
+  "conditional_argmax_exact_ties": [
+    {
+      "id": "4f995ae9ff4059ef08f36347",
+      "generated_vote": "A",
+      "kind": "historical_counterbalance"
+    },
+    {
+      "id": "3e82a6e1957ee284896dcab2",
+      "generated_vote": "A",
+      "kind": "historical_counterbalance"
+    },
+    {
+      "id": "014192318812bf54ae9e66b8",
+      "generated_vote": "A",
+      "kind": "historical_counterbalance"
+    },
+    {
+      "id": "3f715e69fc78685520e6e4ab",
+      "generated_vote": "A",
+      "kind": "historical_counterbalance"
+    }
+  ],
+  "genuine_generated_argmax_mismatches_on_unique_maxima": [],
+  "interpretation": "Agreement rates count ambiguous argmax ties as unresolved, not as an incorrect generated semantic answer. The four unresolved historical rankings explain the 41/42 within-stratum agreement counts.",
+  "run_sha256": "c061cf848e53a12c5572bc24dcab76c0f3409031c646ac305711a14d4b6c765a",
+  "protocol_sha256": "b36e212d64e546370d8daea81fd44a2d53b099675f773fa08e4ab46649670b77",
+  "protocol_matches_frozen_manifest": true,
+  "executed_source_hashes_match_local_staging": {
+    "scripts/run_eval_probe.py": "3f903056291964a6b72bd5cfb437efed76a93e82bf1f013c928b92ee9879507b",
+    "src/country_persona/inference_probe.py": "49ec67776437bd2447d1d349d9e9dbc1a7e43c3877c728db203a003d6e32733d",
+    "src/country_persona/action_eval.py": "2803ef7e4b6058f04d26d6a776df27799055f924ecf20708f86d1e119ede5e08",
+    "src/country_persona/io.py": "c389b6d7be6da5a80d72ba3fbb98cc9fd1556d7233d07a6f9e550143112b24ee"
+  }
+}

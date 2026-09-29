@@ -1,0 +1,35 @@
+{
+  "status": "assistant_source_inspection_not_independent_human_adjudication",
+  "checked_on": "2026-09-26",
+  "sources": [
+    {
+      "url": "https://www.un.org/pga/wp-content/uploads/sites/109/2025/02/20250227-PSC-letter-to-PGA-Special-Rpt-UNSC-9866th-mtg.pdf",
+      "path": "data/raw/eval-pilot-primary-checks-20260926/20250227-unsc-9866.pdf",
+      "sha256": "090d7074c70cb5442f058d7a699c8387605cb9cea1d41633190bc3137677dac4",
+      "text_path": "data/raw/eval-pilot-primary-checks-20260926/20250227-unsc-9866.txt"
+    }
+  ],
+  "findings": [
+    {
+      "documents": [
+        "S/2025/115",
+        "S/2025/116"
+      ],
+      "source_location": "Special Report, page 2 of PDF; voting results for proposed amendments",
+      "observation": "France and the United Kingdom voted in favor of both amendments. The pinned dataset instead assigns A to both countries on each amendment, with aggregate totals 10 Y, 0 N, 5 A.",
+      "action": "Quarantine these rows; do not silently substitute or conflate final-resolution labels with amendment labels.",
+      "observed_primary_totals": {
+        "S/2025/115": {
+          "Y": 9,
+          "N": 1,
+          "A": 5
+        },
+        "S/2025/116": {
+          "Y": 11,
+          "N": 1,
+          "A": 3
+        }
+      }
+    }
+  ]
+}

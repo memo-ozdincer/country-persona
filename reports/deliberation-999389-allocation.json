@@ -1,0 +1,43 @@
+{
+  "status": "experiments_completed_retained_allocation",
+  "job_id": "999389",
+  "account": "def-zhijing",
+  "node": "trig0014",
+  "gpus": 1,
+  "start_toronto": "2026-09-28T18:08:16-04:00",
+  "wall_limit_toronto": "2026-09-28T19:08:16-04:00",
+  "lifetime": "sleep infinity within Slurm wall limit",
+  "remote_payload": "/scratch/memoozd/persona/research-readiness-20260928-v2",
+  "experiment": "runs/deliberation-999389-base-v1",
+  "training": false,
+  "allocation_script_sha256": "cf32e4a194f6229c858f17e04cdbea9c0120721ebf590cf8cd2baadfa3d2aa2e",
+  "note": "One H100 for baseline inference; four-H100 training recipe remains unsubmitted.",
+  "initial_gpu_health": {
+    "device": "NVIDIA H100 80GB HBM3",
+    "memory_total_mib": 81559,
+    "memory_used_mib": 0,
+    "utilization_pct": 0,
+    "temperature_c": 42,
+    "bf16_supported": true
+  },
+  "initial_step_observation": "The health step completed; srun consumed the heredoc input before the next shell command. Confirmed terminal session and absence of inference before launching it once with --input=/dev/null.",
+  "inference_process_pid": 1301607,
+  "inference_gpu_observation": {
+    "memory_used_mib": 17641,
+    "utilization_pct": 64,
+    "temperature_c": 47
+  },
+  "baseline_completed_calls": 42,
+  "diagnostic_completed_calls": 6,
+  "production_training_runs": 0,
+  "helper_script_sha256": "490000695481677474f6af20fc89f25e42aadbf88e1b7b23e5e8c052fe4173ea",
+  "post_experiment_gpu_health": {
+    "memory_used_mib": 0,
+    "utilization_pct": 0,
+    "temperature_c": 41,
+    "model_processes_running": 0,
+    "retained_sleep_process_running": true
+  },
+  "reviewer_kit_zip_sha256": "ddb7b5047b135877d9e495a9d7a09edf7c91550a5f9f2a43b6ee0b696b3acf25",
+  "focused_test_count": 46
+}

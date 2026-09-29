@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "max_length": 4096,
+  "tokenizer_lock_sha256": "1fae7d59c6244f62830b0807baf3fc958e03c0b32e0a6eb7025c90de6c2b07ae",
+  "build_report_sha256": "84439dd1c8c78324884e5c082c3161a8d416ce1935801aa1eb94367ab24ed277",
+  "enable_thinking": false,
+  "completion_boundaries_verified": true,
+  "truncation_used": false,
+  "formats": {
+    "audit.sft": {
+      "sequences": 20,
+      "max_sequence_tokens": 770,
+      "min_completion_tokens": 98,
+      "max_completion_tokens": 257,
+      "total_completion_tokens": 3381
+    },
+    "revision.sft": {
+      "sequences": 10,
+      "max_sequence_tokens": 567,
+      "min_completion_tokens": 34,
+      "max_completion_tokens": 74,
+      "total_completion_tokens": 502
+    },
+    "preference.dpo": {
+      "sequences": 20,
+      "max_sequence_tokens": 519,
+      "min_completion_tokens": 34,
+      "max_completion_tokens": 74,
+      "total_completion_tokens": 1000
+    },
+    "multiagent.sft": {
+      "sequences": 13,
+      "max_sequence_tokens": 1816,
+      "min_completion_tokens": 86,
+      "max_completion_tokens": 241,
+      "total_completion_tokens": 1952
+    }
+  },
+  "structural_validation": {
+    "status": "passed",
+    "export_rows_checked": 53,
+    "source_spans_checked": 10,
+    "workflow_episodes_checked": 3,
+    "audit_verdicts": {
+      "supported": 10,
+      "needs_revision": 10
+    },
+    "leakage_components": 4,
+    "scope": "Structural, provenance and visibility checks; not independent semantic adjudication or model evaluation."
+  },
+  "scope": "Tokenizer preflight only; not trainer integration, training admission or model quality evaluation."
+}

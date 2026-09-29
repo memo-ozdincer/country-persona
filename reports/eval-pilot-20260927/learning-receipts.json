@@ -1,0 +1,233 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint": "1A",
+      "question": "Can targets and allowed information be identified?",
+      "frozen_inputs": "data/manifests/eval-sources-20260927.json",
+      "observations": [
+        "Six primary PDFs acquired and pinned.",
+        "Seven existing action labels match the primary voting records.",
+        "Two UK speeches announce draft support; show these separately.",
+        "Archived PDF publication timing remains unresolved.",
+        "Per-column extraction prevents adjacent-speaker contamination."
+      ],
+      "artifacts": [
+        "reports/eval-pilot-20260927/event-cards.json",
+        "data/prepared/eval-pilot-20260927/two-event-v1/evidence.jsonl"
+      ],
+      "decision": "Admit retrospective reconstruction tasks; do not claim clean prospective forecasting.",
+      "independent_human_review": "pending"
+    },
+    {
+      "checkpoint": "1B",
+      "question": "Can we score substantive policy behavior beyond votes?",
+      "observations": [
+        "Eight authored questions cover position, qualification, attribution and bounded uncertainty.",
+        "Every positive content criterion has an exact source span.",
+        "Brazil climate supports policy evaluation without an invented vote."
+      ],
+      "artifacts": [
+        "data/curation/eval_two_event_pilot_20260927.json",
+        "data/prepared/eval-pilot-20260927/two-event-v1/policy.references.jsonl"
+      ],
+      "decision": "Use a separate policy checklist alongside the action scorer; test the criteria with reviewers."
+    },
+    {
+      "checkpoint": "1C-engineering",
+      "question": "Does rating arithmetic reject known bad treatment and missing reviews?",
+      "observations": [
+        "43 targeted tests pass.",
+        "Nineteen authored expectation fixtures receive the intended scoring treatment.",
+        "Fresh rebuilds match eight package files and six calibration files byte-for-byte.",
+        "Cached recollection preserves the acquisition receipt."
+      ],
+      "artifacts": [
+        "data/review/eval-pilot-20260927/calibration-v1/review-deck.md",
+        "reports/eval-pilot-20260927/validation.json"
+      ],
+      "decision": "Scoring plumbing is checked; semantic calibration and two independent reviewers remain pending.",
+      "reviewer_agreement": null
+    },
+    {
+      "checkpoint": "1D-preflight",
+      "question": "Can the first probe preserve full inputs within the proposed budget?",
+      "observations": [
+        "Thirty full A/B prompts: 44,384 input tokens; maximum 5,033.",
+        "Selected eight-output diagnostic: 17,124 input tokens, no truncation.",
+        "Y/N/A are single tokens with the locked tokenizer.",
+        "Trillium rejected SSH authentication; no job submitted."
+      ],
+      "artifacts": [
+        "reports/eval-pilot-20260927/probe-manifest.json",
+        "reports/eval-pilot-20260927/probe-preflight.json"
+      ],
+      "decision": "Finish instrumented decoding/probability tracing and run the bounded probe when compute authentication is restored; no training yet.",
+      "model_outputs": 0,
+      "new_gpu_hours": 0,
+      "measured_inference_runtime_seconds": null
+    },
+    {
+      "checkpoint": "1D-instrumentation",
+      "question": "Will actual inference retain the information needed to diagnose errors and score confidence?",
+      "observations": [
+        "A generation/direct-forward comparison checks first-token probability extraction.",
+        "A controlled Qwen3 test separates the model EOS list from the legacy single EOS without changing input tokens.",
+        "All eight complete prompts ran through tiny random Qwen3 on CPU; 17,124 input tokens and 32 infrastructure-only output tokens.",
+        "The isolated 16-file payload reproduces the same preflight.",
+        "55 combined targeted tests pass.",
+        "Trillium SSH authentication failed again; no job was submitted."
+      ],
+      "artifacts": [
+        "docs/EVAL_INFERENCE_CHECKPOINT_20260927.md",
+        "reports/eval-pilot-20260927/inference-validation.json",
+        "reports/eval-pilot-20260927/cpu-inference-smoke.json",
+        "reports/eval-pilot-20260927/inference-staging.json"
+      ],
+      "decision": "Run the eight-output pinned-model GPU probe after authentication/scheduler validation, then inspect before expansion. Arrange two independent rubric ratings.",
+      "production_model_outputs": 0,
+      "gpu_hours_spent": 0,
+      "planned_gpu_hour_ceiling": 0.3333333333333333,
+      "human_ratings": 0,
+      "limitations": [
+        "CPU random weights do not establish real model behavior or GPU throughput.",
+        "EOS handling can cause a mechanical difference but is not yet shown to explain prior repetition."
+      ]
+    },
+    {
+      "checkpoint": "1D-allocation-restored",
+      "question": "Can we run and inspect multiple experiments without reallocating?",
+      "observations": [
+        "Authenticated multiplex connection restored.",
+        "def-zhijing association confirmed; no prior allocation to reuse.",
+        "All 17 staged files pass remote hashes; full tokenizer preflight matches.",
+        "Slurm job 996664 accepted and running on trig0042 with one H100.",
+        "Direct node SSH and live sleep infinity process verified.",
+        "srun is prohibited by the login-host wrapper; use node SSH first, then an allocation-bound step.",
+        "Probe is running as step 996664.0; its completion will retain the allocation."
+      ],
+      "artifacts": [
+        "docs/TRILLIUM_WORKFLOW.md",
+        "reports/eval-pilot-20260927/inference-staging-v3.json",
+        "reports/eval-pilot-20260927/allocation-996664.json"
+      ],
+      "decision": "Inspect eight actual outputs before expanding. Retain allocation per user instruction.",
+      "planned_gpu_hour_ceiling": 3,
+      "independent_human_ratings": 0
+    },
+    {
+      "checkpoint": "1D-real-inference",
+      "question": "Do actual generation settings and stopping match the recorded experiment?",
+      "observations": [
+        "First GPU attempt failed the raw-logits/greedy guard because checkpoint sampling defaults overrode explicit GenerationConfig defaults.",
+        "A controlled regression test failed before the fix; 56 targeted tests pass after use_model_defaults=False.",
+        "Corrected eight-output probe completed with full prompts and 486 generated tokens.",
+        "Default versus legacy EOS changes only eos_token_id; all eight outputs/probabilities are identical.",
+        "Allocation survived both failure and successful experiment completion."
+      ],
+      "artifacts": [
+        "reports/eval-pilot-20260927/inference-defaults-regression.json",
+        "reports/eval-pilot-20260927/legacy-eos-comparison.json"
+      ],
+      "decision": "Inference plumbing is validated for this base-model pack. Older trained-adapter repetition remains a separate replay before new adapter interpretation."
+    },
+    {
+      "checkpoint": "1E-first-outputs",
+      "question": "What does supplying the dated country speech add?",
+      "observations": [
+        "30 outputs: seven action pairs and eight policy pairs across two exposed historical events.",
+        "Action accuracy A 4/7, B 5/7; the extra correct prediction has an exact Y/N logit tie.",
+        "Both recorded abstentions are wrong in both arms; evidence lowers the probability of the correct abstention for India and Brazil.",
+        "B reduces action NLL from 2.467 to 2.069, while a country training prior reaches 1.707.",
+        "Assistant source checks identify corrected policy reversals and retained qualifications, but also unsupported assistance types in the France evidence answer.",
+        "All 30 outputs stop at EOS; no input truncation or output caps.",
+        "Sixteen real policy outputs now have a packet with arm/model labels hidden and blank independent-review templates."
+      ],
+      "artifacts": [
+        "docs/EVAL_BASELINE_RESULTS_20260927.md",
+        "reports/eval-pilot-20260927/two-event-base-results.json",
+        "data/review/eval-pilot-20260927/model-outputs-v1/review-deck.md"
+      ],
+      "decision": "Keep B as the same-evidence baseline. Calibrate and obtain independent policy ratings, broaden reviewed event coverage, then select one bounded SFT comparison.",
+      "generation_seconds": 76.24512887652963,
+      "prompt_tokens": 44384,
+      "generated_tokens": 3365,
+      "independent_human_ratings": 0,
+      "new_training_runs": 0
+    },
+    {
+      "checkpoint": "1E-failure-analysis",
+      "question": "Which errors come from insufficient decision evidence, prompt sensitivity, unsupported elaboration or infrastructure?",
+      "observations": [
+        "34 diagnostic outputs completed; four exact baseline replays match.",
+        "Full country names flip three of four letter-label action outputs.",
+        "Natural word labels produce No for all four cases, including the France Yes control.",
+        "Neither removing the abstention warning nor clarifying the vote target fixes either missed abstention.",
+        "Two deliberately outcome-containing extraction controls correctly output A.",
+        "The post-vote record adds Brazil draft/process objections absent from the earlier supplied speech; it is analysis-only except in those oracle controls.",
+        "Claim-to-quotation instructions fix the selected France unsupported assistance types and recover duration; failures of coverage persist elsewhere.",
+        "Under-load GPU samples: 58–59% utilization, 18,379 MiB, 46–47 C, zero reported uncorrected ECC errors."
+      ],
+      "artifacts": [
+        "docs/EVAL_FAILURE_ANALYSIS_20260927.md",
+        "reports/eval-pilot-20260927/failure-analysis.json",
+        "reports/eval-pilot-20260927/failure-analysis-validation.json"
+      ],
+      "decision": "Put source-sufficiency and prompt-invariance calibration before new SFT; compare to stronger source-grounded prompting, preserving original results.",
+      "diagnostic_generations": 34,
+      "generation_seconds": 22.5090440150816,
+      "new_training_runs": 0,
+      "independent_human_ratings": 0,
+      "limitations": [
+        "Adaptive, selected-case diagnosis; no new unbiased benchmark score.",
+        "Observed prompt effects do not identify internal values or private diplomatic motives."
+      ]
+    },
+    {
+      "checkpoint": "1F-evaluation-stabilization",
+      "recorded_at": "2026-09-28T03:38:23.010223+00:00",
+      "question": "Can a complete, counterbalanced interface stabilize measurement without disguising wrong decisions?",
+      "outputs": 200,
+      "historical_decisions": 7,
+      "event_families": 2,
+      "measured_findings": [
+        "All 14 original action prompts replay exactly.",
+        "All 18 authored extraction controls pass.",
+        "The six-permutation mixture predicts Abstain for every historical decision in all four arm/name strata; accuracy 2/7.",
+        "Mixture agreement across names conceals wrong decisions; individual permutations still change some outputs.",
+        "All outputs parse and stop correctly; raw legal digit mass exceeds 0.9996."
+      ],
+      "artifacts": [
+        "docs/EVAL_STABILIZATION_PROTOCOL_V1.md",
+        "docs/EVAL_STABILIZATION_RESULTS_20260927.md",
+        "reports/eval-pilot-20260927/stability-v1-results.json",
+        "data/review/eval-pilot-20260927/reviewer-kit-v2.zip"
+      ],
+      "decision": "Preserve interface sensitivity as a reported failure. Complete independent semantic review and expand independent event families before training.",
+      "new_training_runs": 0,
+      "independent_human_ratings": 0,
+      "limitations": [
+        "Exposed development events; no independent generalization claim.",
+        "Averaging is an ensemble estimator, not proof of calibration or model invariance.",
+        "Policy/source labels remain assistant-proposed until independent review."
+      ]
+    }
+  ],
+  "scope": {
+    "events": 2,
+    "countries": [
+      "FRA",
+      "GBR",
+      "IND",
+      "BRA"
+    ],
+    "action_pairs": 7,
+    "policy_pairs": 8,
+    "status": "exposed_development_only",
+    "limitations": [
+      "Two exposed historical events; no independent family-level effect estimate.",
+      "Formal policy ratings and human agreement remain pending.",
+      "No new training, deliberation or final-test result.",
+      "Archived source-version availability unresolved."
+    ]
+  }
+}

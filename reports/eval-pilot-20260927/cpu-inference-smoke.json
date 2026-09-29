@@ -1,0 +1,23 @@
+{
+  "status": "passed_infrastructure_only",
+  "real_pretrained_model_generations": 0,
+  "random_weight_generations": 8,
+  "prompt_tokens": 17124,
+  "maximum_prompt_tokens": 5033,
+  "generated_tokens": 32,
+  "generation_seconds": 0.4471330411033705,
+  "trace_processing_seconds": 0.04677554382942617,
+  "run_path": "runs/eval-infrastructure-20260927-v1",
+  "run_receipt_sha256": "98d97f34ae976ddfff6ad64942ad9139d00dbad4bb88601c65ccde2ca29857ab",
+  "checks": [
+    "All eight frozen prompts preserve every input token.",
+    "Per-step raw token IDs, decoded forms, EOS scores and stop reasons are present.",
+    "Every action has conditional canonical-label probabilities and independent legal-label mass.",
+    "Every run and output declares random-weight infrastructure provenance."
+  ],
+  "limits": [
+    "This does not test the 8B model, CUDA/BF16 behavior or the full 384-token output cap.",
+    "No action accuracy or policy fidelity score is computed from random-weight outputs.",
+    "Production GPU throughput, memory and stopping behavior remain unmeasured."
+  ]
+}

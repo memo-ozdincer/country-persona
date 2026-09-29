@@ -60,3 +60,13 @@ Maintainers with the frozen data can regenerate the inventory and stage both exi
 ```
 
 Publishing uses the existing owner login and preserves public/private visibility. It updates only UI, metadata and documentation assets; the original record buckets and archive are unchanged. Cluster synchronization is not required to work on this public explorer.
+
+## Complete source training examples (23 September 2026)
+
+Each of the 66 country/source cards now has an actual stored-record view and numbered complete examples. `scripts/build_training_examples.py` verifies the selected catalog object's SHA256 before projection. Its output adds 117 primary task examples, plus source-linked policy applications, constitutional revision/classification examples and existing preference pairs. The JSON exports are illustrative/review candidates; no admission flags change.
+
+System instructions, context, question and completion appear in separate readable blocks; exact machine-readable representations can be downloaded. DPO shows the full shared prompt and both completions. Text-only continued pretraining is distinguished from assistant-only SFT. A complete selected passage is labeled with its character range; the whole original record remains separately inspectable. Observed text, project-authored targets and synthetic errors have explicit provenance. Papers explain the methodological similarity and its limits.
+
+The public projection contains metadata and complete project-authored examples. The existing owner-only research Space contains complete source records and original-text examples, including preceding dialogue. Both use the same interface. The public file must never be replaced by the private projection. This supersedes the earlier placeholder-only trace presentation; the existing archive and source-publication boundaries remain intact.
+
+Rebuild using `python scripts/build_explorer_overview.py`, which now also builds the example projections. For an examples-only rebuild use `python scripts/build_training_examples.py`. Run `node tests/explorer_overview_ui.cjs` and the Python tests before `python scripts/publish_explorer_ui.py --publish`. Do not infer that a rendered example fits the tokenizer budget or has independent expert approval.

@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-09-29T21:10:21.923110+00:00",
+  "host": "aurora",
+  "workspace": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+  "kind": "evaluation_portability_and_readiness_not_model_quality",
+  "plan": "runs/aurora-evaluation-replay-20260929-v2/checkpoint-plan.json",
+  "original_transfer": {
+    "verified_before_edits": true,
+    "files": 9046,
+    "bytes": 500998395,
+    "manifest_sha256": "ecfb8199bca71839bfbda87ea4d778c880c125ee3a1556d612e6f55affcc6da4",
+    "base_commit": "86d0c9fa4b5f294010523018a247a42142dbc2e7",
+    "tracked_working_diff_identical_before_edits": true
+  },
+  "review_replay": {
+    "scores_identical_bytes": true,
+    "scores_sha256": "d476936bb6d8a6a1622aaf27d0822b6ff1845accc01bb42a58f0c47438a6edd6",
+    "reviewed_responses": 42,
+    "rating_instances": 516,
+    "ratings": {
+      "met": 366,
+      "unmet": 117,
+      "unratable": 33
+    },
+    "country_macro_peer_gains": [
+      null,
+      null
+    ],
+    "provenance": "one_unblinded_provisional_assistant_reviewer",
+    "independent_construct_review_pending": true,
+    "semantic_review_pending": true,
+    "scores": "runs/aurora-evaluation-replay-20260929-v2/scores.json",
+    "receipt": "runs/aurora-evaluation-replay-20260929-v2/receipt.json"
+  },
+  "focused_tests": {
+    "passed": 63,
+    "log": "runs/aurora-evaluation-replay-20260929-v2/focused-tests.log"
+  },
+  "broad_tests": {
+    "passed": 166,
+    "failed": 2,
+    "skipped": [
+      "two PyTorch-dependent modules",
+      "four workshop tests requiring omitted source preparation"
+    ],
+    "log": "runs/aurora-evaluation-replay-20260929-v2/repository-tests-after-encoding-fix.log",
+    "failed_omitted_artifacts": [
+      "data/prepared/country-knowledge-20260914/source-text/es11_pv5.txt",
+      ".cache/explorer-{public,private}-static/training-examples.json"
+    ],
+    "earlier_failure_logs_preserved": true,
+    "environment": "runs/aurora-evaluation-replay-20260929-v2/repository-test-environment.json"
+  },
+  "parser_fix": {
+    "change": "Prefer UTF-8 before optional encoding detection; retain declared-encoding fallback",
+    "existing_mfa_tests_pass": true,
+    "declared_windows1252_regression_pass": true,
+    "existing_releases_regenerated": false
+  },
+  "format_preflight": {
+    "path": "runs/aurora-format-preflight-20260929-v1/preflight.json",
+    "reference": "runs/evidence-format-20260928-preflight-v1/preflight.json",
+    "matched_fields": {
+      "case_file_sha256": true,
+      "pack_manifest_sha256": true,
+      "model_lock_sha256": true,
+      "input_token_digests": true,
+      "input_tokens": true,
+      "maximum_input_tokens": true,
+      "model_eos_ids": true,
+      "generation_call_kwargs": true
+    },
+    "cases": 9,
+    "input_tokens": 37823,
+    "maximum_input_tokens": 5669,
+    "output_cap": 2048,
+    "context_budget": 8192,
+    "maximum_prompt_plus_cap": 7717,
+    "weights_loaded": false,
+    "inference_performed": false,
+    "environment": "runs/aurora-format-preflight-20260929-v1/environment.json"
+  },
+  "gpu_occupancy_at_checkpoint": {
+    "observed_at": "2026-09-29T21:10:21.924967+00:00",
+    "query": "index, uuid, name, memory.total [MiB], memory.used [MiB], utilization.gpu [%]\n0, GPU-51e9e550-a798-120d-2926-5c76e25b9e56, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 88613 MiB, 0 %\n1, GPU-e5de478a-c420-a9e6-0e18-093f28ed5069, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB, 0 %\n2, GPU-e485015c-8b0a-afe0-666e-86eec344e76f, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB, 0 %\n3, GPU-c3a50920-76fd-5cf9-8863-21f0a53f54fd, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB, 0 %\n4, GPU-7427c182-6478-e009-954d-3fd903f0b231, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB, 0 %\n5, GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB, 0 %\n6, GPU-6a6425d3-2df8-f7eb-980a-a2c1d4c5296b, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 637 MiB, 0 %\n7, GPU-e6cf2681-2c5a-b428-da53-b98cecb6ead4, NVIDIA RTX PRO 6000 Blackwell Server Edition, 97887 MiB, 0 MiB, 0 %\n",
+    "existing_compute_processes": "gpu_uuid, pid, process_name, used_gpu_memory [MiB]\nGPU-51e9e550-a798-120d-2926-5c76e25b9e56, 118610, VLLM::EngineCore, 88604 MiB\nGPU-6a6425d3-2df8-f7eb-980a-a2c1d4c5296b, 1269160, /h/405/nangia/private-chat/llama-b11254/llama-server, 628 MiB\n",
+    "reservation": false,
+    "ownership_of_existing_processes": "not_assumed",
+    "processes_changed": false
+  },
+  "readiness": {
+    "locked_weights_in_project_cache": false,
+    "verified_aurora_cuda_runtime": false,
+    "gpu_inference_started": false,
+    "gpu_training_started": false,
+    "nine_call_diagnostic_run": false,
+    "next_checkpoint": "Prepare and verify locked model bytes and scoped inference runtime, then record one available device and execute/review the nine-call diagnostic.",
+    "independent_review_required_before_substantive_training": true,
+    "older_germany_china_adapter_regression_preserved": true
+  },
+  "github_scope": {
+    "repository": "memo-ozdincer/country-persona",
+    "verified_private": true,
+    "initial_default_branch": "master",
+    "initial_remote_commit": "86d0c9fa4b5f294010523018a247a42142dbc2e7",
+    "source_code_and_docs": "ordinary fast-forward synchronization",
+    "ignored_artifacts": "separate verified private archive",
+    "handoff_release_tag": "aurora-handoff-20260929-v2",
+    "credentials_and_base_weights_excluded": true
+  }
+}

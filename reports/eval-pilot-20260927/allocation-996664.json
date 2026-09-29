@@ -1,0 +1,126 @@
+{
+  "status": "RUNNING_RETAINED",
+  "files_sha256": {
+    "scripts/run_eval_probe.py": "817f8cda826db1b3cdc536cc46235fa2b989a306969d0d077fbf4ac4bc0bfc08",
+    "scripts/trillium_eval_probe.sbatch": "cf32e4a194f6229c858f17e04cdbea9c0120721ebf590cf8cd2baadfa3d2aa2e",
+    "scripts/trillium_eval_probe.sh": "490000695481677474f6af20fc89f25e42aadbf88e1b7b23e5e8c052fe4173ea",
+    "src/country_persona/__init__.py": "905722ec23490812393905701105c4c5e00c27bab0c912aed5e3af3032ea1d5a",
+    "src/country_persona/inference_probe.py": "010338d5ec6d6cb9385b4ff809e8543c9f6fde0486936e7e6e08cdb87bba4ba4",
+    "src/country_persona/action_eval.py": "355c1a73fdf296556f377af66c03b76e478eac5898bbe879bf17da1bec30e974",
+    "src/country_persona/io.py": "c389b6d7be6da5a80d72ba3fbb98cc9fd1556d7233d07a6f9e550143112b24ee",
+    "reports/trillium_model_verification.json": "ee723a93ce536df302172b5ec5f52654e89933f3f9a41a96304c4d120aad3e45",
+    "configs/posttraining/model.lock.json": "1fae7d59c6244f62830b0807baf3fc958e03c0b32e0a6eb7025c90de6c2b07ae",
+    "data/prepared/eval-pilot-20260927/probe-v1/manifest.json": "3a550fbe0a4770c31ec5a4b93b221f32f065a4566eedcca954ffee3152ba5963",
+    "data/prepared/eval-pilot-20260927/probe-v1/cases.jsonl": "bf7edeb47d71669e2b461d4afe193492e346bcee639c7eff35de84d432509edb",
+    "data/metadata/qwen3-8b-tokenizer/tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "data/metadata/qwen3-8b-tokenizer/tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "data/metadata/qwen3-8b-tokenizer/vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "data/metadata/qwen3-8b-tokenizer/merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "data/metadata/qwen3-8b-tokenizer/config.json": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+    "data/metadata/qwen3-8b-tokenizer/generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+  },
+  "bytes": 16011488,
+  "planned_account": "def-zhijing",
+  "planned_gpu_count": 1,
+  "planned_wall_cap_minutes": 180,
+  "maximum_requested_gpu_hours": 3,
+  "allocation_lifetime": "sleep infinity, bounded by Slurm wall time; experiments are separate steps",
+  "scheduler_validation": "sbatch --test-only accepted; real submission returned 996664",
+  "production_generations": 0,
+  "slurm_job_id": "996664",
+  "account": "def-zhijing",
+  "remote_directory": "/scratch/memoozd/persona/eval-probe-20260927-v3",
+  "ssh_status": "multiplex_authenticated",
+  "initial_scheduler_state": "PENDING",
+  "initial_scheduler_reason": "Priority",
+  "remote_stage_hashes_verified": 17,
+  "remote_preflight": {
+    "cases": 8,
+    "input_tokens": 17124,
+    "maximum_input_tokens": 5033
+  },
+  "experiments_started": 7,
+  "auto_cancel_after_experiment": false,
+  "node": "trig0042",
+  "partition": "compute",
+  "start_time": "2026-09-27T22:30:55-04:00",
+  "scheduled_end_time": "2026-09-28T01:30:55-04:00",
+  "node_ssh_verified": true,
+  "keepalive_process": "579213 sleep infinity",
+  "active_experiment": null,
+  "srun_entrypoint": "SSH allocated node, then srun --jobid; login-host wrapper rejects srun",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "remote_experiment_directory": "/scratch/memoozd/persona/eval-probe-20260927-v6",
+  "completed_experiments": [
+    {
+      "step_id": "996664.0",
+      "status": "FAILED",
+      "exit_code": "1:0",
+      "elapsed_seconds": 56,
+      "path": "runs/probe-996664-base-v1",
+      "diagnosis": "Checkpoint sampling defaults overrode declared configuration; guard rejected output."
+    },
+    {
+      "step_id": "996664.1",
+      "status": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 34,
+      "path": "runs/probe-996664-base-v2",
+      "cases": 8
+    },
+    {
+      "step_id": "996664.2",
+      "status": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 102,
+      "path": "runs/two-event-996664-base-v1",
+      "cases": 30
+    },
+    {
+      "step_id": "996664.3",
+      "status": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed_seconds": 33,
+      "path": "runs/probe-996664-legacy-eos-v1",
+      "cases": 8
+    },
+    {
+      "step_id": "996664.5",
+      "status": "COMPLETED",
+      "path": "runs/failure-diagnostics-996664-v1",
+      "cases": 24,
+      "kind": "targeted_failure_diagnostic",
+      "oracle_controls": 0
+    },
+    {
+      "step_id": "996664.7",
+      "status": "COMPLETED",
+      "path": "runs/failure-diagnostics-996664-v2",
+      "cases": 10,
+      "kind": "targeted_failure_diagnostic",
+      "oracle_controls": 2
+    },
+    {
+      "step_id": "996664.9",
+      "status": "COMPLETED",
+      "exit_code": "0:0",
+      "helper_elapsed_seconds": 55,
+      "path": "runs/stability-996664-v1",
+      "cases": 200,
+      "kind": "counterbalanced_evaluation_diagnostic",
+      "synthetic_extraction_controls": 18
+    }
+  ],
+  "additional_input_files_sha256": {
+    "data/prepared/eval-pilot-20260927/two-event-v1/cases.jsonl": "aeda31bb456e71d0f9b81c8369dd9957ac7bf05a964e1bfa3e89c4ffd19b99b4",
+    "data/prepared/eval-pilot-20260927/two-event-v1/manifest.json": "5c5e3bae85354e9ce8b5ef4f080887b810965daa439d082299cce95936bd27a6"
+  },
+  "last_scheduler_check": "2026-09-27T23:07:09-04:00",
+  "stored_successful_outputs_including_replays": 280,
+  "unique_task_outputs": 30,
+  "retained_after_experiments": true,
+  "allocation_elapsed_seconds_at_last_check": 1162,
+  "experiment_step_seconds_including_failed_attempt": 225,
+  "latest_gpu_check": "reports/eval-pilot-20260927/gpu-health-after-stability.json",
+  "output_count_note": "80 earlier successful outputs plus 200 new outputs (14 replays, 168 correlated historical variants, 18 fictional extraction controls). Historical sample remains seven decisions in two families."
+}

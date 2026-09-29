@@ -1,0 +1,173 @@
+{
+  "created_at": "2026-09-29T00:40:28.224499+00:00",
+  "status": "provisional_single_assistant_source_review_not_independent_validation",
+  "event": "ukraine-policy-workshop-v1",
+  "reviewer_kind": "assistant",
+  "reviewer_id": "assistant-source-review-20260928-ukraine-v1",
+  "blind_review": false,
+  "independent_reviewers": 0,
+  "responses_reviewed": 21,
+  "baseline_responses": 42,
+  "rating_instances": {
+    "met": 165,
+    "unmet": 82,
+    "unratable": 14
+  },
+  "rating_instances_total": 261,
+  "distinct_ambiguous_decisions": 6,
+  "fully_rated_responses": 14,
+  "responses_with_known_failed_units": 21,
+  "by_condition": {
+    "independent_revision": {
+      "calls": 9,
+      "prompt_tokens": 23269,
+      "generated_tokens": 2175,
+      "generation_seconds": 48.66140760993585,
+      "capped_syntheses": 1,
+      "content": {
+        "required_units": 25,
+        "jointly_ratable_units": 24,
+        "known_corrections": 0,
+        "known_regressions": 0
+      },
+      "checks": {
+        "required_units": 16,
+        "jointly_ratable_units": 15,
+        "known_corrections": 0,
+        "known_regressions": 0
+      }
+    },
+    "peer_revision": {
+      "calls": 9,
+      "prompt_tokens": 26249,
+      "generated_tokens": 2122,
+      "generation_seconds": 47.458361957920715,
+      "capped_syntheses": 1,
+      "content": {
+        "required_units": 25,
+        "jointly_ratable_units": 24,
+        "known_corrections": 0,
+        "known_regressions": 1
+      },
+      "checks": {
+        "required_units": 16,
+        "jointly_ratable_units": 14,
+        "known_corrections": 1,
+        "known_regressions": 0
+      }
+    },
+    "single_analyst": {
+      "calls": 3,
+      "prompt_tokens": 9203,
+      "generated_tokens": 1955,
+      "generation_seconds": 43.451874400954694,
+      "capped_syntheses": 0,
+      "content": {
+        "required_units": 25,
+        "jointly_ratable_units": 23,
+        "known_corrections": 0,
+        "known_regressions": 0
+      },
+      "checks": {
+        "required_units": 16,
+        "jointly_ratable_units": 15,
+        "known_corrections": 0,
+        "known_regressions": 0
+      }
+    }
+  },
+  "paired_deliberation_contrast": {
+    "scenario_id": "ukraine-policy-workshop-v1",
+    "country_pairs": [
+      {
+        "country": "FRA",
+        "peer_minus_self_revision_change": 0.0
+      },
+      {
+        "country": "GBR",
+        "peer_minus_self_revision_change": 0.0
+      },
+      {
+        "country": "IND",
+        "peer_minus_self_revision_change": null
+      },
+      {
+        "country": "BRA",
+        "peer_minus_self_revision_change": -0.14285714285714285
+      }
+    ],
+    "country_macro_peer_gain": null
+  },
+  "uk_initial_and_both_revision_texts_identical": true,
+  "uk_response_ids": [
+    "2a318ec7bcbbcd500e03a967",
+    "2f8cf6394ae7e9efa66052db",
+    "d529d2da604c96d363e75a3c",
+    "09cca41b8168ed9d5a24eb4b"
+  ],
+  "synthesis_checks": [
+    {
+      "response_id": "43a3b182c86657ed19b511a2",
+      "condition": "independent_revision",
+      "ratings": {
+        "synthesis.supported_country_positions": "unmet",
+        "synthesis.common_ground_and_differences": "unmet",
+        "synthesis.proposal_not_commitment": "unmet",
+        "synthesis.source_attribution_and_time": "unmet",
+        "synthesis.responsive_analysis": "unmet"
+      },
+      "strict_pass": false
+    },
+    {
+      "response_id": "0042015270b973ebfef362dc",
+      "condition": "peer_revision",
+      "ratings": {
+        "synthesis.supported_country_positions": "unmet",
+        "synthesis.common_ground_and_differences": "unmet",
+        "synthesis.proposal_not_commitment": "unmet",
+        "synthesis.source_attribution_and_time": "unmet",
+        "synthesis.responsive_analysis": "unmet"
+      },
+      "strict_pass": false
+    },
+    {
+      "response_id": "b42da06efee474ba9eb27c41",
+      "condition": "single_analyst",
+      "ratings": {
+        "synthesis.supported_country_positions": "unmet",
+        "synthesis.common_ground_and_differences": "unmet",
+        "synthesis.proposal_not_commitment": "met",
+        "synthesis.source_attribution_and_time": "unmet",
+        "synthesis.responsive_analysis": "met"
+      },
+      "strict_pass": false
+    }
+  ],
+  "semantic_review_pending": true,
+  "climate_reviews_supplied": 0,
+  "new_generations": 0,
+  "new_training_runs": 0,
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/pytest -q tests/test_deliberation.py tests/test_deliberation_review.py tests/test_policy_eval.py",
+    "passed": 34
+  },
+  "files_sha256": {
+    "data/review/deliberation-999389-ukraine-assistant-v1/reviews.jsonl": "d187c640e0dd9cb8b191c5f6d0d6dcd2251a5833d01228328e4665c9e4cdc8f8",
+    "data/review/deliberation-999389-ukraine-assistant-v1/annotation-profiles.json": "64f8d914c1ad451685414bfcf0660ca0ffc6819af8e362206bf8d816e16ef86b",
+    "data/review/deliberation-999389-ukraine-assistant-v1/annotation-audit.json": "093b74317278ce9d7bd05a4b13b3eb5e470b3c85e104cfc91e9e2662d41f49e2",
+    "data/review/deliberation-999389-ukraine-assistant-v1/scored-v2/scores.json": "b840e606baf8a488a530d259085bc4f398434c70ce60c6f3c4ba872406d90050",
+    "data/review/deliberation-999389-ukraine-assistant-v1/scored-v2/receipt.json": "84da5dda78eb4bd384da67e74ee97f167913983ed15ba50c0dafcc1f866a5fca",
+    "data/review/deliberation-999389-ukraine-assistant-v1/assistant-review.md": "18580fa7db8dc548f8bc58d2556ab1ee2b9463c8d75aebfbd7b0d0d40f97a37b",
+    "data/review/deliberation-999389-ukraine-assistant-v1/adjudication-cards.md": "538759c8ceca6647f3769640f4f9491bf97cef36a8e2b06ec3c5b1145accd0f6",
+    "src/country_persona/deliberation_review.py": "d8a28f1ce3228827d9894e7a1516309f8f162c887b80945161e11c5b31d6d039",
+    "scripts/review_deliberation_probe.py": "886526ceb80dd91a50069d33826cfb9bb0810cdd3e6437234c31df3a67d006f3"
+  },
+  "limits": [
+    "One exposed event; repeated turns, identical outputs and rubric units are dependent observations.",
+    "Assistant reviewer helped author the rubric and had seen failure examples; no independence or blinding claimed.",
+    "Ambiguous ratings stay unratable; the overall country-macro peer gain remains null.",
+    "Known correction/regression counts use jointly ratable units and report their denominators.",
+    "Required-content omissions and unsupported assertions are separate dimensions; do not equate a changed answer with improvement.",
+    "scored-v2 supersedes scored only for known-failure handling: a failed unit keeps strict_pass false even when another unit is unratable. Annotation labels did not change."
+  ]
+}

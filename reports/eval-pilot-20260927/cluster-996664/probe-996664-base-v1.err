@@ -1,0 +1,15 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 180.16it/s]
+`generation_config` default values have been modified to match model-specific defaults: {'do_sample': True, 'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}. If this is not desired, please set these values explicitly.
+Traceback (most recent call last):
+  File "/scratch/memoozd/persona/eval-probe-20260927-v3/scripts/run_eval_probe.py", line 120, in <module>
+    main()
+  File "/scratch/memoozd/persona/eval-probe-20260927-v3/scripts/run_eval_probe.py", line 113, in main
+    result = run_cases(model, tokenizer, tokenized, config, model_eos, label_ids, args.output, metadata)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/memoozd/persona/eval-probe-20260927-v3/src/country_persona/inference_probe.py", line 235, in run_cases
+    row = infer_one(model, tokenizer, entry, config, model_eos, label_ids)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/memoozd/persona/eval-probe-20260927-v3/src/country_persona/inference_probe.py", line 194, in infer_one
+    raise ValueError("Declared raw greedy decoding differs from actual generation")
+ValueError: Declared raw greedy decoding differs from actual generation

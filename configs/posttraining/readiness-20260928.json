@@ -1,0 +1,14 @@
+{
+  "purpose": "Prepare and inspect a small grounded-revision optimization probe; not a substantive national-persona trial",
+  "dataset": "data/prepared/training-readiness-20260928-v1",
+  "world_size": 4,
+  "allocation": {"account": "def-zhijing", "gpus": "h100:4", "hours": 1, "lifetime": "sleep infinity until Slurm wall limit", "scheduler_reason": "Trillium requires one GPU or a multiple of four; explicit memory requests are disallowed"},
+  "defaults": {"max_length": 8192, "rank": 8, "learning_rate": 0.00005, "microbatch_per_gpu": 1, "seed": 42},
+  "recipes": {
+    "smoke": {"dataset": "smoke.train", "max_steps": 2, "gradient_accumulation": 1, "warmup_ratio": 0.0, "purpose": "Two optimizer steps; check all-rank execution, finite loss and saved adapter"},
+    "fit-probe": {"dataset": "fit-probe.train", "max_steps": 20, "gradient_accumulation": 1, "warmup_ratio": 0.05, "purpose": "Deliberate repeated exposure to ten examples; diagnose optimization/format learning, not generalization"}
+  },
+  "substantive_training_ready": false,
+  "before_any_gpu_training": ["Restore SSH", "Verify current model bytes and installed dependencies", "Inspect CPU/DDP and mask reports", "Complete the user's evaluation-first gate before launching training"],
+  "after_each_run": ["Check loss/gradient norms, per-rank execution, token counts and memory", "Reload adapter and run the frozen same-evidence evaluation", "Inspect unsupported claims, lost qualifications, repetition and output caps before expanding"]
+}

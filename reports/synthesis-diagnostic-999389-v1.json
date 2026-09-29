@@ -1,0 +1,149 @@
+{
+  "status": "completed_post_hoc_diagnostic_with_partial_assistant_source_review",
+  "responses": 6,
+  "run_sha256": "2808dbb406307e7301e2d105916f3ea923c92f244dcb65df65eb4da4b5a922d7",
+  "source_run_sha256": "279fc6f5919257ea89fb884214c939e524fd6f3b4359b7f91f91b95bb34e7d69",
+  "source_pack_sha256": "2e3e33797b5fef865a87fd08ad3d9bfaeab5d6b27537d21d30ba60db11e0b8f6",
+  "exact_original_prompt_prefix_replays": 3,
+  "output_caps": 0,
+  "total_generated_tokens": 2683,
+  "generation_seconds": 60.87459970614873,
+  "peak_allocated_gpu_gib": 16.532997608184814,
+  "partial_reviews": [
+    {
+      "response_id": "498d346fa7cf684758bb68c1",
+      "case_sha256": "eb49bae7b756dfd2a6f30732b1136224713e3b92a9fa921823a8cac3209183ba",
+      "output_digest": "42f2125b64b3aee66be1d82d12199c7a5ff76194a4671b99a4e1ab9159e2f6c5",
+      "condition": "independent_revision",
+      "diagnostic_condition": "original_prompt",
+      "original_response_id": "a611336d4f1256a46e29a2f3",
+      "unchanged_original_prompt_and_generated_prefix": true,
+      "generated_tokens": 572,
+      "output_capped": false,
+      "assistant_scope_review": {
+        "quota_evidence_scope": "overstated_nonapproval",
+        "quota_quote": "the UK did not approve binding national carbon quotas imposed by the Council",
+        "all_four_g5_agreement_supported_by_packet": false,
+        "unsupported_g5_quote": "All four delegations acknowledged the link between climate change and security, supported regional initiatives like the G-5 Sahel Joint Force, and emphasized the need for multilateral cooperation."
+      },
+      "reviewer_kind": "assistant",
+      "reviewer_id": "codex-source-audit-20260928",
+      "review_scope": "Two diagnosed failure types only; null G5 means no such explicit all-four claim found, not overall policy correctness."
+    },
+    {
+      "response_id": "6d9c0a134a2b574302857d33",
+      "case_sha256": "dcc90f23801baf9bd674931290dc8a598cad7fcd479f5e98b94e7ac481934ca3",
+      "output_digest": "eefbdf98f03c7da79e6fd67eac1d26f8cbfb0cf61f41e0f71fd1ea3cd12bb684",
+      "condition": "independent_revision",
+      "diagnostic_condition": "support_check_instruction",
+      "original_response_id": "a611336d4f1256a46e29a2f3",
+      "unchanged_original_prompt_and_generated_prefix": null,
+      "generated_tokens": 421,
+      "output_capped": false,
+      "assistant_scope_review": {
+        "quota_evidence_scope": "not_established_preserved",
+        "quota_quote": "but did not mention approval of binding national carbon quotas.",
+        "all_four_g5_agreement_supported_by_packet": false,
+        "unsupported_g5_quote": "They all supported the need for enhanced international cooperation and regional initiatives, such as the G-5 Sahel Joint Force, to address these challenges."
+      },
+      "reviewer_kind": "assistant",
+      "reviewer_id": "codex-source-audit-20260928",
+      "review_scope": "Two diagnosed failure types only; null G5 means no such explicit all-four claim found, not overall policy correctness."
+    },
+    {
+      "response_id": "1c36a337d8439f60eca208ad",
+      "case_sha256": "1299658be308bfe757644fe69c08f4d3c1ae262d5b802bd8b984cbc70a93ca3f",
+      "output_digest": "61fff748e3f9a99d70aae995c425babeba47ca7a98fc691bdee9be755cbbde50",
+      "condition": "peer_revision",
+      "diagnostic_condition": "original_prompt",
+      "original_response_id": "d34ea025bccf6d10658acd55",
+      "unchanged_original_prompt_and_generated_prefix": true,
+      "generated_tokens": 429,
+      "output_capped": false,
+      "assistant_scope_review": {
+        "quota_evidence_scope": "overstated_nonapproval",
+        "quota_quote": "the UK did not approve binding national carbon quotas imposed by the Council",
+        "all_four_g5_agreement_supported_by_packet": null,
+        "unsupported_g5_quote": null
+      },
+      "reviewer_kind": "assistant",
+      "reviewer_id": "codex-source-audit-20260928",
+      "review_scope": "Two diagnosed failure types only; null G5 means no such explicit all-four claim found, not overall policy correctness."
+    },
+    {
+      "response_id": "5c16d974d31cbc05e9136b29",
+      "case_sha256": "fe09e8dd7a910eb8664e62748f58761a9c3087430de33a7a2bccf044d2af5f41",
+      "output_digest": "ca02d3aba5abd8a4096eb1a129d2374f6e4c6deb7cec43db80545763b5f46201",
+      "condition": "peer_revision",
+      "diagnostic_condition": "support_check_instruction",
+      "original_response_id": "d34ea025bccf6d10658acd55",
+      "unchanged_original_prompt_and_generated_prefix": null,
+      "generated_tokens": 424,
+      "output_capped": false,
+      "assistant_scope_review": {
+        "quota_evidence_scope": "not_established_preserved",
+        "quota_quote": "but did not mention approval of binding national carbon quotas.",
+        "all_four_g5_agreement_supported_by_packet": false,
+        "unsupported_g5_quote": "They all supported the need for multilateral cooperation and regional initiatives, such as the G-5 Sahel Joint Force, to address these challenges."
+      },
+      "reviewer_kind": "assistant",
+      "reviewer_id": "codex-source-audit-20260928",
+      "review_scope": "Two diagnosed failure types only; null G5 means no such explicit all-four claim found, not overall policy correctness."
+    },
+    {
+      "response_id": "dbb62cbf79e01e2ec1b6b5d7",
+      "case_sha256": "9420cf5866adfbac601cc6bdac578f194f331387913f998bde37ef7525b827c9",
+      "output_digest": "6ccb3226b190c8cc6d73fccc70c9f28794fa6a907b0d111e5fcc55e73041c72e",
+      "condition": "single_analyst",
+      "diagnostic_condition": "original_prompt",
+      "original_response_id": "4dbc4d6d1cd68303a704ec9f",
+      "unchanged_original_prompt_and_generated_prefix": true,
+      "generated_tokens": 460,
+      "output_capped": false,
+      "assistant_scope_review": {
+        "quota_evidence_scope": "overstated_nonapproval",
+        "quota_quote": "the UK did not approve binding national carbon quotas imposed by the Council",
+        "all_four_g5_agreement_supported_by_packet": null,
+        "unsupported_g5_quote": null
+      },
+      "reviewer_kind": "assistant",
+      "reviewer_id": "codex-source-audit-20260928",
+      "review_scope": "Two diagnosed failure types only; null G5 means no such explicit all-four claim found, not overall policy correctness."
+    },
+    {
+      "response_id": "1a591cfe685d1639b7c6c8db",
+      "case_sha256": "284dd328d364aa0cc56db765ae1b41c0e1095206f1b63023047f6eb7810993c4",
+      "output_digest": "1d7081607617f63c838ecdc44db9f1f8e9dd2f1558fc0cc05cce9aabe81174e8",
+      "condition": "single_analyst",
+      "diagnostic_condition": "support_check_instruction",
+      "original_response_id": "4dbc4d6d1cd68303a704ec9f",
+      "unchanged_original_prompt_and_generated_prefix": null,
+      "generated_tokens": 377,
+      "output_capped": false,
+      "assistant_scope_review": {
+        "quota_evidence_scope": "overstated_nonapproval",
+        "quota_quote": "It did not approve binding national carbon quotas imposed by the Council.",
+        "all_four_g5_agreement_supported_by_packet": null,
+        "unsupported_g5_quote": null
+      },
+      "reviewer_kind": "assistant",
+      "reviewer_id": "codex-source-audit-20260928",
+      "review_scope": "Two diagnosed failure types only; null G5 means no such explicit all-four claim found, not overall policy correctness."
+    }
+  ],
+  "quota_overstatement_counts": {
+    "original_prompt_1024": 3,
+    "support_check_instruction_1024": 1
+  },
+  "unsupported_all_four_g5_counts": {
+    "original_prompt_1024": 1,
+    "support_check_instruction_1024": 2
+  },
+  "interpretation": "Extra room fixes truncation, not source-scope mistakes. The added instruction repairs two quota claims but introduces a G5 shared-position claim in the peer summary.",
+  "limits": [
+    "One exposed event, three dependent note contexts; these counts are not benchmark estimates.",
+    "Assistant-authored partial source review; no independent human ratings or general quality score.",
+    "The absence of an explicit all-four G5 claim does not establish that all other agreement/compatibility claims are supported.",
+    "No training occurred. This instruction must not be adopted as a generally better baseline based only on the target fix."
+  ]
+}

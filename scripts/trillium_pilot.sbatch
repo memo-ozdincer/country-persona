@@ -8,6 +8,10 @@
 #SBATCH --cpus-per-task=24
 #SBATCH --output=/scratch/memoozd/persona/cluster_logs/pilot_%j.out
 set -euo pipefail
+TASK_START_SECONDS=$SECONDS
+# Preserve the allocation after success or failure for inspection/further steps.
+# This remains the historical four-GPU training workflow, not the eval probe.
+trap 'rc=$?; printf "EXPERIMENT_EXIT_CODE=%s ELAPSED_SECONDS=%s; retaining allocation until wall limit\n" "$rc" "$((SECONDS-TASK_START_SECONDS))"; sleep infinity' EXIT
 module load StdEnv/2023 python/3.11 cuda/12.6
 cd /scratch/memoozd/persona
 source .venv/bin/activate
@@ -20,8 +24,6 @@ export TRANSFORMERS_OFFLINE=1
 export PYTHONUNBUFFERED=1
 mkdir -p runs reports
 TASK_RUN_PREFIX="runs/trillium-${SLURM_JOB_ID}"
-TASK_START_SECONDS=$SECONDS
-trap 'rc=$?; printf "EXIT_CODE=%s ELAPSED_SECONDS=%s\n" "$rc" "$((SECONDS-TASK_START_SECONDS))"; exit "$rc"' EXIT
 printf 'JOB_ID=%s HOST=%s\n' "$SLURM_JOB_ID" "$(hostname)"
 nvidia-smi
 python scripts/gpu_length_probe.py

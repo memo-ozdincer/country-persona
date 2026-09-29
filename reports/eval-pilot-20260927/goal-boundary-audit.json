@@ -1,0 +1,103 @@
+{
+  "objective": "implement the plan with constant checking and feedback.",
+  "previous_goal_turn_classification": "progress: tested inference instrumentation, produced CPU integration traces, and staged the bounded GPU payload.",
+  "completion_proven": false,
+  "full_scope_preserved": true,
+  "current_checks": {
+    "source_and_evaluation_files_match_manifest": true,
+    "staged_payload_matches_manifest": true,
+    "new_production_runs": [],
+    "current_infrastructure_runs": [
+      {
+        "path": "runs/eval-infrastructure-20260927-v1/run.json",
+        "run_kind": "infrastructure_smoke_random_weights",
+        "status": "completed",
+        "completed_cases": 8
+      }
+    ],
+    "independent_human_rating_rows": 0,
+    "ssh_attempt": {
+      "exit_code": 255,
+      "message": "Permission denied (keyboard-interactive,hostbased).",
+      "job_submitted": false
+    }
+  },
+  "requirement_audit": [
+    {
+      "checkpoint": "1A",
+      "status": "implemented_for_retrospective_reconstruction",
+      "evidence": "reports/eval-pilot-20260927/event-cards.json",
+      "limits": "Assistant source checking only; archived-version availability and independent review remain unresolved."
+    },
+    {
+      "checkpoint": "1B",
+      "status": "implemented_initial_eight_items",
+      "evidence": "data/prepared/eval-pilot-20260927/two-event-v1/policy.references.jsonl",
+      "limits": "Authored questions/checklists; not independently calibrated."
+    },
+    {
+      "checkpoint": "1C",
+      "status": "incomplete",
+      "evidence": "Nineteen authored fixtures and blank review deck/template exist; zero independent human rating rows.",
+      "missing": "Two independent ratings, raw agreement and disagreement/adjudication record."
+    },
+    {
+      "checkpoint": "1D",
+      "status": "incomplete",
+      "evidence": "Instrumented runner, 55 passing targeted checks, eight random-weight CPU generations, isolated GPU payload.",
+      "missing": "Real pinned-model outputs, actual GPU cost/memory/stopping checks and relevant legacy decoding replay."
+    },
+    {
+      "checkpoint": "1E",
+      "status": "incomplete",
+      "missing": "Real paired A/B action and policy results, reviewed error ledger and measured costs."
+    },
+    {
+      "checkpoint": "2A",
+      "status": "incomplete",
+      "missing": "Expanded independently reviewed family coverage, reserved final-test pool and frozen effect/regression criteria informed by development results."
+    },
+    {
+      "checkpoint": "2B",
+      "status": "incomplete",
+      "missing": "One new evidence-conditioned behavioral LoRA pilot and same-evidence comparison. The earlier Germany/China adapter is not this experiment."
+    },
+    {
+      "checkpoint": "2C",
+      "status": "incomplete",
+      "missing": "Robustness/generalization, empirical calibration, supported false-consensus diagnostics and justified data ablation."
+    },
+    {
+      "checkpoint": "3A",
+      "status": "incomplete",
+      "missing": "Actual interaction traces and ratings against the strongest matched-budget control. Earlier authored workshop demonstrations do not establish deliberation gain."
+    },
+    {
+      "checkpoint": "3B",
+      "status": "conditional_not_yet_triggered",
+      "missing": "A diagnosed interaction/behavior failure must select any additional training method; do not run all branches automatically."
+    },
+    {
+      "checkpoint": "4A",
+      "status": "incomplete",
+      "missing": "Replication/transfer of an actual useful result, including prospective collection if that claim is pursued."
+    },
+    {
+      "checkpoint": "4B",
+      "status": "incomplete",
+      "missing": "Independent human-usefulness results and a reproducible paper/release matching observed outcomes."
+    }
+  ],
+  "blocking_audit": {
+    "same_trillium_authentication_condition_recurred_in_at_least_three_consecutive_goal_turns": true,
+    "history": [
+      "Two-event source/rubric turn: SSH authentication failed; user reconnection requested.",
+      "Inference implementation turn: fresh SSH attempt failed; continued useful local implementation and testing.",
+      "Current boundary audit: fresh SSH attempt failed; prepared payload is intact and no production results or human ratings have appeared."
+    ],
+    "why_no_further_implementation_is_selected": "The next checkpoints require actual model outputs or independent ratings. Expanding methods/training or building further scaffolding before those observations would bypass the plan’s feedback gates.",
+    "primary_unblocking_action": "Restore an authenticated Trillium SSH connection.",
+    "parallel_unblocking_action": "Supply two independent rubric ratings or arrange the reviewers.",
+    "no_live_job_handle_to_wait_on": true
+  }
+}

@@ -1,0 +1,755 @@
+     Legal Judgment Prediction: If You Are Going to Do It, Do It Right
+                Masha Medvedeva                          Pauline McBride
+    eLaw Center for Law and Digital Technologies           COHUBICOL,
+         & Department of Business Studies,            Law, Science, Technology
+                  Faculty of Law,                       and Society (LSTS),
+         Leiden University, the Netherlands      Vrije Universiteit Brussel, Belgium
+     m.medvedeva@law.leidenuniv.nl pauline.mcbride@vub.be
+
+
+                      Abstract                                    The media has speculated about the advent of
+                                                               robojudges and automated lawyers for years (Grif-
+    The field of Legal Judgment Prediction (LJP)
+    has witnessed significant growth in the past               fin, 2016; Markou, 2020; Kelly, 2022). Many in the
+    decade, with over 100 papers published in the              justice sector are persuaded that machine learning
+    past three years alone. Our comprehensive sur-             technologies might usefully be employed to pre-
+    vey of over 150 papers reveals a stark reality:            dict the outcomes of cases (CEPEJ, 2018). Some
+    only ∼7% of published papers are doing what                judges believe these technologies could even make
+    they set out to do - predict court decisions. We           “very minor” decisions.1
+    delve into the reasons behind the flawed and
+                                                                  Yet, these systems are not widely used. While
+    unreliable nature of the remaining experiments,
+    emphasising their limited utility in the legal             there are a number of ethical considerations (Leins
+    domain. We examine the distinctions between                et al., 2020) including issues of bias in the data
+    predicting court decisions and the practices of            (Angwin et al., 2016) that could be the reason for
+    legal professionals in their daily work. We ex-            the hesitancy, in this paper we will demonstrate
+    plore how a lack of attention to the identity and          that there may be a different root cause, namely
+    needs of end-users has fostered the misconcep-             that the setup of the experiments presented in the
+    tion that LJP is a near-solved challenge suitable
+                                                               overwhelming majority of academic papers does
+    for practical application, and contributed to the
+    surge in academic research in the field. To ad-
+                                                               not allow the systems to do what they claim to be
+    dress these issues, we examine three different             doing - predicting court decisions.
+    dimensions of ‘doing LJP right’: using data
+    appropriate for the task; tackling explainability;         2       Related work
+    and adopting an application-centric approach to
+    model reporting and evaluation. We formulate
+                                                               The field of Legal Judgment Prediction (LJP) has
+    a practical checklist of recommendations, delin-           rapidly expanded over the years, with over 150 pa-
+    eating the characteristics that are required if a          pers published in the last 10 years. The majority of
+    judgment prediction system is to be a valuable             the papers that we reviewed use the text of histori-
+    addition to the legal field.                               cal decisions to make predictions on unseen data.
+                                                               Some do not use NLP, but rely on manually ex-
+1   Introduction
+                                                               tracted variables to make the predictions (notably,
+The task of predicting court decisions has been a              Katz et al. (2017). We looked specifically at pa-
+topic of great interest since at least the 60s (Lawlor,        pers in English that conduct experiments on court
+1963; Mackaay and Robillard, 1974). It has gained              decisions, rather than any other legal decisions (ex-
+traction in recent years due to policies promot-               cluding, for instance Branting et al. (2021) focused
+ing publishing case law around the world, and in-              on WIPO decisions).
+creased efficiency and popularity of machine learn-               Of all the countries whose court cases feature
+ing.                                                           among the reviewed papers, China has the high-
+   Today there are more than 150 academic papers               est proportion overall (78 papers). China pub-
+claiming to predict court decisions (a.k.a. Legal              lishes millions of cases online, many of which are
+Judgment Prediction) using natural language pro-               available as part of the CAIL2018 dataset (Xiao
+cessing (NLP) and machine learning, many report-               et al., 2018) with over 2 million cases. Bench-
+ing accuracies and F1-scores of over 90% (see, for                 1
+                                                               https://www.judiciary.uk/wp-content/u
+instance, Sulea et al., 2017; Varga et al., 2021; Sert      ploads/2023/06/Law-Society-Scotland-Law
+et al., 2022, among others).                                -and-Tech-Conference-2023.pdf
+
+                                                          73
+                   Proceedings of the Natural Legal Language Processing Workshop 2023, pages 73–84
+                          December 7, 2023 ©2023 Association for Computational Linguistics
+mark datasets attract many to develop new meth-                the judgment is reached or published. The actual
+ods and improve the scores, with LexGLUE ECHR                  user of these systems, let’s say a lawyer looking to
+(Chalkidis et al., 2022) among the more promi-                 advise a client about the likely outcome of a court
+nent ones for the European Court of Human Rights               hearing, does not have access to the same formu-
+(ECtHR). In fact, at least 27 papers we reviewed               lation of the facts as is available and set out in the
+attempt to predict decisions of the ECtHR, with                judgment. That formulation cannot exist until the
+one providing access to a regularly updated web-               judgment is made.
+site (jurisays.com) that predicts decisions in
+                                                                  One might imagine that the ‘facts’ of the case
+real-time.
+                                                               set out in a judgment are the same as, equivalent to,
+   A work that provides an even more ready-to-use
+                                                               or a reasonable proxy for the factual information
+tool is Galli et al. (2022). The paper includes a link
+                                                               available prior to the court’s decision. However,
+to a website where one can input one’s claims and
+                                                               this is incorrect. Facts very often emerge in the
+receive a prediction for Italian and Bulgarian VAT
+                                                               process of litigation. One side’s account of the
+cases.2
+                                                               facts may (and typically will) be countered by the
+   With so much published research, predicting
+                                                               other side’s account. Each side’s account may be
+court decisions (at least for some courts) may seem
+                                                               iteratively refined and expanded to respond to the
+like a solved task, e.g. Sulea et al. (2017) achieves
+                                                               other’s. Factual evidence given by witnesses at a
+99% accuracy for predicting decisions of French
+                                                               hearing may differ from earlier accounts given by
+courts, Quemy and Wrembel (2022) achieves 98%
+                                                               those same witnesses. If, as is generally the case
+accuracy for the judgments of the ECtHR.
+                                                               in lower courts, there is a dispute about the facts,
+3       Getting your ‘facts’ right                             the court will have to make a decision about the
+                                                               facts. In addition, courts are only concerned with
+In this paper we focus on issues with the way that             those facts that are relevant for the decision in the
+research in LJP is conducted today. The main issue,            case, taking account of the nature of the dispute or
+which concerns the experimental setup, was previ-              issue. That is, the courts are only concerned with
+ously addressed in Pasquale and Cashwell (2018),               those facts that relate to the legal rules which the
+(focusing on Aletras et al. (2016) paper), and later           court judges to be relevant. As a result the facts
+in Medvedeva et al. (2023) (reviewing a larger cor-            described in the judgment are often “highly selec-
+pus of 27 papers). We are going to revisit this issue          tive summaries of the original case record, written
+taking account of 171 papers in the field.                     by the decision-makers themselves and tailored
+   Presently, predictive systems predominantly rely            for consistency with the decision.” (Tippett et al.,
+on case facts extracted from judgments. Specifi-               2021). For all these reasons the ‘facts’ set out in
+cally, these machine learning systems are fed the              the judgment may be very different - in substance
+text of the ‘facts’ section of the cases (and some-            and in form - from earlier accounts of the facts.
+times also the reasoning of the court) as inputs
+                                                                  Some research confirms that the way in which
+together with the corresponding decisions (e.g. vi-
+                                                               the ‘facts’ of a case are formulated has a material ef-
+olation/no violation of an article of the European
+                                                               fect on the performance of predictive systems (Tip-
+Convention on Human Rights) as labels. The sys-
+                                                               pett et al., 2021; Branting et al., 2020). Medvedeva
+tems are trained to ‘predict’ decisions; they learn
+                                                               et al. (2021) also experimented with the ECtHR
+patterns within the input which correspond to par-
+                                                               data by comparing the results of training the model
+ticular labels. They are then evaluated on a test
+                                                               on the facts extracted from the final judgments (not
+set (i.e. ‘unseen’ case facts that were not included
+                                                               available prior to decision-making) and training
+in the training set). The ‘facts’ that comprise the
+                                                               it on the facts as published by the court just af-
+test set, like those of the training set, are extracted
+                                                               ter receiving the submission of the alleged victim
+from published final judgments. The labels used to
+                                                               of human right violation. Their work shows that
+evaluate the systems’ performance on the test set
+                                                               models that perform well on the ‘facts’ extracted
+can also be found in those judgments. While such
+                                                               from final judgments do not perform nearly as well
+systems might achieve high performance, they are
+                                                               when trained on the ‘real’ data, available prior to
+never actually tested on ‘real’ data, that is data that
+                                                               the decisions. The best model (Hierarchical BERT)
+is genuinely available to potential end-users before
+                                                               achieves an F1-score of 0.92 on final judgments and
+    2
+        https://adele-tool.eu                                  only 0.64 on facts available prior to the decision.
+                                                          74
+   Systems trained and tested 3 on ‘facts’ extracted                   4   Prediction in law v. prediction in NLP
+from judgments can only model that the facts de-
+scribed in a judgment correspond to a decision that                    We hesitate to describe the activity of lawyers in
+has already been made; they do not in any way                          advising about possible outcomes of cases as ‘pre-
+allow users to actually predict any judgments.                         diction’. Lawyers often qualify advice about out-
+                                                                       comes by observing (correctly) that the law might
+   Although it is usual for LJP systems to rely on                     change, that there may be room for different in-
+the ‘facts’ section of cases, some systems may use                     terpretations of the relevant law, that their client’s
+different information. For instance, Collenette et al.                 account of the facts might not be accepted, that new
+(2020) and Collenette et al. (2023) claim to predict                   issues (of fact and/or law) might arise in the course
+decisions of the ECtHR by creating an Abstract Di-                     of the court proceedings. Lawyers will rarely offer
+alectical Frameworks decision tree based on factors                    a binary ‘win or lose’ prediction, a quantified con-
+the court considers when making decisions regard-                      fidence rating, or a prediction which is not hedged
+ing the right to a fair trial. However, when used                      about with appropriate caveats (Vagts, 1978). This
+to ‘predict’ the outcome of new cases, the system                      hesitation should not be mistaken for failure: the
+depends on the user answering complex questions                        life of the law is its ability to adapt; the processes
+about ‘base factors’ (the leaf nodes of the decision                   and procedures through which the facts of a case
+tree) which can only be authoritatively decided by a                   emerge - gradually and iteratively - are crucial for
+judge. It depends, not on pre-existing information,                    preserving the ability of the citizen to articulate
+but on interpretative decisions made by the user.                      their case (Waldron, 2011). Lawyers are both less
+The system is therefore unable to do the prediction                    and much more than fortune tellers. They have
+without having part of what needs to be decided                        an active role to play in developing the law. Nev-
+fed into it.                                                           ertheless their role in advising about the possible
+   We limited our analysis to LJP papers published                     outcomes of cases is ‘prediction’ in the sense that
+in the past 10 years (2014 until August 2023).                         they are concerned with future outcomes of cases.
+Given the amount of papers published on the topic,                     If lawyers want to know the outcome of an already
+our list might not contain all of the published re-                    decided case they can read it in the judgment.
+search in the field, but we expect that we found                          Some few of the papers we reviewed use NLP
+most of the available papers. We relied on descrip-                    to output a classification (e.g. violation/no viola-
+tions of the datasets presented in the papers in order                 tion) in response to a textual account of the facts
+to establish the data that the authors used for the                    which pre-dates the judgment. These systems are
+experiments. We present the list of all reviewed pa-                   designed to predict a future outcome. However,
+pers, including information about their data and per-                  most of the papers use NLP to output a classifica-
+formance at https://shorturl.at/pxKR3.                                 tion in response to a textual account of facts ex-
+Out of 171 reviewed papers, we found only 12                           tracted from an existing judgment. They classify
+(∼7%) that use appropriate data for predicting de-                     facts in a judgment as associated with a specific
+cisions, with only 7 using text-based input. Addi-                     verdict (i.e. a label), but the actual verdict can be
+tionally we found 3 papers that in principle might                     found in the same judgment. There is therefore a
+provide a way to predict future court decisions, but                   mismatch between the usual framing of the task of
+because their data is private and inaccessible, it is                  LJP in NLP and a lawyer’s understanding of ‘pre-
+unclear whether all of the data used for the test-                     diction’ of judgment. This mismatch might be un-
+ing was available before the relevant judgment and                     derstood as one of terminology. The machine learn-
+therefore suitable for prediction of future outcomes.                  ing community uses the word ‘prediction’ as a sub-
+We discuss all 15 papers in section 5.                                 stitute for ‘classification’; ‘prediction’ in this sense
+                                                                       does not imply looking into the future. Lawyers,
+                                                                       on the other hand, understand ‘prediction’ to en-
+   3
+                                                                       tail prediction of some future event. For this rea-
+     In principle, one can train a machine learning system
+using various data sources, including the details within the           son Medvedeva et al. (2023) suggested researchers
+final judgments or any information derived from them. Having           avoid the term ‘prediction’ and clearly differentiate
+additional, albeit imperfect data could potentially enhance the        between ‘outcome identification, outcome-based
+system’s performance. However, it is imperative that testing
+is consistently performed using data accessible before the             judgement categorisation and outcome forecasting’.
+decision-making process takes place.                                   However, the mismatch is more deep-seated and
+                                                                  75
+significant than one of terminology. It concerns the           dence. This means that the system would have to
+nature of the task performed by LJP models and the             be able to handle multiple languages or be designed
+utility of the models for the intended end-user. If            for a specific country. On the other hand, let’s say
+these are to have real-world utility for lawyers, citi-        the system is built for a big law firm which wants
+zens or others (e.g. political scientists) who wish to         to take account of the outcomes predicted by the
+anticipate the outcome of cases they must be able              system when advising clients. Again the system
+to offer prediction of future judgments. In other              would have to be trained and tested on the kind
+words, they must offer a prediction of what the                of input data available to the user at the point of
+judgment will be, not ‘predict’ what the judgment              use of the system for the purposes of prediction.
+was.                                                           In the case of the law firm, this might consist of
+                                                               the firm’s written submissions for hearings, with
+   Much current research relating to LJP pays little
+                                                               the system being evaluated against ‘unseen’ writ-
+attention to who, precisely, might use these sys-
+                                                               ten submissions and the corresponding outcomes.
+tems and for which use cases. The majority of
+                                                               Like Golumbia (2015) we believe that responsibil-
+papers simply state that these systems could be use-
+                                                               ity for judging should rest with humans, not with
+ful to ‘legal professionals’ without differentiating
+                                                               machines. Judges, should be independent, base
+between, for example, judges, paralegals, prosecu-
+                                                               their decisions on law, and should not defer to ma-
+tors, defence lawyers, clerks of court. Each of these
+                                                               chines. We are therefore very much of the view,
+might have different reasons for using these sys-
+                                                               along with Bex and Prakken (2021), that these sys-
+tems, different obligations and professional respon-
+                                                               tems should not be used for decision making by
+sibilities, and therefore different use cases. The
+                                                               judges or indeed as a means of allowing (or com-
+possibility that citizens might use these systems
+                                                               pelling) a judge to assess whether their proposed
+is frequently overlooked. However, as a matter of
+                                                               decision aligns with the predictions offered by such
+practicality, if one is to build an LJP system which
+                                                               systems. If however, the system were to be devel-
+has utility for some class or classes of user, it is
+                                                               oped for such purposes, solely from an experimen-
+essential to consider why they might want to use
+                                                               tal setup perspective, the data would have to reflect
+the system and what data they might use as inputs
+                                                               the data available to the judge before they issued
+to the system. Different users may have access to
+                                                               their judgment. In all such cases the training data,
+different kinds of information, in different formats
+                                                               test data and finally data used for predictions would
+and languages, from different sources, reflecting
+                                                               have to be obtained and used in a way that respects
+different versions of events, and at different stages
+                                                               copyright, confidentiality, data protection and rel-
+before or during court proceedings. An LJP system
+                                                               evant rules of court. Lawyers, judges and other
+built for a specific class of end-users needs to be
+                                                               legal professionals would have to ensure that use
+trained and evaluated on the data that would be
+                                                               of such systems is in line with their professional
+available to such users. Otherwise the results do
+                                                               obligations, codes of practice and legal and ethi-
+not tell one anything about how the system would
+                                                               cal norms. These considerations are relevant for
+perform in a real-life scenario and the system may
+                                                               the design of such systems and for the choice of
+have little or no utility.
+                                                               input data whether for training, testing or predic-
+   For example, a system built for prospective ap-             tion. Making clear who the end-user is, even if the
+plicants to the ECtHR and intended for use before              system is not ready to be used, rather than doing
+an application is submitted to the court would have            research for the sake of research, paves the way for
+to be trained and tested on data available to the              a more appropriate experimental setup.
+applicant at that stage. Such data might include
+textual descriptions of the facts (and arguments)              5   Data
+formulated by the applicant, or factual accounts
+extracted from earlier decisions in cases raised by            Unfortunately, while the text of a judgment is not
+the applicant in domestic courts. This data has                appropriate data for making predictions for that
+limitations; the descriptions will only contain the            judgment, it can be hard for researchers to find
+version of events and arguments made on behalf                 good data for LJP. In an ideal world researchers
+of the applicant and (like the factual accounts ex-            would use the same information as is available to
+tracted from the lower courts) would normally be               the court and/or the parties, e.g. statements of
+in the language of the applicant’s country of resi-            victims or submissions by the parties. However,
+                                                          76
+this data is not commonly available, with access to                     tually pursue this course of action, introducing po-
+court records varying across jurisdictions. It may                      tential selection bias when training and evaluating
+be restricted to physical (rather than online) access,                  the system.
+to cases in higher courts, to certain kinds of case                        Other papers that use text as input rely on vari-
+documents, or provided only for a fee (Naglič et al.,                  ous documents from different stages of legal pro-
+2013).                                                                  ceedings. For example, Semo et al. (2022) uses
+   The papers that use appropriate data for future                      plaintiff claims, McConnell et al. (2021) complaint
+predictions consistently exhibit much poorer per-                       documents, and Tippett et al. (2021) legal briefs.
+formance compared to those relying on flawed data.                      While these documents may be available before
+Among papers employing text-based input for train-                      the decision is made, they typically represent the
+ing, only one achieves over 70% accuracy. Specifi-                      claims of one party, and therefore may not include
+cally, Medvedeva et al. (2020) attain 75% accuracy                      all relevant information. The papers report accu-
+in predicting ECtHR decisions based on summaries                        racy scores of 67%, 61% and an MCC of 0.48,
+from so-called communicated cases, prepared by                          respectively.
+the court, derived from applicant submissions, and
+                                                                           The papers predicting decisions of the US
+published before the judgments are made. How-
+                                                                        Supreme Court (e.g. Sharma et al., 2015; Katz
+ever, a study with a similar albeit smaller dataset
+                                                                        et al., 2017) often use a manually annotated SCDB
+subsequently reports a reduced accuracy rate of
+                                                                        dataset (Spaeth et al., 2014), containing 240 expert-
+65%-68% depending on the year of the test data
+                                                                        annotated variables, rather than text from legal doc-
+(Medvedeva et al., 2021).
+                                                                        uments. Such data is rarely available for other
+   Note that these summaries are only available if                      courts, and would require significant manual effort
+and when the ECtHR accepts an application and                           to compile. These papers do not use textual input,
+only for a subset of cases. Consequently, depend-                       yet both achieve 70% accuracy. Such data could
+ing on the end-user and their specific requirements,                    potentially be supplemented with, for example, de-
+these summaries may still not suffice for making                        cisions of the lower court and/or expert opinions.
+predictions. Since applicants do not have the case                      For instance, Kaufman et al. (2017) use oral argu-
+summary before they submit the applications to                          ment in combination with the annotated variables,
+the court, it is suitable for prediction only once the                  therefore creating a system that can predict deci-
+legal proceedings begin. Then applicants may use                        sions once the court case started, reporting 74%
+the case summary as input to an LJP system to esti-                     accuracy. Chen and Eagel (2017) incorporate seem-
+mate their prospects of success, potentially opting                     ingly unrelated data like weather and news trends
+for a settlement to avoid lengthy proceedings.                          to improve the performance (up to 79% accuracy).
+   Using lower court decisions to predict higher
+                                                                           Similarly, published judgments, although unsuit-
+court outcomes as explored by Waltl et al. (2017)
+                                                                        able for directly predicting judgments, could serve
+and Jacob de Menezes-Neto and Clementino (2022)
+                                                                        as a source from which to extract factors or vari-
+offers a way to use pre-judgment data, yet perfor-
+                                                                        ables that are relevant to the outcomes of those
+mance has been modest with the papers reporting
+                                                                        cases. These factors, in turn, might be used for
+F1-score of 57% and a Matthews Correlation Co-
+                                                                        prediction. For instance, Hsieh et al. (2021) extract
+efficient (MCC) of 0.37, respectively. Predicting
+                                                                        information about plaintiff and defendant, includ-
+court decisions is an inherently challenging task.
+                                                                        ing their income and debt information, to make
+The challenge is compounded by the fact that many
+                                                                        predictions about discretionary damages. However,
+countries and courts only publish a subset of their
+                                                                        it is not always obvious whether the factors are
+cases at each level, making it difficult to access
+                                                                        available in advance or will have to be established
+sufficient data from both lower and higher courts.4
+                                                                        by the court. For example, França et al. (2020);
+It is crucial to acknowledge, however, that not all
+                                                                        dos Santos et al. (2020); Bagherian-Marandi et al.
+cases eligible for appeal to a higher court will ac-
+                                                                        (2021) who also adopt this approach mention us-
+    4
+      Some countries e.g. Brazil reportedly publish the majority        ing client information, as well as extracting details
+of their case law (Jacob de Menezes-Neto and Clementino,                from judgments. However, since their data is not
+2022). Similarly, Danish Supreme Court cases are published              published or available for examination the precise
+together with underlying decisions of the lower courts, while
+the US Supreme Court publishes most case filings including              nature of the extracted features remains unclear.
+parties’ briefs.                                                        Bagherian-Marandi et al. (2021), for instance, has
+                                                                   77
+the value of the claim as one of the features. This            using data extracted from cases in which the judg-
+feature could relate either to the sum claimed in the          ment is already available as the model input. They
+initial submission (appropriate data) or the sum de-           also implicitly signal that the performance scores
+termined during the course of the proceedings, with            of models tested on the datasets are meaningful
+the latter not being available prior to the judgment           indicators of performance in the real-world task of
+(inappropriate data). Therefore, the performance of            prediction of (future) judgment.
+these systems should be tested on data provided by                Do the ‘predictions’ output by models tested
+the users rather than relying on extracted data. This          against such benchmarks have any real-world util-
+approach ensures that the system’s performance                 ity? We suggest they do not. Such ‘predictions’
+mirrors a real-world scenario.                                 involve labelling or categorising input data as cor-
+   Given the scarcity of papers conducting research            related with a particular (already known) outcome
+on appropriate data and the relatively modest per-             (Medvedeva et al., 2023). These ‘predictions’ have
+formance of many of those systems, it is evident               no informational value for lawyers, their clients
+that there is substantial room for investigation to            or others who wish to obtain a prediction of a fu-
+establish the most effective approaches for LJP.               ture judgment (Bex and Prakken, 2021; Medvedeva
+We have offered examples of data that might be                 et al., 2023). Moreover, to our knowledge there is
+appropriate for LJP (‘good’ data). However fur-                no research indicating that any improvements of
+ther research is needed to establish what ‘good’               the results on such a dataset would translate to im-
+data is available to researchers in different jurisdic-        proved performance in a real-world context. In
+tions, and, of this data, which may produce optimal            fact, we are only aware of research that has demon-
+results. Crucially however, and contrary to the                strated the contrary (see Medvedeva et al. (2021).
+approach adopted in the vast majority of papers,                  To mitigate these issues, we propose that the
+doing LJP ‘right’ depends on selecting and using               ideal test set should - at a minimum - consist of
+data that predates the judgment.                               data in which no information has been derived from
+                                                               the judgments that one is predicting. Instead, this
+6   Benchmark datasets                                         data should be gathered from the parties involved
+                                                               in the case or from documents accessible before
+As we have discussed, the facts of the judgments               the decision-making process. Conducting an ex-
+that one is predicting are the wrong data for the              periment in which data is gathered for cases that
+LJP task. It follows that benchmark datasets, such             are still pending decisions, followed by a waiting
+as CAIL2018 (Xiao et al., 2018), LexGLUE ECHR                  period until the court issues its judgments for com-
+A & B (Chalkidis et al., 2022) or ILDC CJPE (Ma-               parison, would be the most dependable method to
+lik et al., 2021) whose input data consists of facts           safeguard against flawed test results. Although this
+extracted from judgments, are of little or no assis-           approach may present increased difficulties due
+tance for the task of prediction of future judgments.          to its longitudinal nature, it would guarantee the
+Models which predict a future judgment can only                reliability of the test results.
+be benchmarked on a dataset containing textual
+representations of facts that are available before the         7   Addressing explainability
+judgment.
+   Endorsement by the NLP community of datasets                The real-world utility of LJP systems may also de-
+such as CAIL2018, LexGLUE ECHR and ILDC                        pend on their explainability. “[I]n Law the explana-
+CJPE as benchmarks for prediction of judgment has              tion is what matters” (Bench-Capon, 2021). When
+ramifications. Koch et al. (2021) note that “When              lawyers give advice about outcomes, they gener-
+they institutionalize benchmark datasets, task com-            ally explain why an outcome or range of outcomes
+munities implicitly endorse these data as mean-                might be likely. They explain how the law may
+ingful abstractions of a task or problem domain.               apply to the client’s problem. Similarly, judges
+The institutionalization of benchmarks influences              usually offer explanations which serve to justify
+the behavior of both researchers and end-users.”               their decisions with reference to the facts found to
+CAIL2018, LexGLUE ECHR, ILDC CJPE and                          be established and the relevant law. This aspect
+similar datasets implicitly signal to researchers,             of judicial practice relates to the public character
+lawyers and policy makers that it is meaningful                of law and the ability of citizens to engage with
+to carry out the task of prediction of judgment by             the law (Waldron, 2008). Both lawyers and judges
+                                                          78
+provide explanations which involve the exercise of           would not represent the ‘reasoning steps’ of the
+legal reasoning (Branting, 2020). These explana-             predictive model though they may provide an ex
+tions have a particular form. They link the facts            post explanation of the prediction.
+of the case and the law to the conclusion; they are             The focus on explainability is welcome, and cer-
+grounded in law. We also expect these explana-               tain of these approaches may hold some promise.
+tions to meet a qualitative standard; we want them           However, for most users and use cases, the expla-
+to accurately represent the law and to demonstrate           nations (if they are to be useful) must be grounded
+sound reasoning.                                             in law, relate to predictions of future judgments
+   Is it necessary that LJP systems issue explana-           and evaluated for soundness by suitable methods.
+tions that are grounded in law? This may depend              We are not aware of any LJP system that outputs
+on how, by whom and for whose benefit these sys-             ‘explanations’ that meet all three criteria. This ex-
+tems will be used. Despite our reservations, these           plainability deficit is a significant limitation which
+systems might be used in place of judges, to make            is relevant for the evaluation of LJP models, for
+decisions rather than merely offering predictions.           their real-world utility and for the potential bene-
+In that scenario, it would seem essential for such           fits, harms and impacts associated with their use.
+a system to be capable of providing an explana-
+tion of its output that is grounded in law (Završnik,        8   An ethical approach to model
+2020). Otherwise, how could one assess whether                   evaluation and reporting
+the output was justified according to legal stan-            We have suggested that current practice in rela-
+dards, or how, and on what legal basis, litigants            tion to the evaluation of LJP models is frequently
+might challenge the output of the system? Simi-              flawed, involving a race-to-the-top against bench-
+larly, if persons without legal representation use           mark datasets unsuited for the task of prediction of
+these systems to estimate their prospects of suc-            future judgments and a failure to consider intended
+cess in a court case, it would seem essential for the        users and use cases. If these issues are relevant for
+system to provide an explanation grounded in law.            training and testing a system, they are also relevant
+How else could such persons make sense of those              for further evaluation and reporting. We favour
+outputs? If on the other hand lawyers use these              an approach to evaluation which is “application-
+systems as additional tools, it might be desirable           centric” (Hutchinson et al., 2022), that is, an ap-
+but not essential for the system to provide expla-           proach which considers the fitness of the model for
+nations grounded in law. Lawyers should provide              its real-world application context. An application-
+their own explanations of the outcome or outcomes            centric approach would necessarily entail a focus
+they consider likely.                                        on the intended user and use case and highlight
+   A range of approaches to explainability can be            the unsuitability of LJP benchmark datasets com-
+found in the LJP literature. For example, machine            prising formulations of ‘facts’ only available at the
+learning systems which frame LJP as a classifica-            point of judgment.
+tion task may output an ‘explanation’ about which               An application-centric approach takes account
+features the system treats as important. The system          of direct benefits and harms to users and those af-
+may output descriptions or visualisations of which           fected by the outputs of the system (Hutchinson
+words, sentences or paragraphs of the input data             et al., 2022). Adoption of this approach to evalua-
+(usually the ‘facts’ of a case) contributed to the           tion therefore requires a good understanding of the
+output predictions (Medvedeva et al., 2020; Malik            context in which a model is likely to be used, who
+et al., 2021). Alternatively, machine learning sys-          will benefit or suffer adverse consequences as a
+tems that treat LJP as a text generation task may            result of such use and how those consequences are
+generate text in the form of steps of reasoning (a           likely to arise. It requires a sufficient understand-
+chain of thought) or a legal syllogism together with         ing of the way in which LJP systems might shape
+a conclusion (a prediction) (Jiang and Yang, 2023).          lawyers’ advice and judges’ determinations, ulti-
+The ‘reasoning’ steps serve as the explanation. Hy-          mately affecting legal outcomes for citizens, and
+brid systems which combine machine learning with             a recognition that these systems are “intended to
+symbolic reasoning approaches may output justi-              inform decisions about matters central to human
+fications of the predictions output by the system            life or flourishing” (Mitchell et al., 2019). More
+(Prakken and Ratsma, 2022). These justifications             concretely, it requires an appreciation that a citi-
+                                                        79
+zen might suffer harm if, for example, a system                9   Discussion
+suggests a claim will succeed when the claim is
+doomed to failure on legal grounds, or provides                Despite the perception of prolific research activity,
+a judge with an overly harsh recommendation in                 the reality is that the LJP field has produced only a
+relation to sentencing.                                        meagre 12 papers to date, covering 9 courts, and re-
+                                                               porting performance scores between 56% and 79%
+   Crucially an application-centric approach takes             accuracy. By diverting resources and attention to-
+into account the potential impact of “changes to the           wards systems that do not deliver on their promises,
+ecosystem itself” (Hutchinson et al., 2022). In the            researchers and developers may be discouraged
+case of LJP systems this entails reflection on how             from pursuing more appropriate and impactful av-
+the use of these systems may affect the ecosystems             enues. The atmosphere of competition, with nu-
+of law and legal practice. For example, if judges              merous models claiming accuracy rates exceeding
+were to align their decisions with the outputs of              90%, may hinder the publication of rigorous initial-
+LJP systems, this might lend credibility to the no-            stage research and incremental advancements in the
+tion that machines can engage in legal reasoning,              field that produce much lower performance. Con-
+reduce the human element in decision-making, de-               sequently, it impedes the overall progress of LJP
+value legal reasoning and de-skill judges. Lawyers             research.
+who use these systems might be “encourage[d] ...                   Such faulty research not only hampers scien-
+to base their litigation strategy on factors other than        tific progress but also poses potential risks to indi-
+the legal merits of the case” (Diver et al., 2022).            viduals. For instance, a system such as ADELE,
+Law might stagnate; as Bench-Capon (2021) notes,               while conceived as an academic project, can be
+the model producing the prediction can only be                 used to make predictions based on claims provided
+“trained on past decisions”. There is a risk of con-           by users, even though it was not trained or eval-
+fusing or conflating what LJP systems can do with              uated on such data. Given the inflated scores of
+the exercise of legal reasoning within a legal insti-          systems claiming to be predicting court decisions,
+tutional framework which allows for “interpreta-               there is a distinct possibility that these systems may
+tion, contestation and argumentation” (Hildebrandt,            eventually find their way onto the market and into
+2019). The impacts are likely to be amplified if the           courts.
+systems are used for decision-making rather than
+                                                                   We propose a number of recommendations to
+decision-support. In that context, the inability of
+                                                               address the concerns outlined in this paper. We
+LJP systems to provide explanations grounded in
+                                                               recommend that researchers building and reporting
+law could have serious ramifications. Of course,
+                                                               on systems that claim to do LJP identify the end-
+the use of these systems might also produce bene-
+                                                               user, the application of the system and the stage in
+fits - the point is to reflect on the impact of the
+                                                               the legal process when the system would be used.
+research and the technology on the application
+                                                               Researchers should then evaluate whether the data
+ecosystem.
+                                                               they plan to use is available to the user at that stage
+   We suggest that an application-centric approach             of the proceedings or collect a new dataset. De-
+is both necessary and appropriate where re-                    pending on the purpose of the application one may
+searchers maintain that the systems they develop               choose to create a system that offers some form of
+have real-world utility. It encourages trust; instead          explainability, whether in the sense of explaining
+of merely claiming real-world utility, researchers             how the model makes the prediction (for instance,
+would demonstrate their attention to the context               for error analysis and correction) or, explanations
+of application. It is “better aligned with the needs           that take the form of legal reasoning. When build-
+of decision-makers who consider whether to use a               ing such a system, even within academic research,
+model in an application.” (Hutchinson et al., 2022).           one should keep in mind and report not only po-
+Model cards, (Mitchell et al., 2019) which allow               tential benefits, but also potential harms that might
+for reporting on the intended user, intended use               result from use of the system. We encourage de-
+case, the benefits, harms and social impacts, might            velopers to also consider the broader impact that
+be of use in this context. We encourage the use of             the system may have on individuals, law, legal pro-
+such a reporting framework as a means of clearly               cedures and society as a whole. We summarise
+and transparently communicating evaluations of                 these recommendations in a schematic checklist
+models which look beyond accuracy metrics.                     available in Appendix A.
+                                                          80
+10    Conclusion                                                  ternational Conference on Artificial Intelligence and
+                                                                  Law, pages 175–179.
+Our paper delves into the current landscape of Le-
+                                                                Karl Branting, Carlos Balhana, Craig Pfeifer, John S Ab-
+gal Judgment Prediction (LJP) research and its is-
+                                                                  erdeen, and Bradford Brown. 2020. Judges are from
+sues. Through examination of 171 papers, we find                  Mars, pro se litigants are from Venus: Predicting
+that only a small fraction of LJP papers which claim              decisions from lay text. In JURIX, pages 215–218.
+to predict court decisions achieve this objective.
+                                                                L Karl Branting. 2020. Explanation in hybrid, two-
+The majority falter by using the wrong data for the               stage models of legal prediction. In The 3rd XAILA
+task at hand. Despite many papers reporting ex-                   Workshop at JURIX.
+ceptionally high performance, it becomes evident                L Karl Branting, Craig Pfeifer, Bradford Brown, Lisa
+that the task of LJP proves to be considerably more               Ferro, John Aberdeen, Brandy Weiss, Mark Pfaff,
+challenging when researchers use an appropriate                   and Bill Liao. 2021. Scalable and explainable legal
+experimental setup.                                               prediction. Artificial Intelligence and Law, 29:213–
+                                                                  238.
+   In addition, we scrutinise when and for whom
+LJP has real-world utility. We emphasise the im-                European Commission for the Efficiency of Justice
+portance of considering the end-user and the use                  CEPEJ. 2018. European ethical charter on the use of
+                                                                  artificial intelligence in judicial systems and their en-
+case when developing the models. The prevalent
+                                                                  vironment. European Ethical Charter on the Use of
+reliance on readily available data and benchmark                  Artificial Intelligence in Judicial Systems and Their
+datasets is not in line with this focus. We advocate              Environment.
+for a shift in approach to redirect the field away              Ilias Chalkidis, Abhik Jana, Dirk Hartung, Michael
+from a potentially futile trajectory, ultimately pre-              Bommarito, Ion Androutsopoulos, Daniel Katz, and
+venting the misallocation of resources on endeavors                Nikolaos Aletras. 2022. LexGLUE: A benchmark
+that lack practical utility within the legal domain.               dataset for legal language understanding in English.
+                                                                   In Proceedings of the 60th Annual Meeting of the
+Acknowledgements                                                   Association for Computational Linguistics (Volume
+                                                                   1: Long Papers), pages 4310–4330, Dublin, Ireland.
+The second author, Pauline McBride, is funded by                   Association for Computational Linguistics.
+the European Research Council (ERC) under the                   Daniel L Chen and Jess Eagel. 2017. Can machine
+HORIZON2020 Excellence of Science programme                       learning help predict the outcome of asylum adjudi-
+ERC-2017-ADG No 788734                                            cations? In Proceedings of the 16th edition of the
+                                                                  International Conference on Articial Intelligence and
+                                                                  Law, pages 237–240.
+References                                                      Joe Collenette, Katie Atkinson, and Trevor Bench-
+                                                                  Capon. 2020. An explainable approach to deducing
+Nikolaos Aletras, Dimitrios Tsarapatsanis, Daniel                 outcomes in European Court of Human Rights cases
+  Preoţiuc-Pietro, and Vasileios Lampos. 2016. Pre-              using ADFs. Frontiers in Artificial Intelligence and
+  dicting judicial decisions of the European Court of             Applications, 326:21–32.
+  Human Rights: A natural language processing per-
+  spective. PeerJ Computer Science, 2.                          Joe Collenette, Katie Atkinson, and Trevor Bench-
+                                                                  Capon. 2023. Explainable AI tools for legal reason-
+Julia Angwin, Jeff Larson, Surya Mattu, and Lau-                  ing about cases: A study on the European Court of
+   ren Kirchner. 2016. Machine bias: there’s soft-                Human Rights. Artificial Intelligence, 317:103861.
+   ware used across the country to predict future crim-
+   inals. and it’s biased against blacks. ProPublica            Laurence Diver, Pauline McBride, Masha Medvedeva,
+   2016. Https://www.propublica.org/article/machine-              Arjun Bhubaneshwar Banerjee, Eva D’hondt, Ta-
+   bias-risk-assessments-in-criminal-sentencing.                  tiana Duarte Nicolau, Desara Dushi, Gianmarco Gori,
+                                                                  Emilie Van Den Hoven, Paulus Meessen, et al. 2022.
+Navid Bagherian-Marandi, Mehdi Ravanshadnia, and                  Typology of legal technologies. In Cross-disciplinary
+  Mohammad-R Akbarzadeh-T. 2021. Two-layered                      Research in Computational Law (CRCL): Computa-
+  fuzzy logic-based model for predicting court deci-              tional’Law’on Edge.
+  sions in construction contract disputes. Artificial
+  intelligence and law, pages 1–32.                             Pedro TC dos Santos, Fernando Henrique, Venicius Gar-
+                                                                  cia, Victor RS Ferreira, Antonino C dos Santos Neto,
+Trevor Bench-Capon. 2021. The need for good old                   Johnatan C Souza, Caio Manfredini, João VF França,
+  fashioned AI and law. Jusletter-IT, (fses):23–35.               José MC Boaro, Geraldo Braz Junior, et al. 2020.
+                                                                  Multiclass legal judgment outcome prediction for
+Floris Bex and Henry Prakken. 2021. On the relevance              consumer lawsuits using XGBoost and TPE. In 2020
+   of algorithmic decision predictors for judicial deci-          IEEE International Conference on Systems, Man, and
+   sion making. In Proceedings of the Eighteenth In-              Cybernetics (SMC), pages 881–886. IEEE.
+
+                                                           81
+João VF França, José MC Boaro, Pedro TC dos Santos,             Reed C Lawlor. 1963. What computers can do: Anal-
+  Fernando Henrique, Venicius Garcia, Caio Manfre-                ysis and prediction of judicial decisions. American
+  dini, Domingos AD Júnior, Francisco YC de Oliveira,             Bar Association Journal, pages 337–344.
+  Carlos EP Castro, Geraldo Braz Junior, et al. 2020.
+  Legal judgment prediction in the context of energy            Kobi Leins, Jey Han Lau, and Timothy Baldwin. 2020.
+  market using gradient boosting. In 2020 IEEE Inter-             Give me convenience and give her death: Who should
+  national Conference on Systems, Man, and Cybernet-              decide what uses of NLP are appropriate, and on what
+  ics (SMC), pages 875–880. IEEE.                                 basis? In Proceedings of the 58th Annual Meeting of
+                                                                  the Association for Computational Linguistics, pages
+Federico Galli, Giulia Grundler, Alessia Fidelangeli,             2908–2913, Online. Association for Computational
+  Andrea Galassi, Francesca Lagioia, Elena Palmieri,              Linguistics.
+  Federico Ruggeri, Giovanni Sartor, and Paolo Tor-
+  roni. 2022. Predicting outcomes of Italian VAT deci-          Ejan Mackaay and Pierre Robillard. 1974. Predicting
+  sions. In Legal Knowledge and Information Systems,              judicial decisions: The nearest neighbour rule and
+  pages 188–193. IOS Press.                                       visual representation of case patterns, volume 3(3-4).
+
+David Golumbia. 2015. Judging like a machine. In                Vijit Malik, Rishabh Sanjay, Shubham Kumar Nigam,
+  Postdigital aesthetics: art, computation and design,            Kripa Ghosh, Shouvik Kumar Guha, Arnab Bhat-
+  pages 123–135. Springer.                                        tacharya, and Ashutosh Modi. 2021. ILDC for
+                                                                  CJPE: Indian legal documents corpus for court judg-
+Andrew Griffin. 2016. Robot judges could soon be                  ment prediction and explanation. arXiv preprint
+  helping out with court cases. Accessed: 11-08-2023.             arXiv:2105.13562.
+Mireille Hildebrandt. 2019. Data-driven prediction of           Christopher Markou. 2020. Are we ready for robot
+  judgment. Law’s new mode of existence?                          judges? Accessed: 11-08-2023.
+Decheng Hsieh, Lieuhen Chen, and Taiping Sun. 2021.             Devin J McConnell, James Zhu, Sachin Pandya, and
+  Legal judgment prediction based on machine learn-               Derek Aguiar. 2021. Case-level prediction of mo-
+  ing: Predicting the discretionary damages of mental             tion outcomes in civil litigation. In Proceedings of
+  suffering in fatal car accident cases. Applied Sci-             the Eighteenth International Conference on Artificial
+  ences, 11(21):10361.                                            Intelligence and Law, pages 99–108.
+Ben Hutchinson, Negar Rostamzadeh, Christina Greer,             Masha Medvedeva, Ahmet Üstun, Xiao Xu, Michel
+  Katherine Heller, and Vinodkumar Prabhakaran.                  Vols, and Martijn Wieling. 2021. Automatic judge-
+  2022. Evaluation gaps in machine learning prac-                ment forecasting for pending applications of the Eu-
+  tice. In Proceedings of the 2022 ACM Conference on             ropean Court of Human Rights. In Proceedings of
+  Fairness, Accountability, and Transparency, pages              the Fifth Workshop on Automated Semantic Analysis
+  1859–1876.                                                     of Information in Legal Text (ASAIL 2021).
+Elias Jacob de Menezes-Neto and Marco Bruno Miranda
+                                                                Masha Medvedeva, Martijn Wieling, and Michel Vols.
+   Clementino. 2022. Using deep learning to predict
+                                                                 2023. Rethinking the field of automatic prediction
+   outcomes of legal appeals better than human experts:
+                                                                 of court decisions. Artificial Intelligence and Law,
+   A study with data from Brazilian federal courts. PloS
+                                                                 31(1):195–212.
+   one, 17(7):e0272287.
+                                                                Masha Medvedeva, Xiao Xu, Martijn Wieling, and
+Cong Jiang and Xiaolei Yang. 2023. Legal syllogism
+                                                                 Michel Vols. 2020. JURI SAYS: Prediction system
+  prompting: Teaching large language models for legal
+                                                                 for the European Court of Human Rights. In Legal
+  judgment prediction. In Proceedings of the Nine-
+                                                                 Knowledge and Information Systems: JURIX 2020:
+  teenth International Conference on Artificial Intelli-
+                                                                 The Thirty-third Annual Conference, Brno, Czech Re-
+  gence and Law, pages 417–421.
+                                                                 public, December 9-11, 2020, volume 334, page 277.
+Daniel Martin Katz, Michael J Bommarito II, and Josh             IOS Press.
+  Blackman. 2017. A general approach for predicting
+  the behavior of the Supreme Court of the United               Margaret Mitchell, Simone Wu, Andrew Zaldivar,
+  States. PloS one, 12(4).                                       Parker Barnes, Lucy Vasserman, Ben Hutchinson,
+                                                                 Elena Spitzer, Inioluwa Deborah Raji, and Timnit
+Aaron Kaufman, Peter Kraft, and Maya Sen. 2017. Ma-              Gebru. 2019. Model cards for model reporting. In
+  chine learning, text data, and Supreme Court fore-             Proceedings of the conference on fairness, account-
+  casting. Project Report, Harvard University.                   ability, and transparency, pages 220–229.
+
+Jemima Kelly. 2022. AI-driven justice may be better             Vesna Naglič et al. 2013. National practices with regard
+  than none at all. Accessed: 11-08-2023.                         to the accessibility of court documents.
+Bernard Koch, Emily Denton, Alex Hanna, and Jacob G             Frank Pasquale and Glyn Cashwell. 2018. Prediction,
+  Foster. 2021. Reduced, reused and recycled: The                 persuasion, and the jurisprudence of behaviourism.
+  life of a dataset in machine learning research. arXiv           University of Toronto Law Journal, 68(supplement
+  preprint arXiv:2112.01716.                                      1):63–81.
+
+                                                           82
+Henry Prakken and Rosa Ratsma. 2022. A top-level                  Chaojun Xiao, Haoxi Zhong, Zhipeng Guo, Cunchao Tu,
+  model of case-based argumentation for explanation:                Zhiyuan Liu, Maosong Sun, Yansong Feng, Xianpei
+  formalisation and experiments. Argument & Compu-                  Han, Zhen Hu, Heng Wang, et al. 2018. CAIL2018:
+  tation, 13(2):159–194.                                            A large-scale legal dataset for judgment prediction.
+                                                                    arXiv preprint arXiv:1807.02478.
+Alexandre Quemy and Robert Wrembel. 2022. ECHR-
+  OD: On building an integrated open repository of                Aleš Završnik. 2020. Criminal justice, artificial intel-
+  legal documents for machine learning applications.                ligence systems, and human rights. In ERA forum,
+  Information Systems, 106:101822.                                  volume 20, pages 567–583. Springer.
+Gil Semo, Dor Bernsohn, Ben Hagag, Gila Hayat, and
+  Joel Niklaus. 2022. ClassActionPrediction: A chal-
+  lenging benchmark for legal judgment prediction of
+  class action cases in the US. In Proceedings of the
+  Natural Legal Language Processing Workshop 2022,
+  pages 31–46.
+Mehmet Fatih Sert, Engin Yıldırım, and İrfan Haşlak.
+ 2022. Using artificial intelligence to predict deci-
+ sions of the turkish constitutional court. Social Sci-
+ ence Computer Review, 40(6):1416–1435.
+Ranti Dev Sharma, Sudhanshu Mittal, Samarth Tripathi,
+  and Shrinivas Acharya. 2015. Using modern neural
+  networks to predict the decisions of Supreme Court
+  of the United States with state-of-the-art accuracy.
+  In International Conference on Neural Information
+  Processing, pages 475–483. Springer.
+Harold Spaeth, Lee Epstein, Ted Ruger, Keith Whit-
+  tington, Jeffrey Segal, and Andrew D Martin. 2014.
+  Supreme Court database code book.
+Octavia-Maria Sulea, Marcos Zampieri, Shervin Mal-
+  masi, Mihaela Vela, Liviu P Dinu, and Josef Van Gen-
+  abith. 2017. Exploring the use of text classification in
+  the legal domain. In In Proceedings of the 2nd Work-
+  shop on Automated Semantic Analysis of Information
+  in Legal Texts (ASAIL 2017).
+Elizabeth C Tippett, Charlotte S Alexander, Karl Brant-
+   ing, Paul Morawski, Carlos Balhana, Craig Pfeifer,
+   and Sam Bayer. 2021. Does lawyering matter?
+   Predicting judicial decisions from legal briefs, and
+   what that means for access to justice. Tex. L. Rev.,
+   100:1157.
+Detlev F Vagts. 1978. Legal opinions in quantitative
+  terms: The lawyer as haruspex or bookie. Bus. Law.,
+  34:421.
+Dávid Varga, Zoltán Szoplák, Stanislav Krajci, Pavol
+  Sokol, and Peter Gurskỳ. 2021. Analysis and predic-
+  tion of legal judgements in the Slovak criminal.
+Jeremy Waldron. 2008. The concept and the rule of law.
+   Ga L Rev, 43.
+Jeremy Waldron. 2011. The rule of law and the im-
+   portance of procedure. Getting to the Rule of Law,
+   3:4–5.
+Bernhard Waltl, Georg Bonczek, Elena Scepankova,
+  Jörg Landthaler, and Florian Matthes. 2017. Predict-
+  ing the outcome of appeal decisions in Germany’s
+  tax law. In International Conference on Electronic
+  Participation, pages 89–99. Springer.
+
+                                                             83
+A   Appendix A: Checklist for developing Legal Judgment Prediction systems
+
+End-User:
+
+ □ Clearly establish the end-user of the system.
+
+System Application:
+
+ □ Define the specific application and purpose of the system within the legal process.
+
+ □ Determine the stage within the legal process where the system would be used (e.g. prior to going to
+   court, during proceedings).
+
+Data Evaluation:
+
+ □ Assess whether the test set mirrors the data available to the user at the relevant stage of the legal
+   proceeding according to the defined application.
+
+Explainability:
+
+ □ Evaluate whether the system needs to provide explanations for its predictions given the application
+   and, if so, specify the nature of the explanations required.
+
+Ethical considerations:
+
+ □ Identify potential benefits or harms related to system performance, such as (incorrect) predictions
+   affecting legal proceedings, individual’s lives and legal protections.
+
+ □ Consider potential broader repercussions of system design choices, including impacts on individuals,
+   law, legal procedures, and society at large.
+
+
+
+
+                                                   84
+

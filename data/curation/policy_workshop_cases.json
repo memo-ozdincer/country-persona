@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "authorship": "assistant-authored synthetic tasks, drafts, corrections and structured annotations; source evidence is separately verified",
+  "cases": [
+    {
+      "id": "FRA-european-defence-2025",
+      "task": "Edit a delegation briefing on European defence procurement. Preserve the relationship between European capability building and the Atlantic Alliance.",
+      "chosen": "The review calls for a stronger European pillar within the Atlantic Alliance, increased defence and national-security capabilities, and prioritising European-made solutions.",
+      "error": "alliance_relationship",
+      "explanation": "The passage explicitly places the stronger European pillar within the Atlantic Alliance. European procurement preferences do not establish an intention to leave that framework.",
+      "limit": "The passage does not settle a specific procurement contract or deployment.",
+      "facts": {
+        "alliance_relationship": "European pillar within the Atlantic Alliance",
+        "capability_priority": "increase defence and national-security capabilities",
+        "procurement_preference": "European-made solutions",
+        "specific_procurement_decision": null
+      },
+      "rejected": "The review calls for a stronger European pillar outside the Atlantic Alliance, increased defence and national-security capabilities, and prioritising European-made solutions."
+    },
+    {
+      "id": "FRA-nuclear-doctrine-2025",
+      "task": "Check a policy memo summarising the published allocation of nuclear authority and the precision of the doctrine. Do not supply operational scenarios.",
+      "chosen": "The review assigns nuclear use to the President, describes a strictly defensive purpose, and deliberately leaves the exact circumstances ambiguous.",
+      "error": "unsupported_precision",
+      "explanation": "Paragraph 169 explicitly retains deliberate ambiguity about exact circumstances. The published defensive purpose and presidential authority do not supply an exact decision rule.",
+      "limit": "An exact use threshold cannot be recovered from this passage.",
+      "facts": {
+        "decision_authority": "President of the Republic",
+        "purpose": "strictly defensive",
+        "exact_use_threshold": null,
+        "threshold_status": "deliberately ambiguous"
+      },
+      "rejected": "The review assigns nuclear use to the President, describes a strictly defensive purpose, and publicly specifies the exact circumstances."
+    },
+    {
+      "id": "GBR-nato-first-2025",
+      "task": "Check a staff briefing that translates NATO First into concrete defence-planning implications.",
+      "chosen": "The strategy makes NATO foremost in how the UK armed forces plan, invest, train and equip themselves.",
+      "error": "priority_reversal",
+      "explanation": "The source expressly says NATO will be foremost across planning, investment, training and equipment; making it secondary reverses the stated priority.",
+      "limit": "The organising priority alone does not resolve an individual purchase or deployment.",
+      "facts": {
+        "organising_priority": "NATO foremost",
+        "applies_to": [
+          "planning",
+          "investment",
+          "training",
+          "equipment"
+        ],
+        "specific_deployment": null
+      },
+      "rejected": "The strategy makes NATO secondary in how the UK armed forces plan, invest, train and equip themselves."
+    },
+    {
+      "id": "GBR-climate-2035-2025",
+      "task": "Check a climate-comparison briefing, preserving the target, baseline year and sector coverage.",
+      "chosen": "The UK target is at least an 81% reduction in greenhouse-gas emissions by 2035 relative to 1990, excluding international aviation and shipping.",
+      "error": "sector_scope",
+      "explanation": "The parenthetical in the source excludes international aviation and shipping. The percentage, baseline and target year do not cancel that exclusion.",
+      "limit": "This passage does not establish delivery of the target or a GDP-intensity commitment.",
+      "facts": {
+        "metric": "greenhouse-gas emissions reduction",
+        "reduction_percent_minimum": 81,
+        "baseline_year": 1990,
+        "target_year": 2035,
+        "excluded_sectors": [
+          "international aviation",
+          "international shipping"
+        ],
+        "achievement_verified": null
+      },
+      "rejected": "The UK target is at least an 81% reduction in greenhouse-gas emissions by 2035 relative to 1990, including international aviation and shipping."
+    },
+    {
+      "id": "IND-climate-2030-2022",
+      "task": "Check a climate-comparison briefing, distinguishing emissions metrics and installed capacity from generation.",
+      "chosen": "India commits to reduce emissions intensity of GDP by 45% by 2030 from 2005, and achieve about 50% cumulative installed electric-power capacity from non-fossil resources by 2030.",
+      "error": "metric_substitution",
+      "explanation": "The 45% commitment is emissions intensity of GDP, not total emissions. The second commitment concerns non-fossil installed capacity, which must also remain distinct from electricity generated or renewables alone.",
+      "limit": "The excerpt provides no absolute-emissions trajectory or generation-share target.",
+      "facts": {
+        "emissions_metric": "emissions intensity of GDP",
+        "reduction_percent": 45,
+        "baseline_year": 2005,
+        "target_year": 2030,
+        "capacity_metric": "cumulative installed electric-power capacity",
+        "non_fossil_capacity_percent_approximate": 50,
+        "absolute_emissions_reduction_percent": null,
+        "renewable_generation_percent": null
+      },
+      "rejected": "India commits to reduce total emissions by 45% by 2030 from 2005, and achieve about 50% cumulative installed electric-power capacity from non-fossil resources by 2030."
+    },
+    {
+      "id": "IND-wto-differential-treatment-2020",
+      "task": "Check a dated WTO briefing on whether forgoing special and differential treatment is voluntary or mandatory.",
+      "chosen": "The Indian report argues for preserving special and differential treatment for developing members and regards voluntary decisions by members able to forgo it as more acceptable.",
+      "error": "voluntary_vs_mandatory",
+      "explanation": "Paragraph 6.7 describes members voluntarily deciding to forgo treatment. Converting that option into a requirement changes the proposal the report regards as more acceptable.",
+      "limit": "The report does not establish that India itself waived treatment or that this remains its current position.",
+      "facts": {
+        "general_position": "preserve special and differential treatment for developing members",
+        "waiver_basis": "voluntary for members considering themselves able",
+        "india_waiver_observed": null,
+        "current_position_verified": null
+      },
+      "rejected": "The Indian report argues for preserving special and differential treatment for developing members and regards mandatory decisions by members able to forgo it as more acceptable."
+    },
+    {
+      "id": "IND-fisheries-subsidies-2020",
+      "task": "Check a fisheries-subsidy briefing that must preserve both subsidy disciplines and livelihood qualifications.",
+      "chosen": "The Indian report supports strong disciplines on harmful fisheries subsidies while calling for adequate policy space for subsistence, artisanal and small-scale fishers.",
+      "error": "qualification_reversal",
+      "explanation": "The report supports disciplines and explicitly says adequate policy space is required for the specified fishers. Reversing that qualification misrepresents its balance of sustainability and livelihoods.",
+      "limit": "The passage does not specify a negotiated exemption duration, monetary threshold or final treaty outcome.",
+      "facts": {
+        "disciplines": "supports strong disciplines on harmful fisheries subsidies",
+        "qualification": "adequate policy space and special and differential treatment",
+        "livelihood_groups": [
+          "subsistence fishers",
+          "artisanal fishers",
+          "small-scale fishers"
+        ],
+        "agreed_exemption_duration": null
+      },
+      "rejected": "The Indian report supports strong disciplines on harmful fisheries subsidies while rejecting adequate policy space for subsistence, artisanal and small-scale fishers."
+    },
+    {
+      "id": "BRA-climate-2035-2024",
+      "task": "Check an English briefing derived from a Portuguese NDC passage. Preserve the range, baseline and accounting metric.",
+      "chosen": "Brazil states a 59–67% emissions-reduction range for 2035 relative to 2005, consistent with an absolute emissions level of 1.05–0.85 GtCO2e using GWP AR5.",
+      "error": "baseline_substitution",
+      "explanation": "The Portuguese passage says emissions in 2005. Replacing the baseline with 1990 makes the statement inconsistent with the source even though the range, target year and GWP AR5 levels remain unchanged.",
+      "limit": "The passage gives a target range, not proof of attainment or an unqualified promise to reach its upper reduction bound.",
+      "facts": {
+        "reduction_percent_range": [
+          59,
+          67
+        ],
+        "baseline_year": 2005,
+        "target_year": 2035,
+        "absolute_emissions_gtco2e_corresponding": [
+          1.05,
+          0.85
+        ],
+        "accounting_metric": "GWP AR5",
+        "achievement_verified": null
+      },
+      "rejected": "Brazil states a 59–67% emissions-reduction range for 2035 relative to 1990, consistent with an absolute emissions level of 1.05–0.85 GtCO2e using GWP AR5."
+    },
+    {
+      "id": "BRA-wto-differential-treatment-2022",
+      "task": "Check a dated WTO briefing, separating Brazil’s own choice from the flexibility it supports for other members.",
+      "chosen": "Brazil’s 2022 report describes its 2019 decision to begin forgoing special and differential treatment in current and future negotiations, while supporting needs-based flexibility for other developing members.",
+      "error": "other_members_scope",
+      "explanation": "Paragraph 3.24 both reports Brazil’s own decision and supports flexibility for least-developed and other developing members according to their needs. Brazil’s waiver must not be projected onto every member.",
+      "limit": "The report is dated evidence; it does not verify that Brazil’s position remains unchanged today.",
+      "facts": {
+        "reported_decision_year": 2019,
+        "brazil_choice": "begin forgoing special and differential treatment",
+        "scope": "current and future WTO negotiations",
+        "others": "needs-based flexibility for least-developed and other developing members",
+        "current_position_verified": null
+      },
+      "rejected": "Brazil’s 2022 report describes its 2019 decision to begin forgoing special and differential treatment in current and future negotiations, while opposing needs-based flexibility for other developing members."
+    },
+    {
+      "id": "BRA-unilateral-sanctions-2024",
+      "task": "Check an English briefing of the attributed ministry note, retaining the distinction between national measures and Security Council sanctions.",
+      "chosen": "The attributed Brazilian ministry note opposes the Cuba embargo and extraterritorial discriminatory national laws, and characterises Security Council sanctions as supported by international law.",
+      "error": "attributed_position_reversal",
+      "explanation": "The attributed note presents Security Council adoption as the basis for sanctions supported by international law. The draft reverses that stated position. This is an attribution check, not an independent legal conclusion.",
+      "limit": "The compendium attributes the note to 30 October 2024; its publication availability is unverified and it is unsuitable for historical forecasting.",
+      "facts": {
+        "attributed_note_date": "2024-10-30",
+        "opposes": [
+          "Cuba embargo",
+          "extraterritorial discriminatory national laws"
+        ],
+        "security_council_sanctions": "characterised by the attributed note as supported by international law",
+        "independent_legal_ruling": false
+      },
+      "rejected": "The attributed Brazilian ministry note opposes the Cuba embargo and extraterritorial discriminatory national laws, and characterises Security Council sanctions as unsupported by international law."
+    }
+  ]
+}

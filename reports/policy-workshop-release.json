@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "unique_policy_cases": 10,
+  "unique_documents": 8,
+  "source_event_groups": 8,
+  "leakage_components": 4,
+  "countries": {
+    "FRA": 2,
+    "GBR": 2,
+    "IND": 3,
+    "BRA": 3
+  },
+  "formats": {
+    "audit.sft": 20,
+    "revision.sft": 10,
+    "preference.dpo": 10,
+    "multiagent.sft": 13
+  },
+  "collaborative_episodes": 3,
+  "exported_views": 53,
+  "admitted_training_rows": 0,
+  "independent_review_complete": false,
+  "model_tokenization_performed": false,
+  "inputs": {
+    "data/curation/policy_workshop_cases.json": "99fe5d4406fbdfc17798a6ac9da778c32e7c1b8eff27bf9fc5ed74b6007bde0b",
+    "data/curation/policy_workshop_teams.json": "1fbd429c4e68c1aabedce313600bb677c43f16e5056a4e47dd6a1b36c5c66e7f",
+    "data/prepared/country-extension-20260914/policy-positions.candidates.jsonl": "f3f338c59ecbd91178716c0fecb222f0cdce02313c29bbc9ff0a571b4d5c8c7e",
+    "data/prepared/country-extension-20260914/documents.jsonl": "c8634ed74e0d234b1c8c55fde67dc8e8c3f343862097339dbbc38ec7cdccf6aa",
+    "scripts/build_policy_workshop.py": "187f382ea52168019cbe6102866a21b5b761e917ee7da0c3986f2172d35c915c"
+  },
+  "checks": {
+    "raw_hashes_verified": true,
+    "extracted_text_hashes_verified": true,
+    "exact_spans_verified": true,
+    "national_attribution_verified": true,
+    "cross_format_components_assigned": true
+  },
+  "limitations": [
+    "Synthetic annotations are author-reviewed, not independently adjudicated.",
+    "All exports are quarantine candidates; no training or hidden evaluation is claimed.",
+    "Source dates do not establish historical availability; retrospective tasks only.",
+    "Preference negatives are controlled errors, not empirically mined model failures.",
+    "Multiple formats are correlated views of the same cases, not independent evidence.",
+    "No model-specific tokenizer, trainer integration, or training quality measurement performed."
+  ],
+  "artifacts": {
+    "audit.sft.jsonl": "e7f2382810aeb81823f1cd70a6762633fa488fa07d0ebaf51a0233e21739b45a",
+    "audit.sft.manifest.jsonl": "0c510c70098d6214d21df10a7cf7c796dbf288743585d59bbd14f020674aafc8",
+    "episodes.jsonl": "b8171f1525a283b245e49c6abecf1b7d2375e1a557bcca1c08351c488adc944d",
+    "evidence.jsonl": "17daddc0c23153ef46e52ec86b1fa9c94a9ef9531a1dfad69149dd0a71c1eea1",
+    "multiagent.sft.jsonl": "bee57601d8dd41c7aa4d4347bc86442fc9ddbbbbbeadf74162583cad27370245",
+    "multiagent.sft.manifest.jsonl": "f491e22e270f641ccc0b91af9ca15f59e9208ef8df5965bdfdea3c3eb9856b26",
+    "preference.dpo.jsonl": "6b54ec9e2f21a508efa4fe85e4bc2ee15baf89631cf44a8682b315f28b328406",
+    "preference.dpo.manifest.jsonl": "d7d30831fe02c4da4ec2391eadc9043cf5dc73366f5c92ff0f3135e449162b2e",
+    "review.csv": "74bc70cbd6217a628949072991c4de9353a26a940e71a070c5731be1bff18c2b",
+    "revision.sft.jsonl": "127f35ff89d7a84e7099bb32dc172996ad86a1c14aa8e2d8b54a0191ed08a3f8",
+    "revision.sft.manifest.jsonl": "481887c1c1543c5b7d300a235d7e56c08d4c83b65e3521c23ad7225abdff7acc",
+    "showcase.html": "e96ee4ff0c53d1a6c66ba11f44e042ab6e9daa7745eb499d6c14916997265f43"
+  },
+  "verification": {
+    "pytest": "57 passed (full repository suite; includes 10 new workshop tests)",
+    "tokenizer_preflight": "reports/policy-workshop-preflight.json",
+    "maximum_sequence_tokens": 1816,
+    "sequence_limit_checked": 4096,
+    "browser_visual_check": "Local showcase rendered and visually inspected in Codex browser",
+    "training_run_performed": false
+  }
+}

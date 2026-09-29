@@ -1,0 +1,2203 @@
+{
+  "status": "completed_development_inference_independent_policy_ratings_pending",
+  "model": "Qwen/Qwen3-8B",
+  "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "slurm_job_id": "996664",
+  "slurm_step_id": "996664.2",
+  "comparison": {
+    "A": "Country/role prompt and task inputs; no supplied country speech",
+    "B": "Same task plus the selected dated country speech"
+  },
+  "event_groups": 2,
+  "action_pairs": 7,
+  "policy_pairs": 8,
+  "model_outputs": 30,
+  "unique_outputs_across_probe_and_expanded_pack": 30,
+  "probe_outputs_repeated_identically": {
+    "2a82647aa17ffd746172d57d": true,
+    "9572de56abd38603c867a0e7": true,
+    "99ed7b9b6ded7e8516e3fe5c": true,
+    "f0ffe7d64cdfa7cb984f1eb3": true,
+    "f71874eb00be39ea34831a4e": true,
+    "11a6f6e8b3e105a875a847ca": true,
+    "97164aef23791e0cf9d354bc": true,
+    "70380b733032cf5c3eda9512": true
+  },
+  "action_metrics": {
+    "A": {
+      "overall": {
+        "rows": 7,
+        "accuracy": 0.5714285714285714,
+        "invalid_or_missing_rate": 0.0,
+        "macro_f1_fixed_labels": 0.26666666666666666,
+        "balanced_accuracy_observed_classes": 0.3333333333333333,
+        "balanced_accuracy_all_classes": 0.3333333333333333,
+        "missing_reference_classes": [],
+        "per_class": {
+          "Y": {
+            "support": 4,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8
+          },
+          "N": {
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "A": {
+            "support": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "confusion": {
+          "Y": {
+            "Y": 4,
+            "N": 0,
+            "A": 0,
+            "INVALID": 0
+          },
+          "N": {
+            "Y": 1,
+            "N": 0,
+            "A": 0,
+            "INVALID": 0
+          },
+          "A": {
+            "Y": 1,
+            "N": 1,
+            "A": 0,
+            "INVALID": 0
+          }
+        },
+        "probability_rows": 7,
+        "probability_coverage": 1.0,
+        "nll": 2.466728039088626,
+        "brier": 0.7346627060955415,
+        "nll_probability_floor": 1e-15
+      },
+      "by_country": {
+        "BRA": {
+          "rows": 1,
+          "accuracy": 0.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.0,
+          "balanced_accuracy_observed_classes": 0.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y",
+            "N"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 1,
+          "probability_coverage": 1.0,
+          "nll": 5.257152819106142,
+          "brier": 1.6366024329284494,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 1
+        },
+        "FRA": {
+          "rows": 2,
+          "accuracy": 1.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.3333333333333333,
+          "balanced_accuracy_observed_classes": 1.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "N",
+            "A"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 0.011900772092272666,
+          "brier": 0.0005324576436218637,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        },
+        "GBR": {
+          "rows": 2,
+          "accuracy": 1.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.3333333333333333,
+          "balanced_accuracy_observed_classes": 1.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "N",
+            "A"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 0.0016021625181191473,
+          "brier": 1.0075558884158133e-05,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        },
+        "IND": {
+          "rows": 2,
+          "accuracy": 0.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.0,
+          "balanced_accuracy_observed_classes": 0.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 1,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 1,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 5.991468792646728,
+          "brier": 1.7524757216676647,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        }
+      },
+      "event_groups": 2,
+      "missing_predictions": [],
+      "country_macro_accuracy": 0.5,
+      "notes": [
+        "Invalid or missing generations count as errors, never random votes.",
+        "Class labels are fixed at Y/N/A; absent-class recalls are null, not evidence of success.",
+        "NLL and Brier require full probability coverage and are conditional on legal labels.",
+        "No ranking AUC is inferred from hard labels. Scores do not certify temporal/source validity."
+      ]
+    },
+    "B": {
+      "overall": {
+        "rows": 7,
+        "accuracy": 0.7142857142857143,
+        "invalid_or_missing_rate": 0.0,
+        "macro_f1_fixed_labels": 0.5,
+        "balanced_accuracy_observed_classes": 0.6666666666666666,
+        "balanced_accuracy_all_classes": 0.6666666666666666,
+        "missing_reference_classes": [],
+        "per_class": {
+          "Y": {
+            "support": 4,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "N": {
+            "support": 1,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          "A": {
+            "support": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "confusion": {
+          "Y": {
+            "Y": 4,
+            "N": 0,
+            "A": 0,
+            "INVALID": 0
+          },
+          "N": {
+            "Y": 0,
+            "N": 1,
+            "A": 0,
+            "INVALID": 0
+          },
+          "A": {
+            "Y": 0,
+            "N": 2,
+            "A": 0,
+            "INVALID": 0
+          }
+        },
+        "probability_rows": 7,
+        "probability_coverage": 1.0,
+        "nll": 2.069192471901879,
+        "brier": 0.5355128804476706,
+        "nll_probability_floor": 1e-15
+      },
+      "by_country": {
+        "BRA": {
+          "rows": 1,
+          "accuracy": 0.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.0,
+          "balanced_accuracy_observed_classes": 0.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y",
+            "N"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 1,
+          "probability_coverage": 1.0,
+          "nll": 7.82633858355536,
+          "brier": 1.506528651291207,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 1
+        },
+        "FRA": {
+          "rows": 2,
+          "accuracy": 1.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.3333333333333333,
+          "balanced_accuracy_observed_classes": 1.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "N",
+            "A"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 0.00028418828914195587,
+          "brier": 3.0650688996397405e-07,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        },
+        "GBR": {
+          "rows": 2,
+          "accuracy": 1.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.3333333333333333,
+          "balanced_accuracy_observed_classes": 1.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "N",
+            "A"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 1.589448018076982e-06,
+          "brier": 8.491656209846525e-12,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        },
+        "IND": {
+          "rows": 2,
+          "accuracy": 0.5,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.2222222222222222,
+          "balanced_accuracy_observed_classes": 0.5,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 1,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 3.3287185821417364,
+          "brier": 1.121030449405862,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        }
+      },
+      "event_groups": 2,
+      "missing_predictions": [],
+      "country_macro_accuracy": 0.625,
+      "notes": [
+        "Invalid or missing generations count as errors, never random votes.",
+        "Class labels are fixed at Y/N/A; absent-class recalls are null, not evidence of success.",
+        "NLL and Brier require full probability coverage and are conditional on legal labels.",
+        "No ranking AUC is inferred from hard labels. Scores do not certify temporal/source validity."
+      ]
+    }
+  },
+  "action_metrics_excluding_two_explicit_UK_support_speeches": {
+    "A": {
+      "overall": {
+        "rows": 5,
+        "accuracy": 0.4,
+        "invalid_or_missing_rate": 0.0,
+        "macro_f1_fixed_labels": 0.2222222222222222,
+        "balanced_accuracy_observed_classes": 0.3333333333333333,
+        "balanced_accuracy_all_classes": 0.3333333333333333,
+        "missing_reference_classes": [],
+        "per_class": {
+          "Y": {
+            "support": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666
+          },
+          "N": {
+            "support": 1,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "A": {
+            "support": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "confusion": {
+          "Y": {
+            "Y": 2,
+            "N": 0,
+            "A": 0,
+            "INVALID": 0
+          },
+          "N": {
+            "Y": 1,
+            "N": 0,
+            "A": 0,
+            "INVALID": 0
+          },
+          "A": {
+            "Y": 1,
+            "N": 1,
+            "A": 0,
+            "INVALID": 0
+          }
+        },
+        "probability_rows": 5,
+        "probability_coverage": 1.0,
+        "nll": 3.452778389716829,
+        "brier": 1.0285237583102045,
+        "nll_probability_floor": 1e-15
+      },
+      "by_country": {
+        "BRA": {
+          "rows": 1,
+          "accuracy": 0.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.0,
+          "balanced_accuracy_observed_classes": 0.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y",
+            "N"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 1,
+          "probability_coverage": 1.0,
+          "nll": 5.257152819106142,
+          "brier": 1.6366024329284494,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 1
+        },
+        "FRA": {
+          "rows": 2,
+          "accuracy": 1.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.3333333333333333,
+          "balanced_accuracy_observed_classes": 1.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "N",
+            "A"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 0.011900772092272666,
+          "brier": 0.0005324576436218637,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        },
+        "IND": {
+          "rows": 2,
+          "accuracy": 0.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.0,
+          "balanced_accuracy_observed_classes": 0.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 1,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 1,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 5.991468792646728,
+          "brier": 1.7524757216676647,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        }
+      },
+      "event_groups": 2,
+      "missing_predictions": [],
+      "country_macro_accuracy": 0.3333333333333333,
+      "notes": [
+        "Invalid or missing generations count as errors, never random votes.",
+        "Class labels are fixed at Y/N/A; absent-class recalls are null, not evidence of success.",
+        "NLL and Brier require full probability coverage and are conditional on legal labels.",
+        "No ranking AUC is inferred from hard labels. Scores do not certify temporal/source validity."
+      ]
+    },
+    "B": {
+      "overall": {
+        "rows": 5,
+        "accuracy": 0.6,
+        "invalid_or_missing_rate": 0.0,
+        "macro_f1_fixed_labels": 0.5,
+        "balanced_accuracy_observed_classes": 0.6666666666666666,
+        "balanced_accuracy_all_classes": 0.6666666666666666,
+        "missing_reference_classes": [],
+        "per_class": {
+          "Y": {
+            "support": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "N": {
+            "support": 1,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5
+          },
+          "A": {
+            "support": 2,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        },
+        "confusion": {
+          "Y": {
+            "Y": 2,
+            "N": 0,
+            "A": 0,
+            "INVALID": 0
+          },
+          "N": {
+            "Y": 0,
+            "N": 1,
+            "A": 0,
+            "INVALID": 0
+          },
+          "A": {
+            "Y": 0,
+            "N": 2,
+            "A": 0,
+            "INVALID": 0
+          }
+        },
+        "probability_rows": 5,
+        "probability_coverage": 1.0,
+        "nll": 2.8968688248834233,
+        "brier": 0.7497180326233421,
+        "nll_probability_floor": 1e-15
+      },
+      "by_country": {
+        "BRA": {
+          "rows": 1,
+          "accuracy": 0.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.0,
+          "balanced_accuracy_observed_classes": 0.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y",
+            "N"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 1,
+          "probability_coverage": 1.0,
+          "nll": 7.82633858355536,
+          "brier": 1.506528651291207,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 1
+        },
+        "FRA": {
+          "rows": 2,
+          "accuracy": 1.0,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.3333333333333333,
+          "balanced_accuracy_observed_classes": 1.0,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "N",
+            "A"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 2,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "N": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 0.00028418828914195587,
+          "brier": 3.0650688996397405e-07,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        },
+        "IND": {
+          "rows": 2,
+          "accuracy": 0.5,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.2222222222222222,
+          "balanced_accuracy_observed_classes": 0.5,
+          "balanced_accuracy_all_classes": null,
+          "missing_reference_classes": [
+            "Y"
+          ],
+          "per_class": {
+            "Y": {
+              "support": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "N": {
+              "support": 1,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "A": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 0,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 0,
+              "N": 1,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 2,
+          "probability_coverage": 1.0,
+          "nll": 3.3287185821417364,
+          "brier": 1.121030449405862,
+          "nll_probability_floor": 1e-15,
+          "event_groups": 2
+        }
+      },
+      "event_groups": 2,
+      "missing_predictions": [],
+      "country_macro_accuracy": 0.5,
+      "notes": [
+        "Invalid or missing generations count as errors, never random votes.",
+        "Class labels are fixed at Y/N/A; absent-class recalls are null, not evidence of success.",
+        "NLL and Brier require full probability coverage and are conditional on legal labels.",
+        "No ranking AUC is inferred from hard labels. Scores do not certify temporal/source validity."
+      ]
+    }
+  },
+  "action_pairs_detail": [
+    {
+      "country": "FRA",
+      "event": "unsc-meeting:8926:2021-12-13",
+      "expected": "Y",
+      "pair_id": "692d0b7b25e68dcee1f9c69f",
+      "A": {
+        "id": "996cc6e4fbb180eb833fb334",
+        "vote": "Y",
+        "p_recorded_action": 0.9996427574584787,
+        "legal_label_mass": 0.9999999990592912,
+        "tied_top_labels": [
+          "Y"
+        ]
+      },
+      "B": {
+        "id": "b9869875551ad1fbafc3f739",
+        "vote": "Y",
+        "p_recorded_action": 0.9999859251964387,
+        "legal_label_mass": 0.9999999999207674,
+        "tied_top_labels": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "country": "GBR",
+      "event": "unsc-meeting:8926:2021-12-13",
+      "expected": "Y",
+      "pair_id": "4646ee8c839a7845c3ba7fcb",
+      "A": {
+        "id": "7b46f8e7b106ae4e676a3faf",
+        "vote": "Y",
+        "p_recorded_action": 0.9999762948242252,
+        "legal_label_mass": 0.9999999996607016,
+        "tied_top_labels": [
+          "Y"
+        ]
+      },
+      "B": {
+        "id": "488ba57d3e2f1ffb56c5858e",
+        "vote": "Y",
+        "p_recorded_action": 0.9999997268184562,
+        "legal_label_mass": 0.9999999999332019,
+        "tied_top_labels": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "country": "IND",
+      "event": "unsc-meeting:8926:2021-12-13",
+      "expected": "N",
+      "pair_id": "2e0fa6ce26f7404dedcae9c2",
+      "A": {
+        "id": "2a82647aa17ffd746172d57d",
+        "vote": "Y",
+        "p_recorded_action": 0.0014964266086911235,
+        "legal_label_mass": 0.9999999975504181,
+        "tied_top_labels": [
+          "Y"
+        ]
+      },
+      "B": {
+        "id": "9572de56abd38603c867a0e7",
+        "vote": "N",
+        "p_recorded_action": 0.474969301942296,
+        "legal_label_mass": 0.9999999938448383,
+        "tied_top_labels": [
+          "Y",
+          "N"
+        ]
+      }
+    },
+    {
+      "country": "FRA",
+      "event": "unsc-meeting:9143:2022-09-30",
+      "expected": "Y",
+      "pair_id": "8cb524bee47fb32b0e3f37ed",
+      "A": {
+        "id": "99ed7b9b6ded7e8516e3fe5c",
+        "vote": "Y",
+        "p_recorded_action": 0.9768284432368852,
+        "legal_label_mass": 0.9999999627444474,
+        "tied_top_labels": [
+          "Y"
+        ]
+      },
+      "B": {
+        "id": "f0ffe7d64cdfa7cb984f1eb3",
+        "vote": "Y",
+        "p_recorded_action": 0.9994458519211212,
+        "legal_label_mass": 0.999999999564622,
+        "tied_top_labels": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "country": "GBR",
+      "event": "unsc-meeting:9143:2022-09-30",
+      "expected": "Y",
+      "pair_id": "d53201faf5f5898b65db015b",
+      "A": {
+        "id": "3f11c270f84ca9a3b238cb38",
+        "vote": "Y",
+        "p_recorded_action": 0.9968244332325195,
+        "legal_label_mass": 0.9999999919006299,
+        "tied_top_labels": [
+          "Y"
+        ]
+      },
+      "B": {
+        "id": "fbc72a866ae88a4b2452243b",
+        "vote": "Y",
+        "p_recorded_action": 0.9999970942897666,
+        "legal_label_mass": 0.9999999997749427,
+        "tied_top_labels": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "country": "IND",
+      "event": "unsc-meeting:9143:2022-09-30",
+      "expected": "A",
+      "pair_id": "c2156877f285b018fc0604a3",
+      "A": {
+        "id": "ff18fc85d681e62dd7de4c70",
+        "vote": "Y",
+        "p_recorded_action": 0.004176580992807664,
+        "legal_label_mass": 0.9999998275752879,
+        "tied_top_labels": [
+          "Y"
+        ]
+      },
+      "B": {
+        "id": "43cabbaa4d1c8898547e0f92",
+        "vote": "N",
+        "p_recorded_action": 0.0027042462402736916,
+        "legal_label_mass": 0.9999999150837162,
+        "tied_top_labels": [
+          "N"
+        ]
+      }
+    },
+    {
+      "country": "BRA",
+      "event": "unsc-meeting:9143:2022-09-30",
+      "expected": "A",
+      "pair_id": "cf89063a8242d9b39776a79e",
+      "A": {
+        "id": "f71874eb00be39ea34831a4e",
+        "vote": "N",
+        "p_recorded_action": 0.005210117768747875,
+        "legal_label_mass": 0.9999999337742005,
+        "tied_top_labels": [
+          "N"
+        ]
+      },
+      "B": {
+        "id": "11a6f6e8b3e105a875a847ca",
+        "vote": "N",
+        "p_recorded_action": 0.00039908402129544833,
+        "legal_label_mass": 0.9999999973596161,
+        "tied_top_labels": [
+          "N"
+        ]
+      }
+    }
+  ],
+  "baselines": {
+    "status": "empirical_baselines_not_model_results",
+    "smoothing_alpha": 1,
+    "fit_split": "official_train_only",
+    "evaluation_split": "exposed_two_event_development_reconstruction_seven_unique_actions",
+    "excluded_train": [
+      {
+        "Country": "RWANDA",
+        "Original_id": "793",
+        "Authors": "['France', 'Germany', 'Russian Federation', 'United Kingdom', 'United States']",
+        "Voting": "Non-Voting",
+        "Date": "1994-07-21"
+      },
+      {
+        "Country": "RWANDA",
+        "Original_id": "796",
+        "Authors": "['Argentina', 'Canada', 'France', 'United States']",
+        "Voting": "Non-Voting",
+        "Date": "1994-07-31"
+      },
+      {
+        "Country": "ARAB REPUBLIC",
+        "Original_id": "1313",
+        "Authors": "['Spain', 'United Kingdom', 'United States']",
+        "Voting": "Non-Voting",
+        "Date": "2003-05-22"
+      }
+    ],
+    "excluded_test": [],
+    "unseen_test_countries": [],
+    "arms": {
+      "always_yes": {
+        "overall": {
+          "rows": 7,
+          "accuracy": 0.5714285714285714,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.24242424242424243,
+          "balanced_accuracy_observed_classes": 0.3333333333333333,
+          "balanced_accuracy_all_classes": 0.3333333333333333,
+          "missing_reference_classes": [],
+          "per_class": {
+            "Y": {
+              "support": 4,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            },
+            "N": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 4,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 1,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 0,
+          "probability_coverage": 0.0,
+          "nll": null,
+          "brier": null
+        },
+        "target_countries": {
+          "FRANCE": {
+            "rows": 2,
+            "accuracy": 1.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.3333333333333333,
+            "balanced_accuracy_observed_classes": 1.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "N",
+              "A"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 2,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 0,
+            "probability_coverage": 0.0,
+            "nll": null,
+            "brier": null
+          },
+          "UNITED KINGDOM": {
+            "rows": 2,
+            "accuracy": 1.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.3333333333333333,
+            "balanced_accuracy_observed_classes": 1.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "N",
+              "A"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 2,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 0,
+            "probability_coverage": 0.0,
+            "nll": null,
+            "brier": null
+          },
+          "INDIA": {
+            "rows": 2,
+            "accuracy": 0.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.0,
+            "balanced_accuracy_observed_classes": 0.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "Y"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "N": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 0,
+            "probability_coverage": 0.0,
+            "nll": null,
+            "brier": null
+          },
+          "BRAZIL": {
+            "rows": 1,
+            "accuracy": 0.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.0,
+            "balanced_accuracy_observed_classes": 0.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "Y",
+              "N"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 0,
+            "probability_coverage": 0.0,
+            "nll": null,
+            "brier": null
+          }
+        }
+      },
+      "global_train_prior": {
+        "overall": {
+          "rows": 7,
+          "accuracy": 0.5714285714285714,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.24242424242424243,
+          "balanced_accuracy_observed_classes": 0.3333333333333333,
+          "balanced_accuracy_all_classes": 0.3333333333333333,
+          "missing_reference_classes": [],
+          "per_class": {
+            "Y": {
+              "support": 4,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            },
+            "N": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 4,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 1,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 7,
+          "probability_coverage": 1.0,
+          "nll": 2.11443941813191,
+          "brier": 0.8323424462727599,
+          "nll_probability_floor": 1e-15
+        },
+        "target_countries": {
+          "FRANCE": {
+            "rows": 2,
+            "accuracy": 1.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.3333333333333333,
+            "balanced_accuracy_observed_classes": 1.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "N",
+              "A"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 2,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 2,
+            "probability_coverage": 1.0,
+            "nll": 0.018239816423954256,
+            "brier": 0.0006050646716179904,
+            "nll_probability_floor": 1e-15
+          },
+          "UNITED KINGDOM": {
+            "rows": 2,
+            "accuracy": 1.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.3333333333333333,
+            "balanced_accuracy_observed_classes": 1.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "N",
+              "A"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 2,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 2,
+            "probability_coverage": 1.0,
+            "nll": 0.018239816423954256,
+            "brier": 0.0006050646716179904,
+            "nll_probability_floor": 1e-15
+          },
+          "INDIA": {
+            "rows": 2,
+            "accuracy": 0.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.0,
+            "balanced_accuracy_observed_classes": 0.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "Y"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "N": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 2,
+            "probability_coverage": 1.0,
+            "nll": 5.315521792176124,
+            "brier": 1.9463816314291114,
+            "nll_probability_floor": 1e-15
+          },
+          "BRAZIL": {
+            "rows": 1,
+            "accuracy": 0.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.0,
+            "balanced_accuracy_observed_classes": 0.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "Y",
+              "N"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 1,
+            "probability_coverage": 1.0,
+            "nll": 4.097073076875305,
+            "brier": 1.9312136023646245,
+            "nll_probability_floor": 1e-15
+          }
+        }
+      },
+      "country_train_prior": {
+        "overall": {
+          "rows": 7,
+          "accuracy": 0.5714285714285714,
+          "invalid_or_missing_rate": 0.0,
+          "macro_f1_fixed_labels": 0.24242424242424243,
+          "balanced_accuracy_observed_classes": 0.3333333333333333,
+          "balanced_accuracy_all_classes": 0.3333333333333333,
+          "missing_reference_classes": [],
+          "per_class": {
+            "Y": {
+              "support": 4,
+              "precision": 0.5714285714285714,
+              "recall": 1.0,
+              "f1": 0.7272727272727273
+            },
+            "N": {
+              "support": 1,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "A": {
+              "support": 2,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "confusion": {
+            "Y": {
+              "Y": 4,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "N": {
+              "Y": 1,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            },
+            "A": {
+              "Y": 2,
+              "N": 0,
+              "A": 0,
+              "INVALID": 0
+            }
+          },
+          "probability_rows": 7,
+          "probability_coverage": 1.0,
+          "nll": 1.7073285428008675,
+          "brier": 0.8077886736211327,
+          "nll_probability_floor": 1e-15
+        },
+        "target_countries": {
+          "FRANCE": {
+            "rows": 2,
+            "accuracy": 1.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.3333333333333333,
+            "balanced_accuracy_observed_classes": 1.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "N",
+              "A"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 2,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 2,
+            "probability_coverage": 1.0,
+            "nll": 0.009543358046899746,
+            "brier": 0.00015833009615791687,
+            "nll_probability_floor": 1e-15
+          },
+          "UNITED KINGDOM": {
+            "rows": 2,
+            "accuracy": 1.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.3333333333333333,
+            "balanced_accuracy_observed_classes": 1.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "N",
+              "A"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 2,
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 2,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 2,
+            "probability_coverage": 1.0,
+            "nll": 0.002717392976499915,
+            "brier": 1.1046285778459306e-05,
+            "nll_probability_floor": 1e-15
+          },
+          "INDIA": {
+            "rows": 2,
+            "accuracy": 0.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.0,
+            "balanced_accuracy_observed_classes": 0.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "Y"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "N": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 2,
+            "probability_coverage": 1.0,
+            "nll": 4.415600344517784,
+            "brier": 1.9240996420483598,
+            "nll_probability_floor": 1e-15
+          },
+          "BRAZIL": {
+            "rows": 1,
+            "accuracy": 0.0,
+            "invalid_or_missing_rate": 0.0,
+            "macro_f1_fixed_labels": 0.0,
+            "balanced_accuracy_observed_classes": 0.0,
+            "balanced_accuracy_all_classes": null,
+            "missing_reference_classes": [
+              "Y",
+              "N"
+            ],
+            "per_class": {
+              "Y": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "N": {
+                "support": 0,
+                "precision": 0.0,
+                "recall": null,
+                "f1": 0.0
+              },
+              "A": {
+                "support": 1,
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1": 0.0
+              }
+            },
+            "confusion": {
+              "Y": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "N": {
+                "Y": 0,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              },
+              "A": {
+                "Y": 1,
+                "N": 0,
+                "A": 0,
+                "INVALID": 0
+              }
+            },
+            "probability_rows": 1,
+            "probability_coverage": 1.0,
+            "nll": 3.095577608523707,
+            "brier": 1.8059826784873365,
+            "nll_probability_floor": 1e-15
+          }
+        }
+      }
+    },
+    "training_file_sha256": "693af4e958b691747a5bf098d53c30edd95e9ed93957b36901551f1ae9304d14",
+    "training_dates": [
+      "1994-03-04",
+      "2016-11-09"
+    ],
+    "limitation": "The official UNBench prior uses adopted-resolution voting data; these reconstruction items concern rejected drafts. This is a distribution-shift comparator, not a matched task population."
+  },
+  "stopping": {
+    "eos": 30
+  },
+  "output_caps": 0,
+  "generated_thinking_markers": 0,
+  "maximum_duplicate_8gram_fraction": 0.026881720430107527,
+  "rows_with_repeated_sentences": 0,
+  "compute": {
+    "prompt_tokens": 44384,
+    "generated_tokens": 3365,
+    "generation_seconds": 76.24512887652963,
+    "trace_processing_seconds": 2.936094978824258,
+    "model_verification_seconds": 9.836015718989074,
+    "model_load_seconds": 1.9226243691518903,
+    "peak_allocated_gpu_gib": 16.483332633972168
+  },
+  "inputs_sha256": {
+    "data/prepared/eval-pilot-20260927/two-event-v1/cases.jsonl": "aeda31bb456e71d0f9b81c8369dd9957ac7bf05a964e1bfa3e89c4ffd19b99b4",
+    "data/prepared/eval-pilot-20260927/two-event-v1/manifest.json": "5c5e3bae85354e9ce8b5ef4f080887b810965daa439d082299cce95936bd27a6",
+    "data/prepared/eval-pilot-20260927/two-event-v1/action.references.jsonl": "4006a58b6f8e582148c4c2926bbeb5c704964887c16fb91325319dfd82d484e5",
+    "data/prepared/eval-pilot-20260927/two-event-v1/policy.references.jsonl": "57a0f4951db60672e65caef16407a6c80dda0ad9c3412b78301cfbdf13f29743",
+    "runs/two-event-996664-base-v1/run.json": "ddb7b309358ddb8f4d7babace0fc29870a1ec4207e926ca32dce59e0ff051633",
+    "runs/two-event-996664-base-v1/predictions.jsonl": "accd2d1687cf14895499a2d15d5bec13a5b0e2928412853c118e257027e7862a"
+  },
+  "policy_formal_scores": null,
+  "independent_human_ratings": 0,
+  "limits": [
+    "Two exposed events are not seven independent experiments; no significance or calibration-bin claim.",
+    "Historical reconstruction, not prospective forecasting; archived-version availability remains unresolved.",
+    "The single added correct action is an exact Y/N first-token logit tie under BF16 greedy decoding.",
+    "No new training and no evidence of fine-tuning or deliberation gain.",
+    "Policy observations are assistant source checks; rubric calibration and independent ratings remain pending.",
+    "Only decoder instrumentation changed after a failed first attempt; cases, references and prompts remained frozen."
+  ],
+  "review_packet_manifest_sha256": "60319be2ebaedabc66cc9044e7ac95e4f00131a8d3fc29c52c6d89fe7def95a1",
+  "experiment_helper_wall_seconds": 101,
+  "legacy_eos_receipt": "reports/eval-pilot-20260927/legacy-eos-comparison.json"
+}

@@ -10,7 +10,9 @@ from .schema import record
 
 
 def soup_for(path):
-    return BeautifulSoup(Path(path).read_bytes(), 'html.parser')
+    # Prefer UTF-8 before optional detectors guess at typographic punctuation.
+    # Invalid UTF-8 still falls back to the document's declared encoding.
+    return BeautifulSoup(Path(path).read_bytes(), 'html.parser', from_encoding='utf-8')
 
 
 def paragraphs(node):

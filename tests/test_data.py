@@ -65,6 +65,13 @@ def test_mfa_unmatched_question_flagged(tmp_path):
     r=parse_mfa({'path':str(p),'url':'https://example.org','title':''})
     assert 'unparsed_exchange' in r[-1]['quality_flags']
 
+def test_mfa_declared_non_utf8_encoding_is_preserved(tmp_path):
+    p=tmp_path/'press.html'
+    html='''<meta charset="windows-1252"><meta name="ArticleTitle" content="Foreign Ministry Spokesperson Mao Ning’s Regular Press Conference on September 9, 2026"><meta name="PubDate" content="2026-09-09"><div class="content_text"><p><strong>Reporter: Question?</strong></p><p>Mao Ning: Café.</p></div>'''
+    p.write_bytes(html.encode('windows-1252'))
+    rows=parse_mfa({'path':str(p),'url':'https://example.org','title':''})
+    assert rows[1]['text']=='Café.' and rows[1]['speaker']=='Mao Ning'
+
 def test_german_only_foreign_office_is_target(tmp_path):
     p=tmp_path/'press.html';p.write_text('''<title>Regierungspressekonferenz</title><div id="rs_reading_area_content"><div class="bpa-richtext"><p class="Rednerkopf">Frage</p><p>First question?</p><p class="Rednerkopf">Other (BMI)</p><p>Domestic answer.</p><p class="Rednerkopf">Zusatzfrage</p><p>Foreign question?</p><p class="Rednerkopf">Giese (AA)</p><p>Foreign answer.</p></div></div>''')
     rows=parse_german_press({'path':str(p),'url':'https://example.org/regierungspressekonferenz-vom-4-september-2026-1'})

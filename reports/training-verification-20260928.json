@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-09-29T00:15:37.278807+00:00",
+  "status": "shared_training_verification_passes_on_tiny_cpu_model_cuda_ddp_pending",
+  "resolved_gap": "Production trainer previously accepted completion without proving adapter updates or saved-state reload; shared checks now execute in its training path.",
+  "cpu_check": {
+    "steps": 2,
+    "training_loss": 11.924396514892578,
+    "audited_examples": 10,
+    "audited_target_tokens_once": 502,
+    "actual_sequence_tokens_consumed": 940,
+    "actual_target_tokens_consumed": 79,
+    "changed_adapter_tensors": 14,
+    "gradient_checks": 2,
+    "adapter_update_l2": 0.0010719858260629486,
+    "saved_tensors_equal": true,
+    "same_base_logit_max_difference": 0.0,
+    "independent_new_base_peft_reload_equal": true
+  },
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/pytest -q tests/test_training_checks.py tests/test_posttraining.py tests/test_data.py",
+    "passed": 42,
+    "failed": 0,
+    "warnings": 3,
+    "warning_scope": "PEFT random tiny fixture has no source config file; no vocabulary resize requested"
+  },
+  "source_and_staging_sha256": {
+    "runs/training-readiness-20260928-cpu-shared-checks-v1/check.json": "22a960926c061075405727b26a99239c705897fe82b0c2396e9768c3899a8c3b",
+    "src/country_persona/train.py": "50c1674769f9f137020a32e8ad70cce9676c6978d8df7bb9d8ff81b45f2860a7",
+    "src/country_persona/training_checks.py": "dd2bd6c6035d97a82afc029549d4e8a596935f8f09b75cea0f7fb1f8efca6539",
+    "scripts/check_training_readiness.py": "c16dc667c854ac4b2235c225949e22d80a73ce242e697708a80ccb3fe7b5e8fa",
+    "tests/test_training_checks.py": "ca8f5ba756886505b222b56140d4429655eb6c6376eb8b6795eb4be95c362bee",
+    "runs/research-readiness-staging-20260928-v3/staging-manifest.json": "de916752e33981bdbe858bf3bb13f1b8be4af6cfd459696af0da789553aa752a"
+  },
+  "staging": {
+    "version": "v3",
+    "files_verified": 35,
+    "bytes": 16643444,
+    "uploaded": false,
+    "job_submitted": false,
+    "smoke_command_printed_without_execution": true
+  },
+  "cluster": {
+    "ssh_multiplex": "absent at 20:05 Toronto",
+    "fresh_connection": "timed out",
+    "cuda_validation": "pending",
+    "nccl_validation": "pending",
+    "new_gpu_training_runs": 0
+  },
+  "limitations": [
+    "Tiny random CPU Qwen3 is not the pinned 8B model and is not evidence of persona learning.",
+    "Rank-disagreement tests use authored four-rank receipts; only one CPU rank actually ran.",
+    "Shared hooks are exercised locally; the complete CUDA/NCCL entry point and distributed failure handling require allocated-node execution.",
+    "Same-base reload probes 32 input tokens; frozen independent adapter evaluation remains required.",
+    "Evaluation-first gate is still pending."
+  ]
+}

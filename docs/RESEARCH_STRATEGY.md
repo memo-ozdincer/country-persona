@@ -1,5 +1,7 @@
 # Data and experiment strategy
 
+**26 September research anchor:** The user endorsed the [behavior, evidence and deliberation direction](RESEARCH_ANCHOR.md) as a major project anchor. Its recommended next experiment is evaluation-first, evidence-conditioned behavioral SFT against role-prompt and same-evidence controls. The stages below remain a conditional roadmap, not a parallel experiment grid. See the [full evaluation memo](PERSONA_EVALUATION_AND_PAPER_DIRECTION_20260923.md) for the benchmark and metric portfolio.
+
 The target is a **dated institutional representative**, not the average citizen, a national personality, or a model claiming official authority. The research question is whether post-training improves documented positions and observable decisions beyond prompting with the **same evidence**. Public diplomatic discourse provides evidence of public positions; it does not reveal secret negotiating preferences.
 
 ## Recommended order

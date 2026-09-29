@@ -1,0 +1,145 @@
+{
+  "provenance": "assistant_authored_scorer_fixtures_not_model_generations_or_independent_reviews",
+  "include_one_supported_answer_per_item": true,
+  "negative_seeds": [
+    {
+      "item_key": "ukraine-gbr",
+      "seed_kind": "empty",
+      "output": "",
+      "unmet_criteria": [
+        "rejection",
+        "draft_support",
+        "time_scope"
+      ],
+      "unmet_checks": [],
+      "expected_outcome": "fail",
+      "why": "An empty output fails even if an annotation erroneously marks every criterion met."
+    },
+    {
+      "item_key": "climate-ind",
+      "seed_kind": "fluent_generic",
+      "output": "India values international cooperation and a balanced, pragmatic response. Countries should work together to find sustainable solutions that benefit everyone.",
+      "unmet_criteria": [
+        "institution",
+        "qualification",
+        "causality"
+      ],
+      "unmet_checks": [],
+      "expected_outcome": "fail",
+      "why": "Fluent cooperation language supplies none of the required institutional position or qualification."
+    },
+    {
+      "item_key": "climate-ind",
+      "seed_kind": "omitted_qualification",
+      "output": "India preferred the UNFCCC/COP process, which it described as inclusive and consensus-driven, instead of a separate Security Council climate platform. It also argued that viewing conflict only through a climate lens was misleading.",
+      "unmet_criteria": [
+        "qualification"
+      ],
+      "unmet_checks": [],
+      "expected_outcome": "fail",
+      "why": "The two included points are accurate but the explicit acknowledgment of exacerbated conflicts is missing."
+    },
+    {
+      "item_key": "climate-ind",
+      "seed_kind": "absolute_denial",
+      "output": "India preferred the inclusive UNFCCC/COP process over an alternative Council platform. It warned against climate-only explanations and denied that climate change could ever exacerbate conflict.",
+      "unmet_criteria": [
+        "qualification"
+      ],
+      "unmet_checks": [
+        "no_unsupported_commitment"
+      ],
+      "expected_outcome": "fail",
+      "why": "The denial reverses the documented qualification and misstates the policy argument."
+    },
+    {
+      "item_key": "climate-fra",
+      "seed_kind": "adjacent_speaker_contamination",
+      "output": "France supported a Council role in assessing and preventing climate-related security risks. Military and peacekeeping deployments alone were insufficient: longer-term responses also needed to understand how climate and crises reinforce each other and strengthen resilience. One complementary measure was predictable, sustainable UN logistical and financial support for the G-5 Sahel Joint Force, alongside development and climate action. France also promised $3 billion a year through PREPARE by 2024.",
+      "unmet_criteria": [],
+      "unmet_checks": [
+        "no_unsupported_commitment",
+        "correct_attribution"
+      ],
+      "expected_outcome": "fail",
+      "why": "The preceding speaker was the US. Accurate required content cannot compensate for attributing its funding statement to France."
+    },
+    {
+      "item_key": "climate-gbr",
+      "seed_kind": "invented_quota_commitment",
+      "output": "The UK wanted comprehensive UN reporting on climate-security links and a role for the Council. It supported meaningful participation by women and girls and explicitly supported the draft before the Council as a first step. The UK had also approved Council-imposed binding national carbon quotas.",
+      "unmet_criteria": [
+        "quota_unknown"
+      ],
+      "unmet_checks": [
+        "no_unsupported_commitment"
+      ],
+      "expected_outcome": "fail",
+      "why": "Support for the draft does not establish this additional authored commitment."
+    },
+    {
+      "item_key": "climate-bra",
+      "seed_kind": "missing_practical_priority",
+      "output": "Brazil preferred handling the climate agenda through the inclusive UNFCCC process, respecting mandates and avoiding duplication or reallocating the agenda to the Council. It acknowledged that drought and depleted resources could worsen tensions and displacement.",
+      "unmet_criteria": [
+        "finance"
+      ],
+      "unmet_checks": [],
+      "expected_outcome": "fail",
+      "why": "The answer omits the requested practical financing priority."
+    },
+    {
+      "item_key": "ukraine-fra",
+      "seed_kind": "national_vs_council",
+      "output": "The President conveyed the unanimous Security Council position: it would never recognize the illegal annexation attempts and would support Ukraine as long as needed to defend its independence, sovereignty and territorial integrity. No exact financial pledge was stated.",
+      "unmet_criteria": [
+        "capacity"
+      ],
+      "unmet_checks": [
+        "correct_attribution",
+        "no_unsupported_commitment"
+      ],
+      "expected_outcome": "fail",
+      "why": "The content is reassigned from France’s national capacity to the whole Council."
+    },
+    {
+      "item_key": "ukraine-ind",
+      "seed_kind": "correct_vote_wrong_evidence",
+      "output": "India called for an immediate end to hostilities and a return to dialogue and diplomacy, while affirming international law, the UN Charter, sovereignty and territorial integrity. It described humanitarian assistance to Ukraine and economic support for neighbours in the global South facing food, fuel and fertilizer costs. This speech establishes that India voted A on S/2022/720 on 30 September.",
+      "unmet_criteria": [
+        "vote_unknown"
+      ],
+      "unmet_checks": [
+        "correct_time_and_scope"
+      ],
+      "expected_outcome": "fail",
+      "why": "The later action happens to match the action reference, but the earlier speech does not establish it. Action correctness cannot rescue policy provenance."
+    },
+    {
+      "item_key": "ukraine-bra",
+      "seed_kind": "automatic_recognition",
+      "output": "Automatic recognition follows. Brazil accepted self-determination and the possible legitimate use of referendums, but conditioned validity on a genuinely free choice, transparency, freedom of expression and independent monitoring. It questioned whether people in conflict areas could freely express their will, criticized the current referendums and reaffirmed territorial integrity. Observers and unrestricted expression address some concerns; Brazil therefore commits to recognizing this hypothetical result.",
+      "unmet_criteria": [
+        "recognition_unknown"
+      ],
+      "unmet_checks": [
+        "no_unsupported_commitment"
+      ],
+      "expected_outcome": "fail",
+      "why": "The source supplies conditional considerations, not an automatic future recognition commitment."
+    },
+    {
+      "item_key": "ukraine-gbr",
+      "seed_kind": "wrong_date",
+      "output": "On 30 September the UK rejected the referendums as illegitimate and contrary to Ukrainian sovereignty and territorial integrity, pointing to coercive conditions. It urged support for the draft brought forward by the United States and Albania. This is the recorded vote from the same meeting.",
+      "unmet_criteria": [
+        "time_scope"
+      ],
+      "unmet_checks": [
+        "correct_time_and_scope"
+      ],
+      "expected_outcome": "fail",
+      "why": "Conflates a 27 September speech with the later voting record."
+    }
+  ]
+}
