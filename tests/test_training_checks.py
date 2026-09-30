@@ -61,17 +61,23 @@ def test_nonfinite_microbatch_loss_is_rejected_before_trainer_log_filter(loss):
         trainer.training_step(None, {"attention_mask": torch.ones(1, 3), "labels": torch.tensor([[-100, 2, 3]])})
 
 
-def test_masks_detect_prompt_leak_and_lost_completion():
+@pytest.mark.parametrize("return_mapping", [False, True])
+def test_masks_detect_prompt_leak_and_lost_completion(return_mapping):
     row = {"prompt": [{"role": "user", "content": "source"}], "completion": [{"role": "assistant", "content": "answer"}]}
     class Tokenizer:
         def apply_chat_template(self, messages, tokenize=True, add_generation_prompt=False):
-            return [1, 2] if add_generation_prompt else [1, 2, 3, 4]
+            ids = [1, 2] if add_generation_prompt else [1, 2, 3, 4]
+            return {"input_ids": ids} if return_mapping else ids
     prepared = [{"input_ids": [1, 2, 3, 4]}]
     for labels in ([1, -100, 3, 4], [-100, -100, -100, 4]):
         def collator(_):
             return {"input_ids": torch.tensor([[1, 2, 3, 4]]), "attention_mask": torch.ones(1, 4), "labels": torch.tensor([labels])}
         with pytest.raises(ValueError, match="supervised|Completion"):
             audit_completion_masks([row], prepared, collator, Tokenizer())
+    def valid_collator(_):
+        return {"input_ids": torch.tensor([[1, 2, 3, 4]]), "attention_mask": torch.ones(1, 4),
+                "labels": torch.tensor([[-100, -100, 3, 4]])}
+    assert audit_completion_masks([row], prepared, valid_collator, Tokenizer())["supervised_tokens_once"] == 2
 
 
 @pytest.fixture

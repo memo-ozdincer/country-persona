@@ -1,0 +1,32 @@
+{
+  "kind": "versioned_technical_training_checkpoint_not_persona_quality",
+  "authorization": "2026-09-30 user prioritizes small training tests and Qwen3.5 at 8B or smaller",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "source_pack": "data/prepared/training-readiness-20260928-v1",
+  "prepared_pack": "data/prepared/qwen35-smoke-20260930-v1",
+  "world_size": 1,
+  "examples": 4,
+  "max_steps": 2,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.00005,
+  "lora_rank": 8,
+  "seed": 42,
+  "max_length": 2048,
+  "generation_max_new_tokens": 128,
+  "chat_template_kwargs": {"enable_thinking": false},
+  "question": "Can the official small Qwen3.5 checkpoint complete masked BF16 LoRA updates on one Aurora GPU, save/reload identical adapter state, and deliver a small matched before/after probe?",
+  "stop_criteria": ["Changed source/model bytes", "Prompt-mask leakage or lost targets", "Nonfinite loss/gradient/tensor", "No adapter update", "Save/reload mismatch"],
+  "evaluation_scope": "Four training examples before and after; inspect optimization and delivery only. No held-out quality or generalization claim.",
+  "preserved_reference": "The Qwen3-8B lock and H100 results remain unchanged historical references. This model/version change requires its own matched Aurora base."
+}

@@ -5,6 +5,7 @@ fidelity or deliberation improved.
 """
 import hashlib
 import math
+from collections.abc import Mapping
 from pathlib import Path
 
 from .io import digest, sha256
@@ -37,6 +38,9 @@ def audit_completion_masks(rows, prepared_rows, collator, tokenizer):
         kwargs = row.get("chat_template_kwargs", {})
         full = tokenizer.apply_chat_template(row["prompt"] + row["completion"], tokenize=True, **kwargs)
         prefix = tokenizer.apply_chat_template(row["prompt"], tokenize=True, add_generation_prompt=True, **kwargs)
+        # Transformers 5 returns a BatchEncoding by default; older locks return IDs.
+        full = full["input_ids"] if isinstance(full, Mapping) else full
+        prefix = prefix["input_ids"] if isinstance(prefix, Mapping) else prefix
         batch = collator([prepared])
         labels = batch["labels"][0]
         if prepared["input_ids"] != full or full[:len(prefix)] != prefix:

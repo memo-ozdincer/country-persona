@@ -1,6 +1,6 @@
 # Aurora access and experiment workflow
 
-**Latest continuation, 29 September:** this session executes directly on `aurora` in the verified scratch checkout. [Evaluation readiness receipt and limits](AURORA_EVALUATION_READINESS_20260929.md) supersede the earlier chat-location observation below. Exact review/tokenizer reproduction passes; no model weights or verified CUDA runtime are present yet. Existing processes remain untouched.
+**Latest continuation, 30 September:** [Qwen3.5-4B single-GPU training passed](AURORA_QWEN35_TRAINING_SMOKE_20260930.md) using the scratch runtime/model and explicit `scripts/run_aurora_qwen35_smoke.py` path. Two masked BF16 LoRA steps, finite gradients, 496 adapter updates and exact save/reload are measured; four before/after controls were inspected. This verifies single-GPU CUDA, not NCCL/distributed training or persona quality. No unfamiliar process was changed. [September 29 evaluation portability](AURORA_EVALUATION_READINESS_20260929.md) and the earlier access observations below remain dated evidence.
 
 Verified 29 September 2026, approximately 16:21 Toronto. [Access receipt](../reports/aurora-access-20260929-162128.json). No experiment, model download or GPU reservation was launched during this check.
 

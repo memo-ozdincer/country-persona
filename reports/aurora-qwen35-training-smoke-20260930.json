@@ -1,0 +1,272 @@
+{
+  "status": "technical_single_gpu_training_and_reload_passed",
+  "created_at": "2026-09-30T04:35:19.214251+00:00",
+  "question": "Can the official small Qwen3.5 checkpoint complete masked BF16 LoRA updates on one Aurora GPU, save/reload identical adapter state, and deliver a small matched before/after probe?",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_receipt_sha256": "9232b2bce9177f1fd63538f1e59dbf8989e32fa0a208128a89cb7300e6f12011",
+  "config_sha256": "55991f77606c6c18c17ad672d7c97725c538ccfb4d4debe28a745b8c82f50759",
+  "gpu": {
+    "uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "memory_used_mib_before_launch": 0,
+    "utilization_before_launch": 0,
+    "existing_compute_processes": []
+  },
+  "identity": {
+    "host": "aurora",
+    "pid": 1757430,
+    "process_start_ticks": 1099832201,
+    "process_start_utc": "2026-09-30T04:25:12.010000+00:00",
+    "command": [
+      "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+      "-u",
+      "scripts/run_aurora_qwen35_smoke.py",
+      "--gpu-uuid",
+      "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+      "--output",
+      "runs/aurora-qwen35-4b-smoke-20260930-v3"
+    ],
+    "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+    "slurm_job_id": null
+  },
+  "cuda": {
+    "torch_cuda_version": "12.8",
+    "capability": [
+      12,
+      0
+    ],
+    "device": "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+  },
+  "runtime_versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "mask_audit": {
+    "rows": 4,
+    "sequence_tokens_once": 1746,
+    "supervised_tokens_once": 199,
+    "actual_trainer_masks_checked": true
+  },
+  "optimization_checks": {
+    "all_ranks_participated": true,
+    "rank_count": 1,
+    "all_ranks_same_final_adapter": true,
+    "rank_checks": [
+      {
+        "rank": 0,
+        "steps": 2,
+        "training_loss": 0.2610408514738083,
+        "actual_sequence_tokens": 3492,
+        "actual_target_tokens": 398,
+        "gradient_checks": 2,
+        "gradient_trace": [
+          {
+            "step": 1,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999643298166
+          },
+          {
+            "step": 2,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996552325242
+          }
+        ],
+        "adapter_tensors": 496,
+        "changed_adapter_tensors": 496,
+        "adapter_update_l2": 0.2224366733617795,
+        "all_adapter_tensors_finite": true,
+        "initial_adapter_digest": "6372b4c0d640d45fa81bd7c79ac522485dbe96a79b8369fd422a2c4a698b2772",
+        "final_adapter_digest": "52204a1860ab20f1ce4c32df59685ee4daed79b4bfb0462ad886d3e796b2f285"
+      }
+    ]
+  },
+  "measurement": {
+    "training_seconds": 4.30160678178072,
+    "peak_allocated_gpu_gib": 9.251296997070312,
+    "trainer_metrics": {
+      "train_runtime": 3.9502,
+      "train_samples_per_second": 2.025,
+      "train_steps_per_second": 0.506,
+      "total_flos": 75139833765888.0,
+      "train_loss": 0.2610408514738083,
+      "epoch": 2.0
+    }
+  },
+  "serialization_checks": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 32,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "bcc147b0892efb5b89b8e113c86791ec154a4531d5fc777644ff2cf8a3a4407b",
+      "adapter_config.json": "5dbf757ed400efe3f3b0698b3f986cad1fab16b1ae31e7c017b8a50a1555404a"
+    }
+  },
+  "same_training_target_loss_before": 0.2905963391215358,
+  "same_training_target_loss_after": 0.19087858243503764,
+  "training_control_inspection": {
+    "status": "all_eight_training_control_outputs_inspected",
+    "inspected_at": "2026-09-30T04:35:18.382388+00:00",
+    "reviewer": "one assistant; unblinded training-control inspection",
+    "independent_review": false,
+    "model_quality_gain_claim": false,
+    "matched_input_digests": true,
+    "base_already_makes_all_four_core_corrections": true,
+    "same_tasks_used_for_training": true,
+    "base_capped": 2,
+    "adapter_capped": 0,
+    "pairs": [
+      {
+        "id": "FRA-european-defence-2025:revision",
+        "country": "FRA",
+        "input_ids_digest": "af4c12293a62280a92b96529b385ca3070211b3c9338ae3517c8abc7b6c7bfec",
+        "base_generated_tokens": 54,
+        "adapter_generated_tokens": 54,
+        "base_capped": false,
+        "adapter_capped": false,
+        "answer_text_identical": false,
+        "observation": "Both correct outside to within the Atlantic Alliance. Base also substitutes spending; adapter wording is closer to the capabilities target."
+      },
+      {
+        "id": "GBR-nato-first-2025:revision",
+        "country": "GBR",
+        "input_ids_digest": "cb11b1c7a34f3fc96418c4454f3f7a2f0a3fce9eef83da654f61cf87136f8f50",
+        "base_generated_tokens": 45,
+        "adapter_generated_tokens": 45,
+        "base_capped": false,
+        "adapter_capped": false,
+        "answer_text_identical": true,
+        "observation": "Both correct secondary to foremost; generated answers are byte-identical."
+      },
+      {
+        "id": "IND-climate-2030-2022:revision",
+        "country": "IND",
+        "input_ids_digest": "1abe6aaa7a2c464aea3618ad328baa320cba64620afb64a33f26f8504646fb94",
+        "base_generated_tokens": 128,
+        "adapter_generated_tokens": 76,
+        "base_capped": true,
+        "adapter_capped": false,
+        "answer_text_identical": false,
+        "observation": "Both replace total emissions with emissions intensity of GDP and preserve installed capacity. Base gives the correction/citation, then its extra explanation is cut off at 128 tokens; adapter stops after the requested work product."
+      },
+      {
+        "id": "BRA-wto-differential-treatment-2022:revision",
+        "country": "BRA",
+        "input_ids_digest": "93b901b968ae6102dfc14be2dfbad96679f49a9bb87faa4af530f80256486f55",
+        "base_generated_tokens": 128,
+        "adapter_generated_tokens": 63,
+        "base_capped": true,
+        "adapter_capped": false,
+        "answer_text_identical": false,
+        "observation": "Both replace opposing with supporting needs-based flexibility. Base gives the correction/citation, then its extra explanation is cut off at 128 tokens; adapter stops after the requested work product."
+      }
+    ]
+  },
+  "cpu_tests": {
+    "passed": 19,
+    "failed": 0,
+    "log": "runs/aurora-qwen35-4b-smoke-20260930-v3/cpu-checks.log"
+  },
+  "preserved_failed_runs": [
+    "runs/aurora-qwen35-4b-smoke-20260930-v1",
+    "runs/aurora-qwen35-4b-smoke-20260930-v2"
+  ],
+  "nccl_distributed_verified": false,
+  "independent_review_complete": false,
+  "generalization_claim": false,
+  "historical_model_lock_sha256": "1fae7d59c6244f62830b0807baf3fc958e03c0b32e0a6eb7025c90de6c2b07ae",
+  "original_training_release_sha256": "eb406f97323aebf09bf460772deb621596c068bdb190f205695f8176182d8900",
+  "prepared_release_sha256": "e87b8485686de467a78d2062ca78f08da0ce496bde32790e289a9aa8cba28f95",
+  "existing_processes_managed": false,
+  "credentials_included": false,
+  "base_weights_in_snapshot": false,
+  "files": {
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter/README.md": {
+      "bytes": 5358,
+      "sha256": "58378fa479221fe81ab98f2429398130325f3419996ccf82eba7e7d230a7bdf6"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter/adapter_config.json": {
+      "bytes": 1337,
+      "sha256": "5dbf757ed400efe3f3b0698b3f986cad1fab16b1ae31e7c017b8a50a1555404a"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter/adapter_model.safetensors": {
+      "bytes": 64996408,
+      "sha256": "bcc147b0892efb5b89b8e113c86791ec154a4531d5fc777644ff2cf8a3a4407b"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter/chat_template.jinja": {
+      "bytes": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter/tokenizer.json": {
+      "bytes": 19989325,
+      "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter/tokenizer_config.json": {
+      "bytes": 1123,
+      "sha256": "bee8eba30f0eb4af73c0fe2cd06d0f89b657d7819941c438157ec42f7c80ea87"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter/training_args.bin": {
+      "bytes": 5777,
+      "sha256": "9e6ed879932accc64f1817402ca8753ba95103e9a8e8aaeef77a72d3c7036e27"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/adapter-controls.jsonl": {
+      "bytes": 12241,
+      "sha256": "85daa6ade2068eb4daea23e45c2dbea321ebd17568351a594431ac3305917e36"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/base-controls.jsonl": {
+      "bytes": 13420,
+      "sha256": "58f9dea69a2bec0463b534820567cfac797c39758ae3aa0db4bc2861dbe3e525"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/cpu-checks.log": {
+      "bytes": 100,
+      "sha256": "dfa6c513eec0cf48a024c5752818f0690c123e4889238e6e253717d597414bd0"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/environment.json": {
+      "bytes": 2332,
+      "sha256": "cd61fb37fe6e005b005a93d7f73dfbdb70832e88b7c644770624e3036fcac0d5"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/execution.log": {
+      "bytes": 4769,
+      "sha256": "1ed1a11e00bfa6845a702d2c9902d2b6407efd7da8d136c7f80641202070f673"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/inspection.json": {
+      "bytes": 2584,
+      "sha256": "6edf53c818c43dd05fcdf1b09a3956fd74f4243852c738c25109c1382abf28ee"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/launch.json": {
+      "bytes": 3585,
+      "sha256": "ec3300f1a8125010346b4fc9285c30587a52e9b266d03ff0860372dac2bc8b8c"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/paired-controls.md": {
+      "bytes": 11765,
+      "sha256": "696a346de1aa9c1c77e452512ae9deef292c303a0d925a129b616b2705ab1278"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/postrun-resources.json": {
+      "bytes": 909,
+      "sha256": "1d24b09848ea57fab9b9bd345c48c374c53475ce9bedb8465e88c82fbef49966"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/run.json": {
+      "bytes": 12943,
+      "sha256": "4a9c5769f68a897e61bea6c4d92f6605269f199fe92dd4e77950e98c70e54525"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/runner.py": {
+      "bytes": 18960,
+      "sha256": "cfb8cd73f157aea2f50dec8e095bee608d4a01d1b44196cee7b3656302818603"
+    },
+    "runs/aurora-qwen35-4b-smoke-20260930-v3/training_checks.py": {
+      "bytes": 10008,
+      "sha256": "6c4e5e38cc9bf8c000af1698ee7fdda9683e9350c6a19d1c934ebec43a52d7e6"
+    }
+  },
+  "decision": "Single-GPU small training machinery works. Choose a new bounded fitting/data question; no large inference campaign required. Distinct reviewed cases and matched evaluation remain necessary for behavioral claims."
+}

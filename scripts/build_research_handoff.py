@@ -15,7 +15,7 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "eval-pilot-20260926", "eval-pilot-20260927", "eval-qwen3-v1", "eval-v1",
             "policy-workshop-20260916", "deliberation-probe-20260928-v1",
             "evidence-format-20260928-v1", "synthesis-diagnostic-20260928-v1",
-            "training-readiness-20260928-v1")
+            "training-readiness-20260928-v1", "qwen35-smoke-20260930-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",

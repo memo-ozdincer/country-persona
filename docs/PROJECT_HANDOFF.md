@@ -1,8 +1,10 @@
 # Project handoff for fresh Aurora and local sessions
 
-State consolidated **29 September 2026** from code, frozen artifacts and measured receipts. This is a navigation/state document, not a new experimental result. Read `AGENTS.md` for user requirements and [HANDOFF_OPERATIONS.md](HANDOFF_OPERATIONS.md) for transfer verification and commands.
+State consolidated **30 September 2026** from code, frozen artifacts and measured receipts. This is a navigation/state document, not a new experimental result. Read `AGENTS.md` for user requirements and [HANDOFF_OPERATIONS.md](HANDOFF_OPERATIONS.md) for transfer verification and commands.
 
-**Latest continuation:** [Aurora evaluation portability and readiness](AURORA_EVALUATION_READINESS_20260929.md) verifies the original 9,046-file transfer, exact 42-response score replay, and all nine original prompt-token digests. The 63 focused checks pass; broader checks yield 166 passes, two omitted-artifact failures and six skips. A UTF-8 parser fallback fix preserves existing releases. The private GitHub synchronization captures working research code/docs and a separate verified handoff archive captures ignored evidence. Aurora model weights/runtime, independent review and the actual nine-call diagnostic remain pending; no GPU experiment was launched.
+**Latest continuation:** [Qwen3.5-4B Aurora training smoke](AURORA_QWEN35_TRAINING_SMOKE_20260930.md) passed: four examples, two BF16 LoRA steps, correct masks, finite gradients, 496 changed adapter tensors and exact save/reload. Training took 4.3 seconds at 9.25 GiB peak allocated memory. Four matched baseline/adapter answer pairs were inspected and 19 shared CPU checks passed. Two compatibility failures are preserved. The small model/runtime are now on scratch; NCCL/distributed training, independent review and persona-quality evidence remain pending. The nine-call historical format diagnostic is unrun and is not required before technical training tests.
+
+[September 29 portability evidence](AURORA_EVALUATION_READINESS_20260929.md) remains preserved: original 9,046-file transfer verification, exact 42-response score replay, all nine original prompt-token digests and 63 focused checks. Broader checks yielded 166 passes, two omitted-artifact failures and six skips. Private GitHub code synchronization and separate handoff archives carry code and ignored evidence; a code clone alone is insufficient.
 
 ## Research purpose and agreed approach
 
@@ -24,7 +26,7 @@ Working title: *From Positions to Decisions: Evaluating Behavior-Trained Country
 - Aurora is available for a few Blackwell GPUs when justified. A medical agent may also use `memo`; only manage resources positively traced to this project's launches. Never infer project ownership from username or perform blanket cancellation.
 - Keep models/caches/bulky outputs on scratch, not CSlab home. Credentials remain private and outside snapshots.
 - On Trillium prefer `def-zhijing` and retained `sleep infinity` allocations. The September 29 request to cancel all Trillium jobs was executed; the queue was already empty. It is not a standing instruction for future jobs or Aurora.
-- The latest request authorizes deep documentation and ordinary ongoing work. It does not waive the evaluation gate or resource-ownership rules.
+- September 30's request prioritizes small training tests on Aurora, using Qwen3.5 at 8B or smaller. Qwen3.5-4B is separately locked and technically tested; historical Qwen3-8B releases remain unchanged. A large inference campaign is not needed before technical tests. Stable evaluation remains necessary for substantive behavioral claims; resource-ownership rules persist.
 
 ## What has actually run
 
@@ -38,11 +40,12 @@ Working title: *From Positions to Decisions: Evaluating Behavior-Trained Country
 | Six synthesis diagnostics | Larger output cap removed observed truncation; targeted instruction repaired selected quota errors but introduced a false common-position claim | Not a general fix or fresh test-set improvement |
 | Complete baseline source review | 42 responses; 366 met, 117 unmet, 33 unratable rating instances; one unblinded assistant, zero independent reviewers | 516 dependent judgments, not 516 independent observations |
 | Tiny CPU optimization | Two steps, finite loss/gradients, 14 adapter tensors changed, correct masks and save/reload | Not the real 8B model or CUDA/NCCL/persona validation |
-| Aurora access/handoff | Remote-host metadata and SSH access; private HF authentication and scratch environment prepared | No Aurora model run or GPU reservation |
+| Aurora Qwen3.5-4B smoke, 30 September | Four examples, two real CUDA LoRA steps; 496 adapter tensors changed; exact save/reload; four matched before/after training-control pairs inspected | Single GPU only; no held-out gain, independent review or NCCL validation |
+| Aurora access/handoff, 29 September | Remote-host metadata and SSH access; private HF authentication and scratch environment prepared | No Aurora model run or GPU reservation during that checkpoint |
 
 Evidence: [old regression](REGRESSION_RESEARCH.md), [A/B results](EVAL_BASELINE_RESULTS_20260927.md), [failure analysis](EVAL_FAILURE_ANALYSIS_20260927.md), [stability](EVAL_STABILIZATION_RESULTS_20260927.md), [deliberation](DELIBERATION_BASELINE_20260928.md), [source review](DELIBERATION_SOURCE_REVIEW_20260928.md), [training verification](../reports/training-verification-20260928.json).
 
-“No new training” refers to the current four-country/evaluation-first phase. An older adapter did run and regressed. The later base-model EOS-only replay was identical; it does not resolve the old adapter's repetition mechanism.
+Earlier “no new training” observations predate September 30's four-country technical smoke. No new four-country production training or validated behavioral gain has run. An older Germany/China adapter did run and regressed. The later base-model EOS-only replay was identical; it does not resolve the old adapter's repetition mechanism.
 
 ## Evaluation definitions and present limitations
 
@@ -79,7 +82,7 @@ Measured H100 baseline: 150,968 input tokens, 11,551 generated tokens, about 260
 | Ukraine / peers | 24/25 | 0/1 | 14/16 | 1/0 |
 | Ukraine / central | 23/25 | 0/0 | 15/16 | 0/0 |
 
-These are provisional assistant judgments over jointly ratable units. Both overall country-macro peer gains remain null. No significance claim or general method ranking is supported. No new trained-model comparison has run.
+These are provisional assistant judgments over jointly ratable units. Both overall country-macro peer gains remain null. No significance claim or general method ranking is supported. No trained-model comparison under this deliberation protocol has run.
 
 ## Failures that should guide the next step
 
@@ -95,7 +98,9 @@ The evidence-JSON checker deliberately cannot certify entailment. A real exact q
 
 ## Next useful checkpoints
 
-**1. Portable Aurora context.** Verify the snapshot, inspect runtime/current GPU occupancy, use scratch caches and record process ownership. Trillium used torch 2.8.0+cu128, Transformers 4.57.6, TRL 0.24.0, PEFT 0.17.1 and Accelerate 1.11.0. Aurora compatibility has not been tested. Do not silently change versions or assume H100 results transfer.
+**Current priority:** small training tests. The single-GPU optimization/reload question is answered; inspect the [smoke receipt and paired controls](AURORA_QWEN35_TRAINING_SMOKE_20260930.md) before selecting a new bounded fitting/data question. Use a small matched base/adapter control on the same Qwen3.5 revision/runtime. The four smoke corrections are already handled by the base, so a meaningful behavioral comparison needs distinct, reviewed cases. The prepared format comparison below remains useful development work, not a prerequisite for another technical training check.
+
+**1. Portable Aurora context.** Snapshot verification and Qwen3.5-4B single-GPU execution passed; always recheck occupancy and record process ownership. The new scratch runtime has Torch 2.8.0+cu128, Transformers 5.17.0, TRL 1.14.1, PEFT 0.21.1 and Accelerate 1.15.0. Historical Trillium Qwen3-8B used Transformers 4.57.6, TRL 0.24.0, PEFT 0.17.1 and Accelerate 1.11.0. Do not silently mix versions or assume H100 results transfer. Distributed/NCCL remains untested.
 
 **2. One bounded format comparison plus source review.** `data/prepared/evidence-format-20260928-v1/` compares ordinary prose, evidence prose and evidence JSON in three contexts: climate frozen peer notes, Ukraine frozen central notes, and new South Sudan statements. Nine calls, common 2,048-token cap, 700-word limit, 8,192 context. Preflight: 37,823 input tokens, maximum 5,669; full prompt+cap fits 7,717. No model outputs exist yet.
 
@@ -105,7 +110,7 @@ Question: do evidence requirements or JSON structure help preserve positions, un
 
 **4. Technical training smoke, then fit only if useful.** Ten authored correction targets from eight documents/four connected components; 4,798 sequence and 502 supervised tokens for the full inventory, maximum length 567. Smoke: four cases, one per country, two steps. Fit: ten cases, twenty steps. Rank-8 BF16 LoRA, 5e-5 learning rate, seed 42, completion-only loss. These sizes diagnose optimization, not generalization.
 
-Training now checks masks, finite microbatch loss/gradients, actual updates, rank agreement and saved-state reload. CUDA/NCCL remains unverified. `launch_training_readiness.py --run` requires Slurm and exactly four visible GPUs. **Do not fake `SLURM_JOB_ID` on Aurora.** Establish an explicit Aurora launcher when that step is reached, retaining the verification checks.
+Training checks masks, finite microbatch loss/gradients, actual updates, rank agreement and saved-state reload. The Qwen3.5-4B version of the four-case/two-step smoke passed on one Aurora GPU, with its own prepared pack/model/runtime lock. NCCL remains unverified. Historical `launch_training_readiness.py --run` requires Slurm and exactly four visible GPUs. **Do not fake `SLURM_JOB_ID` on Aurora.** The verified explicit Aurora path is `scripts/run_aurora_qwen35_smoke.py`.
 
 **5. Matched base/adapter evaluation, then broader data.** The comparator requires identical device type, library versions, inference code, model bytes, protocol and budgets. An Aurora adapter needs a matched **Aurora base run**; H100 results are historical diagnostics. Expand independent event families and reviewed training supervision before research-quality claims. Multiseed confirmation is for a later stage.
 
@@ -117,6 +122,7 @@ Training now checks masks, finite microbatch loss/gradients, actual updates, ran
 | Four-country extension | Strategies, climate/development evidence and policy applications; candidates, not automatic admission | `data/prepared/country-extension-20260914/`; `COUNTRY_EXTENSION_20260914.md` |
 | Policy workshop | Ten cases, 53 correlated rows in audit SFT/revision SFT/DPO/multi-agent views, three authored workflows | `data/prepared/policy-workshop-20260916/`; `POLICY_WORKSHOP_POSTTRAINING.md` |
 | Technical training probe | Revision view only; research-prepared, not human-approved | `data/prepared/training-readiness-20260928-v1/` |
+| Qwen3.5 technical controls | Same four authored tasks with new tokenizer/model lock; two-step single-GPU CUDA execution passed | `data/prepared/qwen35-smoke-20260930-v1/`, `runs/aurora-qwen35-4b-smoke-20260930-v3/` |
 | Reddit | 2,470,215 unique records and 1,743,263 overlapping direct reply-pair views, six country contexts | `data/prepared/reddit-country-20260923/`; `REDDIT_COUNTRY_DATA.md` |
 | Full acquired UNBench release | Beyond the original public sample; documented join/date/scoring issues remain | `data/raw/unbench-audit-20260926/`; `reports/eval-pilot-20260926/unbench-audit.json` |
 | UNSC-Bench | Independent diplomatic corpus with overlap/historical-representation limitations | `data/raw/unsc-bench-audit-20260926/`; corresponding audit |
