@@ -1,0 +1,40 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "kind": "supplied_content_plan_to_text_base_diagnostic",
+  "authorization": "User explicitly requests trying supplied-bullet-content plan-to-text SFT; inspect base first and train only if useful failures remain.",
+  "source_pack": "data/prepared/evidence-format-20260928-v1",
+  "format_condition": "checked_bullet_plan",
+  "context_budget": 8192,
+  "generation_max_new_tokens": 2048,
+  "question": "Can the untrained Qwen3.5-4B faithfully realize source-checked bullet plans into complete policy memos, repairing prior support-reversal and false-consensus errors?",
+  "decision_rules": [
+    "Inspect all three complete base answers against supplied plans and original sources.",
+    "If the base faithfully covers the plans, report the preprocessing result and do not train a redundant adapter.",
+    "If substantive omissions, distortions or invented positions remain, prepare one small complete plan-to-text fit and matched comparison."
+  ],
+  "limitations": [
+    "Plans give intended content and stated decisions; this tests realization, not predicting decisions.",
+    "Plans and output review are authored by one assistant; independent review pending.",
+    "Three exposed development contexts, no sealed test.",
+    "Raw-source contrast changes input content, prompt instructions, removes prior notes and reduces input length; not a single-variable or equal-compute causal comparison.",
+    "Assistant preparation cost is not a metered teacher endpoint run; student timing excludes upstream planning."
+  ],
+  "max_length": 8192,
+  "eval_pack": "data/prepared/qwen35-plan-to-text-eval-20260930-v2",
+  "mode": "base"
+}

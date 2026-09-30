@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "model_answers_inspected": 6,
+  "matched_prompt_case_and_plan_digests": 3,
+  "all_full_answers_within_2048_token_and_700_word_limits": true,
+  "same_model_bytes_versions_hardware_type_inference_helper_and_generation_config": true,
+  "actual_completion_masks_checked": {
+    "rows": 2,
+    "sequence_tokens_once": 3720,
+    "supervised_tokens_once": 1167,
+    "actual_trainer_masks_checked": true
+  },
+  "finite_gradient_steps": 20,
+  "changed_adapter_tensors": 496,
+  "saved_adapter_exact_reload": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 32,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "099f036ea14d9139d91a10ff4f6ea99137a93210978ce5e885dd522b34903939",
+      "adapter_config.json": "5b5acf1c87256c76f7af8af2cc0f256d459cb9c18a1c2065351ea87aa1421bc8"
+    }
+  },
+  "pack_software_checks": {
+    "status": "passed",
+    "checks": [
+      "Captured plan builder reproduces all six frozen files byte-for-byte.",
+      "Post-checkpoint all-country guard preserves all evaluated plan/case/review bytes.",
+      "Complete-target builder reproduces all six frozen training files byte-for-byte.",
+      "missing_country is rejected before pack creation.",
+      "missing_criterion is rejected before pack creation.",
+      "wrong_quote is rejected before pack creation."
+    ],
+    "software_check_count": 6,
+    "semantic_fidelity_or_independent_review_claim": false,
+    "captured_builder_sha256": "ede14f5d74b560023d1a72b57237deb2f5115a6e04b9d17a8831c6ae9f2c4b65",
+    "current_builder_sha256": "f8e882af2e06c828b4b5ff58c4949a217605411c5c60542a2d48337fe62125d3",
+    "note": "Frozen V2 retains the builder used before inference. Current builder adds an all-country guard; evaluated content bytes are identical. Initial audit harness included __pycache__ directory in file hashing and failed before any comparison; corrected to regular files."
+  },
+  "base_source_sha256": {
+    "scripts/run_aurora_qwen35_plan_to_text.py": "e4f5d7ec74f62716a9819493f117514600243954a358b93cf82867e4571789f2",
+    "scripts/run_aurora_qwen35_smoke.py": "cfb8cd73f157aea2f50dec8e095bee608d4a01d1b44196cee7b3656302818603",
+    "src/country_persona/training_checks.py": "6c4e5e38cc9bf8c000af1698ee7fdda9683e9350c6a19d1c934ebec43a52d7e6",
+    "src/country_persona/io.py": "c389b6d7be6da5a80d72ba3fbb98cc9fd1556d7233d07a6f9e550143112b24ee"
+  },
+  "fit_source_sha256": {
+    "scripts/run_aurora_qwen35_plan_to_text_fit.py": "2b2616ea52c99e40c2e085f712ba71ffb1b34816408e94c10654efd4d6ae371b",
+    "scripts/run_aurora_qwen35_smoke.py": "cfb8cd73f157aea2f50dec8e095bee608d4a01d1b44196cee7b3656302818603",
+    "src/country_persona/training_checks.py": "6c4e5e38cc9bf8c000af1698ee7fdda9683e9350c6a19d1c934ebec43a52d7e6",
+    "src/country_persona/train.py": "50c1674769f9f137020a32e8ad70cce9676c6978d8df7bb9d8ff81b45f2860a7",
+    "src/country_persona/io.py": "c389b6d7be6da5a80d72ba3fbb98cc9fd1556d7233d07a6f9e550143112b24ee"
+  },
+  "independent_semantic_review_complete": false,
+  "persona_quality_gain_claim": false,
+  "nccl_distributed_verified": false
+}

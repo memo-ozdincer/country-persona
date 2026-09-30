@@ -1,0 +1,283 @@
+{
+  "status": "plan_to_text_fit_and_matched_memos_completed",
+  "run_directory": "runs/aurora-qwen35-plan-to-text-fit-20260930-v1",
+  "run_sha256": "45e4ebae1c6bb9f67426b07be2ee0818aa7c3e057653d7136466d5ee58cb7c8e",
+  "transcript_sha256": "2a849989fbda8fdfb3b251aa00e9a9e5eb516bf2725eb46bcf719129c33e1f75",
+  "inspection_sha256": "5bae94b2ca83d7144c2b667e4b2b0b2187485624ccb727c62daf90ba005d5709",
+  "training_steps": 20,
+  "examples": 2,
+  "measurement": {
+    "training_seconds": 44.428758289664984,
+    "peak_training_allocated_gpu_gib": 9.660622119903564,
+    "trainer_metrics": {
+      "train_runtime": 44.0421,
+      "train_samples_per_second": 0.908,
+      "train_steps_per_second": 0.454,
+      "total_flos": 1600917420441600.0,
+      "train_loss": 0.414759860932827,
+      "epoch": 20.0
+    }
+  },
+  "same_target_loss_before": 0.6818433897865054,
+  "same_target_loss_after": 0.26668536613257193,
+  "mask_audit": {
+    "rows": 2,
+    "sequence_tokens_once": 3720,
+    "supervised_tokens_once": 1167,
+    "actual_trainer_masks_checked": true
+  },
+  "optimization_checks": {
+    "all_ranks_participated": true,
+    "rank_count": 1,
+    "all_ranks_same_final_adapter": true,
+    "rank_checks": [
+      {
+        "rank": 0,
+        "steps": 20,
+        "training_loss": 0.414759860932827,
+        "actual_sequence_tokens": 74400,
+        "actual_target_tokens": 23340,
+        "gradient_checks": 20,
+        "gradient_trace": [
+          {
+            "step": 1,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999992144215112
+          },
+          {
+            "step": 2,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999991359006242
+          },
+          {
+            "step": 3,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9271116836433718
+          },
+          {
+            "step": 4,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.8026997317960581
+          },
+          {
+            "step": 5,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.7713971765510473
+          },
+          {
+            "step": 6,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9539531092733826
+          },
+          {
+            "step": 7,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.6679552609330237
+          },
+          {
+            "step": 8,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.6541279668983442
+          },
+          {
+            "step": 9,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999990441979206
+          },
+          {
+            "step": 10,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.584553672930938
+          },
+          {
+            "step": 11,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.583537186905531
+          },
+          {
+            "step": 12,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5859687852133594
+          },
+          {
+            "step": 13,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5647537518854446
+          },
+          {
+            "step": 14,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5593364504101486
+          },
+          {
+            "step": 15,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5546035149020574
+          },
+          {
+            "step": 16,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.562308178151036
+          },
+          {
+            "step": 17,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5652840088647828
+          },
+          {
+            "step": 18,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5446180139874648
+          },
+          {
+            "step": 19,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.536855990496665
+          },
+          {
+            "step": 20,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5312627955378709
+          }
+        ],
+        "adapter_tensors": 496,
+        "changed_adapter_tensors": 496,
+        "adapter_update_l2": 1.4749381336310288,
+        "all_adapter_tensors_finite": true,
+        "initial_adapter_digest": "6372b4c0d640d45fa81bd7c79ac522485dbe96a79b8369fd422a2c4a698b2772",
+        "final_adapter_digest": "95e1fbc32a01d6312c2635436074077b1e3e781d734a7c5ffca710ab2c28b459"
+      }
+    ]
+  },
+  "serialization_checks": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 32,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "099f036ea14d9139d91a10ff4f6ea99137a93210978ce5e885dd522b34903939",
+      "adapter_config.json": "5b5acf1c87256c76f7af8af2cc0f256d459cb9c18a1c2065351ea87aa1421bc8"
+    }
+  },
+  "matched_input_digests": true,
+  "same_hardware_type_runtime_model_bytes_and_generation_helper": true,
+  "different_gpu_uuids": true,
+  "base_generation_seconds": 40.669850282371044,
+  "adapter_generation_seconds": 43.315944807603955,
+  "base_input_tokens": 3891,
+  "base_generated_tokens": 2626,
+  "adapter_generated_tokens": 1764,
+  "teacher_cost": "Assistant content planning and review, not a metered teacher endpoint; excluded from student timings.",
+  "inspection": {
+    "status": "all_three_complete_matched_memo_pairs_inspected",
+    "inspected_at": "2026-09-30T15:57:20.887021+00:00",
+    "reviewer": "same unblinded LLM assistant as planner and target author",
+    "independent_review_complete": false,
+    "quality_gain_claim": false,
+    "aggregate_fidelity_score": null,
+    "baseline_transcript_sha256": "eada4dfd5614127613cdc09397cc94c8f427bb4932509d689cc663ec4d32d789",
+    "adapter_transcript_sha256": "2a849989fbda8fdfb3b251aa00e9a9e5eb516bf2725eb46bcf719129c33e1f75",
+    "training_controls": [
+      "climate-policy-workshop-v1",
+      "ukraine-policy-workshop-v1"
+    ],
+    "outside_training_exposed_monitor": "south-sudan-policy-workshop-v1",
+    "observations": {
+      "climate": {
+        "repairs": [
+          "Invented writing date 2021-12-10 removed; heading uses supplied source date.",
+          "Brazil climate-related development harms restored."
+        ],
+        "retained_content": [
+          "France military insufficiency, climate-crisis understanding/resilience and complementary measures.",
+          "UK reporting/draft, meaningful women/girls participation and quota uncertainty.",
+          "India qualification attributed to India, institutional preference and G-5 support.",
+          "Brazil inclusive UNFCCC, harms and timely scaling-up of developed-country finance.",
+          "No all-four Council/UNFCCC-primary/G-5/financing agreement invented; proposal not an agreed commitment."
+        ],
+        "tradeoffs": [
+          "The opposing institutional camps are clear in national paragraphs, but the separate explicit France/UK-versus-India/Brazil summary from the base is removed.",
+          "Less explicit proposal language about the all-four financing priority, while no false all-four claim is introduced."
+        ],
+        "new_substantive_position_errors_observed": []
+      },
+      "ukraine": {
+        "repairs": [
+          "Invented writing date October 15, 2022 removed.",
+          "Brazil immediate ceasefire and peace negotiations restored.",
+          "Unsupported France material-support embellishment removed."
+        ],
+        "retained_content": [
+          "France national capacity and as-long-as-necessary support; no exact financial pledge.",
+          "UK SUPPORTS US-Albania draft; no contradictory draft rejection or later vote/passage.",
+          "India international law/Charter, humanitarian and global-South assistance; no historical Abstain inferred.",
+          "Brazil procedural conditions and uncertain future recognition; no automatic recognition.",
+          "Limited common ground, differences and analyst proposal."
+        ],
+        "remaining_or_new_errors": [
+          "Output repeats an instruction to the writer (do not assert a vote...) rather than consistently expressing final memo prose."
+        ],
+        "tradeoffs": [
+          "Explicit France unconditional-support caution is omitted, though no unconditional commitment is asserted."
+        ],
+        "new_substantive_position_errors_observed": []
+      },
+      "south_sudan_outside_training": {
+        "repairs": [
+          "Invented writing date October 26, 2023 removed.",
+          "France humanitarian-worker protection restored.",
+          "Ambiguous France national UN Security Council position wording removed.",
+          "UK 8.9-million humanitarian figure now correctly says people in need."
+        ],
+        "retained_content": [
+          "EU 42-to-72-million aid remains EU rather than French, with no protection conditionality.",
+          "UK critical benchmarks unmet and election-date agreement not established.",
+          "India UNMISS flood-area assistance, nearly 2300 troops and bounded sanctions concerns.",
+          "Brazil three priorities and UNMISS mobility; no embargo timetable established.",
+          "No pooled assembly/UNMISS/AU-IGAD/Leer agreement or immediate unconditional sanctions lifting invented."
+        ],
+        "remaining_omissions": [
+          "EU support will continue remains omitted."
+        ],
+        "new_omissions": [
+          "France implementation resources for unified command omitted.",
+          "France electoral legal framework omitted while constitutional framework retained.",
+          "India 8.9-million humanitarian figure omitted from the differences section; only UK retained."
+        ],
+        "interpretation": "Outside-training exposed monitor has useful format/coverage repairs and new omissions. This is mixed transfer evidence, not a complete coverage pass or sealed test."
+      }
+    },
+    "writing_date_inventions": {
+      "base": 3,
+      "adapter": 0,
+      "denominator": 3,
+      "scope": "Targeted observed header behavior, not a validated overall score."
+    },
+    "interpretation": "Checked plans repair the central position/consensus failures before SFT. One complete-task fit adds format and selected content repairs, including outside training, but still loses supplied details. It teaches realization of given positions rather than decision prediction.",
+    "decision": "Retain checked-plan realization as a useful development direction. Before increasing optimization, freeze a separate-context pack with atomic coverage and source/absence audits, inspect upstream planner errors independently where possible, and compare base versus this adapter with identical plans. Do not automatically repeat short fits or queue a sweep."
+  },
+  "decision": "Retain checked-plan realization as a useful development direction. Before increasing optimization, freeze a separate-context pack with atomic coverage and source/absence audits, inspect upstream planner errors independently where possible, and compare base versus this adapter with identical plans. Do not automatically repeat short fits or queue a sweep."
+}

@@ -1,0 +1,66 @@
+{
+  "status": "three_base_memos_completed_and_inspected",
+  "run_directory": "runs/aurora-qwen35-plan-to-text-base-20260930-v1",
+  "run_sha256": "54cad15060e1db790c5d468c06e332b720c8efef71558cfca96851388c7ca638",
+  "transcript_sha256": "eada4dfd5614127613cdc09397cc94c8f427bb4932509d689cc663ec4d32d789",
+  "inspection_sha256": "bb825fa07ab4acf64f92315ad2509c1786846ae2fec90f8ecfbecfd58e0e9704",
+  "calls": 3,
+  "training_steps": 0,
+  "inspection": {
+    "status": "all_three_complete_memos_inspected_against_frozen_plans_and_original_sources",
+    "inspected_at": "2026-09-30T15:49:50.287291+00:00",
+    "reviewer": "same unblinded LLM assistant as plan author",
+    "independent_review_complete": false,
+    "quality_gain_claim": false,
+    "aggregate_fidelity_score": null,
+    "transcript_sha256": "eada4dfd5614127613cdc09397cc94c8f427bb4932509d689cc663ec4d32d789",
+    "observations": {
+      "climate": {
+        "repairs_relative_to_prior_raw_source_outputs": [
+          "UK quota uncertainty is preserved as absence, not rejection.",
+          "India absolute-denial characterization corrected.",
+          "France/UK Council preference is separated from India/Brazil UNFCCC preference.",
+          "G-5 support restricted to France/India; silence is not opposition.",
+          "Women/girls participation and Brazil timely scaling-up of finance retained."
+        ],
+        "remaining_errors": [
+          "Invented memo date 2021-12-10; no writing date is supplied.",
+          "Brazil climate-related development harms omitted while health/food/water harms retained."
+        ]
+      },
+      "ukraine": {
+        "repairs_relative_to_prior_raw_source_outputs": [
+          "UK explicitly SUPPORTS US-Albania draft without a retained opposite claim.",
+          "No later vote or passage invented; India unknown is not treated as Abstain.",
+          "Referendum condemnation is not pooled across all four.",
+          "France national capacity preserved; no exact financial amount or unconditional commitment.",
+          "Brazil future recognition remains undetermined."
+        ],
+        "remaining_errors": [
+          "Invented memo date October 15, 2022.",
+          "Brazil immediate ceasefire is omitted, although negotiations appear in differences."
+        ],
+        "minor_scope_concern": "France support is called material in the differences section; the plan only says support."
+      },
+      "south_sudan_outside_future_fit": {
+        "repairs_relative_to_prior_raw_source_outputs": [
+          "UK unmet benchmarks and unknown election date retained.",
+          "EU 42-to-72-million assistance kept distinct from French pledge and protection conditionality.",
+          "No all-four assembly/UNMISS mobility/AU-IGAD endorsement or embargo-lifting agreement invented.",
+          "India UNMISS flood-area deliveries and sanctions concerns retained."
+        ],
+        "remaining_errors": [
+          "Invented memo date October 26, 2023.",
+          "France protection of humanitarian workers is omitted; civilian protection is discussed.",
+          "EU support will continue is omitted."
+        ],
+        "minor_wording_concerns": [
+          "France national UN Security Council position is ambiguous institutional wording, although introduced as France delegation.",
+          "UK/India humanitarian figure is phrased as a need for 8.9 million people rather than people in need."
+        ]
+      }
+    },
+    "interpretation": "Checked plans repair core diagnosed position/consensus failures in these exposed examples; raw-source contrast changes many prompt factors. Remaining invented metadata and omissions justify one complete-task realization fit.",
+    "decision": "Train one fresh-base rank-8 LoRA on two complete climate/Ukraine plan-to-memo targets for 20 optimizer steps, then inspect the same three prompts. South Sudan remains outside training but exposed."
+  }
+}

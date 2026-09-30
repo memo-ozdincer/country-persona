@@ -1,0 +1,55 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "kind": "two_complete_plan_to_text_target_fit",
+  "authorization": "User explicitly requests trying supplied-bullet-content plan-to-text SFT; inspect base first and train only if useful failures remain.",
+  "source_pack": "data/prepared/evidence-format-20260928-v1",
+  "format_condition": "checked_bullet_plan",
+  "context_budget": 8192,
+  "generation_max_new_tokens": 2048,
+  "question": "Can complete plan-to-memo SFT remove invented memo metadata and restore supplied details without losing correct positions; does this extend to South Sudan outside training?",
+  "decision_rules": [
+    "Inspect all three complete matched answers.",
+    "Report repairs, new errors and retained content separately; climate/Ukraine prompts are exact training controls.",
+    "South Sudan is excluded from optimization but already exposed; no generalization claim.",
+    "Use the result to choose next data/evaluation changes; no automatic next fit or sweep."
+  ],
+  "limitations": [
+    "Plans give intended content and stated decisions; this tests realization, not predicting decisions.",
+    "Plans and output review are authored by one assistant; independent review pending.",
+    "Three exposed development contexts, no sealed test.",
+    "Raw-source contrast changes input content, prompt instructions, removes prior notes and reduces input length; not a single-variable or equal-compute causal comparison.",
+    "Assistant preparation cost is not a metered teacher endpoint run; student timing excludes upstream planning.",
+    "Two full memos, with exact training-prompt evaluation: fitting controls, not held-out gains.",
+    "South Sudan was inspected before training and is an exposed outside-training monitor.",
+    "Twenty repeated optimizer steps on two examples; not a production training release."
+  ],
+  "max_length": 8192,
+  "eval_pack": "data/prepared/qwen35-plan-to-text-eval-20260930-v2",
+  "mode": "fit",
+  "training_pack": "data/prepared/qwen35-plan-to-text-fit-20260930-v1",
+  "training_examples": 2,
+  "baseline_run": "runs/aurora-qwen35-plan-to-text-base-20260930-v1",
+  "baseline_run_sha256": "54cad15060e1db790c5d468c06e332b720c8efef71558cfca96851388c7ca638",
+  "baseline_transcript_sha256": "eada4dfd5614127613cdc09397cc94c8f427bb4932509d689cc663ec4d32d789",
+  "baseline_inspection_sha256": "bb825fa07ab4acf64f92315ad2509c1786846ae2fec90f8ecfbecfd58e0e9704",
+  "max_steps": 20,
+  "gradient_accumulation_steps": 2,
+  "lora_rank": 8,
+  "learning_rate": 5e-05,
+  "initializer": "fresh_base_not_resume_of_prior_adapters"
+}
