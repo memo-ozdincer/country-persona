@@ -1,0 +1,47 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "kind": "targeted_four_example_development_fit_and_transfer",
+  "authorization": "2026-09-30 user requests small results that inform adaptive continuation, fixes or replanning",
+  "source_pack": "data/prepared/evidence-format-20260928-v1",
+  "format_condition": "prose_control",
+  "context_budget": 8192,
+  "generation_max_new_tokens": 2048,
+  "question": "Can 20 LoRA steps on source-scope corrections repair diagnosed draft-support and false-consensus errors while preserving full-answer coverage, and do changes extend to South Sudan outside training?",
+  "decision_rules": [
+    "Inspect all three after-fit memos against the matched base and two-step adapter.",
+    "Count repairs and regressions separately; treat climate/Ukraine as exposed fit diagnostics.",
+    "South Sudan remains outside training but is an already exposed development monitor, not a sealed test.",
+    "Continue only from specific inspected results; change supervision/method if targeted fitting does not repair the failures."
+  ],
+  "limitations": [
+    "Four assistant-authored targets derived after inspecting development errors; no independent semantic review.",
+    "Climate and Ukraine source contexts are exposed and included in training.",
+    "South Sudan is outside this adapter training but already exposed, so it is an exploratory monitor, not confirmatory generalization.",
+    "Different curricula, steps and target lengths prevent attributing differences solely to one factor."
+  ],
+  "training_pack": "data/prepared/qwen35-scope-fit-20260930-v1",
+  "baseline_run": "runs/aurora-qwen35-transfer-20260930-v1",
+  "max_steps": 20,
+  "gradient_accumulation_steps": 4,
+  "lora_rank": 8,
+  "learning_rate": 5e-05,
+  "max_length": 8192,
+  "initializer": "fresh_base_not_resume_of_two_step_adapter",
+  "baseline_run_sha256": "d02749c8c552c52c6da1fdcc153ce50c33490955ea469cbc351739bba1564f22",
+  "baseline_transcript_sha256": "efbafbebe080976cc9dde2c72636009a619646914f40d68f744dfda66b6b54cb"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "matched_development_transfer_completed",
+  "run_directory": "runs/aurora-qwen35-note-ablation-20260930-v1",
+  "run_sha256": "37bd0c63667d31fd97b4b191dee0ea5399c759f5cdb8defeb70a7d24bf605f12",
+  "transcript_sha256": "87c3a05471c1deff635b65948e5a19c05aadb62c0ae258e1429032a135e48609",
+  "inspection_sha256": "4a9928efe43aeee1e5ef7f312513ba51c42ceb3c7e0aada846519e485eb6cb52",
+  "inspection": {
+    "status": "both_complete_answers_inspected",
+    "inspected_at": "2026-09-30T05:18:50.896148+00:00",
+    "reviewer": "one unblinded assistant",
+    "independent_review_complete": false,
+    "aggregate_score": null,
+    "base": "Correctly quotes UK support, then still says its stance is against the draft; contradiction persists without notes. Later recorded vote is no longer asserted. All-four negotiation generalization remains.",
+    "targeted_adapter": "Clearly says UK supports the US/Albania draft, without later-vote assertions. Still invents uniform rejection of referendums and all-four negotiation language, contradicting its own India paragraph.",
+    "inference": "Conflicting notes affect the trained adapter response, but notes are not a sufficient explanation of all failures. Prompt length also changes.",
+    "decision": "Hold targets/hyperparameters fixed and include the frozen conflicting notes in training; inspect original-task repairs and regressions."
+  },
+  "variant": "Only terminal prior notes removed; full sources, questions and generation budgets unchanged. Input length is shorter.",
+  "decision": "Hold targets/hyperparameters fixed and include the frozen conflicting notes in training; inspect original-task repairs and regressions."
+}

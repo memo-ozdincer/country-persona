@@ -1,0 +1,41 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "kind": "exploratory_notes_removal_diagnostic",
+  "authorization": "2026-09-30 user requests small results that inform adaptive continuation, fixes or replanning",
+  "source_pack": "data/prepared/evidence-format-20260928-v1",
+  "format_condition": "prose_control",
+  "adapter_run": "runs/aurora-qwen35-scope-fit-20260930-v1",
+  "context_budget": 8192,
+  "generation_max_new_tokens": 2048,
+  "question": "Does removing the erroneous prior-note block repair the UK draft-support reversal while leaving national questions and all four source statements unchanged?",
+  "decision_rules": [
+    "Compare both clean-source answers with their corresponding original-note answers.",
+    "If reversal disappears, test supervision for source-versus-note conflict before adding more generic correction steps.",
+    "If reversal persists, isolate the support/reject clause and investigate comprehension/decoding rather than assuming notes cause it."
+  ],
+  "limitations": [
+    "Removing notes changes prompt length and content; this is a small mechanism diagnostic, not a controlled generalization result.",
+    "Ukraine has been exposed and included in targeted training; independent review remains pending."
+  ],
+  "scenario_ids": [
+    "ukraine-policy-workshop-v1"
+  ],
+  "expected_contexts": 1,
+  "remove_prior_notes": true,
+  "adapter_arm": "targeted_twenty_step_adapter"
+}

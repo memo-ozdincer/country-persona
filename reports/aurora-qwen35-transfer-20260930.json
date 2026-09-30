@@ -1,0 +1,85 @@
+{
+  "status": "matched_development_transfer_completed",
+  "run_directory": "runs/aurora-qwen35-transfer-20260930-v1",
+  "run_sha256": "d02749c8c552c52c6da1fdcc153ce50c33490955ea469cbc351739bba1564f22",
+  "transcript_sha256": "efbafbebe080976cc9dde2c72636009a619646914f40d68f744dfda66b6b54cb",
+  "inspection_sha256": "deeb48d60701b4fe8f104f82a3be96b851c18b4155f46591c47cd0dd7f15c71d",
+  "paired_answers_sha256": "de49a51aa8a1b8e7bd379e0c9622182ccf7d5d35f5748dbed5c1e208d3882577",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "gpu": {
+    "uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "memory_used_mib_before_launch": 0,
+    "utilization_before_launch": 0,
+    "existing_compute_processes": []
+  },
+  "completed_calls": 6,
+  "output_caps": 0,
+  "generation_seconds": 127.59230534173548,
+  "fresh_adapter_loaded_and_digest_verified": true,
+  "comparison_inputs_matched": true,
+  "observations": {
+    "status": "all_six_complete_answers_inspected_against_full_bounded_sources",
+    "inspected_at": "2026-09-30T05:01:05.231076+00:00",
+    "reviewer": "one unblinded assistant",
+    "independent_review_complete": false,
+    "quality_gain_claim": false,
+    "aggregate_fidelity_score": null,
+    "scope": "Exploratory qualitative source inspection; observations are dependent, not calibrated independent ratings.",
+    "observations": {
+      "climate-policy-workshop-v1": {
+        "persistent_errors": [
+          "Both explicitly invent UK support for the G-5 Sahel Joint Force; UK source does not mention it.",
+          "Both claim all four explicitly acknowledge an existential climate threat to peace/security, overstating the common scope.",
+          "Both claim all nations cite COP26/Glasgow; Brazil does not."
+        ],
+        "adapter_regressions": [
+          "France no longer says armed forces/peacekeepers alone are insufficient.",
+          "UK explicit draft support is omitted.",
+          "The adapter redirects Brazil/India climate finance toward regional security initiatives, not established by those finance passages."
+        ],
+        "retained_correct_distinctions": [
+          "UK Council-imposed carbon quota approval remains not established in both.",
+          "India climate harms versus opposition to a separate Council platform is broadly distinguished, though adapter does not explicitly correct the supplied absolute-denial claim."
+        ]
+      },
+      "ukraine-policy-workshop-v1": {
+        "persistent_errors": [
+          "Both reverse UK draft support into rejection despite quoting the support clause.",
+          "Both invent all-four condemnation of referendums; India does not discuss referendums in its bounded statement.",
+          "Both invent all-four return-to-negotiations language; it is explicit for India/Brazil, while France/UK call for ending the war."
+        ],
+        "adapter_regressions": [
+          "Adapter asserts a later recorded UK vote and constructs a false conflict with the meeting statement; that later vote is outside the packet."
+        ],
+        "retained_correct_distinctions": [
+          "France national capacity and unspecified financial pledge remain explicit in both.",
+          "India draft vote is not established in both."
+        ],
+        "ambiguities": [
+          "Neither answer clearly answers every condition in the hypothetical Brazil recognition question. Full proposed rubric review remains pending."
+        ]
+      },
+      "south-sudan-policy-workshop-v1": {
+        "persistent_errors": [
+          "Both attribute the combination of command-structure and legislative-assembly developments to all four; France/UK do not mention assembly formation.",
+          "Both turn the absence of an established UK election date into the definite assertion that a date has not been agreed."
+        ],
+        "base_only_errors": [
+          "Base attributes Leer condemnation/accountability to all nations, citing India though the Indian statement does not mention Leer.",
+          "Base attributes UNMISS mobility to all four; that detail is in Brazil."
+        ],
+        "adapter_remaining_errors": [
+          "Adapter still says all nations condemned violence; descriptive concern and condemnation are not interchangeable."
+        ],
+        "retained_correct_distinctions": [
+          "Both attribute EUR 72 million to the EU, not a French national pledge.",
+          "Both retain UK unmet benchmarks, India no unconditional immediate lifting of all sanctions, and Brazil no established embargo timetable."
+        ]
+      }
+    },
+    "decision": "Do not extend easy four-case correction fitting blindly. Test targeted claim-scope corrections on climate/Ukraine; retain South Sudan outside that training."
+  },
+  "decision": "Do not extend easy four-case correction fitting blindly. Test targeted claim-scope corrections on climate/Ukraine; retain South Sudan outside that training."
+}

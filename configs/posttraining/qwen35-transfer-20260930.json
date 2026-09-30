@@ -1,0 +1,38 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "kind": "exploratory_two_step_adapter_transfer_not_confirmatory_generalization",
+  "authorization": "2026-09-30 user requests small results that inform adaptive continuation, fixes or replanning",
+  "source_pack": "data/prepared/evidence-format-20260928-v1",
+  "format_condition": "prose_control",
+  "adapter_run": "runs/aurora-qwen35-4b-smoke-20260930-v3",
+  "context_budget": 8192,
+  "generation_max_new_tokens": 2048,
+  "question": "Does the two-step source-grounded correction adapter change source fidelity, uncertainty handling or delivery on three longer synthesis tasks outside its four training rows?",
+  "decision_rules": [
+    "Inspect all six delivered answers against full bounded sources and frozen proposed criteria.",
+    "If base already handles the material distinctions and the adapter adds no fidelity gain, change the learning task or supervision instead of extending easy correction training.",
+    "If specific errors persist, use them to design a bounded training or prompt contrast; retain regressions and uncertainty.",
+    "If outputs are capped or inputs differ, fix delivery/comparison before interpreting behavior."
+  ],
+  "limitations": [
+    "Three exposed development contexts and one assistant inspection; independent review remains pending.",
+    "No statistical generalization or validated persona-quality claim.",
+    "The two historical note sets come from Qwen3-8B, identically supplied to both Qwen3.5 arms.",
+    "This six-call comparison is separate from the unrun nine-format Qwen3-8B diagnostic."
+  ]
+}

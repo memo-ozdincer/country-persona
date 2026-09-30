@@ -1,0 +1,236 @@
+{
+  "status": "targeted_fit_and_matched_development_memos_completed",
+  "run_directory": "runs/aurora-qwen35-scope-fit-20260930-v1",
+  "run_sha256": "4b135ea216825984315bbcc9b45d2169f62ab15a83e95fc38fe4d855ee62b503",
+  "transcript_sha256": "29e831d13c33b5ade8a945f300d99ec1343c5007e0aa9b40c680cd9767077d73",
+  "inspection_sha256": "a2347d22c08b44911ed5e0045610abeaaa503009731f70ef12f442e39a5468dc",
+  "training_steps": 20,
+  "examples": 4,
+  "measurement": {
+    "training_seconds": 191.44763574376702,
+    "peak_training_allocated_gpu_gib": 11.33509635925293,
+    "trainer_metrics": {
+      "train_runtime": 190.9854,
+      "train_samples_per_second": 0.419,
+      "train_steps_per_second": 0.105,
+      "total_flos": 5462485166039040.0,
+      "train_loss": 1.540531063079834,
+      "epoch": 20.0
+    }
+  },
+  "mask_audit": {
+    "rows": 4,
+    "sequence_tokens_once": 12693,
+    "supervised_tokens_once": 472,
+    "actual_trainer_masks_checked": true
+  },
+  "optimization_checks": {
+    "all_ranks_participated": true,
+    "rank_count": 1,
+    "all_ranks_same_final_adapter": true,
+    "rank_checks": [
+      {
+        "rank": 0,
+        "steps": 20,
+        "training_loss": 1.540531063079834,
+        "actual_sequence_tokens": 253860,
+        "actual_target_tokens": 9440,
+        "gradient_checks": 20,
+        "gradient_trace": [
+          {
+            "step": 1,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999691701698
+          },
+          {
+            "step": 2,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996572683194
+          },
+          {
+            "step": 3,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996635038846
+          },
+          {
+            "step": 4,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995599465809
+          },
+          {
+            "step": 5,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999589516939
+          },
+          {
+            "step": 6,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999443319192
+          },
+          {
+            "step": 7,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993906348182
+          },
+          {
+            "step": 8,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994342340491
+          },
+          {
+            "step": 9,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993668827613
+          },
+          {
+            "step": 10,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994170474303
+          },
+          {
+            "step": 11,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994550771685
+          },
+          {
+            "step": 12,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994624250713
+          },
+          {
+            "step": 13,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994611456853
+          },
+          {
+            "step": 14,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999992682883604
+          },
+          {
+            "step": 15,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993495721315
+          },
+          {
+            "step": 16,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993567574407
+          },
+          {
+            "step": 17,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993103966263
+          },
+          {
+            "step": 18,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993727859657
+          },
+          {
+            "step": 19,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993296620985
+          },
+          {
+            "step": 20,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999357142212
+          }
+        ],
+        "adapter_tensors": 496,
+        "changed_adapter_tensors": 496,
+        "adapter_update_l2": 1.5464183538584,
+        "all_adapter_tensors_finite": true,
+        "initial_adapter_digest": "6372b4c0d640d45fa81bd7c79ac522485dbe96a79b8369fd422a2c4a698b2772",
+        "final_adapter_digest": "c370e60b1fdc93d124eea81fb98beed9b47e48ad4fb96f7e0013c544890615f0"
+      }
+    ]
+  },
+  "serialization_checks": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 32,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "4257049d307bd3cc285d4ae933420d5905211e1556fe063ec63263c79a7f7040",
+      "adapter_config.json": "4ce08963fb91eaf94b38fbdc828522e4c8a60ecbe7155873052ea80fecd1d449"
+    }
+  },
+  "same_target_loss_before": 2.3036788136272106,
+  "same_target_loss_after": 1.100454522138935,
+  "inspection": {
+    "status": "all_three_complete_memos_inspected_against_full_sources",
+    "inspected_at": "2026-09-30T05:12:44.987925+00:00",
+    "reviewer": "one unblinded assistant",
+    "independent_review_complete": false,
+    "quality_gain_claim": false,
+    "aggregate_fidelity_score": null,
+    "observations": {
+      "climate": {
+        "repairs": [
+          "False UK endorsement of the G-5 Joint Force is absent.",
+          "France military insufficiency and UK draft support return.",
+          "India absolute-denial characterization is explicitly corrected."
+        ],
+        "remaining_or_new_errors": [
+          "New all-four endorsement of UNFCCC as primary forum is not established for France/UK.",
+          "New all-four developed-country financing priority is not established by France.",
+          "France climate/crisis understanding and resilience, UK meaningful women/girls participation, and Brazil scaling-up/timely delivery remain omitted."
+        ],
+        "interpretation": "Some targeted exposed-context repairs; source-scope error persists in other claims."
+      },
+      "ukraine": {
+        "remaining_errors": [
+          "UK support clause still interpreted as rejecting the draft.",
+          "Later recorded vote is asserted despite not being in the source packet.",
+          "India is still included in all-four referendum condemnation."
+        ],
+        "regressions": [
+          "France is newly said to explicitly reject the US-Albania draft."
+        ],
+        "repairs": [
+          "Hypothetical Brazil recognition is now explicitly not automatic.",
+          "India global-South economic support is retained."
+        ]
+      },
+      "south_sudan_outside_training": {
+        "repairs": [
+          "UK election-date wording now correctly says an agreement is not established, rather than claiming definitively no agreed date."
+        ],
+        "remaining_errors": [
+          "All-four assembly formation/UNMISS mobility claims persist.",
+          "New all-four recognition of AU/IGAD role is not established for France/UK."
+        ],
+        "regressions": [
+          "EU humanitarian assistance is newly described as contingent on authorities protecting workers; the source says support will continue while separately demanding protection."
+        ]
+      }
+    },
+    "decision": "Training optimizes and some local claims change, but the central draft reversal survives and regressions remain. Test note removal on Ukraine before deciding further supervision."
+  },
+  "decision": "Training optimizes and some local claims change, but the central draft reversal survives and regressions remain. Test note removal on Ukraine before deciding further supervision."
+}
