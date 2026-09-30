@@ -1,0 +1,141 @@
+{
+  "status": "completed_and_full_answers_inspected",
+  "question": "Does the saved complete-task adapter preserve given actions, qualifications and bounded nonmembership on a new benchmark-derived Gaza memo?",
+  "run_directory": "runs/aurora-qwen35-benchmark-plan-20260930-v1",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "gpu_type": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "new_optimizer_steps": 0,
+  "inspected_complete_answers": 2,
+  "independent_review_complete": false,
+  "reviewer_kind": "assistant",
+  "unblinded": true,
+  "content_rating_counts": {
+    "base_checked_plan": {
+      "met": 26,
+      "unmet": 3
+    },
+    "saved_complete_task_adapter_checked_plan": {
+      "met": 28,
+      "unratable": 1
+    }
+  },
+  "content_transition": {
+    "required_units": 29,
+    "jointly_ratable_units": 28,
+    "coverage": 0.9655172413793104,
+    "known_corrections": 3,
+    "known_regressions": 0,
+    "retention_rate": null,
+    "content_change": null,
+    "semantic_ratings_required": true
+  },
+  "strict_outcomes": {
+    "1d03d040f9d15bb607694b36": "fail",
+    "9bf42cfcd7949cb34c11860c": "unresolved"
+  },
+  "qualitative_findings": [
+    "France political emphasis, Brazil humanitarian work and bounded common ground repaired.",
+    "Invented writing date and extra UK hypothetical-vote prerequisite removed.",
+    "Adapter gives correct outcome/tally but omits explicit permanent-member/veto mechanism: unratable pending construct adjudication.",
+    "Adapter copies an instruction into the public India paragraph: formatting concern outside frozen rubric."
+  ],
+  "known_content_regressions": 0,
+  "jointly_ratable_content_units": 28,
+  "uncertain_content_units": 1,
+  "persona_quality_gain_claim": false,
+  "native_benchmark_prediction_score_claim": false,
+  "nccl_distributed_verified": false,
+  "created_at": "2026-09-30T16:55:47.680388+00:00",
+  "config_sha256": "37243c8ee465b3914f2405214669be4a042eb40b2908a69304212eb3087d75c5",
+  "run_sha256": "98cf51f83dddc67d1f690d30448d35875200b1c3b2e5e3ad06ca55166755122f",
+  "transcript_sha256": "0db7ab97542c2a03e9f42bf3157c6c939d64b8d188e367a1e2a4aa081ce95fda",
+  "inspection_sha256": "76b2f7a2bca1c5765d6fb2c441a099f51e194ae200f84ad49f6e418073587408",
+  "review_receipt_sha256": "00bc97c1da0270f33bf474c21610b3a71f638aa363f3335ec7d6084666a4eb58",
+  "frozen_pack_manifest_sha256": "df1b83074bb40103911e2f5f7e45ca500bfbd5062e7a6a6fc2ee94da784117c4",
+  "metrics": [
+    {
+      "arm": "base_checked_plan",
+      "response_id": "1d03d040f9d15bb607694b36",
+      "input_tokens": 902,
+      "generated_tokens": 859,
+      "generation_seconds": 13.523391868919134,
+      "whitespace_words": 630,
+      "hit_output_cap": false
+    },
+    {
+      "arm": "saved_complete_task_adapter_checked_plan",
+      "response_id": "9bf42cfcd7949cb34c11860c",
+      "input_tokens": 902,
+      "generated_tokens": 653,
+      "generation_seconds": 16.123200280591846,
+      "whitespace_words": 509,
+      "hit_output_cap": false
+    }
+  ],
+  "peak_allocated_gpu_gib": 8.304109573364258,
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "model_files_rehashed": 11,
+  "loaded_adapter_digest": "95e1fbc32a01d6312c2635436074077b1e3e781d734a7c5ffca710ab2c28b459",
+  "ownership": {
+    "status": "recorded_project_process_exited",
+    "checked_at": "2026-09-30T16:55:47.664540+00:00",
+    "launch_identity": {
+      "host": "aurora",
+      "pid": 2356474,
+      "process_start_ticks": 1104196979,
+      "process_start_utc": "2026-09-30T16:32:39.790000+00:00",
+      "command": [
+        "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+        "-u",
+        "scripts/run_aurora_qwen35_benchmark_plan.py",
+        "--config",
+        "configs/posttraining/qwen35-benchmark-plan-comparison-20260930.json",
+        "--gpu-uuid",
+        "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "--output",
+        "runs/aurora-qwen35-benchmark-plan-20260930-v1"
+      ],
+      "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+      "slurm_job_id": null
+    },
+    "gpu_uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+    "recorded_process_check": "recorded_project_pid_absent",
+    "gpu_observation": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f, NVIDIA RTX PRO 6000 Blackwell Server Edition, 0, 0",
+    "shell_exit_code_observed": 0,
+    "processes_cancelled_or_altered": 0,
+    "unfamiliar_processes_changed": false
+  },
+  "native_benchmark_revision": "55bd5aa5bb317a942b9229de13dca985e642a40b",
+  "benchmark_source": {
+    "name": "UNSC-Bench",
+    "config": "vetoed",
+    "row_index": 11,
+    "existing_eval_group": "unsc-meeting:9499:2023-12-08",
+    "native_row_quarantined": false
+  },
+  "scoring": {
+    "evaluator": "scripts/score_policy_reviews.py",
+    "original_rubric_sha256": "9fb6823b6f7b8691d2128d1fb2aff64852b989521521dec8e0065d7ac9c592c4",
+    "canonical_rubric_sha256": "b32063174d206c1b2edac78bf6096d0c2201029af9c45bd46221a807b1ed2696",
+    "key_only_bridge": {
+      "no_unsupported_commitments": "no_unsupported_commitment",
+      "correct_attribution": "correct_attribution",
+      "correct_time_scope": "correct_time_and_scope"
+    },
+    "criteria_changed_after_outputs": false
+  },
+  "development_limits": [
+    "Recorded votes are supplied, so no vote-prediction accuracy or native benchmark score.",
+    "One event outside this adapter training; previously selected for our development pack.",
+    "Same assistant authors plan and reviews outputs; independent review pending.",
+    "Model pretraining contamination and whole-family independence are not established."
+  ]
+}

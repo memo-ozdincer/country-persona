@@ -1,0 +1,38 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "context_budget": 8192,
+  "generation_max_new_tokens": 2048,
+  "max_length": 8192,
+  "kind": "benchmark_grounded_checked_plan_base_adapter_comparison",
+  "question": "Does the saved complete-task adapter preserve given actions, qualifications and bounded nonmembership on a new benchmark-derived Gaza memo?",
+  "authorization": "User endorses existing benchmarks, our evals and source grounding; bounded continuation of the plan-to-text trial.",
+  "eval_pack": "data/prepared/qwen35-benchmark-plan-20260930-v1",
+  "eval_pack_manifest_sha256": "df1b83074bb40103911e2f5f7e45ca500bfbd5062e7a6a6fc2ee94da784117c4",
+  "adapter_run": "runs/aurora-qwen35-plan-to-text-fit-20260930-v1",
+  "adapter_run_sha256": "45e4ebae1c6bb9f67426b07be2ee0818aa7c3e057653d7136466d5ee58cb7c8e",
+  "adapter_inspection_sha256": "5bae94b2ca83d7144c2b667e4b2b0b2187485624ccb727c62daf90ba005d5709",
+  "new_training_steps": 0,
+  "expected_cases": 1,
+  "expected_calls": 2,
+  "decision_rules": [
+    "Inspect both complete answers against the frozen 29 content units and 3 existing universal checks.",
+    "Score with the existing policy evaluator; assistant annotations remain provisional and independent review pending.",
+    "Keep given-action realization separate from native benchmark vote prediction; no benchmark accuracy claim.",
+    "Select further data or methods only from inspected repairs and regressions; no sweep."
+  ]
+}

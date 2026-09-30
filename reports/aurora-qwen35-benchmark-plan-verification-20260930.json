@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "created_at": "2026-09-30T16:55:47.687450+00:00",
+  "checks": [
+    {
+      "check": "captured_pack_builder_byte_replay",
+      "payload_files_equal": 7,
+      "manifest_timestamp_excluded": true
+    },
+    {
+      "check": "captured_primary_extractor_byte_replay",
+      "files_equal": 5
+    },
+    {
+      "check": "existing_scorer_review_replay",
+      "files_equal": 6
+    },
+    {
+      "check": "matched_frozen_inputs_and_full_output_limits",
+      "cases": 1,
+      "answers": 2,
+      "prompt_tokens_per_answer": 902,
+      "criteria_frozen_before_launch": true
+    },
+    {
+      "check": "saved_adapter_model_runtime_hardware_and_generation_lock",
+      "same_loaded_adapter_state": true,
+      "new_optimizer_steps": 0
+    }
+  ],
+  "existing_focused_tests": {
+    "passed": 19,
+    "failed": 0,
+    "runs": [
+      {
+        "command": "PYTHONPATH=src /mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python -m pytest -q tests/test_policy_eval.py",
+        "passed": 13,
+        "seconds": 0.1
+      },
+      {
+        "command": "PYTHONPATH=src /mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python -m pytest -q tests/test_eval_evidence.py",
+        "passed": 6,
+        "seconds": 0.11
+      }
+    ],
+    "evidence": "Completed tool results in this session; no log captured for those two original test invocations.",
+    "software_checks_are_model_quality_evidence": false
+  },
+  "frozen_content_units": 29,
+  "frozen_universal_checks": 3,
+  "review_scorer_and_rubric_bridge": {
+    "scripts/review_benchmark_plan_to_text.py": "bfb356d278c1e1365ec6f33d78c0eac7a77a4488635ea04f202e9d1b1573b7a4",
+    "scripts/score_policy_reviews.py": "2ff575dbad9b7b624340347f42e973ea0460baa263a0094dff8d3916e713e244",
+    "src/country_persona/policy_eval.py": "06be415772cc7788200b3d25af4590bd14a8346882c3ed010e8909cd0af5d839"
+  },
+  "independent_semantic_review_complete": false,
+  "persona_quality_gain_claim": false,
+  "native_prediction_score_claim": false,
+  "verification_harness_sha256": "ef24af9752fbb278eb2ed658131b622f3584b17adbf619a9e4cc7b74c7bfec75",
+  "verification_log_sha256": "3517e5d3737048e95ecaecc3ff1448457ef4b495d4b78f6022714f50633b293d",
+  "verification_artifact_directory": "runs/aurora-qwen35-benchmark-plan-20260930-v1"
+}
