@@ -1,0 +1,232 @@
+{
+  "status": "portable_training_sample_viewer_exact_artifacts_and_offline_browser_verified",
+  "created_at": "2026-10-01T23:13:46.638239+00:00",
+  "question": "Show actual original source data, assistant processing, exact final SFT records and historical model outputs in a portable short/full walkthrough.",
+  "viewer": "explorer/training-samples.html",
+  "shareable_bundle": "runs/training-sample-showcase-20261001-v2/training-samples.zip",
+  "bundle_bytes": 1486492,
+  "bundle_sha256": "89a42834b3f9c339dda2395d3b2f68a7eae1cb2ff364e31535f0130d0756e200",
+  "source_export_receipt": "runs/training-sample-showcase-20261001-v2/export-receipt.json",
+  "browser_verification": "runs/training-sample-showcase-20261001-v2/browser-verification.json",
+  "counts": {
+    "actual_training_points": 2,
+    "outside_training_exposed_monitor": 1,
+    "complete_national_statements": 12,
+    "original_UN_meeting_pdfs": 3,
+    "historical_base_answers": 3,
+    "historical_adapter_answers": 3
+  },
+  "pipeline": [
+    "original bounded English UN national statements",
+    "same session assistant checked bullet plans with source spans",
+    "checked-plan student input and assistant-authored full memo target",
+    "saved Qwen3.5-4B base and complete-task adapter answers on identical input token digests"
+  ],
+  "teacher_api_calls_for_original_targets": 0,
+  "standalone_teacher_API_transcript_available": false,
+  "target_provenance": "Synthetic comparative analyst memos authored by this session assistant after inspecting earlier errors; not authentic government utterances or independently reviewed examples.",
+  "original_training_file": "data/prepared/qwen35-plan-to-text-fit-20260930-v1/train.jsonl",
+  "exact_training_file_sha256": "4d1c8a118c592929467b44dfd16c63c66324fbdaf5761dcca06c7dc32110fc23",
+  "loss_scope": "assistant completion tokens only; source/plan prompt tokens excluded",
+  "historical_model": "Qwen/Qwen3.5-4B",
+  "historical_gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "historical_fit_optimizer_steps": 20,
+  "checks": {
+    "frozen_manifest_hashes": true,
+    "source_text_digests": true,
+    "source_anchor_substrings": true,
+    "PDF_hashes": true,
+    "exact_target_equality": true,
+    "exact_sft_jsonl_bytes": true,
+    "identical_before_after_input_token_digests": true,
+    "ZIP_integrity_and_payload_hashes": true,
+    "offline_browser": {
+      "status": "offline_browser_verification_passed",
+      "verified_at": "2026-10-01T23:07:11.901591+00:00",
+      "sample_checks": [
+        {
+          "javascriptErrors": [],
+          "noHorizontalOverflow": true,
+          "originalPromptExact": true,
+          "outputsExact": true,
+          "planExact": true,
+          "scenario": "climate-policy-workshop-v1",
+          "sourceTextsExact": true,
+          "trainingInputExact": true,
+          "trainingTargetExact": true
+        },
+        {
+          "javascriptErrors": [],
+          "noHorizontalOverflow": true,
+          "originalPromptExact": true,
+          "outputsExact": true,
+          "planExact": true,
+          "scenario": "ukraine-policy-workshop-v1",
+          "sourceTextsExact": true,
+          "trainingInputExact": true,
+          "trainingTargetExact": true
+        },
+        {
+          "javascriptErrors": [],
+          "noHorizontalOverflow": true,
+          "originalPromptExact": true,
+          "outputsExact": true,
+          "planExact": true,
+          "scenario": "south-sudan-policy-workshop-v1",
+          "sourceTextsExact": true,
+          "trainingInputExact": true,
+          "trainingTargetExact": true
+        }
+      ],
+      "expand_collapse_all": true,
+      "downloaded_training_bytes_exact": true,
+      "downloaded_sample_record_exact": true,
+      "desktop_and_mobile_no_horizontal_overflow": true,
+      "independent_semantic_review": false,
+      "new_model_calls": 0,
+      "unfamiliar_processes_changed": false,
+      "owned_browser_session_closed": true
+    }
+  },
+  "presentation_correction": "v1 used page+1 for already one-based source locations; v2 displays original page numbers. Original data was unchanged. Superseded export and failed browser launch receipts preserved.",
+  "new_model_calls": 0,
+  "new_optimizer_steps": 0,
+  "new_GPU_jobs": 0,
+  "unfamiliar_processes_changed": false,
+  "GPU_processes_inspected": false,
+  "CPU_browser_scope": "Dedicated task session with scratch binary/browser/libraries; own daemon identity checked before close; no system package changes. Early launch failures retained.",
+  "semantic_validation": "Byte, location and UI checks do not imply independent semantic review or persona improvement.",
+  "independent_semantic_review_complete": false,
+  "persona_quality_gain_claim": false,
+  "public_deployment_or_external_message": false,
+  "files": {
+    "explorer/training-samples.html": {
+      "bytes": 351204,
+      "sha256": "43c105365a197f852994d399ff963642e92b6df6560409b52d0cf2de78050f66"
+    },
+    "explorer/training-samples.template.html": {
+      "bytes": 22922,
+      "sha256": "021bd9eb0bd4a47b5501f7f28f86fc35c35b74b11bb389d356e163b1f8c90f05"
+    },
+    "scripts/build_training_sample_showcase.py": {
+      "bytes": 11902,
+      "sha256": "47372a1c031b56abf4f14d41829ea205f2c2db77d994ae8f2a5faf096c051d01"
+    },
+    "runs/training-sample-showcase-20261001-v2/README.md": {
+      "bytes": 2043,
+      "sha256": "589fed5dc54326beaea6eda0de5dac5e63bfc795d8be8ef4768e22bfeb0bcc64"
+    },
+    "runs/training-sample-showcase-20261001-v2/adapter-transcript.jsonl": {
+      "bytes": 43964,
+      "sha256": "2a849989fbda8fdfb3b251aa00e9a9e5eb516bf2725eb46bcf719129c33e1f75"
+    },
+    "runs/training-sample-showcase-20261001-v2/base-transcript.jsonl": {
+      "bytes": 52565,
+      "sha256": "eada4dfd5614127613cdc09397cc94c8f427bb4932509d689cc663ec4d32d789"
+    },
+    "runs/training-sample-showcase-20261001-v2/browser-command-receipts.json": {
+      "bytes": 12639,
+      "sha256": "99f1e488190fd9d34df4ecdb00e61e4effe7daf4441269ca07bac186ce70a369"
+    },
+    "runs/training-sample-showcase-20261001-v2/browser-command-receipts.json.before-flags-fix": {
+      "bytes": 2713,
+      "sha256": "aec5eb96942ae23f3cdf7ffbeb97025a051c7318b93396d44788c86e69450f9e"
+    },
+    "runs/training-sample-showcase-20261001-v2/browser-downloaded-sample.json": {
+      "bytes": 154916,
+      "sha256": "0d3d75ba77a998c3c146db7239e522cf7c21a67b4a699aa08d17834cee732244"
+    },
+    "runs/training-sample-showcase-20261001-v2/browser-downloaded-training.jsonl": {
+      "bytes": 19410,
+      "sha256": "4d1c8a118c592929467b44dfd16c63c66324fbdaf5761dcca06c7dc32110fc23"
+    },
+    "runs/training-sample-showcase-20261001-v2/browser-ownership.json": {
+      "bytes": 509,
+      "sha256": "8f767a2307db5109e0e3a408d0f6173e776873b4d2592333491087e24dc77be9"
+    },
+    "runs/training-sample-showcase-20261001-v2/browser-verification.json": {
+      "bytes": 1395,
+      "sha256": "6f4bac2e45e12f396fd1cc2bfe7365ba291ff420e43df29168849642c31cd8e7"
+    },
+    "runs/training-sample-showcase-20261001-v2/builder-original.py": {
+      "bytes": 11902,
+      "sha256": "47372a1c031b56abf4f14d41829ea205f2c2db77d994ae8f2a5faf096c051d01"
+    },
+    "runs/training-sample-showcase-20261001-v2/checked-plans.jsonl": {
+      "bytes": 54535,
+      "sha256": "c441fe5eb4d256419ac5c910fd6ac897183842a2e009bc1dd55c1d6c3ff1c91e"
+    },
+    "runs/training-sample-showcase-20261001-v2/desktop-preview.png": {
+      "bytes": 138824,
+      "sha256": "ed10b049f8e33f08c4a32944a91d74db6481b1829a771b7f175af8f497059b89"
+    },
+    "runs/training-sample-showcase-20261001-v2/export-receipt.json": {
+      "bytes": 4538,
+      "sha256": "17d53c95f1336928e8a51393d2f7e846de01133fe893bc67a3e15eafd97e3c7d"
+    },
+    "runs/training-sample-showcase-20261001-v2/mobile-preview.png": {
+      "bytes": 69281,
+      "sha256": "2ee2cc2647839ff6d264a980f2dab98ee19857b63cde4a6cb88ef76e17459517"
+    },
+    "runs/training-sample-showcase-20261001-v2/original-evidence.jsonl": {
+      "bytes": 54075,
+      "sha256": "cfff8bdd54d7fb4e808ee4e13db632f40d0cfb39356b5d5b64f4c6edd9573c08"
+    },
+    "runs/training-sample-showcase-20261001-v2/original-source-cases.jsonl": {
+      "bytes": 201051,
+      "sha256": "213daf4820f31c91875b536787cf62b180306dd133dd9657c44659cef7145e6f"
+    },
+    "runs/training-sample-showcase-20261001-v2/samples.json": {
+      "bytes": 510118,
+      "sha256": "d07ee8721de768b6303601559d114e81532500a87fa3619e0517c8a6c8a7e042"
+    },
+    "runs/training-sample-showcase-20261001-v2/sources/record-8923.pdf": {
+      "bytes": 720547,
+      "sha256": "7714d361642b047e184a06cd742bcc9ec896565c7d2e06902a06863e398bd31d"
+    },
+    "runs/training-sample-showcase-20261001-v2/sources/record-9067.pdf": {
+      "bytes": 490627,
+      "sha256": "412a4d805830420e2c6045c98368fdabd48e5e7f2cdbd4133f658db0951450b6"
+    },
+    "runs/training-sample-showcase-20261001-v2/sources/record-9138.pdf": {
+      "bytes": 437632,
+      "sha256": "6e80ffa0f6382a59cf7207ee9615c9f8b246d017e805e551d731af687c1e69fc"
+    },
+    "runs/training-sample-showcase-20261001-v2/student-inputs.jsonl": {
+      "bytes": 20642,
+      "sha256": "381763ce8b21f4b91f84af4640aa35f4d02f3489ad33e3151d7b03f9ab1b272e"
+    },
+    "runs/training-sample-showcase-20261001-v2/teacher-targets.json": {
+      "bytes": 7022,
+      "sha256": "3cd1394d65af053a536cf149deb537c077743bb2fa22f1dabf2d83a46bfa962f"
+    },
+    "runs/training-sample-showcase-20261001-v2/template-original.html": {
+      "bytes": 22922,
+      "sha256": "021bd9eb0bd4a47b5501f7f28f86fc35c35b74b11bb389d356e163b1f8c90f05"
+    },
+    "runs/training-sample-showcase-20261001-v2/training-points.jsonl": {
+      "bytes": 19410,
+      "sha256": "4d1c8a118c592929467b44dfd16c63c66324fbdaf5761dcca06c7dc32110fc23"
+    },
+    "runs/training-sample-showcase-20261001-v2/training-provenance.jsonl": {
+      "bytes": 2776,
+      "sha256": "e3218056f9dbedc715a6c73a07dfc21649aedfe0a95e13d4e3d8ef288088bb09"
+    },
+    "runs/training-sample-showcase-20261001-v2/training-samples.html": {
+      "bytes": 351204,
+      "sha256": "43c105365a197f852994d399ff963642e92b6df6560409b52d0cf2de78050f66"
+    },
+    "runs/training-sample-showcase-20261001-v2/training-samples.zip": {
+      "bytes": 1486492,
+      "sha256": "89a42834b3f9c339dda2395d3b2f68a7eae1cb2ff364e31535f0130d0756e200"
+    },
+    "runs/training-sample-showcase-20261001-v2/verify_browser.py": {
+      "bytes": 5370,
+      "sha256": "0fdfa6b469498ecc55205838568ad581b776fdd010d54d2fb341a9489a50af21"
+    },
+    "runs/training-sample-showcase-20261001-v2/verify_browser.py.before-flags-fix": {
+      "bytes": 5241,
+      "sha256": "81c2164630e6c5b9a0cd4741389eb8d5886357174386d4c50c248059323faa9e"
+    }
+  }
+}
