@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "kind": "national_application_raw_vs_checked_plan",
+  "event": "S/PV.9214",
+  "document_date": "2022-12-09",
+  "source_dir": "data/raw/source-plan-grounding-20261002-v1",
+  "output_pack": "data/prepared/qwen35-source-plan-probe-20261002-v1",
+  "split_group": "unsc-humanitarian-exemption-2664-20221209",
+  "system": "You are an evidence-grounded analyst preparing a dated national delegation briefing. Use only the supplied record for claims about official positions. Keep documented positions, your negotiating recommendations, and unknown future commitments distinct. Speak for the assigned national delegation, not the Council chair or another country. Do not invent source facts or future votes.",
+  "scenario": "Hypothetical implementation discussion immediately after the 9 December 2022 meeting. These options were not tabled in the historical record. Option A permits prompt humanitarian delivery but creates no proactive 1267 Monitoring Team role and no robust reporting mechanism. Option B pauses all exempt humanitarian deliveries until every end beneficiary has been screened. Both aim to prevent aid diversion. Neither option has a recorded national response.",
+  "request": "Prepare a briefing for {country_name}'s national delegation, about 300 words. (1) Identify its documented priorities and relevant qualifications, with source-specific reasons. (2) Recommend A, B, or a revision, explicitly addressing the trade-off between prompt aid and anti-diversion safeguards; give at least one concrete amendment. (3) State whether accepting your amendment guarantees this delegation's support for a future Council text. Distinguish your recommendation from an official commitment. Do not simply restate both countries' speeches.",
+  "rubric_policy": {
+    "labels": [
+      "met",
+      "unmet",
+      "unratable"
+    ],
+    "explicit_vs_implicit": "Equivalent concrete meaning counts; keywords alone do not. An omitted required idea is unmet. Genuine semantic ambiguity is unratable, never counted as met.",
+    "recommendation": "Multiple defensible recommendations allowed. Do not require countries to disagree; reject a recommendation that contradicts its documented priority without explaining the trade-off.",
+    "strict_pass": "All eight country units and four universal units met; any unmet is fail, otherwise any unratable is unresolved.",
+    "review": "Same-assistant development annotation; independent semantic/source-plan review pending."
+  },
+  "universal_units": [
+    [
+      "U1",
+      "Official-source claims are faithful; do not attribute another country's explicit demand to the assigned country. Analyst proposals may draw on the full record if labeled as proposals."
+    ],
+    [
+      "U2",
+      "Explicitly distinguish hypothetical recommendation/amendment from a documented official commitment."
+    ],
+    [
+      "U3",
+      "Explicitly reject a guaranteed future vote/support; the supplied record does not establish it."
+    ],
+    [
+      "U4",
+      "Stay in the assigned national role and historical information boundary; no invented dates, Council-wide mandate, or later facts."
+    ]
+  ],
+  "countries": {
+    "BRA": {
+      "name": "Brazil",
+      "plan": [
+        "Documented: Brazil sponsored the initiative and voted in favour of resolution 2664 (2022).",
+        "Documented: ill-devised sanctions harm vulnerable civilians, worsen food insecurity/inflation, and hinder neutral, impartial, independent humanitarian assistance.",
+        "Documented: humanitarian providers need more predictable operating conditions.",
+        "Documented: sanctions remain an important peace/security tool; the resolution balances legitimate security concerns with civilian protection.",
+        "Application (analyst recommendation): revise the options so timely, predictable aid survives while addressing diversion proportionately. Blanket suspension in B risks the civilian harm Brazil warns against. A's omission of formal monitoring is not a documented Brazilian red line; avoid inventing one.",
+        "Application (analyst proposal): for example, targeted risk-based checks/reporting that avoid a universal pause; explain the trade-off. This operational detail is a proposed amendment, not a verbatim Brazilian demand.",
+        "Unknown: the record does not guarantee Brazil's support for a future text even if an amendment is accepted."
+      ],
+      "units": [
+        [
+          "B1",
+          "Identify Brazil's support/vote in favour of 2664.",
+          "Brazil’s vote in favour of resolution 2664 (2022)"
+        ],
+        [
+          "B2",
+          "Ground its position in civilian/vulnerable-population harm from ill-devised sanctions.",
+          "disproportionately affect vulnerable populations"
+        ],
+        [
+          "B3",
+          "Mention food insecurity or inflation as a concrete unintended cost.",
+          "worsen food insecurity, increase inflation"
+        ],
+        [
+          "B4",
+          "Preserve predictable humanitarian operations as a priority.",
+          "more predictable conditions"
+        ],
+        [
+          "B5",
+          "Preserve sanctions' legitimate security purpose, rather than opposing sanctions wholesale.",
+          "important tool for the maintenance of international peace and security"
+        ],
+        [
+          "B6",
+          "Apply the civilian-protection priority to B's blanket delivery pause (reject or revise it, or explicitly explain a protection-preserving alternative).",
+          "protect civilians"
+        ],
+        [
+          "B7",
+          "Propose at least one operational amendment with an aid/security trade-off, explicitly as an analyst recommendation.",
+          "fine balance"
+        ],
+        [
+          "B8",
+          "Do not falsely portray absence of the specific 1267/reporting mechanism as Brazil's recorded categorical red line; allow a proposed mechanism without official attribution.",
+          "legitimate security concerns"
+        ]
+      ]
+    },
+    "IND": {
+      "name": "India",
+      "plan": [
+        "Documented national position (after explicit switch from chair): Article 41 sanctions are provisional, not ends in themselves; legitimate trade and regional economic activity matter.",
+        "Documented: timely humanitarian assistance/basic needs and predictable safeguards for agencies matter; India is not opposing aid wholesale.",
+        "Documented: terrorist groups can exploit humanitarian cover to evade sanctions, raise funds and recruit; exemptions must not politically mainstream terror entities.",
+        "Documented: India sought a proactive 1267 Monitoring Team role AND robust reporting standards/mechanisms; it regrets both concerns were not fully addressed.",
+        "Application (analyst recommendation): A as written leaves the specific documented safeguards unanswered. Revise it to provide the Monitoring Team role and robust reporting while maintaining timely delivery; B's universal pause risks India's aid/trade priorities.",
+        "Application (analyst proposal): implement targeted due diligence and operational reporting rather than assuming blanket suspension follows from India's caution. Other justified revisions are admissible.",
+        "Unknown: these changes address stated concerns but do not guarantee India's support/vote for a future text. The national speech contains no such promise. Do not speak as Council President."
+      ],
+      "units": [
+        [
+          "I1",
+          "Preserve provisional/not-an-end-in-itself character of sanctions.",
+          "provisional in nature and not permanent"
+        ],
+        [
+          "I2",
+          "Preserve legitimate trade or regional economic activity as a qualification.",
+          "legitimate trade and economic activities"
+        ],
+        [
+          "I3",
+          "Preserve timely aid/basic needs and agency predictability, rather than opposing aid wholesale.",
+          "timely delivery of humanitarian assistance"
+        ],
+        [
+          "I4",
+          "Identify specific exploitation of humanitarian cover (fundraising/recruitment/evasion).",
+          "raise funds and recruit fighters"
+        ],
+        [
+          "I5",
+          "Preserve concern about political mainstreaming of terror entities.",
+          "mainstreaming of terror entities in the political space"
+        ],
+        [
+          "I6",
+          "Apply the demand for a proactive 1267 Monitoring Team role to A's missing safeguard.",
+          "proactive role for the 1267 Monitoring Team"
+        ],
+        [
+          "I7",
+          "Apply the distinct demand for robust reporting standards/mechanisms to A.",
+          "robust reporting standards and mechanisms"
+        ],
+        [
+          "I8",
+          "Propose a concrete revision addressing diversion while explicitly preserving timely aid or discussing B's blanket-pause cost.",
+          "Due diligence and extreme caution"
+        ]
+      ]
+    }
+  }
+}

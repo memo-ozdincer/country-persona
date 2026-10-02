@@ -1,0 +1,231 @@
+{
+  "status": "twelve_complete_development_answers_inspected_and_byte_verified",
+  "created_utc": "2026-10-02T23:55:45.533899+00:00",
+  "question": "Source-grounded national application: raw sources versus checked plan, then an inspected explicit-boundary repair.",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "new_model_calls": 12,
+  "new_optimizer_steps": 0,
+  "total_project_optimizer_steps_remains": 62,
+  "software_tests_passed": 4,
+  "software_checks_are_not_model_quality": true,
+  "runs": [
+    {
+      "kind": "probe",
+      "completed_calls": 8,
+      "new_optimizer_steps": 0,
+      "identity": {
+        "host": "aurora",
+        "pid": 857518,
+        "process_start_ticks": 1124063810,
+        "process_start_utc": "2026-10-02T23:43:48.100000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_aurora_qwen35_source_plan_probe.py",
+          "--config",
+          "configs/posttraining/qwen35-source-plan-comparison-20261002.json",
+          "--gpu-uuid",
+          "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+          "--output",
+          "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-qwen35-source-plan-probe-20261002-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "process_exited": true,
+      "peak_allocated_gpu_gib": 8.470207214355469,
+      "ratings": [
+        {
+          "id": "9214-bra-raw",
+          "arm": "base",
+          "counts": {
+            "met": 10,
+            "unmet": 2,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        },
+        {
+          "id": "9214-bra-checked_plan",
+          "arm": "base",
+          "counts": {
+            "met": 10,
+            "unmet": 2,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        },
+        {
+          "id": "9214-ind-raw",
+          "arm": "base",
+          "counts": {
+            "met": 8,
+            "unmet": 4,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        },
+        {
+          "id": "9214-ind-checked_plan",
+          "arm": "base",
+          "counts": {
+            "met": 8,
+            "unmet": 4,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        },
+        {
+          "id": "9214-bra-raw",
+          "arm": "saved_adapter",
+          "counts": {
+            "met": 10,
+            "unmet": 2,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        },
+        {
+          "id": "9214-bra-checked_plan",
+          "arm": "saved_adapter",
+          "counts": {
+            "met": 12,
+            "unmet": 0,
+            "unratable": 0
+          },
+          "strict_result": "pass"
+        },
+        {
+          "id": "9214-ind-raw",
+          "arm": "saved_adapter",
+          "counts": {
+            "met": 8,
+            "unmet": 4,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        },
+        {
+          "id": "9214-ind-checked_plan",
+          "arm": "saved_adapter",
+          "counts": {
+            "met": 10,
+            "unmet": 2,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        }
+      ]
+    },
+    {
+      "kind": "repair",
+      "completed_calls": 4,
+      "new_optimizer_steps": 0,
+      "identity": {
+        "host": "aurora",
+        "pid": 865308,
+        "process_start_ticks": 1124109828,
+        "process_start_utc": "2026-10-02T23:51:28.280000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_aurora_qwen35_source_plan_probe.py",
+          "--config",
+          "configs/posttraining/qwen35-source-plan-repair-20261002.json",
+          "--gpu-uuid",
+          "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+          "--output",
+          "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-qwen35-source-plan-repair-20261002-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "process_exited": true,
+      "peak_allocated_gpu_gib": 8.539085388183594,
+      "ratings": [
+        {
+          "id": "9214-bra-repair",
+          "arm": "base",
+          "counts": {
+            "met": 12,
+            "unmet": 0,
+            "unratable": 0
+          },
+          "strict_result": "pass"
+        },
+        {
+          "id": "9214-ind-repair",
+          "arm": "base",
+          "counts": {
+            "met": 12,
+            "unmet": 0,
+            "unratable": 0
+          },
+          "strict_result": "pass"
+        },
+        {
+          "id": "9214-bra-repair",
+          "arm": "saved_adapter",
+          "counts": {
+            "met": 11,
+            "unmet": 1,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        },
+        {
+          "id": "9214-ind-repair",
+          "arm": "saved_adapter",
+          "counts": {
+            "met": 11,
+            "unmet": 1,
+            "unratable": 0
+          },
+          "strict_result": "fail"
+        }
+      ]
+    }
+  ],
+  "evidence_sha256": {
+    "runs/aurora-qwen35-source-plan-probe-20261002-v1/run.json": "ba01959c84be510e5fdfd8224e19b5ad8fe035b0e5a0a3279deb6421ca4a4ca1",
+    "runs/aurora-qwen35-source-plan-probe-20261002-v1/launch.json": "e943f4e8d8ddecd9c2ae7079720b7a6ee61514833eb114184b2a7d35c45bb184",
+    "runs/aurora-qwen35-source-plan-probe-20261002-v1/preflight.json": "7d740d4668a3e273aa567a79a473ce4a401ddaae3e18295f60a66cbe764e4f49",
+    "runs/aurora-qwen35-source-plan-probe-20261002-v1/transcript.jsonl": "f3a655437c909934eea32d030edb25a815364e3d980cdfc7ca20ba04e8f8f1e3",
+    "runs/aurora-qwen35-source-plan-probe-20261002-v1/inspection.json": "19ae919c66cdf98c35303bd33abb81e40a68103316fd93029f341c8c2feda000",
+    "runs/aurora-qwen35-source-plan-probe-20261002-v1/answers.md": "0953376b46759404c29850d8c3f28c830309cc488e52238f0f792a8a9c4614fc",
+    "runs/aurora-qwen35-source-plan-repair-20261002-v1/run.json": "cd1502ba1f67bd389fd0e765bc197e5c44dacdf6fa7ceba0e919b73af5f4d072",
+    "runs/aurora-qwen35-source-plan-repair-20261002-v1/launch.json": "4e47ec9ffae1b783557a01a5eb085236922847fcc1fb75f6c04310c6da80f7ed",
+    "runs/aurora-qwen35-source-plan-repair-20261002-v1/preflight.json": "1bb6e52ef9f5c45387f35e31760643fd4addd633a105b79c72a34678f8f111e6",
+    "runs/aurora-qwen35-source-plan-repair-20261002-v1/transcript.jsonl": "53486b5153b13756e3baacdf01527db5aefd6c5090ec491945c3ae033b59eb2e",
+    "runs/aurora-qwen35-source-plan-repair-20261002-v1/inspection.json": "39552f224ac4b7bf38b0c82d886f0298de33cbbbc88c1b74e9883d5292c5386a",
+    "runs/aurora-qwen35-source-plan-repair-20261002-v1/answers.md": "70a83932940f32712d2a307a56cc3ce2290f54ad738527ff571be75be084b274",
+    "data/raw/source-plan-grounding-20261002-v1/acquisition.json": "7167259cb3158494dffb270ca15b0fd411903c939ded3f8bf743a5aca18a8876",
+    "data/prepared/qwen35-source-plan-probe-20261002-v1/manifest.json": "094ccef9eaea3d309e6d851c925866c807ffc595880de6244936c0132c2658c2",
+    "data/prepared/qwen35-source-plan-repair-20261002-v1/manifest.json": "c592030b1bd93b759e7413034ebe17a1a73aa602a8637c740fd67292601702d5",
+    "reports/qwen35-source-plan-verification-20261002.json": "6090ad00826ce8dea3ba9e0a92da3ae5afba5461e525819a5c355162cac0d4e7"
+  },
+  "source": "Primary UN S/PV.9214, linked to acquired UNBench-all meeting 2467; hypothetical implementation options, not benchmark prediction.",
+  "source_plan_review": "same assistant as response reviewer; no independent reviewer",
+  "ratings_independent_samples": false,
+  "held_out_claim": "Outside known adapter training; project-document-symbol audit only. Now exposed development event, base pretraining unknown.",
+  "decision": "Retain stronger source/operational/unknown-commitment plan boundaries and base-plus-plan control. Next candidate is checked source-to-national-application SFT with teacher-only plans, not a launched fit or queue. Require separate frozen family, source-faithful targets and independent review where available before optimization. No evidence selects DPO/RL or model scaling now.",
+  "existing_gpu_processes_changed": false,
+  "nccl_verified": false,
+  "persona_quality_gain_claim": false,
+  "multi_agent_gain_claim": false,
+  "historical_gaza_veto_criterion": "Remains unresolved; historical ratings unchanged."
+}
