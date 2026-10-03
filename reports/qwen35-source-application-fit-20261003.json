@@ -1,0 +1,365 @@
+{
+  "status": "one_source_application_fit_and_twelve_new_complete_answers_inspected",
+  "created_utc": "2026-10-03T19:32:55.513944+00:00",
+  "question": "Can raw-source national-application SFT fix exposed application failures and transfer to a separately frozen survivor-care event without regressing genuine commitments or legitimate agreement?",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "gpu_type": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "new_model_answers": 12,
+  "reused_historical_base_answers": 2,
+  "new_optimizer_steps": 20,
+  "recorded_aurora_qwen35_optimizer_steps": 82,
+  "optimizer_scope": "2-step smoke plus four separate fresh 20-step fits; excludes historical Germany/China training",
+  "training_rows": 20,
+  "training_event_families": 2,
+  "teacher_private_plans_in_student_input": false,
+  "teacher_api_calls": 0,
+  "synthetic_target_author": "same session assistant as reviewer, no independent teacher transcript",
+  "objective": "Response-only uniform-token cross-entropy, fresh rank-8 all-linear LoRA; 20 optimizer steps, grad accumulation 2, learning rate 5e-5 with default linear decay",
+  "held_event": "UN S/PV.8514, WPS resolution 2467, 23 April 2019; complete France/UK post-vote statements; separate event family frozen before new inference/training",
+  "training_sources": [
+    "S/PV.9214 sanctions 2664",
+    "S/PV.8923 climate/security"
+  ],
+  "benchmark_scope": "Acquired UNBench-all includes event; UK Lord-title post-vote statement missing from parsed benchmark statements, primary PDF used. Hypothetical application, no native outcome-prediction score. Public record can be in pretraining; not certified OOD.",
+  "results": [
+    {
+      "mode": "base",
+      "groups": {
+        "checked_plan": {
+          "answers": 2,
+          "met": 22,
+          "unmet": 1,
+          "unratable": 1,
+          "strict_passes": 1
+        },
+        "raw": {
+          "answers": 4,
+          "met": 40,
+          "unmet": 7,
+          "unratable": 1,
+          "strict_passes": 0
+        }
+      }
+    },
+    {
+      "mode": "fit",
+      "groups": {
+        "raw": {
+          "answers": 4,
+          "met": 37,
+          "unmet": 10,
+          "unratable": 1,
+          "strict_passes": 0
+        },
+        "training_control": {
+          "answers": 2,
+          "met": 16,
+          "unmet": 8,
+          "unratable": 0,
+          "strict_passes": 0
+        }
+      }
+    }
+  ],
+  "historical_exact_control_base": {
+    "met": 18,
+    "unmet": 6,
+    "unratable": 0,
+    "strict_passes": 0,
+    "answers": 2
+  },
+  "pairwise": [
+    {
+      "id": "held-fra-restriction",
+      "base_counts": {
+        "met": 8,
+        "unmet": 4,
+        "unratable": 0
+      },
+      "adapter_counts": {
+        "met": 9,
+        "unmet": 2,
+        "unratable": 1
+      },
+      "jointly_ratable_units": 11,
+      "repairs": [
+        "H8",
+        "U1"
+      ],
+      "regressions": [],
+      "unresolved_pairs": [
+        "H9"
+      ]
+    },
+    {
+      "id": "held-fra-revision",
+      "base_counts": {
+        "met": 10,
+        "unmet": 1,
+        "unratable": 1
+      },
+      "adapter_counts": {
+        "met": 8,
+        "unmet": 4,
+        "unratable": 0
+      },
+      "jointly_ratable_units": 11,
+      "repairs": [
+        "H5"
+      ],
+      "regressions": [
+        "H1",
+        "H6",
+        "H9",
+        "H10"
+      ],
+      "unresolved_pairs": [
+        "U1"
+      ]
+    },
+    {
+      "id": "held-gbr-restriction",
+      "base_counts": {
+        "met": 11,
+        "unmet": 1,
+        "unratable": 0
+      },
+      "adapter_counts": {
+        "met": 9,
+        "unmet": 3,
+        "unratable": 0
+      },
+      "jointly_ratable_units": 12,
+      "repairs": [
+        "U1"
+      ],
+      "regressions": [
+        "H6",
+        "H9",
+        "H10"
+      ],
+      "unresolved_pairs": []
+    },
+    {
+      "id": "held-gbr-revision",
+      "base_counts": {
+        "met": 11,
+        "unmet": 1,
+        "unratable": 0
+      },
+      "adapter_counts": {
+        "met": 11,
+        "unmet": 1,
+        "unratable": 0
+      },
+      "jointly_ratable_units": 12,
+      "repairs": [
+        "U1"
+      ],
+      "regressions": [
+        "H6"
+      ],
+      "unresolved_pairs": []
+    },
+    {
+      "id": "control-bra",
+      "base_counts": {
+        "met": 10,
+        "unmet": 2,
+        "unratable": 0
+      },
+      "adapter_counts": {
+        "met": 9,
+        "unmet": 3,
+        "unratable": 0
+      },
+      "jointly_ratable_units": 12,
+      "repairs": [
+        "U1"
+      ],
+      "regressions": [
+        "B3",
+        "B5"
+      ],
+      "unresolved_pairs": []
+    },
+    {
+      "id": "control-ind",
+      "base_counts": {
+        "met": 8,
+        "unmet": 4,
+        "unratable": 0
+      },
+      "adapter_counts": {
+        "met": 7,
+        "unmet": 5,
+        "unratable": 0
+      },
+      "jointly_ratable_units": 12,
+      "repairs": [
+        "I8",
+        "U4"
+      ],
+      "regressions": [
+        "I3",
+        "I4",
+        "I5"
+      ],
+      "unresolved_pairs": []
+    }
+  ],
+  "generation_measurements": {
+    "base": {
+      "raw": {
+        "answers": 4,
+        "generated_tokens": 2132,
+        "generation_seconds": 34.78694357536733,
+        "mean_words": 383.0
+      },
+      "checked_plan": {
+        "answers": 2,
+        "generated_tokens": 1021,
+        "generation_seconds": 15.738149596378207,
+        "mean_words": 384.5
+      }
+    },
+    "fit": {
+      "training_control": {
+        "answers": 2,
+        "generated_tokens": 347,
+        "generation_seconds": 8.796841898933053,
+        "mean_words": 140.5
+      },
+      "raw": {
+        "answers": 4,
+        "generated_tokens": 1346,
+        "generation_seconds": 34.0708331335336,
+        "mean_words": 286.5
+      }
+    }
+  },
+  "optimization": {
+    "steps": 20,
+    "training_seconds": 49.4381347168237,
+    "peak_training_allocated_gpu_gib": 10.394441604614258,
+    "actual_sequence_tokens": 79556,
+    "actual_target_tokens": 9420,
+    "changed_adapter_tensors": 496,
+    "finite_gradient_checks": 20,
+    "target_loss_before": 2.7876220289056217,
+    "target_loss_after": 2.0153651044373806,
+    "serialization": {
+      "saved_tensors_equal": true,
+      "reload_verified_after_state_perturbation": true,
+      "same_base_probe_logits_equal": true,
+      "probe_tokens": 32,
+      "maximum_logit_difference": 0.0,
+      "logit_atol": 1e-05,
+      "logit_rtol": 1e-05,
+      "files_sha256": {
+        "adapter_model.safetensors": "609b1c0945a4bce975158393319f11692f6a5abe8e5df1effb5133ecbc67a95e",
+        "adapter_config.json": "a2475114ce2944c8352e3952226bf08304e455e71240fc88be819550bd00a5ac"
+      }
+    }
+  },
+  "inspection": "12 new full answers read; 144 dependent atomic annotations; historical two controls/24 annotations reused",
+  "independent_review_complete": false,
+  "persona_or_multi_agent_gain_established": false,
+  "decision": "Do not increase/repeat this uniform-CE recipe. Prioritize a matched clause/coverage-balanced loss test with same targets/budget, independently checked source/rubric and a newly frozen event family. Contrastive preference objectives remain a candidate, not an established winner or a queue.",
+  "observed_error_pattern": "Application and future-vote errors repair, but outputs compress and omit source specifics/operational trade-offs. Missing exact-control facts are already present in training targets; merely harder cases or a larger inference campaign does not isolate this supervision imbalance.",
+  "unresolved": [
+    "Independent source/semantic review",
+    "France revision base refusal paraphrase; UK plan implicit mandate; adapter French pregnancy wording",
+    "H8 frozen negative criterion permits silent UK revision: separate qualitative failure to answer future-support question retained",
+    "Historical Gaza veto rating unchanged; prospective mechanism definition adopted before new fit",
+    "NCCL and trained autonomous interaction untested"
+  ],
+  "limits": [
+    "One held event becomes exposed development upon baseline inspection",
+    "20 correlated synthetic rows in two training families, same author also grading",
+    "Task contract, target content and data volume differ from old two-target writer; no isolated claim about superiority of an objective function",
+    "Raw and plan conditions have different assistance/token counts; no equal-compute claim"
+  ],
+  "software_checks": {
+    "focused_passed": 8,
+    "initial_guard_failure": "Three tests initially exposed treating JSONL generators as lists; fixed before GPU calls. Five tests passed in initial run.",
+    "portable_failure_preserved": "runs/source-application-preparation-20261003-v1/portable-check-schema-failure.log; verifier used older acquisition coverage field, fixed to new explicit 102-page column audit",
+    "portable_verification_receipt": "reports/qwen35-source-application-fit-verification-20261003.json"
+  },
+  "owned_processes": [
+    {
+      "mode": "base",
+      "identity": {
+        "host": "aurora",
+        "pid": 1834161,
+        "process_start_ticks": 1131097030,
+        "process_start_utc": "2026-10-03T19:16:00.300000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_aurora_qwen35_source_application_fit.py",
+          "--mode",
+          "base",
+          "--gpu-uuid",
+          "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+          "--output",
+          "runs/aurora-qwen35-source-application-base-20261003-v1",
+          "--config",
+          "configs/posttraining/qwen35-source-application-fit-20261003-v2.json"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu_uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+      "process_exited": true,
+      "exit_code": 0
+    },
+    {
+      "mode": "fit",
+      "identity": {
+        "host": "aurora",
+        "pid": 1842152,
+        "process_start_ticks": 1131135480,
+        "process_start_utc": "2026-10-03T19:22:24.800000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_aurora_qwen35_source_application_fit.py",
+          "--mode",
+          "fit",
+          "--gpu-uuid",
+          "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+          "--output",
+          "runs/aurora-qwen35-source-application-fit-20261003-v1",
+          "--config",
+          "configs/posttraining/qwen35-source-application-fit-launch-20261003.json"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu_uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+      "process_exited": true,
+      "exit_code": 0
+    }
+  ],
+  "unfamiliar_processes_changed": false,
+  "runs": {
+    "base": "runs/aurora-qwen35-source-application-base-20261003-v1",
+    "fit": "runs/aurora-qwen35-source-application-fit-20261003-v1"
+  },
+  "hashes": {
+    "runs/aurora-qwen35-source-application-base-20261003-v1/run.json": "92346647fb8142c75300939d2e41cc0349e19361d6ec6ae41ae866792cc42ebc",
+    "runs/aurora-qwen35-source-application-base-20261003-v1/transcript.jsonl": "33c14494f37578239061e36bcd815e282fe787a8f80691bf96f5f24570d3b3f4",
+    "runs/aurora-qwen35-source-application-base-20261003-v1/inspection.json": "1c8177f898918e2d5901bd87d611470a8272b7c4b5cc7d01412d9ec4c932f6cc",
+    "runs/aurora-qwen35-source-application-fit-20261003-v1/run.json": "711fbdf21adf7d33212b22dfc29cfd2fa1cb9a42c4cbb960ce2a8330878e9d10",
+    "runs/aurora-qwen35-source-application-fit-20261003-v1/transcript.jsonl": "db4f99913312fa9121d8b7b6acfeb54e9566a676120aa2e1b4db81a15d4dd1ca",
+    "runs/aurora-qwen35-source-application-fit-20261003-v1/inspection.json": "9cf7f3ad38a17aab7b1713815af30c8a6ad24a588495a82b27e13378e0122965"
+  }
+}

@@ -19,13 +19,16 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "qwen35-scope-fit-20260930-v1", "qwen35-conflict-fit-20260930-v1",
             "qwen35-plan-to-text-eval-20260930-v1", "qwen35-plan-to-text-eval-20260930-v2",
             "qwen35-plan-to-text-fit-20260930-v1", "qwen35-benchmark-plan-20260930-v1",
-            "qwen35-source-plan-probe-20261002-v1", "qwen35-source-plan-repair-20261002-v1")
+            "qwen35-source-plan-probe-20261002-v1", "qwen35-source-plan-repair-20261002-v1",
+            "source-application-sft-20261003-v1", "source-application-sft-20261003-v2",
+            "source-application-eval-20261003-v1", "source-application-eval-20261003-v2")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
        "unbench-audit-20260926", "unsc-bench-audit-20260926",
        "benchmark-plan-grounding-20260930-v1", "benchmark-plan-grounding-20260930-v2",
-       "benchmark-plan-grounding-20260930-v3", "source-plan-grounding-20261002-v1")
+       "benchmark-plan-grounding-20260930-v3", "source-plan-grounding-20261002-v1",
+       "source-application-grounding-20261003-v1")
 SKIP_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", ".cache"}
 SECRET = re.compile(rb"hf_[A-Za-z0-9]{20,}|-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----")
 
