@@ -1,0 +1,385 @@
+{
+  "created_at": "2026-10-03T23:49:50.724835+00:00",
+  "status": "source_preference_comparison_completed_all_twenty_two_new_answers_inspected",
+  "question": "Can a minimal-error preference contrast improve source facts/application beyond the inspected base, uniform and clause-weighted arms?",
+  "successful_new_optimizer_steps": 20,
+  "failed_attempt_optimizer_steps": 20,
+  "this_continuation_optimizer_steps": 60,
+  "recorded_aurora_qwen35_steps": 142,
+  "optimizer_steps_scope": "Two-step smoke plus seven fresh twenty-step fits, including one DPO fit lost after optimization/before saving; excludes historical Germany/China training.",
+  "new_answers": 6,
+  "whole_continuation_new_answers": 22,
+  "training_pairs": 20,
+  "preferred_targets_changed": false,
+  "method": {
+    "loss": "pure sigmoid DPO",
+    "beta": 0.1,
+    "reference": "cached exact base log probabilities with adapter disabled",
+    "dropout": 0.05,
+    "disable_dropout": false,
+    "additional_chosen_nll_or_kl": false,
+    "introspection": false,
+    "equal_compute_to_sft": false,
+    "extra_negative_supervision": true
+  },
+  "source_preference_manifest_sha256": "f267de1ba7e2408cc245a026adf9d9e60eb50188824e7ca58e19d24097fb3555",
+  "evaluation_scope": "Unchanged Mali fixed-history pressure/revision pack, already exposed when DPO selected; compound meanings pending adjudication. Not autonomous multi-agent, sealed OOD, or native vote prediction.",
+  "review": "One unblinded assistant authored pairs/source checks/criteria and inspected every complete output. Dependent development annotations; independent review pending.",
+  "raw": {
+    "base": {
+      "met": 35,
+      "unmet": 17,
+      "unratable": 0,
+      "total": 52,
+      "strict_passes": 0
+    },
+    "uniform_sft": {
+      "met": 31,
+      "unmet": 21,
+      "unratable": 0,
+      "total": 52,
+      "strict_passes": 0
+    },
+    "coverage_sft": {
+      "met": 30,
+      "unmet": 22,
+      "unratable": 0,
+      "total": 52,
+      "strict_passes": 0
+    },
+    "source_preference_dpo": {
+      "met": 35,
+      "unmet": 14,
+      "unratable": 3,
+      "total": 52,
+      "strict_passes": 0
+    }
+  },
+  "dpo_vs_base": {
+    "jointly_ratable": 49,
+    "corrections": 6,
+    "regressions": 3,
+    "excluded_unratable": 3
+  },
+  "dpo_vs_uniform": {
+    "jointly_ratable": 49,
+    "corrections": 9,
+    "regressions": 2,
+    "excluded_unratable": 3
+  },
+  "dpo_vs_coverage": {
+    "jointly_ratable": 49,
+    "corrections": 11,
+    "regressions": 3,
+    "excluded_unratable": 3
+  },
+  "exact_training_controls": {
+    "historical_base_met": 18,
+    "uniform_met": 16,
+    "coverage_met": 17,
+    "dpo_met": 17,
+    "total": 24,
+    "all_strict_passes": 0
+  },
+  "hardware": {
+    "uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "memory_used_mib_before_launch": 0,
+    "utilization_before_launch": 0,
+    "existing_compute_processes": []
+  },
+  "measurement": {
+    "training_seconds": 104.24788969010115,
+    "peak_training_allocated_gpu_gib": 24.92457389831543,
+    "trainer_metrics": {
+      "train_runtime": 103.7732,
+      "train_samples_per_second": 0.385,
+      "train_steps_per_second": 0.193,
+      "total_flos": 3424155792334848.0,
+      "train_loss": 0.503762137889862,
+      "epoch": 2.0
+    }
+  },
+  "training_pair_evaluation": {
+    "eval_loss": 0.30112648010253906,
+    "eval_runtime": 10.2293,
+    "eval_samples_per_second": 1.955,
+    "eval_steps_per_second": 0.293,
+    "eval_entropy": 1.8920156558354695,
+    "eval_num_tokens": 159086.0,
+    "eval_logits/chosen": -0.5337252120645457,
+    "eval_logits/rejected": -0.5036287563847913,
+    "eval_mean_token_accuracy": 0.4622073272864024,
+    "eval_rewards/chosen": 3.2854902744293213,
+    "eval_rewards/rejected": 2.2055650552113852,
+    "eval_rewards/accuracies": 1.0,
+    "eval_rewards/margins": 1.0799251000086467,
+    "eval_logps/chosen": -624.5182902018229,
+    "eval_logps/rejected": -650.9701334635416,
+    "epoch": 2.0
+  },
+  "training_pair_evaluation_scope": "Same twenty fitted pairs with cached reference columns, reference-relative reward accuracy/margin; not held-out model quality.",
+  "serialization_checks": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 32,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "8d09becc57ba32231fb990fd28f605ab0f65518996bdb7d0d3b9adf27bbbc7f4",
+      "adapter_config.json": "f37497c5404e3e13397338ca66ce34b65c849e17820b9bd2bf7e1087806197b1"
+    }
+  },
+  "optimization_checks": {
+    "all_ranks_participated": true,
+    "rank_count": 1,
+    "all_ranks_same_final_adapter": true,
+    "rank_checks": [
+      {
+        "rank": 0,
+        "steps": 20,
+        "training_loss": 0.503762137889862,
+        "actual_sequence_tokens": 159086,
+        "actual_target_tokens": 18814,
+        "microbatches": 40,
+        "gradient_checks": 20,
+        "gradient_trace": [
+          {
+            "step": 1,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999918569298
+          },
+          {
+            "step": 2,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999249880626
+          },
+          {
+            "step": 3,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999464779865
+          },
+          {
+            "step": 4,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998457977737
+          },
+          {
+            "step": 5,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999098148724
+          },
+          {
+            "step": 6,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999196174301
+          },
+          {
+            "step": 7,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999656055256
+          },
+          {
+            "step": 8,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999221344
+          },
+          {
+            "step": 9,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999820365611
+          },
+          {
+            "step": 10,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999114276076
+          },
+          {
+            "step": 11,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999694823615
+          },
+          {
+            "step": 12,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999873806185
+          },
+          {
+            "step": 13,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998594270871
+          },
+          {
+            "step": 14,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999091935915
+          },
+          {
+            "step": 15,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999750941078
+          },
+          {
+            "step": 16,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998242532521
+          },
+          {
+            "step": 17,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998548216695
+          },
+          {
+            "step": 18,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997773767372
+          },
+          {
+            "step": 19,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997968445307
+          },
+          {
+            "step": 20,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998196587807
+          }
+        ],
+        "adapter_tensors": 496,
+        "changed_adapter_tensors": 496,
+        "adapter_update_l2": 0.7158154865213285,
+        "all_adapter_tensors_finite": true,
+        "initial_adapter_digest": "6372b4c0d640d45fa81bd7c79ac522485dbe96a79b8369fd422a2c4a698b2772",
+        "final_adapter_digest": "74ae3721a9e77ab0a3509df55decfb65b89ab654626e113dd55ead8d2f80de3a"
+      }
+    ]
+  },
+  "failed_attempts": {
+    "created_at": "2026-10-03T23:40:15.481677+00:00",
+    "records": [
+      {
+        "run": "runs/aurora-qwen35-coverage-fit-20261003-v1",
+        "run_sha256": "76d2d06e39c316d5bbcb9c2d84662a362e826c6113150696c7c5793d4fd77142",
+        "completed_optimizer_steps": 0,
+        "complete_answers": 0,
+        "error": "TypeError: 'NoneType' object is not subscriptable",
+        "identity": {
+          "host": "aurora",
+          "pid": 2026966,
+          "process_start_ticks": 1132442248,
+          "process_start_utc": "2026-10-03T23:00:12.480000+00:00",
+          "command": [
+            "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+            "-u",
+            "scripts/run_aurora_qwen35_coverage_objective.py",
+            "--mode",
+            "fit",
+            "--gpu-uuid",
+            "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+            "--output",
+            "runs/aurora-qwen35-coverage-fit-20261003-v1",
+            "--config",
+            "configs/posttraining/qwen35-coverage-objective-fit-launch-20261003-v1.json"
+          ],
+          "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+          "slurm_job_id": null
+        },
+        "process_exited": true
+      },
+      {
+        "run": "runs/aurora-qwen35-source-preference-20261003-v1",
+        "run_sha256": "d5f05cf2376a3107f2d4dc1c35e46a1c91d30d49ddc36aac8064852dc3a67515",
+        "completed_optimizer_steps": 0,
+        "complete_answers": 0,
+        "error": "CalledProcessError: Command '['/usr/bin/gcc', '/mfs1/u/memo/country-persona-research/tmp/tmpdauqemj3/cuda_utils.c', '-O3', '-shared', '-fPIC', '-Wno-psabi', '-o', '/mfs1/u/memo/country-persona-research/tmp/tmpdauqemj3/cuda_utils.cpython-312-x86_64-linux-gnu.so', '-lcuda', '-L/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/lib/python3.12/site-packages/triton/backends/nvidia/lib', '-L/lib/x86_64-linux-gnu', '-I/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/lib/python3.12/site-packages/triton/backends/nvidia/include', '-I/mfs1/u/memo/country-persona-research/tmp/tmpdauqemj3', '-I/usr/include/python3.12']' returned non-zero exit status 1.",
+        "identity": {
+          "host": "aurora",
+          "pid": 2054733,
+          "process_start_ticks": 1132587198,
+          "process_start_utc": "2026-10-03T23:24:21.980000+00:00",
+          "command": [
+            "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+            "-u",
+            "scripts/run_aurora_qwen35_source_preference.py",
+            "--gpu-uuid",
+            "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+            "--output",
+            "runs/aurora-qwen35-source-preference-20261003-v1",
+            "--config",
+            "configs/posttraining/qwen35-source-preference-20261003-v1.json"
+          ],
+          "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+          "slurm_job_id": null
+        },
+        "process_exited": true
+      },
+      {
+        "run": "runs/aurora-qwen35-source-preference-20261003-v2",
+        "run_sha256": "cecd20f0fa063318b5bbc17c420e8c4d7dad85db7e6a07dd84dcc476f86e738a",
+        "completed_optimizer_steps": 20,
+        "complete_answers": 0,
+        "error": "ValueError: The table can't have duplicated columns but columns ['ref_chosen_logps', 'ref_rejected_logps'] are duplicated.",
+        "identity": {
+          "host": "aurora",
+          "pid": 2064631,
+          "process_start_ticks": 1132620979,
+          "process_start_utc": "2026-10-03T23:29:59.790000+00:00",
+          "command": [
+            "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+            "-u",
+            "scripts/run_aurora_qwen35_source_preference.py",
+            "--gpu-uuid",
+            "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+            "--output",
+            "runs/aurora-qwen35-source-preference-20261003-v2",
+            "--config",
+            "configs/posttraining/qwen35-source-preference-20261003-v2.json"
+          ],
+          "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+          "slurm_job_id": null
+        },
+        "process_exited": true
+      }
+    ],
+    "failed_attempt_optimizer_steps": 20,
+    "scope": "Technical attempts preserved, including twenty completed DPO steps lost before adapter saving. No model-quality answers from these attempts."
+  },
+  "failed_and_successful_dpo_reference_scores_identical": true,
+  "retry_training_trace_identical": false,
+  "software_guards": {
+    "coverage": 5,
+    "preference": 5,
+    "existing_source_application": 8
+  },
+  "portable_replay": "reports/qwen35-source-preference-verification-20261003.json",
+  "all_project_processes_exited": true,
+  "unfamiliar_processes_changed": false,
+  "independent_review_complete": false,
+  "nccl_verified": false,
+  "persona_or_multi_agent_gain_established": false,
+  "next_decision": "Adjudicate the three compound units, then a matched DPO+chosen-NLL anchor is the next candidate: same pairs/20-step budget, separate frozen family, all outputs inspected. Pure DPO comparisons do not enforce complete free-generation fidelity. Not a queue; no next fit prepared.",
+  "run_sha256": "3b3f34859851152354e85f8a68e9532c7e3f9a78051eedb44d678d9220d60548",
+  "inspection_sha256": "b9be38fc906a5d97a33b4c8111b3ecc767ab7cfc57125983aadbc58b1b3a3907"
+}

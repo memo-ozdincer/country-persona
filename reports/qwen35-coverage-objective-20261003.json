@@ -1,0 +1,87 @@
+{
+  "created_at": "2026-10-03T23:16:24.743580+00:00",
+  "status": "matched_coverage_objective_completed_all_sixteen_answers_inspected",
+  "question": "Does redistributing supervision toward checked national/application clauses preserve obligations and concrete application better than uniform-token CE at the same target/optimizer budget?",
+  "new_optimizer_steps": 20,
+  "recorded_aurora_qwen35_steps": 102,
+  "new_answers": 16,
+  "training_rows": 20,
+  "preferred_targets_changed": false,
+  "held_family": "S/PV.9365 Mali withdrawal; complete Brazil/UK post-adoption speeches",
+  "criteria_frozen_before_calls": true,
+  "grades": "One unblinded assistant authored targets/criteria/source checks and reviewed all complete answers; dependent development annotations.",
+  "held_raw": {
+    "base": {
+      "met": 35,
+      "total": 52,
+      "strict_passes": 0
+    },
+    "uniform_sft": {
+      "met": 31,
+      "total": 52,
+      "strict_passes": 0
+    },
+    "coverage_sft": {
+      "met": 30,
+      "total": 52,
+      "strict_passes": 0
+    }
+  },
+  "checked_plan_base": {
+    "met": 18,
+    "total": 26,
+    "strict_passes": 0
+  },
+  "exact_training_controls": {
+    "historical_base_met": 18,
+    "uniform_met": 16,
+    "coverage_met": 17,
+    "total": 24
+  },
+  "coverage_vs_uniform": {
+    "jointly_ratable_units": 52,
+    "corrections": 6,
+    "regressions": 7
+  },
+  "coverage_vs_base": {
+    "jointly_ratable_units": 52,
+    "corrections": 5,
+    "regressions": 10
+  },
+  "hardware": {
+    "uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "memory_used_mib_before_launch": 0,
+    "utilization_before_launch": 0,
+    "existing_compute_processes": []
+  },
+  "measurement": {
+    "training_seconds": 49.71486288867891,
+    "peak_training_allocated_gpu_gib": 10.394492149353027,
+    "trainer_metrics": {
+      "train_runtime": 49.139,
+      "train_samples_per_second": 0.814,
+      "train_steps_per_second": 0.407,
+      "total_flos": 1711862719094784.0,
+      "train_loss": 2.5406875252723693,
+      "epoch": 2.0
+    }
+  },
+  "uniform_model_loss_before": 2.7876220289056217,
+  "uniform_model_loss_after": 2.190132213803107,
+  "failed_attempt": {
+    "run": "runs/aurora-qwen35-coverage-fit-20261003-v1",
+    "steps": 0,
+    "answers": 0,
+    "cause": "Guard assumed logits alongside chunked built-in loss; corrected by retaining original chunked forward and checking uniform equivalence."
+  },
+  "software_checks": {
+    "new_objective_guards_passed": 5,
+    "existing_application_guards_passed": 8,
+    "portable_replay": "reports/qwen35-coverage-objective-verification-20261003.json",
+    "initial_portable_path_concatenation_failure": "Corrected before successful replay; no scoring criteria changed."
+  },
+  "next_decision": "One source-audited minimal-error preference comparison using unchanged preferred targets. Reuse frozen Mali cases as exposed development, not fresh confirmation. No DPO fit or sweep yet prepared.",
+  "independent_review_complete": false,
+  "persona_or_multi_agent_gain_established": false
+}
