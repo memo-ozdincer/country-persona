@@ -106,14 +106,15 @@ def stage(data):
             for c, original in zip(view['countries'], data['countries']):
                 for e, source in zip(c['examples'], original['examples']): e['format'] = source['_private_format']
         (dst / 'overview.json').write_text(json.dumps(view, ensure_ascii=False, indent=2) + '\n')
-        for name in ('index.html', 'overview.js', 'reddit-coverage.js', 'overview.css', 'overview-narrow.css', 'data-client.js', 'sources.json', 'source_profiles.json', 'trace_types.json', 'decision-showcase.json'):
+        for name in ('index.html', 'data.html', 'homepage.js', 'homepage.css', 'homepage-data.json', 'catalog-summary.json', 'training-samples.html', 'overview.js', 'reddit-coverage.js', 'overview.css', 'overview-narrow.css', 'data-client.js', 'sources.json', 'source_profiles.json', 'trace_types.json', 'decision-showcase.json'):
             shutil.copyfile(ROOT / 'explorer' / name, dst / name)
+        shutil.copytree(ROOT / 'explorer/assets', dst / 'assets', dirs_exist_ok=True)
         # Retain the complete catalog as a secondary screen, with its static adapter.
         html = (ROOT / 'explorer/advanced.html').read_text()
         html = html.replace('<script>', '<script src="data-client.js"></script>\n<script>', 1)
         html = html.replace("async function get(url){const r=await fetch(url);const x=await r.json();if(!r.ok)throw Error(x.error||r.statusText);return x}", 'async function get(url){return STATIC_DATA.get(url)}')
         html = html.replace("$('#filters').onchange=", "$('#export').onclick=async e=>{e.preventDefault();try{await STATIC_DATA.exportSelection(e.currentTarget.href)}catch(err){alert(err.message)}};\n$('#filters').onchange=")
-        html = html.replace('<nav>', '<nav><a href="index.html">Country overview</a>', 1)
+        html = html.replace('<nav>', '<nav><a href="index.html">Research home</a><a href="data.html">Country overview</a>', 1)
         html = html.replace('Download selection</a>', 'Download matching metadata</a>')
         html = html.replace('<h2>The same proposal, different decisions</h2>', '<h2>Limited decision subset: two Ukraine resolutions</h2>')
         html = html.replace('Retrospective cases with actual draft text, final votes and attributed statements.', 'Only 12 country views of two events have been joined so far. This is not the topic coverage of the wider corpus. Retrospective cases with actual draft text, final votes and attributed statements.')
@@ -128,7 +129,7 @@ def github(data):
     inventory = json.loads((ROOT / 'explorer/sources.json').read_text())
     profiles = json.loads((ROOT / 'explorer/source_profiles.json').read_text())
     recipes = json.loads((ROOT / 'explorer/trace_types.json').read_text())
-    base = 'https://memo-ozdincer-country-persona-explorer.static.hf.space/index.html'
+    base = 'https://memo-ozdincer-country-persona-explorer.static.hf.space/data.html'
     rows = ['# Data explorer for persona fine-tuning', '',
             'A living inventory of country-attributed sources, available trace types and possible training uses.', '',
             f'**[Open the explorer]({base})** · [Contribute](CONTRIBUTING.md) · [Download catalog tables](https://huggingface.co/datasets/memo-ozdincer/country-persona-data)', '',
@@ -155,7 +156,7 @@ def github(data):
                 lines += [f"### {recipe['label']}", '', recipe['availability'], '', '**Prompt/context:** ' + '; '.join(recipe['input']), '',
                           '**Output/target:** ' + '; '.join(recipe['target']), '', '**Use:** ' + recipe['possible_use'], '',
                           '**Scoring/environment:** ' + recipe['scoring'], '',
-                          f"[Actual record reference]({base.replace('index.html','advanced.html')}#view=explore&id={task['sample']['uid']})", '']
+                          f"[Actual record reference]({base.replace('data.html','advanced.html')}#view=explore&id={task['sample']['uid']})", '']
             lines += ['</details>', '']
         lines += ['## Post-training examples', '', f"[Inspect task templates and a worked evidence-conditioned candidate]({base}#country={c['code']})", '',
                   'No interactive environments, multi-agent trajectories, training reward verifiers or preference pairs are prepared. Some vote/response labels can support future verifiable tasks after validation. New curated applications remain review candidates.', '']
@@ -177,15 +178,16 @@ def github(data):
              'Original publishers retain attribution. Public previews omit restricted source bodies; source links and record references remain available. The two-event Ukraine decision subset is one small source collection, not the whole corpus.', '']
     (dest / 'README.md').write_text('\n'.join(rows))
     for rel in ['TODO.md', 'CONTRIBUTING.md', '.github/ISSUE_TEMPLATE/data-source.yml', '.github/ISSUE_TEMPLATE/data-correction.yml', '.github/PULL_REQUEST_TEMPLATE.md',
-                'explorer/index.html', 'explorer/advanced.html', 'explorer/overview.js', 'explorer/overview.css', 'explorer/overview-narrow.css', 'explorer/overview.json',
-                'explorer/sources.json', 'explorer/source_profiles.json', 'explorer/trace_types.json', 'explorer/decision-showcase.json',
+                'explorer/index.html', 'explorer/data.html', 'explorer/homepage.css', 'explorer/homepage.js', 'explorer/homepage-data.json', 'explorer/catalog-summary.json', 'explorer/training-samples.html', 'explorer/advanced.html', 'explorer/overview.js', 'explorer/overview.css', 'explorer/overview-narrow.css', 'explorer/overview.json',
+                'explorer/sources.json', 'explorer/source_profiles.json', 'explorer/trace_types.json', 'explorer/decision-showcase.json', 'explorer/training-examples.json', 'explorer/reddit-coverage.js',
                 'explorer/app.py', 'explorer/README.md', 'tests/explorer_overview_ui.cjs', 'scripts/build_explorer_overview.py', 'scripts/stage_static_explorer.py',
-                'scripts/build_source_inventory.py', 'scripts/validate_source_inventory.py', 'scripts/publish_explorer_ui.py', 'scripts/build_decision_posttraining.py', 'scripts/build_decision_cases.py',
+                'scripts/build_source_inventory.py', 'scripts/validate_source_inventory.py', 'scripts/publish_explorer_ui.py', 'scripts/build_decision_posttraining.py', 'scripts/build_decision_cases.py', 'scripts/build_training_examples.py', 'scripts/build_research_homepage.py',
                 'scripts/stage_data_publication.py', 'docs/EXPLORER_PRESENTATION.md', 'docs/DATA_EXPLORER.md', 'docs/DECISION_POSTTRAINING_FORMAT.md',
                 'data/curation/decision_dossiers_v2.json', 'data/manifests/decision-cases-20260914.json', 'reports/data-catalog.json']:
         target = dest / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / rel, target)
+    shutil.copytree(ROOT / 'explorer/assets', dest / 'explorer/assets', dirs_exist_ok=True)
     guide = dest / 'docs/DATA_EXPLORER.md'
     guide.write_text(guide.read_text().replace('Existing [training decisions](DECISION_REGISTER.md) and [four-country source methodology](COUNTRY_EXTENSION_20260914.md) retain their literature links.', 'Additional training decisions and source-method notes remain in the original research workspace.'))
 
@@ -199,6 +201,11 @@ def main():
     stage(data)
     from build_training_examples import build as build_training_examples
     build_training_examples()
+    from build_research_homepage import build as build_homepage
+    build_homepage()
+    for mode in ('public', 'private'):
+        for name in ('homepage-data.json', 'catalog-summary.json'):
+            shutil.copyfile(ROOT/'explorer'/name, CACHE/f'explorer-{mode}-static'/name)
     github(data)
     print(json.dumps({c['code']: {'counts': c['counts'], 'featured': c['examples'][0]['id'], 'languages': c['languages']} for c in data['countries']}, indent=2))
 

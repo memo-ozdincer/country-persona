@@ -65,7 +65,12 @@ def main():
     from build_explorer_overview import build, stage, github
     from build_source_inventory import build_inventory
     build_inventory()
-    overview = build(); stage(overview); github(overview)
+    overview = build(); stage(overview)
+    from build_research_homepage import build as build_homepage
+    build_homepage()
+    for dest in (public, private):
+        shutil.copyfile(ROOT/'explorer/homepage-data.json', dest/'homepage-data.json')
+    github(overview)
     report={'public_files':sum(p.is_file() for p in public.rglob('*')),'private_files':sum(p.is_file() for p in private.rglob('*')),'original_records_hash_verified':sum(map(len,buckets.values())),'index_rows':sum(map(len,indexes.values())),'public_bytes':sum(p.stat().st_size for p in public.rglob('*') if p.is_file()),'private_bytes':sum(p.stat().st_size for p in private.rglob('*') if p.is_file()),'private_host_bytes':sum(p.stat().st_size for p in private.rglob('*') if p.is_file() and p.name!='research.tar.gz'),'private_archive_bytes':(archive/'research.tar.gz').stat().st_size}
     (ROOT/'reports/static-explorer-build.json').write_text(json.dumps(report,indent=2)+'\n');print(report)
 if __name__=='__main__':main()

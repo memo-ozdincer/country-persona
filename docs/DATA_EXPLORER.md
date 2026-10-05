@@ -1,6 +1,6 @@
 # Explore the country-persona data
 
-**Current interface:** The [source explorer](https://memo-ozdincer-country-persona-explorer.static.hf.space/index.html) shows country counts, a type breakdown, expandable data sources, measured character lengths and possible trace/environment mappings. See [count and format definitions](EXPLORER_PRESENTATION.md) and the [contribution guide](../CONTRIBUTING.md). The larger filterable catalog remains at `advanced.html`.
+**Current interface:** The [research homepage](https://memo-ozdincer-country-persona-explorer.static.hf.space/index.html) introduces the goals, evidence, evaluations, preliminary results and training loop with source-linked graphics. The [source explorer](https://memo-ozdincer-country-persona-explorer.static.hf.space/data.html) retains country counts, a type breakdown, expandable data sources, measured character lengths and possible trace/environment mappings. See [count and format definitions](EXPLORER_PRESENTATION.md) and the [contribution guide](../CONTRIBUTING.md). The larger filterable catalog remains at `advanced.html`; legacy country hash links redirect to the source explorer.
 
 Project owner and publisher: **Memo Ozdincer** (`memo-ozdincer`).
 

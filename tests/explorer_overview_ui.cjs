@@ -28,7 +28,7 @@ setImmediate(()=>{
    } else assert(!html.includes('From observed decision to post-training trace'));
    assert(!html.includes('Memo Ozdincer'));
    assert(!html.includes('Environment inventory:'));
-   const page=fs.readFileSync('explorer/index.html','utf8');
+   const page=fs.readFileSync('explorer/data.html','utf8');
    assert(page.indexOf('class="contribute"')>page.indexOf('id="build-guide"'));
    for(const heading of ['Interactive environments','Multi-agent trajectories','Reward verifiers and possible RLVR tasks','Preference pairs'])assert(page.includes('<h3>'+heading+'</h3>'));
  }

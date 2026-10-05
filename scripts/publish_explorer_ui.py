@@ -9,7 +9,8 @@ from pathlib import Path
 from huggingface_hub import HfApi, CommitOperationAdd, get_token
 
 ROOT=Path(__file__).resolve().parents[1]
-FILES=['index.html','advanced.html','overview.js', 'reddit-coverage.js','overview.css','overview-narrow.css','overview.json','sources.json','source_profiles.json','trace_types.json','decision-showcase.json','training-examples.json','README.md']
+FILES=['index.html','data.html','homepage.css','homepage.js','homepage-data.json', 'catalog-summary.json','training-samples.html','advanced.html','overview.js', 'reddit-coverage.js','overview.css','overview-narrow.css','overview.json','sources.json','source_profiles.json','trace_types.json','decision-showcase.json','training-examples.json','README.md']
+FILES += [str(p.relative_to(ROOT/'explorer')) for p in sorted((ROOT/'explorer/assets').rglob('*')) if p.is_file()]
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
