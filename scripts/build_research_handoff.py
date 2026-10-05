@@ -32,6 +32,9 @@ RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expa
        "source-application-grounding-20261003-v1", "coverage-objective-grounding-20261003-v1")
 SKIP_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", ".cache"}
 SECRET = re.compile(rb"hf_[A-Za-z0-9]{20,}|-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----")
+QUOTED_KEY_HEADER = re.compile(
+    rb"(?P<quote>'|\"|\\\")-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----(?P=quote)"
+)
 REFERENCE_ADAPTERS = {
     "runs/open-character-humor-reproduction-20261004-v1/dpo-fit/adapter/adapter_model.safetensors",
     "runs/open-character-humor-reproduction-20261004-v1/sft-fit/adapter/adapter_model.safetensors",
@@ -121,7 +124,10 @@ def build(root, output):
         source, target = root / name, output / name
         # Secrets must not enter copied docs/code or raw text. Do not print matched data.
         if source.suffix.lower() not in {".pdf", ".zip", ".gz", ".safetensors", ".bin", ".pt", ".png", ".jpg"}:
-            if SECRET.search(source.read_bytes()):
+            # A quoted header alone (e.g. a Python PEM parser's b'BEGIN...')
+            # contains no private-key material. A header followed by a key body
+            # before its closing quote remains subject to the secret check.
+            if SECRET.search(QUOTED_KEY_HEADER.sub(b"[KEY_HEADER_LITERAL]", source.read_bytes())):
                 raise ValueError("Possible secret detected; file excluded by failing build: " + name)
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
