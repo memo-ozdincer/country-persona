@@ -1,0 +1,33 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "max_length": 4096,
+  "generation_max_new_tokens": 384,
+  "max_steps": 64,
+  "gradient_accumulation_steps": 2,
+  "lora_rank": 8,
+  "learning_rate": 5e-05,
+  "pack": "data/prepared/minimal-mechanism-20261005-v1",
+  "baseline_run": "runs/aurora-minimal-mechanism-base-20261005-v1",
+  "kind": "evaluation_only_literal_state_adjudication",
+  "authorization": "User explicitly requests recursive minimal country pipeline experiments, complete selected-data reading, inspection then scale.",
+  "change_from_v1": "Materialize JSONL iterator as a list before token audit and Dataset.from_list. Rerun base with identical generation protocol; failed v2 fit made zero optimizer steps.",
+  "change_from_v2": "Only optimizer budget rises from 16 to 64 steps, fresh same base, same four targets, same frozen ten cases. Decision follows inspected v3 fit; not a sweep.",
+  "selection_inspection_sha256": "3184db314131994c52e8d4ab093d5171b9ab7a90beaef3cc44b74b013ab5f74e",
+  "change_from_v3": "Eight targets, first four unchanged plus four manually read attribution/shutdown contrasts. Same sixty-four optimizer steps; exposure per example halves from 32 to 16. New peer/partial-repair wording frozen before calls; old pressure/repair and strong plans retained.",
+  "change_from_extension": "Literal source-matched partial mechanisms plus checked-state controls; zero optimization, same generation/model/runtime. Not replacement of historical active/proactive scores."
+}
