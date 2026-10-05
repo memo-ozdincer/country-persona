@@ -1,0 +1,51 @@
+{
+  "question": "Can we independently recreate the published Qwen2.5-7B humorous-persona training arm and its resistance to persona-removal prompts?",
+  "paper": "https://arxiv.org/abs/2511.01689",
+  "paper_version": "2511.01689v1",
+  "code_repo": "https://github.com/maiush/OpenCharacterTraining",
+  "code_revision": "d1da9f03628cb4c5482ba2e494a7cba33bcd5818",
+  "training_repo": "https://github.com/maiush/OpenRLHF",
+  "training_revision": "eaf40e10e0471a9e50d33697bcef15f7b0a32b05",
+  "persona": "humor",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "assets_root": "/mfs1/u/memo/country-persona-research/reference-reproductions/20261004/assets",
+  "reference_code": "/mfs1/u/memo/country-persona-research/reference-reproductions/20261004/OpenCharacterTraining",
+  "run": "runs/open-character-humor-reproduction-20261004-v1",
+  "training": {
+    "seed": 123456, "batch_size": 32, "epochs": 1,
+    "learning_rate": 0.00005, "warmup_ratio": 0.1,
+    "adam_betas": [0.9, 0.98], "max_norm": 1.0,
+    "lora_rank": 64, "lora_alpha": 128, "lora_dropout": 0,
+    "target_modules": "all-linear", "zero_stage": 2, "dtype": "bfloat16",
+    "dpo": {"micro_batch_size": 1, "max_len": 1024, "beta": 0.1, "nll_loss_coef": 0.1, "kl_loss_coef": 0.001},
+    "sft": {"micro_batch_size": 2, "max_len": 3072}
+  },
+  "evaluation": {
+    "dataset": "LDJnr/Pure-Dove", "dataset_revision": "d8f711ad5a96a42af44b13e1a5bb054e48ff3a69",
+    "first_n": 500, "variants": ["default", 0, 1, 2, 3, 4, 5, 6, 7],
+    "temperature": 0.7, "top_p": 0.95, "top_k": -1, "min_p": 0.0, "max_tokens": 1024,
+    "classifier_max_len": 8192, "classifier_batch_size": 8,
+    "metric": "class-specific humor recall and probability; not the paper's eleven-persona macro F1",
+    "controls": ["unprompted base", "authors' released DPO", "authors' released full persona"],
+    "decision": "First inspect a small released-weight positive control, then the fresh DPO fit, before proceeding to introspective SFT. Evaluate fresh full training against released full weights and base on the same frozen question/variant pairs."
+  },
+  "known_reproduction_limits_before_outputs": [
+    "One published model/persona arm, not all eleven personas across three models.",
+    "Aurora NVIDIA RTX PRO 6000 Blackwell Server Edition and a separately pinned runtime; the paper does not provide a complete hardware/runtime lock.",
+    "Original base revision is unspecified; current released base is pinned here.",
+    "Released final introspective SFT order is unavailable: preserve every raw record and original preprocessing, then explicitly seed the original unseeded shuffle.",
+    "Evaluation ordering and generation seeds were unspecified in original scripts; freeze shared inputs and explicit seeds for paired comparisons.",
+    "Disable external W&B and replace home/Slurm paths with scratch paths and an owned single-GPU launch.",
+    "The independent published classifier measures recognizable persona, not country-policy faithfulness, multi-agent gains or general response quality."
+  ],
+  "assets": [
+    {"name": "base", "repo": "Qwen/Qwen2.5-7B-Instruct", "revision": "a09a35458c702b33eeacc393d103063234e8bc28", "repo_type": "model"},
+    {"name": "training-data", "repo": "maius/OpenCharacterTraining-data", "revision": "2577813a6a435d21051c0548ff2f29dc897212d7", "repo_type": "dataset", "patterns": ["README.md", "dpo/qwen-2.5-7b-it/humor.jsonl", "self_reflection/qwen-2.5-7b-it/humor.jsonl", "self_interaction/qwen-2.5-7b-it/humor.jsonl", "self_interaction/qwen-2.5-7b-it/humor-leading.jsonl"]},
+    {"name": "author-dpo", "repo": "maius/qwen-2.5-7b-it-pt-distillation", "revision": "14ac414b589ae3ee93efce055fa7e3b4cb766f78", "repo_type": "model", "patterns": ["README.md", "humor/*"]},
+    {"name": "author-sft", "repo": "maius/qwen-2.5-7b-it-pt-introspection", "revision": "8206429731f78657dbceadd3a628ae7a6e835801", "repo_type": "model", "patterns": ["README.md", "humor/*"]},
+    {"name": "author-full", "repo": "maius/qwen-2.5-7b-it-personas", "revision": "02471b26f7413b795702c3e60855d833694a2d64", "repo_type": "model", "patterns": ["README.md", "humor/*"]},
+    {"name": "classifier", "repo": "maius/qwen-2.5-7b-it-pt-classifier", "revision": "cb721623486f633dd932f03cd5826373870f6527", "repo_type": "model", "patterns": ["*.json", "*.safetensors", "README.md"]},
+    {"name": "pure-dove", "repo": "LDJnr/Pure-Dove", "revision": "d8f711ad5a96a42af44b13e1a5bb054e48ff3a69", "repo_type": "dataset", "patterns": ["README.md", "Pure-Dove.jsonl"]}
+  ]
+}

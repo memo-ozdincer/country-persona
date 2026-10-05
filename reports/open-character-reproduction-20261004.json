@@ -1,0 +1,786 @@
+{
+  "status": "six_arm_published_protocol_comparison_completed",
+  "created_utc": "2026-10-05T00:26:28.717892+00:00",
+  "paper": "https://arxiv.org/abs/2511.01689",
+  "run": "runs/open-character-humor-reproduction-20261004-v1",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "persona": "humor",
+  "arms": {
+    "base": {
+      "metrics": {
+        "default": {
+          "n": 500,
+          "humor_predictions": 52,
+          "humor_recall": 0.104,
+          "mean_humor_probability": 0.069562788035837
+        },
+        "0": {
+          "n": 500,
+          "humor_predictions": 72,
+          "humor_recall": 0.144,
+          "mean_humor_probability": 0.08523455643339549
+        },
+        "1": {
+          "n": 500,
+          "humor_predictions": 43,
+          "humor_recall": 0.086,
+          "mean_humor_probability": 0.06438345814804779
+        },
+        "2": {
+          "n": 500,
+          "humor_predictions": 26,
+          "humor_recall": 0.052,
+          "mean_humor_probability": 0.05139439169963589
+        },
+        "3": {
+          "n": 500,
+          "humor_predictions": 122,
+          "humor_recall": 0.244,
+          "mean_humor_probability": 0.12050807336927391
+        },
+        "4": {
+          "n": 500,
+          "humor_predictions": 36,
+          "humor_recall": 0.072,
+          "mean_humor_probability": 0.06034404517814983
+        },
+        "5": {
+          "n": 500,
+          "humor_predictions": 80,
+          "humor_recall": 0.16,
+          "mean_humor_probability": 0.08690705604339019
+        },
+        "6": {
+          "n": 500,
+          "humor_predictions": 44,
+          "humor_recall": 0.088,
+          "mean_humor_probability": 0.0711343268500641
+        },
+        "7": {
+          "n": 500,
+          "humor_predictions": 21,
+          "humor_recall": 0.042,
+          "mean_humor_probability": 0.0464331926017403
+        }
+      },
+      "generations": 4500,
+      "output_caps": 208
+    },
+    "prompted-base": {
+      "metrics": {
+        "default": {
+          "n": 500,
+          "humor_predictions": 235,
+          "humor_recall": 0.47,
+          "mean_humor_probability": 0.20620107538392768
+        },
+        "0": {
+          "n": 500,
+          "humor_predictions": 200,
+          "humor_recall": 0.4,
+          "mean_humor_probability": 0.21275349053973333
+        },
+        "1": {
+          "n": 500,
+          "humor_predictions": 143,
+          "humor_recall": 0.286,
+          "mean_humor_probability": 0.12272413708269596
+        },
+        "2": {
+          "n": 500,
+          "humor_predictions": 91,
+          "humor_recall": 0.182,
+          "mean_humor_probability": 0.0907484545954503
+        },
+        "3": {
+          "n": 500,
+          "humor_predictions": 285,
+          "humor_recall": 0.57,
+          "mean_humor_probability": 0.30833422768022867
+        },
+        "4": {
+          "n": 500,
+          "humor_predictions": 193,
+          "humor_recall": 0.386,
+          "mean_humor_probability": 0.1775748894130811
+        },
+        "5": {
+          "n": 500,
+          "humor_predictions": 177,
+          "humor_recall": 0.354,
+          "mean_humor_probability": 0.17604151194356382
+        },
+        "6": {
+          "n": 500,
+          "humor_predictions": 237,
+          "humor_recall": 0.474,
+          "mean_humor_probability": 0.23370741152600386
+        },
+        "7": {
+          "n": 500,
+          "humor_predictions": 31,
+          "humor_recall": 0.062,
+          "mean_humor_probability": 0.05794643301761244
+        }
+      },
+      "generations": 4500,
+      "output_caps": 233
+    },
+    "author-full-sequential": {
+      "metrics": {
+        "default": {
+          "n": 500,
+          "humor_predictions": 329,
+          "humor_recall": 0.658,
+          "mean_humor_probability": 0.3537671906949836
+        },
+        "0": {
+          "n": 500,
+          "humor_predictions": 301,
+          "humor_recall": 0.602,
+          "mean_humor_probability": 0.352175968571566
+        },
+        "1": {
+          "n": 500,
+          "humor_predictions": 301,
+          "humor_recall": 0.602,
+          "mean_humor_probability": 0.33686356820154467
+        },
+        "2": {
+          "n": 500,
+          "humor_predictions": 257,
+          "humor_recall": 0.514,
+          "mean_humor_probability": 0.2819496392024739
+        },
+        "3": {
+          "n": 500,
+          "humor_predictions": 298,
+          "humor_recall": 0.596,
+          "mean_humor_probability": 0.35124052738491446
+        },
+        "4": {
+          "n": 500,
+          "humor_predictions": 343,
+          "humor_recall": 0.686,
+          "mean_humor_probability": 0.3872063745851628
+        },
+        "5": {
+          "n": 500,
+          "humor_predictions": 329,
+          "humor_recall": 0.658,
+          "mean_humor_probability": 0.3721168533512391
+        },
+        "6": {
+          "n": 500,
+          "humor_predictions": 273,
+          "humor_recall": 0.546,
+          "mean_humor_probability": 0.32840921527519823
+        },
+        "7": {
+          "n": 500,
+          "humor_predictions": 271,
+          "humor_recall": 0.542,
+          "mean_humor_probability": 0.27918755497928943
+        }
+      },
+      "generations": 4500,
+      "output_caps": 57
+    },
+    "author-dpo": {
+      "metrics": {
+        "default": {
+          "n": 500,
+          "humor_predictions": 278,
+          "humor_recall": 0.556,
+          "mean_humor_probability": 0.2725186207049992
+        },
+        "0": {
+          "n": 500,
+          "humor_predictions": 298,
+          "humor_recall": 0.596,
+          "mean_humor_probability": 0.32727355889836324
+        },
+        "1": {
+          "n": 500,
+          "humor_predictions": 257,
+          "humor_recall": 0.514,
+          "mean_humor_probability": 0.25824962383229283
+        },
+        "2": {
+          "n": 500,
+          "humor_predictions": 204,
+          "humor_recall": 0.408,
+          "mean_humor_probability": 0.19782180450798478
+        },
+        "3": {
+          "n": 500,
+          "humor_predictions": 314,
+          "humor_recall": 0.628,
+          "mean_humor_probability": 0.333665855825413
+        },
+        "4": {
+          "n": 500,
+          "humor_predictions": 327,
+          "humor_recall": 0.654,
+          "mean_humor_probability": 0.3398488948594895
+        },
+        "5": {
+          "n": 500,
+          "humor_predictions": 305,
+          "humor_recall": 0.61,
+          "mean_humor_probability": 0.32034622658311857
+        },
+        "6": {
+          "n": 500,
+          "humor_predictions": 312,
+          "humor_recall": 0.624,
+          "mean_humor_probability": 0.3348671711970819
+        },
+        "7": {
+          "n": 500,
+          "humor_predictions": 215,
+          "humor_recall": 0.43,
+          "mean_humor_probability": 0.2160088592935863
+        }
+      },
+      "generations": 4500,
+      "output_caps": 47
+    },
+    "reproduction-dpo": {
+      "metrics": {
+        "default": {
+          "n": 500,
+          "humor_predictions": 239,
+          "humor_recall": 0.478,
+          "mean_humor_probability": 0.23423769464576616
+        },
+        "0": {
+          "n": 500,
+          "humor_predictions": 283,
+          "humor_recall": 0.566,
+          "mean_humor_probability": 0.2997596777466679
+        },
+        "1": {
+          "n": 500,
+          "humor_predictions": 215,
+          "humor_recall": 0.43,
+          "mean_humor_probability": 0.23087821614393034
+        },
+        "2": {
+          "n": 500,
+          "humor_predictions": 131,
+          "humor_recall": 0.262,
+          "mean_humor_probability": 0.14054712845003814
+        },
+        "3": {
+          "n": 500,
+          "humor_predictions": 309,
+          "humor_recall": 0.618,
+          "mean_humor_probability": 0.3442394846025854
+        },
+        "4": {
+          "n": 500,
+          "humor_predictions": 297,
+          "humor_recall": 0.594,
+          "mean_humor_probability": 0.3119955159500241
+        },
+        "5": {
+          "n": 500,
+          "humor_predictions": 269,
+          "humor_recall": 0.538,
+          "mean_humor_probability": 0.29321007753908634
+        },
+        "6": {
+          "n": 500,
+          "humor_predictions": 287,
+          "humor_recall": 0.574,
+          "mean_humor_probability": 0.31417292661553076
+        },
+        "7": {
+          "n": 500,
+          "humor_predictions": 139,
+          "humor_recall": 0.278,
+          "mean_humor_probability": 0.14946345879416914
+        }
+      },
+      "generations": 4500,
+      "output_caps": 69
+    },
+    "reproduction-full-sequential": {
+      "metrics": {
+        "default": {
+          "n": 500,
+          "humor_predictions": 293,
+          "humor_recall": 0.586,
+          "mean_humor_probability": 0.3222909451737069
+        },
+        "0": {
+          "n": 500,
+          "humor_predictions": 273,
+          "humor_recall": 0.546,
+          "mean_humor_probability": 0.345336864448851
+        },
+        "1": {
+          "n": 500,
+          "humor_predictions": 270,
+          "humor_recall": 0.54,
+          "mean_humor_probability": 0.31454826724497253
+        },
+        "2": {
+          "n": 500,
+          "humor_predictions": 168,
+          "humor_recall": 0.336,
+          "mean_humor_probability": 0.1997989090590272
+        },
+        "3": {
+          "n": 500,
+          "humor_predictions": 301,
+          "humor_recall": 0.602,
+          "mean_humor_probability": 0.35699650125484916
+        },
+        "4": {
+          "n": 500,
+          "humor_predictions": 334,
+          "humor_recall": 0.668,
+          "mean_humor_probability": 0.3794956726297678
+        },
+        "5": {
+          "n": 500,
+          "humor_predictions": 324,
+          "humor_recall": 0.648,
+          "mean_humor_probability": 0.3668107487903908
+        },
+        "6": {
+          "n": 500,
+          "humor_predictions": 274,
+          "humor_recall": 0.548,
+          "mean_humor_probability": 0.33637627675861587
+        },
+        "7": {
+          "n": 500,
+          "humor_predictions": 176,
+          "humor_recall": 0.352,
+          "mean_humor_probability": 0.20184466047096067
+        }
+      },
+      "generations": 4500,
+      "output_caps": 74
+    }
+  },
+  "paired_classifier_label_comparisons": {
+    "reproduction-dpo_versus_base": {
+      "default": {
+        "questions": 500,
+        "gained_humor_labels": 202,
+        "lost_humor_labels": 15,
+        "net_percentage_points": 37.4
+      },
+      "0": {
+        "questions": 500,
+        "gained_humor_labels": 240,
+        "lost_humor_labels": 29,
+        "net_percentage_points": 42.2
+      },
+      "1": {
+        "questions": 500,
+        "gained_humor_labels": 194,
+        "lost_humor_labels": 22,
+        "net_percentage_points": 34.4
+      },
+      "2": {
+        "questions": 500,
+        "gained_humor_labels": 120,
+        "lost_humor_labels": 15,
+        "net_percentage_points": 21.0
+      },
+      "3": {
+        "questions": 500,
+        "gained_humor_labels": 229,
+        "lost_humor_labels": 42,
+        "net_percentage_points": 37.4
+      },
+      "4": {
+        "questions": 500,
+        "gained_humor_labels": 268,
+        "lost_humor_labels": 7,
+        "net_percentage_points": 52.2
+      },
+      "5": {
+        "questions": 500,
+        "gained_humor_labels": 223,
+        "lost_humor_labels": 34,
+        "net_percentage_points": 37.8
+      },
+      "6": {
+        "questions": 500,
+        "gained_humor_labels": 261,
+        "lost_humor_labels": 18,
+        "net_percentage_points": 48.6
+      },
+      "7": {
+        "questions": 500,
+        "gained_humor_labels": 128,
+        "lost_humor_labels": 10,
+        "net_percentage_points": 23.6
+      }
+    },
+    "reproduction-dpo_versus_prompted-base": {
+      "default": {
+        "questions": 500,
+        "gained_humor_labels": 103,
+        "lost_humor_labels": 99,
+        "net_percentage_points": 0.8
+      },
+      "0": {
+        "questions": 500,
+        "gained_humor_labels": 157,
+        "lost_humor_labels": 74,
+        "net_percentage_points": 16.6
+      },
+      "1": {
+        "questions": 500,
+        "gained_humor_labels": 142,
+        "lost_humor_labels": 70,
+        "net_percentage_points": 14.4
+      },
+      "2": {
+        "questions": 500,
+        "gained_humor_labels": 95,
+        "lost_humor_labels": 55,
+        "net_percentage_points": 8.0
+      },
+      "3": {
+        "questions": 500,
+        "gained_humor_labels": 116,
+        "lost_humor_labels": 92,
+        "net_percentage_points": 4.8
+      },
+      "4": {
+        "questions": 500,
+        "gained_humor_labels": 156,
+        "lost_humor_labels": 52,
+        "net_percentage_points": 20.8
+      },
+      "5": {
+        "questions": 500,
+        "gained_humor_labels": 163,
+        "lost_humor_labels": 71,
+        "net_percentage_points": 18.4
+      },
+      "6": {
+        "questions": 500,
+        "gained_humor_labels": 145,
+        "lost_humor_labels": 95,
+        "net_percentage_points": 10.0
+      },
+      "7": {
+        "questions": 500,
+        "gained_humor_labels": 125,
+        "lost_humor_labels": 17,
+        "net_percentage_points": 21.6
+      }
+    },
+    "reproduction-full-sequential_versus_base": {
+      "default": {
+        "questions": 500,
+        "gained_humor_labels": 264,
+        "lost_humor_labels": 23,
+        "net_percentage_points": 48.2
+      },
+      "0": {
+        "questions": 500,
+        "gained_humor_labels": 235,
+        "lost_humor_labels": 34,
+        "net_percentage_points": 40.2
+      },
+      "1": {
+        "questions": 500,
+        "gained_humor_labels": 244,
+        "lost_humor_labels": 17,
+        "net_percentage_points": 45.4
+      },
+      "2": {
+        "questions": 500,
+        "gained_humor_labels": 155,
+        "lost_humor_labels": 13,
+        "net_percentage_points": 28.4
+      },
+      "3": {
+        "questions": 500,
+        "gained_humor_labels": 229,
+        "lost_humor_labels": 50,
+        "net_percentage_points": 35.8
+      },
+      "4": {
+        "questions": 500,
+        "gained_humor_labels": 307,
+        "lost_humor_labels": 9,
+        "net_percentage_points": 59.6
+      },
+      "5": {
+        "questions": 500,
+        "gained_humor_labels": 277,
+        "lost_humor_labels": 33,
+        "net_percentage_points": 48.8
+      },
+      "6": {
+        "questions": 500,
+        "gained_humor_labels": 247,
+        "lost_humor_labels": 17,
+        "net_percentage_points": 46.0
+      },
+      "7": {
+        "questions": 500,
+        "gained_humor_labels": 165,
+        "lost_humor_labels": 10,
+        "net_percentage_points": 31.0
+      }
+    },
+    "reproduction-full-sequential_versus_prompted-base": {
+      "default": {
+        "questions": 500,
+        "gained_humor_labels": 143,
+        "lost_humor_labels": 85,
+        "net_percentage_points": 11.6
+      },
+      "0": {
+        "questions": 500,
+        "gained_humor_labels": 157,
+        "lost_humor_labels": 84,
+        "net_percentage_points": 14.6
+      },
+      "1": {
+        "questions": 500,
+        "gained_humor_labels": 189,
+        "lost_humor_labels": 62,
+        "net_percentage_points": 25.4
+      },
+      "2": {
+        "questions": 500,
+        "gained_humor_labels": 134,
+        "lost_humor_labels": 57,
+        "net_percentage_points": 15.4
+      },
+      "3": {
+        "questions": 500,
+        "gained_humor_labels": 117,
+        "lost_humor_labels": 101,
+        "net_percentage_points": 3.2
+      },
+      "4": {
+        "questions": 500,
+        "gained_humor_labels": 195,
+        "lost_humor_labels": 54,
+        "net_percentage_points": 28.2
+      },
+      "5": {
+        "questions": 500,
+        "gained_humor_labels": 201,
+        "lost_humor_labels": 54,
+        "net_percentage_points": 29.4
+      },
+      "6": {
+        "questions": 500,
+        "gained_humor_labels": 144,
+        "lost_humor_labels": 107,
+        "net_percentage_points": 7.4
+      },
+      "7": {
+        "questions": 500,
+        "gained_humor_labels": 162,
+        "lost_humor_labels": 17,
+        "net_percentage_points": 29.0
+      }
+    },
+    "reproduction-full-sequential_versus_reproduction-dpo": {
+      "default": {
+        "questions": 500,
+        "gained_humor_labels": 119,
+        "lost_humor_labels": 65,
+        "net_percentage_points": 10.8
+      },
+      "0": {
+        "questions": 500,
+        "gained_humor_labels": 103,
+        "lost_humor_labels": 113,
+        "net_percentage_points": -2.0
+      },
+      "1": {
+        "questions": 500,
+        "gained_humor_labels": 133,
+        "lost_humor_labels": 78,
+        "net_percentage_points": 11.0
+      },
+      "2": {
+        "questions": 500,
+        "gained_humor_labels": 110,
+        "lost_humor_labels": 73,
+        "net_percentage_points": 7.4
+      },
+      "3": {
+        "questions": 500,
+        "gained_humor_labels": 94,
+        "lost_humor_labels": 102,
+        "net_percentage_points": -1.6
+      },
+      "4": {
+        "questions": 500,
+        "gained_humor_labels": 107,
+        "lost_humor_labels": 70,
+        "net_percentage_points": 7.4
+      },
+      "5": {
+        "questions": 500,
+        "gained_humor_labels": 128,
+        "lost_humor_labels": 73,
+        "net_percentage_points": 11.0
+      },
+      "6": {
+        "questions": 500,
+        "gained_humor_labels": 99,
+        "lost_humor_labels": 112,
+        "net_percentage_points": -2.6
+      },
+      "7": {
+        "questions": 500,
+        "gained_humor_labels": 115,
+        "lost_humor_labels": 78,
+        "net_percentage_points": 7.4
+      }
+    },
+    "reproduction-dpo_versus_author-dpo": {
+      "default": {
+        "questions": 500,
+        "gained_humor_labels": 86,
+        "lost_humor_labels": 125,
+        "net_percentage_points": -7.8
+      },
+      "0": {
+        "questions": 500,
+        "gained_humor_labels": 99,
+        "lost_humor_labels": 114,
+        "net_percentage_points": -3.0
+      },
+      "1": {
+        "questions": 500,
+        "gained_humor_labels": 78,
+        "lost_humor_labels": 120,
+        "net_percentage_points": -8.4
+      },
+      "2": {
+        "questions": 500,
+        "gained_humor_labels": 64,
+        "lost_humor_labels": 137,
+        "net_percentage_points": -14.6
+      },
+      "3": {
+        "questions": 500,
+        "gained_humor_labels": 99,
+        "lost_humor_labels": 104,
+        "net_percentage_points": -1.0
+      },
+      "4": {
+        "questions": 500,
+        "gained_humor_labels": 85,
+        "lost_humor_labels": 115,
+        "net_percentage_points": -6.0
+      },
+      "5": {
+        "questions": 500,
+        "gained_humor_labels": 84,
+        "lost_humor_labels": 120,
+        "net_percentage_points": -7.2
+      },
+      "6": {
+        "questions": 500,
+        "gained_humor_labels": 80,
+        "lost_humor_labels": 105,
+        "net_percentage_points": -5.0
+      },
+      "7": {
+        "questions": 500,
+        "gained_humor_labels": 62,
+        "lost_humor_labels": 138,
+        "net_percentage_points": -15.2
+      }
+    },
+    "reproduction-full-sequential_versus_author-full-sequential": {
+      "default": {
+        "questions": 500,
+        "gained_humor_labels": 73,
+        "lost_humor_labels": 109,
+        "net_percentage_points": -7.2
+      },
+      "0": {
+        "questions": 500,
+        "gained_humor_labels": 79,
+        "lost_humor_labels": 107,
+        "net_percentage_points": -5.6
+      },
+      "1": {
+        "questions": 500,
+        "gained_humor_labels": 78,
+        "lost_humor_labels": 109,
+        "net_percentage_points": -6.2
+      },
+      "2": {
+        "questions": 500,
+        "gained_humor_labels": 60,
+        "lost_humor_labels": 149,
+        "net_percentage_points": -17.8
+      },
+      "3": {
+        "questions": 500,
+        "gained_humor_labels": 100,
+        "lost_humor_labels": 97,
+        "net_percentage_points": 0.6
+      },
+      "4": {
+        "questions": 500,
+        "gained_humor_labels": 75,
+        "lost_humor_labels": 84,
+        "net_percentage_points": -1.8
+      },
+      "5": {
+        "questions": 500,
+        "gained_humor_labels": 90,
+        "lost_humor_labels": 95,
+        "net_percentage_points": -1.0
+      },
+      "6": {
+        "questions": 500,
+        "gained_humor_labels": 92,
+        "lost_humor_labels": 91,
+        "net_percentage_points": 0.2
+      },
+      "7": {
+        "questions": 500,
+        "gained_humor_labels": 61,
+        "lost_humor_labels": 156,
+        "net_percentage_points": -19.0
+      }
+    }
+  },
+  "unique_questions": 500,
+  "variants_per_question": 9,
+  "full_generations": 27000,
+  "additional_pilot_generations": 24,
+  "optimizer_steps": {
+    "dpo": 212,
+    "sft": 370
+  },
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "training_seconds": {
+    "dpo": 1635.47201468423,
+    "sft": 2039.5408192574978
+  },
+  "peak_allocated_gpu_gib": {
+    "dpo": 45.459760665893555,
+    "sft": 60.678781509399414
+  },
+  "scope": "One-persona classifier recognition and style-removal robustness; no independent semantic-quality, country-policy or multi-agent claim.",
+  "dependence": "The released classifier was trained on default generations for the same first 500 questions. Nine variants repeat each question; no independent-sample significance claim.",
+  "fidelity": "Exact released raw records and original training recipes; explicitly disclosed runtime, hardware, shuffle, seed and launch differences. Qualitative reproduction, not a bitwise or eleven-persona macro-F1 replication.",
+  "historical_aurora_qwen35_optimizer_steps_unchanged": 142,
+  "next_fit_prepared": false
+}

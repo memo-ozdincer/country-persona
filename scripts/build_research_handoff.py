@@ -32,6 +32,10 @@ RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expa
        "source-application-grounding-20261003-v1", "coverage-objective-grounding-20261003-v1")
 SKIP_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", ".cache"}
 SECRET = re.compile(rb"hf_[A-Za-z0-9]{20,}|-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----")
+REFERENCE_ADAPTERS = {
+    "runs/open-character-humor-reproduction-20261004-v1/dpo-fit/adapter/adapter_model.safetensors",
+    "runs/open-character-humor-reproduction-20261004-v1/sft-fit/adapter/adapter_model.safetensors",
+}
 
 
 def git(root, *args):
@@ -76,7 +80,13 @@ def selected_files(root):
         if p.resolve() != p or not p.is_file():
             raise ValueError("Refusing symlink/nonregular source: " + name)
         if p.stat().st_size > 300_000_000:
-            raise ValueError("Unexpected large member; review inclusion: " + name)
+            # This arm's rank-64 BF16 LoRA is approximately 323 MB. Preserve its exact
+            # fitted weights in the private handoff, with a narrow size/type/rank guard.
+            if name not in REFERENCE_ADAPTERS or p.stat().st_size > 350_000_000:
+                raise ValueError("Unexpected large member; review inclusion: " + name)
+            adapter_config = json.loads((p.parent / "adapter_config.json").read_text())
+            if (adapter_config.get("peft_type"), adapter_config.get("r"), adapter_config.get("lora_alpha")) != ("LORA", 64, 128):
+                raise ValueError("Large reference member is not the expected fitted LoRA: " + name)
         result.append(name)
     if set(REQUIRED) - set(result):
         raise ValueError("Required handoff material missing: " + str(sorted(set(REQUIRED) - set(result))))

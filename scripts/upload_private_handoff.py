@@ -21,6 +21,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--archive',type=Path,required=True);p.add_argument('--receipt',type=Path,required=True)
     p.add_argument('--tag',required=True);p.add_argument('--commit',required=True);p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--body-file',type=Path,help='Exact release description; default preserves the historical objective-checkpoint description.')
     args=p.parse_args()
     if args.output.exists():raise ValueError('Fresh upload receipt required')
     credential=subprocess.run(['git','credential','fill'],input='protocol=https\nhost=github.com\n\n',text=True,capture_output=True,check=True)
@@ -42,8 +43,9 @@ def main():
     bound=json.loads(args.receipt.read_text())
     if bound['archive_sha256']!=sha256(args.archive) or bound['base_commit']!=args.commit or not bound['archive_payload_verified']:
         raise ValueError('Archive receipt/hash/commit binding differs')
+    body=args.body_file.read_text() if args.body_file else 'Private verified research handoff: matched clause-weighted SFT and source-audited preference checkpoint. Includes frozen data, complete outputs, provisional reviews, measured/verification receipts and preserved failed attempts. Credentials and base weights excluded. No independent persona or multi-agent gain claimed.'
     release=request(api+'/releases','POST',{'tag_name':args.tag,'target_commitish':args.commit,'name':args.tag,
-        'body':'Private verified research handoff: matched clause-weighted SFT and source-audited preference checkpoint. Includes frozen data, complete outputs, provisional reviews, measured/verification receipts and preserved failed attempts. Credentials and base weights excluded. No independent persona or multi-agent gain claimed.','draft':False,'prerelease':True})
+        'body':body,'draft':False,'prerelease':True})
     record={'state':'private_handoff_uploaded_and_remote_digests_verified','repository':repository,'private':True,'commit':args.commit,'tag':args.tag,
         'release_id':release['id'],'url':release['html_url'],'created_at':release['created_at'],'assets':[]}
     upload=release['upload_url'].split('{')[0]
