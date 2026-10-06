@@ -58,7 +58,9 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "model-decision-plan-planner-20261006-v1", "question-guided-plan-planner-20261006-v1",
             "question-guided-plan-writer-20261006-v1", "plan-input-20261006-v1",
             "plan-input-fit-20261006-v1", "ordinary-points-20261006-v1",
-            "ordinary-points-20261006-v2")
+            "ordinary-points-20261006-v2", "compression-teacher-20261006-v1",
+            "compression-teacher-probe-20261006-v1", "compression-teacher-remaining-20261006-v1",
+            "compression-student-draft-20261006-v2")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
@@ -68,7 +70,7 @@ RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expa
        "source-application-grounding-20261003-v1", "coverage-objective-grounding-20261003-v1",
        "conditional-india-haiti-grounding-20261006-v1", "diverse-country-somalia-grounding-20261006-v1",
        "two-context-training-grounding-20261006-v1", "two-context-sudan-grounding-20261006-v1",
-       "plan-input-icc-grounding-20261006-v1")
+       "plan-input-icc-grounding-20261006-v1", "compression-libya-grounding-20261006-v1")
 SKIP_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", ".cache"}
 SECRET = re.compile(rb"hf_[A-Za-z0-9]{20,}|-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----")
 QUOTED_KEY_HEADER = re.compile(

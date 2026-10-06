@@ -1,0 +1,214 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-06T22:58:43.611596+00:00",
+  "new_model_outputs": 16,
+  "new_optimizer_steps": 0,
+  "cumulative_qwen35_steps": 2270,
+  "reference_qwen25_steps": 582,
+  "all_sixteen_full_uncapped_teacher_outputs_read": true,
+  "teacher_records": [
+    {
+      "run": "runs/aurora-compression-teacher-20261006-v2",
+      "outputs": 8,
+      "word_counts": {
+        "wps-bad": 281,
+        "wps-repaired": 301,
+        "mali-bad": 262,
+        "mali-repaired": 249,
+        "sanctions-absent": 295,
+        "sanctions-authority": 279,
+        "haiti-bad": 323,
+        "haiti-repaired": 371
+      },
+      "transcript_sha256": "a1c19df666a9099a4dcc99765df61b6aeefb98731861fa5e30005846fc6fa84d",
+      "inspection_sha256": "b249c184051e9ccf903cde53907f13d47b508114c747ed681e037bca875d7973"
+    },
+    {
+      "run": "runs/aurora-compression-teacher-probe-20261006-v2",
+      "outputs": 1,
+      "word_counts": {
+        "wps-bad-clean-expansion": 417
+      },
+      "transcript_sha256": "3f25b9cd8acd911a1ae62fb36741b006c291d9719b448a0840003f05bfe0e891",
+      "inspection_sha256": "cb848f26214395c3f5dda60bc009d254c53dc5d4c019b7337c7190019cafaaad"
+    },
+    {
+      "run": "runs/aurora-compression-teacher-remaining-20261006-v1",
+      "outputs": 7,
+      "word_counts": {
+        "wps-repaired": 648,
+        "mali-bad": 722,
+        "mali-repaired": 518,
+        "sanctions-absent": 623,
+        "sanctions-authority": 424,
+        "haiti-bad": 592,
+        "haiti-repaired": 470
+      },
+      "transcript_sha256": "0192e746ae87a3feb177452a9c38dba6c71206c3120f249d10acbe72dc5e5c23",
+      "inspection_sha256": "5ddba7c49f60ec6d3a241fb0cea698312fcef9d80a410be7f8f5f2499f44c246"
+    }
+  ],
+  "resources": [
+    {
+      "run": "runs/aurora-compression-teacher-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1660129,
+        "process_start_ticks": 1158033645,
+        "process_start_utc": "2026-10-06T22:05:26.450000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compression_teacher.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-compression-teacher-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+          "--output",
+          "runs/aurora-compression-teacher-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-ordinary-points-plan8-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e5de478a-c420-a9e6-0e18-093f28ed5069",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-compression-teacher-probe-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1672467,
+        "process_start_ticks": 1158100494,
+        "process_start_utc": "2026-10-06T22:16:34.940000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-compression-teacher-probe-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-c3a50920-76fd-5cf9-8863-21f0a53f54fd",
+          "--output",
+          "runs/aurora-compression-teacher-probe-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-compression-teacher-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-c3a50920-76fd-5cf9-8863-21f0a53f54fd",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-compression-teacher-remaining-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1683424,
+        "process_start_ticks": 1158162202,
+        "process_start_utc": "2026-10-06T22:26:52.020000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compression_teacher_remaining.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-compression-teacher-remaining-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-c3a50920-76fd-5cf9-8863-21f0a53f54fd",
+          "--output",
+          "runs/aurora-compression-teacher-remaining-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-compression-teacher-probe-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-c3a50920-76fd-5cf9-8863-21f0a53f54fd",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "all_three_owned_gpu_identities_exited": true,
+  "teacher_outputs_approved_unchanged": 0,
+  "curated_pairs": 8,
+  "curated_pair_word_counts": {
+    "wps-bad": {
+      "plan": 420,
+      "target": 209
+    },
+    "wps-repaired": {
+      "plan": 424,
+      "target": 210
+    },
+    "mali-bad": {
+      "plan": 481,
+      "target": 200
+    },
+    "mali-repaired": {
+      "plan": 480,
+      "target": 204
+    },
+    "sanctions-absent": {
+      "plan": 468,
+      "target": 226
+    },
+    "sanctions-authority": {
+      "plan": 483,
+      "target": 236
+    },
+    "haiti-bad": {
+      "plan": 470,
+      "target": 201
+    },
+    "haiti-repaired": {
+      "plan": 466,
+      "target": 204
+    }
+  },
+  "chosen_completion_tokens_exact_to_raw8_and_point8": true,
+  "student_fit_authorized": false,
+  "student_model_quality_outputs": 0,
+  "generated_tokens": 9197,
+  "generation_seconds": 139.2461509052664,
+  "fresh_primary_source": {
+    "symbol": "S/PV.9469",
+    "date": "2023-11-08",
+    "countries": [
+      "BRA",
+      "FRA"
+    ],
+    "pdf_sha256": "e441e063b306755f2ae0e597a7b491dd25bcbbe65d52663a094d07602ee7e2af",
+    "english_selected_pages_viewed": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "french_ambassador_posting_adjudicated": true,
+    "libya_writer_calls": 0
+  },
+  "independent_review_complete": false,
+  "scope": "Actual4Bteacher drafts extensivelycorrected/rewritten bysameassistant intoexactcontent longer inputs. Dataquality/preparation evidence, not student/persona/nativeprediction/multiagent/strongOOD gain. Two safeoccupiedGPU guardstops beforeownership, one missing-review CPU preparation failure and one nonPDF acquisition failure preserved, zero extra calls/updates.",
+  "next_decision": "Finish checkedLibya raw/longplan control inputs and freezeprospective presentation checks, then matching inspectedbase controls/actualzero-gradient negatives. Bind one fresh8target256update comparison withunchangednativechosen tokens; inspect savedpoint8 andnewfit onidentical outsideinputs before anyscaleup. No studentfit/queue/sweep authorized orprepared now."
+}
