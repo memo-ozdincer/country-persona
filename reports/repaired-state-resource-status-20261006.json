@@ -1,0 +1,121 @@
+{
+  "checked_at": "2026-10-06T07:57:03.390678+00:00",
+  "all_three_gpu_process_identities_exited": true,
+  "new_public_outputs": 9,
+  "new_optimizer_steps": 96,
+  "actual_generated_tokens": 3049,
+  "actual_generation_seconds": 70.77325987629592,
+  "project_terminations": 0,
+  "unfamiliar_processes_changed": false,
+  "launches": [
+    {
+      "run_directory": "runs/aurora-repaired-state-partial-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 885371,
+        "process_start_ticks": 1152750314,
+        "process_start_utc": "2026-10-06T07:24:53.140000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_native_reasoning_probe.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-repaired-state-partial-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-repaired-state-partial-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "recorded_identity_live": false,
+      "status": "completed",
+      "optimizer_steps": 0,
+      "new_model_outputs": 1,
+      "run_sha256": "e5adcdc074911f703a5334801a4fb9ff6015e5ff89d5d1a771bf39c600dd0f09"
+    },
+    {
+      "run_directory": "runs/aurora-repaired-state-partial-parent-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 892987,
+        "process_start_ticks": 1152806010,
+        "process_start_utc": "2026-10-06T07:34:10.100000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_native_reasoning_probe.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-repaired-state-partial-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-repaired-state-partial-parent-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-repaired-state-partial-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "recorded_identity_live": false,
+      "status": "completed",
+      "optimizer_steps": 0,
+      "new_model_outputs": 1,
+      "run_sha256": "65ae85e6637d27020953bc394f89837994f0db71ee359d1909863da87ab0d9ca"
+    },
+    {
+      "run_directory": "runs/aurora-repaired-state-fit-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 900113,
+        "process_start_ticks": 1152854896,
+        "process_start_utc": "2026-10-06T07:42:18.960000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_repaired_state_checkpoint.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-repaired-state-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-repaired-state-fit-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-repaired-state-parent-replay-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "recorded_identity_live": false,
+      "status": "completed",
+      "optimizer_steps": 96,
+      "new_model_outputs": 7,
+      "run_sha256": "1c3bc6c35f1dd8535401040c8cd4df030af27c19ad6c6798310dc54175cbb4ae"
+    }
+  ]
+}
