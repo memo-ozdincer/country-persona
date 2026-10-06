@@ -1,0 +1,99 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-06T18:02:59.807681+00:00",
+  "new_model_answers": 4,
+  "optimizer_steps": 0,
+  "stats": {
+    "base": {
+      "fact_units": {
+        "met": 5,
+        "unratable": 1
+      },
+      "core_error_facts_correct": 2,
+      "answers": 2,
+      "rubric_scope": "Frozen UKF2 demands2715/engagement, but valid envoy welcome also answers prompt; ambiguity preserved, no artificial model ranking."
+    },
+    "adapter": {
+      "fact_units": {
+        "met": 4,
+        "unmet": 2
+      },
+      "core_error_facts_correct": 2,
+      "answers": 2,
+      "rubric_scope": "Frozen UKF2 demands2715/engagement, but valid envoy welcome also answers prompt; ambiguity preserved, no artificial model ranking."
+    }
+  },
+  "resources": [
+    {
+      "run": "runs/aurora-two-context-source-facts-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1432356,
+        "process_start_ticks": 1156533664,
+        "process_start_utc": "2026-10-06T17:55:26.640000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_source_facts.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-two-context-source-facts-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-source-facts-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-country-fit-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-two-context-source-facts-adapter-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1434779,
+        "process_start_ticks": 1156548506,
+        "process_start_utc": "2026-10-06T17:57:55.060000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_source_facts.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-two-context-source-facts-adapter-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-source-facts-adapter-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-source-facts-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "all_two_owned_process_identities_exited": true,
+  "actual_generated_tokens": 449,
+  "generation_seconds": 10.907927656546235,
+  "scope": "Two exposed source-error questions; task and output scope changed. Stored hand-judgment replay, no independent validation/OOD/persona gain.",
+  "independent_review_complete": false
+}

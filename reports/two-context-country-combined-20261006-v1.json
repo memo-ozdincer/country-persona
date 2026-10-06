@@ -1,0 +1,3615 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-06T17:53:29.947303+00:00",
+  "config_sha256": "c78f9b0528f36972df878753e20baf470ad1d1d8177b95b5365a298e65dad622",
+  "pack_manifest_sha256": "de784f1e52b2e4abbc37f8a69dc60b82c790dc075d035c362cf3369f7bf8c3b4",
+  "all_three_owned_process_identities_exited": true,
+  "resources": [
+    {
+      "run": "runs/aurora-two-context-country-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1402301,
+        "process_start_ticks": 1156324708,
+        "process_start_utc": "2026-10-06T17:20:37.080000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_country_controls.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-two-context-country-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-country-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-diverse-country-role-adapter-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-two-context-country-parent-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1407271,
+        "process_start_ticks": 1156360043,
+        "process_start_utc": "2026-10-06T17:26:30.430000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_country_controls.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-two-context-country-parent-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-country-parent-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-country-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-two-context-country-fit-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1409613,
+        "process_start_ticks": 1156371742,
+        "process_start_utc": "2026-10-06T17:28:27.420000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_country_fit.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-two-context-country-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-country-fit-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-country-parent-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-two-context-source-facts-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1432356,
+        "process_start_ticks": 1156533664,
+        "process_start_utc": "2026-10-06T17:55:26.640000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_source_facts.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-two-context-source-facts-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-source-facts-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-country-fit-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-two-context-source-facts-adapter-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1434779,
+        "process_start_ticks": 1156548506,
+        "process_start_utc": "2026-10-06T17:57:55.060000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_source_facts.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-two-context-source-facts-adapter-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-source-facts-adapter-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-source-facts-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "new_model_answers": 46,
+  "new_optimizer_steps": 512,
+  "cumulative_qwen35_steps": 2014,
+  "reference_qwen25_steps": 582,
+  "groups": {
+    "base": {
+      "fitting_old": {
+        "answers": 8,
+        "content": {
+          "unmet": 61,
+          "met": 47,
+          "unratable": 4
+        },
+        "checks": {
+          "unmet": 16,
+          "met": 14,
+          "unratable": 2
+        },
+        "strict_passes": 0,
+        "denominator": 112
+      },
+      "fitting_new": {
+        "answers": 8,
+        "content": {
+          "unmet": 54,
+          "met": 55,
+          "unratable": 3
+        },
+        "checks": {
+          "unmet": 23,
+          "met": 5,
+          "unratable": 4
+        },
+        "strict_passes": 0,
+        "denominator": 112
+      },
+      "partial": {
+        "answers": 2,
+        "content": {
+          "unmet": 18,
+          "met": 9,
+          "unratable": 1
+        },
+        "checks": {
+          "unmet": 8
+        },
+        "strict_passes": 0,
+        "denominator": 28
+      },
+      "somalia_raw": {
+        "answers": 2,
+        "content": {
+          "unmet": 15,
+          "met": 10,
+          "unratable": 1
+        },
+        "checks": {
+          "unmet": 8
+        },
+        "strict_passes": 0,
+        "denominator": 26
+      },
+      "somalia_plan": {
+        "answers": 2,
+        "content": {
+          "met": 16,
+          "unmet": 8,
+          "unratable": 2
+        },
+        "checks": {
+          "unratable": 4,
+          "unmet": 4
+        },
+        "strict_passes": 0,
+        "denominator": 26
+      },
+      "sudan_raw": {
+        "answers": 2,
+        "content": {
+          "unmet": 14,
+          "met": 14
+        },
+        "checks": {
+          "met": 8
+        },
+        "strict_passes": 0,
+        "denominator": 28
+      },
+      "sudan_plan": {
+        "answers": 2,
+        "content": {
+          "unmet": 11,
+          "met": 14,
+          "unratable": 3
+        },
+        "checks": {
+          "met": 4,
+          "unratable": 4
+        },
+        "strict_passes": 0,
+        "denominator": 28
+      }
+    },
+    "fresh512": {
+      "fitting_old": {
+        "answers": 8,
+        "content": {
+          "met": 112
+        },
+        "checks": {
+          "met": 32
+        },
+        "strict_passes": 8,
+        "denominator": 112
+      },
+      "fitting_new": {
+        "answers": 8,
+        "content": {
+          "met": 112
+        },
+        "checks": {
+          "met": 32
+        },
+        "strict_passes": 8,
+        "denominator": 112
+      },
+      "partial": {
+        "answers": 2,
+        "content": {
+          "met": 22,
+          "unmet": 6
+        },
+        "checks": {
+          "met": 4,
+          "unmet": 4
+        },
+        "strict_passes": 0,
+        "denominator": 28
+      },
+      "somalia_raw": {
+        "answers": 2,
+        "content": {
+          "met": 22,
+          "unmet": 4
+        },
+        "checks": {
+          "unratable": 1,
+          "unmet": 2,
+          "met": 5
+        },
+        "strict_passes": 0,
+        "denominator": 26
+      },
+      "somalia_plan": {
+        "answers": 2,
+        "content": {
+          "unmet": 9,
+          "met": 15,
+          "unratable": 2
+        },
+        "checks": {
+          "met": 5,
+          "unmet": 3
+        },
+        "strict_passes": 0,
+        "denominator": 26
+      },
+      "sudan_raw": {
+        "answers": 2,
+        "content": {
+          "met": 23,
+          "unmet": 5
+        },
+        "checks": {
+          "unmet": 6,
+          "met": 2
+        },
+        "strict_passes": 0,
+        "denominator": 28
+      },
+      "sudan_plan": {
+        "answers": 2,
+        "content": {
+          "unmet": 2,
+          "met": 24,
+          "unratable": 2
+        },
+        "checks": {
+          "met": 5,
+          "unratable": 3
+        },
+        "strict_passes": 0,
+        "denominator": 28
+      }
+    }
+  },
+  "parent256_sudan_content": {
+    "unmet": 11,
+    "met": 40,
+    "unratable": 5
+  },
+  "actual_generated_tokens": 14319,
+  "generation_seconds": 308.04391845688224,
+  "training_seconds": 841.4484541323036,
+  "peak_allocated_gpu_gib": 18.911601066589355,
+  "optimization_checks": {
+    "all_ranks_participated": true,
+    "rank_count": 1,
+    "all_ranks_same_final_adapter": true,
+    "rank_checks": [
+      {
+        "rank": 0,
+        "steps": 512,
+        "training_loss": 0.2043770806980092,
+        "actual_sequence_tokens": 1447968,
+        "actual_target_tokens": 394784,
+        "microbatches": 512,
+        "gradient_checks": 512,
+        "gradient_trace": [
+          {
+            "step": 1,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996538706282
+          },
+          {
+            "step": 2,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997425926368
+          },
+          {
+            "step": 3,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996588469411
+          },
+          {
+            "step": 4,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999654400272
+          },
+          {
+            "step": 5,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996309814251
+          },
+          {
+            "step": 6,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996454205609
+          },
+          {
+            "step": 7,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996366784306
+          },
+          {
+            "step": 8,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997068336333
+          },
+          {
+            "step": 9,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996385312029
+          },
+          {
+            "step": 10,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996368224373
+          },
+          {
+            "step": 11,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996532102985
+          },
+          {
+            "step": 12,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996804663249
+          },
+          {
+            "step": 13,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996199035125
+          },
+          {
+            "step": 14,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995688131651
+          },
+          {
+            "step": 15,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996394411585
+          },
+          {
+            "step": 16,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996261629702
+          },
+          {
+            "step": 17,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996220836637
+          },
+          {
+            "step": 18,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996870314929
+          },
+          {
+            "step": 19,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997130737983
+          },
+          {
+            "step": 20,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.99999958201333
+          },
+          {
+            "step": 21,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997180486395
+          },
+          {
+            "step": 22,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997102055923
+          },
+          {
+            "step": 23,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996755392184
+          },
+          {
+            "step": 24,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995956480608
+          },
+          {
+            "step": 25,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996404274478
+          },
+          {
+            "step": 26,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997064254609
+          },
+          {
+            "step": 27,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996977267236
+          },
+          {
+            "step": 28,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997147523014
+          },
+          {
+            "step": 29,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997026791834
+          },
+          {
+            "step": 30,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996931726858
+          },
+          {
+            "step": 31,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997510118909
+          },
+          {
+            "step": 32,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999709389374
+          },
+          {
+            "step": 33,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997206422941
+          },
+          {
+            "step": 34,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999772839287
+          },
+          {
+            "step": 35,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996810114441
+          },
+          {
+            "step": 36,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997021423653
+          },
+          {
+            "step": 37,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997663529275
+          },
+          {
+            "step": 38,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997172385774
+          },
+          {
+            "step": 39,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997058047657
+          },
+          {
+            "step": 40,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996460883659
+          },
+          {
+            "step": 41,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997431491621
+          },
+          {
+            "step": 42,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997129092737
+          },
+          {
+            "step": 43,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997433936011
+          },
+          {
+            "step": 44,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998049434022
+          },
+          {
+            "step": 45,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997045184806
+          },
+          {
+            "step": 46,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997494602821
+          },
+          {
+            "step": 47,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997362228891
+          },
+          {
+            "step": 48,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997832234622
+          },
+          {
+            "step": 49,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999830495911
+          },
+          {
+            "step": 50,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997068517215
+          },
+          {
+            "step": 51,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997345999344
+          },
+          {
+            "step": 52,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998046421803
+          },
+          {
+            "step": 53,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998119550665
+          },
+          {
+            "step": 54,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997571307683
+          },
+          {
+            "step": 55,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997171784661
+          },
+          {
+            "step": 56,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997605033306
+          },
+          {
+            "step": 57,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999764290551
+          },
+          {
+            "step": 58,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997720104497
+          },
+          {
+            "step": 59,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997639741132
+          },
+          {
+            "step": 60,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999206467041
+          },
+          {
+            "step": 61,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998845037139
+          },
+          {
+            "step": 62,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998663258217
+          },
+          {
+            "step": 63,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998427870392
+          },
+          {
+            "step": 64,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997961344719
+          },
+          {
+            "step": 65,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997446863745
+          },
+          {
+            "step": 66,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996855596998
+          },
+          {
+            "step": 67,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997616557722
+          },
+          {
+            "step": 68,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999864661043
+          },
+          {
+            "step": 69,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999728875463
+          },
+          {
+            "step": 70,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998070445801
+          },
+          {
+            "step": 71,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997334791331
+          },
+          {
+            "step": 72,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998415974216
+          },
+          {
+            "step": 73,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998771122457
+          },
+          {
+            "step": 74,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999582106522
+          },
+          {
+            "step": 75,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997755339954
+          },
+          {
+            "step": 76,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998092013306
+          },
+          {
+            "step": 77,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997796267039
+          },
+          {
+            "step": 78,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997892903825
+          },
+          {
+            "step": 79,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998706403761
+          },
+          {
+            "step": 80,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997910180822
+          },
+          {
+            "step": 81,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998942769742
+          },
+          {
+            "step": 82,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998481034472
+          },
+          {
+            "step": 83,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997661773373
+          },
+          {
+            "step": 84,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998076680928
+          },
+          {
+            "step": 85,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998307084641
+          },
+          {
+            "step": 86,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997946098462
+          },
+          {
+            "step": 87,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998530664154
+          },
+          {
+            "step": 88,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996482311698
+          },
+          {
+            "step": 89,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999102926588
+          },
+          {
+            "step": 90,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996910083285
+          },
+          {
+            "step": 91,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999542419203
+          },
+          {
+            "step": 92,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998159516033
+          },
+          {
+            "step": 93,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998551662682
+          },
+          {
+            "step": 94,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997424120372
+          },
+          {
+            "step": 95,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997849515697
+          },
+          {
+            "step": 96,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998208928115
+          },
+          {
+            "step": 97,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998277965932
+          },
+          {
+            "step": 98,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997551397348
+          },
+          {
+            "step": 99,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998748449102
+          },
+          {
+            "step": 100,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999770117113
+          },
+          {
+            "step": 101,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998858090802
+          },
+          {
+            "step": 102,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997409882704
+          },
+          {
+            "step": 103,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998318225929
+          },
+          {
+            "step": 104,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999076860053
+          },
+          {
+            "step": 105,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998516244422
+          },
+          {
+            "step": 106,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997942245493
+          },
+          {
+            "step": 107,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998826784802
+          },
+          {
+            "step": 108,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999138513823
+          },
+          {
+            "step": 109,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997727199685
+          },
+          {
+            "step": 110,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996916595884
+          },
+          {
+            "step": 111,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997890089799
+          },
+          {
+            "step": 112,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997533638117
+          },
+          {
+            "step": 113,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999992459724882
+          },
+          {
+            "step": 114,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998812465452
+          },
+          {
+            "step": 115,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999991437550738
+          },
+          {
+            "step": 116,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993133169941
+          },
+          {
+            "step": 117,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994439417118
+          },
+          {
+            "step": 118,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998980555513
+          },
+          {
+            "step": 119,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995917857
+          },
+          {
+            "step": 120,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999621072005
+          },
+          {
+            "step": 121,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997915891173
+          },
+          {
+            "step": 122,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998060708233
+          },
+          {
+            "step": 123,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999851162243
+          },
+          {
+            "step": 124,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999213748357
+          },
+          {
+            "step": 125,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998994891189
+          },
+          {
+            "step": 126,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997340766085
+          },
+          {
+            "step": 127,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997175319363
+          },
+          {
+            "step": 128,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999218866056
+          },
+          {
+            "step": 129,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997240238333
+          },
+          {
+            "step": 130,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.8534212186143041
+          },
+          {
+            "step": 131,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993082064803
+          },
+          {
+            "step": 132,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998334685055
+          },
+          {
+            "step": 133,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997251748781
+          },
+          {
+            "step": 134,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999921539564
+          },
+          {
+            "step": 135,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997779290536
+          },
+          {
+            "step": 136,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995670065279
+          },
+          {
+            "step": 137,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996883094282
+          },
+          {
+            "step": 138,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997818299637
+          },
+          {
+            "step": 139,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999540126298
+          },
+          {
+            "step": 140,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999891257628
+          },
+          {
+            "step": 141,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994567400234
+          },
+          {
+            "step": 142,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997702550594
+          },
+          {
+            "step": 143,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995310335048
+          },
+          {
+            "step": 144,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997036850177
+          },
+          {
+            "step": 145,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994633457906
+          },
+          {
+            "step": 146,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995986219772
+          },
+          {
+            "step": 147,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999991410239677
+          },
+          {
+            "step": 148,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999992123197485
+          },
+          {
+            "step": 149,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998942155446
+          },
+          {
+            "step": 150,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996572983813
+          },
+          {
+            "step": 151,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995547378141
+          },
+          {
+            "step": 152,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.7824171248695361
+          },
+          {
+            "step": 153,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998835008785
+          },
+          {
+            "step": 154,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996770605676
+          },
+          {
+            "step": 155,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.4811053908517207
+          },
+          {
+            "step": 156,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998421870812
+          },
+          {
+            "step": 157,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999820625566
+          },
+          {
+            "step": 158,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999337558078
+          },
+          {
+            "step": 159,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999090361903
+          },
+          {
+            "step": 160,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.847326624402717
+          },
+          {
+            "step": 161,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.09085170753143512
+          },
+          {
+            "step": 162,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995227686097
+          },
+          {
+            "step": 163,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996165786708
+          },
+          {
+            "step": 164,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9533427351495082
+          },
+          {
+            "step": 165,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994612126061
+          },
+          {
+            "step": 166,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996021337587
+          },
+          {
+            "step": 167,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.21779250523914762
+          },
+          {
+            "step": 168,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999685870116
+          },
+          {
+            "step": 169,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996873143956
+          },
+          {
+            "step": 170,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998316503775
+          },
+          {
+            "step": 171,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999996923335086
+          },
+          {
+            "step": 172,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998648135924
+          },
+          {
+            "step": 173,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998430738564
+          },
+          {
+            "step": 174,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.6666977061498306
+          },
+          {
+            "step": 175,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995745222483
+          },
+          {
+            "step": 176,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997234602895
+          },
+          {
+            "step": 177,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994673820471
+          },
+          {
+            "step": 178,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999991906834338
+          },
+          {
+            "step": 179,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997595596358
+          },
+          {
+            "step": 180,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.7001603160929566
+          },
+          {
+            "step": 181,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999999146179347
+          },
+          {
+            "step": 182,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.06419346617230032
+          },
+          {
+            "step": 183,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.14765142706213705
+          },
+          {
+            "step": 184,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.6214411942728142
+          },
+          {
+            "step": 185,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997607776647
+          },
+          {
+            "step": 186,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999693819578
+          },
+          {
+            "step": 187,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.417782066757108
+          },
+          {
+            "step": 188,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.6874449686745525
+          },
+          {
+            "step": 189,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.3271984837634906
+          },
+          {
+            "step": 190,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.7451869904178248
+          },
+          {
+            "step": 191,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999998898266448
+          },
+          {
+            "step": 192,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.5119014917793595
+          },
+          {
+            "step": 193,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999993860679861
+          },
+          {
+            "step": 194,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.16804718370867483
+          },
+          {
+            "step": 195,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.09126246493309483
+          },
+          {
+            "step": 196,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9251010374973664
+          },
+          {
+            "step": 197,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999629402947
+          },
+          {
+            "step": 198,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.1151223028560156
+          },
+          {
+            "step": 199,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.04414277816357005
+          },
+          {
+            "step": 200,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999482139006
+          },
+          {
+            "step": 201,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.486414069820407
+          },
+          {
+            "step": 202,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.2028714527504846
+          },
+          {
+            "step": 203,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.3945923443242934
+          },
+          {
+            "step": 204,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.8084197460126661
+          },
+          {
+            "step": 205,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.186650590759995
+          },
+          {
+            "step": 206,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999995404102863
+          },
+          {
+            "step": 207,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.23356321910711272
+          },
+          {
+            "step": 208,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999994313623334
+          },
+          {
+            "step": 209,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999991230341627
+          },
+          {
+            "step": 210,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.05989223680728657
+          },
+          {
+            "step": 211,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.3251792730736691
+          },
+          {
+            "step": 212,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.13758276229380842
+          },
+          {
+            "step": 213,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.12742001646033682
+          },
+          {
+            "step": 214,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.05330505805379018
+          },
+          {
+            "step": 215,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.24739318304715058
+          },
+          {
+            "step": 216,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.3288461991403626
+          },
+          {
+            "step": 217,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.4289838125293546
+          },
+          {
+            "step": 218,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.12101674322532414
+          },
+          {
+            "step": 219,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997293712567
+          },
+          {
+            "step": 220,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.2692871667385334
+          },
+          {
+            "step": 221,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.3873365375969548
+          },
+          {
+            "step": 222,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.4815885283851329
+          },
+          {
+            "step": 223,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.029446409500050223
+          },
+          {
+            "step": 224,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997373225243
+          },
+          {
+            "step": 225,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.028773426112337835
+          },
+          {
+            "step": 226,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.03779202468123024
+          },
+          {
+            "step": 227,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.07217808222284498
+          },
+          {
+            "step": 228,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.08935432963722587
+          },
+          {
+            "step": 229,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.060625788898257385
+          },
+          {
+            "step": 230,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.05764683822903122
+          },
+          {
+            "step": 231,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.38676751254642777
+          },
+          {
+            "step": 232,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.06299420494945035
+          },
+          {
+            "step": 233,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999992008835041
+          },
+          {
+            "step": 234,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.025511781538712437
+          },
+          {
+            "step": 235,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.06260240949413026
+          },
+          {
+            "step": 236,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.08917494029590563
+          },
+          {
+            "step": 237,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9724271637460897
+          },
+          {
+            "step": 238,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9542622766200166
+          },
+          {
+            "step": 239,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02472791148882018
+          },
+          {
+            "step": 240,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.11102108128944908
+          },
+          {
+            "step": 241,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0588372479766593
+          },
+          {
+            "step": 242,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0471227292671498
+          },
+          {
+            "step": 243,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0535799465375866
+          },
+          {
+            "step": 244,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.06859929553009451
+          },
+          {
+            "step": 245,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.999999632166789
+          },
+          {
+            "step": 246,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.07956150841616903
+          },
+          {
+            "step": 247,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.06073095065639252
+          },
+          {
+            "step": 248,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.017366445890677887
+          },
+          {
+            "step": 249,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.041976640533586566
+          },
+          {
+            "step": 250,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.019299361614233762
+          },
+          {
+            "step": 251,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0648782841131323
+          },
+          {
+            "step": 252,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.21124470248749755
+          },
+          {
+            "step": 253,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02730211768972534
+          },
+          {
+            "step": 254,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.044136417963072334
+          },
+          {
+            "step": 255,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.07478074614379791
+          },
+          {
+            "step": 256,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.9999997022592132
+          },
+          {
+            "step": 257,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.12359541356254264
+          },
+          {
+            "step": 258,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02601458673838816
+          },
+          {
+            "step": 259,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02361945208370197
+          },
+          {
+            "step": 260,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02719323418946727
+          },
+          {
+            "step": 261,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.4019333236160728
+          },
+          {
+            "step": 262,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014329072822439217
+          },
+          {
+            "step": 263,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.03577290217650993
+          },
+          {
+            "step": 264,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02003745913531741
+          },
+          {
+            "step": 265,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.020631814642167606
+          },
+          {
+            "step": 266,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.05362055570314964
+          },
+          {
+            "step": 267,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0265707544055138
+          },
+          {
+            "step": 268,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02748960502815421
+          },
+          {
+            "step": 269,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012126423391567295
+          },
+          {
+            "step": 270,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.022639965372702985
+          },
+          {
+            "step": 271,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.048630761290446356
+          },
+          {
+            "step": 272,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.028909995111855262
+          },
+          {
+            "step": 273,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0163629440765104
+          },
+          {
+            "step": 274,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.04216111705012081
+          },
+          {
+            "step": 275,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015635335456863922
+          },
+          {
+            "step": 276,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01208244632823388
+          },
+          {
+            "step": 277,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.025582356289949294
+          },
+          {
+            "step": 278,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02630162322054352
+          },
+          {
+            "step": 279,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.024260348025603073
+          },
+          {
+            "step": 280,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01573262361457359
+          },
+          {
+            "step": 281,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.023422836339048944
+          },
+          {
+            "step": 282,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011829918982211075
+          },
+          {
+            "step": 283,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.24178475462458318
+          },
+          {
+            "step": 284,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.019549545538964822
+          },
+          {
+            "step": 285,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.023415134884680118
+          },
+          {
+            "step": 286,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.019941210325381688
+          },
+          {
+            "step": 287,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02222208594735853
+          },
+          {
+            "step": 288,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.020318378959881693
+          },
+          {
+            "step": 289,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.019273160598547397
+          },
+          {
+            "step": 290,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02210429227231739
+          },
+          {
+            "step": 291,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.019337940166808183
+          },
+          {
+            "step": 292,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.020760590963079018
+          },
+          {
+            "step": 293,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.018029812514874913
+          },
+          {
+            "step": 294,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.018421362385965506
+          },
+          {
+            "step": 295,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010700179315780415
+          },
+          {
+            "step": 296,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013041635880636001
+          },
+          {
+            "step": 297,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009967588605646824
+          },
+          {
+            "step": 298,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.04608610259215402
+          },
+          {
+            "step": 299,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.017849323482032796
+          },
+          {
+            "step": 300,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01698839766612944
+          },
+          {
+            "step": 301,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.017085405500995167
+          },
+          {
+            "step": 302,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012099843831015629
+          },
+          {
+            "step": 303,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01777879904561346
+          },
+          {
+            "step": 304,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012459170439011402
+          },
+          {
+            "step": 305,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.018770998961701934
+          },
+          {
+            "step": 306,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01578662370517049
+          },
+          {
+            "step": 307,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013354531743048455
+          },
+          {
+            "step": 308,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015830716379259924
+          },
+          {
+            "step": 309,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01127285736163144
+          },
+          {
+            "step": 310,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009454435340281453
+          },
+          {
+            "step": 311,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.02438608710788842
+          },
+          {
+            "step": 312,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014698028290665487
+          },
+          {
+            "step": 313,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.016597565485403053
+          },
+          {
+            "step": 314,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015432546904511525
+          },
+          {
+            "step": 315,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015134562554024556
+          },
+          {
+            "step": 316,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015882101197262882
+          },
+          {
+            "step": 317,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013217608293722127
+          },
+          {
+            "step": 318,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011526301023273969
+          },
+          {
+            "step": 319,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.016562161584372338
+          },
+          {
+            "step": 320,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010249487191564825
+          },
+          {
+            "step": 321,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.021548179532351178
+          },
+          {
+            "step": 322,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014413723095337512
+          },
+          {
+            "step": 323,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013639386575498092
+          },
+          {
+            "step": 324,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010975622336041997
+          },
+          {
+            "step": 325,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01427354822137368
+          },
+          {
+            "step": 326,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014004263808322353
+          },
+          {
+            "step": 327,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015193859082632889
+          },
+          {
+            "step": 328,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011342709316674469
+          },
+          {
+            "step": 329,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015996230641229982
+          },
+          {
+            "step": 330,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008931813158222926
+          },
+          {
+            "step": 331,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009540700163740371
+          },
+          {
+            "step": 332,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013654440625413752
+          },
+          {
+            "step": 333,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013992275725825407
+          },
+          {
+            "step": 334,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010034914035039965
+          },
+          {
+            "step": 335,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014568848891639563
+          },
+          {
+            "step": 336,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014463894358781981
+          },
+          {
+            "step": 337,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013157650919318696
+          },
+          {
+            "step": 338,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01515445655160749
+          },
+          {
+            "step": 339,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009717805457132148
+          },
+          {
+            "step": 340,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013189241014643641
+          },
+          {
+            "step": 341,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014316638830491753
+          },
+          {
+            "step": 342,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012906992102694843
+          },
+          {
+            "step": 343,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01315990734602444
+          },
+          {
+            "step": 344,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013233980359848699
+          },
+          {
+            "step": 345,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013945061875617924
+          },
+          {
+            "step": 346,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010450245621507105
+          },
+          {
+            "step": 347,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.018698524369802356
+          },
+          {
+            "step": 348,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010849292862924435
+          },
+          {
+            "step": 349,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014411857011272051
+          },
+          {
+            "step": 350,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009333705867434981
+          },
+          {
+            "step": 351,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01016518345532555
+          },
+          {
+            "step": 352,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00802954968406036
+          },
+          {
+            "step": 353,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008209009860365468
+          },
+          {
+            "step": 354,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012631834930770974
+          },
+          {
+            "step": 355,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012099939582253257
+          },
+          {
+            "step": 356,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014413955364487944
+          },
+          {
+            "step": 357,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013314288791297708
+          },
+          {
+            "step": 358,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009436781083068552
+          },
+          {
+            "step": 359,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012812430263586486
+          },
+          {
+            "step": 360,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.018558119634458674
+          },
+          {
+            "step": 361,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010908530485035475
+          },
+          {
+            "step": 362,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013134908014037503
+          },
+          {
+            "step": 363,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011923878684726991
+          },
+          {
+            "step": 364,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011895249907523187
+          },
+          {
+            "step": 365,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008830967110674378
+          },
+          {
+            "step": 366,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010429207766618202
+          },
+          {
+            "step": 367,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0088159281624266
+          },
+          {
+            "step": 368,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011679588382780125
+          },
+          {
+            "step": 369,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012115033515251072
+          },
+          {
+            "step": 370,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.016759313420702217
+          },
+          {
+            "step": 371,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014156033818080274
+          },
+          {
+            "step": 372,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011058070769165184
+          },
+          {
+            "step": 373,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008909041176815166
+          },
+          {
+            "step": 374,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007459222247120003
+          },
+          {
+            "step": 375,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012309018867293907
+          },
+          {
+            "step": 376,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008611733810407593
+          },
+          {
+            "step": 377,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011374515938456972
+          },
+          {
+            "step": 378,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012146495084016337
+          },
+          {
+            "step": 379,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010037371287390722
+          },
+          {
+            "step": 380,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009542733857456073
+          },
+          {
+            "step": 381,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0081399184258602
+          },
+          {
+            "step": 382,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011108059695039089
+          },
+          {
+            "step": 383,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011954620112623012
+          },
+          {
+            "step": 384,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01172260862442003
+          },
+          {
+            "step": 385,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0074734191375873
+          },
+          {
+            "step": 386,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009747059633487527
+          },
+          {
+            "step": 387,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0112752307623345
+          },
+          {
+            "step": 388,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01111886892474035
+          },
+          {
+            "step": 389,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012210629878584647
+          },
+          {
+            "step": 390,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01052160848587118
+          },
+          {
+            "step": 391,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01126762926045842
+          },
+          {
+            "step": 392,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008308081240603503
+          },
+          {
+            "step": 393,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008275434040807085
+          },
+          {
+            "step": 394,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00872550241134619
+          },
+          {
+            "step": 395,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011462102453561739
+          },
+          {
+            "step": 396,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013143447902041795
+          },
+          {
+            "step": 397,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010378133154888676
+          },
+          {
+            "step": 398,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008767027149484642
+          },
+          {
+            "step": 399,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.016011951450107715
+          },
+          {
+            "step": 400,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011064837935738876
+          },
+          {
+            "step": 401,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012676376871788823
+          },
+          {
+            "step": 402,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.015445999882930255
+          },
+          {
+            "step": 403,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007951244933761245
+          },
+          {
+            "step": 404,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010450294736791543
+          },
+          {
+            "step": 405,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010161184960624937
+          },
+          {
+            "step": 406,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01074705742765526
+          },
+          {
+            "step": 407,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006793315070896587
+          },
+          {
+            "step": 408,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011284754696511348
+          },
+          {
+            "step": 409,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010956192906199686
+          },
+          {
+            "step": 410,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007991777315510871
+          },
+          {
+            "step": 411,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009004463718488735
+          },
+          {
+            "step": 412,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008231042812864776
+          },
+          {
+            "step": 413,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009941689862623726
+          },
+          {
+            "step": 414,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007952267980372197
+          },
+          {
+            "step": 415,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011058988140360918
+          },
+          {
+            "step": 416,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010454710235463835
+          },
+          {
+            "step": 417,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01020879920637571
+          },
+          {
+            "step": 418,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.014220239658611827
+          },
+          {
+            "step": 419,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008254858205776762
+          },
+          {
+            "step": 420,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009962624324670712
+          },
+          {
+            "step": 421,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01105800987950452
+          },
+          {
+            "step": 422,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010137510455382736
+          },
+          {
+            "step": 423,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006707150893263023
+          },
+          {
+            "step": 424,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007902966741360056
+          },
+          {
+            "step": 425,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007880517874204547
+          },
+          {
+            "step": 426,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010242832569254021
+          },
+          {
+            "step": 427,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008102569824209887
+          },
+          {
+            "step": 428,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010148083524923128
+          },
+          {
+            "step": 429,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010698654266272877
+          },
+          {
+            "step": 430,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009964135749004732
+          },
+          {
+            "step": 431,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009087004813475416
+          },
+          {
+            "step": 432,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011889348672195144
+          },
+          {
+            "step": 433,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010712225321824836
+          },
+          {
+            "step": 434,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010348232243330481
+          },
+          {
+            "step": 435,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009930122356244535
+          },
+          {
+            "step": 436,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006646022653496841
+          },
+          {
+            "step": 437,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007784016660428956
+          },
+          {
+            "step": 438,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010389741612971543
+          },
+          {
+            "step": 439,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009861848233483057
+          },
+          {
+            "step": 440,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009674077139274354
+          },
+          {
+            "step": 441,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007355639523928633
+          },
+          {
+            "step": 442,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013578793904243316
+          },
+          {
+            "step": 443,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009795505733131675
+          },
+          {
+            "step": 444,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010002669971516486
+          },
+          {
+            "step": 445,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011358983705534608
+          },
+          {
+            "step": 446,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007397670144069777
+          },
+          {
+            "step": 447,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007605158753349905
+          },
+          {
+            "step": 448,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00845192626041862
+          },
+          {
+            "step": 449,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010556313312764999
+          },
+          {
+            "step": 450,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007986136276305341
+          },
+          {
+            "step": 451,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.013761530978109728
+          },
+          {
+            "step": 452,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006797270160986393
+          },
+          {
+            "step": 453,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011139109790575303
+          },
+          {
+            "step": 454,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009192672218340511
+          },
+          {
+            "step": 455,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009776943587132112
+          },
+          {
+            "step": 456,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008269720604985905
+          },
+          {
+            "step": 457,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009450779027175256
+          },
+          {
+            "step": 458,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009229435834117006
+          },
+          {
+            "step": 459,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01020329686702068
+          },
+          {
+            "step": 460,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009850770929570185
+          },
+          {
+            "step": 461,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00708098992010056
+          },
+          {
+            "step": 462,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007566578021833083
+          },
+          {
+            "step": 463,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007764826174227778
+          },
+          {
+            "step": 464,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009389362125606322
+          },
+          {
+            "step": 465,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010046151488055292
+          },
+          {
+            "step": 466,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008115258742579469
+          },
+          {
+            "step": 467,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007205550529625078
+          },
+          {
+            "step": 468,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009686783258598466
+          },
+          {
+            "step": 469,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006293197838110228
+          },
+          {
+            "step": 470,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.0090181658443533
+          },
+          {
+            "step": 471,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010174347109788203
+          },
+          {
+            "step": 472,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007038434436858813
+          },
+          {
+            "step": 473,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00758242023125416
+          },
+          {
+            "step": 474,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007703781886797008
+          },
+          {
+            "step": 475,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008720279940160301
+          },
+          {
+            "step": 476,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01336535483353876
+          },
+          {
+            "step": 477,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011389726564041722
+          },
+          {
+            "step": 478,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009452220317808973
+          },
+          {
+            "step": 479,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010352833462669348
+          },
+          {
+            "step": 480,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009290138810473613
+          },
+          {
+            "step": 481,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00892933801430652
+          },
+          {
+            "step": 482,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009972914408970246
+          },
+          {
+            "step": 483,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.01325336911860368
+          },
+          {
+            "step": 484,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006730871409960558
+          },
+          {
+            "step": 485,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006701622231187645
+          },
+          {
+            "step": 486,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009526427609199173
+          },
+          {
+            "step": 487,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00996889342154456
+          },
+          {
+            "step": 488,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00896867524046667
+          },
+          {
+            "step": 489,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007445954514507817
+          },
+          {
+            "step": 490,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.011278995361421967
+          },
+          {
+            "step": 491,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007484113638695745
+          },
+          {
+            "step": 492,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008197227024888797
+          },
+          {
+            "step": 493,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009911048212773147
+          },
+          {
+            "step": 494,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009387265695515346
+          },
+          {
+            "step": 495,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007227860868151795
+          },
+          {
+            "step": 496,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009259754899646743
+          },
+          {
+            "step": 497,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009936122385324268
+          },
+          {
+            "step": 498,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.012755756344649788
+          },
+          {
+            "step": 499,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00894671146664385
+          },
+          {
+            "step": 500,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006085949769405423
+          },
+          {
+            "step": 501,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007339990673459637
+          },
+          {
+            "step": 502,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009392669525838478
+          },
+          {
+            "step": 503,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.006816257734625054
+          },
+          {
+            "step": 504,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009035158643189557
+          },
+          {
+            "step": 505,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009518623147964412
+          },
+          {
+            "step": 506,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.009763371598711651
+          },
+          {
+            "step": 507,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008035585418149855
+          },
+          {
+            "step": 508,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007701937898773697
+          },
+          {
+            "step": 509,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.008578486220825262
+          },
+          {
+            "step": 510,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.00905858024673702
+          },
+          {
+            "step": 511,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.010711223253754431
+          },
+          {
+            "step": 512,
+            "gradient_tensors": 496,
+            "finite": true,
+            "gradient_l2_after_clipping": 0.007487728664026002
+          }
+        ],
+        "pair_presentations": {
+          "wps-bad": 32,
+          "wps-repaired": 32,
+          "mali-bad": 32,
+          "mali-repaired": 32,
+          "sanctions-absent": 32,
+          "sanctions-authority": 32,
+          "haiti-bad": 32,
+          "haiti-repaired": 32,
+          "uk-wps-bad": 32,
+          "uk-wps-repaired": 32,
+          "brazil-mali-bad": 32,
+          "brazil-mali-authority": 32,
+          "france-climate-bad": 32,
+          "france-climate-repaired": 32,
+          "india-climate-bad": 32,
+          "india-climate-repaired": 32
+        },
+        "adapter_tensors": 496,
+        "changed_adapter_tensors": 496,
+        "adapter_update_l2": 5.250903106662032,
+        "all_adapter_tensors_finite": true,
+        "initial_adapter_digest": "6372b4c0d640d45fa81bd7c79ac522485dbe96a79b8369fd422a2c4a698b2772",
+        "final_adapter_digest": "cd71584d95d6c9895a526348419e63a1895bdcb5a1b5b6d5a746896f1dd11420"
+      }
+    ]
+  },
+  "serialization_checks": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 32,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "93e07800ee70c2144007bde25ad06fd49f5d66d200467ec0d7b55a62875d15fd",
+      "adapter_config.json": "72426bd266ef1eed34dd82d5c2c7bca93d6ce7d644bb9574112465cb808ce54f"
+    }
+  },
+  "independent_review_complete": false,
+  "scope": "Software/provenance/stored-annotation replay, not independent semantic validation. All42 new answers read;14 old actual controls/grades replay unchanged. Two contexts/country still supplied source, genre overlap and correlated criteria.",
+  "target_audit_sha256": "2d3238059da7f0d5bca129ff2576e4847db401835a8ed0c57244dbfb75d2de40",
+  "source_audit_sha256": "f801df72f7ff9d67b93cc09b672a45a4b4efdc4d1e95a88d8478307106fdc998",
+  "main_new_model_answers": 42,
+  "source_fact_new_model_answers": 4,
+  "source_fact_diagnostic": {
+    "status": "pass",
+    "verified_at": "2026-10-06T18:02:59.807681+00:00",
+    "new_model_answers": 4,
+    "optimizer_steps": 0,
+    "stats": {
+      "base": {
+        "fact_units": {
+          "met": 5,
+          "unratable": 1
+        },
+        "core_error_facts_correct": 2,
+        "answers": 2,
+        "rubric_scope": "Frozen UKF2 demands2715/engagement, but valid envoy welcome also answers prompt; ambiguity preserved, no artificial model ranking."
+      },
+      "adapter": {
+        "fact_units": {
+          "met": 4,
+          "unmet": 2
+        },
+        "core_error_facts_correct": 2,
+        "answers": 2,
+        "rubric_scope": "Frozen UKF2 demands2715/engagement, but valid envoy welcome also answers prompt; ambiguity preserved, no artificial model ranking."
+      }
+    },
+    "resources": [
+      {
+        "run": "runs/aurora-two-context-source-facts-base-20261006-v1",
+        "identity": {
+          "host": "aurora",
+          "pid": 1432356,
+          "process_start_ticks": 1156533664,
+          "process_start_utc": "2026-10-06T17:55:26.640000+00:00",
+          "command": [
+            "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+            "scripts/run_two_context_source_facts.py",
+            "--mode",
+            "base",
+            "--config",
+            "configs/posttraining/qwen35-two-context-source-facts-base-20261006-v1.json",
+            "--gpu-uuid",
+            "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+            "--output",
+            "runs/aurora-two-context-source-facts-base-20261006-v1",
+            "--previous-inspected-run",
+            "runs/aurora-two-context-country-fit-20261006-v1"
+          ],
+          "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+          "slurm_job_id": null
+        },
+        "gpu": {
+          "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "memory_used_mib_before_launch": 0,
+          "utilization_before_launch": 0,
+          "existing_compute_processes": []
+        },
+        "exited": true
+      },
+      {
+        "run": "runs/aurora-two-context-source-facts-adapter-20261006-v1",
+        "identity": {
+          "host": "aurora",
+          "pid": 1434779,
+          "process_start_ticks": 1156548506,
+          "process_start_utc": "2026-10-06T17:57:55.060000+00:00",
+          "command": [
+            "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+            "scripts/run_two_context_source_facts.py",
+            "--mode",
+            "adapter",
+            "--config",
+            "configs/posttraining/qwen35-two-context-source-facts-adapter-20261006-v1.json",
+            "--gpu-uuid",
+            "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+            "--output",
+            "runs/aurora-two-context-source-facts-adapter-20261006-v1",
+            "--previous-inspected-run",
+            "runs/aurora-two-context-source-facts-base-20261006-v1"
+          ],
+          "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+          "slurm_job_id": null
+        },
+        "gpu": {
+          "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "memory_used_mib_before_launch": 0,
+          "utilization_before_launch": 0,
+          "existing_compute_processes": []
+        },
+        "exited": true
+      }
+    ],
+    "all_two_owned_process_identities_exited": true,
+    "actual_generated_tokens": 449,
+    "generation_seconds": 10.907927656546235,
+    "scope": "Two exposed source-error questions; task and output scope changed. Stored hand-judgment replay, no independent validation/OOD/persona gain.",
+    "independent_review_complete": false
+  },
+  "main_replay_sha256": "30d3bc341bf14e1852610f551b554fd203dc6b10735524209e2c78c4c64014e8",
+  "source_fact_replay_sha256": "c8de5c6439caaae1d72e2cb0442e2026b659555eead5e1a9d4240cc3f4b10fec",
+  "all_five_owned_process_identities_exited": true,
+  "next_decision": "Both base and trained model recover the two critical error facts directly; trained answers still lose quote/length constraints and add another unsupported source claim. This does not establish the causal mechanism, but absent local fact knowledge is insufficient as a diagnosis. Next candidate: one actual base-generated Brazil/Sudan source-fact bullet plan, hand-audited unchanged, then identical plan/source/current-note inputs to base and fresh512 writers: three calls/no fit. Preserve smaller256 and strong original checked-plan controls; do not increase fitting budget blindly. No next pack/fit/queue/sweep prepared."
+}
