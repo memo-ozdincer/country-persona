@@ -39,7 +39,10 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "factual-repair-20261006-v1", "factual-repair-20261006-v1-parent",
             "raw-coverage-20261006-v1", "raw-update-status-20261006-v1",
             "raw-update-status-20261006-v1-parent", "repaired-state-20261006-v1",
-            "repaired-state-partial-eval-20261006-v1")
+            "repaired-state-partial-eval-20261006-v1",
+            "application-paragraph-20261006-v1-parent", "application-paragraph-20261006-v1-combined",
+            "application-paragraph-20261006-v1-chosen", "application-paragraph-20261006-v2-parent",
+            "application-paragraph-20261006-v2-combined", "application-paragraph-20261006-v2-chosen")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",

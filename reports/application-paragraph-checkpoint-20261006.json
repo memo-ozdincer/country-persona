@@ -1,0 +1,256 @@
+{
+  "status": "same_component_sources_prefix_requests_tokens_real_four_weight_runs_and_manual_grades_replayed",
+  "new_model_generations_completed": 5,
+  "new_inspectable_public_answers": 4,
+  "failed_recording_generation_lost": 1,
+  "new_optimizer_steps": 0,
+  "cumulative_aurora_qwen35_steps": 702,
+  "reference_qwen25_steps": 582,
+  "input_tokens_each": 1808,
+  "stored_generated_tokens": 596,
+  "stored_generation_seconds": 14.63549337349832,
+  "lost_generation_tokens": null,
+  "lost_generation_seconds": null,
+  "summary": {
+    "base": {
+      "core_met": 2,
+      "core_unratable": 2,
+      "core_units": 4,
+      "additional_met": 2,
+      "additional_unratable": 0,
+      "additional_units": 2,
+      "words": 163,
+      "within100words": false,
+      "at_cap": false,
+      "strict_component_pass": false
+    },
+    "parent": {
+      "core_met": 3,
+      "core_unratable": 0,
+      "core_units": 4,
+      "additional_met": 1,
+      "additional_unratable": 0,
+      "additional_units": 2,
+      "words": 107,
+      "within100words": false,
+      "at_cap": false,
+      "strict_component_pass": false
+    },
+    "combined": {
+      "core_met": 1,
+      "core_unratable": 2,
+      "core_units": 4,
+      "additional_met": 0,
+      "additional_unratable": 1,
+      "additional_units": 2,
+      "words": 106,
+      "within100words": false,
+      "at_cap": false,
+      "strict_component_pass": false
+    },
+    "chosen": {
+      "core_met": 3,
+      "core_unratable": 0,
+      "core_units": 4,
+      "additional_met": 1,
+      "additional_unratable": 0,
+      "additional_units": 2,
+      "words": 128,
+      "within100words": false,
+      "at_cap": false,
+      "strict_component_pass": false
+    }
+  },
+  "scope": "Same exposed WPS event and mixed analyst scenario; supplied factual prefix/application-only task is a new easier component condition, not sealed OOD or full-task success.",
+  "comparison_scope": "Identical component inputs across four weights; differs from original full task by supplied factual prefix, application-only request and100word limit. Not an isolated composition effect, independent source parsing, full-task, sealed OOD or persona/multi-agent gain.",
+  "independent_review_complete": false,
+  "created_at": "2026-10-06T08:54:11.178304+00:00",
+  "all_five_owned_process_identities_exited": true,
+  "project_terminations": 0,
+  "unfamiliar_processes_changed": false,
+  "resources": [
+    {
+      "run_directory": "runs/aurora-application-paragraph-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 951787,
+        "process_start_ticks": 1153216828,
+        "process_start_utc": "2026-10-06T08:42:38.280000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_native_reasoning_probe.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-application-paragraph-20261006-v1-parent.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-application-paragraph-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "failed",
+      "optimizer_steps": 0,
+      "recorded_identity_live": false,
+      "outputs_saved": 0,
+      "generation_lost_after_recording_failure": 1
+    },
+    {
+      "run_directory": "runs/aurora-application-paragraph-base-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 953939,
+        "process_start_ticks": 1153228190,
+        "process_start_utc": "2026-10-06T08:44:31.900000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_application_paragraph_checkpoint.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-application-paragraph-20261006-v2-parent.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-application-paragraph-base-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "optimizer_steps": 0,
+      "recorded_identity_live": false,
+      "outputs_saved": 1,
+      "generation_lost_after_recording_failure": 0
+    },
+    {
+      "run_directory": "runs/aurora-application-paragraph-parent-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 955495,
+        "process_start_ticks": 1153237437,
+        "process_start_utc": "2026-10-06T08:46:04.370000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_application_paragraph_checkpoint.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-application-paragraph-20261006-v2-parent.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-application-paragraph-parent-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-application-paragraph-base-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "optimizer_steps": 0,
+      "recorded_identity_live": false,
+      "outputs_saved": 1,
+      "generation_lost_after_recording_failure": 0
+    },
+    {
+      "run_directory": "runs/aurora-application-paragraph-combined-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 957083,
+        "process_start_ticks": 1153246068,
+        "process_start_utc": "2026-10-06T08:47:30.680000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_application_paragraph_checkpoint.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-application-paragraph-20261006-v2-combined.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-application-paragraph-combined-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-application-paragraph-parent-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "optimizer_steps": 0,
+      "recorded_identity_live": false,
+      "outputs_saved": 1,
+      "generation_lost_after_recording_failure": 0
+    },
+    {
+      "run_directory": "runs/aurora-application-paragraph-chosen-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 959539,
+        "process_start_ticks": 1153261509,
+        "process_start_utc": "2026-10-06T08:50:05.090000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_application_paragraph_checkpoint.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-application-paragraph-20261006-v2-chosen.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-application-paragraph-chosen-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-application-paragraph-combined-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "optimizer_steps": 0,
+      "recorded_identity_live": false,
+      "outputs_saved": 1,
+      "generation_lost_after_recording_failure": 0
+    }
+  ],
+  "next_decision": "Keep all original full-task grades and both352branches. Given fact-prefix/application-only condition yields immediate care during validation in all3adapters, but every adapter misses known conviction waiver and concrete trade-off; all4exceed100words. Base explicitly acknowledges waiver. Next candidate: fresh-base chosen-only SFT on exact same3positive texts and96update/32presentation budget, original7full-task controls, before adding cases. This tests inherited adapter-history contribution, not a new objective or fresh OOD. No next pack/fit/queue/sweep prepared.",
+  "evaluation_qualification": "Chosen answer omits explicit future-vote guarantee response; frozen P4 prohibits invented conditions but does not by itself require the explicit phrase. Additional task observation retained; no frozen scores rewritten. All answers already fail other component criteria and word budget."
+}
