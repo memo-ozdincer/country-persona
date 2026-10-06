@@ -1,0 +1,29 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "max_length": 8192,
+  "generation_max_new_tokens": 384,
+  "max_steps": 64,
+  "gradient_accumulation_steps": 2,
+  "lora_rank": 8,
+  "learning_rate": 5e-05,
+  "pack": "data/prepared/minimal-deliberation-initials-20261006-v1",
+  "baseline_run": "runs/aurora-minimal-deliberation-initials-base-20261006-v1",
+  "kind": "original_four_country_deliberation_initials",
+  "authorization": "User explicitly requests recursive minimal country pipeline experiments, complete selected-data reading, inspection then scale.",
+  "change_from_v3": "Original four-country source-grounded initial prompts and384-token cap; context enlarged to8192 to hold all four complete statements without truncation. Matched base/selected four-target fit, no optimizer step."
+}
