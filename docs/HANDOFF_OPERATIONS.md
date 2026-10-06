@@ -12,7 +12,7 @@ git status --short
 source /h/405/memo/.config/country-persona/aurora-env.sh
 ```
 
-The verifier checks every payload file against `handoff/manifest.json`, rejects unsafe paths/symlinks, and checks required entry artifacts. `handoff/git-status.txt` records source working changes, while `handoff/base-history.bundle` preserves committed ancestry. The working files include uncommitted edits and untracked research code. No source commit, push or PR is implied. Model weights, credentials and runtime environments are not included.
+The verifier checks every payload file against `handoff/manifest.json`, rejects unsafe paths/symlinks, and checks required entry artifacts. `handoff/git-status.txt` records source working changes, while `handoff/base-history.bundle` preserves committed ancestry. The working files include uncommitted edits and untracked research code. No source commit, push or PR is implied. Base model weights, credentials and runtime environments are excluded; bounded saved LoRA adapters are included.
 
 Snapshot hashes describe transfer time. Intentional later edits will produce mismatches; preserve the original manifest and create a new snapshot after a checkpoint. Do not update hashes merely to silence unexplained differences. Read `handoff/source-inventory.json` before running a builder that needs omitted older corpora.
 
@@ -82,3 +82,9 @@ python3 scripts/verify_research_handoff.py --root /ABSOLUTE/FRESH/STAGING/DIRECT
 The builder refuses existing destinations, selects working files plus relevant ignored artifacts, records omissions, verifies copied bytes and preserves base history/diff/status. It does not upload, allocate, change credentials, commit or push. Transfer to a fresh private workspace and verify there. Never blanket-sync `.env`, credential files, `.venv`, `.git` internals or model caches.
 
 Source PDFs and archived texts are private research context; their inclusion does not create publication permission. Public explorers are presentation layers, not evidence that every local experiment artifact is hosted online. Scratch is non-backed-up: retain durable code/manifests and important outputs elsewhere.
+
+## Private archives larger than a release asset
+
+Growing snapshots retain the full local archive and all historical adapters. If the compressed archive exceeds GitHub's 2 GiB per-asset limit, upload ordered parts below that limit with a JSON multipart manifest and the original verification receipt. The manifest records each part's name, bytes and SHA-256 plus the full archive's name, bytes and SHA-256. Download every part and concatenate in the exact manifest order. Verify every part and the reassembled archive against these fields before extracting, then run the normal payload verifier in the extracted tree.
+
+`scripts/upload_private_handoff.py --asset-manifest /ABSOLUTE/MULTIPART-MANIFEST.json` checks part hashes, ordered reassembly and the original archive/receipt/commit binding before creating a release. It verifies the destination repository is private and checks GitHub's returned SHA-256/size for every uploaded asset. The full archive remains available locally; splitting does not omit payload files or reduce the evidence included.
