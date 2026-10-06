@@ -30,7 +30,9 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "minimal-deliberation-adapted-aggregator-20261006-v1",
             "minimal-attribution-ledger-20261006-v1", "minimal-attribution-ledger-20261006-v2",
             "minimal-synthesis-fit-20261006-v1", "minimal-synthesis-fit-20261006-v2",
-            "minimal-synthesis-cold-20261006-v1")
+            "minimal-synthesis-cold-20261006-v1",
+            "synthesis-rehearsal-20261006-v1", "synthesis-rehearsal-wps-20261006-v1",
+            "rehearsal-diagnostic-20261006-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
