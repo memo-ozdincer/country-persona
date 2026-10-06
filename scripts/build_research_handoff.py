@@ -48,7 +48,9 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "minimal-endorsement-20261006-v1", "endorsement-authority-eval-20261006-v1",
             "conditional-india-20261006-v1", "conditional-india-eval-20261006-v1",
             "conditional-india-20261006-v2", "conditional-india-eval-20261006-v2",
-            "conditional-india-fit-20261006-v2", "haiti-source-scope-20261006-v1")
+            "conditional-india-fit-20261006-v2", "haiti-source-scope-20261006-v1",
+            "diverse-country-20261006-v1", "diverse-country-20261006-v2",
+            "diverse-country-fit-20261006-v2", "diverse-country-role-check-20261006-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
@@ -56,7 +58,7 @@ RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expa
        "benchmark-plan-grounding-20260930-v1", "benchmark-plan-grounding-20260930-v2",
        "benchmark-plan-grounding-20260930-v3", "source-plan-grounding-20261002-v1",
        "source-application-grounding-20261003-v1", "coverage-objective-grounding-20261003-v1",
-       "conditional-india-haiti-grounding-20261006-v1")
+       "conditional-india-haiti-grounding-20261006-v1", "diverse-country-somalia-grounding-20261006-v1")
 SKIP_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", ".cache"}
 SECRET = re.compile(rb"hf_[A-Za-z0-9]{20,}|-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----")
 QUOTED_KEY_HEADER = re.compile(

@@ -1,0 +1,118 @@
+{
+  "status": "primary_speaker_chair_metadata_only_delta_four_actual_answers_tokens_weights_protocol_and_reviews_replayed",
+  "summary": {
+    "base": {
+      "somalia-gbr-raw": {
+        "met": 7,
+        "unratable": 0,
+        "units": 12,
+        "universal_met": 0,
+        "words": 348,
+        "at_cap": false,
+        "strict_pass": false
+      },
+      "somalia-gbr-plan": {
+        "met": 7,
+        "unratable": 0,
+        "units": 12,
+        "universal_met": 0,
+        "words": 359,
+        "at_cap": false,
+        "strict_pass": false
+      }
+    },
+    "adapter": {
+      "somalia-gbr-raw": {
+        "met": 9,
+        "unratable": 1,
+        "units": 12,
+        "universal_met": 1,
+        "words": 172,
+        "at_cap": false,
+        "strict_pass": false
+      },
+      "somalia-gbr-plan": {
+        "met": 12,
+        "unratable": 0,
+        "units": 12,
+        "universal_met": 4,
+        "words": 161,
+        "at_cap": false,
+        "strict_pass": true
+      }
+    }
+  },
+  "resources": {
+    "base": {
+      "run_directory": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-diverse-country-role-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1336904,
+        "process_start_ticks": 1155869570,
+        "process_start_utc": "2026-10-06T16:04:45.700000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_diverse_country_role_check.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-diverse-country-role-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-diverse-country-role-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-diverse-country-fit-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      }
+    },
+    "adapter": {
+      "run_directory": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-diverse-country-role-adapter-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1342993,
+        "process_start_ticks": 1155902481,
+        "process_start_utc": "2026-10-06T16:10:14.810000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_diverse_country_role_check.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-diverse-country-role-adapter-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-diverse-country-role-adapter-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-diverse-country-role-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      }
+    }
+  },
+  "new_model_generations": 4,
+  "new_optimizer_steps": 0,
+  "generated_tokens": 1492,
+  "generation_seconds": 27.549450701102614,
+  "caps": 0,
+  "independent_review_complete": false,
+  "scope": "Only source-checked speaker/chair metadata added; source text, scenario, task, criterion and checked plan unchanged. Input facts/length change, no training effect claim. Same exposed Somalia development."
+}
