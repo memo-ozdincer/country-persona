@@ -1,0 +1,570 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-06T20:08:11.060877+00:00",
+  "new_model_outputs": 7,
+  "new_optimizer_steps": 0,
+  "cumulative_qwen35_steps": 2014,
+  "reference_qwen25_steps": 582,
+  "all_seven_complete_outputs_read": true,
+  "all_seven_owned_gpu_process_identities_exited": true,
+  "all_new_outputs_uncapped": true,
+  "resources": [
+    {
+      "run": "runs/aurora-model-generated-plan-planner-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1461284,
+        "process_start_ticks": 1156705273,
+        "process_start_utc": "2026-10-06T18:24:02.730000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-model-generated-plan-planner-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-model-generated-plan-planner-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-source-facts-adapter-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-model-generated-plan-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1470015,
+        "process_start_ticks": 1156756323,
+        "process_start_utc": "2026-10-06T18:32:33.230000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-model-generated-plan-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-model-generated-plan-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-model-generated-plan-planner-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-model-generated-plan-adapter-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1478190,
+        "process_start_ticks": 1156803012,
+        "process_start_utc": "2026-10-06T18:40:20.120000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-model-generated-plan-adapter-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-model-generated-plan-adapter-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-model-generated-plan-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-model-decision-plan-planner-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1488371,
+        "process_start_ticks": 1156861334,
+        "process_start_utc": "2026-10-06T18:50:03.340000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-model-decision-plan-planner-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-model-decision-plan-planner-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-model-generated-plan-adapter-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-question-guided-plan-planner-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1509389,
+        "process_start_ticks": 1157005277,
+        "process_start_utc": "2026-10-06T19:14:02.770000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-question-guided-plan-planner-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-question-guided-plan-planner-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-model-decision-plan-planner-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-question-guided-plan-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1526747,
+        "process_start_ticks": 1157125535,
+        "process_start_utc": "2026-10-06T19:34:05.350000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-question-guided-plan-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-question-guided-plan-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-question-guided-plan-planner-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-question-guided-plan-adapter-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1537940,
+        "process_start_ticks": 1157209465,
+        "process_start_utc": "2026-10-06T19:48:04.650000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-question-guided-plan-adapter-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-question-guided-plan-adapter-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-question-guided-plan-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "summaries": {
+    "aurora-model-generated-plan-planner-20261006-v1": {
+      "content": {
+        "met": 4,
+        "unmet": 3,
+        "unratable": 1
+      },
+      "source": {
+        "met": 4,
+        "unmet": 3,
+        "unratable": 1
+      },
+      "application": {},
+      "words": 212,
+      "within_requested_words": true,
+      "strict_pass": false
+    },
+    "aurora-model-generated-plan-base-20261006-v1": {
+      "content": {
+        "met": 6,
+        "unmet": 6,
+        "unratable": 2
+      },
+      "source": {
+        "met": 2,
+        "unmet": 6
+      },
+      "application": {
+        "met": 4,
+        "unratable": 2
+      },
+      "words": 323,
+      "within_requested_words": false,
+      "strict_pass": false
+    },
+    "aurora-model-generated-plan-adapter-20261006-v1": {
+      "content": {
+        "unmet": 5,
+        "met": 7,
+        "unratable": 2
+      },
+      "source": {
+        "unmet": 4,
+        "met": 3,
+        "unratable": 1
+      },
+      "application": {
+        "unmet": 1,
+        "met": 4,
+        "unratable": 1
+      },
+      "words": 192,
+      "within_requested_words": true,
+      "strict_pass": false
+    },
+    "aurora-model-decision-plan-planner-20261006-v1": {
+      "content": {
+        "unmet": 7,
+        "met": 5,
+        "unratable": 2
+      },
+      "source": {
+        "unmet": 7,
+        "met": 1
+      },
+      "application": {
+        "met": 4,
+        "unratable": 2
+      },
+      "words": 303,
+      "within_requested_words": true,
+      "strict_pass": false
+    },
+    "aurora-question-guided-plan-planner-20261006-v1": {
+      "content": {
+        "met": 12,
+        "unratable": 2
+      },
+      "source": {
+        "met": 7,
+        "unratable": 1
+      },
+      "application": {
+        "met": 5,
+        "unratable": 1
+      },
+      "words": 512,
+      "within_requested_words": false,
+      "strict_pass": false
+    },
+    "aurora-question-guided-plan-base-20261006-v1": {
+      "content": {
+        "met": 8,
+        "unmet": 4,
+        "unratable": 2
+      },
+      "source": {
+        "met": 3,
+        "unmet": 4,
+        "unratable": 1
+      },
+      "application": {
+        "met": 5,
+        "unratable": 1
+      },
+      "words": 321,
+      "within_requested_words": false,
+      "strict_pass": false
+    },
+    "aurora-question-guided-plan-adapter-20261006-v1": {
+      "content": {
+        "met": 11,
+        "unmet": 3
+      },
+      "source": {
+        "met": 7,
+        "unmet": 1
+      },
+      "application": {
+        "met": 4,
+        "unmet": 2
+      },
+      "words": 219,
+      "within_requested_words": true,
+      "strict_pass": false
+    }
+  },
+  "historical_controls": {
+    "base_sudan-bra-raw": {
+      "content": {
+        "unmet": 7,
+        "met": 7
+      },
+      "source": {
+        "unmet": 7,
+        "met": 1
+      },
+      "application": {
+        "met": 6
+      },
+      "words": 368,
+      "within_requested_words": false,
+      "strict_pass": false
+    },
+    "base_sudan-bra-plan": {
+      "content": {
+        "unratable": 1,
+        "unmet": 5,
+        "met": 8
+      },
+      "source": {
+        "unratable": 1,
+        "unmet": 5,
+        "met": 2
+      },
+      "application": {
+        "met": 6
+      },
+      "words": 299,
+      "within_requested_words": true,
+      "strict_pass": false
+    },
+    "fresh512_sudan-bra-raw": {
+      "content": {
+        "met": 10,
+        "unmet": 4
+      },
+      "source": {
+        "met": 7,
+        "unmet": 1
+      },
+      "application": {
+        "unmet": 3,
+        "met": 3
+      },
+      "words": 279,
+      "within_requested_words": true,
+      "strict_pass": false
+    },
+    "fresh512_sudan-bra-plan": {
+      "content": {
+        "met": 11,
+        "unmet": 1,
+        "unratable": 2
+      },
+      "source": {
+        "met": 6,
+        "unmet": 1,
+        "unratable": 1
+      },
+      "application": {
+        "met": 5,
+        "unratable": 1
+      },
+      "words": 214,
+      "within_requested_words": true,
+      "strict_pass": false
+    }
+  },
+  "historical_control_provenance": [
+    {
+      "run": "runs/aurora-two-context-country-base-20261006-v1",
+      "id": "sudan-bra-raw",
+      "actual_identity": {
+        "host": "aurora",
+        "pid": 1402301,
+        "process_start_ticks": 1156324708,
+        "process_start_utc": "2026-10-06T17:20:37.080000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_country_controls.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-two-context-country-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-country-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-diverse-country-role-adapter-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "record_digest": "49c70db2ebc24caa0fe7ff9a4b0ff64b5067b7280428ccea22968e886e380800",
+      "review_digest": "9194ece69886ca5d62109fef841021bfacf161606fc37f428da1e55f2bac8966",
+      "transcript_sha256": "5c7873aaa64a421e831e754b896f02601e0be2e7cf370fa98a571383f23aa37b",
+      "inspection_sha256": "1a9d77dfabd316832e53d9044681e09ec34967c46b6f767c11ea09bf0cb68ec7"
+    },
+    {
+      "run": "runs/aurora-two-context-country-base-20261006-v1",
+      "id": "sudan-bra-plan",
+      "actual_identity": {
+        "host": "aurora",
+        "pid": 1402301,
+        "process_start_ticks": 1156324708,
+        "process_start_utc": "2026-10-06T17:20:37.080000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_country_controls.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-two-context-country-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-country-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-diverse-country-role-adapter-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "record_digest": "8c08c9c28072437aff852d3b41ab0456196e92bee8ff1dcf06971d93f1f245c0",
+      "review_digest": "b78fda896333b0e5dac21dba9eae2f1cf6564478e790ebdcdf61c4b82c79204c",
+      "transcript_sha256": "5c7873aaa64a421e831e754b896f02601e0be2e7cf370fa98a571383f23aa37b",
+      "inspection_sha256": "1a9d77dfabd316832e53d9044681e09ec34967c46b6f767c11ea09bf0cb68ec7"
+    },
+    {
+      "run": "runs/aurora-two-context-country-fit-20261006-v1",
+      "id": "sudan-bra-raw",
+      "actual_identity": {
+        "host": "aurora",
+        "pid": 1409613,
+        "process_start_ticks": 1156371742,
+        "process_start_utc": "2026-10-06T17:28:27.420000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_country_fit.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-two-context-country-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-country-fit-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-country-parent-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "record_digest": "172d27781967ce7b4c7148322c333f6d52c7becdc5e12746952d481fc19428fc",
+      "review_digest": "6eba597a7e799f4c4165bc605f19e59c0e3bce76385270bb3bbe23844855498f",
+      "transcript_sha256": "8f974bf491b3aab510b8421e780c52aae77d74f8c3211f4472abb02f179cc977",
+      "inspection_sha256": "e77e7ea28998023acdd384cad8803bfeeb711729a5cd268683056e10f888d1bb"
+    },
+    {
+      "run": "runs/aurora-two-context-country-fit-20261006-v1",
+      "id": "sudan-bra-plan",
+      "actual_identity": {
+        "host": "aurora",
+        "pid": 1409613,
+        "process_start_ticks": 1156371742,
+        "process_start_utc": "2026-10-06T17:28:27.420000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_two_context_country_fit.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-two-context-country-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-two-context-country-fit-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-context-country-parent-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "record_digest": "7f4c51461ebf5b442652223dd83bccbe0dfe7ab9a13f5b886af1309b58ed8cc0",
+      "review_digest": "ed53cf74c2f231d52e17f26e7ad3d8e2542a8bae268d69000b2e3f6fbeb61f4a",
+      "transcript_sha256": "8f974bf491b3aab510b8421e780c52aae77d74f8c3211f4472abb02f179cc977",
+      "inspection_sha256": "e77e7ea28998023acdd384cad8803bfeeb711729a5cd268683056e10f888d1bb"
+    }
+  ],
+  "actual_generated_tokens": 3005,
+  "generation_seconds": 57.38188362121582,
+  "independent_review_complete": false,
+  "scope": "Same-assistant exposed Brazil/Sudan development. More questions, input length, plan budget, information and realization contract change together. No causal component isolation, native prediction/persona/multi-agent/strongOOD gain. Criteria/oldgrades unchanged. Actual plans unedited; failed full planner stopped before writers.",
+  "next_decision": "Question-guided teacher can supply most requested facts/decisions; raw-task-trained writer still flips known negation and drops two given steps. Next candidate after full hand audit and a separately frozen family: plan-input realization SFT with unchanged original eight preferred target texts, freshzeroLoRA and matched256update/32presentations budget versus saved raw8. Retain current actual QAplan and stronger checked-plan/base controls as exposed development. No next pack/fit/queue/sweep prepared."
+}

@@ -53,7 +53,10 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "diverse-country-fit-20261006-v2", "diverse-country-role-check-20261006-v1",
             "two-context-country-20261006-v1", "two-context-country-base-20261006-v1",
             "two-context-country-parent-20261006-v1", "two-context-country-fit-20261006-v1",
-            "two-context-source-facts-20261006-v1")
+            "two-context-source-facts-20261006-v1",
+            "model-generated-plan-planner-20261006-v1", "model-generated-plan-writer-20261006-v1",
+            "model-decision-plan-planner-20261006-v1", "question-guided-plan-planner-20261006-v1",
+            "question-guided-plan-writer-20261006-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
