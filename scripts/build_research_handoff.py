@@ -25,7 +25,10 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "coverage-objective-20261003-v1", "source-preference-20261003-v1",
             "minimal-country-20261005-v1", "minimal-country-20261005-v2",
             "minimal-mechanism-20261005-v1", "minimal-country-transfer-20261005-v1",
-            "minimal-country-transfer-20261005-v2", "minimal-deliberation-initials-20261006-v1")
+            "minimal-country-transfer-20261005-v2", "minimal-deliberation-initials-20261006-v1",
+            "minimal-deliberation-revisions-20261006-v1", "minimal-deliberation-synthesis-20261006-v1",
+            "minimal-deliberation-adapted-aggregator-20261006-v1",
+            "minimal-attribution-ledger-20261006-v1", "minimal-attribution-ledger-20261006-v2")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
