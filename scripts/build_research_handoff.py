@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -138,13 +139,24 @@ def inventory(root, names):
     return result
 
 
-def build(root, output):
+def build(root, output, reuse_snapshot=None):
     root, output = root.resolve(), output.resolve()
     if output.exists():
         raise ValueError("Choose a fresh staging directory")
     names = selected_files(root)
     inv = inventory(root, names)
     source_hashes = {name: sha256(root / name) for name in names}
+    prior_files, prior_manifest_sha256, reused = {}, None, 0
+    if reuse_snapshot is not None:
+        reuse_snapshot = reuse_snapshot.resolve()
+        if reuse_snapshot == root or reuse_snapshot == output:
+            raise ValueError("Reuse only a separate frozen snapshot, never the working source")
+        prior_manifest = reuse_snapshot / "handoff/manifest.json"
+        prior = json.loads(prior_manifest.read_text())
+        if prior["credentials_included"] or prior["base_model_weights_included"]:
+            raise ValueError("Unexpected prior snapshot scope")
+        prior_files = prior["files"]
+        prior_manifest_sha256 = sha256(prior_manifest)
     output.mkdir(parents=True, mode=0o700)
     for name in names:
         source, target = root / name, output / name
@@ -156,7 +168,18 @@ def build(root, output):
             if SECRET.search(QUOTED_KEY_HEADER.sub(b"[KEY_HEADER_LITERAL]", source.read_bytes())):
                 raise ValueError("Possible secret detected; file excluded by failing build: " + name)
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, target)
+        previous = reuse_snapshot / name if reuse_snapshot is not None else None
+        expected = prior_files.get(name)
+        if expected is not None and expected["sha256"] == source_hashes[name]:
+            if previous.resolve() != previous or not previous.is_file():
+                raise ValueError("Refusing nonregular prior snapshot member: " + name)
+            if previous.stat().st_size != expected["bytes"] or sha256(previous) != source_hashes[name]:
+                raise ValueError("Prior snapshot member changed: " + name)
+            # Link immutable snapshot bytes, never mutable working-tree files.
+            os.link(previous, target)
+            reused += 1
+        else:
+            shutil.copy2(source, target)
         if sha256(target) != source_hashes[name] or sha256(source) != source_hashes[name]:
             raise ValueError("Source changed during snapshot: " + name)
     meta = output / "handoff"
@@ -173,6 +196,8 @@ def build(root, output):
                 "source_remote": "https://github.com/memo-ozdincer/country-persona.git",
                 "kind": "private_working_state_snapshot_not_a_training_or_public_release",
                 "credentials_included": False, "base_model_weights_included": False,
+                "immutable_prior_snapshot_members_reused": reused,
+                "reuse_snapshot_manifest_sha256": prior_manifest_sha256,
                 "omissions": ["Credentials and virtual environments", "Base model weights and caches",
                               "Large Reddit raw/body exports and older bulk/canonical corpora; see source-inventory.json",
                               "Duplicated historical staging payloads; their manifests are retained"],
@@ -186,5 +211,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--reuse-snapshot", type=Path)
     args = parser.parse_args()
-    print(json.dumps(build(args.root, args.output), indent=2))
+    print(json.dumps(build(args.root, args.output, args.reuse_snapshot), indent=2))
