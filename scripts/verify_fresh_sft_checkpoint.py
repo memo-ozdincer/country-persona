@@ -1,0 +1,131 @@
+"""Replay fresh-base initialization, matched chosen-only fitting, actual base/warm controls and complete reviews."""
+import argparse
+import hashlib
+import json
+import sys
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
+from country_persona.io import digest,read_jsonl,sha256,write_json
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    pack=ROOT/'data/prepared/repaired-state-20261006-v1';m=json.loads((pack/'manifest.json').read_text());hand=json.loads((pack/'manual-inspection.json').read_text())
+    for filename,h in m['files_sha256'].items():assert sha256(pack/filename)==h
+    assert hand['all_selected_texts_read_complete'] and hand['manifest_sha256']==sha256(pack/'manifest.json')
+    pairs=list(read_jsonl(pack/'pairs.jsonl'));audits=list(read_jsonl(pack/'pair-audit.jsonl'));cases=list(read_jsonl(pack/'cases.jsonl'));criteria=json.loads((pack/'criteria.json').read_text())
+    assert len(pairs)==len(audits)==3 and len(cases)==7 and pairs[0]['chosen']==pairs[1]['chosen']
+    proof=json.loads((pack/'pair-provenance.json').read_text());oldfile=ROOT/proof['original_two_pairs_file']
+    assert sha256(oldfile)==proof['original_two_pairs_sha256'] and pairs[:2]==list(read_jsonl(oldfile))
+    negative=proof['new_negative'];neg=ROOT/negative['run'];assert sha256(neg/'transcript.jsonl')==negative['transcript_sha256'] and sha256(neg/'inspection.json')==negative['inspection_sha256']
+    assert pairs[2]['rejected'][0]['content']==next(r['output'] for r in read_jsonl(neg/'transcript.jsonl') if r['id']==negative['id'])
+    assert pairs[2]['chosen'][0]['content']==proof['new_target'] and len(proof['new_target'].split())==proof['new_target_words']<=300
+    assert pairs[2]['chosen'][0]['content'].rsplit('\n\n',1)[0]==pairs[0]['chosen'][0]['content'].rsplit('\n\n',1)[0]
+    sources={}
+    for family,filename,rawdir,recordfile in [('wps','wps-statements.json','data/raw/source-application-grounding-20261003-v1','record-8514.txt'),('mali','mali-statements.json','data/raw/coverage-objective-grounding-20261003-v1','record-9365.txt')]:
+        sources[family]=json.loads((pack/filename).read_text());doc=(ROOT/rawdir/recordfile).read_text()
+        for s in sources[family].values():assert doc[s['start']:s['end']].strip()==s['text'] and digest(s['text'])==s['text_digest']
+        pr=json.loads((pack/('source-proof.json' if family=='wps' else 'mali-source-proof.json')).read_text())
+        hashes=pr['wps_raw_files_sha256'] if family=='wps' else pr['files_sha256']
+        for name,h in hashes.items():assert sha256(ROOT/rawdir/name)==h
+    from transformers import AutoTokenizer
+    cfg=json.loads((ROOT/'configs/posttraining/qwen35-fresh-sft-20261006-v1.json').read_text());tok=AutoTokenizer.from_pretrained(cfg['model_path'],local_files_only=True)
+    for i,(pair,audit) in enumerate(zip(pairs,audits)):
+        assert pair['prompt']==cases[[0,1,5][i]]['prompt'] and digest(pair)==audit['pair_sha256']
+        prefix=tok.apply_chat_template(pair['prompt'],tokenize=True,return_dict=False,add_generation_prompt=True,enable_thinking=False)
+        assert prefix==audit['prompt_ids']
+        for k in ('chosen','rejected'):
+            full=tok.apply_chat_template(pair['prompt']+pair[k],tokenize=True,return_dict=False,enable_thinking=False)
+            assert full[:len(prefix)]==prefix and full[len(prefix):]==audit[k+'_ids'] and len(full)<=8192
+    assert all((pack/'selected-card.txt').read_text() not in pair['prompt'][1]['content'] for pair in pairs[1:])
+    runs={};outputs={};summary={}
+    for arm in ('base','warm','fit'):
+        d=ROOT/({'base':'runs/aurora-repaired-state-base-replay-20261006-v1','warm':'runs/aurora-chosen-sft-fit-20261006-v2','fit':'runs/aurora-fresh-sft-fit-20261006-v1'}[arm]);run=json.loads((d/'run.json').read_text());inspection=json.loads((d/'inspection.json').read_text());rows=list(read_jsonl(d/'transcript.jsonl'))
+        assert len(rows)==len(inspection['reviews'])==7 and inspection['all_outputs_read_complete']
+        assert run['transcript_sha256']==inspection['transcript_sha256']==sha256(d/'transcript.jsonl') and inspection['criteria_sha256']==sha256(pack/'criteria.json')
+        assert run['pack_manifest_sha256']==sha256(pack/'manifest.json')
+        for source,h in run['source_code_sha256'].items():assert sha256(d/Path(source).name)==h
+        if arm=='base':
+            assert run['status']=='completed_cpu_replay' and run['optimizer_steps']==run['new_model_generations']==0 and run['original_actual_generations']==7
+            assert len(run['source_links'])==7 and run['generation_helper_sha256']==sha256(ROOT/'scripts/run_aurora_qwen35_smoke.py')
+            for link,row in zip(run['source_links'],rows):
+                origin=ROOT/link['run'];original=json.loads((origin/'run.json').read_text())
+                for k in ('run','transcript','inspection'):assert sha256(origin/(k+('.jsonl' if k=='transcript' else '.json')))==link[k+'_sha256']
+                actual=next(r for r in read_jsonl(origin/'transcript.jsonl') if r['id']==row['id'])
+                assert row['input_ids']==actual['input_ids'] and row['output_ids']==actual['output_ids'] and row['output']==actual['output'] and original['identity']==link['actual_identity']
+                assert original['versions']==cfg['runtime_pins'] and original['gpu']['name']==run['gpu']['name']
+                for k in ('model','revision','generation_max_new_tokens','max_length','chat_template_kwargs'):assert original['config'][k]==cfg[k]
+                assert original['source_code_sha256']['scripts/run_aurora_qwen35_smoke.py']==run['generation_helper_sha256']
+                assert original['mode']=='base'
+        else:assert run['status']=='completed' and run['optimizer_steps']==96
+        results={}
+        for case,row,review in zip(cases,rows,inspection['reviews']):
+            assert case['id']==row['id']==review['id'] and review['all_output_read_complete']
+            ids=tok.apply_chat_template(case['prompt'],tokenize=True,return_dict=False,add_generation_prompt=True,enable_thinking=False)
+            assert ids==case['input_ids']==row['input_ids'] and len(ids)+2048<=8192 and tok.decode(row['output_ids'],skip_special_tokens=True)==row['output']
+            assert hashlib.sha256(row['output'].encode()).hexdigest()==review['output_sha256']
+            for s in sources[case['family']].values():assert s['text'] in case['prompt'][1]['content']
+            expected={co+':'+k for co in ('FRA','GBR') for k,_ in criteria['wps']['common']+criteria['wps']['specific'][co]} if case['family']=='wps' else {u['id'] for u in criteria['mali']}
+            assert set(review['ratings'])==expected and set(review['universal_checks'])==set(criteria['universal_checks'])
+            assert set(review['synthesis_checks'])==(set(criteria['synthesis_checks']) if case['family']=='wps' else set())
+            values=[*review['ratings'].values(),*review['universal_checks'].values(),*review['synthesis_checks'].values()]
+            assert all(v['status'] in ('met','unmet','unratable') and v['reason'].strip() for v in values)
+            partial=review.get('partial_state_ratings',{})
+            assert set(partial)==(set(criteria['partial_state_units']) if case['id']=='wps-partial-repair' else set())
+            assert all(v['status'] in ('met','unmet','unratable') and v['reason'].strip() for v in partial.values())
+            results[case['id']]={'met':sum(v['status']=='met' for v in review['ratings'].values()),'unratable':sum(v['status']=='unratable' for v in review['ratings'].values()),'units':len(expected),
+                'source_pass':not row['at_output_cap'] and not review.get('additional_source_fidelity_observations') and all(v['status']=='met' for v in [*values,*partial.values()]),'words':len(row['output'].split()),'at_cap':row['at_output_cap'], 'partial_state_met':sum(v['status']=='met' for v in partial.values()),'partial_state_unratable':sum(v['status']=='unratable' for v in partial.values()),'partial_state_units':len(partial)}
+        runs[arm]=run;outputs[arm]=rows;summary[arm]=results
+    fit=runs['fit'];assert fit['config_sha256']==sha256(ROOT/'configs/posttraining/qwen35-fresh-sft-20261006-v1.json')
+    for arm in ('base','warm'):
+        assert [r['input_ids'] for r in outputs[arm]]==[r['input_ids'] for r in outputs['fit']] and runs[arm]['versions']==fit['versions']
+        assert runs[arm]['gpu']['name']==fit['gpu']['name']=='NVIDIA RTX PRO 6000 Blackwell Server Edition'
+    checks=fit['optimization_checks']['rank_checks'][0];mask=fit['mask_audit']
+    assert checks['steps']==checks['microbatches']==checks['gradient_checks']==96 and checks['pair_presentations']=={'card':32,'raw':32,'repair':32}
+    assert checks['actual_sequence_tokens']==32*mask['sequence_tokens_once'] and checks['actual_target_tokens']==32*(mask['chosen_tokens_once']+mask['rejected_tokens_once'])
+    assert mask['actual_trainer_token_ids_and_masks_checked'] and checks['all_adapter_tensors_finite'] and checks['changed_adapter_tensors']>0
+    assert fit['method']['reference_tensor_digest_before']==fit['method']['reference_tensor_digest_after']==checks['initial_adapter_digest']
+    assert len(fit['actual_objective_guard']['pairs'])==3 and all(p['absolute_difference']<1e-4 for p in fit['actual_objective_guard']['pairs'])
+    assert sha256(ROOT/cfg['lora_config_template'])==cfg['lora_config_template_sha256']
+    assert fit['serialization_checks']['saved_tensors_equal'] and fit['serialization_checks']['reload_verified_after_state_perturbation']
+    for name,h in fit['serialization_checks']['files_sha256'].items():assert sha256(ROOT/'runs/aurora-fresh-sft-fit-20261006-v1/adapter'/name)==h
+    combined=runs['warm']
+    for key in ('pack_manifest_sha256','versions'):
+        assert fit[key]==combined[key]
+    for key in ('max_steps','gradient_accumulation_steps','learning_rate','seed','max_length','generation_max_new_tokens','chat_template_kwargs'):
+        assert fit['config'][key]==combined['config'][key]
+    for key in ('actual_sequence_tokens','actual_target_tokens','microbatches','steps','pair_presentations'):
+        assert checks[key]==combined['optimization_checks']['rank_checks'][0][key]
+    assert fit['mask_audit']==combined['mask_audit']
+    assert fit['method']['preference_gradient_enabled'] is False and fit['method']['negative_and_reference_compute_retained']
+    objective=fit['actual_objective_guard']
+    assert objective['loss_types']==['sft'] and objective['loss_weights']==[1.0]
+    assert all(abs(p['component_losses']['combined']-p['component_losses']['chosen_nll'])<1e-4 for p in objective['pairs'])
+    assert len(objective['native_logit_gradient_checks'])==3
+    for g in objective['native_logit_gradient_checks']:
+        assert g['rejected_logit_gradient_zero'] and g['prompt_padding_and_final_logit_gradient_zero']
+        assert g['chosen_completion_logit_gradient_nonzero'] and g['parameter_gradients_not_accumulated']
+    preparation=ROOT/cfg['preparation'];prep=json.loads(preparation.read_text())
+    assert sha256(preparation)==fit['preparation_sha256'] and prep['all_selected_texts_read_complete']
+    assert prep['config_sha256']==fit['config_sha256'] and prep['pack_manifest_sha256']==fit['pack_manifest_sha256']
+    for key in ('run','transcript','inspection'):
+        fn=key+('.jsonl' if key=='transcript' else '.json')
+        assert sha256(ROOT/cfg['comparison_run']/fn)==fit['warm_chosen_comparison'][key+'_sha256']
+    from safetensors.torch import load_file
+    from country_persona.training_checks import tensor_state_digest
+    initial=ROOT/'runs/aurora-fresh-sft-fit-20261006-v1/initial-adapter'
+    for name,h in fit['initial_adapter_files_sha256'].items():assert sha256(initial/name)==h
+    state=load_file(str(initial/'adapter_model.safetensors'))
+    init=fit['initialization_checks']
+    assert len(state)==init['adapter_tensors']==496 and init['all_B_tensors_zero'] and init['base_initial_adapter_logits_exact'] and not init['loaded_trained_adapter']
+    assert tensor_state_digest(state)==init['initial_adapter_digest']==checks['initial_adapter_digest']==fit['method']['reference_tensor_digest_before']
+    bs=[v for k,v in state.items() if 'lora_B' in k]
+    assert len(bs)==init['zero_B_matrices'] and all(bool((v==0).all()) for v in bs)
+    assert init['probe_maximum_logit_difference']==0 and cfg['parent_steps']==0 and 'loaded_adapter_sha256' not in fit
+    assert checks['initial_adapter_digest']!=combined['optimization_checks']['rank_checks'][0]['initial_adapter_digest']
+    result={'status':'fresh_base_zero_effect_initial_weights_chosen_only_loss_masks_steps_reference_base_warm_tokens_and_reviews_replayed',
+        'new_public_model_generations':7,'original_base_outputs_reused':7,'warm_chosen_outputs_reused':7,'new_optimizer_steps':96,'new_branch_steps':96,'cumulative_aurora_qwen35_steps':798,'reference_qwen25_steps':582,
+        'summary':summary,'actual_pair_presentations':checks['pair_presentations'],'actual_sequence_tokens':checks['actual_sequence_tokens'],'actual_preference_completion_tokens':checks['actual_target_tokens'],
+        'training_seconds':fit['training_seconds'],'scope':m['source_scope'],'comparison_scope':'Same3pairs/source/input/output masks/chosen-only objective/optimizer/seed/96steps/32presentations/runtime/GPU; fresh zero-effect LoRA replaces start256 history. New initialized adapter/prior exposure differ; not isolated rollback of a historical update. Negative/reference forward compute retained without preference gradient. Exposed development, not OOD.','independent_review_complete':False}
+    write_json(a.output,result);print(json.dumps(result,indent=2))
+
+if __name__=='__main__':main()
