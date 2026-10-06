@@ -1,0 +1,278 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-06T21:41:49.144440+00:00",
+  "new_model_outputs": 3,
+  "new_optimizer_steps": 0,
+  "cumulative_qwen35_steps": 2270,
+  "reference_qwen25_steps": 582,
+  "input_tokens": 1912,
+  "ordinary_plan_words": 378,
+  "old_shorthand_plan_words": 172,
+  "arms": {
+    "base": {
+      "content": {
+        "unmet": 7,
+        "met": 6,
+        "unratable": 1
+      },
+      "source": {
+        "unmet": 7,
+        "met": 1
+      },
+      "application": {
+        "unratable": 1,
+        "met": 5
+      },
+      "universal": {
+        "met": 4
+      },
+      "words": 347,
+      "original_strict_pass": false,
+      "presentation_checks": {
+        "ordinary_word_separation": "met",
+        "three_requested_sections": "unmet",
+        "no_source_repetition_failure": "met",
+        "within300ordinary_words": "unmet"
+      },
+      "usable_realization_pass": false
+    },
+    "raw8": {
+      "content": {
+        "met": 10,
+        "unmet": 3,
+        "unratable": 1
+      },
+      "source": {
+        "met": 4,
+        "unmet": 3,
+        "unratable": 1
+      },
+      "application": {
+        "met": 6
+      },
+      "universal": {
+        "met": 4
+      },
+      "words": 258,
+      "original_strict_pass": false,
+      "presentation_checks": {
+        "ordinary_word_separation": "met",
+        "three_requested_sections": "met",
+        "no_source_repetition_failure": "met",
+        "within300ordinary_words": "met"
+      },
+      "usable_realization_pass": false
+    },
+    "plan8": {
+      "content": {
+        "met": 14
+      },
+      "source": {
+        "met": 8
+      },
+      "application": {
+        "met": 6
+      },
+      "universal": {
+        "met": 4
+      },
+      "words": 367,
+      "original_strict_pass": false,
+      "presentation_checks": {
+        "ordinary_word_separation": "met",
+        "three_requested_sections": "met",
+        "no_source_repetition_failure": "met",
+        "within300ordinary_words": "unmet"
+      },
+      "usable_realization_pass": false
+    }
+  },
+  "older_shorthand_grades_unchanged": {
+    "base": {
+      "content": {
+        "unmet": 7,
+        "met": 6,
+        "unratable": 1
+      },
+      "source": {
+        "unmet": 7,
+        "met": 1
+      },
+      "application": {
+        "met": 5,
+        "unratable": 1
+      },
+      "universal": {
+        "met": 2,
+        "unratable": 2
+      },
+      "words": 324,
+      "original_strict_pass": false
+    },
+    "raw8": {
+      "content": {
+        "met": 10,
+        "unmet": 4
+      },
+      "source": {
+        "met": 4,
+        "unmet": 4
+      },
+      "application": {
+        "met": 6
+      },
+      "universal": {
+        "met": 4
+      },
+      "words": 190,
+      "original_strict_pass": false
+    },
+    "plan8": {
+      "content": {
+        "met": 14
+      },
+      "source": {
+        "met": 8
+      },
+      "application": {
+        "met": 6
+      },
+      "universal": {
+        "met": 4
+      },
+      "words": 161,
+      "original_strict_pass": true
+    }
+  },
+  "old_output_review_provenance": [
+    {
+      "arm": "base",
+      "run": "runs/aurora-plan-input-base-20261006-v1",
+      "output_digest": "2ff5a524d11b306f2ff55dfc372fd86c81d26e84a750af260cef7c27cf5a7405",
+      "review_digest": "64711242b85de1f275add9b09ea17593dcc4059a9a43cec23f31515caf1334ad",
+      "inspection_sha256": "ca15b944b60d81fc0000b6f8713360147745a9df7853af68fd7d8281c8da3b0a"
+    },
+    {
+      "arm": "raw8",
+      "run": "runs/aurora-plan-input-raw8-20261006-v1",
+      "output_digest": "32d0cbc9746ff654d3783a667fe8bc0b2845ae39bf509afbf345c242c0b726bc",
+      "review_digest": "9623865761be5dc6c41da76b9eb60a6e15a016ba03bfe60c664982286b561264",
+      "inspection_sha256": "f37b8c62a19af60070eef07ed465347361e75c7ffc929dcf1615625f12828a5a"
+    },
+    {
+      "arm": "plan8",
+      "run": "runs/aurora-plan-input-fit-20261006-v1",
+      "output_digest": "be45deb17a3193471da73dbaefc1aa6447c9ff1fbead05a5756fdcbc8dc87fbe",
+      "review_digest": "eee821013d738ffe706577b184003a3324dd25500236310adfb87e8579bf7700",
+      "inspection_sha256": "1a94e8921b3e4f0cbc383fc1e6d3c5e6cdf4a33c644e6013d55d0531ded79251"
+    }
+  ],
+  "resources": [
+    {
+      "run": "runs/aurora-ordinary-points-base-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1628435,
+        "process_start_ticks": 1157827792,
+        "process_start_utc": "2026-10-06T21:31:07.920000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-ordinary-points-base-20261006-v2.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-ordinary-points-base-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-plan-input-fit-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-ordinary-points-raw8-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1630827,
+        "process_start_ticks": 1157843630,
+        "process_start_utc": "2026-10-06T21:33:46.300000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-ordinary-points-raw8-20261006-v2.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-ordinary-points-raw8-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-ordinary-points-base-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-ordinary-points-plan8-20261006-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1633927,
+        "process_start_ticks": 1157863322,
+        "process_start_utc": "2026-10-06T21:37:03.220000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_model_generated_plan.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-ordinary-points-plan8-20261006-v2.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-ordinary-points-plan8-20261006-v2",
+          "--previous-inspected-run",
+          "runs/aurora-ordinary-points-raw8-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "all_three_owned_gpu_identities_exited": true,
+  "all_three_uncapped_full_outputs_read": true,
+  "generated_tokens": 1305,
+  "generation_seconds": 29.83040826395154,
+  "independent_review_complete": false,
+  "scope": "Exposed Brazil ICC development; only plan representation/length change, no new facts or decisions intended. Same source/scenario/rubric/contract/model/runtime for base/raw8/plan8. Three calls, zero optimization; independent review pending.",
+  "next_decision": "All14given meanings can transfer with ordinaryEnglish, but current eightpoint-input examples teachexactbulletflattening, not compression:378wordplan->367wordanswer. Base6met+1uncertain/14 at347words/fivesections, raw8=10met+1uncertain/14 at258words, plan8=14/14 at367words; usablepasses0/3. Next candidate: compression-specific realization supervision, same8preferredshortanswers/nativechosen tokens/fresh256updatebudget, longer ordinaryEnglish teacherplans that preserve exactly their source/decision meanings. Prefer actualLLM-expanded plans, handinspect/correct all, preserve originalteacherrecords; freeze newoutside sourcefamily/strongbaseplan controls beforefit. No more sentence-for-sentence copying fits. This is a candidate, no nextpack/fit/queue/sweep prepared."
+}
