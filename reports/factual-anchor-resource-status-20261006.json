@@ -1,0 +1,261 @@
+{
+  "checked_at": "2026-10-06T06:12:17.477477+00:00",
+  "all_seven_gpu_process_identities_exited": true,
+  "project_terminations": 0,
+  "unfamiliar_processes_changed": false,
+  "actual_new_public_outputs": 18,
+  "actual_generated_tokens": 6721,
+  "actual_generation_seconds": 137.93725533783436,
+  "actual_new_optimizer_steps": 32,
+  "launches": [
+    {
+      "run_directory": "runs/aurora-factual-anchor-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 791290,
+        "process_start_ticks": 1152134274,
+        "process_start_utc": "2026-10-06T05:42:12.740000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_factual_anchor_checkpoint.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-factual-anchor-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-factual-anchor-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "recorded_identity_live": false,
+      "optimizer_steps": 0,
+      "new_public_outputs": 5,
+      "run_sha256": "9b78a54d3b2c10c8a6d402a78563dcabf69257c7b17c191ef8d63f49f0fd44d5"
+    },
+    {
+      "run_directory": "runs/aurora-factual-anchor-parent-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 794352,
+        "process_start_ticks": 1152153504,
+        "process_start_utc": "2026-10-06T05:45:25.040000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_factual_anchor_checkpoint.py",
+          "--mode",
+          "parent",
+          "--config",
+          "configs/posttraining/qwen35-factual-anchor-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-factual-anchor-parent-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-factual-anchor-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "recorded_identity_live": false,
+      "optimizer_steps": 0,
+      "new_public_outputs": 5,
+      "run_sha256": "1d3e063fdae2c72914cf662773b79e02e112be9fc52a7961000fabb0b95e6ca2"
+    },
+    {
+      "run_directory": "runs/aurora-factual-anchor-fit-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 797412,
+        "process_start_ticks": 1152172694,
+        "process_start_utc": "2026-10-06T05:48:36.940000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_factual_anchor_checkpoint.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-factual-anchor-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-factual-anchor-fit-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-factual-anchor-parent-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "recorded_identity_live": false,
+      "optimizer_steps": 32,
+      "new_public_outputs": 5,
+      "run_sha256": "47578b604520367729a1507c5a5d271cf6593733905aca4c6f829252b0de00c8"
+    },
+    {
+      "run_directory": "runs/aurora-factual-anchor-pair-metrics-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 810818,
+        "process_start_ticks": 1152268660,
+        "process_start_utc": "2026-10-06T06:04:36.600000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/replay_factual_anchor_metrics.py",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-factual-anchor-pair-metrics-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "clean_single_fitted_pair_metrics_replayed",
+      "recorded_identity_live": false,
+      "optimizer_steps": 0,
+      "new_public_outputs": 0,
+      "run_sha256": "c74956702e0ffccb2a6a278be0383d176560b477505c44c95262330540308e9a"
+    },
+    {
+      "run_directory": "runs/aurora-factual-repair-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 813001,
+        "process_start_ticks": 1152275982,
+        "process_start_utc": "2026-10-06T06:05:49.820000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_native_reasoning_probe.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-factual-repair-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-factual-repair-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "recorded_identity_live": false,
+      "optimizer_steps": 0,
+      "new_public_outputs": 1,
+      "run_sha256": "3989f716b54ad6d7d7f718c10300ff17fb4ea55e6041d43be627f4ece783a237"
+    },
+    {
+      "run_directory": "runs/aurora-factual-repair-parent-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 816179,
+        "process_start_ticks": 1152287440,
+        "process_start_utc": "2026-10-06T06:07:44.400000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_native_reasoning_probe.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-factual-repair-20261006-v1-parent.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-factual-repair-parent-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-factual-repair-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "recorded_identity_live": false,
+      "optimizer_steps": 0,
+      "new_public_outputs": 1,
+      "run_sha256": "7550f8e47a544a99215e64c53128b8f5a0a1a60ca0c1f682d1a611f79ba75efd"
+    },
+    {
+      "run_directory": "runs/aurora-factual-repair-new-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 817873,
+        "process_start_ticks": 1152296826,
+        "process_start_utc": "2026-10-06T06:09:18.260000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_native_reasoning_probe.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-factual-repair-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-factual-repair-new-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-factual-repair-parent-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "status": "completed",
+      "recorded_identity_live": false,
+      "optimizer_steps": 0,
+      "new_public_outputs": 1,
+      "run_sha256": "ea73e8efc6067fa3739a9c4745b94543992ee8caaf7ec2c92059eab349c468d2"
+    }
+  ]
+}
