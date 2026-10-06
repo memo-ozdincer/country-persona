@@ -1,0 +1,89 @@
+{
+  "status": "four_native_mode_traces_and_public_annotations_replayed",
+  "new_model_calls": 4,
+  "new_optimizer_steps": 0,
+  "cumulative_aurora_qwen35_steps": 414,
+  "reference_qwen25_steps": 582,
+  "summary": {
+    "base-off": {
+      "content_met": 22,
+      "content_unratable": 0,
+      "content_units": 24,
+      "guards_met": 2,
+      "synthesis_met": 3,
+      "source_criteria_pass": false,
+      "public_words": 358,
+      "within300words": false,
+      "reasoning_tokens": 0,
+      "public_tokens_including_eos": 513,
+      "total_generated_tokens": 513,
+      "generation_seconds": 8.05488339997828,
+      "at_output_cap": false,
+      "protocol_status": "public_answer"
+    },
+    "adapter-off": {
+      "content_met": 17,
+      "content_unratable": 3,
+      "content_units": 24,
+      "guards_met": 1,
+      "synthesis_met": 3,
+      "source_criteria_pass": false,
+      "public_words": 312,
+      "within300words": false,
+      "reasoning_tokens": 0,
+      "public_tokens_including_eos": 396,
+      "total_generated_tokens": 396,
+      "generation_seconds": 9.822808738797903,
+      "at_output_cap": false,
+      "protocol_status": "public_answer"
+    },
+    "base-on": {
+      "content_met": 0,
+      "content_unratable": 0,
+      "content_units": 24,
+      "guards_met": 0,
+      "synthesis_met": 0,
+      "source_criteria_pass": false,
+      "public_words": 0,
+      "within300words": false,
+      "reasoning_tokens": 2048,
+      "public_tokens_including_eos": 0,
+      "total_generated_tokens": 2048,
+      "generation_seconds": 30.650594651699066,
+      "at_output_cap": true,
+      "protocol_status": "no_public_boundary"
+    },
+    "adapter-on": {
+      "content_met": 0,
+      "content_unratable": 0,
+      "content_units": 24,
+      "guards_met": 0,
+      "synthesis_met": 0,
+      "source_criteria_pass": false,
+      "public_words": 0,
+      "within300words": false,
+      "reasoning_tokens": 2048,
+      "public_tokens_including_eos": 0,
+      "total_generated_tokens": 2048,
+      "generation_seconds": 48.526392959058285,
+      "at_output_cap": true,
+      "protocol_status": "no_public_boundary"
+    }
+  },
+  "historical512_prefix_replay": {
+    "base-off": {
+      "old512_tokens": 512,
+      "old_at_cap": true,
+      "old_input_ids_equal": true,
+      "old_output_ids_match_new_prefix": true
+    },
+    "adapter-off": {
+      "old512_tokens": 396,
+      "old_at_cap": false,
+      "old_input_ids_equal": true,
+      "old_output_ids_match_new_prefix": true
+    }
+  },
+  "actual_input_output_tokens_replayed": true,
+  "scope": "Same exposed one-family development, same unblinded assistant. Native mode/decoder changes consume a different share of a matched total budget. Sampling followup is one fixed-seed draw per weight arm, not an expected-performance estimate or isolated presence effect. No independent persona, sealed OOD, native vote or multi-agent gain."
+}
