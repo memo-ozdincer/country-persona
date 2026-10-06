@@ -1,0 +1,182 @@
+{
+  "created_at": "2026-10-06T14:26:47.063870+00:00",
+  "status": "four_complete_answers_read_zero_fit_source_scope_diagnostic_completed",
+  "new_model_generations": 4,
+  "new_optimizer_steps": 0,
+  "cumulative_aurora_qwen35_steps": 1246,
+  "reference_qwen25_steps": 582,
+  "selected_branch_steps": 288,
+  "new_complete_stored_outputs_since_v11": 228,
+  "legacy_output_count_scope": "Includes historical reasoning-only/capped records; not228public task answers.",
+  "all_new_answers_uncapped": true,
+  "all_new_answers_read_complete": true,
+  "resources": {
+    "base": {
+      "run_directory": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-haiti-source-scope-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1245710,
+        "process_start_ticks": 1155227070,
+        "process_start_utc": "2026-10-06T14:17:40.700000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_haiti_source_scope_checkpoint.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-haiti-source-scope-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-haiti-source-scope-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-conditional-india-fit-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "current_pid_present": false,
+      "current_process_start_ticks": null,
+      "original_identity_exited": true
+    },
+    "adapter": {
+      "run_directory": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-haiti-source-scope-adapter-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1249046,
+        "process_start_ticks": 1155248655,
+        "process_start_utc": "2026-10-06T14:21:16.550000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_haiti_source_scope_checkpoint.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-haiti-source-scope-adapter-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-haiti-source-scope-adapter-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-haiti-source-scope-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "current_pid_present": false,
+      "current_process_start_ticks": null,
+      "original_identity_exited": true
+    }
+  },
+  "all_two_owned_process_identities_exited": true,
+  "unfamiliar_processes_changed": false,
+  "summary": {
+    "base": {
+      "combined": {
+        "haiti-bra-raw": {
+          "met": 7,
+          "unratable": 1,
+          "units": 14,
+          "words": 313,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 6,
+          "unratable": 0,
+          "units": 14,
+          "words": 315,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        }
+      },
+      "own": {
+        "haiti-bra-raw": {
+          "met": 3,
+          "unratable": 1,
+          "units": 14,
+          "words": 301,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 7,
+          "unratable": 0,
+          "units": 14,
+          "words": 266,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        }
+      }
+    },
+    "adapter": {
+      "combined": {
+        "haiti-bra-raw": {
+          "met": 5,
+          "unratable": 2,
+          "units": 14,
+          "words": 194,
+          "at_cap": false,
+          "universal_met": 2,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 6,
+          "unratable": 2,
+          "units": 14,
+          "words": 217,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        }
+      },
+      "own": {
+        "haiti-bra-raw": {
+          "met": 7,
+          "unratable": 0,
+          "units": 14,
+          "words": 153,
+          "at_cap": false,
+          "universal_met": 4,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 7,
+          "unratable": 0,
+          "units": 14,
+          "words": 210,
+          "at_cap": false,
+          "universal_met": 4,
+          "strict_pass": false
+        }
+      }
+    }
+  },
+  "actual_generated_tokens": 1228,
+  "actual_generation_seconds": 23.772973688319325,
+  "replay_sha256": "f18997d62a82468a324692396ee3a58557b330897b75c5a8ec3166c20b51452d",
+  "pack_manifest_sha256": "81394b2de0e23b4dd34eda90b807e06f10efa0fcc322ee491eed1cc00713eae2",
+  "next_decision": "One bounded fresh-base chosen-only SFT comparison using hand-audited complete single-country responses across existing source families; freeze a separate outside-fitting family and strong base-plus-plan controls first. Preserve conditional authority distinctions. Select target count/budget after audit; no next pack/fit/queue/sweep prepared.",
+  "next_pack_prepared": false,
+  "independent_review_complete": false,
+  "persona_native_prediction_or_mult_agent_gain_claimed": false,
+  "comparison_scope": "Only peer speech and separator removed, same own speech/system/scenario/questions/criteria. Source scope/input length coupled; exposed development and same assistant grades."
+}

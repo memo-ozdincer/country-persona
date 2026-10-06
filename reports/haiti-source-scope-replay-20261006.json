@@ -1,0 +1,163 @@
+{
+  "status": "source_deletion_tokens_protocol_weights_four_answers_and_stored_annotations_replayed",
+  "new_model_generations": 4,
+  "new_optimizer_steps": 0,
+  "generated_tokens": 1228,
+  "generation_seconds": 23.772973688319325,
+  "summary": {
+    "base": {
+      "combined": {
+        "haiti-bra-raw": {
+          "met": 7,
+          "unratable": 1,
+          "units": 14,
+          "words": 313,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 6,
+          "unratable": 0,
+          "units": 14,
+          "words": 315,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        }
+      },
+      "own": {
+        "haiti-bra-raw": {
+          "met": 3,
+          "unratable": 1,
+          "units": 14,
+          "words": 301,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 7,
+          "unratable": 0,
+          "units": 14,
+          "words": 266,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        }
+      }
+    },
+    "adapter": {
+      "combined": {
+        "haiti-bra-raw": {
+          "met": 5,
+          "unratable": 2,
+          "units": 14,
+          "words": 194,
+          "at_cap": false,
+          "universal_met": 2,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 6,
+          "unratable": 2,
+          "units": 14,
+          "words": 217,
+          "at_cap": false,
+          "universal_met": 0,
+          "strict_pass": false
+        }
+      },
+      "own": {
+        "haiti-bra-raw": {
+          "met": 7,
+          "unratable": 0,
+          "units": 14,
+          "words": 153,
+          "at_cap": false,
+          "universal_met": 4,
+          "strict_pass": false
+        },
+        "haiti-gbr-raw": {
+          "met": 7,
+          "unratable": 0,
+          "units": 14,
+          "words": 210,
+          "at_cap": false,
+          "universal_met": 4,
+          "strict_pass": false
+        }
+      }
+    }
+  },
+  "resources": {
+    "base": {
+      "run_directory": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-haiti-source-scope-base-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1245710,
+        "process_start_ticks": 1155227070,
+        "process_start_utc": "2026-10-06T14:17:40.700000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_haiti_source_scope_checkpoint.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-haiti-source-scope-base-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-haiti-source-scope-base-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-conditional-india-fit-20261006-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      }
+    },
+    "adapter": {
+      "run_directory": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/aurora-haiti-source-scope-adapter-20261006-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1249046,
+        "process_start_ticks": 1155248655,
+        "process_start_utc": "2026-10-06T14:21:16.550000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_haiti_source_scope_checkpoint.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-haiti-source-scope-adapter-20261006-v1.json",
+          "--gpu-uuid",
+          "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+          "--output",
+          "runs/aurora-haiti-source-scope-adapter-20261006-v1",
+          "--previous-inspected-run",
+          "runs/aurora-haiti-source-scope-base-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-e485015c-8b0a-afe0-666e-86eec344e76f",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      }
+    }
+  },
+  "cumulative_aurora_qwen35_steps": 1246,
+  "reference_qwen25_steps": 582,
+  "independent_review_complete": false,
+  "scope": "Exposed Haiti development. Source scope and input length change together. Same national task/scenario/questions/criteria, no new checked plan or fitting. Government-persona, native prediction, independent review and sealed OOD remain unestablished."
+}
