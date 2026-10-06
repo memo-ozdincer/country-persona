@@ -1,0 +1,43 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "max_length": 8192,
+  "pack": "data/prepared/repaired-state-20261006-v1",
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "generation_max_new_tokens": 2048,
+  "kind": "matched_chosen_only_sft_ablation",
+  "authorization": "User requests recursive informative minimal country experiments, fully inspected data and results before scaling.",
+  "starting_adapter": "runs/aurora-raw-coverage-fit-20261006-v1/adapter",
+  "starting_adapter_sha256": "da241c3b31bcf6680b99824362df312fb42fdb79d1079ccb2acdb6c1c5a26a79",
+  "max_steps": 96,
+  "gradient_accumulation_steps": 1,
+  "learning_rate": 5e-05,
+  "dpo_beta": 0.1,
+  "dpo_loss_types": [
+    "sft"
+  ],
+  "dpo_loss_weights": [
+    1.0
+  ],
+  "disable_dropout": true,
+  "baseline_run": "runs/aurora-repaired-state-parent-replay-20261006-v1",
+  "starting_adapter_config_sha256": "661b878790bd5b8f8180bb888ec44f3a5cbfad10f1831ae0c50705e1bdac2aad",
+  "training_examples": 3,
+  "eval_cases": 7,
+  "parent_steps": 256,
+  "comparison_run": "runs/aurora-repaired-state-fit-20261006-v1",
+  "preparation": "reports/chosen-sft-preparation-20261006.json"
+}
