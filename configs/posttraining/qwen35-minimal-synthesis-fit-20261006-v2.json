@@ -1,0 +1,35 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "runtime_path": "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1",
+  "runtime_pins": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "trl": "1.14.1",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0"
+  },
+  "seed": 42,
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "max_length": 8192,
+  "generation_max_new_tokens": 512,
+  "max_steps": 32,
+  "gradient_accumulation_steps": 2,
+  "lora_rank": 8,
+  "learning_rate": 5e-05,
+  "pack": "data/prepared/minimal-synthesis-fit-20261006-v2",
+  "baseline_run": "runs/aurora-minimal-synthesis-parent-replay-20261006-v2",
+  "kind": "one_complete_synthesis_target_warm_start",
+  "authorization": "User explicitly requests recursive minimal country pipeline experiments, complete selected-data reading, inspection then scale.",
+  "change_from_v1": "Materialize JSONL iterator as a list before token audit and Dataset.from_list. Rerun base with identical generation protocol; failed v2 fit made zero optimizer steps.",
+  "change_from_v2": "Only optimizer budget rises from 16 to 64 steps, fresh same base, same four targets, same frozen ten cases. Decision follows inspected v3 fit; not a sweep.",
+  "selection_inspection_sha256": "3184db314131994c52e8d4ab093d5171b9ab7a90beaef3cc44b74b013ab5f74e",
+  "starting_adapter": "runs/aurora-minimal-country-fit-20261005-v4/adapter",
+  "starting_adapter_sha256": "beacf1b23a7ebc5363b1e71d1ae90ed3e9b8f30323220b3d6240dc20fea257cd",
+  "starting_adapter_config_sha256": "870801840354b4a60fd384f639d7f30592a40acac2905ad82d3a887f8e9bd022",
+  "change_from_v3": "One complete source-only climate target; warm-start saved four-example adapter with new optimizer32steps. Frozen Ukraine raw/checked-plan comparison and two sanctions retention controls. Base/parent/fit use identical six prompts and512cap/8192context. v2 corrects only the missing per-row nonthinking template flag; controls are explicit token replays of actual v1 generations, with no new model calls."
+}
