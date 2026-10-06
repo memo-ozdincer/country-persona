@@ -36,7 +36,9 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "native-sampling-20261006-v1", "native-sampling-20261006-v2",
             "country-source-cards-20261006-v1", "country-source-cards-20261006-v2",
             "country-source-bridge-20261006-v1", "factual-anchor-20261006-v1",
-            "factual-repair-20261006-v1", "factual-repair-20261006-v1-parent")
+            "factual-repair-20261006-v1", "factual-repair-20261006-v1-parent",
+            "raw-coverage-20261006-v1", "raw-update-status-20261006-v1",
+            "raw-update-status-20261006-v1-parent")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
