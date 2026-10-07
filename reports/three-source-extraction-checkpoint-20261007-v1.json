@@ -1,0 +1,468 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-07T09:11:38.077573+00:00",
+  "new_model_outputs": 15,
+  "uncapped": 15,
+  "capped": 0,
+  "new_optimizer_steps": 96,
+  "cumulative_qwen35_steps": 3198,
+  "reference_qwen25_steps": 582,
+  "all_owned_gpu_identities_exited": true,
+  "resources": [
+    {
+      "run": "runs/aurora-india-actual-extraction-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2624909,
+        "process_start_ticks": 1161702885,
+        "process_start_utc": "2026-10-07T08:16:58.850000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-india-actual-extraction-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-india-actual-extraction-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-two-country-application-French-monitor-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-india-actual-extraction-source64-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2631144,
+        "process_start_ticks": 1161725640,
+        "process_start_utc": "2026-10-07T08:20:46.400000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-india-actual-extraction-source64-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-india-actual-extraction-source64-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-india-actual-extraction-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-three-source-extraction-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2646643,
+        "process_start_ticks": 1161783319,
+        "process_start_utc": "2026-10-07T08:30:23.190000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_source_status_controls.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-three-source-extraction-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-three-source-extraction-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-india-actual-extraction-source64-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-three-source-extraction-Brazil-source64-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2657430,
+        "process_start_ticks": 1161823770,
+        "process_start_utc": "2026-10-07T08:37:07.700000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-three-source-extraction-Brazil-source64-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-three-source-extraction-Brazil-source64-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-three-source-extraction-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-three-source-extraction-fit-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2665898,
+        "process_start_ticks": 1161853018,
+        "process_start_utc": "2026-10-07T08:42:00.180000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_three_source_extraction_fit.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-three-source-extraction-fit-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-three-source-extraction-fit-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-three-source-extraction-Brazil-source64-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-india-raw-application-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2687510,
+        "process_start_ticks": 1161911597,
+        "process_start_utc": "2026-10-07T08:51:45.970000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-india-raw-application-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-india-raw-application-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-three-source-extraction-fit-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-india-raw-application-adapter-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2694627,
+        "process_start_ticks": 1161933074,
+        "process_start_utc": "2026-10-07T08:55:20.740000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-india-raw-application-adapter-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-india-raw-application-adapter-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-india-raw-application-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-india-raw-writer-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2706335,
+        "process_start_ticks": 1161973484,
+        "process_start_utc": "2026-10-07T09:02:04.840000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-india-raw-writer-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-india-raw-writer-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-india-raw-application-adapter-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-india-raw-writer-point8-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2716586,
+        "process_start_ticks": 1162006542,
+        "process_start_utc": "2026-10-07T09:07:35.420000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-india-raw-writer-point8-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-india-raw-writer-point8-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-india-raw-writer-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "summaries": {
+    "aurora-india-actual-extraction-base-20261007-v1": [
+      {
+        "id": "india-sanctions-complete-source-extraction",
+        "content": {
+          "met": 5,
+          "unmet": 3
+        },
+        "words": 151,
+        "pass": false
+      }
+    ],
+    "aurora-india-actual-extraction-source64-20261007-v1": [
+      {
+        "id": "india-sanctions-complete-source-extraction",
+        "content": {
+          "met": 8
+        },
+        "words": 217,
+        "pass": false
+      }
+    ],
+    "aurora-three-source-extraction-base-20261007-v1": [
+      {
+        "id": "ukraine24-fra-source-only-planner",
+        "content": {
+          "unmet": 7,
+          "met": 1
+        },
+        "words": 146,
+        "pass": false
+      },
+      {
+        "id": "libya-fra-source-only-monitor",
+        "content": {
+          "unmet": 7,
+          "met": 1
+        },
+        "words": 163,
+        "pass": false
+      },
+      {
+        "id": "india-sanctions-complete-source-extraction",
+        "content": {
+          "met": 5,
+          "unmet": 3
+        },
+        "words": 151,
+        "pass": false
+      },
+      {
+        "id": "brazil-sanctions-complete-source-monitor",
+        "content": {
+          "unmet": 6,
+          "met": 2
+        },
+        "words": 115,
+        "pass": false
+      }
+    ],
+    "aurora-three-source-extraction-Brazil-source64-20261007-v1": [
+      {
+        "id": "brazil-sanctions-complete-source-monitor",
+        "content": {
+          "unmet": 3,
+          "met": 4,
+          "unratable": 1
+        },
+        "words": 206,
+        "pass": false
+      }
+    ],
+    "aurora-three-source-extraction-fit-20261007-v1": [
+      {
+        "id": "ukraine24-fra-source-only-planner",
+        "content": {
+          "met": 8
+        },
+        "words": 207,
+        "pass": true
+      },
+      {
+        "id": "libya-fra-source-only-monitor",
+        "content": {
+          "met": 8
+        },
+        "words": 210,
+        "pass": true
+      },
+      {
+        "id": "india-sanctions-complete-source-extraction",
+        "content": {
+          "met": 8
+        },
+        "words": 178,
+        "pass": true
+      },
+      {
+        "id": "brazil-sanctions-complete-source-monitor",
+        "content": {
+          "met": 6,
+          "unmet": 2
+        },
+        "words": 200,
+        "pass": false
+      }
+    ],
+    "aurora-india-raw-application-base-20261007-v1": [
+      {
+        "id": "india-Q-actual-extraction-application",
+        "content": {
+          "unmet": 4,
+          "met": 2
+        },
+        "words": 67,
+        "pass": false
+      }
+    ],
+    "aurora-india-raw-application-adapter-20261007-v1": [
+      {
+        "id": "india-Q-actual-extraction-application",
+        "content": {
+          "unmet": 1,
+          "met": 5
+        },
+        "words": 77,
+        "pass": false
+      }
+    ],
+    "aurora-india-raw-writer-base-20261007-v1": [
+      {
+        "id": "india-Q-actual-source-and-application-writer",
+        "content": {
+          "met": 6,
+          "unmet": 8
+        },
+        "words": 209,
+        "pass": false
+      }
+    ],
+    "aurora-india-raw-writer-point8-20261007-v1": [
+      {
+        "id": "india-Q-actual-source-and-application-writer",
+        "content": {
+          "met": 14
+        },
+        "words": 241,
+        "pass": true
+      }
+    ]
+  },
+  "original_two_French_source_targets_and_inputs_unchanged": true,
+  "complete_primary_source_inputs_verified": true,
+  "actual_presentations_each": 32,
+  "training_seconds": 137.7458575181663,
+  "peak_allocated_gpu_gib": 15.116986751556396,
+  "independent_review_complete": false,
+  "scope": "Three source-only fitting targets and Brazil outside fit, all historically exposed sources. Eight source compounds/guards; downstream actual outputs unedited. Same-assistant adaptive development, not independent quality/strongOOD/persona/nativeprediction/multiagent gain."
+}
