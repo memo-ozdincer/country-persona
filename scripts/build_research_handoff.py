@@ -73,7 +73,10 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "source-status-application-block-20261007-v1", "source-status-application-block-20261007-v2",
             "minimal-application-20261007-v1-uncalled-draft", "minimal-application-20261007-v1",
             "minimal-application-fit-20261007-v1", "actual-composed-writer-20261007-v1",
-            "application-current-state-20261007-v1")
+            "application-current-state-20261007-v1",
+            "paired-application-states-20261007-v1", "paired-application-monitor-20261007-v1",
+            "paired-application-fit-20261007-v1", "paired-application-endpoint-20261007-v1",
+            "paired-application-format-control-20261007-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
