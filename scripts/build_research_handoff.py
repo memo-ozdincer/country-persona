@@ -66,7 +66,8 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "compact-points-20261007-v2", "compact-france-20261007-v1",
             "actual-compact-planner-20261007-v1", "actual-compact-planner-checked-20261007-v1",
             "source-only-compact-probe-20261007-v1", "source-extraction-20261007-v1",
-            "source-extraction-fit-20261007-v1")
+            "source-extraction-fit-20261007-v1", "extraction-diversity-20261007-v1",
+            "extraction-diversity-monitor-20261007-v1", "extraction-diversity-fit-20261007-v1", "modal-status-probe-20261007-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
@@ -76,7 +77,7 @@ RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expa
        "source-application-grounding-20261003-v1", "coverage-objective-grounding-20261003-v1",
        "conditional-india-haiti-grounding-20261006-v1", "diverse-country-somalia-grounding-20261006-v1",
        "two-context-training-grounding-20261006-v1", "two-context-sudan-grounding-20261006-v1",
-       "plan-input-icc-grounding-20261006-v1", "compression-libya-grounding-20261006-v1", "compact-planner-ukraine-grounding-20261007-v1")
+       "plan-input-icc-grounding-20261006-v1", "compression-libya-grounding-20261006-v1", "compact-planner-ukraine-grounding-20261007-v1", "extraction-diversity-gaza-grounding-20261007-v1")
 SKIP_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", "node_modules", ".cache"}
 SECRET = re.compile(rb"hf_[A-Za-z0-9]{20,}|-----BEGIN (?:OPENSSH |RSA |EC )?PRIVATE KEY-----")
 QUOTED_KEY_HEADER = re.compile(

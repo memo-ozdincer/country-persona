@@ -1,0 +1,293 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-07T03:35:37.230828+00:00",
+  "summaries": {
+    "aurora-extraction-diversity-base-20261007-v1": {
+      "ukraine24-fra-source-only-planner": {
+        "content": {
+          "unmet": 7,
+          "met": 1
+        },
+        "universal": {
+          "met": 2,
+          "unmet": 2
+        },
+        "words": 146,
+        "task_pass": false,
+        "capped": false
+      },
+      "libya-fra-source-only-monitor": {
+        "content": {
+          "unmet": 7,
+          "met": 1
+        },
+        "universal": {
+          "met": 2,
+          "unratable": 2
+        },
+        "words": 163,
+        "task_pass": false,
+        "capped": false
+      },
+      "gaza24-fra-source-only-monitor": {
+        "content": {
+          "unmet": 5,
+          "met": 3
+        },
+        "universal": {
+          "met": 4
+        },
+        "words": 214,
+        "task_pass": false,
+        "capped": false
+      }
+    },
+    "aurora-extraction-diversity-monitor-old64-20261007-v1": {
+      "gaza24-fra-source-only-monitor": {
+        "content": {
+          "unmet": 2,
+          "met": 6
+        },
+        "universal": {
+          "met": 4
+        },
+        "words": 236,
+        "task_pass": false,
+        "capped": false
+      }
+    },
+    "aurora-extraction-diversity-fit-20261007-v1": {
+      "ukraine24-fra-source-only-planner": {
+        "content": {
+          "met": 8
+        },
+        "universal": {
+          "met": 4
+        },
+        "words": 198,
+        "task_pass": true,
+        "capped": false
+      },
+      "libya-fra-source-only-monitor": {
+        "content": {
+          "met": 8
+        },
+        "universal": {
+          "met": 4
+        },
+        "words": 194,
+        "task_pass": true,
+        "capped": false
+      },
+      "gaza24-fra-source-only-monitor": {
+        "content": {
+          "unmet": 8
+        },
+        "universal": {
+          "met": 2,
+          "unratable": 2
+        },
+        "words": 2030,
+        "task_pass": false,
+        "capped": true
+      }
+    },
+    "aurora-extraction-diversity-fit64-20261007-v1": {
+      "ukraine24-fra-source-only-planner": {
+        "content": {
+          "met": 8
+        },
+        "universal": {
+          "met": 4
+        },
+        "words": 198,
+        "task_pass": true,
+        "capped": false
+      },
+      "libya-fra-source-only-monitor": {
+        "content": {
+          "met": 8
+        },
+        "universal": {
+          "met": 4
+        },
+        "words": 194,
+        "task_pass": true,
+        "capped": false
+      },
+      "gaza24-fra-source-only-monitor": {
+        "content": {
+          "unmet": 4,
+          "met": 2,
+          "unratable": 2
+        },
+        "universal": {
+          "met": 2,
+          "unmet": 2
+        },
+        "words": 195,
+        "task_pass": false,
+        "capped": false
+      }
+    }
+  },
+  "resources": [
+    {
+      "run": "runs/aurora-extraction-diversity-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2108879,
+        "process_start_ticks": 1159859636,
+        "process_start_utc": "2026-10-07T03:09:46.360000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_extraction_diversity_controls.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-extraction-diversity-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-extraction-diversity-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-source-extraction-fit64-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-extraction-diversity-monitor-old64-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2113958,
+        "process_start_ticks": 1159877802,
+        "process_start_utc": "2026-10-07T03:12:48.020000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-extraction-diversity-monitor-old64-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-extraction-diversity-monitor-old64-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-extraction-diversity-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-extraction-diversity-fit-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2116788,
+        "process_start_ticks": 1159885754,
+        "process_start_utc": "2026-10-07T03:14:07.540000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_extraction_diversity_fit.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-extraction-diversity-fit-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-extraction-diversity-fit-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-extraction-diversity-monitor-old64-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-extraction-diversity-fit64-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2127129,
+        "process_start_ticks": 1159922971,
+        "process_start_utc": "2026-10-07T03:20:19.710000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_extraction_diversity_fit64.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-extraction-diversity-fit64-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-extraction-diversity-fit64-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-extraction-diversity-fit-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "all_four_owned_gpu_identities_exited": true,
+  "new_model_outputs": 10,
+  "all_outputs_hand_read": true,
+  "uncapped": 9,
+  "capped": 1,
+  "new_optimizer_steps": 192,
+  "cumulative_qwen35_steps": 2814,
+  "reference_qwen25_steps": 582,
+  "training_seconds": 193.66668327338994,
+  "peak_allocated_gpu_gib": 14.989213466644287,
+  "native_training_checks": {
+    "initial_digest": "6372b4c0d640d45fa81bd7c79ac522485dbe96a79b8369fd422a2c4a698b2772",
+    "actual_sequence_tokens": 367552,
+    "actual_both_completion_tokens": 68032,
+    "actual_chosen_supervised_tokens": 39552,
+    "presentations": {
+      "ukraine24-fra-source-only-planner": 64,
+      "libya-fra-source-only-monitor": 64
+    }
+  },
+  "independent_review_complete": false,
+  "scope": "Two-source extraction fitting and one same-genre/new-source monitor; source-only8unit task, full14unit application/persona/multiagent claims unproved. Totalbudget doubled versusone-source64.",
+  "lower_exposure_training_seconds": 98.76789369061589,
+  "lower_exposure_peak_allocated_gpu_gib": 14.989213466644287,
+  "next_decision": "No morefullsummaryfits yet. Run one two-clause quote/status diagnostic onunchanged completeheldsource, identicalinputto base/new64, to distinguish reading/status knowledge fromcompression-inducedloss. Then consider explicit actor/status slots andmodal-word-preservingtargets, not moreupdates or bulk data."
+}
