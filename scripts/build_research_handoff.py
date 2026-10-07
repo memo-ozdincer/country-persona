@@ -60,7 +60,10 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "plan-input-fit-20261006-v1", "ordinary-points-20261006-v1",
             "ordinary-points-20261006-v2", "compression-teacher-20261006-v1",
             "compression-teacher-probe-20261006-v1", "compression-teacher-remaining-20261006-v1",
-            "compression-student-draft-20261006-v2")
+            "compression-student-draft-20261006-v2", "compression-checkpoint-20261006-v1",
+            "compression-parent-controls-20261006-v1", "compression-fit-20261006-v1",
+            "compression-points-only-20261007-v1", "compact-points-20261007-v1",
+            "compact-points-20261007-v2")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",

@@ -1,0 +1,173 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-07T00:55:17.327666+00:00",
+  "summaries": {
+    "base": {
+      "content": {
+        "unmet": 6,
+        "met": 7,
+        "unratable": 1
+      },
+      "words": 259,
+      "universal": {
+        "met": 2,
+        "unratable": 2
+      },
+      "presentation": {
+        "ordinary_word_separation": true,
+        "three_requested_sections": true,
+        "no_source_repetition_failure": true,
+        "within300ordinary_words": true
+      },
+      "usable_realization_pass": false
+    },
+    "point8": {
+      "content": {
+        "met": 14
+      },
+      "words": 262,
+      "universal": {
+        "met": 4
+      },
+      "presentation": {
+        "ordinary_word_separation": true,
+        "three_requested_sections": true,
+        "no_source_repetition_failure": true,
+        "within300ordinary_words": true
+      },
+      "usable_realization_pass": true
+    },
+    "compression8": {
+      "content": {
+        "met": 14
+      },
+      "words": 250,
+      "universal": {
+        "met": 4
+      },
+      "presentation": {
+        "ordinary_word_separation": true,
+        "three_requested_sections": true,
+        "no_source_repetition_failure": true,
+        "within300ordinary_words": true
+      },
+      "usable_realization_pass": true
+    }
+  },
+  "new_model_outputs": 3,
+  "new_optimizer_steps": 0,
+  "cumulative_qwen35_steps": 2526,
+  "reference_qwen25_steps": 582,
+  "resources": [
+    {
+      "run": "runs/aurora-compact-points-base-20261007-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1870473,
+        "process_start_ticks": 1158983751,
+        "process_start_utc": "2026-10-07T00:43:47.510000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-compact-points-base-20261007-v2.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-compact-points-base-20261007-v2",
+          "--previous-inspected-run",
+          "runs/aurora-compression-points-only-adapter-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-compact-points-point8-20261007-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1876152,
+        "process_start_ticks": 1159004528,
+        "process_start_utc": "2026-10-07T00:47:15.280000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-compact-points-point8-20261007-v2.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-compact-points-point8-20261007-v2",
+          "--previous-inspected-run",
+          "runs/aurora-compact-points-base-20261007-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-compact-points-compression8-20261007-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 1880770,
+        "process_start_ticks": 1159020729,
+        "process_start_utc": "2026-10-07T00:49:57.290000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-compact-points-compression8-20261007-v2.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-compact-points-compression8-20261007-v2",
+          "--previous-inspected-run",
+          "runs/aurora-compact-points-point8-20261007-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "all_owned_processes_exited": true,
+  "all_outputs_hand_read": true,
+  "uncapped": 3,
+  "capped": 0,
+  "generated_tokens": 1066,
+  "generation_seconds": 23.944430084899068,
+  "compact_plan_words": 276,
+  "uncalled_draft_correction": "v1 ambiguous ICC versus State unable/unwilling subject and slash-list shorthand corrected before any calls; v1 bytes retained.",
+  "independent_review_complete": false,
+  "scope": "Given-content format realization on one exposed Brazil/Libya case; no native persona, autonomous planner, multi-agent or strong OOD result.",
+  "next_decision": "One readable compact checked-plan writer example works: base7met+1uncertain/14 at259words, savedpoint8 all14+4guards at262, newcompression8 all14+4guards at250. Both adapters pass; olderpoint8 suffices for this component, so no extra compression fitting indicated. Next scale one variable: source-audit normally spaced compact France/Libya points with all same14meanings under budget, compare existing base/point8 before any more optimization. Then test actual planner generation separately on newsource. Keep upstream handaudit/strongbase controls, do not claim persona/native prediction/multiagent. No next pack/fit/queue/sweep prepared."
+}

@@ -1,0 +1,178 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-07T00:40:06.710191+00:00",
+  "summaries": {
+    "base": {
+      "libya-fra-plan-only": {
+        "content": {
+          "met": 7,
+          "unmet": 7
+        },
+        "words": 322,
+        "universal": {
+          "met": 3,
+          "unratable": 1
+        },
+        "presentation": {
+          "ordinary_word_separation": true,
+          "three_requested_sections": true,
+          "no_source_repetition_failure": true,
+          "within300ordinary_words": false
+        },
+        "usable_realization_pass": false
+      },
+      "libya-bra-plan-only": {
+        "content": {
+          "unmet": 8,
+          "met": 6
+        },
+        "words": 276,
+        "universal": {
+          "met": 1,
+          "unmet": 3
+        },
+        "presentation": {
+          "ordinary_word_separation": true,
+          "three_requested_sections": true,
+          "no_source_repetition_failure": true,
+          "within300ordinary_words": true
+        },
+        "usable_realization_pass": false
+      }
+    },
+    "adapter": {
+      "libya-fra-plan-only": {
+        "content": {
+          "unmet": 2,
+          "met": 12
+        },
+        "words": 450,
+        "universal": {
+          "met": 4
+        },
+        "presentation": {
+          "ordinary_word_separation": true,
+          "three_requested_sections": true,
+          "no_source_repetition_failure": true,
+          "within300ordinary_words": false
+        },
+        "usable_realization_pass": false
+      },
+      "libya-bra-plan-only": {
+        "content": {
+          "met": 14
+        },
+        "words": 372,
+        "universal": {
+          "met": 4
+        },
+        "presentation": {
+          "ordinary_word_separation": true,
+          "three_requested_sections": true,
+          "no_source_repetition_failure": true,
+          "within300ordinary_words": false
+        },
+        "usable_realization_pass": false
+      }
+    }
+  },
+  "groups": {
+    "base": {
+      "answers": 2,
+      "content": {
+        "met": 13,
+        "unmet": 15
+      },
+      "usable_passes": 0
+    },
+    "adapter": {
+      "answers": 2,
+      "content": {
+        "unmet": 2,
+        "met": 26
+      },
+      "usable_passes": 0
+    }
+  },
+  "new_model_outputs": 4,
+  "new_optimizer_steps": 0,
+  "cumulative_qwen35_steps": 2526,
+  "reference_qwen25_steps": 582,
+  "resources": [
+    {
+      "run": "runs/aurora-compression-points-only-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1847822,
+        "process_start_ticks": 1158905272,
+        "process_start_utc": "2026-10-07T00:30:42.720000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compression_points_only.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-compression-points-only-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-compression-points-only-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-compression-fit-20261006-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-compression-points-only-adapter-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 1855974,
+        "process_start_ticks": 1158933615,
+        "process_start_utc": "2026-10-07T00:35:26.150000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compression_points_only.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-compression-points-only-adapter-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-compression-points-only-adapter-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-compression-points-only-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "all_owned_processes_exited": true,
+  "all_outputs_hand_read": true,
+  "uncapped": 4,
+  "capped": 0,
+  "generated_tokens": 1878,
+  "generation_seconds": 42.34394450485706,
+  "independent_review_complete": false,
+  "scope": "Exposed source-removal development diagnostic; no new family, active training, persona/native prediction/multi-agent or strong OOD result.",
+  "next_decision": "No outside full pass; newfit memorizes8 exactshorttargets but doesnotlearn sufficientnovelcompression. Duplicate-source removal notsolution (450/372words,26/28content). Next bounded candidate: normally spaced concise checked points within output budget, retain all same source/application/authority meanings and strict criteria, compare existing base/point8/compression8 on one exposed role before any furtherfit. This tests original format-only realization architecture; compression happens in audited planner. Independent actual-planner quality remains separate. No pack/fit/queue/sweep prepared."
+}
