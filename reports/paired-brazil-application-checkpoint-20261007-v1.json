@@ -1,0 +1,257 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-07T13:59:29.861104+00:00",
+  "new_model_outputs": 15,
+  "uncapped": 15,
+  "capped": 0,
+  "new_optimizer_steps": 256,
+  "cumulative_qwen35_steps": 3934,
+  "selected_mixed_branch_steps": 256,
+  "reference_qwen25_steps": 582,
+  "all_owned_gpu_identities_exited": true,
+  "resources": [
+    {
+      "run": "runs/aurora-brazil-M-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3076421,
+        "process_start_ticks": 1163497668,
+        "process_start_utc": "2026-10-07T13:16:06.680000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-brazil-M-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-brazil-M-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-four-country-application-fit-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-brazil-M-mixed224-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3081969,
+        "process_start_ticks": 1163523449,
+        "process_start_utc": "2026-10-07T13:20:24.490000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-brazil-M-mixed224-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-brazil-M-mixed224-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-brazil-M-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-paired-brazil-application-fit-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3089363,
+        "process_start_ticks": 1163555726,
+        "process_start_utc": "2026-10-07T13:25:47.260000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_paired_brazil_application_fit.py",
+          "--mode",
+          "fit",
+          "--config",
+          "configs/posttraining/qwen35-paired-brazil-application-fit-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-paired-brazil-application-fit-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-brazil-M-mixed224-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "summaries": {
+    "aurora-brazil-M-base-20261007-v1": [
+      {
+        "id": "brazil-M-source-checked-application",
+        "content": {
+          "unmet": 2,
+          "met": 4
+        },
+        "words": 146,
+        "pass": false
+      }
+    ],
+    "aurora-brazil-M-mixed224-20261007-v1": [
+      {
+        "id": "brazil-M-source-checked-application",
+        "content": {
+          "unmet": 1,
+          "met": 5
+        },
+        "words": 79,
+        "pass": false
+      }
+    ],
+    "aurora-paired-brazil-application-fit-20261007-v1": [
+      {
+        "id": "ukraine24-fra-actual-facts-application-block",
+        "content": {
+          "met": 6
+        },
+        "words": 83,
+        "pass": true
+      },
+      {
+        "id": "ukraine24-fra-repaired-note-application-probe",
+        "content": {
+          "met": 6
+        },
+        "words": 79,
+        "pass": true
+      },
+      {
+        "id": "india-sanctions-monitoring-added-application-transfer",
+        "content": {
+          "met": 6
+        },
+        "words": 76,
+        "pass": true
+      },
+      {
+        "id": "india-sanctions-timeliness-repaired-application-transfer",
+        "content": {
+          "met": 6
+        },
+        "words": 78,
+        "pass": true
+      },
+      {
+        "id": "uk-R-existing-repair-application",
+        "content": {
+          "met": 6
+        },
+        "words": 85,
+        "pass": true
+      },
+      {
+        "id": "uk-S-existing-repair-application",
+        "content": {
+          "met": 6
+        },
+        "words": 85,
+        "pass": true
+      },
+      {
+        "id": "brazil-J-source-checked-application",
+        "content": {
+          "met": 6
+        },
+        "words": 85,
+        "pass": true
+      },
+      {
+        "id": "brazil-K-source-checked-application",
+        "content": {
+          "met": 6
+        },
+        "words": 88,
+        "pass": true
+      },
+      {
+        "id": "uk-T-existing-repair-application",
+        "content": {
+          "unratable": 1,
+          "met": 5
+        },
+        "words": 86,
+        "pass": false
+      },
+      {
+        "id": "uk-E-existing-repair-application",
+        "content": {
+          "met": 6
+        },
+        "words": 84,
+        "pass": true
+      },
+      {
+        "id": "brazil-L-source-checked-application",
+        "content": {
+          "met": 6
+        },
+        "words": 85,
+        "pass": true
+      },
+      {
+        "id": "brazil-M-source-checked-application",
+        "content": {
+          "met": 6
+        },
+        "words": 82,
+        "pass": true
+      },
+      {
+        "id": "india-P-authenticated-endorsement-update",
+        "content": {
+          "unratable": 2,
+          "met": 4
+        },
+        "words": 77,
+        "pass": false
+      }
+    ]
+  },
+  "training_seconds": 195.96715676784515,
+  "peak_allocated_gpu_gib": 12.260271549224854,
+  "actual_sequence_tokens": 422336,
+  "actual_both_completion_tokens": 62144,
+  "actual_chosen_supervised_tokens": 30336,
+  "actual_presentations_each": 32,
+  "historical_base_outputs_replayed": 12,
+  "actual_writer_outputs_reused": 1,
+  "historical_writer_role_prompt_mismatch": true,
+  "new_writer_outputs": 0,
+  "independent_review_complete": false,
+  "scope": "Seven old texts/inputs/exposures unchanged plus one BrazilK target32 presentations. L/M, UKT/E and authenticatedP excluded; M newly frozen before calls/fit. Same-author adaptive development; read individual results rather than inferring global improvement. Same-author development, not independent persona/native-prediction/multi-agent or sealed OOD evidence."
+}
