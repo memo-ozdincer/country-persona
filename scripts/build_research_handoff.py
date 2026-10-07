@@ -85,7 +85,9 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "india-raw-application-20261007-v1", "india-raw-writer-20261007-v1",
             "uk-source-transfer-20261007-v1", "uk-referent-diagnostic-20261007-v1",
             "uk-quote-backed-summary-20261007-v1", "uk-raw-application-20261007-v1",
-            "uk-raw-application-20261007-v2", "uk-raw-writer-20261007-v1")
+            "uk-raw-application-20261007-v2", "uk-raw-writer-20261007-v1",
+            "uk-paired-application-20261007-v1", "uk-paired-application-fit-20261007-v1",
+            "uk-application-retention-20261007-v1", "uk-complete-plan-writer-20261007-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
