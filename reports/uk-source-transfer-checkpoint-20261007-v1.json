@@ -1,0 +1,473 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-07T10:13:35.337638+00:00",
+  "new_model_outputs": 10,
+  "uncapped": 10,
+  "capped": 0,
+  "new_optimizer_steps": 0,
+  "cumulative_qwen35_steps": 3198,
+  "reference_qwen25_steps": 582,
+  "all_owned_gpu_identities_exited": true,
+  "resources": [
+    {
+      "run": "runs/aurora-uk-source-transfer-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2761784,
+        "process_start_ticks": 1162175055,
+        "process_start_utc": "2026-10-07T09:35:40.550000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-uk-source-transfer-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-source-transfer-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-india-raw-writer-point8-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-source-transfer-source96-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2769699,
+        "process_start_ticks": 1162204144,
+        "process_start_utc": "2026-10-07T09:40:31.440000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-uk-source-transfer-source96-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-source-transfer-source96-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-uk-source-transfer-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-referent-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2780891,
+        "process_start_ticks": 1162241542,
+        "process_start_utc": "2026-10-07T09:46:45.420000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-uk-referent-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-referent-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-uk-source-transfer-source96-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-referent-source96-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2786788,
+        "process_start_ticks": 1162261630,
+        "process_start_utc": "2026-10-07T09:50:06.300000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-uk-referent-source96-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-referent-source96-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-uk-referent-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-quote-backed-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2803705,
+        "process_start_ticks": 1162319992,
+        "process_start_utc": "2026-10-07T09:59:49.920000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-uk-quote-backed-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-quote-backed-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-uk-referent-source96-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-quote-backed-source96-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2805665,
+        "process_start_ticks": 1162326260,
+        "process_start_utc": "2026-10-07T10:00:52.600000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-uk-quote-backed-source96-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-quote-backed-source96-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-uk-quote-backed-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-raw-application-base-20261007-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 2813079,
+        "process_start_ticks": 1162349137,
+        "process_start_utc": "2026-10-07T10:04:41.370000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-uk-raw-application-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-raw-application-base-20261007-v2",
+          "--previous-inspected-run",
+          "runs/aurora-uk-quote-backed-source96-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-raw-application-adapter-20261007-v2",
+      "identity": {
+        "host": "aurora",
+        "pid": 2815046,
+        "process_start_ticks": 1162354978,
+        "process_start_utc": "2026-10-07T10:05:39.780000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-uk-raw-application-adapter-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-raw-application-adapter-20261007-v2",
+          "--previous-inspected-run",
+          "runs/aurora-uk-raw-application-base-20261007-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-raw-writer-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2822424,
+        "process_start_ticks": 1162375021,
+        "process_start_utc": "2026-10-07T10:09:00.210000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-uk-raw-writer-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-raw-writer-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-uk-raw-application-adapter-20261007-v2"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-uk-raw-writer-point8-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 2824954,
+        "process_start_ticks": 1162383458,
+        "process_start_utc": "2026-10-07T10:10:24.580000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_compact_points.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-uk-raw-writer-point8-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-uk-raw-writer-point8-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-uk-raw-writer-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "summaries": {
+    "aurora-uk-source-transfer-base-20261007-v1": {
+      "content": {
+        "unmet": 3,
+        "met": 5
+      },
+      "words": 180,
+      "source_pass": false,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": null,
+      "writer_pass": null
+    },
+    "aurora-uk-source-transfer-source96-20261007-v1": {
+      "content": {
+        "met": 7,
+        "unmet": 1
+      },
+      "words": 228,
+      "source_pass": false,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": null,
+      "writer_pass": null
+    },
+    "aurora-uk-referent-base-20261007-v1": {
+      "content": {
+        "met": 3
+      },
+      "words": 28,
+      "source_pass": null,
+      "content_pass": true,
+      "diagnostic_pass": false,
+      "application_pass": null,
+      "writer_pass": null
+    },
+    "aurora-uk-referent-source96-20261007-v1": {
+      "content": {
+        "met": 3
+      },
+      "words": 35,
+      "source_pass": null,
+      "content_pass": true,
+      "diagnostic_pass": true,
+      "application_pass": null,
+      "writer_pass": null
+    },
+    "aurora-uk-quote-backed-base-20261007-v1": {
+      "content": {
+        "unmet": 7,
+        "met": 1
+      },
+      "words": 166,
+      "source_pass": false,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": null,
+      "writer_pass": null
+    },
+    "aurora-uk-quote-backed-source96-20261007-v1": {
+      "content": {
+        "met": 8
+      },
+      "words": 201,
+      "source_pass": true,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": null,
+      "writer_pass": null
+    },
+    "aurora-uk-raw-application-base-20261007-v2": {
+      "content": {
+        "unmet": 3,
+        "met": 2,
+        "unratable": 1
+      },
+      "words": 163,
+      "source_pass": null,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": false,
+      "writer_pass": null
+    },
+    "aurora-uk-raw-application-adapter-20261007-v2": {
+      "content": {
+        "unmet": 2,
+        "met": 2,
+        "unratable": 2
+      },
+      "words": 90,
+      "source_pass": null,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": false,
+      "writer_pass": null
+    },
+    "aurora-uk-raw-writer-base-20261007-v1": {
+      "content": {
+        "unmet": 12,
+        "met": 1,
+        "unratable": 1
+      },
+      "words": 280,
+      "source_pass": null,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": null,
+      "writer_pass": false
+    },
+    "aurora-uk-raw-writer-point8-20261007-v1": {
+      "content": {
+        "met": 10,
+        "unmet": 3,
+        "unratable": 1
+      },
+      "words": 329,
+      "source_pass": null,
+      "content_pass": null,
+      "diagnostic_pass": null,
+      "application_pass": null,
+      "writer_pass": false
+    }
+  },
+  "matched_weight_arm_inputs": true,
+  "primary_source_and_old_source8_criteria_verified": true,
+  "actual_source_facts_unedited": true,
+  "independent_review_complete": false,
+  "failed_model_outputs": 0,
+  "failed_optimizer_steps": 0,
+  "scope": "Same-assistant adaptive UK development outside reader/application fitting sources, historically exposed elsewhere. Original eight-unit failures retained; focused diagnostic and quote-contract review separate. No independent quality, sealed OOD, persona, native prediction or multi-agent gain."
+}
