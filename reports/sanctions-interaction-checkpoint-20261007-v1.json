@@ -1,0 +1,512 @@
+{
+  "status": "pass",
+  "verified_at": "2026-10-07T15:00:07.262972+00:00",
+  "new_model_outputs": 12,
+  "uncapped": 12,
+  "capped": 0,
+  "new_optimizer_steps": 0,
+  "cumulative_qwen35_steps": 3934,
+  "selected_application_branch_steps": 256,
+  "reference_qwen25_steps": 582,
+  "total_generated_tokens": 3177,
+  "total_generation_seconds": 64.5077573992312,
+  "all_owned_gpu_identities_exited": true,
+  "resources": [
+    {
+      "run": "runs/aurora-sanctions-interaction-initial-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3167325,
+        "process_start_ticks": 1163928789,
+        "process_start_utc": "2026-10-07T14:27:57.890000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_sanctions_interaction.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-sanctions-interaction-initial-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-sanctions-interaction-initial-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-paired-brazil-application-fit-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-sanctions-interaction-initial-adapter-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3171921,
+        "process_start_ticks": 1163959502,
+        "process_start_utc": "2026-10-07T14:33:05.020000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_sanctions_interaction.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-sanctions-interaction-initial-adapter-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-sanctions-interaction-initial-adapter-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-sanctions-interaction-initial-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-sanctions-interaction-seed-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3176782,
+        "process_start_ticks": 1163985291,
+        "process_start_utc": "2026-10-07T14:37:22.910000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_sanctions_interaction.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-sanctions-interaction-seed-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-sanctions-interaction-seed-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-sanctions-interaction-initial-adapter-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-sanctions-interaction-seed-adapter-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3183303,
+        "process_start_ticks": 1164024379,
+        "process_start_utc": "2026-10-07T14:43:53.790000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_sanctions_interaction.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-sanctions-interaction-seed-adapter-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-sanctions-interaction-seed-adapter-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-sanctions-interaction-peer-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-sanctions-interaction-peer-base-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3180105,
+        "process_start_ticks": 1164006885,
+        "process_start_utc": "2026-10-07T14:40:58.850000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_sanctions_interaction.py",
+          "--mode",
+          "base",
+          "--config",
+          "configs/posttraining/qwen35-sanctions-interaction-peer-base-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-sanctions-interaction-peer-base-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-sanctions-interaction-seed-base-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    },
+    {
+      "run": "runs/aurora-sanctions-interaction-peer-adapter-20261007-v1",
+      "identity": {
+        "host": "aurora",
+        "pid": 3187965,
+        "process_start_ticks": 1164051989,
+        "process_start_utc": "2026-10-07T14:48:29.890000+00:00",
+        "command": [
+          "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+          "scripts/run_sanctions_interaction.py",
+          "--mode",
+          "adapter",
+          "--config",
+          "configs/posttraining/qwen35-sanctions-interaction-peer-adapter-20261007-v1.json",
+          "--gpu-uuid",
+          "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+          "--output",
+          "runs/aurora-sanctions-interaction-peer-adapter-20261007-v1",
+          "--previous-inspected-run",
+          "runs/aurora-sanctions-interaction-seed-adapter-20261007-v1"
+        ],
+        "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+        "slurm_job_id": null
+      },
+      "gpu": {
+        "uuid": "GPU-2d466265-cfbf-44c7-c234-fc0128ce6ae4",
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory_used_mib_before_launch": 0,
+        "utilization_before_launch": 0,
+        "existing_compute_processes": []
+      },
+      "exited": true
+    }
+  ],
+  "summaries": {
+    "aurora-sanctions-interaction-initial-base-20261007-v1": [
+      {
+        "id": "sanctions-H1-IND-initial",
+        "content": {
+          "unmet": 2,
+          "met": 5,
+          "unratable": 1
+        },
+        "words": 160,
+        "pass": false,
+        "discussion_pass": false
+      },
+      {
+        "id": "sanctions-H1-BRA-initial",
+        "content": {
+          "unmet": 4,
+          "met": 4
+        },
+        "words": 207,
+        "pass": false,
+        "discussion_pass": false
+      }
+    ],
+    "aurora-sanctions-interaction-initial-adapter-20261007-v1": [
+      {
+        "id": "sanctions-H1-IND-initial",
+        "content": {
+          "unmet": 3,
+          "met": 5
+        },
+        "words": 117,
+        "pass": false,
+        "discussion_pass": false
+      },
+      {
+        "id": "sanctions-H1-BRA-initial",
+        "content": {
+          "unmet": 4,
+          "met": 3,
+          "unratable": 1
+        },
+        "words": 91,
+        "pass": false,
+        "discussion_pass": false
+      }
+    ],
+    "aurora-sanctions-interaction-seed-base-20261007-v1": [
+      {
+        "id": "sanctions-H1-IND-seed",
+        "content": {
+          "unmet": 3,
+          "met": 4,
+          "unratable": 1
+        },
+        "words": 189,
+        "pass": false,
+        "discussion_pass": true
+      },
+      {
+        "id": "sanctions-H1-BRA-seed",
+        "content": {
+          "unmet": 3,
+          "met": 4,
+          "unratable": 1
+        },
+        "words": 312,
+        "pass": false,
+        "discussion_pass": true
+      }
+    ],
+    "aurora-sanctions-interaction-seed-adapter-20261007-v1": [
+      {
+        "id": "sanctions-H1-IND-seed",
+        "content": {
+          "unmet": 2,
+          "met": 6
+        },
+        "words": 121,
+        "pass": false,
+        "discussion_pass": true
+      },
+      {
+        "id": "sanctions-H1-BRA-seed",
+        "content": {
+          "unmet": 3,
+          "met": 5
+        },
+        "words": 132,
+        "pass": false,
+        "discussion_pass": true
+      }
+    ],
+    "aurora-sanctions-interaction-peer-base-20261007-v1": [
+      {
+        "id": "sanctions-H1-IND-peer",
+        "content": {
+          "unmet": 2,
+          "met": 5,
+          "unratable": 1
+        },
+        "words": 252,
+        "pass": false,
+        "discussion_pass": true
+      },
+      {
+        "id": "sanctions-H1-BRA-peer",
+        "content": {
+          "unmet": 3,
+          "met": 4,
+          "unratable": 1
+        },
+        "words": 324,
+        "pass": false,
+        "discussion_pass": false
+      }
+    ],
+    "aurora-sanctions-interaction-peer-adapter-20261007-v1": [
+      {
+        "id": "sanctions-H1-IND-peer",
+        "content": {
+          "unmet": 3,
+          "met": 5
+        },
+        "words": 159,
+        "pass": false,
+        "discussion_pass": true
+      },
+      {
+        "id": "sanctions-H1-BRA-peer",
+        "content": {
+          "unmet": 3,
+          "met": 5
+        },
+        "words": 174,
+        "pass": false,
+        "discussion_pass": false
+      }
+    ]
+  },
+  "comparisons": {
+    "base": {
+      "IND": {
+        "base_start_to_seed": {
+          "jointly_ratable": 7,
+          "corrections": [],
+          "regressions": [
+            "R2"
+          ],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "base_start_to_peer": {
+          "jointly_ratable": 7,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "peer_vs_seed": {
+          "jointly_ratable": 7,
+          "corrections": [
+            "R2"
+          ],
+          "regressions": [],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "guard_peer_vs_seed": {
+          "jointly_ratable": 3,
+          "corrections": [
+            "correct_time_and_scope"
+          ],
+          "regressions": [],
+          "uncertain_excluded": [
+            "all_material_claims_supported"
+          ]
+        }
+      },
+      "BRA": {
+        "base_start_to_seed": {
+          "jointly_ratable": 7,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "base_start_to_peer": {
+          "jointly_ratable": 7,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "peer_vs_seed": {
+          "jointly_ratable": 7,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "guard_peer_vs_seed": {
+          "jointly_ratable": 2,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": [
+            "correct_attribution",
+            "all_material_claims_supported"
+          ]
+        }
+      }
+    },
+    "adapter": {
+      "IND": {
+        "base_start_to_seed": {
+          "jointly_ratable": 7,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "base_start_to_peer": {
+          "jointly_ratable": 7,
+          "corrections": [],
+          "regressions": [
+            "R2"
+          ],
+          "uncertain_excluded": [
+            "R5"
+          ]
+        },
+        "peer_vs_seed": {
+          "jointly_ratable": 8,
+          "corrections": [],
+          "regressions": [
+            "R2"
+          ],
+          "uncertain_excluded": []
+        },
+        "guard_peer_vs_seed": {
+          "jointly_ratable": 3,
+          "corrections": [
+            "correct_attribution"
+          ],
+          "regressions": [],
+          "uncertain_excluded": [
+            "all_material_claims_supported"
+          ]
+        }
+      },
+      "BRA": {
+        "base_start_to_seed": {
+          "jointly_ratable": 8,
+          "corrections": [
+            "R5"
+          ],
+          "regressions": [],
+          "uncertain_excluded": []
+        },
+        "base_start_to_peer": {
+          "jointly_ratable": 8,
+          "corrections": [
+            "R5"
+          ],
+          "regressions": [],
+          "uncertain_excluded": []
+        },
+        "peer_vs_seed": {
+          "jointly_ratable": 8,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": []
+        },
+        "guard_peer_vs_seed": {
+          "jointly_ratable": 4,
+          "corrections": [],
+          "regressions": [],
+          "uncertain_excluded": []
+        }
+      }
+    }
+  },
+  "identical_inputs_across_weights": true,
+  "actual_common_base_history_verified": true,
+  "independent_review_complete": false,
+  "source_facts_origin": "same root assistant curated, not a source-reader rollout or independent teacher",
+  "protocol_caveat": "Shared revision instruction conditionally mentions peer behavior, but seed-only mode is not explicitly named in model-visible text; attribution failures may reflect prompt ambiguity. Preserve protocol/grades, clarify mode before new training.",
+  "strict_passes": 0,
+  "actual_trained_openings_used_as_history": false,
+  "scope": "One historically exposed sanctions source family, assistant-checked factual blocks, hypothetical resource proposal and adaptive development; no sealed OOD, native-vote or autonomous trained-conversation claim.",
+  "semantic_validation": "Manual same-author annotations; portable replay verifies bytes/arithmetic, not entailment or independent persona quality."
+}
