@@ -97,7 +97,8 @@ PREPARED = ("decision-cases-20260914", "decision-posttraining-20260916",
             "sanctions-interaction-20261007-v1-initial",
             "sanctions-interaction-20261007-v2-initial",
             "sanctions-interaction-20261007-v2-seed",
-            "sanctions-interaction-20261007-v2-peer")
+            "sanctions-interaction-20261007-v2-peer",
+            "explicit-seed-control-20261007-v1")
 RAW = ("country-extension-20260914", "country-knowledge-20260914", "country-expansion-20260913",
        "decision-cases-20260914", "eval-pilot-primary-checks-20260926", "eval-sources-20260927",
        "ledger-eval-sources-20260928", "ledger-eval-sources-20260928-expansion",
