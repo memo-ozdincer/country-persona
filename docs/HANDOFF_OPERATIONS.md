@@ -2,6 +2,12 @@
 
 Read `START_HERE.md`, `AGENTS.md` and [PROJECT_HANDOFF.md](PROJECT_HANDOFF.md) first. These are private research snapshots, not public releases.
 
+## Current live-workspace policy (14 October)
+
+Read [storage policy](STORAGE_POLICY.md) and [current state](CURRENT_STATE.md). The live checkout now supports a committed Git overlay over the immutable v47 research snapshot. Use `verify_workspace_overlay.py` with the pinned digest from `START_HERE.md` for that checkout; use the original verifier below for an unchanged snapshot. Do not make a new multi-GB archive for a code/documentation-only update. New ignored research evidence still needs a durable artifact backup.
+
+The redundant whole v47 archive was intentionally removed after full/parts/remote verification; ordered local parts and the private release remain. Reassemble and verify into a fresh whole archive if required. Earlier descriptions below of retaining both representations describe the former packaging practice.
+
 ## Verify the transfer
 
 From the transferred project root, using standard Python:

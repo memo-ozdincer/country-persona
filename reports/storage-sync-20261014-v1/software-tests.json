@@ -1,0 +1,23 @@
+{
+  "command": "python3 tests/test_workspace_overlay.py -v",
+  "tests": 7,
+  "result": "passed",
+  "model_calls": 0,
+  "optimizer_updates": 0,
+  "note": "Regression tests of integrity tooling, not model quality.",
+  "cpu_runtime_imports": {
+    "qwen35": {
+      "torch": "2.8.0+cu128",
+      "transformers": "5.17.0",
+      "peft": "0.21.1",
+      "result": "passed"
+    },
+    "open_character": {
+      "torch": "2.8.0+cu128",
+      "transformers": "4.57.0",
+      "peft": "0.17.1",
+      "result": "passed",
+      "diagnostic": "Existing pynvml deprecation FutureWarning; imports succeeded."
+    }
+  }
+}

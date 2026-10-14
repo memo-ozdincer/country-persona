@@ -1,5 +1,7 @@
 # Project handoff for fresh Aurora and local sessions
 
+**14 October navigation/storage update:** [Current state](CURRENT_STATE.md), [sync audit and research assessment](STORAGE_SYNC_AND_RESEARCH_DIRECTION_20261014.md), [storage policy](STORAGE_POLICY.md). No new model result. The chronology below is preserved; use current summaries for active instructions.
+
 The 7 October explicit seed-only control is prepared but unrun. Four planned answers, zero actual model calls/updates. Same old source/H1/task/base-draft prefixes, system, rubric/model/runtime/decoder unchanged; revision adds explicit no-peer mode and removes conditional peer-engagement sentence. Native input lengths 1,397/1,452 and CPU provenance/config/adapter checks pass. Same root assistant hand-read both changes/reused complete text; private 143/139-word source-compatible feasibility references are outside student inputs and not training targets or national-choice labels.
 
 All eight Aurora GPUs stayed occupied by unlinked processes across 41 read-only observations/~615 seconds; unfamiliar jobs untouched, no GPU model or CPU substitute launched. Own read-only observer exited normally; raw observation/code/identity preserved. Resource window information requested asynchronously; no free-GPU signal inferred from elapsed time. Recheck live occupancy before the existing runner, which requires zero memory/utilisation/no resident processes.
