@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-17T13:33:13.310261+00:00",
+  "status": "research_and_cpu_representation_preview_complete_not_training_release",
+  "question": "Does scenario-conditioned authentic delegation speech SFT improve role- and situation-sensitive behavior, and do learned atomic markers add value?",
+  "report": "docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md",
+  "preview_status": "cpu_representation_preview_not_training_ready",
+  "source_path": "data/raw/source-plan-grounding-20261002-v1/record-9214.txt",
+  "source_sha256": "70853be7fbc9c686c8ad09091de7372afdcaf91c5ddc5e710bc6e48b237ff94d",
+  "source_hand_read_by": "same root assistant; full record, scenario, 18 transitions, three complete targets and their prior histories",
+  "independent_review_complete": false,
+  "target_countries": [
+    "GBR",
+    "BRA",
+    "IND"
+  ],
+  "new_model_calls": 0,
+  "new_optimizer_updates": 0,
+  "cumulative_qwen35_updates": 3934,
+  "reference_qwen25_updates": 582,
+  "software_tests": {
+    "command": "UV_CACHE_DIR=/mfs1/u/memo/country-persona-research/cache/uv uv run --no-project --with pytest==9.1.1 python -m pytest -q tests/test_meeting_sequence.py tests/test_workspace_overlay.py",
+    "new_sequence_tests_passed": 7,
+    "existing_overlay_tests_passed": 7,
+    "total": 14,
+    "meaning": "software integrity, not model quality"
+  },
+  "tokenizer_roundtrip_status": "tokenizer_only_roundtrip_verified_not_model_or_adapter_reload",
+  "preparation_failures": [
+    {
+      "action": "first CPU tokenizer registration",
+      "error": "TypeError: unexpected replace_additional_special_tokens keyword",
+      "resolution": "Used installed Transformers 5.17.0 extra_special_tokens and replace_extra_special_tokens API; existing special flags preserved.",
+      "model_calls": 0,
+      "optimizer_updates": 0
+    },
+    {
+      "action": "system Python pytest invocation",
+      "error": "No module named pytest",
+      "resolution": "Separate pinned scratch-cached pytest environment; no training runtime changed.",
+      "model_calls": 0,
+      "optimizer_updates": 0
+    }
+  ],
+  "implementation_files": {
+    "src/country_persona/meeting_sequence.py": "824cab7da8bdcdbbd5ac01955b4657f7dd407cc96477d678f5f7dc704037849a",
+    "scripts/preview_meeting_sequence.py": "d82fb0aaef1ed5290e39898484aaebdf6760ff9c61ddf61d74ea9c72f698e68b",
+    "tests/test_meeting_sequence.py": "a2ea91985fe03fecbecb3c647d01fe865bc2764691af881469787b1e8fa186d9"
+  },
+  "research_files": {
+    "research/scenario-role-20261017/acquisition.json": {
+      "bytes": 555,
+      "sha256": "8df3e6277227f8eb3d9ae81afa2e834c61fb9e352f6530619232d247b75ba718"
+    },
+    "research/scenario-role-20261017/coser-README.md": {
+      "bytes": 12662,
+      "sha256": "bc283b8064412c1fb1e2d5497a77f2c89e33e01c19194b1ca76bf9c3abb6e406"
+    },
+    "research/scenario-role-20261017/coser-code-acquisition.json": {
+      "bytes": 887,
+      "sha256": "775c0f0da802f88664ad9e41bf8c4e8177517be8dcb5338c230f2522e689f8ed"
+    },
+    "research/scenario-role-20261017/coser-code-index.json": {
+      "bytes": 2410,
+      "sha256": "448ef5699cad28b43f67f93be120d8219dfec5c895e58f24143bce86c6865b13"
+    },
+    "research/scenario-role-20261017/coser-format-audit.json": {
+      "bytes": 687,
+      "sha256": "6bb18b0b702bc90704aa755bff12e0d4e3bb4bce44d1d29c9f49ba49671556f9"
+    },
+    "research/scenario-role-20261017/coser-icml2025.pdf": {
+      "bytes": 15897963,
+      "sha256": "564e731753027efe358fa025ae08c926e80c21c633cf2973a5b9794ad19381a0"
+    },
+    "research/scenario-role-20261017/coser-icml2025.txt": {
+      "bytes": 184610,
+      "sha256": "67339259aa4c1cadaa8a1da3b08c403a0eec22b3b6599eca8c46f2fdde5b335a"
+    },
+    "research/scenario-role-20261017/coser-prompts.py": {
+      "bytes": 5442,
+      "sha256": "50fbe0435349e324c34b417ff913d10bf9dea68c4d79147577dcfdde0f792755"
+    },
+    "research/scenario-role-20261017/ditto-acl2024.pdf": {
+      "bytes": 937492,
+      "sha256": "669ddfd495ebe9dcd123a9abab5ec8e67edfd161a2a7b1ba1bb44bfb2330aca7"
+    },
+    "research/scenario-role-20261017/ditto-acl2024.txt": {
+      "bytes": 107814,
+      "sha256": "837ff2d25a6a5d24f23c6589b52f635070f2a9066d053106fa1f853b4144413f"
+    },
+    "research/scenario-role-20261017/example-GBR.txt": {
+      "bytes": 11250,
+      "sha256": "19b8c992eb03c2b4d5e74911d148d2d346ec716c429d49e60c048f943ad68f80"
+    },
+    "research/scenario-role-20261017/preview.json": {
+      "bytes": 8695,
+      "sha256": "cd1972ca50d10c6d0a2dbea5f534bc9d8df49eb0760c73a0aeda2ec5f85e7c77"
+    },
+    "research/scenario-role-20261017/tokenizer-roundtrip.json": {
+      "bytes": 618,
+      "sha256": "7bcaecdbe01341fae7fd6da516b5a7f4daace2ae734a2a96386f5d768ab5872e"
+    }
+  },
+  "training_pack_prepared": false,
+  "gpu_fit_config_prepared": false,
+  "gpu_launched": false,
+  "existing_experiment_queue_changed": false,
+  "limitations": [
+    "One historically exposed meeting; no fitting or held-event model result.",
+    "Raw extraction retains soft-hyphen/line-wrap artifacts; audited normalization required before fitting.",
+    "France attended but has no recorded national speech here; no French target invented.",
+    "Actual Qwen embedding-row gradients, tied output effects and adapter reload not tested."
+  ]
+}

@@ -4,6 +4,8 @@ Read `AGENTS.md`, then [the full handoff](docs/PROJECT_HANDOFF.md). Use [current
 
 ## Current research
 
+Newest work: [scenario-conditioned delegation sequences](docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md), researched against CoSER (ICML 2025). A hand-read real-meeting CPU prototype compares readable and atomic role markers; no inference/training or quality gain. See the report for the four-target/two-topic proposal and its source/phase/role controls.
+
 Qwen3.5-4B small training works. The strongest recent local result is source-conditioned application of repaired versus unrepaired proposal clauses, including two excluded Brazilian combinations. This does not establish national persona, diplomatic reasoning or multi-agent gains. The latest measured interaction has twelve strict failures and a prompt-mode caveat. A four-answer explicit seed-only control is prepared but unrun; inspect base answers before adapter answers, with no automatic launch or fit.
 
 - [Latest measured interaction](docs/AURORA_SANCTIONS_INTERACTION_20261007.md)

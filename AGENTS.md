@@ -15,7 +15,7 @@ Read `START_HERE.md`, then `docs/PROJECT_HANDOFF.md` before experiments. Current
 - On Trillium prefer `def-zhijing`; retained allocations use `sleep infinity` within wall limits, with experiments as separate steps. Past job IDs/deadlines are historical. September 29's one-time account-wide cancellation is not standing authorization.
 - Credentials stay outside the repo. On Aurora source `/h/405/memo/.config/country-persona/aurora-env.sh` for private `HF_TOKEN_PATH` and scratch caches. Never print, commit or put the token value in command arguments.
 
-## Current boundary — 14 October 2026
+## Current boundary — 17 October 2026
 
 Read [docs/CURRENT_STATE.md](docs/CURRENT_STATE.md) for the current measured state, pending control and storage verification. Historical checkpoint summaries remain in `docs/PROJECT_HANDOFF.md`, their dated reports, Git history and the immutable v47 snapshot. They are evidence, not a queue of current instructions.
 
@@ -23,7 +23,7 @@ The four-answer explicit seed-only control prepared on 7 October remains unrun: 
 
 Last measured checkpoint: twelve-answer India–Brazil sanctions interaction, all twelve strict answers fail; no demonstrated persona or collective benefit. Protocol ambiguity and source/draft attribution errors remain. Same-assistant authorship/grading, historical exposure and independent-review limitations remain explicit. Qwen3.5 cumulative updates 3,934; selected eight-example branch 256; separate Qwen2.5 reference reproduction 582. Preparation and byte verification are not model-quality results.
 
-The 14 October request is repository/storage synchronization and research assessment. No model inference/training or unfamiliar process management is needed for that audit. Preserve all existing experiments, original grades, failures, Germany/China work and private releases.
+The latest request is to research and define scenario-conditioned, chronological country/delegation SFT. Read `docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md`. A full-record, three-target CPU representation preview and fourteen software tests pass; zero new model calls/updates. This is not a training release or persona result. The proposed smallest comparison uses four authentic speeches across two topics, with fitting and held-episode inspection before any dependent token arm. No GPU fit config/queue is prepared. The earlier explicit seed-only control remains preserved and unrun; it is not a prerequisite for this independent direction. Preserve all existing experiments, original grades, failures, Germany/China work and private releases.
 
 ## Storage and synchronization
 

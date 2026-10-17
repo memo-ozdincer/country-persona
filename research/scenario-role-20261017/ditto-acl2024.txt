@@ -1,0 +1,810 @@
+
+--- PDF PAGE 1 ---
+   Large Language Models are Superpositions of All Characters: Attaining
+                  Arbitrary Role-play via Self-Alignment
+
+                 Keming Lu, Bowen Yu, Chang Zhou, Jingren Zhou
+                                        Alibaba Inc.
+             {lukeming.lkm,yubowen.ybw}@alibaba-inc.com
+             {ericzhou.zc,jingren.zhou}@alibaba-inc.com
+
+
+                  Abstract
+
+       Considerable efforts have been invested in
+       augmenting the role-playing proficiency of
+       open-source large language models (LLMs)
+      by emulating proprietary counterparts. Nev-
+        ertheless, we posit that LLMs inherently har-
+       bor role-play capabilities, owing to the exten-
+        sive knowledge of characters and potential dia-
+       logues ingrained in their vast training corpora.
+       Thus, in this study, we introduce DITTO, a
+        self-alignment method for role-play. DITTO
+        capitalizes on character knowledge, encour-
+       aging an instruction-following LLM to simu-
+         late role-play dialogues as a variant of read-
+                                                           Figure 1: DITTO enlightens LLMs’ roleplay capabilities       ing comprehension.  This method creates a
+                                                 by self-alignment as they have pre-trained on various        role-play training set comprising 4000 char-
+                                                              character profiles and dialogues.         acters, surpassing the scale of currently avail-
+        able datasets by tenfold regarding the number
+        of roles. Subsequently, we fine-tune the LLM       a diverse range of applications (Zhao et al., 2023;
+       using this self-generated dataset to augment      Yuan et al., 2023). However, designed as universal
+          its role-playing capabilities. Upon evaluating        task assistants, LLMs typically differ from human-
+       our meticulously constructed and reproducible        like interlocutors, lacking experiential events and
+        role-play benchmark and the roleplay subset of       emotions (Shanahan et al., 2023). Consequently,
+      MT-Bench, DITTO in various parameter scales                                                       they face limitations in facilitating engaging and ex-
+        consistently maintains a consistent role identity
+                                                           tensive conversations with users (Shao et al., 2023).       and provides accurate role-specific knowledge
+        in multi-turn role-play conversations. Notably,        To infuse emotional value into user interac-
+           it outperforms all open-source role-play base-        tions, Role-play LLMs empower users to de-
+         lines, showcasing performance levels compa-        fine and create profiles for their preferred char-
+        rable to advanced proprietary chatbots. Fur-       acters (Zhou et al., 2023). Nonetheless, existing
+       thermore, we present the first comprehensive      works cheaply imitate the proprietary model (GPT-
+        cross-supervision alignment experiment in the                                                            4)’s role-play capabilities using a weaker open-
+        role-play domain, revealing that the intrinsic
+                                                    source model (Shanahan et al., 2023; Shao et al.,        capabilities of LLMs confine the knowledge
+                                                 2023; Zhou et al., 2023; Tu et al., 2023; Wang       within role-play.  Meanwhile, the role-play
+        styles can be easily acquired with the guid-        et al., 2023c; Tao et al., 2023), as GPT-4 has al-
+       ance of smaller models. We open-source re-       ready demonstrated outstanding role-playing abili-
+        lated resources in https://github.com/        ties (Wang et al., 2023c). This approach presents
+      OFA-Sys/Ditto.                                challenges, assuming the existence of a more profi-
+                                                            cient role-play model, and we currently lack a clear   1  Introduction                                                    understanding of how to build such a model from
+   Large Language Models (LLMs) have show-    scratch, apart from manually annotating extensive
+   cased  unparalleled  proficiency  in  understand-    datasets. Furthermore, imitation models excel at
+   ing intent (Lu et al., 2023b), following instruc-   mimicking GPT-4’s style but fall short in replicat-
+    tions (Wang et al., 2023b), and solving tasks across    ing its factuality, introducing increased hallucina-
+
+                                           7828
+Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 7828–7840
+                           August 11-16, 2024 ©2024 Association for Computational Linguistics
+
+
+--- PDF PAGE 2 ---
+tion as a trade-off (Gudibande et al., 2023), and are    to an LLM judger and four character options, re-
+subject to OpenAI’s terms of use 1 (Muennighoff    quiring the judger to determine which character is
+et al., 2023).                                    being portrayed. If the conversation successfully
+  In this work, for the first time, we enable LLM   mimics the role, it should be straightforward for the
+role-play through self-alignment and named this    judger to select the correct role. (2) Whether the
+method DITTO, eliminating the need for distilling   model can provide accurate role-related knowl-
+outputs from more potent role-play models. LLMs,   edge. We present a role-play dialogue to the judger
+extensively trained on a vast corpus of human-   and the underlying golden knowledge supporting
+generated text (Brown et al., 2020), encapsulate    the dialogue. The judger is tasked with determin-
+a rich array of character experiences, events, per-   ing whether the knowledge implied in the dialogue
+sonalities, and dialogues, as illustrated in Fig. 1.    is consistent with the provided golden knowledge.
+Taking a nuanced perspective, we perceive an LLM    (3) Whether the model can reject unknown ques-
+as a superposition of characters (Shanahan et al.,   tions beyond the character’s background. We ask
+2023).  This implies that LLMs are essentially    the judger to determine if the model truthfully ex-
+equipped with the conversational styles necessary    presses its lack of knowledge when faced with an
+for role-playing and possess knowledge about nu-   unknown question, such as questioning Harry Pot-
+merous famous characters, albeit exhibiting an aver-    ter about implementing quicksort in Python. This
+age of these roles. To elicit such role-play capabili-   way, we transform the complex role-play evalua-
+ties in a general LLM, only two steps are required:    tion into three multiple-choice and true/false ques-
+(1) Provide attributes and profiles about characters,    tions that a capable LLM can judge, achieving an
+instructing the LLM to engage in dialogue based on    efficient and reproducible role-play assessment.
+the character’s speaking style and experiences. (2)
+                                  We apply DITTO on Qwen-Chat models (BaiConceal character information, offering only brief
+                                                           et al., 2023) in four different parameter scales todetails like the name, and align the LLM to respond
+                                            examine  it empirically.  Extensive experimentsconsistently with step 1, thereby forcing the LLM
+                                          show DITTO effectively empowers LLMs with role-to summon intrinsic character knowledge and then
+                                                  play capabilities without distilling from advancedinternally adjust the generated style and content.
+                                                     chatbots. DITTO based on Qwen-72B-Chat evenDITTO is highly scalable and flexible. We have
+                                                  achieves 90% on role identity consistency, show-explored 4,000 characters available on Wikipedia,
+                                                   ing robust self-awareness in role-play. The generalgenerating a self-simulated role-play dataset called
+                                                performance of Qwen-72B-Chat on our evaluationWIKIROLE, which is ten times larger than any pub-
+                                              can be on par advanced chatbots, such as GPT-licly available role-play dataset to date regarding
+                                                   3.5-Turbo, but slightly falls short on accurate role-the number of roles.
+                                                        related knowledge than GPT-4 and Qwen-Max, as  Meanwhile, the efficient and reproducible evalu-
+                                      Qwen-Max achieves the highest scores on the cur-ation of role-play remains elusive. Recent efforts
+                                                       rent role-play benchmark and the role-play subsetheavily rely on manual annotations (Wang et al.,
+                                                   of MT-Bench. Furthermore, we comprehensively2023c; Shao et al., 2023; Zhou et al., 2023). How-
+                                                 analyze the dissection of role-play by extendingever, the costly manual labeling prevents previous
+                                                  our self-alignment setting to cross-supervision. Ex-works from comprehensively comparing the perfor-
+                                                  periments show consistent role identity can benefitmance of all relevant models. Moreover, the high
+                                            from imitation learning even with worse supervi-variance in manual annotations hinders subsequent
+                                                       sion, while knowledge-related metrics do not. Atwork from consistently replicating previous evalua-
+                                                     the same time, we observe knowledge in role-playtion results. As to the observation in the previous
+                                                                is bounded by the inherent capabilities of LLMsparagraph that role-play can be decomposed into
+                                                      in strong-to-weak settings, and we notice consis-conventional style and character knowledge, we
+                                                          tent weak-to-strong generalizations on knowledge-aim to simplify role-play evaluation so that LLMs
+                                                       related metrics. Such observations provide a deepcan automatically score. Specifically, we assess:
+                                            and solid understanding of LLM role-play and(1) Whether the model can maintain consistent
+                                                    alignment, suggesting the knowledge of seed LLMsrole identity. We provide a role-play dialogue
+                                             and proper demonstration, such as simulation data
+  1https://openai.com/policies/             from DITTO, are the key to impressive role-play ca-
+terms-of-use                                            pabilities. Our contributions are mainly three-fold:
+
+                                        7829
+
+
+--- PDF PAGE 3 ---
+ • We propose DITTO, the  first self-alignment   number in previous works. We demonstrate that
+  method empowering LLMs with strong role-play   our model achieves the best role-playing ability to
+   capabilities by knowledge augmentation and di-   date through self-alignment, surpassing even pro-
+  alogue simulation.                                  prietary LLMs like GPT-3.5-Turbo.
+ • We design an objective role-play evaluation                                                 Self-alignment. An emerging method to cheaply
+  focusing on consistent role identity, accurate                                             improve a weaker language model is to fine-tune
+   role-related knowledge, and cognitive boundary.                                                                              it on outputs from a stronger model, such as a pro-
+  Such evaluation is reproducible, explainable, and                                                        prietary system like GPT-4. However, Gudibande
+   efficient compared with manual annotations.                                                            et al. (2023) concluded that model imitation is not
+ • We analyze the dissection of role-play by cross-                                                a free lunch: it is adept at mimicking GPT’s style
+   supervision, providing rich insights into the                                                    but the factuality is weak, thus fostering hallucina-
+  keys of role-play capabilities. Our experiments                                                            tion. This is due to the substantial capabilities gap
+  empirically display knowledge boundedness in                                                           that exists between open and closed language mod-
+  strong-to-weak imitation learning and the weak-                                                              els.  Li et al. (2023b) utilized the model itself to
+   to-strong generalization in role-play styles.                                                both augment and curate high-quality training ex-
+                                                  amples, enhancing its own performance and achiev-
+2  Related Works                                                  ing promising results on the Alpaca leaderboard.
+                                            Muennighoff et al. (2023) avoided using closed
+Role-play. Our work belongs to character-based                                              models from the OpenAI API to generate synthetic
+dialogue systems, which aim to mimic the behav-                                                         data, thus sidestepping the non-commercial restric-
+ior and utterance style of specific characters. Yu                                                       tions imposed by OpenAI. This training approach
+et al. (2022) instructed the LLMs to follow speci-                                                       resulted in the development of the best permissive
+fied character descriptions for role-playing without                                             code LLMs. In this paper, we observe that LLMs
+tuning but encountered significant challenges in                                                    inherently acquire styles and knowledge of a vast
+accurately reflecting the intrinsic relationship be-                                                    array of roles during pre-training. Therefore, by
+tween the character profile and the dialogue content.                                                     self-alignment, we can effectively stimulate the
+Chen et al. (2023) focused on evaluating how well                                      LLM’s intrinsic role-play abilities, leading to the
+a LLM can align with a specific character, using                                                   attainment of the current best role-play models.
+Harry Potter as a case study. Wang et al. (2023c) in-
+troduced the first fine-grained role-playing dataset                                       3  Methods
+containing 100 roles via prompting to GPT-3.5.
+Li et al. (2023a) incorporated substantial prompts    3.1  Problem Definition
+about the character’s background, personality, and
+                                                 Role-play.  Role-play necessitates LLMs to en-prior conversations, leveraging ChatGPT to gener-
+                                              gage in dialogue, embodying specific characters toate dialogues of 32 characters. Zhou et al. (2023)
+                                                             facilitate immersive interaction. Consequently, aprompted GPT-4 to expand the scale and diversity
+                                                    role-playing LLM must exhibit unwavering self-of human-annotated role-playing data, resulting
+                                                awareness and possess extensive character-specificin 1,034 dialogues of 250 characters. Shao et al.
+                                            knowledge in adherence to query instructions. In(2023) also prompted GPT-3.5 to become the role-
+                                                           this study, we define the role-play task by furnish-play data generator. Zhou et al. (2023) proposed
+                                                  ing LLMs with either a name or a concise de-drawing role-playing dialogues from diverse Chi-
+                                                      scription of a particular character. Subsequently,nese novels and scripts with the help of GPT-4.
+                                    we assess their ability to maintain consistent self-However, limited by data sources, they could only
+                                               awareness and demonstrate nuanced role-specificconstruct a Chinese dataset containing 77 roles. In
+                                             knowledge across multi-turn conversations.this work, different from previous works, we com-
+pletely abandon imitating proprietary LLMs and   Method Overview. We introduce DITTO, a self-
+build role-playing training data entirely through    alignment method for arbitrary role-play scenarios.
+self-alignment. Our method separates character   The inspiration behind DITTO lies in the premise
+knowledge and conversation style, allowing it to    that LLMs are the superposition of all characters,
+be used with any LLM capable of following in-   as they are pre-trained on the tremendous corpus,
+structions. It is highly scalable, creating the first    including conversations on various styles and do-
+multilingual dataset with 4,000 roles, 16 times the   mains (Shanahan et al., 2023). Moreover, we de-
+
+                                        7830
+
+
+--- PDF PAGE 4 ---
+                                               Knowledge Collection
+  Name: Alice                                                      Name: Peter Griffin
+  Summary: a fictional character and the main protagonist …                           Attributes: television character (instance of)…
+   Attributes: literary character (instance of)…                                            Profile:
+   Profile:                                                                               Peter Griffin Sr. is a fictional character and the main protagonist of the American …
+  Alice is a fictional character and the main protagonist of Lewis Carroll's children’s …
+
+                                                Role-specific                                                     Contrastive
+                                                      Dialogue Simulation
+                                                                                                Self
+                                                      During your adventures        Response    How do you handle
+                                                                  in Wonderland, you                               the chaos that ensues
+   You are Alice, a                                        encountered various        Ah, the Cheshire    from your frequent         It appears you may be
+    fictional character and     Attributes   Query Design  peculiar creatures. Can     Cat—such a          run-ins with Ernie       blending different characters
+    the main protagonist of                              you describe what the       curious creature      the Giant Chicken,      from separate works of fiction.
+   Lewis Carroll's                                         Cheshire Cat was like       indeed! The        and what does it            I do not have any run-ins with
+    children's novel Alice's                               and the nature of its         Cheshire Cat was    symbolize in your       Ernie the Giant Chicken, nor
+    Adventures in               Profile                     advice to you?            one of the most        life in Quahog?        do I live in Quahog. In my
+   Wonderland.                                                                     remarkable                                  adventures in Wonderland, I
+                                                                                              inhabitants of                               encounter various forms of
+                                                                               Wonderland, …                            chaos and confusion …
+
+
+
+
+
+                                                             Fine-tuning
+
+Figure 2: Illustration of DITTO. DITTO consists of three phrases for self-alignment of role-play. First, DITTO
+collects character profiles from knowledge bases, as shown in the upper part. Then, it applies an off-the-shelf chatbot
+to generate role-specific and contrastive queries, followed by a knowledge-augmented self-response to construct
+role-play supervision datasets (Dialogue Simulation). Finally, DITTO finetunes the dataset on the supervision model
+to empower role-play capabilities.
+
+compose role-play into two crucial components:   data2 and Wikipedia3 to support DITTO, although
+consistent self-awareness and role-specific knowl-   DITTO can seamlessly adapt to alternative knowl-
+edge. To realize these objectives, DITTO com-   edge bases.  Wiki is a human-curated database
+prises three steps for constructing datasets tailored   widely adopted in natural language research (Xue
+for role-play alignment: character knowledge col-    et al., 2020; Lu et al., 2023a). We gather character
+lection, dialogue simulation, and supervised fine-   names, descriptions, and key properties from Wiki-
+tuning, illustrated in Fig. 2. In particular, DITTO    data, accompanied by the corresponding Wikipedia
+operates on a readily available LLM chatbot, such    article serving as the character profile, as depicted
+as Qwen-Chat (Bai et al., 2023), Llama-chat (Tou-    in the upper of Fig. 2. While we currently focus
+vron et al., 2023), or Mistral-instruct (Jiang et al.,    solely on Chinese and English characters, DITTO
+2023). Such open-sourced LLMs have already ex-   can be extended to more complex multilingual sce-
+hibited commendable instruction-following capa-    narios, as Wikidata and Wikipedia boast rich con-
+bilities but still fall short of role-play capabilities.    tent in numerous languages.
+DITTO simulates role-play dialogue by reformulat-
+                                                    3.3  Dialogue Simulationing it as a reading comprehension task, utilizing
+role profiles sourced from open-access knowledge   With the gathered character knowledge, role-play
+bases to generate a role-play dataset. Subsequently,   dialogue simulation is structured into two consecu-
+we fine-tune the LLM using this self-generated    tive reading comprehension tasks: one for generat-
+dataset to imbue it with role-play capabilities. The    ing queries and the other for responses.
+design and implementation details of each compo-   Query Simulation. We use an LLM to generate
+nent are elaborated in the subsequent sections.        role-related and role-contrastive queries to main-
+                                                        tain consistent role identity and reject unknown
+3.2  Character Knowledge Collection                                                    questions for each character. Role-specific queries
+Diverse characters and corresponding precise pro-   ask for information closely related to the back-
+files are essential for generating high-quality role-   ground of characters.  For example, a question
+play supervision. DITTO, as its foundational step,                                               2https://www.wikidata.org/wiki/
+gathers comprehensive profiles from open-source   Wikidata:Main_Page
+knowledge bases. In this study, we leverage Wiki-     3https://www.wikipedia.org/
+
+                                        7831
+
+
+--- PDF PAGE 5 ---
+about “Cheshire Cat” is generated as a role-specific    Algorithm 1: DITTO, Self-alignment for
+query for “Alice” in Fig. 2. On the contrary, con-    Role-play
+trastive queries ask for information that is out of       Data: Character Data Base     Seed LLM                                                                   DC,      M,
+a character’s knowledge scope, as asking “Alice”           Query Simulation Template TQ, Response                                                                     Simulation Templatefor stories in “Family Guys” in Fig. 2. To effi-                        TR
+                                                               Result: Role-play alignment dataset DR, Role-playciently generate such queries on a large scale, we         LLM                                    MR
+pair characters in our pool and provide detailed     // Dialogue Simulation, See  §3.3
+profiles for LLMs to generate queries one charac-      1 DR = []
+                                                                                2 for r in |DC| doter can answer but is unsuitable for the other. The        // Query Simulation
+questions should strictly conform to one’s era back-      3     rn = random_select(DC/r)
+ground and character set but go beyond the era,      54      queriesquery_sim_prompts=        = TQ(r, rn)                                                                   M(query_sim_prompts)genre, occupation, age, knowledge, etc., settings        // Response Simulation
+of the other. Therefore, the paired character can-      6     conv = [system(r)] // Verbalization
+                                                                                7      for q in queries do
+not answer them. Detailed instructions for query       8         response_sim_prompt =       q)                                                                                         TR(r,
+simulation are shown in Appx. §B.1.                          9          response = M(response_sim_prompt)                                                                               10          conv.append(q)
+Response Simulation. Given the self-generated      11          conv.append(response)
+queries and character profiles, we also conceptual-     12                                                             DR.append(conv)
+ize the response simulation as a reading comprehen-     // Supervised Finetuning, See §3.4
+sion task. We linearize the structured profile using      13 MR = Train(M, DR)
+templates outlined in Appx. §B.2. Then, a query
+is appended after the verbalized profile. LLMs are
+expected to extract pertinent information from the     field. This work proposes an objective assessment
+provided context and generate responses by emu-   instead of previous preference annotations to eval-
+lating the character. This process is viable since all    uate basic role-play capabilities. We first design
+questions originate from the same set of profiles.     three core metrics for role-play and implement a
+  Reading comprehension is an inherent skill for    trustworthy evaluation recipe for each based on
+one LLM with instruction-following capabilities,  “LLMs as Judges” (Zheng et al., 2023; Zhang et al.,
+and we provide precise role-specific knowledge    2023). During the evaluation, we only provide a
+to the LLM. Therefore, we are confident that this    brief introduction of the character profile, as shown
+approach can reduce hallucinations compared to    in Fig. 3, such as “You are Edward III of England,
+the previous method of directly generating role-   king of England.”. Such a recipe evaluates whether
+play data by prompting GPT-4.              LLMs can excavate inherent knowledge for role-
+                                                         play.
+3.4  Supervised Finetuning
+We finetune the LLM on the self-generated dataset    4.1  Metric Design
+to inject role-play capabilities. During the fine-  As we interpret in §3.1, role-play LLMs are ex-
+tuning, we remove the injected knowledge and    pected to have consistent self-awareness, rich role-
+only retain a very brief introduction of the char-    specific knowledge, and precise knowledge bound-
+acter. Such variants help LLMs not only retrieve    ary awareness. We design three objective metrics
+character profiles from a given context but also    for these three properties respectively:
+inherent knowledge.                                               Consistent Role Identity.  An ideal role-play
+                               LLM should seamlessly embody a designated role4  Evaluation
+                                                 throughout a multi-turn conversation, maintaining
+Efficient evaluation for open-ended problems, such    character consistency without deviating. We struc-
+as role-play, is significantly understudied. Recent    ture the assessment of role consistency as a multi-
+work depends on heavy manual annotations for con-   choice problem involving four potential role can-
+ducting multifaceted role-play evaluations (Wang    didates. An additional LLM judger is tasked with
+et al., 2023c; Shao et al., 2023; Zhou et al., 2023).   discerning the most suitable character from the
+However, though human evaluation is promising,   given options. In essence, if the role-play model
+it is label-intensive and cannot be exactly repro-   successfully emulates the role and manifests the
+duced, impairing the further development of this    distinct stylistic attributes of the character during
+
+                                        7832
+
+
+--- PDF PAGE 6 ---
+        Consistent Role Identity                                           Accurate Role-related Knowledge                                Unknown Question Rejection
+
+  You are Edward III ofMASKEngland, king of England                          You are Edward III of England, king of England                          You are Edward III of England, king of England
+                                                                   What were the challenges you faced when asserting your claim to the French
+     Can you elaborate on the political and social reforms you implemented during       throne, and how did this ambition initiate the Hundred Years' War?              What were the key factors that influenced your stance on Australia's
+     your reign that contributed to the evolution of the English Parliament?                                                                                         involvement in international conflicts during your time in office, such as the
+                                                        My assertion to the French throne was rooted in both dynastic claims and the       War in Afghanistan and the Iraq War?"
+                                                                                                     politics of the period. As the son of Isabella of France, I claimed the French
+    During        my reign,                     several                               significant                                             political                                      and                                                        social                                                    reforms                                                               contributed                                                                            to       crown                                                                                     through                                                                     my                                                                                                maternal                                                                                                                    grandfather,                                                                                                                          King                                                                                                                                                   Philip IV of                                                                                                                                             France. However,                                                                                                                                                   As                                                                                                                                               Edward III                                                                                                                                                                                        of England,                                                                                                                                    my                                                                                                                                                                                                         reign                                                                                                                                                                             from 1327                                                                                                                                                                                                                   to 1377 was                                                                                                                                                                                         marked                                                                                                                                                                                                         by military
+    the evolution                  of the                        English                               Parliament.                                     Here                                              are                                       some                                                          of the key                                                         ways in                                                                                 the French                                                                                       upheld                                                                                                  the                                                                                                                              Salic law,                                                                                                       which barred                                                                                                                                succession                                                                                                                                 through                                                                                                                                            the female                                                                                                                                                    campaigns                                                                                                                                                                                            closer                                                                                                                                                                                        to home,                                                                                                                                                                 most                                                                                                                                                                                                 notably                                                                                                                                                                                                  the Hundred                                                                                                                                                                                                                                                Years'                                                                                                                                                                           War against
+   which the parliamentary institution developed:                                             line, thereby favoring my cousin, Philip VI of France, who was a direct male-          France, rather than involvement in conflicts that would occur centuries later,
+    1. The Establishment of Regular Parliaments: I recognized the importance …          line descendant…                                                           such as those in Afghanistan and Iraq. My considerations for engaging in
+                                                                                                                                                                                              conflict were based on medieval dynamics, including claims to territories and
+  The possible identities for the character are as follows:                       Please act as an impartial judge and evaluate the correctness of the response.       thrones (such as my claim to the French crown), feudal obligations, the
+    •  [Edward III of England] Edward III (13 November 1312 – 21 June 1377), also known as      You will be given some related information as tips for your accurate judgement.     defense of my realm, and the assertion of England's power in Europe …
+     Edward of Windsor before his accession …                                               Related Evidence:
+    •  [Anne, Princess Royal] Anne, Princess Royal (Anne Elizabeth Alice Louise; born 15                    • He declared himself the rightful heir to the French throne, initiating the Hundred Years' War.
+                                                                                                                                         •                                                                                                Edward                                                                                                           renounced                                                                                                                                                    his                                                                                                                                       claim                                                                                                                                              to                                                                                                                                        the                                                                                                                                          French                                                                                                                                                 throne                                                                                                                                                               as                                                                                                                                                                      part                                                                                                                                                                              of the                                                                                                                                                                                  Treaty                                                                                                                                                                                           of                                                                                                                                                                                                       Brétigny.      August            1950)                           is a                 member                                of                                the                                            British                                               royal                                                    family                                   …                                                                                                                                                            determine                                                                                                                                                              whether                                                                                                                                                                                    the                                                                                                                                                                                   responder                                                                                                                                                                                                                 refuses                                                                                                                                                                                                                      to answer                                                                                                                                                                                                                  the                                                                                                                                                                                                                          question                                                                                                                                                                                                  due                                                                                                                                                                                                                                                to                                                                                                                                         •                                                                                                                      His                                                                                                                                      later                                                                                                                          years                                                                                                            were                                                                                                                marked                                                                                                                            by                                                                                                                                                        international                                                                                                                                                                                      failure                                                                                                                                         and                                                                                                                                                          domestic                                                                                                                                                                                                                                   strife,                                                                                                                                                                                                     partly                                                                                                                                                            due                                                                                                                                                                                                 to                                                                                                                                                                                                                          his                                                                                                                                                                                poor       Please    •       [Jean-Pierre                 Sauvage]                             Jean-Pierre                                   Sauvage                                                                  is a                                               French                                                         coordination                                                                  chemist                                                                        working                                                                                            at
+                                                                                                                                                                               limited                                                                                                                                                     knowledge                                                                                                                                                                                   or other                                                                                                                                                                                                 reasons.                                                                                                                 health                                                                                                     and                                                                                                                                                       inactivity.      Strasbourg                   University.                     He                             graduated                                    from                                            the                               …
+                                                                                                                                         •                                                                                                Edward                                                                                                                      faced                                                                                                                                challenges                                                                                                                         from                                                                                                                                       the                                                                                                                                                                    nobility                                                                                                                                                       during                                                                                                                                                                                    his                                                                                                                                                                                       father's                                                                                                                                                                                   reign                                                                                                                                                     and                                                                                                                                                                                                       after                                                                                                                                                                                                                 his                                                                                                                                           own                                                                                                                                                                                                         accession,    •      [Zhang                Ziyi]                Zhang                              Ziyi                           (born                             9                                  February                                         1979)                                                                      is                                               a Chinese                                                                 actress                                                          and                                                                   model.                                                                      She                                                                                                                     is                                                                                                                       including                                                                                                                    the                                                                                                                            execution                                                                                                                                             of                                                                                                                                                            his                                                                                                                                                     cousin,                                                                                                                                  Thomas,                                                                                                                                                                                 Earl                                                                                                                                                                        of                                                                                                                                                                               Lancaster.                                                                                                                                         Ground                                                                                                                                                                                    Truth:                                                                                                                                                                                   Rejection                                                                                                                                                                                        required                                                                                                                                                                                                    as the                                                                                                                                                                                                         Afghanistan                                                                                                                                                                                      and the                                                                                                                                                                                                                                                   Iraq                                                                                                                                                                               War are                                                                                                                                                                                                                           out      regarded               as               one                       of                       the                          Four                          Dan                                      Actresses                                                of                                                  China.                                                                                                                                         •                                                                                       He                                                                                                was                                                                                                       crowned                                                                                                                                          at                                                                                                                      age                                                                                                                                     fourteen                                                                                                                                                               after                                                                                                                                                                        his                                                                                                                                                                father                                                                                                                                   was                                                                                                                                             deposed                                                                                                                                                        by                                                                                                                                                                                                     his                                                                                                                                                                        mother,                                                                                                                                                                                                               Isabella                                                                                                                                                                                                         of                                                                                                                                                                                                        France,                                                                                                                                                                           of Edward                                                                                                                                                                                                                                                                                            III’s knowledge
+                                                                                                and                                                                                                               her                                                                                                                                lover                                                                                                                   Roger                                                                                                                              Mortimer.  Please          select              the                   character                               identity                                     that                                        best                                                             fits                                              the                                                responder                                                                       in                                                             the                                                                                                                                         •                                                                                                                      His                                                                                                                     claim                                                                                                                           to                                                                                                                       the                                                                                                                         French                                                                                                                                throne                                                                                                                        and                                                                                                                                           the                                                                                                                                               ensuing                                                                                                                                     war                                                                                                                                         were                                                                                                                                                                                                significant                                                                                                                                                                                                  factors                                                                                                                                                                                                                  in                                                                                                                                                                                 the                                                                                                                                                                                                                              historical
+  current conversation:                                                                                             conflicts between England and France.
+
+                        [Edward III of England]                                                             Score: 9. Explanation: …                                                             Yes,  it rejects the question
+
+         Figure 3: Objective evaluation of LLM role-play. We present three metrics as described in §4.
+
+
+the conversation, the selection of the correct role    in both English and Chinese from Wikidata and
+by the judger should be very easy.                 Wikipedia for the experiments conducted in this
+Accurate Role-related Knowledge. While fully    study.  This approach can be readily expanded
+                                                      to encompass additional characters from variousembodying the identity of the role, we also an-
+                                           Wiki databases and across diverse languages. Toticipate the role-play model to accurately con-
+                                                   delve deeper into the examination of the impact ofvey the knowledge associated with the role, pre-
+                                  LLMs with varying instruction-following capaci-venting factual errors and hallucinations. How-
+                                                             ties in DITTO, we opt for Qwen’s 1.8B, 7B, 14B,ever, factual assessment presents substantial chal-
+                                              and 72B models as the seed LLMs, generating fourlenges, as even advanced LLMs like GPT-4 may
+                                                         sets of training data. In order to safeguard againstbe prone to hallucination. Fortunately, through our
+                                                         potential biases present in the training data that thedialogue-simulating scheme (§3.3), we can acquire
+                                            model could exploit to deceive evaluations, we uti-the golden knowledge behind each round of role-
+                                                           lize GPT-4-Turbo as the base LLM for DITTO toplay dialogue. As depicted in the middle subgraph
+                                                   generate a held-out test set. The test set comprisesof Fig. 3, we furnish role-related knowledge as tips
+                                          100 roles that do not overlap with the training set,to empower a judging LLM to evaluate whether a
+                                                 with each role having its own session, totaling 498response appropriately integrates knowledge con-
+                                                   chat turns. When compared to counterparts de-sistent with the provided evidence.
+                                                         tailed in Tab. 1, WIKIROLE stands out with the
+Unknown Question Rejection. Cognitive bound-                                                     highest number of roles and conversation sessions,ary reveals whether a model will reject questions
+                                                      establishing it as a robust dataset for exploring thethat are out of the cognitive boundary of a specific
+                                                      role-play dynamics of LLMs.role due to age, era, occupation, etc. A role-play
+model with a clear cognitive boundary will sig-   Baselines. We test both open-source and propri-
+nificantly enhance the immersion. We manually    etary advanced chatbots on our benchmarks: (1)
+annotate all questions in the test set based on the   OpenChat-3.5-1210 (Wang et al., 2023a) is based
+cognitive boundary of each character. Then, we   on Mistral-7B and trained with C-RLFT on pub-
+employ an LLM judger to evaluate whether the    licly available high-quality instruction data.  (2)
+model rejects each question. And we can calculate    Mistral-7B-Instruct-v0.2 (Jiang et al., 2023) is a
+the accuracy of rejections during the conversations.   strong aligned LLM with 7 billion parameters. (3)
+                                              Mixtral-7×8B-Instruct-v0.1 (Jiang et al., 2024)5  Experiments                                         is an aligned pretrained generative sparse mixture
+                                                   of experts model. Our proprietary baselines in-In   this  section,  we  present  experimental
+                                                  clude (4) Claude 2.14, (5) Wenxin 4.0 (API)5, (6)setup  (§5.1),  main  results  of DITTO  (§5.2),
+                                            GPT-3.5-Turbo, (7) GPT-4, (8) GPT-4-Turbo6,and further analyses (§6).
+                                               4https://www.anthropic.com/index/
+5.1  Experimental Setup                     claude-2-1
+                                               5https://yiyan.baidu.com/
+Dataset. Following the methodology outlined in      6https://platform.openai.com/docs/
+§3.2, we extracted 3,902 characters with profiles   models/gpt-4-and-gpt-4-turbo
+
+                                        7833
+
+
+--- PDF PAGE 7 ---
+         Dataset      Split     Source     Open-source     Multi-lingual     Multi-turn # Role # Session # Turn
+     CharacterGLM −−    −−       N         N        Y      250    1,034   16,316
+      RoleLLM     Test    −−       Y     Y Zh: 5, En: 95    N      100   −−    23,463
+     CharacterLLM −−    −−       Y         N        Y       9      1,600   21,120
+                      Train Self-Generated              Zh: 3184, En: 3902             3,902    7,086   36,164     WIKIROLE                  Y                  Y                       Test     GPT-4                    Zh: 47, En: 53              100     100     498
+
+Table 1: Dataset statistics. Comparing WIKIROLE with existing open-source role-play datasets. The queries in the
+training set of WIKIROLE are generated by the seed LLM, while the test set is generated by GPT-4.
+
+(9) Qwen-Max7. We exclude some popular open-   5.2  Main Results
+sourced LLMs due to lacking of support for long
+                                We present our main results in Tab. 2. We reportsequence length.
+                                                 both performances on English and Chinese evalua-
+  We also include LLMs with role-play expertise:                                                         tion subsets and aggregated scores in all languages.
+(1) CharacterGLM (Zhou et al., 2023) is a series                                   Among general baselines, we notice proprietary
+of models based on ChatGLM designed for gen-                                            models still significantly outperform open-source
+erating Character-based Dialogues. The role-play                                                models. For example, OpenChat-3.5 achieves sig-
+capability of CharacterGLM, with 66 billion param-                                                          nificantly higher performance than GPT-3.5-Turbo
+eters, outperforms most mainstream close-source                                          on various benchmarks (Wang et al., 2023a) but
+LLMs on human evaluation. However, Character-                                                                         still falls short of role-play on all three metrics. We
+GLM has not open-sourced models on all sizes                                                     also notice that role-play expertise baselines have
+yet, so we can only evaluate it through API 8. (2)                                                        better self-awareness consistency and cognitive
+Tongyi Xingchen is a close-sourced LLM role-play                                                boundaries than general baselines, showing these
+platform developed by Alibaba Cloud.                                            two metrics are significant for role-play agents. For
+Configurations. We use the Qwen-Chat series in   example, Xingchen achieves 0.85 on consistency
+four sizes (1.8B, 7B, 14B, 72B) as our seed LLMs.   and 0.87 on rejection, surpassing advanced propri-
+These Qwen-Chat models have basic instruction-    etary chatbots such as GPT-4. However, both Char-
+following abilities but no role-play capabilities.   acterGLM and Xingchen show very low scores
+These models are downgraded versions of the open-   on knowledge, suggesting they lack role-specific
+source Qwen-Chat series by removing the role-play   knowledge, which is also related to helpfulness,
+capabilities and will also be released for research    the key feature of language chatbots. Their knowl-
+purposes.  For simplicity, we refer to all these   edge scores are only on par with 7 billion param-
+Qwen-Chat (w/o roleplay) models as the series of    eters general baselines OpenChat-3.5 and Mistral-
+Qwen-Chat, but they differ from the open-sourced    7B-Instruct-v0.1. Among the proprietary LLMs,
+series. We finetune the Qwen-1.8B-Chat, Qwen-  Qwen-Max surpasses GPT-4, achieving the highest
+7B-Chat, and Qwen-14B-Chat on 32 A100 80G    scores on the current role-play benchmark and the
+GPUs, and the Qwen-72B-Chat on 64 A100 80G    role-play subset of MT-Bench.
+GPUs. We train all models for five epochs with a    We then report DITTO performance on four dif-
+learning rate of 2e −7, a 0.1 warm-up rate, and    ferent seed LLMs. First, we witness a remarkable
+a sequence length 8,192. We use GPT-4-turbo as    increase in all metrics along with the parameter
+the LLM judger in our evaluation. For each judg-   scale of LLMs. DITTO built on Qwen-72B even
+ment, we set the temperature of OpenAI API to 0.2    achieves 0.9 on consistency, surpassing all base-
+and generate 3 rounds for majority voting, which    lines and showing strong self-awareness consis-
+significantly decreases the variance of our evalu-    tency. It also has 6.64 on knowledge and outper-
+ation. The other hyperparameters are detailed in   forms all role-play expertise baselines. The rejec-
+Appx. §C. Baseline inference and judgment details    tion score of DITTO Qwen-72B is also on par with
+are described in Appx. §D.                      GPT-4. The similar trend can also be observed
+                                                      in the role-play subset of the publicly available
+  7https://help.aliyun.com/zh/dashscope/   MT-Bench evaluation. In general, DITTO shows ro-
+create-a-chat-foundation-model?spm=          bust effectiveness on LLMs in different scales, and
+a2c4g.11186623.0.0.581c64d16b7Azw
+  8https://maas.aminer.cn/dev/api#            the best model trained on Qwen-72B surpasses
+characterglm                                             all role-play expertise baselines and reaches the
+                                        7834
+
+
+--- PDF PAGE 8 ---
+                                                  WIKIROLEEVAL                                                                                     MT-Bench Model                       #Params         All            En            Zh
+                                           Cons. Know.  Rej.  Cons. Know.  Rej.  Cons. Know.  Rej.  Roleplay
+                                  General Baselines (Open-sourced)
+ OpenChat-3.5                  7B     0.67   5.29  0.79  0.66   6.46  0.83  0.67   3.73  0.74   −−
+ Mistral-7B-Instruct-v0.2           7B     0.76    5.5   0.79  0.73   6.81  0.87  0.79   3.72  0.69   −−
+ Mixtral-8x7B-Instruct-v0.1         8x7B    0.73   6.19   0.8   0.71   7.27  0.83  0.76   4.73  0.76   −−
+                                   General Baselines (Proprietary)
+ Claude2.1               −−     0.51   5.02  0.66  0.56   6.25   0.7   0.44   3.28   0.6   −−
+ Wenxin 4.0              −−     0.68   5.12  0.74  0.64   5.29  0.77  0.74    4.9    0.7   −−
+ GPT-3.5-Turbo            −−     0.72   6.33  0.81  0.79   7.56  0.87  0.63   4.59  0.71    8.40
+ GPT-4                 −−     0.8    7.62  0.85  0.81   8.53   0.9   0.8    6.35  0.79    8.90
+ GPT-4-Turbo             −−     0.7    7.33  0.82  0.72   8.57  0.84  0.67   5.58  0.79   −−
+ Qwen-Max              −−     0.92   8.33  0.91  0.88   8.71  0.93  0.98   7.79  0.89    9.65
+                                       Role-play Expertise Baselines
+ CharacterGLM                 6B     0.75   4.73   0.8   0.72   4.71  0.79  0.79   4.76  0.81   −−
+ Xingchen               −−     0.85    5.9   0.87  0.83   6.09   0.9   0.86   5.63  0.84   −−
+                                            Ours
+ Qwen-1.8B-Chat w/o roleplay SFT †   1.8B     0.6    3.13  0.65  0.58   3.24  0.63  0.62   2.99  0.67    5.85
+ +DITTO                          1.8B    0.78   3.81  0.73  0.79   3.87  0.75  0.78   3.71  0.71    6.34
+ Qwen-7B-Chat w/o roleplay SFT †    7B     0.52   3.87   0.7   0.55   4.39  0.71  0.49   3.16  0.69    6.73
+ +DITTO                      7B     0.82   4.97  0.76  0.79   5.38  0.85  0.87    4.4   0.64    6.90
+ Qwen-14B-Chat w/o roleplay SFT †   14B     0.52   4.15  0.68  0.56   4.84  0.68  0.47   3.16  0.67    7.10
+ +DITTO                       14B     0.9    6.03   0.8   0.88   6.46  0.85  0.92   5.43  0.74    7.65
+ Qwen-72B-Chat w/o roleplay SFT †   72B     0.54   4.92  0.67  0.58    5.8   0.68  0.48   3.64  0.66    8.13
+ +DITTO                       72B     0.9    6.64  0.82  0.87   7.03  0.87  0.93   6.09  0.73    8.43
+
+   † Baselines are a downgraded series of Qwen-Chat from 1.8B to 72B without any role-play supervised-finetuning (SFT),
+   which are not the open-sourced version of Qwen-Chat.
+
+Table 2: Main results of DITTO. Cons., Know., Rej. are short for consistent role identity, accurate role-related
+knowledge, and unknown question rejection, respectively. “En” is short for English, while “Zh” is short for Chinese.
+The “All” columns show aggregated scores on bilingual test samples. We report accuracy for consistency and
+rejection evaluation and a 1-10 score for knowledge. A darker background indicates better performance. The
+number of parameters for close-sourced LLMs remains unknown, so we mark them with dashes.
+
+                                    Correct        Not Sure          Incorrect       Query Quality. To obtain a better understand-
+                       Query Quality Annotation             ing of self-simulated queries in DITTO, we em-
+                                                ploy human annotators to examine the quality of
+   Qwen-72B-Chat                                         these queries. We sample 400 queries generated
+                                          by Qwen-Chat in 4 scales from the training set,
+   Qwen-14B-Chat                                        containing half role-specific and half contrastive
+                                                      queries. Human annotators are asked to check
+    Qwen-7B-Chat                                    whether a question meets the requirement of role-
+                                                          specific or contrastive queries for specific character.
+  Qwen-1.8B-Chat                                 The annotation results shown in Fig. 4 suggests an
+                                                remarkable increases of accuracy in query simula-
+             0      20      40      60      80     100      tion, when the number of parameters scale from
+                                             1.8B to 72B. Therefore, we notice stronger LLMs
+Figure 4: Human annotation for the quality of query                                                  generate more accurate queries, leading to better
+simulation.
+                                                  end-to-end roleplay performance.
+performance of advanced proprietary chatbots.                                        Knowledge Injection. We further analyze the ef-
+                                                          fective of character knowledge injection during the
+5.3  Analysis                                                 dialogue simulation in DITTO.  Specifically, we
+We introduce two further analyses in query quality   compare the quality of dialogue simulation by di-
+and the effectiveness of knowledge injection.         rectly applying this method on WIKIROLEEVAL
+
+                                        7835
+
+
+--- PDF PAGE 9 ---
+                                Supervision LLM                                                       SeedSeed LLMLLM
+                  Qwen-1.8B-Chat     Qwen-7B-Chat     Qwen-14B-Chat     Qwen-72B-Chat                          Qwen-1.8B-ChatQwen-1.8B-Chat     Qwen-7B-ChatQwen-7B-Chat     Qwen-14B-ChatQwen-14B-Chat     Qwen-72B-ChatQwen-72B-Chat
+     0.950          consistency                                        7.5         knowledge                                       0.90            rejection
+
+     0.925                                                                                                     7.0
+                                                                                                                                                                                                            0.85
+     0.900                                                                                                     6.5
+
+                                                                                                                6.0                                                                                               0.80
+     0.875
+
+                                                                                                                5.5 Performance 0.850                                                                                                                                                                                                  Performance                                                                                                                                                                                                     Performance 0.75
+                                                                                                                5.0
+
+     0.825
+                                                                                                                4.5                                                                                               0.70
+
+     0.800Imitation                                                                                                                                                                                 Imitation 4.0                                                                                                                                                            Imitation
+                                                                                                                                                                                                            0.65
+     0.775                                                                                                     3.5
+
+     0.7500.750     0.775     0.800     0.825     0.850     0.875     0.900     0.925     0.950          3.03.0       3.5       4.0       4.5       5.0       5.5       6.0       6.5       7.0       7.5          0.600.60          0.65          0.70          0.75          0.80          0.85          0.90
+               Supervision Performance                           Supervision Performance                           Supervision Performance
+
+Figure 5: Generalization analyses between various supervision and seed LLMs. Supervision performance denotes
+role-play under the DITTO simulation recipe with knowledge augmentation. Imitation performance denotes the
+performance when seed LLMs fine-tune on simulation of certain supervision LLMs.
+
+
+              Setting       Cons.   Know.   Rej.          extend our setting from self-supervision to cross-
+        w/ Knowledge    0.77     4.40    0.79           supervision:
+       w/o Knowledge    0.76     3.77    0.73
+                                                              • Supervision LLM is the LLM we used to sim-
+Table 3: The effectiveness of knowledge injection in      ulate role-play dialogue in DITTO. We use the
+dialogue simulation. We report the performance of dia-      supervision model to generate queries and corre-
+logue simulation with and without character knowledge      sponding responses and finetune the seed LLM
+injection on the test set with Qwen-1.8B-Chat.                                             on this dataset. In the original setting of DITTO,
+                                                      the supervision LLM is the same as the seedwith Qwen-1.8B-Chat as the seed LLM. As shown
+                                       LLM, while the supervision one can be a weakerin Tab. 3, the setting containing knowledge injec-
+                                                       or stronger LLM in the cross-supervision setting.tion shows consistently better performance on all
+                                                              • Supervision Performance denotes the perfor-three metrics, especially the knowledge and rejec-
+                                          mance on the test set of supervision model fol-tion, showing knowledge injection can significantly
+                                                lowing the simulation recipe of DITTO. Specif-boost quality of self-simulated supervision.
+                                                                ically, we first retrieve the role-specific knowl-
+                                               edge of characters in the test set and then gen-6  Dissecting Role-play by Cross                                                         erate responses as the recipe of response sim-   Supervision                                                        ulation in §3.3 with supervision LLMs. This
+We have observed in Table 2 that a strong LLM     method efficiently evaluates the quality of super-
+supervising itself yields better results compared to      vision via "LLMs as Judges."
+                                                              • Imitation Performance is the performance ofa weak LLM self-alignment, with a particularly
+                                                  seed LLMs on the test set after finetuning onsignificant improvement in knowledge, while the
+                                                       role-play simulation from certain supervisionenhancement in conversational style, such as iden-
+                                      LLM. We introduce this term to distinguish ittity, is relatively limited. Naturally, this raises two
+                                               from supervision performance.intriguing questions: (1) Is the improvement in
+performance attributed to the higher quality of su-                                            Our experiments utilize four Qwen-Chat models
+pervision, the larger capacity of the seed model, or                                                 ranging from 1.8B to 72B as supervisory LLMs.
+a combination of both? (2) Is high-quality supervi-                                                   All models undergo training using nearly identical
+sion necessary to simulate role-play style? There-                                                      pre-training and alignment procedures, ensuring
+fore, we conduct a series of cross-supervision anal-                                               uniform initial conditions. We adopt each of them
+yses to investigate how the combination of different                                                     as the supervision LLM and fine-tune all four mod-
+supervision and seed LLMs affects the outcomes.                                                         els on each simulation.  In each simulation, the
+                                                   supervision LLM generates both queries and re-
+6.1  Cross-supervision Setting                                                  sponses, strictly following the recipe in DITTO.
+We first introduce the supervision model, supervi-  And the quality of supervision can be estimated by
+sion performance and imitation performance to    their supervision performance.
+                                        7836
+
+
+--- PDF PAGE 10 ---
+6.2  Discussion                                  tune Qwen-72B-Chat, can achieve on-par perfor-
+                                          mance on self-aligned Qwen-7B-Chat. Despite our
+We present the results of cross-supervision analy-                                                       definition and experimental settings are different
+ses on Fig. 5. We introduce our observations and                                            from (Burns et al., 2023), both works empirically
+insights below:                                         show the potential of eliciting strong capabilities
+  Consistent role identity can consistently bene-                                                 with weak supervision.
+fit from imitation learning even with worse su-
+pervision, while knowledge-related metrics do                                       7  Conclusion
+not. As shown in the first subplot in Fig. 5, all
+data points on consistency are above the diagonal,   In this paper, we present for the first time a LLM
+while those on knowledge and rejection subplots   endowed with instruction-following capabilities,
+are below the diagonal. The above diagonal means   can achieve role-play proficiency through self-
+the imitation performance in all settings is con-   alignment without the need to distill proprietary
+sistently higher than the supervision performance.   counterparts like GPT-4.  Experimental results
+Role identity can consistently benefit from imita-   demonstrate the effectiveness of our proposed self-
+tion learning. In other words, seed LLMs can easily   alignment strategy DITTO, across four LLM sizes
+learn the role-playing format even though there are    ranging from 1.8B to 72B. It consistently outper-
+worse demonstrations in supervision.  It can be   forms all existing open-source role-play models,
+interpreted that role consistency is easier to learn   even without relying on distillation data. Notably,
+and more robust to supervision quality, while role-     it showcases performance levels comparable to pro-
+specific knowledge and rejection behaviors show    prietary LLMs such as GPT-4-turbo. Furthermore,
+degradation after imitation learning.            we delve into the decomposition of role-play into
+  Knowledge in role-play is bounded by inher-   two distinct sub-abilities: role-specific knowledge
+ent capabilities of LLMs in strong-to-weak set-   and conversational style. The former is inherently
+tings. The second subplot reveals a noticeable    constrained by the LM’s knowledge, while the lat-
+trend wherein imitation performance experiences    ter displays a spectrum of weak-to-strong general-
+marginal increments for the seed LLM Qwen-1.8B-    ization, facilitating easy acquisition from a smaller-
+Chat, while supervision intensifies from Qwen-   sized model. Our intention with this paper is to
+1.8B-Chat to Qwen-72B-Chat. Similar patterns are    stimulate researchers to reconsider the foundational
+evident for Qwen-7B-Chat and Qwen-14B-Chat    roots of role-play alignment capabilities.
+when employing corresponding more potent mod-
+els as supervision LLMs. These observations imply   Limitations
+that the intrinsic capabilities of seed LLMs confine
+                                              Although DITTO can empower open-source LLMs
+the role-specific knowledge, and utilizing supervi-
+                                                     role-play capabilities, we also notice the best
+sion from significantly more robust LLMs may only
+                                         DITTO model based on Qwen-72B-Chat is still out-
+yield slight improvements. Similar conclusions can
+                                                performed by advanced chatbots such as GPT-4 and
+be drawn from the rejection metric, which relies on
+                                              GPT-4-Turbo. However, our training data, though
+role-specific knowledge. In light of this conclusion
+                                                           efficiently attained, contains noticeable noise even
+and the preceding one, we may summarize that
+                                                       for DITTO on Qwen-72B-Chat as presented in
+achieving a commendable role-play performance
+                                                       Fig. 4. So we expect a manual cleaning of the self-
+necessitates a strong foundational model, with SFT
+                                                 generated dialogue simulation will further boost
+data not constituting the central bottleneck.
+                                                     the performance of DITTO.
+  Consistent weak-to-strong generalizations are
+witnessed on knowledge-related metrics but not                                            Ethics Statements
+in role identity consistency. We notice consistent
+weak-to-strong generalizations on the knowledge    Role-play LLMs aligned by DITTO may only have
+and rejection subplots, especially the knowledge   minimum safety alignment, so it will probably gen-
+one. It is remarkable that, for each verticle line of    erate toxic and harmful contents under induction.
+the same supervision in the knowledge subplot, the    Therefore, these role-play LLMs are only for re-
+imitation performance increases as the seed LLM    search purposes and should be carefully aligned in
+scales up. For example, using weak supervision,   terms of safety in the future.
+such as simulations on Qwen-1.8B-Chat to fine-
+
+                                        7837
+
+
+--- PDF PAGE 11 ---
+References                                  Keming Lu, Hongyi Yuan, Zheng Yuan, Runji Lin, Jun-
+                                                  yang Lin, Chuanqi Tan, Chang Zhou, and Jingren
+Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang,                                                    Zhou. 2023b. # InsTag: Instruction tagging for ana-
+  Xiaodong Deng, Yang Fan, Wenbin Ge, Yu Han, Fei                                                            lyzing supervised fine-tuning of large language mod-
+  Huang, et al. 2023. Qwen technical report. arXiv                                                                         els. arXiv e-prints, pages arXiv–2308.
+   preprint arXiv:2309.16609.
+                                                     Niklas Muennighoff, Qian Liu, Armel Zebaze, QinkaiTom Brown, Benjamin Mann, Nick Ryder, Melanie                                                    Zheng, Binyuan Hui, Terry Yue Zhuo, Swayam   Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind                                                        Singh, Xiangru Tang, Leandro Von Werra, and   Neelakantan, Pranav Shyam, Girish Sastry, Amanda                                                 Shayne Longpre. 2023. Octopack: Instruction tun-   Askell, et al. 2020. Language models are few-shot                                                         ing code large language models.  arXiv preprint   learners. Advances in neural information processing                                                        arXiv:2308.07124.   systems, 33:1877–1901.
+                                                Murray Shanahan, Kyle McDonell, and Laria Reynolds.Collin Burns, Pavel Izmailov, Jan Hendrik Kirchner,
+                                                        2023. Role play with large language models. Nature,  Bowen Baker, Leo Gao, Leopold Aschenbrenner,
+                                                      pages 1–6.  Yining Chen, Adrien Ecoffet, Manas Joglekar, Jan
+   Leike, Ilya Sutskever, and Jeff Wu. 2023. Weak-to-                                                Yunfan Shao, Linyang Li, Junqi Dai, and Xipeng Qiu.   strong generalization: Eliciting strong capabilities                                                      2023.  Character-llm: A trainable agent for role-  with weak supervision.                                                             playing. arXiv preprint arXiv:2310.10158.
+Nuo Chen, Yan Wang, Haiyun Jiang, Deng Cai, Yuhan
+                                                   Meiling Tao, Xuechen Liang, Tianyu Shi, Lei Yu, and   Li, Ziyang Chen, Longyue Wang, and Jia Li. 2023.
+                                                           Yiting Xie. 2023. Rolecraft-glm: Advancing person-  Large language models meet harry potter: A dataset
+                                                              alized role-playing in large language models.   for aligning dialogue agents with characters. In Find-
+   ings of the Association for Computational Linguistics:                                          Hugo Touvron, Louis Martin, Kevin Stone, Peter Al-
+  EMNLP 2023, pages 8506–8520.                                                                   bert, Amjad Almahairi, Yasmine Babaei, Nikolay
+                                                         Bashlykov, Soumya Batra, Prajjwal Bhargava, ShrutiArnav Gudibande, Eric Wallace, Charlie Snell, Xinyang
+                                                        Bhosale,  et  al. 2023.  Llama 2:  Open founda-  Geng, Hao Liu, Pieter Abbeel, Sergey Levine, and
+                                                              tion and fine-tuned chat models.  arXiv preprint  Dawn Song. 2023. The false promise of imitating
+                                                        arXiv:2307.09288.   proprietary llms. arXiv preprint arXiv:2305.15717.
+Albert Q Jiang, Alexandre Sablayrolles, Arthur Men-   Quan Tu, Chuanqi Chen, Jinpeng Li, Yanran Li, Shuo
+   sch, Chris Bamford, Devendra Singh Chaplot, Diego      Shang, Dongyan Zhao, Ran Wang, and Rui Yan.
+  de las Casas, Florian Bressand, Gianna Lengyel, Guil-      2023.  Characterchat: Learning towards conversa-
+  laume Lample, Lucile Saulnier, et al. 2023. Mistral       tional ai with personalized social support.  arXiv
+   7b. arXiv preprint arXiv:2310.06825.                     preprint arXiv:2308.10278.
+Albert Q. Jiang, Alexandre Sablayrolles, Antoine   Guan Wang, Sijie Cheng, Xianyuan Zhan, Xiangang Li,
+  Roux,  Arthur Mensch,  Blanche  Savary,  Chris      Sen Song, and Yang Liu. 2023a. Openchat: Advanc-
+  Bamford, Devendra Singh Chaplot, Diego de las       ing open-source language models with mixed-quality
+  Casas, Emma Bou Hanna, Florian Bressand, Gi-       data. arXiv preprint arXiv:2309.11235.
+  anna Lengyel, Guillaume Bour, Guillaume Lam-
+                                                        Yufei Wang, Wanjun Zhong, Liangyou Li, Fei Mi, Xing-   ple, Lélio Renard Lavaud, Lucile Saulnier, Marie-
+                                                     shan Zeng, Wenyong Huang, Lifeng Shang, Xin  Anne Lachaux, Pierre Stock, Sandeep Subramanian,
+                                                              Jiang, and Qun Liu. 2023b.  Aligning large lan-  Sophia Yang, Szymon Antoniak, Teven Le Scao,
+                                                    guage models with human: A survey. arXiv preprint  Théophile Gervet, Thibaut Lavril, Thomas Wang,
+                                                        arXiv:2307.12966.  Timothée Lacroix, and William El Sayed. 2024. Mix-
+   tral of experts.                                             Zekun Moore Wang, Zhongyuan Peng, Haoran Que,
+Cheng Li, Ziang Leng, Chenxi Yan, Junyi Shen, Hao      Jiaheng  Liu,  Wangchunshu Zhou,  Yuhan Wu,
+  Wang, Weishi MI, Yaying Fei, Xiaoyang Feng, Song     Hongcheng Guo, Ruitong Gan, Zehao Ni, Man
+  Yan, HaoSheng Wang, et al. 2023a. Chatharuhi: Re-      Zhang, et al. 2023c. Rolellm: Benchmarking, elic-
+  viving anime character in reality via large language        iting, and enhancing role-playing abilities of large
+  model. arXiv preprint arXiv:2308.09597.               language models. arXiv preprint arXiv:2310.00746.
+Xian Li, Ping Yu, Chunting Zhou, Timo Schick, Luke   Mengge Xue, Bowen Yu, Zhenyu Zhang, Tingwen Liu,
+   Zettlemoyer, Omer Levy, Jason Weston, and Mike     Yue Zhang, and Bin Wang. 2020. Coarse-to-fine pre-
+  Lewis. 2023b. Self-alignment with instruction back-       training for named entity recognition. arXiv preprint
+   translation. arXiv preprint arXiv:2308.06259.            arXiv:2010.08210.
+
+Keming Lu, Xiaoman Pan, Kaiqiang Song, Hongming     Jifan Yu, Xiaohan Zhang, Yifan Xu, Xuanyu Lei, Xinyu
+  Zhang, Dong Yu, and Jianshu Chen. 2023a. Pivoine:     Guan, Jing Zhang, Lei Hou, Juanzi Li, and Jie Tang.
+   Instruction tuning for open-world entity profiling.      2022. Xdai: A tuning-free framework for exploiting
+   In Findings of the Association for Computational       pre-trained language models in knowledge grounded
+   Linguistics: EMNLP 2023, pages 15108–15127.          dialogue generation. In Proceedings of the 28th ACM
+
+                                        7838
+
+
+--- PDF PAGE 12 ---
+  SIGKDD Conference on Knowledge Discovery and    Query for collecting virtual characters
+  Data Mining, pages 4422–4432.
+                                              PREFIX wdt: <http://www.wikidata.orgZheng Yuan, Hongyi Yuan, Chengpeng Li, Guanting                                                 /prop/direct/>
+  Dong, Keming Lu, Chuanqi Tan, Chang Zhou, and                                              PREFIX wd: <http://www.wikidata.org/
+   Jingren Zhou. 2023. Scaling relationship on learning         entity/>
+   mathematical reasoning with large language models.     PREFIX schema: <http://schema.org/>
+                                              PREFIX wikibase: <http://wikiba.se/
+Xinghua Zhang, Bowen Yu, Haiyang Yu, Yangyu Lv,        ontology#>
+  Tingwen Liu, Fei Huang, Hongbo Xu, and Yongbin     PREFIX rdfs: <http://www.w3.org
+   Li. 2023. Wider and deeper llm networks are fairer         /2000/01/rdf-schema#>
+   llm evaluators. arXiv preprint arXiv:2308.01862.       SELECT ?person ?label
+                                              (COUNT(DISTINCT(?sitelink)) as ?
+Wayne Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang,        sites)
+   Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen     WHERE {
+  Zhang, Junjie Zhang, Zican Dong, et al. 2023. A       ?person wdt:P31 wd:Q15632617 .
+   survey of large language models.  arXiv preprint       ?sitelink schema:about ?person .
+   arXiv:2303.18223.                                ?person rdfs:label ?label .
+                                                FILTER (lang(?label) = "zh") .
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan       ?person schema:description ?
+  Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin,          description.
+  Zhuohan Li, Dacheng Li, Eric Xing, et al. 2023.       FILTER(LANG(?description) = "zh")
+  Judging llm-as-a-judge with mt-bench and chatbot       }
+   arena. arXiv preprint arXiv:2306.05685.             GROUP BY ?person ?label
+                                              ORDER BY DESC(?sites)
+Jinfeng Zhou, Zhuang Chen, Dazhen Wan, Bosi Wen,     LIMIT 5000
+  Yi Song, Jifan Yu, Yongkang Huang, Libiao Peng,
+  Jiaming Yang, Xiyao Xiao, et al. 2023. Character-
+  glm: Customizing chinese conversational ai char-  B  Prompts
+   acters with large language models. arXiv preprint
+   arXiv:2311.16832.                    We use the following prompt in dialogue simula-
+                                                      tion to prompt chat models generate queries and
+Appendix                                                 corresponding responses.
+A  Wikidata Queries
+                                              B.1  Query Simulation
+We use the following queries to collect character
+profiles form Wikidata:                      Query Simulation
+
+  Query for collecting human characters       You are skilled at designing                                                 questions for specific characters
+                                                  based on background information,
+  PREFIX wdt: <http://www.wikidata.org            as follows you will be provided
+      /prop/direct/>                              with information for two
+  PREFIX wd: <http://www.wikidata.org/           characters:
+      entity/>
+  PREFIX schema: <http://schema.org/>         [Character A]
+  PREFIX wikibase: <http://wikiba.se/         The name is {label1}, the
+      ontology#>                                  description is {description1},
+  PREFIX rdfs: <http://www.w3.org                and the aliases also include {
+      /2000/01/rdf-schema#>                       aliases1}.
+  SELECT ?person ?label                       Here are the properties of Character
+  (COUNT(DISTINCT(?sitelink)) as ?                A:
+      sites)                                  {claims1}
+  WHERE {                                     Here is an introduction to Character
+    ?person wdt:P31 wd:Q5 .                       A:
+    ?sitelink schema:about ?person .          {wiki1}
+    ?person rdfs:label ?label .
+    FILTER (lang(?label) = "zh") .            [Character B]
+    ?person schema:description ?              The name is {label2}, the
+        description.                              description is {description2},
+    FILTER(LANG(?description) = "zh")            and the aliases also include {
+        .                                         aliases2}.
+    }                                         Here are the properties of Character
+  GROUP BY ?person ?label                         B:
+  ORDER BY DESC(?sites)                       {claims2}
+  LIMIT 5000                                  Here is an introduction to Character
+                                                  B:
+
+                                        7839
+
+
+--- PDF PAGE 13 ---
+  {wiki2}                                       follow the output format. And we only generate
+                                             one response in the response simulation.
+  Please design 3 questions that
+      Character                A can                      answer,                              but                                  are
+      not suitable                   for                       Character                                 B                                   to    D  API Configurations
+      answer. The questions should
+      strictly conform to Character A’s     Through Together API9, we infer our open-sourced
+       era background and character           general baselines, including OpenChat-3.5, Mistral-
+      setting, but go beyond the era,         7B-Instruct-v0.2, and Mixtral-8x7B-Instruct-v0.1.      genre, occupation, age, knowledge
+      , etc., settings of Character B,     We use the default hyper-parameters inherently set
+      therefore Character B cannot             in the APIs and set the max length to 8,192. We
+      answer them. Provide an
+      explanation with each question,        run our proprietary general baselines through their
+      explaining why Character A can         APIs. We call Claude2.1 and Wenxin 4.0 APIs with
+      answer it but Character B cannot.      default parameters and OpenAI APIs for GPT-3.5-
+  Please use as casual language as          Turbo (gpt-3.5-turbo-1106), GPT-4 (gpt-4), GPT-4-
+      possible to ask questions, and        Turbo (gpt-4-1106-preview) with 0.7 temperature
+      try to use the second person for      and 8, 192 max length.
+      questioning, such as "Who are you
+      ?". Please response in English.        As for the role-play expertise baselines, we call
+      Please return the results in the      CharacterGLM10 through the official API provided
+      following JSON structure:             by Zhipu AI. We infer Xingchen through their of-  [{{"question": str}}]
+                                                                ficial Python SDK with default inference param-
+                                                          eters11. For both models, we set the “user_name”
+B.2  Response Simulation                     and “user_info” as “user”.
+  Response Simulation
+
+  Please answer the questions
+      according to your identity! When
+      encountering questions that do
+      not match your identity, please
+      refuse to answer the question in
+      the role of {label}, and explain
+      the reason for refusal step by
+      step based on your identity.
+      Please do not step out of your
+      role! Please avoid repeatedly
+      restating your identity or name.
+
+  You are {label}, your description is
+       {description}, and your aliases
+      also include {aliases}.
+  Here are your properties:
+  {claims}
+  Here is your introduction:
+  {wiki}
+
+C  Hyperparameters
+
+Training. We train all models for 300 steps with
+the 128 global batch size. We set the training se-
+quence length to 8,192. The learning rate is 2e-6,
+and the minimum learning rate is 2e-7. We mask
+prompts and ChatML roles during the training.
+Inference. We infer all models with topP 0.8,
+length penalty 1.1, sequence length 8,192, and max      9https://api.together.xyz/playground
+new token 2,048. We generate three rounds for     10https://maas.aminer.cn/dev/api#
+                                            characterglm
+query simulation and randomly select one format-     11https://xingchen.aliyun.com/xingchen/
+valid query, as smaller LLMs sometimes do not   document/python_sdk_static_role
+
+                                        7840

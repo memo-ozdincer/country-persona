@@ -1,5 +1,7 @@
 # Project handoff for fresh Aurora and local sessions
 
+**17 October research/preparation:** [Scenario-conditioned delegation sequences](SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md), closest precedent CoSER (ICML 2025). One hand-read meeting, three CPU examples, fourteen software tests, zero model calls/updates. Not a training release or quality result. Current navigation is in [CURRENT_STATE.md](CURRENT_STATE.md).
+
 **14 October navigation/storage update:** [Current state](CURRENT_STATE.md), [sync audit and research assessment](STORAGE_SYNC_AND_RESEARCH_DIRECTION_20261014.md), [storage policy](STORAGE_POLICY.md). No new model result. The chronology below is preserved; use current summaries for active instructions.
 
 The 7 October explicit seed-only control is prepared but unrun. Four planned answers, zero actual model calls/updates. Same old source/H1/task/base-draft prefixes, system, rubric/model/runtime/decoder unchanged; revision adds explicit no-peer mode and removes conditional peer-engagement sentence. Native input lengths 1,397/1,452 and CPU provenance/config/adapter checks pass. Same root assistant hand-read both changes/reused complete text; private 143/139-word source-compatible feasibility references are outside student inputs and not training targets or national-choice labels.
