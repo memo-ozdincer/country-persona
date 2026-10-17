@@ -1,0 +1,154 @@
+{
+  "status": "source_audited_data_harness_and_training_loop_prepared",
+  "date": "2026-10-17",
+  "release": "research/scenario-role-sft-20261017-v1",
+  "fit_config_sha256": "fe05083183f0592ed1eb0a490dcf99aab655fca41f642de4b464bbc9a0224104",
+  "tests": {
+    "focused_pytest_passed": 32,
+    "pinned_torch_runtime_unittest_passed": 3,
+    "total": 35
+  },
+  "source_review": {
+    "full_authentic_targets": 6,
+    "fitting_targets": 4,
+    "development_targets": 2,
+    "official_pdf_body_pages_covered": 54,
+    "logged_normalization_edits": 36,
+    "material_criteria": 28,
+    "all_used_context_read_by_same_assistant": true,
+    "all_excluded_headers_footers_read": true,
+    "independent_semantic_review": false
+  },
+  "preflight": {
+    "examples": 6,
+    "fitting_examples": 4,
+    "development_examples": 2,
+    "planned_updates": 128,
+    "sequence_tokens": 444032,
+    "supervised_tokens": 100736,
+    "actual_model_calls": 0,
+    "actual_optimizer_updates": 0
+  },
+  "cpu_engineering": {
+    "steps": 8,
+    "presentations": {
+      "synthetic-2": 2,
+      "synthetic-1": 2,
+      "synthetic-3": 2,
+      "synthetic-0": 2
+    },
+    "sequence_tokens": 80,
+    "supervised_tokens": 32,
+    "objective": "equal-example response-only mean causal CE",
+    "batch_size": 1,
+    "gradient_accumulation": 1,
+    "base_tensor_versions_unchanged": true,
+    "update": {
+      "adapter_tensors": 30,
+      "changed_adapter_tensors": 30,
+      "adapter_update_l2": 0.2447105061916333,
+      "all_adapter_tensors_finite": true,
+      "initial_adapter_digest": "9b710d2a7ea6aecab77a75a2d0face4cd091fe313832391d99f790eb29b02570",
+      "final_adapter_digest": "1c2176e7fa78f2b3cac683fd83c390c002d30a7c202901ecf22ffd74827a69f5"
+    },
+    "serialization": {
+      "saved_tensors_equal": true,
+      "reload_verified_after_state_perturbation": true,
+      "same_base_probe_logits_equal": true,
+      "probe_tokens": 10,
+      "maximum_logit_difference": 0.0,
+      "logit_atol": 1e-05,
+      "logit_rtol": 1e-05,
+      "files_sha256": {
+        "adapter_model.safetensors": "18eb583e2f12d2c504b4aec26e5fe60395b2078993e33485452accd8a4ab6375",
+        "adapter_config.json": "22736774c41794993c265a6a539e6817fc6d1ff69024e18a924532fc45b84783"
+      }
+    },
+    "trace_sha256": "10cd270e0bd3a83daa5438b5915eee07da4cc21827ec9c1c7b4f1e395514bfc7",
+    "trace_replay": {
+      "entries": 8,
+      "source_inputs_masks_schedule_and_finite_gradients_replayed": true
+    },
+    "kind": "engineering_only_random_tiny_Qwen3_5_not_production_model",
+    "full_vs_target_only_loss_equal": true,
+    "corrupt_prompt_mask_rejected": true,
+    "cold_separate_base_reload_exact": true,
+    "production_model_calls": 0,
+    "production_optimizer_updates": 0
+  },
+  "production_model_calls": 0,
+  "production_optimizer_updates": 0,
+  "cumulative_qwen35_updates": 3934,
+  "separate_qwen25_reference_updates": 582,
+  "preparation_errors": [
+    {
+      "error": "Used 8192 instead of 6144 as raw-history prompt allowance during initial construction; rejected before data output, corrected to reserve 2048 generation tokens.",
+      "model_calls": 0,
+      "updates": 0
+    },
+    {
+      "error": "Relative source path was passed to absolute relative_to during release writing; partial pack preserved externally, fixed, final release rebuilt deterministically.",
+      "model_calls": 0,
+      "updates": 0
+    }
+  ],
+  "limitations": [
+    "Public record fidelity is distinct from neutral world-truth verification.",
+    "Same-assistant curation and criteria; no independent adjudication.",
+    "Historically exposed development episode, not sealed OOD.",
+    "Random tiny CPU model is engineering validation, not 4B hardware/training/quality evidence.",
+    "No substantive GPU fit or new production inference; no automatic experiment queue."
+  ],
+  "implementation_sha256": {
+    "scripts/extract_scenario_sft_sources.py": "fc47dc9d437adea525e985b6a0a2e77f445addef52887595543cc448c74be6cd",
+    "scripts/build_scenario_sft_pack.py": "6a1d1d4afa9295ade69f1035dd70ed955ce7687b5ba475824e2fabb125fe78d8",
+    "scripts/audit_scenario_sft_grounding.py": "c33aa77627d754c33ffd6f5abe6f618e2e124da409629973d2391bb2c0937ce5",
+    "scripts/run_scenario_sft.py": "ae1b175f22532d6ff5a8f5ee5a29e6f64ff634977aaf76fadb5ccceea55dd8c1",
+    "scripts/review_scenario_sft.py": "284021f850e6ebf229ed989a90207aa1ab214f50bb29951ad50f54da76d456d7",
+    "scripts/run_aurora_qwen35_smoke.py": "cfb8cd73f157aea2f50dec8e095bee608d4a01d1b44196cee7b3656302818603",
+    "src/country_persona/scenario_sft.py": "26b1621ef62e08c6beb9d0133d29fc7f2c1b1b7e5b55ac2f0c6acc148abbb396",
+    "src/country_persona/meeting_sequence.py": "e69f5e407cbfa3f7184cfc3f5312d762767522e759630c12df1e82f237a48642",
+    "src/country_persona/training_checks.py": "6c4e5e38cc9bf8c000af1698ee7fdda9683e9350c6a19d1c934ebec43a52d7e6"
+  },
+  "artifacts_sha256": {
+    "fit-config.json": "fe05083183f0592ed1eb0a490dcf99aab655fca41f642de4b464bbc9a0224104",
+    "excluded-margin-audit.json": "5a750a575a58f3c7499ecf05fd2461babbd576f8b76c4700f92e2a484fbce0d5",
+    "body-geometry-check.json": "0a6bd88452dd282855570001c8fa5c1698a46defa3cd2550b7b7d2b761a59db5",
+    "quality-review.json": "fad27496523b527f57fd6be1f74c180e4ddc07d6d009954054c9499a60fc6f74",
+    "rubric.json": "2a87ceb81db6ed1c69206873d9676251cc151cb8f497060a22e8d4e276bc3992",
+    "grounding.json": "ca0b03de930c3663d6989ff28b2da8b7faee1f2c9561816fb7a68ebe09371ffd",
+    "curation.json": "ffff75cf6a29b36b22fce7eb404a53f640064271eabb998ad4b359d736ee3f60",
+    "validation/pack-rebuild.json": "15bf74409cfa037f0579f16a27818220225e889694c28686f60dc3ac0b95e7ad",
+    "validation/source-rebuild.json": "25c0fbbd70665469eb9d527d8d20c6a03afdcae5f72a275ff7168d7463ab470e",
+    "pack/release.json": "a3fae112c1ebd63362144c2a11dedd059b2ed0a493ee369a48b6d8aa7f358e8b",
+    "pack/tokenizer-lock.json": "f7b6cb851aad24c8b784a2d2d9f9a1bf716bcc1d54e26453e49e1a880ee4c300",
+    "pack/overview.json": "649ef4dff8cd8412bb1bb898bb88f0e59ff9b2480dde8aed2aba35f21fce4b75",
+    "pack/example-9138-GBR.txt": "40ec89258196ad8ea24525b681d2b52675ece1e2d6e652c2e270bfe86fdaca4c",
+    "pack/example-9138-IND.txt": "0d28d47bc47c311332713a14c479601566504bc7047c8843c205515786920be3",
+    "pack/example-8923-GBR.txt": "d8cfd0619d202ca004546f65be505d06a4c9aaf305dd3d241d44bc3569f84b4f",
+    "pack/example-8923-IND.txt": "33783c969f2e4570dbe18c28bd66d7a93922b8b01808392a8024a6f69b7df719",
+    "pack/example-9214-IND.txt": "8ffb86380351e6d5ec0f3f6e96b299eaa8839cf66d6ca3e5a28c28912557a9d9",
+    "pack/example-9214-GBR.txt": "79846867c8e6a3f0b475175ecfad09d3ce6a172bfcd1c0d146d01db3359819ae",
+    "pack/eval.jsonl": "986fca178bfe65b7b24f1f5f6ca603d3458f5e70860f2f93a70457ff40f5bee1",
+    "pack/train.jsonl": "a7078f23cfb67717db2584c59f530ae2ba617e857dc00c3496a7c8fa251c63ed",
+    "sources/sources.json": "4059b6086015136abcb55b452f02f5eead007dad3cb79c8dd280531d5dc8bd84",
+    "sources/record-9138.extraction.json": "66b87c019dfaf3269484031f0ecac8d8d13f4317118cede79dbddf63927d0614",
+    "sources/record-9138.txt": "64c65a77407028be90c8fd5593dbc4e2d8c2e249f32715a4ad02b8e21d055e2b",
+    "sources/record-8923.extraction.json": "a10ac242d26fbb7a7a61c54ed3c2d9efe9e281299619c630ad780f9753aa677b",
+    "sources/record-8923.txt": "be9a09dc1ed07d974860596af75117ab0e8e49e4da9c7ecb9062a6f17d6d5833",
+    "sources/record-9214.extraction.json": "77d8f3bd6bccb2a09b203ae28ab864bf493a50255cfab2de00504fa975b236a5",
+    "sources/record-9214.txt": "6419b5f2a0042294447b748e1b74f5d01116e871a62f238dac022b4e673c0fa9",
+    "validation/preflight/launch.json": "285611486d296e0cabb5cedf50d34196985a369ae8be7dbbd22ee1534a7a02a2",
+    "validation/preflight/planned-schedule.json": "b021668b0dd643b310c532fac875057fa008e1832c1f8349f3f0847e3a67d6ab",
+    "validation/preflight/mask-audit.json": "dd115f524f9bd981c40d4d54bc5b4ea7178b3b3ec8c9ddeab98590f227bf25a0",
+    "validation/preflight/preflight.json": "8f46db71831d3b228d6d1b8422e3d5796300c82aa96ee8fba99d90d198119847",
+    "validation/tiny-cpu/launch.json": "2d8d6208bc392f5f136df37323469975bbe78f124abb068212b86673389b0e86",
+    "validation/tiny-cpu/schedule.json": "d4bd159af5dcc03659b2c5728d9fe6fdd0ddfa8346d5d31c558affd3c1893983",
+    "validation/tiny-cpu/optimization.jsonl": "10cd270e0bd3a83daa5438b5915eee07da4cc21827ec9c1c7b4f1e395514bfc7",
+    "validation/tiny-cpu/training-result.json": "c6044ab71c0940d19dcf081d9b50a2d23720c7659300898767432a448cd6a2af",
+    "validation/tiny-cpu/cpu-check.json": "5292949422a596609ea68027e76435e6663dd68638a60d35cabcbbb536e14890",
+    "validation/tiny-cpu/adapter/README.md": "65aec2b75e3528a0ee37e91119d6ab4f3f4ef4696791c251f936672451b7c7a1",
+    "validation/tiny-cpu/adapter/adapter_model.safetensors": "18eb583e2f12d2c504b4aec26e5fe60395b2078993e33485452accd8a4ab6375",
+    "validation/tiny-cpu/adapter/adapter_config.json": "22736774c41794993c265a6a539e6817fc6d1ff69024e18a924532fc45b84783"
+  }
+}

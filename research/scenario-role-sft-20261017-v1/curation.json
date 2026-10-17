@@ -1,0 +1,75 @@
+{
+  "reviewer": "same root assistant; manual source and example inspection",
+  "independent_review_complete": false,
+  "target_policy": "Complete authentic national speeches. No LLM-generated bullet plans, rewritten decisions, fabricated thoughts or national profiles enter the target.",
+  "history_policy": "All earlier body turns in short S/PV.9214; in the two long records, one immediately preceding complete speech. Unlabelled full past alone exceeds the 6,144-token prompt allowance. Omitted history is declared, with no inferred summary. No target-aware retrieval.",
+  "manual_read_scope": "All six complete target speeches; all four complete selected prior speeches in the long records; complete S/PV.9214 including all earlier body turns, vote and chair/national transitions; rendered headers and scenarios. Unused speeches in the long records were not all hand-read.",
+  "visual_pdf_pages": {"9214": [1,3,4,7,8], "8923": [1,17,18,19,20,21,23,24], "9138": [1,8,9,10]},
+  "normalization": "Whitespace collapsed within each PDF column. Original column joins retained as double newlines. Two discretionary soft hyphens removed; printed hard hyphens retained while their within-column newline whitespace is removed. Every non-whitespace edit has reversible raw offsets. No spelling or substantive correction.",
+  "known_source_irregularities": [
+    "9214 USA context prints 'As this if my first time'; preserved, not corrected to is.",
+    "8923 Russia context prints 'the Russian Federation a government order' and 'the success in Glasgow possible'; visible in the PDF and preserved.",
+    "Soft-hyphen normalization was visually checked on 9214 page 3; hard-hyphen wraps and India's five climate targets checked against pages 20–21.",
+    "These are provisional English records, including translations. Version identity is the pinned PDF, not a claim that later corrections do not exist."
+  ],
+  "scene_evidence": {
+    "9214": ["Friday, 9 December 2022, 10 a.m.", "New York", "General issues relating to sanctions", "Members of the Council have before them document S/2022/925", "statements before the voting", "statements after the voting"],
+    "8923": ["Thursday, 9 December 2021, 10 a.m.", "New York", "Maintenance of international peace and security", "Security in the context of terrorism and climate change", "S/2021/988", "this open debate"],
+    "9138": ["Tuesday, 27 September 2022, 3 p.m.", "New York", "Maintenance of peace and security of Ukraine", "I too would like to thank Under-Secretary-General DiCarlo for her briefing", "Mr. Mythen (Ireland):"]
+  },
+  "institutional_adjudications": [
+    "India is Council president on 9 December 2022 but the selected substantive speech begins after 'I shall now make a statement as the representative of India.' The later resumption of the presidency is excluded from its target.",
+    "UK and India sanctions speeches are after the recorded vote. Including the earlier vote is legitimate reconstruction context and disqualifies vote-forecasting claims.",
+    "UK/India climate and Ukraine examples are national speeches. Earlier Russian, Vietnamese, Irish and Ghanaian claims retain their speaker ownership. No later vote/outcome enters the scenario.",
+    "France has no selected national speech in S/PV.9214; attendance does not create a training target. No changes to Germany/China releases."
+  ],
+  "exposure_and_limits": [
+    "Ukraine is excluded from this four-target fit, but all three records have historical project exposure and may be in pretraining; this is development transfer, not sealed OOD.",
+    "Source completeness means every supplied context/target byte and scene assertion has a record anchor. It does not independently verify every geopolitical, legal or scientific claim made by a delegate, nor recover private motives.",
+    "Wrong-role teacher-forced likelihood is a paired diagnostic, not an automatic measure of persona or decision quality. Native-chat base uses the same scene/history plus explicit continuation instructions; it is a strong practical baseline, not a pure serializer ablation.",
+    "Material criteria below sample the full speeches; a source-faithfulness guard also requires reviewing the entire answer for unsupported additions and changed qualifications. Exact reproduction on four fitted speeches is a plumbing/memorization result.",
+    "Independent semantic review and actual 4B GPU execution remain pending. New atomic-token training is deliberately deferred until the readable-marker result is inspected."
+  ],
+  "cases": {
+    "9214-GBR": [
+      ["adoption", "Welcomes adoption of 2664 and preserves UK support, favourable vote and sponsorship.", "The United Kingdom is pleased to have voted in favour and to have been a sponsor of resolution 2664 (2022)."],
+      ["sanctions", "Retains sanctions as a legitimate Charter-based Council tool, rather than renouncing sanctions.", "In line with the Charter of the United Nations, they are rightly used to address threats to international peace and security."],
+      ["scope", "Carveout is for specified organizations and necessary humanitarian/basic-needs activities under UN asset freezes; not unrestricted transfers to designated entities.", "The resolution will provide that certain activities necessary for humanitarian assistance or in support of basic human needs, when carried out by specified organizations, do not violate United Nations asset freezes."],
+      ["clarity", "Explains clarity for humanitarian providers and their service providers and effective aid delivery.", "The resolution will help save lives by providing clarity, to help ensure that humanitarian providers and their service providers can continue to help the most vulnerable."]
+    ],
+    "9214-IND": [
+      ["temporary", "Sanctions remain provisional, not ends in themselves; humanitarian and legitimate economic effects matter.", "The measures imposed by the Security Council under Article 41 of the Charter of the United Nations are provisional in nature and not permanent."],
+      ["constructive", "India engaged constructively on 2664 and acknowledges the humanitarian/basic-needs carveout.", "In that context, India engaged constructively in the negotiations on resolution 2664 (2022)."],
+      ["exploitation", "Retains concern about terrorist groups masquerading as humanitarian/civil-society groups to evade sanctions, raise funds and recruit fighters.", "Those terrorist organizations use the umbrella of the humanitarian assistance space to raise funds and recruit fighters."],
+      ["political", "Exemptions must not facilitate political mainstreaming of terror entities; due diligence remains essential.", "More important, such exemptions must not facilitate the mainstreaming of terror entities in the political space in our region."],
+      ["unresolved", "India sought proactive 1267 Monitoring Team/reporting safeguards; concerns were NOT fully addressed and correction is a future hope.", "We regret that those specific concerns were not fully addressed in the final text adopted today."]
+    ],
+    "8923-IND": [
+      ["sahel", "Supports adequate, sustainable resources, training and logistics for G-5 Sahel security efforts.", "A resource-constrained counter-terrorism strategy can be a recipe for failure."],
+      ["forum", "Opposes a separate Council climate/security track in favour of inclusive UNFCCC mechanisms, while recognizing climate harms; not climate denial.", "Given that background, we do not think that it is appropriate to draw a separate link between security and climate change, especially when all aspects of climate change are already being dealt with holistically"],
+      ["science_scope", "Attributes contested climate-violence causation to India's account, avoiding an invented universal scientific finding that climate has no security effects.", "The report of the Intergovernmental Panel on Climate Change clearly states that the effect of climate variability on violence is contested."],
+      ["goals", "Preserves the five announced goals and horizons: intensity 45% vs 2005 by 2030; installed non-fossil electricity 50% by 2030; projected emissions down 1bn tons by 2030; non-fossil energy 500GW by 2030; net zero 2070.", "achieving the target of net zero by the year 2070"],
+      ["finance", "Developed-country finance and technology obligations are not shifted to developing countries; $1tn is urged, not already delivered.", "urge developed countries to begin providing climate financing of $1 trillion at the earliest."],
+      ["mechanisms", "Concludes that terrorism and climate each have established institutional mechanisms and should be addressed through them.", "today we have institutional mechanisms to address each of these issues."]
+    ],
+    "8923-GBR": [
+      ["multiplier", "Treats climate as a threat multiplier for vulnerable/conflict-affected populations, avoiding deterministic climate-causes-all-terrorism claims.", "the impacts of climate change act as a multiplier of the threats already facing vulnerable populations."],
+      ["pledges", "Accurately treats COP26 commitments as commitments, including 1.5C hope, adaptation financing and $100bn by 2023 at the latest.", "meeting the $100 billion goal by 2023 at the latest."],
+      ["reporting", "Calls for UN climate/security reporting and a CTED role.", "Secondly, we need the United Nations system to report comprehensively on the links between climate and security"],
+      ["draft", "Supports a Council role and the draft as an important FIRST step, without inventing a later vote.", "Therefore, we support the draft resolution submitted to the Council as an important first step."],
+      ["inclusion", "Retains meaningful inclusion of women and girls disproportionately affected by conflict and climate.", "in particular with respect to women and girls, who suffer disproportionately from conflict and climate change, so that they can play a meaningful role."]
+    ],
+    "9138-IND": [
+      ["diplomacy", "Calls for immediate cessation of hostilities, dialogue, diplomacy and return to negotiations.", "India has repeatedly called for an immediate cessation of hostilities and has underscored the need to resolve the ongoing conflict through dialogue and diplomacy."],
+      ["charter", "Affirms international law, Charter, sovereignty and territorial integrity.", "We firmly believe that the global order should be anchored in international law, the Charter of the United Nations and respect for the sovereignty and territorial integrity of States."],
+      ["assistance", "Separates humanitarian assistance to Ukraine from economic support to neighbours in the global South; retains food/fuel/fertilizer distress.", "we provide both humanitarian assistance to Ukraine and economic support to some of our neighbours in the global South"],
+      ["human", "Human-centric priority includes civilian lives and displacement; does not adopt Ireland's national condemnation or infer a future vote on India's behalf.", "India’s approach to the Ukraine conflict will continue to be human-centric."]
+    ],
+    "9138-GBR": [
+      ["referendums", "Rejects Russia's sham referendums as violating Ukrainian sovereignty/territorial integrity and the Charter.", "Russia’s holding of sham referendums in the Donetsk, Luhansk, Zaporizhzhya and Kherson regions of Ukraine is an egregious violation of Ukraine’s sovereignty and territorial integrity"],
+      ["coercion", "Connects illegitimacy to coercive wartime conditions; avoids presenting forced votes as free self-determination.", "Any referendums held under those conditions, at the barrel"],
+      ["draft", "Calls for rejecting illegal annexation and supporting the US/Albania draft introduced today; does not claim a vote has already passed.", "support the draft resolution the United States and Albania have brought forward today."],
+      ["end_war", "Calls for Russia to end the war and frames changing borders by force as a threat to shared security.", "If we allow Russia to believe it can change sovereign borders by force, then the entire system on which we base our shared safety and security is under threat."]
+    ]
+  }
+}

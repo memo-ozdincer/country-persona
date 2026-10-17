@@ -1,0 +1,47 @@
+{
+  "steps": 8,
+  "presentations": {
+    "synthetic-2": 2,
+    "synthetic-1": 2,
+    "synthetic-3": 2,
+    "synthetic-0": 2
+  },
+  "sequence_tokens": 80,
+  "supervised_tokens": 32,
+  "objective": "equal-example response-only mean causal CE",
+  "batch_size": 1,
+  "gradient_accumulation": 1,
+  "base_tensor_versions_unchanged": true,
+  "update": {
+    "adapter_tensors": 30,
+    "changed_adapter_tensors": 30,
+    "adapter_update_l2": 0.2447105061916333,
+    "all_adapter_tensors_finite": true,
+    "initial_adapter_digest": "9b710d2a7ea6aecab77a75a2d0face4cd091fe313832391d99f790eb29b02570",
+    "final_adapter_digest": "1c2176e7fa78f2b3cac683fd83c390c002d30a7c202901ecf22ffd74827a69f5"
+  },
+  "serialization": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 10,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "18eb583e2f12d2c504b4aec26e5fe60395b2078993e33485452accd8a4ab6375",
+      "adapter_config.json": "22736774c41794993c265a6a539e6817fc6d1ff69024e18a924532fc45b84783"
+    }
+  },
+  "trace_sha256": "10cd270e0bd3a83daa5438b5915eee07da4cc21827ec9c1c7b4f1e395514bfc7",
+  "trace_replay": {
+    "entries": 8,
+    "source_inputs_masks_schedule_and_finite_gradients_replayed": true
+  },
+  "kind": "engineering_only_random_tiny_Qwen3_5_not_production_model",
+  "full_vs_target_only_loss_equal": true,
+  "corrupt_prompt_mask_rejected": true,
+  "cold_separate_base_reload_exact": true,
+  "production_model_calls": 0,
+  "production_optimizer_updates": 0
+}

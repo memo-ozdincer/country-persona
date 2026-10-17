@@ -1,12 +1,14 @@
 # Current state — 17 October 2026
 
-This is the navigation summary. Dated reports and raw artifacts remain the evidence. The October 14 audit and October 17 research/preparation add no model calls or optimizer updates.
+This is the navigation summary. Dated reports and raw artifacts remain the evidence. The October 14 audit and October 17 setup add no production-model calls or optimizer updates.
 
-## Latest work: scenario and delegation sequences
+## Latest work: source-audited scenario/delegation SFT
 
-The [17 October design](SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md) adapts scene-conditioned, selected-speaker SFT from CoSER to dated public institutional records. One complete S/PV.9214 record was hand-read; eighteen source-bound segments preserve chronology, vote events and India's chair/national switch. Three national CPU examples compare readable versus seven atomic markers with identical supervised speech tokens. Fourteen software tests and tokenizer-only save/reload pass. No trained model or quality result; raw extraction still needs an audited normalization ledger before fitting.
+The [17 October readiness report](SCENARIO_ROLE_SFT_READINESS_20261017.md) records implemented data, training and evaluation. Four complete UK/India sanctions/climate speeches fit; two Ukraine speeches are excluded from this fit but historically exposed development data, not sealed OOD. All used source text was hand-read; complete target/context maps, past-only scene anchors, role/phase distinctions, reversible normalization and 54-page crop/column checks are retained. Twenty-eight source-backed content criteria and whole-answer guards are frozen. Same-assistant review; independent semantic adjudication pending.
 
-The proposed next training question uses four authentic speeches (two roles × two topics), a separately frozen whole-episode control, then a conditional matched role-token comparison after inspection. No fitting release, GPU config, automatic launch or sweep is prepared. The earlier seed-only pack remains preserved and unrun; it is not a prerequisite for this new direction. [Preparation receipt](../reports/scenario-role-preparation-20261017-v1.json).
+Thirty-two focused pytest checks and three pinned-runtime unittest checks pass. The final eight-step random tiny hybrid-Qwen CPU run validates the actual loss/optimizer/save path, finite gradients, frozen base and exact cold reload; not a production 4B hardware/training/quality result. Source and tokenized pack rebuilds are byte-identical. [Readiness receipt](../reports/scenario-sft-readiness-20261017-v1.json).
+
+The readable-marker rank-8 fit is frozen at four examples × 32 presentations = 128 planned updates. No new production execution or queue. Next: recheck GPU ownership, run/inspect two base Ukraine sequence replies and use the ordinary-chat base control before diagnosing serializer failure. If informative, perform only the four-target fit and inspect fitting/held-episode outputs before scaling or atomic tokens. The earlier explicit seed-only control remains preserved/unrun, not a prerequisite.
 
 ## Measured research boundary
 
@@ -24,4 +26,4 @@ The proposed next training question uses four authentic speeches (two roles × t
 
 The pinned v47 snapshot and its private GitHub release retain the ignored research evidence. October 14 code, audit receipts and documentation are a Git overlay; no new full archive is needed. Use the pinned overlay verifier from `START_HERE.md`. The original immutable snapshot manifest stays unchanged. See [storage policy](STORAGE_POLICY.md) and [audit/research assessment](STORAGE_SYNC_AND_RESEARCH_DIRECTION_20261014.md).
 
-Fresh-session task selection should follow the latest user request. The latest request concerns researching and defining the meeting-sequence experiment; it does not trigger the old prepared GPU experiment automatically.
+Fresh-session task selection should follow the latest user request. The latest request concerns implementing and validating the meeting-sequence experiment; it does not trigger the old prepared GPU experiment automatically.

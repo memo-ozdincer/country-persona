@@ -1,0 +1,50 @@
+{
+  "status": "frozen_setup; production_execution_pending; no_automatic_launch",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "model_path": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "release_sha256": "a3fae112c1ebd63362144c2a11dedd059b2ed0a493ee369a48b6d8aa7f358e8b",
+  "quality_review_sha256": "fad27496523b527f57fd6be1f74c180e4ddc07d6d009954054c9499a60fc6f74",
+  "code_sha256": {
+    "scripts/extract_scenario_sft_sources.py": "fc47dc9d437adea525e985b6a0a2e77f445addef52887595543cc448c74be6cd",
+    "scripts/build_scenario_sft_pack.py": "6a1d1d4afa9295ade69f1035dd70ed955ce7687b5ba475824e2fabb125fe78d8",
+    "scripts/audit_scenario_sft_grounding.py": "c33aa77627d754c33ffd6f5abe6f618e2e124da409629973d2391bb2c0937ce5",
+    "scripts/run_scenario_sft.py": "ae1b175f22532d6ff5a8f5ee5a29e6f64ff634977aaf76fadb5ccceea55dd8c1",
+    "scripts/review_scenario_sft.py": "284021f850e6ebf229ed989a90207aa1ab214f50bb29951ad50f54da76d456d7",
+    "scripts/run_aurora_qwen35_smoke.py": "cfb8cd73f157aea2f50dec8e095bee608d4a01d1b44196cee7b3656302818603",
+    "src/country_persona/scenario_sft.py": "26b1621ef62e08c6beb9d0133d29fc7f2c1b1b7e5b55ac2f0c6acc148abbb396",
+    "src/country_persona/meeting_sequence.py": "e69f5e407cbfa3f7184cfc3f5312d762767522e759630c12df1e82f237a48642",
+    "src/country_persona/training_checks.py": "6c4e5e38cc9bf8c000af1698ee7fdda9683e9350c6a19d1c934ebec43a52d7e6"
+  },
+  "artifact_sha256": {
+    "research/scenario-role-sft-20261017-v1/curation.json": "ffff75cf6a29b36b22fce7eb404a53f640064271eabb998ad4b359d736ee3f60",
+    "research/scenario-role-sft-20261017-v1/quality-review.json": "fad27496523b527f57fd6be1f74c180e4ddc07d6d009954054c9499a60fc6f74",
+    "research/scenario-role-sft-20261017-v1/grounding.json": "ca0b03de930c3663d6989ff28b2da8b7faee1f2c9561816fb7a68ebe09371ffd",
+    "research/scenario-role-sft-20261017-v1/rubric.json": "2a87ceb81db6ed1c69206873d9676251cc151cb8f497060a22e8d4e276bc3992",
+    "research/scenario-role-sft-20261017-v1/body-geometry-check.json": "0a6bd88452dd282855570001c8fa5c1698a46defa3cd2550b7b7d2b761a59db5",
+    "research/scenario-role-sft-20261017-v1/excluded-margin-audit.json": "5a750a575a58f3c7499ecf05fd2461babbd576f8b76c4700f92e2a484fbce0d5",
+    "reports/qwen35-model-verification-20260930.json": "9232b2bce9177f1fd63538f1e59dbf8989e32fa0a208128a89cb7300e6f12011"
+  },
+  "training": {
+    "rank": 8,
+    "alpha": 16,
+    "target_modules": "all-linear",
+    "presentations": 32,
+    "updates": 128,
+    "seed": 42,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.0,
+    "clip_norm": 1.0,
+    "batch_size": 1,
+    "accumulation": 1,
+    "max_length": 8192,
+    "generation_max_new_tokens": 2048
+  },
+  "marker_mode": "readable_existing_subwords; no vocabulary or embedding changes",
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "gradient_checkpointing": "nonreentrant",
+  "schedule": "seeded permutation each epoch; 4 examples x 32 presentations; mean CE per example",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "readiness": "Source/tokenizer/CPU engineering validated. Actual 4B optimizer execution and behavior pending. Base development outputs must be read before a dependent fit; ordinary-chat control available. Atomic-token arm deferred."
+}

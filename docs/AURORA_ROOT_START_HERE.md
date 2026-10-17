@@ -4,7 +4,7 @@ Authoritative workspace: `/mfs1/u/memo/country-persona-research/workspaces/perso
 Stable shortcut: `/mfs1/u/memo/country-persona-research/current`.
 Read that workspace's `AGENTS.md`, `START_HERE.md`, `docs/PROJECT_HANDOFF.md` and `docs/CURRENT_STATE.md`. This scratch-root guide is navigation, not a second experiment chronology. Its tracked source is `docs/AURORA_ROOT_START_HERE.md` in the workspace.
 
-Latest research/preparation: `docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md`, adapting CoSER-style scene-conditioned authentic dialogue to delegation speech. Three CPU examples and fourteen software tests pass; no model calls/updates or fitting release.
+Latest setup: `docs/SCENARIO_ROLE_SFT_READINESS_20261017.md`. Four authentic UK/India fitting speeches, two fit-excluded Ukraine development speeches, complete source maps, frozen small-fit config and separate-operation harness. Thirty-five software/runtime checks and a final eight-step random tiny-Qwen CPU optimizer/reload proof pass. No new production answers/updates or 4B GPU execution. Next is two base Ukraine replies and inspection; no automatic queue. New bounded release/validation artifacts are Git-tracked.
 
 The latest measured model checkpoint is the twelve-answer 7 October India–Brazil interaction, with no strict passes or proven collective benefit. Cumulative Qwen3.5 updates are 3,934; selected branch 256; separate Qwen2.5 reference 582. The four-answer explicit seed-only control is prepared/unrun. Check current GPU ownership before any authorized model run; leave unfamiliar processes untouched. Audit/synchronization does not authorize an automatic run.
 

@@ -31,7 +31,7 @@ def validate(meeting, source):
             raise ValueError("Invalid speech-content boundary")
         if turn["capacity"] not in {"national_delegation", "council_president", "record_event"}:
             raise ValueError("Unknown institutional capacity")
-        if turn["phase"] not in {"before_vote", "vote_event", "after_vote"}:
+        if turn["phase"] not in {"before_vote", "vote_event", "after_vote", "open_debate", "discussion"}:
             raise ValueError("Unknown meeting phase")
         if (turn["institution"] != "UNSC" or "\n" in turn["representative"]
                 or not re.fullmatch(r"[A-Z]{3}|NONE", turn["country"])
