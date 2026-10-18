@@ -1,0 +1,119 @@
+{
+  "responses_sha256": "801388ae6cea3f220fde08ee14304f9924e5afa7b7b50559818aec3361c37646",
+  "rubric_sha256": "2a87ceb81db6ed1c69206873d9676251cc151cb8f497060a22e8d4e276bc3992",
+  "reviewer": "same root assistant; full corrected-native replies and source references hand-read",
+  "rationale": "Escaping embedded native end tokens leaves coherent but unfaithful speeches. Neither case strictly passes; UK again omits the referendum agenda despite it being visible. Proceed with only the frozen four-target fit to test raw role/agenda transfer, preserving the criterion-observability limitations.",
+  "decision": "run_four_example_fit",
+  "independent_review": false,
+  "cases": [
+    {
+      "id": "9138-IND",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 520 tokens. The response invents an Indian unconditional withdrawal demand and a neutral mediation mechanism. Humanitarian language does not rescue source-faithfulness or country-specific framing.",
+      "units": [
+        {
+          "id": "diplomacy",
+          "status": "met",
+          "answer_quote": "We call upon all parties to the conflict to exercise maximum restraint and to de-escalate the situation immediately.",
+          "reason": "Later explicitly calls for immediate resumption of Russia/Ukraine dialogue and urges Russia to cease its aggression; the whole response covers stopping hostilities and diplomacy."
+        },
+        {
+          "id": "charter",
+          "status": "met",
+          "answer_quote": "India firmly supports the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations.",
+          "reason": "Later calls for compliance with international-law obligations."
+        },
+        {
+          "id": "assistance",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No actual Indian aid versus economic support to global-South neighbours or food/fuel/fertilizer distinction."
+        },
+        {
+          "id": "human",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Civilian protection/displacement are present, but the compound also forbids substituting the earlier national condemnation for India's framing. The response adopts an unconditional Russian-withdrawal/cease-aggression demand absent from the India source."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Invents an Indian unconditional withdrawal demand, neutral mediation mechanism and other unsupported initiatives."
+        },
+        "institutional_role": {
+          "status": "pass",
+          "reason": "One explicitly Indian national voice; no chair or other country identity."
+        },
+        "chronology": {
+          "status": "pass",
+          "reason": "Demands are prospective, no later vote/adoption or completed pledge asserted."
+        },
+        "output_integrity": {
+          "status": "pass",
+          "reason": "Complete readable speech with ordinary end token; no visible thought trace or repetition loop."
+        }
+      }
+    },
+    {
+      "id": "9138-GBR",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 288 tokens including the generated display boundary. Coherent UK voice and explicit Ghana attribution; again omits referendum specifics and invents pre-2014 withdrawal and defence/sanctions recommendations.",
+      "units": [
+        {
+          "id": "referendums",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No discussion of the sham referendums."
+        },
+        {
+          "id": "coercion",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No coercive voting conditions or free/fair-vote distinction."
+        },
+        {
+          "id": "draft",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No US/Albania draft or explicit annexation rejection."
+        },
+        {
+          "id": "end_war",
+          "status": "uncertain",
+          "answer_quote": "",
+          "reason": "Calls for ceasefire and Russian withdrawal and discusses erosion of international order; the forced-border/shared-security causal argument is not clearly delivered. Do not promote partial implied coverage to a pass."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Pre-2014 withdrawal, sanctions and defence-capability proposals are absent from the UK reference."
+        },
+        "institutional_role": {
+          "status": "pass",
+          "reason": "UK national voice with Ghana explicitly credited as a previous speaker."
+        },
+        "chronology": {
+          "status": "pass",
+          "reason": "No later vote/adoption or completed pledge claimed."
+        },
+        "output_integrity": {
+          "status": "pass",
+          "reason": "Complete speech, no thinking loop. Generated [END OF RECORDED TURN] is a visible delimiter artifact and is retained; it does not introduce another speaker or conceal truncation."
+        }
+      }
+    }
+  ],
+  "scores": [
+    {
+      "id": "9138-IND",
+      "strict_pass": false
+    },
+    {
+      "id": "9138-GBR",
+      "strict_pass": false
+    }
+  ],
+  "review_file_sha256": "649822fe3511d87eac5b9b3e63ca00d88a8015109194ef328c83abb5afb8ea73"
+}

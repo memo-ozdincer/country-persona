@@ -1,0 +1,124 @@
+{
+  "responses_sha256": "b356a77dea6c2f49e9a53bc69f777b82b2582f62230f95763fb09cd789fd2123",
+  "rubric_sha256": "2a87ceb81db6ed1c69206873d9676251cc151cb8f497060a22e8d4e276bc3992",
+  "reviewer": "same root assistant; full raw replies and source references hand-read",
+  "rationale": "After reading both native v1 and boundary-corrected controls: native chat fixes looping but neither control strictly reconstructs either source; UK ignores the observable referendum topic. One frozen four-target fit tests raw role transitions and agenda use. Historical details missing from inputs cannot establish a persona deficit. Initial replan review/grades remain preserved unchanged.",
+  "decision": "run_four_example_fit",
+  "independent_review": false,
+  "cases": [
+    {
+      "id": "9138-IND",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 2048 raw tokens. The opening public speech borrows Ireland's condemnation; subsequent <think> commentary is not a delivered national speech and receives no material-coverage credit. The output is capped.",
+      "units": [
+        {
+          "id": "diplomacy",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No completed national call for cessation, dialogue and negotiations in the delivered speech."
+        },
+        {
+          "id": "charter",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Opening refers to sovereignty and territorial integrity but is garbled and cuts off at Charter of the; the full compound including international law is not delivered."
+        },
+        {
+          "id": "assistance",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No delivered account separating Ukraine humanitarian assistance from global-South economic support/food-fuel-fertilizer distress."
+        },
+        {
+          "id": "human",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No delivered human-centric/civilian/displacement framing; instead adopts Ireland's condemnation."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Copies Ireland as India and invents commentary about the actual Indian speech."
+        },
+        "institutional_role": {
+          "status": "fail",
+          "reason": "Changes Ireland fully agrees to India fully agrees while retaining the Irish condemnation."
+        },
+        "chronology": {
+          "status": "pass",
+          "reason": "No explicit subsequent vote or adoption is asserted; source/role errors are graded separately."
+        },
+        "output_integrity": {
+          "status": "fail",
+          "reason": "Visible thought trace, repeated self-analysis and 2048-token cap; no complete national speech."
+        }
+      }
+    },
+    {
+      "id": "9138-GBR",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 114 raw tokens including im_end. Copies the Ghana opening, repeats the Russian-aggression sentence and ends with We join other speech.",
+      "units": [
+        {
+          "id": "referendums",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No rejection or discussion of the sham referendums."
+        },
+        {
+          "id": "coercion",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No wartime coercion/free-fair-vote reasoning."
+        },
+        {
+          "id": "draft",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No US/Albania draft or rejection of annexation."
+        },
+        {
+          "id": "end_war",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No request to end the war or shared-security reasoning about forcibly changed borders."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Unsupported in Ghana intrusion and repeated wording instead of the UK source substance."
+        },
+        "institutional_role": {
+          "status": "fail",
+          "reason": "Ghana-context copying includes in Ghana in the purported UK speech."
+        },
+        "chronology": {
+          "status": "pass",
+          "reason": "No subsequent vote, adoption or fulfilled pledge asserted."
+        },
+        "output_integrity": {
+          "status": "fail",
+          "reason": "Repetition and an incomplete sentence despite terminating with the end marker."
+        }
+      }
+    }
+  ],
+  "followup_evidence": {
+    "native_review_sha256": "5707a5fea9e8cc23a7c98dc2fd36255f1779dc230db948aac19195771516ff5b",
+    "boundary_review_sha256": "649822fe3511d87eac5b9b3e63ca00d88a8015109194ef328c83abb5afb8ea73",
+    "observability_audit_sha256": "a112fc59ebf79bb7855121a5d6e3c1f528ac675389a3f894bdf4fa29536835f6"
+  },
+  "scores": [
+    {
+      "id": "9138-IND",
+      "strict_pass": false
+    },
+    {
+      "id": "9138-GBR",
+      "strict_pass": false
+    }
+  ],
+  "review_file_sha256": "de49e48889b0384b864a76f84b5b0e1c207f04bcd50c28ed03abfc77a5e71a5d"
+}

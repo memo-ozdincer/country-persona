@@ -1,0 +1,119 @@
+{
+  "responses_sha256": "cfd8553324ac6ebd638adf100f7d1b7336efe395aa0c745c569147e57a3fec77",
+  "rubric_sha256": "2a87ceb81db6ed1c69206873d9676251cc151cb8f497060a22e8d4e276bc3992",
+  "reviewer": "same root assistant; complete raw replies and original source references hand-read",
+  "rationale": "Native chat removes thought/copy loops and produces two complete speeches, but original country-specific content and the referendum agenda remain missing or changed. This native v1 prompt contains documentary end-of-message tokens; inspect a separately preserved boundary-escaped control before fitting.",
+  "decision": "replan",
+  "independent_review": false,
+  "cases": [
+    {
+      "id": "9138-IND",
+      "complete_raw_answer_read": true,
+      "notes": "All 334 tokens read. Two material compounds met; generic solidarity with Ukraine and requests for international assistance do not reproduce India's human-centric statement or its actual aid and neighbours distinction.",
+      "units": [
+        {
+          "id": "diplomacy",
+          "status": "met",
+          "answer_quote": "We call for an immediate and unconditional cessation of hostilities. We urge all parties to the conflict to engage in meaningful dialogue",
+          "reason": "Delivers cessation and dialogue toward a peaceful resolution."
+        },
+        {
+          "id": "charter",
+          "status": "met",
+          "answer_quote": "India firmly supports the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations.",
+          "reason": "Also later urges Russia to comply with obligations under international law; the compound is present across the complete speech."
+        },
+        {
+          "id": "assistance",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Calls on the international community to give Ukraine aid; omits India's own humanitarian assistance versus economic support to global-South neighbours and food/fuel/fertilizer distress."
+        },
+        {
+          "id": "human",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Suffering is generic, displacement is absent, and the supplied human-centric position becomes solidarity with Ukraine's struggle against aggression."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Adds most serious threat in the current era, Ukraine's fight for freedom and collective support demands absent from India's reference."
+        },
+        "institutional_role": {
+          "status": "pass",
+          "reason": "One explicitly Indian national voice, no chair role or other country name presented as its identity."
+        },
+        "chronology": {
+          "status": "pass",
+          "reason": "No later vote/adoption or already fulfilled pledge is claimed."
+        },
+        "output_integrity": {
+          "status": "pass",
+          "reason": "Complete readable speech, ends normally; no visible thought trace or other speaker."
+        }
+      }
+    },
+    {
+      "id": "9138-GBR",
+      "complete_raw_answer_read": true,
+      "notes": "All 326 tokens read. Coherent generic pro-Ukraine speech, but no referendums or draft despite Ghana context explicitly naming the referendums.",
+      "units": [
+        {
+          "id": "referendums",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Does not discuss the sham referendums."
+        },
+        {
+          "id": "coercion",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No coercive wartime voting conditions or free/fair vote distinction."
+        },
+        {
+          "id": "draft",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No US/Albania draft or annexation rejection."
+        },
+        {
+          "id": "end_war",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Broadly urges parties to de-escalate and restore peace but does not call on Russia to end the war while giving the forced-border/shared-security argument."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Adds war crimes and crimes against humanity committed by all parties and calls for defence capabilities absent from this UK reference."
+        },
+        "institutional_role": {
+          "status": "pass",
+          "reason": "One UK national voice; does not assume chair or Ghana identity."
+        },
+        "chronology": {
+          "status": "pass",
+          "reason": "No later vote, adoption or completed pledge claimed."
+        },
+        "output_integrity": {
+          "status": "pass",
+          "reason": "Complete readable single speech with ordinary end token; no repetition loop or thinking trace."
+        }
+      }
+    }
+  ],
+  "scores": [
+    {
+      "id": "9138-IND",
+      "strict_pass": false
+    },
+    {
+      "id": "9138-GBR",
+      "strict_pass": false
+    }
+  ],
+  "review_file_sha256": "5707a5fea9e8cc23a7c98dc2fd36255f1779dc230db948aac19195771516ff5b"
+}
