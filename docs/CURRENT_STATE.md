@@ -1,29 +1,23 @@
-# Current state — 17 October 2026
+# Current state — 18 October 2026
 
-This is the navigation summary. Dated reports and raw artifacts remain the evidence. The October 14 audit and October 17 setup add no production-model calls or optimizer updates.
+Dated reports and complete artifacts are the evidence; this file guides navigation.
 
-## Latest work: source-audited scenario/delegation SFT
+## Latest measured checkpoint
 
-The [17 October readiness report](SCENARIO_ROLE_SFT_READINESS_20261017.md) records implemented data, training and evaluation. Four complete UK/India sanctions/climate speeches fit; two Ukraine speeches are excluded from this fit but historically exposed development data, not sealed OOD. All used source text was hand-read; complete target/context maps, past-only scene anchors, role/phase distinctions, reversible normalization and 54-page crop/column checks are retained. Twenty-eight source-backed content criteria and whole-answer guards are frozen. Same-assistant review; independent semantic adjudication pending.
+[Authentic delegation SFT, 18 October](SCENARIO_ROLE_CHECKPOINT_20261018.md): fourteen saved outputs hand-read and one fresh four-target/128-update Qwen3.5-4B fit. All four fitting speeches exactly reproduce complete authentic targets (20/20 material units and guards). Both fit-excluded Ukraine cases fail under raw and corrected native-chat adapter prompts. The raw adapter invents institutions/events and an extra US turn; the native adapter also fabricates policies/events. Reference NLL worsens under both matched prompt formats. Do not scale this branch or launch atomic tokens.
 
-Thirty-two focused pytest checks and three pinned-runtime unittest checks pass. The final eight-step random tiny hybrid-Qwen CPU run validates the actual loss/optimizer/save path, finite gradients, frozen base and exact cold reload; not a production 4B hardware/training/quality result. Source and tokenized pack rebuilds are byte-identical. [Readiness receipt](../reports/scenario-sft-readiness-20261017-v1.json).
+All 128 source/input/mask/finite-gradient/exposure records replay. Frozen base parameter versions remain unchanged; safe save/perturb/reload gives equal probe logits; a separate fresh 4B load matches the trained adapter tensor digest. Five positively identified GPU workers exited normally. An unfamiliar process joined the training device after free-GPU checks and left naturally, never altered. No throughput comparison or NCCL claim.
 
-The readable-marker rank-8 fit is frozen at four examples × 32 presentations = 128 planned updates. No new production execution or queue. Next: recheck GPU ownership, run/inspect two base Ukraine sequence replies and use the ordinary-chat base control before diagnosing serializer failure. If informative, perform only the four-target fit and inspect fitting/held-episode outputs before scaling or atomic tokens. The earlier explicit seed-only control remains preserved/unrun, not a prerequisite.
+The original native wrapper embedded two documentary message-end tokens; a separately preserved corrected control removes them. Historical aid/draft facts are absent from some supplied windows. Original strict scores remain reconstruction measures, not proof of deficient country beliefs from unavailable facts. Sources have historical exposure; sanctions fitting follows the Ukraine development date. Independent semantic review, national persona/diplomatic-reasoning/multi-agent/strong OOD gains remain unproved.
 
-## Measured research boundary
+Cumulative Qwen3.5 updates: **4,062**; this fresh scenario branch: **128**. Prior paired-Brazil branch: **256**, preserved. Separate Qwen2.5 reference reproduction: **582**, unchanged. [Measured receipt](../reports/scenario-role-checkpoint-20261018-v1.json), [complete records](../research/scenario-checkpoint-20261018-v1/README.md), [portable replay](../research/scenario-checkpoint-20261018-v1/final-replay.json).
 
-- Latest measured model result: [India–Brazil interaction, 7 October](AURORA_SANCTIONS_INTERACTION_20261007.md). Twelve complete answers, all strict failures; adapter peer revision makes zero content corrections and one regression versus its seed-only control. The seed-only mode was underspecified, so this does not isolate a training defect.
-- Strongest recent application component: [paired Brazilian states](AURORA_PAIRED_BRAZIL_APPLICATION_20261007.md). Eight fitting targets reproduced; excluded same-source L/M pass six content compounds and guards at 85/82 words. UK E passes; UK T and the authenticated Indian update remain ambiguous. This is adaptive development, not sealed OOD or persona validation.
-- [Published character reproduction](OPEN_CHARACTER_REPRODUCTION_20261004.md): Qwen2.5-7B humor classification rises 10.4%→58.6% normally and 4.2%→35.2% under strong neutrality. Different model/task/objective; classifier dependence and content errors remain.
-- Cumulative Qwen3.5 updates: 3,934; selected eight-example branch: 256. Separate Qwen2.5 reproduction: 582. These are cumulative accounting, not one continuously trained model or sample counts.
-- No independent country-persona, diplomatic decision-quality, native prediction, autonomous multi-agent or strong OOD gain established. Same-assistant curation/ratings and source/rubric ambiguity remain material limitations.
+## Next decision
 
-## Pending experiment, not launched
+Keep the failed-transfer adapter and original reviews. Prioritize native-chat continuation with fully source-bound pre-target meeting/country evidence and explicit role/topic controls. Compare base and this saved adapter on a small frozen pair before another fit. No new pack, optimization, token arm or seed sweep is queued. The [17 October setup](SCENARIO_ROLE_SFT_READINESS_20261017.md) is historical preparation evidence; its 128-update fit is now completed, not a task to rerun automatically.
 
-[Explicit seed-only preparation](EXPLICIT_SEED_PREPARATION_20261007.md): four planned answers, zero actual calls/updates. Two base replies must be run and inspected before the two saved-adapter replies. Keep the prepared configuration; no fit, sweep or automated resource-triggered launch. Last GPU occupation observation is 7 October, not current availability.
+The [7 October explicit seed-only control](EXPLICIT_SEED_PREPARATION_20261007.md) remains preserved/unrun, not a prerequisite. The [paired-Brazil application result](AURORA_PAIRED_BRAZIL_APPLICATION_20261007.md) and [published character reproduction](OPEN_CHARACTER_REPRODUCTION_20261004.md) remain separate evidence with their original limitations; the twelve-answer [sanctions interaction](AURORA_SANCTIONS_INTERACTION_20261007.md) still has no strict pass or established collective benefit.
 
-## Storage state
+## Storage and synchronization
 
-The pinned v47 snapshot and its private GitHub release retain the ignored research evidence. October 14 code, audit receipts and documentation are a Git overlay; no new full archive is needed. Use the pinned overlay verifier from `START_HERE.md`. The original immutable snapshot manifest stays unchanged. See [storage policy](STORAGE_POLICY.md) and [audit/research assessment](STORAGE_SYNC_AND_RESEARCH_DIRECTION_20261014.md).
-
-Fresh-session task selection should follow the latest user request. The latest request concerns implementing and validating the meeting-sequence experiment; it does not trigger the old prepared GPU experiment automatically.
+Keep the immutable v47 snapshot/manifest/private release unchanged. New bounded code/data/reviews live in Git; the new adapter/run delivery and remote digests are recorded in the separate October 18 delivery receipt. Do not make another multi-GB full archive for this checkpoint. Verify the committed overlay with the pinned digest in `START_HERE.md`. Credentials/base weights/caches remain outside the backup. Read [storage policy](STORAGE_POLICY.md) and [handoff operations](HANDOFF_OPERATIONS.md); old resource observations never prove current availability.

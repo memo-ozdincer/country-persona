@@ -1,0 +1,108 @@
+{
+  "responses_sha256": "8a586e4b312e74a4e0addd86f08b18334586b2b459009b98c149b461ad771b08",
+  "rubric_sha256": "2a87ceb81db6ed1c69206873d9676251cc151cb8f497060a22e8d4e276bc3992",
+  "reviewer": "same root assistant; all actual raw output and original source references hand-read",
+  "rationale": "All four fitting speeches are exact, but both unchanged Ukraine outputs fail all material compounds and introduce extensive unsupported content. No additional fitting or atomic-token arm. One saved-adapter native-boundary control will isolate format sensitivity and check cold loading.",
+  "decision": "replan",
+  "independent_review": false,
+  "cases": [
+    {
+      "id": "9138-IND",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 217 tokens. Invents jets/engines restrictions, INNS and its future observer status. Opening conflates the Prime Minister with a female speaker and replaces the actual human-centric speech.",
+      "units": [
+        {
+          "id": "diplomacy",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Vague engagement/peace language does not deliver the source's immediate cessation, dialogue and return-to-negotiations compound; it is replaced by a fabricated initiative."
+        },
+        {
+          "id": "charter",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No Charter, international-law, sovereignty/territorial-integrity compound."
+        },
+        {
+          "id": "assistance",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Invented export restrictions instead of actual humanitarian aid to Ukraine versus economic support to global-South neighbours and food/fuel/fertilizer distress."
+        },
+        {
+          "id": "human",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Generic saving lives, without displacement or the source's human-centric framing; invented institutions/positions dominate."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "INNS, observer status, export restrictions and claims about military escalation have no support in the India source."
+        },
+        "institutional_role": {
+          "status": "uncertain",
+          "reason": "The opening narrates The Prime Minister followed by She, then shifts to India/we; requested-delegate ownership is not clear enough for a pass."
+        },
+        "chronology": {
+          "status": "fail",
+          "reason": "Asserts a forthcoming INNS observer-status announcement with no source or authority."
+        },
+        "output_integrity": {
+          "status": "pass",
+          "reason": "One readable, normally terminated reply without visible thought trace or extra speaker."
+        }
+      }
+    },
+    {
+      "id": "9138-GBR",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 1001 tokens including the generated USA header with representative Mr. Kariuki. The subsequent US speech does not earn coverage credit for the requested UK speech.",
+      "units": [
+        {
+          "id": "referendums",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No discussion of the sham referendums."
+        },
+        {
+          "id": "coercion",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No coercive voting conditions or free/fair-vote distinction."
+        },
+        {
+          "id": "draft",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No US/Albania draft or rejection of annexation."
+        },
+        {
+          "id": "end_war",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Generic sustainable-peace/territorial-integrity language lacks the direct Russian-end-war/forced-border/shared-security compound."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Invents personal meetings, attacks on UK defence providers, border incidents, US aid figures and other events absent from the source."
+        },
+        "institutional_role": {
+          "status": "fail",
+          "reason": "Generates a USA national turn while retaining UK representative Mr. Kariuki."
+        },
+        "chronology": {
+          "status": "uncertain",
+          "reason": "No explicit later vote/adoption, but fabricated recent events and an unauthorized subsequent US turn make temporal availability unverified; source/role failures are definite."
+        },
+        "output_integrity": {
+          "status": "fail",
+          "reason": "Continues into another country's full speech before the single EOS."
+        }
+      }
+    }
+  ]
+}

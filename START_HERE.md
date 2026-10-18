@@ -4,9 +4,11 @@ Read `AGENTS.md`, then [the full handoff](docs/PROJECT_HANDOFF.md). Use [current
 
 ## Current research
 
-Newest work: [source-audited scenario/delegation SFT setup](docs/SCENARIO_ROLE_SFT_READINESS_20261017.md), following the [CoSER-grounded design](docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md). Four authentic fitting speeches, two fit-excluded development speeches, complete source maps, a frozen small-fit config and separate-operation harness are prepared. Thirty-five software/runtime checks and an eight-step random tiny-Qwen CPU trace/reload pass. Zero new production answers/updates; actual 4B execution and independent semantic review remain pending. Next checkpoint is two base Ukraine replies and inspection, before any dependent fit; no automatic queue.
+Newest measured result: [18 October authentic delegation SFT checkpoint](docs/SCENARIO_ROLE_CHECKPOINT_20261018.md). Fourteen inspected outputs and one fresh four-speech/128-update Qwen3.5-4B fit. All four fitting speeches reproduce exactly; both Ukraine development cases fail under raw and corrected native-chat adapter prompts, with worse reference likelihood and unsupported claims. This is overfitting, not a persona/agent gain. All five owned GPU workers exited. Do not expand this branch or launch atomic tokens.
 
-Qwen3.5-4B small training works. The strongest recent local result is source-conditioned application of repaired versus unrepaired proposal clauses, including two excluded Brazilian combinations. This does not establish national persona, diplomatic reasoning or multi-agent gains. The latest measured interaction has twelve strict failures and a prompt-mode caveat. A four-answer explicit seed-only control is prepared but unrun; inspect base answers before adapter answers, with no automatic launch or fit.
+[The source-audited setup](docs/SCENARIO_ROLE_SFT_READINESS_20261017.md) and [CoSER-grounded design](docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md) remain the method/data evidence. The next candidate is a small native-chat base/adapter comparison with source-grounded pre-target meeting/country evidence and identifiable role/topic controls, before any further fit. No next pack/queue is prepared.
+
+Earlier application-state results remain useful components, not validated national persona or multi-agent gains. The four-answer explicit seed-only control remains preserved and unrun; the latest request does not auto-launch it.
 
 - [Latest measured interaction](docs/AURORA_SANCTIONS_INTERACTION_20261007.md)
 - [Prepared, unrun explicit-mode control](docs/EXPLICIT_SEED_PREPARATION_20261007.md)

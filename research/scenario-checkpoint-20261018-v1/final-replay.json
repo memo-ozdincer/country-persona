@@ -1,0 +1,77 @@
+{
+  "status": "actual_inputs_outputs_masks_reviews_and_trace_replayed",
+  "stages": [
+    {
+      "stage": "base-sequence",
+      "calls": 2,
+      "generated_tokens": 2162,
+      "content_units": {
+        "unmet": 8
+      },
+      "strict_passes": 0,
+      "response_sha256": "b356a77dea6c2f49e9a53bc69f777b82b2582f62230f95763fb09cd789fd2123"
+    },
+    {
+      "stage": "base-native",
+      "calls": 2,
+      "generated_tokens": 660,
+      "content_units": {
+        "met": 2,
+        "unmet": 6
+      },
+      "strict_passes": 0,
+      "response_sha256": "cfd8553324ac6ebd638adf100f7d1b7336efe395aa0c745c569147e57a3fec77"
+    },
+    {
+      "stage": "base-native-boundary",
+      "calls": 2,
+      "generated_tokens": 808,
+      "content_units": {
+        "met": 2,
+        "unmet": 5,
+        "uncertain": 1
+      },
+      "strict_passes": 0,
+      "response_sha256": "801388ae6cea3f220fde08ee14304f9924e5afa7b7b50559818aec3361c37646"
+    },
+    {
+      "stage": "adapter-fitting",
+      "calls": 4,
+      "generated_tokens": 3148,
+      "content_units": {
+        "met": 20
+      },
+      "strict_passes": 4,
+      "response_sha256": "17ae73568af2684e18c3dcfc8a4f5971d5e98de9585424ef71477316753b13ce"
+    },
+    {
+      "stage": "adapter-held",
+      "calls": 2,
+      "generated_tokens": 1218,
+      "content_units": {
+        "unmet": 8
+      },
+      "strict_passes": 0,
+      "response_sha256": "8a586e4b312e74a4e0addd86f08b18334586b2b459009b98c149b461ad771b08"
+    },
+    {
+      "stage": "adapter-native-boundary",
+      "calls": 2,
+      "generated_tokens": 952,
+      "content_units": {
+        "unmet": 7,
+        "met": 1
+      },
+      "strict_passes": 0,
+      "response_sha256": "5dc1d80010a2fa38c3f97452117f7aeef398945b1435f06a5e9be8f0d88601fb"
+    }
+  ],
+  "trace": {
+    "entries": 128,
+    "source_inputs_masks_schedule_and_finite_gradients_replayed": true
+  },
+  "actual_generated_answers": 14,
+  "optimizer_updates": 128,
+  "model_inference_calls_for_replay": 0,
+  "limitation": "Byte/decoder/provenance/arithmetic replay, not independent semantic entailment or persona adjudication."
+}

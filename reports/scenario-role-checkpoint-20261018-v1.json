@@ -1,0 +1,369 @@
+{
+  "status": "measured_small_checkpoint_complete; delivery_receipt_separate",
+  "created_at": "2026-10-18T19:40:19.717973-04:00",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "new_generated_answers": 14,
+  "new_optimizer_updates": 128,
+  "cumulative_qwen35_updates": 4062,
+  "selected_scenario_branch_updates": 128,
+  "prior_paired_brazil_branch_updates": 256,
+  "separate_qwen25_reference_updates": 582,
+  "stages": [
+    {
+      "stage": "base-sequence",
+      "answers": 2,
+      "generated_tokens": 2162,
+      "capped_answers": 1,
+      "content_units": {
+        "met": 0,
+        "unmet": 8,
+        "uncertain": 0
+      },
+      "strict_passes": 0,
+      "cases": [
+        {
+          "id": "9138-IND",
+          "tokens": 2048,
+          "target_nll": 2.217810869216919,
+          "wrong_role_target_nll": 2.251542329788208,
+          "correct_role_advantage": 0.03373146057128906,
+          "at_cap": true
+        },
+        {
+          "id": "9138-GBR",
+          "tokens": 114,
+          "target_nll": 2.6156368255615234,
+          "wrong_role_target_nll": 2.6625866889953613,
+          "correct_role_advantage": 0.04694986343383789,
+          "at_cap": false
+        }
+      ]
+    },
+    {
+      "stage": "base-native",
+      "answers": 2,
+      "generated_tokens": 660,
+      "capped_answers": 0,
+      "content_units": {
+        "met": 2,
+        "unmet": 6,
+        "uncertain": 0
+      },
+      "strict_passes": 0,
+      "cases": [
+        {
+          "id": "9138-IND",
+          "tokens": 334,
+          "target_nll": 2.13889217376709,
+          "wrong_role_target_nll": null,
+          "correct_role_advantage": null,
+          "at_cap": false
+        },
+        {
+          "id": "9138-GBR",
+          "tokens": 326,
+          "target_nll": 2.406717538833618,
+          "wrong_role_target_nll": null,
+          "correct_role_advantage": null,
+          "at_cap": false
+        }
+      ]
+    },
+    {
+      "stage": "base-native-boundary",
+      "answers": 2,
+      "generated_tokens": 808,
+      "capped_answers": 0,
+      "content_units": {
+        "met": 2,
+        "unmet": 5,
+        "uncertain": 1
+      },
+      "strict_passes": 0,
+      "cases": [
+        {
+          "id": "9138-IND",
+          "tokens": 520,
+          "target_nll": 2.1490306854248047,
+          "wrong_role_target_nll": null,
+          "correct_role_advantage": null,
+          "at_cap": false
+        },
+        {
+          "id": "9138-GBR",
+          "tokens": 288,
+          "target_nll": 2.4079174995422363,
+          "wrong_role_target_nll": null,
+          "correct_role_advantage": null,
+          "at_cap": false
+        }
+      ]
+    },
+    {
+      "stage": "adapter-fitting",
+      "answers": 4,
+      "generated_tokens": 3148,
+      "capped_answers": 0,
+      "content_units": {
+        "met": 20,
+        "unmet": 0,
+        "uncertain": 0
+      },
+      "strict_passes": 4,
+      "cases": [
+        {
+          "id": "9214-GBR",
+          "tokens": 260,
+          "target_nll": 0.00027136309654451907,
+          "wrong_role_target_nll": 0.0452866293489933,
+          "correct_role_advantage": 0.04501526625244878,
+          "at_cap": false
+        },
+        {
+          "id": "9214-IND",
+          "tokens": 574,
+          "target_nll": 0.0007696718676015735,
+          "wrong_role_target_nll": 0.10559778660535812,
+          "correct_role_advantage": 0.10482811473775655,
+          "at_cap": false
+        },
+        {
+          "id": "8923-IND",
+          "tokens": 1744,
+          "target_nll": 0.004419263917952776,
+          "wrong_role_target_nll": 0.06075557321310043,
+          "correct_role_advantage": 0.05633630929514766,
+          "at_cap": false
+        },
+        {
+          "id": "8923-GBR",
+          "tokens": 570,
+          "target_nll": 0.0009446108597330749,
+          "wrong_role_target_nll": 0.09351195394992828,
+          "correct_role_advantage": 0.09256734309019521,
+          "at_cap": false
+        }
+      ]
+    },
+    {
+      "stage": "adapter-held",
+      "answers": 2,
+      "generated_tokens": 1218,
+      "capped_answers": 0,
+      "content_units": {
+        "met": 0,
+        "unmet": 8,
+        "uncertain": 0
+      },
+      "strict_passes": 0,
+      "cases": [
+        {
+          "id": "9138-IND",
+          "tokens": 217,
+          "target_nll": 4.600475311279297,
+          "wrong_role_target_nll": 4.37326192855835,
+          "correct_role_advantage": -0.22721338272094727,
+          "at_cap": false
+        },
+        {
+          "id": "9138-GBR",
+          "tokens": 1001,
+          "target_nll": 4.755647659301758,
+          "wrong_role_target_nll": 4.975422382354736,
+          "correct_role_advantage": 0.21977472305297852,
+          "at_cap": false
+        }
+      ]
+    },
+    {
+      "stage": "adapter-native-boundary",
+      "answers": 2,
+      "generated_tokens": 952,
+      "capped_answers": 0,
+      "content_units": {
+        "met": 1,
+        "unmet": 7,
+        "uncertain": 0
+      },
+      "strict_passes": 0,
+      "cases": [
+        {
+          "id": "9138-IND",
+          "tokens": 535,
+          "target_nll": 4.861536979675293,
+          "wrong_role_target_nll": null,
+          "correct_role_advantage": null,
+          "at_cap": false
+        },
+        {
+          "id": "9138-GBR",
+          "tokens": 417,
+          "target_nll": 4.8331780433654785,
+          "wrong_role_target_nll": null,
+          "correct_role_advantage": null,
+          "at_cap": false
+        }
+      ]
+    }
+  ],
+  "matched_likelihood_comparison": [
+    {
+      "id": "9138-IND",
+      "raw_base_nll": 2.217810869216919,
+      "raw_adapter_nll": 4.600475311279297,
+      "raw_nll_increase": 2.382664442062378,
+      "native_base_nll": 2.1490306854248047,
+      "native_adapter_nll": 4.861536979675293,
+      "native_nll_increase": 2.7125062942504883
+    },
+    {
+      "id": "9138-GBR",
+      "raw_base_nll": 2.6156368255615234,
+      "raw_adapter_nll": 4.755647659301758,
+      "raw_nll_increase": 2.1400108337402344,
+      "native_base_nll": 2.4079174995422363,
+      "native_adapter_nll": 4.8331780433654785,
+      "native_nll_increase": 2.425260543823242
+    }
+  ],
+  "training": {
+    "steps": 128,
+    "presentations": {
+      "8923-IND": 32,
+      "9214-IND": 32,
+      "8923-GBR": 32,
+      "9214-GBR": 32
+    },
+    "sequence_tokens": 444032,
+    "supervised_tokens": 100736,
+    "objective": "equal-example response-only mean causal CE",
+    "batch_size": 1,
+    "gradient_accumulation": 1,
+    "base_tensor_versions_unchanged": true,
+    "update": {
+      "adapter_tensors": 496,
+      "changed_adapter_tensors": 496,
+      "adapter_update_l2": 5.6141076992511945,
+      "all_adapter_tensors_finite": true,
+      "initial_adapter_digest": "6372b4c0d640d45fa81bd7c79ac522485dbe96a79b8369fd422a2c4a698b2772",
+      "final_adapter_digest": "1ee2ca8b65f128b3404d0181476dca8d689e0bb007c2ab697b0c232b343cfed2"
+    },
+    "serialization": {
+      "saved_tensors_equal": true,
+      "reload_verified_after_state_perturbation": true,
+      "same_base_probe_logits_equal": true,
+      "probe_tokens": 24,
+      "maximum_logit_difference": 0.0,
+      "logit_atol": 1e-05,
+      "logit_rtol": 1e-05,
+      "files_sha256": {
+        "adapter_model.safetensors": "c1e7a3683a5bb437889962acb7db31f369bf103d006ba2f3cfb7f65f88053690",
+        "adapter_config.json": "9d8602e978cb17a5aa49c264e7c8a8ae26ff947b9f0de20ecd630ee7cd8ba90e"
+      }
+    },
+    "trace_sha256": "ebf4ffe235852a77cd3a629e7a9520e88347b454dada2a117059545b0505395a",
+    "trace_replay": {
+      "entries": 128,
+      "source_inputs_masks_schedule_and_finite_gradients_replayed": true
+    }
+  },
+  "fitting_exact_reproductions": 4,
+  "independent_semantic_review": false,
+  "persona_gain_established": false,
+  "diplomatic_reasoning_gain_established": false,
+  "multi_agent_gain_established": false,
+  "strong_ood_gain_established": false,
+  "final_cold_4b_adapter_state_exact": true,
+  "resource_exit_receipt": "research/scenario-checkpoint-20261018-v1/resource-exits.json",
+  "primary_observations": [
+    "Four complete authentic fitting speeches exactly reproduced; all 20 fitting material compounds/guards pass.",
+    "All ten fit-excluded development outputs across five prompt/weight arms strictly fail; historic facts missing from some prompts limit the interpretation of omissions.",
+    "Raw base copies context/loops; native chat repairs output form. The trained adapter fabricates policies/events and raw UK emits a spurious US turn.",
+    "Reference NLL worsens in both same-input raw and boundary-corrected-native comparisons; failure is not confined to raw serialization.",
+    "Only one 128-update fit; no extra dose, token arm, seed sweep or old explicit seed-only control."
+  ],
+  "protocol_findings": [
+    "Original native control embedded two documentary end-of-message markers inside the user content; corrected and preserved as a separate control, with identical documentary text and reference targets.",
+    "India aid details and UK draft sponsorship absent from supplied windows; no persona-deficit claim from these omissions alone.",
+    "No chronological/OOD holdout: December 2022 sanctions fitting follows September 2022 Ukraine development.",
+    "Unfamiliar GPU process joined after free-device checks and left naturally before evaluation; never cancelled or altered. Throughput not compared under shared occupancy.",
+    "A premature preflight status poll asserted while CPU preparation was still pending; the explicitly launched boundary runner independently passed the same derivation before allocation. Subsequent shell command groups fail fast. No additional answers/updates arose from the poll."
+  ],
+  "recommendation": "Do not scale this four-speech bare-sequence branch. Keep native chat, supply source-bound pre-target meeting/country evidence, and freeze role/topic counterfactuals with observable criteria before another fit. Compare base with the saved adapter under identical grounded inputs first; no next pack or fit queued.",
+  "artifact_manifest": {
+    "software-checks.json": "bbfb8d02e0c3e03ba896aeddc6e1badf2cbf8fef533b021cd581b0cec23807b4",
+    "final-replay.json": "aaf7d2b05f6154faa4472dfcdf9f4a850c461e5c9b32c41d83dd71b4b60b5485",
+    "resource-exits.json": "a2834c9ba058d39e73072724c8fe712a37438b5ed296a9cfd203becc2e02db4a",
+    "adapter-native-boundary-review.json": "0a1659cb0af39af363334105fb6ebb298d1ee617241c761a26a77e968beccdf3",
+    "sequence-checkpoint-replay.json": "389021ac141beac0c79c5b6ad4b56c2bb6cb3f6e7f94bf137e9e9cdff0ea290d",
+    "adapter-held-review.json": "d78a3912301f8d5b16e2315ad03d82f479e1893e90d49ad27750d54811858ad7",
+    "adapter-fitting-review.json": "8bd00a4f6dbf61338898409a5b2d4d716ecc1a4a88efcd1ecde9c4c7ef0dab6e",
+    "resource-observations.jsonl": "0dffc94272f3bef5b38d45a446a87f330fe1242389eea96656fcf7a84441caa9",
+    "baseline-replay.json": "eb241f00ced624bcb0a1e4dac5f1ea785b04492722cfe4e2c1d2af15f9e86b3a",
+    "README.md": "3c8482f99584752ad2dccc0fec9dab49965c4678e8159e0bfec3c67a4e70cd2e",
+    "base-sequence-review-before-fit.json": "de49e48889b0384b864a76f84b5b0e1c207f04bcd50c28ed03abfc77a5e71a5d",
+    "base-native-boundary-review.json": "649822fe3511d87eac5b9b3e63ca00d88a8015109194ef328c83abb5afb8ea73",
+    "criterion-observability.json": "a112fc59ebf79bb7855121a5d6e3c1f528ac675389a3f894bdf4fa29536835f6",
+    "base-native-review.json": "5707a5fea9e8cc23a7c98dc2fd36255f1779dc230db948aac19195771516ff5b",
+    "base-sequence-review-initial.json": "48c07e777c9dc4d0cd156b110aad134e7f9acaa5dfd79342a2d50c2a1798dbad",
+    "protocol.json": "91fcfe887e6755bdee35e0eccf4549269afcf7f1aa159cd851b8033d54427e02",
+    "initial-github.json": "d3b463732448cedff54b75d908974bd5b4617d43da27979bb9d9087f550dab2a",
+    "adapter-native-boundary/execution-script.py": "2d229af087911a9963549e11f3f46ef52481bf6a6f319f31b5d355e86d15e78a",
+    "adapter-native-boundary/console.log": "e067862557fd7f6549a92b6cf7cd7243cff1e2648d008962166d34f662c8d66c",
+    "adapter-native-boundary/launch.json": "709958f2d2b456e49fc85ad8547d12ee695449b880442018c280c9001379de1d",
+    "adapter-native-boundary/actual-inputs.json": "a5b94087c31a2c3bb0909b28bac3a76c6a5244a186503c21006d92e010709f56",
+    "adapter-native-boundary/responses.jsonl": "5dc1d80010a2fa38c3f97452117f7aeef398945b1435f06a5e9be8f0d88601fb",
+    "adapter-native-boundary/evaluation-result.json": "58cd8139c5bdddca7990c8e097bc49aa3fabeb50431f63560fa888140e96ff9d",
+    "adapter-native-boundary/inspection.json": "50073532ae67b0902c9ef0116995ede3e87a10495758a32422a7ba554560b33d",
+    "adapter-held/launch.json": "ece4fca73ffa73db1df1fcf8137226ef59bbd8e6551a5474366ec9527b987929",
+    "adapter-held/responses.jsonl": "8a586e4b312e74a4e0addd86f08b18334586b2b459009b98c149b461ad771b08",
+    "adapter-held/evaluation-result.json": "653c3f9e4c1468a54a3ea0cc67de9eb01d08cdb033c0465230f257cb2564df72",
+    "adapter-held/inspection.json": "89b95d21c6416c2e85a1d415ab749327e5c392fccb30a51e4d0b16ea523dc78d",
+    "adapter-fitting/launch.json": "d9640b8f6bce40faabf1d05346ff985617eae2fd3eaac8127d3a45ee3045563f",
+    "adapter-fitting/responses.jsonl": "17ae73568af2684e18c3dcfc8a4f5971d5e98de9585424ef71477316753b13ce",
+    "adapter-fitting/evaluation-result.json": "df374456a1b05db0cf27b92e10491fb09a0821e4e4f466b7b89e589f20eb04a7",
+    "adapter-fitting/inspection.json": "40d0cf37da9960cabd60f480c0be2ff05ddb4d4365e5cbb6e71500dc208fe3cc",
+    "fit/execution-script.py": "5c36ba69e20fb589a48fa9b85fb3a5585a92ff4893b151030fcbe34dcebb2bdf",
+    "fit/resource-exit.json": "c28b9e47d04abf85b341bc52e25d3f5b6ce2e749b52866021c1b5a1f40d4943e",
+    "fit/console.log": "f419425c2d97b4d883a340aa58615ba26c32fcd9e89dadbce091798e65caa798",
+    "fit/launch.json": "34c598b487dc48cb786fbaecf7166d24fcb166eced39152693ca9033f3c079df",
+    "fit/schedule.json": "b021668b0dd643b310c532fac875057fa008e1832c1f8349f3f0847e3a67d6ab",
+    "fit/optimization.jsonl": "ebf4ffe235852a77cd3a629e7a9520e88347b454dada2a117059545b0505395a",
+    "fit/training-result.json": "6e3c977a400485ec15c12ea00dd1a15031edfe467bec66d18bb2d2e69353d3f9",
+    "base-native-boundary/execution-script.py": "0b6f21ac395d1cd388cd4b51a93540b0a927a15c25e923b3670139cf5d09b301",
+    "base-native-boundary/console.log": "64be4654146c4123a90ad638bb27c69d9ce9f50aab111475e208d31be7fa30c1",
+    "base-native-boundary/launch.json": "9c9e6b721b8a1645b1399d450df5b280fb9429f6ee89c87f453597b5fd7d92ae",
+    "base-native-boundary/actual-inputs.json": "a5b94087c31a2c3bb0909b28bac3a76c6a5244a186503c21006d92e010709f56",
+    "base-native-boundary/responses.jsonl": "801388ae6cea3f220fde08ee14304f9924e5afa7b7b50559818aec3361c37646",
+    "base-native-boundary/evaluation-result.json": "e31829f6f6a7671ac94192567a856cad261caa65d14c8d5ba600067ba5827977",
+    "base-native-boundary/inspection.json": "cd9173b5044f6f988b08a63654e7410ecf627031e92b879b6c9b6570676d218c",
+    "native-boundary-preflight/launch.json": "5d5d8ff074ac7e4da3e1b726032d3913168ce73490982f5a1e1ebefa33022660",
+    "native-boundary-preflight/actual-inputs.json": "a5b94087c31a2c3bb0909b28bac3a76c6a5244a186503c21006d92e010709f56",
+    "base-native/console.log": "ec90cf39e7ffd9f1d85fdd337d1f5509421ca3f32fd23db0e3ae12507cd2dcce",
+    "base-native/launch.json": "2c1160238152ef4a0f2d2d042f4e3ceb7108454f665f9599b5e9be022eaf7ded",
+    "base-native/planned-schedule.json": "b021668b0dd643b310c532fac875057fa008e1832c1f8349f3f0847e3a67d6ab",
+    "base-native/mask-audit.json": "dd115f524f9bd981c40d4d54bc5b4ea7178b3b3ec8c9ddeab98590f227bf25a0",
+    "base-native/preflight.json": "8f46db71831d3b228d6d1b8422e3d5796300c82aa96ee8fba99d90d198119847",
+    "base-native/responses.jsonl": "cfd8553324ac6ebd638adf100f7d1b7336efe395aa0c745c569147e57a3fec77",
+    "base-native/evaluation-result.json": "9bf22c5a663f5419ef4a3bcda6bd63ecece03eed3a29a6bce33b4adc582385a7",
+    "base-native/inspection.json": "eaeb73c873326f2d6e3719d8cc51e057533c758f8e2d595b3e4b6fdae0b9fa8f",
+    "base-sequence/inspection.json": "d48572d822576ab50a24987a8f309da0503796637ea1d9d1fc18d1ab52771f89",
+    "base-sequence/preservation.json": "8f5be7d96d5373c00ca0f9eb532135ee2491a69fa2ee2dfc593f3a48d2dc1535",
+    "base-sequence/console.log": "5545d07aa93f9fb7b133b0b9ad975ca7618aadeb7a1d23843843a17816ac3947",
+    "base-sequence/launch.json": "156ca07c9847db70186d6a1842f265ad54ae166fb5845c06b51db70e3e84c487",
+    "base-sequence/planned-schedule.json": "b021668b0dd643b310c532fac875057fa008e1832c1f8349f3f0847e3a67d6ab",
+    "base-sequence/mask-audit.json": "dd115f524f9bd981c40d4d54bc5b4ea7178b3b3ec8c9ddeab98590f227bf25a0",
+    "base-sequence/preflight.json": "8f46db71831d3b228d6d1b8422e3d5796300c82aa96ee8fba99d90d198119847",
+    "base-sequence/responses.jsonl": "b356a77dea6c2f49e9a53bc69f777b82b2582f62230f95763fb09cd789fd2123",
+    "base-sequence/evaluation-result.json": "6a486bb0bb782ba13109f5927653bda36602177dd23f50f5978ea28d929f7897",
+    "base-sequence/inspection-initial.json": "d4287ca11a4f1091e40a834e133c1abca5657865c9d8de345a2f6268a9909824"
+  },
+  "software_checks": {
+    "pytest": 32,
+    "pinned_runtime_unittest": 3,
+    "total": 35
+  },
+  "portable_replay_sha256": "aaf7d2b05f6154faa4472dfcdf9f4a850c461e5c9b32c41d83dd71b4b60b5485"
+}

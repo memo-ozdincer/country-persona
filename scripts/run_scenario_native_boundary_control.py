@@ -1,4 +1,4 @@
-"""One base evaluation with quoted record boundaries escaped from native chat.
+"""One base or saved-adapter evaluation with native record boundaries escaped.
 
 Preserves the October 17 release and runner. Only documentary boundary notation
 changes inside the native user message; scene, speeches, requested role, weights,
@@ -51,10 +51,11 @@ def main():
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--gpu-uuid")
     p.add_argument("--preflight-only", action="store_true")
+    p.add_argument("--adapter-run", type=Path)
     a = p.parse_args()
     out = a.output.resolve()
     out.mkdir(parents=True, exist_ok=False)
-    launch = dict(identity=identity(), runtime=locked_runtime(), status="started", arm="base",
+    launch = dict(identity=identity(), runtime=locked_runtime(), status="started", arm="adapter" if a.adapter_run else "base",
         format="native_with_escaped_record_boundaries", production_model_calls=0, production_optimizer_updates=0,
         code_sha256=sha256(Path(__file__)), output=str(out))
     write_json(out / "launch.json", launch)
@@ -65,6 +66,15 @@ def main():
             for name, expected in config[key].items():
                 if sha256(ROOT / name) != expected:
                     raise ValueError("Frozen parent implementation/artifact changed: " + name)
+        if a.adapter_run:
+            prior = json.loads((a.adapter_run / "launch.json").read_text())
+            training = json.loads((a.adapter_run / "training-result.json").read_text())
+            if prior["status"] != "completed" or prior["fit_config_sha256"] != sha256(config_path):
+                raise ValueError("Complete matched adapter fit required")
+            for name, expected in training["serialization"]["files_sha256"].items():
+                if sha256(a.adapter_run / "adapter" / name) != expected:
+                    raise ValueError("Saved adapter changed")
+            launch["adapter_training_result_sha256"] = sha256(a.adapter_run / "training-result.json")
         from transformers import AutoTokenizer
         tokenizer = AutoTokenizer.from_pretrained(config["model_path"], local_files_only=True)
         _, held = load_pack(ROOT, RELEASE / "pack", tokenizer)
@@ -89,6 +99,14 @@ def main():
             torch.manual_seed(42)
             model = Qwen3_5ForCausalLM.from_pretrained(config["model_path"], local_files_only=True,
                 dtype=torch.bfloat16, attn_implementation="sdpa").to("cuda:0")
+            if a.adapter_run:
+                from peft import PeftModel
+                from country_persona.training_checks import adapter_snapshot, tensor_state_digest
+                model = PeftModel.from_pretrained(model, a.adapter_run / "adapter")
+                if tensor_state_digest(adapter_snapshot(model)) != training["update"]["final_adapter_digest"]:
+                    raise ValueError("Cold-loaded adapter differs from trained tensor state")
+                launch["cold_adapter_state_exact"] = True
+                write_json(out / "launch.json", launch)
             result = evaluate(model, tokenizer, rows, out, "cuda:0", native=True)
             write_json(out / "evaluation-result.json", result)
             launch.update(status="completed", result=result, production_model_calls=result["calls"])

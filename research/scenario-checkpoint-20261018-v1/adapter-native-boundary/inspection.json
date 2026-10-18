@@ -1,0 +1,119 @@
+{
+  "responses_sha256": "5dc1d80010a2fa38c3f97452117f7aeef398945b1435f06a5e9be8f0d88601fb",
+  "rubric_sha256": "2a87ceb81db6ed1c69206873d9676251cc151cb8f497060a22e8d4e276bc3992",
+  "reviewer": "same root assistant; both complete native adapter replies and reference sources hand-read",
+  "rationale": "Cold adapter state matches exactly. Under the same corrected native inputs as the base, reference NLL worsens and both speeches introduce extensive unsupported policies/events. Regression is not confined to the bare sequence format. No further fitting/token arm; replan around native format, prior-context evidence and identifiable role/topic controls.",
+  "decision": "replan",
+  "independent_review": false,
+  "cases": [
+    {
+      "id": "9138-IND",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 535 tokens and the visible boundary marker. Invents India/Bangladesh strikes, executions, neighbourhood threats and other positions absent from India's reference. General Charter language earns one material unit; inventions remain source failures.",
+      "units": [
+        {
+          "id": "diplomacy",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Restraint and a diplomatic solution are mentioned, but immediate cessation/return-to-negotiations is replaced by invented expert-talk structures."
+        },
+        {
+          "id": "charter",
+          "status": "met",
+          "answer_quote": "any long-term peace deal must be based on respect for the sovereignty and territorial integrity of both Ukraine and Russia, as enshrined in the Charter of the United Nations.",
+          "reason": "Affirms Charter/territorial norms and condemns an illegal invasion; the legal-order compound is present despite unsupported surrounding claims."
+        },
+        {
+          "id": "assistance",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No actual Indian humanitarian aid to Ukraine versus global-South economic support or food/fuel/fertilizer distress."
+        },
+        {
+          "id": "human",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No displaced-people/human-centric framing; unrelated invented military/terrorism/justice narratives dominate."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Adds strikes, executions, terminology claims, regional threats and unsupported Indian positions."
+        },
+        "institutional_role": {
+          "status": "pass",
+          "reason": "One explicitly Indian national voice, no chair or additional speaker identity."
+        },
+        "chronology": {
+          "status": "pass",
+          "reason": "No explicit later vote/adoption or future outcome is asserted; unsupported recent-event claims fail source fidelity separately."
+        },
+        "output_integrity": {
+          "status": "pass",
+          "reason": "One complete speech with ordinary EOS; visible recorded-turn marker retained, no thinking trace or new speaker."
+        }
+      }
+    },
+    {
+      "id": "9138-GBR",
+      "complete_raw_answer_read": true,
+      "notes": "Read all 417 tokens and the boundary marker. No referendum agenda; invents EU four-track/UK two-track diplomacy, attacks and certainty about nuclear non-use.",
+      "units": [
+        {
+          "id": "referendums",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No sham referendums or four-region account."
+        },
+        {
+          "id": "coercion",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "No coercive wartime voting conditions."
+        },
+        {
+          "id": "draft",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "An unnamed resolution is discussed, not the US/Albania draft or the source's rejection of annexation."
+        },
+        {
+          "id": "end_war",
+          "status": "unmet",
+          "answer_quote": "",
+          "reason": "Generic peace/sovereignty rhetoric does not deliver the Russian-end-war and forcibly-changed-borders/shared-security compound."
+        }
+      ],
+      "guards": {
+        "source_faithfulness": {
+          "status": "fail",
+          "reason": "Invented diplomacy tracks, attacks and nuclear guarantees have no support in the UK source."
+        },
+        "institutional_role": {
+          "status": "pass",
+          "reason": "One UK national speech. Inviting Putin to reflect is treated as rhetoric, not automatically as claiming the Council presidency."
+        },
+        "chronology": {
+          "status": "fail",
+          "reason": "Guarantees nuclear weapons will not be used, an unsupported future certainty outside the source."
+        },
+        "output_integrity": {
+          "status": "pass",
+          "reason": "One complete normally terminated speech, no thought loop or extra speaker."
+        }
+      }
+    }
+  ],
+  "scores": [
+    {
+      "id": "9138-IND",
+      "strict_pass": false
+    },
+    {
+      "id": "9138-GBR",
+      "strict_pass": false
+    }
+  ],
+  "review_file_sha256": "0a1659cb0af39af363334105fb6ebb298d1ee617241c761a26a77e968beccdf3"
+}
