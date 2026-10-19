@@ -1,0 +1,109 @@
+{
+  "status": "actual_native_tokens_masks_sources_32_steps_and_review_arithmetic_replayed",
+  "generated_records": 14,
+  "reused_baseline_records_not_double_counted": 2,
+  "production_optimizer_updates": 32,
+  "cumulative_qwen35_updates": 4094,
+  "fit_sequence_tokens": 80992,
+  "fit_supervised_tokens": 5856,
+  "complete_speech_source_spans_replayed": 6,
+  "stages": {
+    "base-source": {
+      "answers": 2,
+      "material": {
+        "met": 14,
+        "unmet": 4
+      },
+      "guards": {
+        "met": 10,
+        "uncertain": 2
+      },
+      "source_map": {},
+      "strict_passes": 0,
+      "generated_tokens": 563,
+      "responses_sha256": "6bad1dd0ec94e4f5dc60ba5b1f83caa0d245beef6c0a8ca246b22014010761f3"
+    },
+    "base-application": {
+      "answers": 2,
+      "material": {
+        "met": 20,
+        "unmet": 4
+      },
+      "guards": {
+        "met": 11,
+        "unmet": 1
+      },
+      "source_map": {},
+      "strict_passes": 0,
+      "generated_tokens": 542,
+      "responses_sha256": "026cccac67f224fa029694fa802ab9708bff55687ef242d28e573511b3d8d69a"
+    },
+    "adapter-fitting": {
+      "answers": 4,
+      "material": {
+        "met": 35
+      },
+      "guards": {
+        "met": 24
+      },
+      "source_map": {},
+      "strict_passes": 4,
+      "generated_tokens": 735,
+      "responses_sha256": "f99fb5dbb9b26af05db53b35adbd9ce32c8c3dda6182d3b9ac76e983e2835c4d"
+    },
+    "adapter-source": {
+      "answers": 2,
+      "material": {
+        "met": 18
+      },
+      "guards": {
+        "met": 12
+      },
+      "source_map": {},
+      "strict_passes": 2,
+      "generated_tokens": 405,
+      "responses_sha256": "bbf5404b1f3a737399185fbcef880ef2344487e958867ddb698f6f54e934942e"
+    },
+    "corrected-application-base": {
+      "answers": 2,
+      "material": {
+        "met": 23,
+        "uncertain": 1
+      },
+      "guards": {
+        "met": 9,
+        "unmet": 2,
+        "uncertain": 1
+      },
+      "source_map": {
+        "met": 16,
+        "unmet": 1,
+        "uncertain": 1
+      },
+      "strict_passes": 0,
+      "generated_tokens": 675,
+      "responses_sha256": "fa3ffc88407e8fb76bfc8fca3564d3863ec6bdd98938c634e0fb6dbe91bc2275"
+    },
+    "corrected-application-adapter": {
+      "answers": 2,
+      "material": {
+        "met": 21,
+        "unmet": 3
+      },
+      "guards": {
+        "met": 12
+      },
+      "source_map": {
+        "unmet": 1,
+        "met": 17
+      },
+      "strict_passes": 0,
+      "generated_tokens": 460,
+      "responses_sha256": "7eb3f6800d2bd7949b18c394b05ace8a2cd5c1370f07721521ba5ca35ca0accc"
+    }
+  },
+  "saved_adapter_digest": "ce7120b2cff0948880830febc830d4566992a2e382174115f50c448ddc46717d",
+  "cold_adapter_tensor_state_exact": true,
+  "independent_semantic_review_complete": false,
+  "scope": "Software/provenance replay; semantic ratings remain same-assistant development judgments."
+}

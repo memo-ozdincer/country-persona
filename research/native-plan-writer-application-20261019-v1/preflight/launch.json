@@ -1,0 +1,32 @@
+{
+  "status": "failed",
+  "identity": {
+    "host": "aurora",
+    "pid": 2697948,
+    "process_start_ticks": 1269649179,
+    "process_start_utc": "2026-10-19T20:08:01.790000+00:00",
+    "command": [
+      "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+      "scripts/run_native_plan_writer_application_control.py",
+      "--preflight-only",
+      "--output",
+      "research/native-plan-writer-application-20261019-v1/preflight"
+    ],
+    "cwd": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1",
+    "slurm_job_id": null
+  },
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "peft": "0.21.1"
+  },
+  "output": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/research/native-plan-writer-application-20261019-v1/preflight",
+  "code_sha256": "37e0fe45f412942e075b4184e2e9219eeaa92e371b9507abf033c966c943fdef",
+  "production_generated_answers": 0,
+  "production_optimizer_updates": 0,
+  "independent_review_complete": false,
+  "parent_fit_config_sha256": "fe05083183f0592ed1eb0a490dcf99aab655fca41f642de4b464bbc9a0224104",
+  "release_sha256": "0deb22e97156f215ca25bdd41a58187e242a914afaa27e02c3347bfe8c855c1d",
+  "exception": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/scripts/run_grounded_role_checkpoint.py\", line 64, in main\n    rows = prepare(tok)\n           ^^^^^^^^^^^^\n  File \"/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/scripts/run_grounded_role_checkpoint.py\", line 29, in prepare\n    assert len(rows) == 2 and {r[\"country\"] for r in rows} == {\"IND\", \"GBR\"}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

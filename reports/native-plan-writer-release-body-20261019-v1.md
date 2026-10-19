@@ -1,0 +1,7 @@
+One fresh32-update Qwen3.5-4B native plan-conditioned writer fit on four UK/India sanctions/climate targets. Four fitting outputs preserve all35 required meanings; excluded WPS source statements improve from0/2 to2/2 provisional strict passes with identical supplied sources/plans. The corrected harder application remains0/2 strict in both base/adapter arms. Same-assistant curation/grading, exposed historical episode, independent review pending; no broader persona/private-value/multi-agent claim.
+
+Fourteen actual statements and all32 input/mask/gradient traces are preserved in the tagged Git source. Initial inspection-gate failure and two reused base answers are explicitly accounted; no duplicate generations. All owned workers exited, unfamiliar processes untouched. Cumulative Qwen3.5 updates4094, this branch32; prior branches/reference unchanged.
+
+Download adapter_model.safetensors and adapter_config.json into the restored run's adapter directory. Verify both against native-plan-writer-adapter-manifest-20261019-v1.json. That manifest binds the trained tensor digest, training receipt and source release, and supplies restore instructions for the exact metadata trees. The tag pins the measured source commit; later delivery receipts may live in newer Git commits.
+
+Base model weights, credentials, runtime and caches are excluded. Restore immutable v47 plus the Git overlay per docs/STORAGE_POLICY.md; no new full research archive or replacement manifest is created.

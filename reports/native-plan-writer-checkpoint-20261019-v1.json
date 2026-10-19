@@ -1,0 +1,150 @@
+{
+  "status": "measured_source_transfer_component_gain_application_incomplete",
+  "date": "2026-10-19",
+  "report": "docs/NATIVE_PLAN_WRITER_CHECKPOINT_20261019.md",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "generation_records": 14,
+  "reused_baseline_records_not_double_counted": 2,
+  "generated_tokens": 3380,
+  "optimizer_updates": 32,
+  "cumulative_qwen35_updates": 4094,
+  "branch_updates": 32,
+  "older_raw_speech_branch": 128,
+  "prior_paired_brazil_branch": 256,
+  "separate_qwen25_reference_updates": 582,
+  "fit_sequence_tokens": 80992,
+  "fit_supervised_tokens": 5856,
+  "stages": {
+    "base-source": {
+      "answers": 2,
+      "material": {
+        "met": 14,
+        "unmet": 4
+      },
+      "guards": {
+        "met": 10,
+        "uncertain": 2
+      },
+      "source_map": {},
+      "strict_passes": 0,
+      "generated_tokens": 563,
+      "responses_sha256": "6bad1dd0ec94e4f5dc60ba5b1f83caa0d245beef6c0a8ca246b22014010761f3"
+    },
+    "base-application": {
+      "answers": 2,
+      "material": {
+        "met": 20,
+        "unmet": 4
+      },
+      "guards": {
+        "met": 11,
+        "unmet": 1
+      },
+      "source_map": {},
+      "strict_passes": 0,
+      "generated_tokens": 542,
+      "responses_sha256": "026cccac67f224fa029694fa802ab9708bff55687ef242d28e573511b3d8d69a"
+    },
+    "adapter-fitting": {
+      "answers": 4,
+      "material": {
+        "met": 35
+      },
+      "guards": {
+        "met": 24
+      },
+      "source_map": {},
+      "strict_passes": 4,
+      "generated_tokens": 735,
+      "responses_sha256": "f99fb5dbb9b26af05db53b35adbd9ce32c8c3dda6182d3b9ac76e983e2835c4d"
+    },
+    "adapter-source": {
+      "answers": 2,
+      "material": {
+        "met": 18
+      },
+      "guards": {
+        "met": 12
+      },
+      "source_map": {},
+      "strict_passes": 2,
+      "generated_tokens": 405,
+      "responses_sha256": "bbf5404b1f3a737399185fbcef880ef2344487e958867ddb698f6f54e934942e"
+    },
+    "corrected-application-base": {
+      "answers": 2,
+      "material": {
+        "met": 23,
+        "uncertain": 1
+      },
+      "guards": {
+        "met": 9,
+        "unmet": 2,
+        "uncertain": 1
+      },
+      "source_map": {
+        "met": 16,
+        "unmet": 1,
+        "uncertain": 1
+      },
+      "strict_passes": 0,
+      "generated_tokens": 675,
+      "responses_sha256": "fa3ffc88407e8fb76bfc8fca3564d3863ec6bdd98938c634e0fb6dbe91bc2275"
+    },
+    "corrected-application-adapter": {
+      "answers": 2,
+      "material": {
+        "met": 21,
+        "unmet": 3
+      },
+      "guards": {
+        "met": 12
+      },
+      "source_map": {
+        "unmet": 1,
+        "met": 17
+      },
+      "strict_passes": 0,
+      "generated_tokens": 460,
+      "responses_sha256": "7eb3f6800d2bd7949b18c394b05ace8a2cd5c1370f07721521ba5ca35ca0accc"
+    }
+  },
+  "fitting_strict_passes": 4,
+  "fitting_exact_strings": 1,
+  "source_transfer_base_strict": 0,
+  "source_transfer_adapter_strict": 2,
+  "corrected_application_base_strict": 0,
+  "corrected_application_adapter_strict": 0,
+  "all_outputs_hand_read": true,
+  "independent_review_complete": false,
+  "sealed_ood_or_forward_time_claim": false,
+  "persona_or_private_national_value_or_diplomatic_reasoning_or_multiagent_gain": false,
+  "source_realization_component_gain": "18/18 vs14/18 material with identical provided source/map;2/2 vs0/2 strict, same-assistant exposed-episode development.",
+  "application_limit": "Explicit recommendation permission improves base guidance; source-only adapter omits France application and UK cost even with supplied plan.",
+  "training_serialization": {
+    "saved_tensors_equal": true,
+    "reload_verified_after_state_perturbation": true,
+    "same_base_probe_logits_equal": true,
+    "probe_tokens": 24,
+    "maximum_logit_difference": 0.0,
+    "logit_atol": 1e-05,
+    "logit_rtol": 1e-05,
+    "files_sha256": {
+      "adapter_model.safetensors": "84af46543eb8000f9729bf626854c3fc97d19f91c7f9fb719fec1b639f3b842d",
+      "adapter_config.json": "9f47de3851ed4e4624d30324c0b54c593b307d6c622e63722d872de4fdc739aa"
+    }
+  },
+  "trained_adapter_tensor_digest": "ce7120b2cff0948880830febc830d4566992a2e382174115f50c448ddc46717d",
+  "cold_adapter_tensor_state_exact": true,
+  "same_base_probe_max_logit_difference": 0,
+  "owned_gpu_workers_exited": 3,
+  "unfamiliar_processes_modified": false,
+  "replay_receipt": "reports/native-plan-writer-replay-20261019-v1.json",
+  "replay_sha256": "a70c3d0c6995ed7761ef13b665e93f8b8a22618ce0f64dfb8b878e36d3968c18",
+  "adapter_manifest": "reports/native-plan-writer-adapter-manifest-20261019-v1.json",
+  "adapter_remote_delivery": "pending_verified_receipt",
+  "next_candidate": "One complete labeled application target on fitting-family source, retain4 source targets and freeze fresh source-family/country control before next fit. No new pack or fit queued.",
+  "broad_goal": "active, not complete"
+}

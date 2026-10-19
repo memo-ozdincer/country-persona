@@ -1,0 +1,23 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 14477.06it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"state": "awaiting_explicit_operation", "stages": ["base-source"], "updates": 0, "idle_timeout_seconds": 300}
+Traceback (most recent call last):
+  File "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/scripts/run_native_plan_writer.py", line 168, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/scripts/run_native_plan_writer.py", line 133, in main
+    inspected("base-source");evaluate("application_eval","base-application")
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/scripts/run_native_plan_writer.py", line 114, in inspected
+    path=out/stage/"inspection.json";d=json.loads(path.read_text())
+                                                  ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/runs/native-plan-writer-20261019-v1/base-source/inspection.json'
