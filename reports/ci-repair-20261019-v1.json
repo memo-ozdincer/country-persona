@@ -1,5 +1,5 @@
 {
-  "status": "local_git_only_cpu_suite_passed_hosted_verification_pending",
+  "status": "local_and_hosted_git_only_cpu_suite_passed",
   "verified_at": "2026-10-19T22:43:30.495105+00:00",
   "original_failed_run": "https://github.com/memo-ozdincer/country-persona/actions/runs/39324501557",
   "original_failed_commit": "43048eed8b8207ea1e42c116ae0acde4263710cc",
@@ -86,5 +86,59 @@
     "tests/test_training_examples.py": "53d4c35793d249c2cb089c33bebfaecf8dbada045e6e600bc52a2c5e803e97f7",
     "tests/test_inference_probe.py": "fc7a32691d9fd79302eb83167cbc0f0ab855a2ddcd2ff3970ef31a1639245737",
     "tests/test_scenario_sft_runtime.py": "54e2c23689dfda07e704e3a75569009455c86653e3b7508f8be67532d5a60335"
+  },
+  "hosted_verification": {
+    "status": "success",
+    "run": "https://github.com/memo-ozdincer/country-persona/actions/runs/39337006149",
+    "run_id": 39337006149,
+    "code_commit": "5870d54acf10d671d4eae39e1aa64cb12bca3c54",
+    "branch": "master",
+    "passed": 242,
+    "skipped": 23,
+    "log_summary": "2026-10-19T22:44:45.2052035Z 242 passed, 23 skipped in 10.17s",
+    "job_log_sha256": "abf0652b004ecd5d4fb355b1b657c26235b57fe0280fe9d267fc9e973db2b2d7",
+    "verified_at": "2026-10-19T22:45:33.691188+00:00",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run astral-sh/setup-uv@v6",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install CPU test dependencies",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run .venv/bin/python -m pytest -q",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run .venv/bin/python scripts/validate_source_inventory.py",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run .venv/bin/python -m compileall -q src scripts",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run astral-sh/setup-uv@v6",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
   }
 }
