@@ -1,0 +1,153 @@
+{
+  "status": "three_state_baselines_hand_read_and_compared",
+  "new_answers": 6,
+  "generated_tokens": 1753,
+  "optimizer_updates": 0,
+  "cases": {
+    "missing-outside": {
+      "base": {
+        "words": 246,
+        "material": {
+          "A1": "unmet",
+          "A2": "unmet",
+          "A3": "met",
+          "A4": "uncertain"
+        },
+        "guards": {
+          "country": "met",
+          "grounding": "uncertain",
+          "attribution": "met",
+          "time_authority": "met",
+          "public": "met",
+          "length": "unmet"
+        },
+        "rubric_strict_pass": false,
+        "application_only_scope_pass": false,
+        "complete_output_contract_pass": false,
+        "correct_core_action": false,
+        "tokens": 309
+      },
+      "adapter": {
+        "words": 206,
+        "material": {
+          "A1": "unmet",
+          "A2": "unmet",
+          "A3": "met",
+          "A4": "uncertain"
+        },
+        "guards": {
+          "country": "met",
+          "grounding": "uncertain",
+          "attribution": "met",
+          "time_authority": "met",
+          "public": "met",
+          "length": "met"
+        },
+        "rubric_strict_pass": false,
+        "application_only_scope_pass": false,
+        "complete_output_contract_pass": false,
+        "correct_core_action": false,
+        "tokens": 266
+      }
+    },
+    "existing-outside": {
+      "base": {
+        "words": 229,
+        "material": {
+          "A1": "unmet",
+          "A2": "unmet",
+          "A3": "met",
+          "A4": "uncertain"
+        },
+        "guards": {
+          "country": "met",
+          "grounding": "uncertain",
+          "attribution": "met",
+          "time_authority": "met",
+          "public": "met",
+          "length": "met"
+        },
+        "rubric_strict_pass": false,
+        "application_only_scope_pass": false,
+        "complete_output_contract_pass": false,
+        "correct_core_action": false,
+        "tokens": 287
+      },
+      "adapter": {
+        "words": 234,
+        "material": {
+          "A1": "met",
+          "A2": "met",
+          "A3": "met",
+          "A4": "met"
+        },
+        "guards": {
+          "country": "met",
+          "grounding": "met",
+          "attribution": "met",
+          "time_authority": "met",
+          "public": "met",
+          "length": "met"
+        },
+        "rubric_strict_pass": true,
+        "application_only_scope_pass": false,
+        "complete_output_contract_pass": false,
+        "correct_core_action": true,
+        "tokens": 301
+      }
+    },
+    "missing-inside": {
+      "base": {
+        "words": 239,
+        "material": {
+          "A1": "unmet",
+          "A2": "unmet",
+          "A3": "met",
+          "A4": "uncertain"
+        },
+        "guards": {
+          "country": "met",
+          "grounding": "unmet",
+          "attribution": "met",
+          "time_authority": "met",
+          "public": "met",
+          "length": "met"
+        },
+        "rubric_strict_pass": false,
+        "application_only_scope_pass": false,
+        "complete_output_contract_pass": false,
+        "correct_core_action": false,
+        "tokens": 297
+      },
+      "adapter": {
+        "words": 232,
+        "material": {
+          "A1": "unmet",
+          "A2": "met",
+          "A3": "met",
+          "A4": "met"
+        },
+        "guards": {
+          "country": "met",
+          "grounding": "met",
+          "attribution": "met",
+          "time_authority": "met",
+          "public": "met",
+          "length": "met"
+        },
+        "rubric_strict_pass": false,
+        "application_only_scope_pass": false,
+        "complete_output_contract_pass": false,
+        "correct_core_action": true,
+        "tokens": 293
+      }
+    }
+  },
+  "base_core_actions_correct": 0,
+  "native40_core_actions_correct": 2,
+  "base_full_contract_passes": 0,
+  "native40_full_contract_passes": 0,
+  "scope_contract": "Application-only instruction was explicit in frozen system/user prompt, but not a separate frozen six-guard rubric item. Audit it separately and do not claim full success from existing-state native40 rubric pass.",
+  "interpretation": "Base follows/rationalizes current geographic exclusions rather than applying repair rule. Native40 retains fully covered channel and correctly repairs missing inside coverage, but wrongly calls inside-only coverage sufficient when outside is missing. All six prepend source summaries despite requested scope.",
+  "independent_review_complete": false
+}

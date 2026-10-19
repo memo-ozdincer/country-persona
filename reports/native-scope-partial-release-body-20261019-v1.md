@@ -1,0 +1,7 @@
+The previous native writer could reproduce source positions while rationalizing an incompatible current plan and ignoring requested output scope. One fresh48-update Qwen3.5-4B fit adds one81-word application-only partial-state target with five previous examples unchanged. Source coverage improves and scope transfers, but original full Brazil regresses and France still exceeds240words. Preserve native40 and original failures.
+
+Twenty-five new answers and two deterministic compositions were hand-read. A shared actual166-word source plus typed67-word companion yields233words,13/13 material and6/6 source/length guards; the required literal Authority heading is missing, so full-format instruction compliance is not claimed. Base221words misses material/authority. Same-assistant, adaptive same-source prototype with supplied action rule; no independent/persona/collective/strongOOD claim.
+
+All48 actual native masks/gradients/exposures and output/review records replay. Frozen base versions unchanged; same-base save/reload probe exact, cold saved tensors and separate cold-model adapter state exact. Hardware NVIDIA RTX PRO 6000 Blackwell Server Edition. All six owned workers exited normally; unfamiliar processes untouched.
+
+Restore immutablev47 plus committed overlay and preceding native40 dependencies. Copy exact metadata mirror pairs listed in the manifest into fresh run destinations, download this adapter/config, and verify sizes/SHA256. Base weights,credentials,runtime/cache excluded. No new multi-GB full archive.

@@ -1,0 +1,114 @@
+{
+  "status": "matched_source_compounds_compared",
+  "new_answers": 2,
+  "historical_application_answers_reused": 2,
+  "optimizer_updates": 0,
+  "only_prompt_change": "Application R substring deleted; exact system/dossier/map/role/decoder unchanged.",
+  "arms": {
+    "base": {
+      "application_task_source_units": {
+        "met": 7,
+        "unmet": 1,
+        "uncertain": 1
+      },
+      "source_only_units": {
+        "met": 9
+      },
+      "application_task_words": 177,
+      "source_only_words": 223,
+      "unit_ratings": {
+        "complementarity": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "legal_scope": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "cooperation": {
+          "application_task": "unmet",
+          "source_only": "met"
+        },
+        "positive": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "victims": {
+          "application_task": "uncertain",
+          "source_only": "met"
+        },
+        "equality": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "status": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "transparency": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "hope": {
+          "application_task": "met",
+          "source_only": "met"
+        }
+      },
+      "source_only_strict_pass": true
+    },
+    "adapter": {
+      "application_task_source_units": {
+        "met": 7,
+        "uncertain": 1,
+        "unmet": 1
+      },
+      "source_only_units": {
+        "met": 8,
+        "uncertain": 1
+      },
+      "application_task_words": 221,
+      "source_only_words": 182,
+      "unit_ratings": {
+        "complementarity": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "legal_scope": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "cooperation": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "positive": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "victims": {
+          "application_task": "uncertain",
+          "source_only": "uncertain"
+        },
+        "equality": {
+          "application_task": "unmet",
+          "source_only": "met"
+        },
+        "status": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "transparency": {
+          "application_task": "met",
+          "source_only": "met"
+        },
+        "hope": {
+          "application_task": "met",
+          "source_only": "met"
+        }
+      },
+      "source_only_strict_pass": false
+    }
+  },
+  "interpretation": "Base fully covers the source without the application. Adapter restores equality without the application but still leaves witness/affected-community coverage implicit. Combined-task interference exists, but does not fully explain adapter coverage failure.",
+  "review": "Same assistant; original ambiguous group ratings preserved. No independent or persona/collective/OOD claim."
+}

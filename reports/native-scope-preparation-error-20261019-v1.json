@@ -1,0 +1,13 @@
+{
+  "status": "pre_generation_builder_metadata_error_preserved",
+  "entry": "scripts/build_native_scope_partial.py training",
+  "exception": "KeyError: 'units' in training rubric assembly",
+  "cause": "Application-only state example.json rows store units in separate rubric.json; builder expected inline units.",
+  "optimizer_updates_from_failure": 0,
+  "generation_records_from_failure": 0,
+  "new_training_pack_created": false,
+  "original_builder_sha256": "ba9d9855be302d1f85d08efb70b87b3265befa1e7eb82ce6d40c1d1701eea03f",
+  "separate_repair": "scripts/build_native_scope_partial_v2.py",
+  "repair": "Copy exact separately stored per-case units into metadata after asserting any inline copy agrees. Messages/targets/frozen controls untouched.",
+  "old_reverse_manifest_unchanged": true
+}
