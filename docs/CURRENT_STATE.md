@@ -2,6 +2,8 @@
 
 Dated reports and complete artifacts are the evidence; this file guides navigation.
 
+Wrap-up source review: [role-contrast design](ROLE_CONTRAST_DESIGN_20261019.md) verifies two complete climate statements/eight source spans and defines a country-role contrast with a legitimate-agreement control, without a supplied decision rule. Design only: zero new answers/updates, no executable pack or queued run. Latest measured results below are unchanged.
+
 Wrap-up infrastructure: [CPU CI repair](CI_REPAIR_20261019.md) records the reported workflow failure, missing dependencies/runtime-profile fixes and 242 passing Git-only software tests (23 private-artifact skips). No additional production generations or optimizer updates. User requested wrapping up; no experiment is queued.
 
 ## Latest measured checkpoint
