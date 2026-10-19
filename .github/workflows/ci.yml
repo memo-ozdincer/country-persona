@@ -1,14 +1,39 @@
 name: data-pipeline
-on: [push, pull_request]
+on:
+  push:
+    branches: [master]
+    paths-ignore: ['**/*.md', 'docs/**', 'reports/**', 'research/**']
+  pull_request:
+    paths-ignore: ['**/*.md', 'docs/**', 'reports/**', 'research/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: data-pipeline-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      CUDA_VISIBLE_DEVICES: ''
+      HF_HUB_OFFLINE: '1'
+      OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.11'
-      - run: uv sync --locked --extra data --extra dev
-      - run: uv run pytest -q
-      - run: uv run python scripts/validate_source_inventory.py
-      - run: uv run python -m compileall -q src scripts
+      - name: Install CPU test dependencies
+        run: |
+          uv venv --python 3.11
+          uv pip install --python .venv/bin/python 'torch==2.8.0' --index-url https://download.pytorch.org/whl/cpu
+          # Keep the remaining versions locked, without downloading CUDA libraries.
+          uv export --locked --extra data --extra dev --group research-test --prune torch --no-hashes --output-file /tmp/persona-ci-requirements.txt
+          uv pip install --python .venv/bin/python --requirement /tmp/persona-ci-requirements.txt
+      - run: .venv/bin/python -m pytest -q
+      - run: .venv/bin/python scripts/validate_source_inventory.py
+      - run: .venv/bin/python -m compileall -q src scripts

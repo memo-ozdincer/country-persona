@@ -5,6 +5,7 @@ from collections import Counter
 from copy import deepcopy
 from datetime import datetime, timezone
 import hashlib
+import inspect
 import json
 from pathlib import Path
 import re
@@ -171,6 +172,7 @@ def repetition_trace(ids, output):
 
 def infer_one(model, tokenizer, tokenized, config, model_eos, label_ids):
     import torch
+    from transformers.generation.utils import GenerationMixin
 
     case, input_ids = tokenized["case"], tokenized["input_ids"]
     label_ids = tokenized.get("label_token_ids", label_ids)
@@ -179,11 +181,15 @@ def infer_one(model, tokenizer, tokenized, config, model_eos, label_ids):
     if device.type == "cuda":
         torch.cuda.synchronize(device)
     started = time.perf_counter()
+    # Transformers 4 needs this override; Transformers 5 removed the argument
+    # and respects the supplied config directly. Check the library API so PEFT
+    # wrappers with generic signatures also retain the correct behavior.
+    generate_kwargs = {}
+    if "use_model_defaults" in inspect.signature(GenerationMixin.generate).parameters:
+        generate_kwargs["use_model_defaults"] = False
     with torch.inference_mode():
-        # Transformers can replace explicitly supplied global defaults (including
-        # do_sample=False) with checkpoint sampling defaults unless disabled here.
         generated = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids),
-                                   generation_config=config, use_model_defaults=False)
+                                   generation_config=config, **generate_kwargs)
     if device.type == "cuda":
         torch.cuda.synchronize(device)
     generation_seconds = time.perf_counter() - started

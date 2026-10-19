@@ -2,6 +2,8 @@
 
 Dated reports and complete artifacts are the evidence; this file guides navigation.
 
+Wrap-up infrastructure: [CPU CI repair](CI_REPAIR_20261019.md) records the reported workflow failure, missing dependencies/runtime-profile fixes and 242 passing Git-only software tests (23 private-artifact skips). No additional production generations or optimizer updates. User requested wrapping up; no experiment is queued.
+
 ## Latest measured checkpoint
 
 [Scope/partial-state training and composition](NATIVE_SCOPE_PARTIAL_CHECKPOINT_20261019.md): one fresh **48-update Qwen3.5-4B** fit retains five messages/targets/units byte-identically and adds one **81-word** India application-only partial-state target. All **25 generated answers and two composed documents** hand-read; 5,616 new output tokens. Facts and a conditional action rule are supplied; same assistant curates, authors targets and grades. Independent review remains pending.

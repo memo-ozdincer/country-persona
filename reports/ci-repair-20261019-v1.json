@@ -1,0 +1,90 @@
+{
+  "status": "local_git_only_cpu_suite_passed_hosted_verification_pending",
+  "verified_at": "2026-10-19T22:43:30.495105+00:00",
+  "original_failed_run": "https://github.com/memo-ozdincer/country-persona/actions/runs/39324501557",
+  "original_failed_commit": "43048eed8b8207ea1e42c116ae0acde4263710cc",
+  "original_failure": "Collection errors: torch absent in coverage/native-sampling tests; pyarrow absent in Reddit parser tests. No tests executed.",
+  "subsequent_diagnosis": [
+    "zstandard undeclared by compressed-data parser",
+    "new trainer checks require measured newer Aurora versions, not historical train extra",
+    "research homepage attribution is intentional; neutrality guard belongs to data/advanced explorer",
+    "Transformers 5 removed use_model_defaults; capability check preserves Transformers 4 override",
+    "label-order permutation changes floating reduction by approximately 1.4e-16",
+    "private source text and staged explorer projections are omitted from Git-only checkout"
+  ],
+  "fixes": {
+    "cpu_torch": "2.8.0+cpu",
+    "research_test_group": [
+      "transformers==5.17.0",
+      "trl==1.14.1",
+      "peft==0.21.1",
+      "datasets==5.0.1",
+      "accelerate==1.15.0",
+      "pyarrow==25.0.1"
+    ],
+    "historical_training_extras_preserved": true,
+    "data_zstandard": "0.25.0",
+    "dependency_lock": "uv.lock",
+    "automatic_push_branch": "master",
+    "pull_requests_and_manual_dispatch": true,
+    "docs_reports_research_only_pushes_ignored": true,
+    "duplicate_branch_pushes_ignored": true,
+    "notification_preferences_modified": false
+  },
+  "validation": {
+    "checkout": "Git archive of 39471946ad35ce39b9584c68542312bbe1bd0da3 plus exact nine candidate file replacements, no ignored/private payload copied",
+    "passed": 242,
+    "skipped": 23,
+    "failed": 0,
+    "skip_scope": "Private source/previous run/staged projection integration checks; Qwen3.5 runtime checks execute in CPU CI profile.",
+    "pinned_aurora_cpu_runtime_tests_passed": 3,
+    "private_workspace_boundary_check": "1 passed, 2 explicitly skipped: case source-text payload and staged public/private projections absent",
+    "model_weights_downloaded": false,
+    "gpu_used": false,
+    "production_generations": 0,
+    "production_optimizer_updates": 0,
+    "inference_behavior": "Existing greedy/default-override, EOS, raw-logit, first-forward, probability mapping and output-receipt tests pass with the new API check. No production results regenerated.",
+    "legacy_full_suite_reexecuted": false
+  },
+  "failed_local_attempts_preserved": [
+    {
+      "attempt": 1,
+      "failures": [
+        "tests.test_reddit_country"
+      ]
+    },
+    {
+      "attempt": 2,
+      "failures": [
+        "test_pinned_chunked_loss_values_and_gradients",
+        "test_quarantined_rows_and_no_vote_leakage",
+        "test_case_mapping_changes_probability_semantics_not_model_logits",
+        "test_actual_collator_and_truncation",
+        "test_cached_dataset_evaluation_skips_duplicate_precomputation",
+        "test_torch_fallback_scores_masks_and_gradients",
+        "test_all_source_tasks_have_complete_examples"
+      ]
+    },
+    {
+      "attempt": 3,
+      "failures": [
+        "test_actual_qwen_generation_trace_matches_direct_first_forward",
+        "test_case_mapping_changes_probability_semantics_not_model_logits",
+        "test_actual_qwen_stops_on_second_eos_only_when_enabled",
+        "test_checkpoint_sampling_defaults_cannot_override_greedy_probe",
+        "test_run_receipt_preserves_tokens_and_refuses_overwrite"
+      ]
+    }
+  ],
+  "candidate_sha256": {
+    ".github/workflows/ci.yml": "61ec2d2a79afdf828b4b17902b37ae860b86d6812a8e17c1456ef443f58d32fe",
+    "pyproject.toml": "fee78c8e67918df93e713fa2a8b0223f35660b06a2898d0ce3dc13f00777f723",
+    "uv.lock": "22747335fde1f33c0cf56450dfb1d709c96eb42cf1c8ff8c82a18a0a388bf977",
+    "scripts/validate_source_inventory.py": "c2f0efb96c628b0ebe4b6981e8144befae82b53f66e7817ef480ebb5ed5fa824",
+    "src/country_persona/inference_probe.py": "2d85dd80b10d7377688830d6e20dfbe25b2c3e1eefe3f1f4c56bf45a1271deae",
+    "tests/test_decision_posttraining.py": "fb4b6c07fac5456df55c16e0929a5660c1becbc585319a33fbf46555561aa4fe",
+    "tests/test_training_examples.py": "53d4c35793d249c2cb089c33bebfaecf8dbada045e6e600bc52a2c5e803e97f7",
+    "tests/test_inference_probe.py": "fc7a32691d9fd79302eb83167cbc0f0ab855a2ddcd2ff3970ef31a1639245737",
+    "tests/test_scenario_sft_runtime.py": "54e2c23689dfda07e704e3a75569009455c86653e3b7508f8be67532d5a60335"
+  }
+}

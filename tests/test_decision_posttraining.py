@@ -1,6 +1,7 @@
 import importlib.util
 import json
 from pathlib import Path
+import pytest
 
 ROOT = Path(__file__).parents[1]
 spec = importlib.util.spec_from_file_location('decision_posttraining', ROOT / 'scripts/build_decision_posttraining.py')
@@ -9,7 +10,13 @@ spec.loader.exec_module(builder)
 
 
 def test_quarantined_rows_and_no_vote_leakage():
+    if not builder.SOURCE.is_file():
+        pytest.skip('Private decision source snapshot not restored')
     cases = [json.loads(s) for s in (ROOT / 'data/prepared/decision-cases-20260914/cases.jsonl').read_text().splitlines()]
+    sources = [ROOT / e['text_file'] for c in cases if c['country_iso3'] in builder.COUNTRIES
+               for e in (c['proposal_evidence'], c['explanation_evidence']) if e is not None]
+    if not builder.DOSSIERS.is_file() or not all(p.is_file() for p in sources):
+        pytest.skip('Private decision source-text payload not restored')
     rows, meta, showcase = builder.project(cases)
     assert len(rows) == len(meta) == 8
     assert showcase['case_count'] == 4 and showcase['event_count'] == 2

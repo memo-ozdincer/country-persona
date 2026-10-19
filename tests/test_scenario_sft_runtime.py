@@ -20,11 +20,13 @@ class RuntimeChecks(unittest.TestCase):
             import transformers
         except ImportError:
             raise unittest.SkipTest("Pinned ML environment required")
+        if not hasattr(transformers, "Qwen3_5ForCausalLM"):
+            raise unittest.SkipTest("Qwen3.5 runtime checks require the separate pinned Transformers 5 environment")
         torch.set_num_threads(1)
 
     def test_cpu_optimization_and_cold_reload(self):
         from run_scenario_sft import cpu_check
-        with tempfile.TemporaryDirectory(dir="/mfs1/u/memo/country-persona-research/audits") as temp:
+        with tempfile.TemporaryDirectory() as temp:
             result = cpu_check(Path(temp))
             self.assertEqual(result["steps"], 8)
             self.assertTrue(result["cold_separate_base_reload_exact"])
@@ -70,7 +72,7 @@ class RuntimeChecks(unittest.TestCase):
             rows.append(dict(id=country, source="test", country=country, prefix=prefix,
                              completion=completion, provenance={"turns": [turn]},
                              **tokenize_example(tok, dict(prefix=prefix, completion=completion))))
-        with tempfile.TemporaryDirectory(dir="/mfs1/u/memo/country-persona-research/audits") as temp:
+        with tempfile.TemporaryDirectory() as temp:
             result = evaluate(model, tok, rows, temp, "cpu", max_new_tokens=4)
         self.assertEqual(result["calls"], 2)
         self.assertEqual(model.seen, [r["input_ids"][:r["prefix_tokens"]] for r in rows])

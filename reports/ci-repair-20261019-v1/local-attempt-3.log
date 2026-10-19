@@ -1,0 +1,505 @@
+.....................sss............................................s.s. [ 27%]
+......................ssss....................sssssssss................. [ 54%]
+FFFFF.................................ssss.............................. [ 81%]
+...................................s.............                        [100%]
+=================================== FAILURES ===================================
+________ test_actual_qwen_generation_trace_matches_direct_first_forward ________
+
+tiny_inputs = (Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList... 3], 'input_ids_digest': '5bf775530e2e5fcd9c6ae577c52cd57a20d13ebb5f7bc3e8a8a7920d3a7ce41e'}, {'Y': 2, 'N': 3, 'A': 4})
+
+    def test_actual_qwen_generation_trace_matches_direct_first_forward(tiny_inputs):
+        model, tokenizer, entry, labels = tiny_inputs
+        config, original = generation_config(model.generation_config, tokenizer, 4, "model")
+        with torch.inference_mode():
+            direct = model(torch.tensor([entry["input_ids"]]), logits_to_keep=1).logits[0, -1]
+>       row = infer_one(model, tokenizer, entry, config, original, labels)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inference_probe.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/country_persona/inference_probe.py:185: in infer_one
+    generated = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids),
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/torch/utils/_contextlib.py:120: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:2617: in generate
+    self._validate_model_kwargs(model_kwargs.copy())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList(...s=1e-06)
+    (rotary_emb): Qwen3RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=16, out_features=8, bias=False)
+)
+model_kwargs = {'input_ids': tensor([[2, 3]]), 'attention_mask': tensor([[1, 1]]), 'use_model_defaults': False}
+
+    def _validate_model_kwargs(self: "GenerativePreTrainedModel", model_kwargs: dict[str, Any]):
+        """Validates model kwargs for generation. Generate argument typos will also be caught here."""
+        # Excludes arguments that are handled before calling any model function
+        if self.config.is_encoder_decoder:
+            for key in ["decoder_input_ids"]:
+                model_kwargs.pop(key, None)
+    
+        unused_model_args = []
+        model_args = set(inspect.signature(self.prepare_inputs_for_generation).parameters)
+        # `kwargs`/`model_kwargs` is often used to handle optional forward pass inputs like `attention_mask`. If
+        # `prepare_inputs_for_generation` doesn't accept them, then a stricter check can be made ;)
+        if "kwargs" in model_args or "model_kwargs" in model_args:
+            model_args |= set(inspect.signature(self.forward).parameters)
+    
+        # Encoder-Decoder models may also need Encoder arguments from `model_kwargs`
+        if self.config.is_encoder_decoder:
+            base_model = getattr(self, self.base_model_prefix, None)
+    
+            # allow encoder kwargs
+            encoder = getattr(self, "encoder", None)
+            # `MusicgenForConditionalGeneration` has `text_encoder` and `audio_encoder`.
+            # Also, it has `base_model_prefix = "encoder_decoder"` but there is no `self.encoder_decoder`
+            # TODO: A better way to handle this.
+            if encoder is None and base_model is not None:
+                encoder = getattr(base_model, "encoder", None)
+    
+            if encoder is not None:
+                encoder_model_args = set(inspect.signature(encoder.forward).parameters)
+                model_args |= encoder_model_args
+    
+            # allow decoder kwargs
+            decoder = getattr(self, "decoder", None)
+            if decoder is None and base_model is not None:
+                decoder = getattr(base_model, "decoder", None)
+    
+            if decoder is not None:
+                decoder_model_args = set(inspect.signature(decoder.forward).parameters)
+                model_args |= {f"decoder_{x}" for x in decoder_model_args}
+    
+        # TransformersKwargs are model-agnostic attention and generation arguments such as 'output_attentions'
+        for key, value in model_kwargs.items():
+            if (
+                value is not None
+                and key not in model_args
+                and key not in TransformersKwargs.__optional_keys__
+                and key != "debug_io"
+            ):
+                unused_model_args.append(key)
+    
+        if unused_model_args:
+>           raise ValueError(
+                f"The following `model_kwargs` are not used by the model: {unused_model_args} (note: typos in the"
+                " generate arguments will also show up in this list)"
+            )
+E           ValueError: The following `model_kwargs` are not used by the model: ['use_model_defaults'] (note: typos in the generate arguments will also show up in this list)
+
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:1793: ValueError
+_______ test_case_mapping_changes_probability_semantics_not_model_logits _______
+
+tiny_inputs = (Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList... 3], 'input_ids_digest': '5bf775530e2e5fcd9c6ae577c52cd57a20d13ebb5f7bc3e8a8a7920d3a7ce41e'}, {'Y': 2, 'N': 3, 'A': 4})
+
+    def test_case_mapping_changes_probability_semantics_not_model_logits(tiny_inputs):
+        model, tokenizer, entry, canonical = tiny_inputs
+        config, original = generation_config(model.generation_config, tokenizer, 4, "model")
+>       baseline = infer_one(model, tokenizer, entry, config, original, canonical)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inference_probe.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/country_persona/inference_probe.py:185: in infer_one
+    generated = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids),
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/torch/utils/_contextlib.py:120: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:2617: in generate
+    self._validate_model_kwargs(model_kwargs.copy())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList(...s=1e-06)
+    (rotary_emb): Qwen3RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=16, out_features=8, bias=False)
+)
+model_kwargs = {'input_ids': tensor([[2, 3]]), 'attention_mask': tensor([[1, 1]]), 'use_model_defaults': False}
+
+    def _validate_model_kwargs(self: "GenerativePreTrainedModel", model_kwargs: dict[str, Any]):
+        """Validates model kwargs for generation. Generate argument typos will also be caught here."""
+        # Excludes arguments that are handled before calling any model function
+        if self.config.is_encoder_decoder:
+            for key in ["decoder_input_ids"]:
+                model_kwargs.pop(key, None)
+    
+        unused_model_args = []
+        model_args = set(inspect.signature(self.prepare_inputs_for_generation).parameters)
+        # `kwargs`/`model_kwargs` is often used to handle optional forward pass inputs like `attention_mask`. If
+        # `prepare_inputs_for_generation` doesn't accept them, then a stricter check can be made ;)
+        if "kwargs" in model_args or "model_kwargs" in model_args:
+            model_args |= set(inspect.signature(self.forward).parameters)
+    
+        # Encoder-Decoder models may also need Encoder arguments from `model_kwargs`
+        if self.config.is_encoder_decoder:
+            base_model = getattr(self, self.base_model_prefix, None)
+    
+            # allow encoder kwargs
+            encoder = getattr(self, "encoder", None)
+            # `MusicgenForConditionalGeneration` has `text_encoder` and `audio_encoder`.
+            # Also, it has `base_model_prefix = "encoder_decoder"` but there is no `self.encoder_decoder`
+            # TODO: A better way to handle this.
+            if encoder is None and base_model is not None:
+                encoder = getattr(base_model, "encoder", None)
+    
+            if encoder is not None:
+                encoder_model_args = set(inspect.signature(encoder.forward).parameters)
+                model_args |= encoder_model_args
+    
+            # allow decoder kwargs
+            decoder = getattr(self, "decoder", None)
+            if decoder is None and base_model is not None:
+                decoder = getattr(base_model, "decoder", None)
+    
+            if decoder is not None:
+                decoder_model_args = set(inspect.signature(decoder.forward).parameters)
+                model_args |= {f"decoder_{x}" for x in decoder_model_args}
+    
+        # TransformersKwargs are model-agnostic attention and generation arguments such as 'output_attentions'
+        for key, value in model_kwargs.items():
+            if (
+                value is not None
+                and key not in model_args
+                and key not in TransformersKwargs.__optional_keys__
+                and key != "debug_io"
+            ):
+                unused_model_args.append(key)
+    
+        if unused_model_args:
+>           raise ValueError(
+                f"The following `model_kwargs` are not used by the model: {unused_model_args} (note: typos in the"
+                " generate arguments will also show up in this list)"
+            )
+E           ValueError: The following `model_kwargs` are not used by the model: ['use_model_defaults'] (note: typos in the generate arguments will also show up in this list)
+
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:1793: ValueError
+____________ test_actual_qwen_stops_on_second_eos_only_when_enabled ____________
+
+tiny_inputs = (Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList... 3], 'input_ids_digest': '5bf775530e2e5fcd9c6ae577c52cd57a20d13ebb5f7bc3e8a8a7920d3a7ce41e'}, {'Y': 2, 'N': 3, 'A': 4})
+
+    def test_actual_qwen_stops_on_second_eos_only_when_enabled(tiny_inputs):
+        model, tokenizer, entry, labels = tiny_inputs
+        # With zero parameters every logit ties; deterministic argmax selects ID 0.
+        # This creates a controlled stopping edge case, not a model-quality example.
+        with torch.no_grad():
+            for p in model.parameters():
+                p.zero_()
+        default, original = generation_config(model.generation_config, tokenizer, 4, "model")
+        legacy, _ = generation_config(model.generation_config, tokenizer, 4, "legacy-tokenizer")
+>       a = infer_one(model, tokenizer, entry, default, original, labels)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inference_probe.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/country_persona/inference_probe.py:185: in infer_one
+    generated = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids),
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/torch/utils/_contextlib.py:120: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:2617: in generate
+    self._validate_model_kwargs(model_kwargs.copy())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList(...s=1e-06)
+    (rotary_emb): Qwen3RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=16, out_features=8, bias=False)
+)
+model_kwargs = {'input_ids': tensor([[2, 3]]), 'attention_mask': tensor([[1, 1]]), 'use_model_defaults': False}
+
+    def _validate_model_kwargs(self: "GenerativePreTrainedModel", model_kwargs: dict[str, Any]):
+        """Validates model kwargs for generation. Generate argument typos will also be caught here."""
+        # Excludes arguments that are handled before calling any model function
+        if self.config.is_encoder_decoder:
+            for key in ["decoder_input_ids"]:
+                model_kwargs.pop(key, None)
+    
+        unused_model_args = []
+        model_args = set(inspect.signature(self.prepare_inputs_for_generation).parameters)
+        # `kwargs`/`model_kwargs` is often used to handle optional forward pass inputs like `attention_mask`. If
+        # `prepare_inputs_for_generation` doesn't accept them, then a stricter check can be made ;)
+        if "kwargs" in model_args or "model_kwargs" in model_args:
+            model_args |= set(inspect.signature(self.forward).parameters)
+    
+        # Encoder-Decoder models may also need Encoder arguments from `model_kwargs`
+        if self.config.is_encoder_decoder:
+            base_model = getattr(self, self.base_model_prefix, None)
+    
+            # allow encoder kwargs
+            encoder = getattr(self, "encoder", None)
+            # `MusicgenForConditionalGeneration` has `text_encoder` and `audio_encoder`.
+            # Also, it has `base_model_prefix = "encoder_decoder"` but there is no `self.encoder_decoder`
+            # TODO: A better way to handle this.
+            if encoder is None and base_model is not None:
+                encoder = getattr(base_model, "encoder", None)
+    
+            if encoder is not None:
+                encoder_model_args = set(inspect.signature(encoder.forward).parameters)
+                model_args |= encoder_model_args
+    
+            # allow decoder kwargs
+            decoder = getattr(self, "decoder", None)
+            if decoder is None and base_model is not None:
+                decoder = getattr(base_model, "decoder", None)
+    
+            if decoder is not None:
+                decoder_model_args = set(inspect.signature(decoder.forward).parameters)
+                model_args |= {f"decoder_{x}" for x in decoder_model_args}
+    
+        # TransformersKwargs are model-agnostic attention and generation arguments such as 'output_attentions'
+        for key, value in model_kwargs.items():
+            if (
+                value is not None
+                and key not in model_args
+                and key not in TransformersKwargs.__optional_keys__
+                and key != "debug_io"
+            ):
+                unused_model_args.append(key)
+    
+        if unused_model_args:
+>           raise ValueError(
+                f"The following `model_kwargs` are not used by the model: {unused_model_args} (note: typos in the"
+                " generate arguments will also show up in this list)"
+            )
+E           ValueError: The following `model_kwargs` are not used by the model: ['use_model_defaults'] (note: typos in the generate arguments will also show up in this list)
+
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:1793: ValueError
+________ test_checkpoint_sampling_defaults_cannot_override_greedy_probe ________
+
+tiny_inputs = (Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList... 3], 'input_ids_digest': '5bf775530e2e5fcd9c6ae577c52cd57a20d13ebb5f7bc3e8a8a7920d3a7ce41e'}, {'Y': 2, 'N': 3, 'A': 4})
+
+    def test_checkpoint_sampling_defaults_cannot_override_greedy_probe(tiny_inputs):
+        model, tokenizer, entry, labels = tiny_inputs
+        # The production checkpoint supplies sampling defaults. With tied logits,
+        # greedy decoding must still emit EOS ID 0 immediately, not sample a token.
+        model.generation_config.do_sample = True
+        model.generation_config.temperature = 0.6
+        model.generation_config.top_k = 20
+        model.generation_config.top_p = 0.95
+        with torch.no_grad():
+            for p in model.parameters():
+                p.zero_()
+        config, original = generation_config(model.generation_config, tokenizer, 4, "model")
+>       row = infer_one(model, tokenizer, entry, config, original, labels)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inference_probe.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/country_persona/inference_probe.py:185: in infer_one
+    generated = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids),
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/torch/utils/_contextlib.py:120: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:2617: in generate
+    self._validate_model_kwargs(model_kwargs.copy())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList(...s=1e-06)
+    (rotary_emb): Qwen3RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=16, out_features=8, bias=False)
+)
+model_kwargs = {'input_ids': tensor([[2, 3]]), 'attention_mask': tensor([[1, 1]]), 'use_model_defaults': False}
+
+    def _validate_model_kwargs(self: "GenerativePreTrainedModel", model_kwargs: dict[str, Any]):
+        """Validates model kwargs for generation. Generate argument typos will also be caught here."""
+        # Excludes arguments that are handled before calling any model function
+        if self.config.is_encoder_decoder:
+            for key in ["decoder_input_ids"]:
+                model_kwargs.pop(key, None)
+    
+        unused_model_args = []
+        model_args = set(inspect.signature(self.prepare_inputs_for_generation).parameters)
+        # `kwargs`/`model_kwargs` is often used to handle optional forward pass inputs like `attention_mask`. If
+        # `prepare_inputs_for_generation` doesn't accept them, then a stricter check can be made ;)
+        if "kwargs" in model_args or "model_kwargs" in model_args:
+            model_args |= set(inspect.signature(self.forward).parameters)
+    
+        # Encoder-Decoder models may also need Encoder arguments from `model_kwargs`
+        if self.config.is_encoder_decoder:
+            base_model = getattr(self, self.base_model_prefix, None)
+    
+            # allow encoder kwargs
+            encoder = getattr(self, "encoder", None)
+            # `MusicgenForConditionalGeneration` has `text_encoder` and `audio_encoder`.
+            # Also, it has `base_model_prefix = "encoder_decoder"` but there is no `self.encoder_decoder`
+            # TODO: A better way to handle this.
+            if encoder is None and base_model is not None:
+                encoder = getattr(base_model, "encoder", None)
+    
+            if encoder is not None:
+                encoder_model_args = set(inspect.signature(encoder.forward).parameters)
+                model_args |= encoder_model_args
+    
+            # allow decoder kwargs
+            decoder = getattr(self, "decoder", None)
+            if decoder is None and base_model is not None:
+                decoder = getattr(base_model, "decoder", None)
+    
+            if decoder is not None:
+                decoder_model_args = set(inspect.signature(decoder.forward).parameters)
+                model_args |= {f"decoder_{x}" for x in decoder_model_args}
+    
+        # TransformersKwargs are model-agnostic attention and generation arguments such as 'output_attentions'
+        for key, value in model_kwargs.items():
+            if (
+                value is not None
+                and key not in model_args
+                and key not in TransformersKwargs.__optional_keys__
+                and key != "debug_io"
+            ):
+                unused_model_args.append(key)
+    
+        if unused_model_args:
+>           raise ValueError(
+                f"The following `model_kwargs` are not used by the model: {unused_model_args} (note: typos in the"
+                " generate arguments will also show up in this list)"
+            )
+E           ValueError: The following `model_kwargs` are not used by the model: ['use_model_defaults'] (note: typos in the generate arguments will also show up in this list)
+
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:1793: ValueError
+___________ test_run_receipt_preserves_tokens_and_refuses_overwrite ____________
+
+tiny_inputs = (Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList... 3], 'input_ids_digest': '5bf775530e2e5fcd9c6ae577c52cd57a20d13ebb5f7bc3e8a8a7920d3a7ce41e'}, {'Y': 2, 'N': 3, 'A': 4})
+tmp_path = PosixPath('/mfs1/u/memo/country-persona-research/tmp/pytest-of-memo/pytest-9/test_run_receipt_preserves_tok0')
+
+    def test_run_receipt_preserves_tokens_and_refuses_overwrite(tiny_inputs, tmp_path):
+        model, tokenizer, entry, labels = tiny_inputs
+        config, original = generation_config(model.generation_config, tokenizer, 2, "model")
+        destination = tmp_path / "run"
+>       report = run_cases(model, tokenizer, [entry], config, original, labels, destination,
+                           {"run_kind": "infrastructure_smoke_random_weights"})
+
+tests/test_inference_probe.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/country_persona/inference_probe.py:259: in run_cases
+    row = infer_one(model, tokenizer, entry, config, model_eos, label_ids)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/country_persona/inference_probe.py:185: in infer_one
+    generated = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids),
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/torch/utils/_contextlib.py:120: in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:2617: in generate
+    self._validate_model_kwargs(model_kwargs.copy())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList(...s=1e-06)
+    (rotary_emb): Qwen3RotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=16, out_features=8, bias=False)
+)
+model_kwargs = {'input_ids': tensor([[2, 3]]), 'attention_mask': tensor([[1, 1]]), 'use_model_defaults': False}
+
+    def _validate_model_kwargs(self: "GenerativePreTrainedModel", model_kwargs: dict[str, Any]):
+        """Validates model kwargs for generation. Generate argument typos will also be caught here."""
+        # Excludes arguments that are handled before calling any model function
+        if self.config.is_encoder_decoder:
+            for key in ["decoder_input_ids"]:
+                model_kwargs.pop(key, None)
+    
+        unused_model_args = []
+        model_args = set(inspect.signature(self.prepare_inputs_for_generation).parameters)
+        # `kwargs`/`model_kwargs` is often used to handle optional forward pass inputs like `attention_mask`. If
+        # `prepare_inputs_for_generation` doesn't accept them, then a stricter check can be made ;)
+        if "kwargs" in model_args or "model_kwargs" in model_args:
+            model_args |= set(inspect.signature(self.forward).parameters)
+    
+        # Encoder-Decoder models may also need Encoder arguments from `model_kwargs`
+        if self.config.is_encoder_decoder:
+            base_model = getattr(self, self.base_model_prefix, None)
+    
+            # allow encoder kwargs
+            encoder = getattr(self, "encoder", None)
+            # `MusicgenForConditionalGeneration` has `text_encoder` and `audio_encoder`.
+            # Also, it has `base_model_prefix = "encoder_decoder"` but there is no `self.encoder_decoder`
+            # TODO: A better way to handle this.
+            if encoder is None and base_model is not None:
+                encoder = getattr(base_model, "encoder", None)
+    
+            if encoder is not None:
+                encoder_model_args = set(inspect.signature(encoder.forward).parameters)
+                model_args |= encoder_model_args
+    
+            # allow decoder kwargs
+            decoder = getattr(self, "decoder", None)
+            if decoder is None and base_model is not None:
+                decoder = getattr(base_model, "decoder", None)
+    
+            if decoder is not None:
+                decoder_model_args = set(inspect.signature(decoder.forward).parameters)
+                model_args |= {f"decoder_{x}" for x in decoder_model_args}
+    
+        # TransformersKwargs are model-agnostic attention and generation arguments such as 'output_attentions'
+        for key, value in model_kwargs.items():
+            if (
+                value is not None
+                and key not in model_args
+                and key not in TransformersKwargs.__optional_keys__
+                and key != "debug_io"
+            ):
+                unused_model_args.append(key)
+    
+        if unused_model_args:
+>           raise ValueError(
+                f"The following `model_kwargs` are not used by the model: {unused_model_args} (note: typos in the"
+                " generate arguments will also show up in this list)"
+            )
+E           ValueError: The following `model_kwargs` are not used by the model: ['use_model_defaults'] (note: typos in the generate arguments will also show up in this list)
+
+../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/transformers/generation/utils.py:1793: ValueError
+=========================== short test summary info ============================
+SKIPPED [3] tests/test_application_fit_checks.py:15: Bounded frozen artifacts available in private handoff
+SKIPPED [1] tests/test_data_catalog.py:37: Private source snapshot not restored
+SKIPPED [1] tests/test_decision_posttraining.py:14: Private decision source snapshot not restored
+SKIPPED [1] tests/test_eval_evidence.py:35: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_eval_evidence.py:53: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_eval_evidence.py:69: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_eval_evidence.py:81: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_evidence_ledger.py:120: Build the frozen format diagnostic for its integration checks
+SKIPPED [1] tests/test_evidence_ledger.py:140: Build the frozen format diagnostic for its integration checks
+SKIPPED [1] tests/test_evidence_ledger.py:192: Build the frozen format diagnostic for its integration checks
+SKIPPED [6] tests/test_evidence_ledger.py:201: Build the frozen format diagnostic for its integration checks
+SKIPPED [1] tests/test_policy_workshop.py:71: Local source snapshot unavailable
+SKIPPED [1] tests/test_policy_workshop.py:79: Local source snapshot unavailable
+SKIPPED [1] tests/test_policy_workshop.py:91: Local source snapshot unavailable
+SKIPPED [1] tests/test_policy_workshop.py:106: Local source snapshot unavailable
+SKIPPED [1] tests/test_training_examples.py:9: Private/public staged explorer projections not restored
+FAILED tests/test_inference_probe.py::test_actual_qwen_generation_trace_matches_direct_first_forward
+FAILED tests/test_inference_probe.py::test_case_mapping_changes_probability_semantics_not_model_logits
+FAILED tests/test_inference_probe.py::test_actual_qwen_stops_on_second_eos_only_when_enabled
+FAILED tests/test_inference_probe.py::test_checkpoint_sampling_defaults_cannot_override_greedy_probe
+FAILED tests/test_inference_probe.py::test_run_receipt_preserves_tokens_and_refuses_overwrite
+5 failed, 237 passed, 23 skipped in 17.85s

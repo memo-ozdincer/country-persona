@@ -27,8 +27,9 @@ def validate():
                         assert metric['unit']=='Unicode characters'
                 for field in ('input','target','scoring','possible_use','availability','inference'):
                     assert recipes[task['id']][field]
-    for page in ('index.html','advanced.html'):
+    # The research homepage has author attribution; the data explorer stays neutral.
+    for page in ('data.html','advanced.html'):
         assert 'Memo Ozdincer' not in (ROOT/'explorer'/page).read_text()
-    print('Source counts, task coverage, lengths, public record references and neutral interface validated.')
+    print('Source counts, task coverage, lengths, public record references and neutral data explorer validated.')
 
 if __name__=='__main__':validate()

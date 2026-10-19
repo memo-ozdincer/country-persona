@@ -1,0 +1,225 @@
+.....................sss................F...........................s.F. [ 27%]
+......................ssss....................sssssssss................. [ 54%]
+.F....................................ssss....FF..F..................... [ 81%]
+.........sss.......................F.............                        [100%]
+=================================== FAILURES ===================================
+_______ CoverageLossTests.test_pinned_chunked_loss_values_and_gradients ________
+
+self = <test_coverage_loss.CoverageLossTests testMethod=test_pinned_chunked_loss_values_and_gradients>
+
+    def test_pinned_chunked_loss_values_and_gradients(self):
+>       from trl.trainer.sft_trainer import _chunked_cross_entropy_loss
+E       ImportError: cannot import name '_chunked_cross_entropy_loss' from 'trl.trainer.sft_trainer' (/mfs1/u/memo/country-persona-research/envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/trl/trainer/sft_trainer.py)
+
+tests/test_coverage_loss.py:54: ImportError
+__________________ test_quarantined_rows_and_no_vote_leakage ___________________
+
+    def test_quarantined_rows_and_no_vote_leakage():
+>       cases = [json.loads(s) for s in (ROOT / 'data/prepared/decision-cases-20260914/cases.jsonl').read_text().splitlines()]
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_decision_posttraining.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/h/405/memo/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/mfs1/u/memo/country-persona-research/audits/ci-repair-20261019-v1/git-only-checkout/data/prepared/decision-cases-20260914/cases.jsonl')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/mfs1/u/memo/country-persona-research/audits/ci-repair-20261019-v1/git-only-checkout/data/prepared/decision-cases-20260914/cases.jsonl'
+
+/h/405/memo/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_______ test_case_mapping_changes_probability_semantics_not_model_logits _______
+
+tiny_inputs = (Qwen3ForCausalLM(
+  (model): Qwen3Model(
+    (embed_tokens): Embedding(8, 16, padding_idx=0)
+    (layers): ModuleList... 3], 'input_ids_digest': '5bf775530e2e5fcd9c6ae577c52cd57a20d13ebb5f7bc3e8a8a7920d3a7ce41e'}, {'Y': 2, 'N': 3, 'A': 4})
+
+    def test_case_mapping_changes_probability_semantics_not_model_logits(tiny_inputs):
+        model, tokenizer, entry, canonical = tiny_inputs
+        config, original = generation_config(model.generation_config, tokenizer, 4, "model")
+        baseline = infer_one(model, tokenizer, entry, config, original, canonical)
+        changed = deepcopy(entry)
+        changed["case"]["choice_labels"] = {"Y": "<t4>", "N": "<t2>", "A": "<t3>"}
+        changed["label_token_ids"] = {"Y": 4, "N": 2, "A": 3}
+        row = infer_one(model, tokenizer, changed, config, original, canonical)
+        assert row["generated_ids"] == baseline["generated_ids"]
+        assert row["probabilities"] == pytest.approx({"Y": baseline["probabilities"]["A"],
+                                                     "N": baseline["probabilities"]["Y"],
+                                                     "A": baseline["probabilities"]["N"]})
+        assert "canonical_label_logits" not in row
+>       assert row["legal_label_mass"] == baseline["legal_label_mass"]
+E       assert 0.3809581815560216 == 0.38095818155602174
+
+tests/test_inference_probe.py:108: AssertionError
+__________ PreferenceChecksTests.test_actual_collator_and_truncation ___________
+
+self = <test_preference_checks.PreferenceChecksTests testMethod=test_actual_collator_and_truncation>
+
+    def test_actual_collator_and_truncation(self):
+        from trl.trainer.dpo_trainer import DataCollatorForPreference
+        _,_,a=self.fixture()
+        row={k:a[k] for k in ('prompt_ids','chosen_ids','rejected_ids')}
+>       report=audit_preference_masks([row],DataCollatorForPreference(pad_token_id=0,max_length=8),[a])
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: DataCollatorForPreference.__init__() got an unexpected keyword argument 'max_length'
+
+tests/test_preference_checks.py:23: TypeError
+_ PreferenceChecksTests.test_cached_dataset_evaluation_skips_duplicate_precomputation _
+
+self = <test_preference_checks.PreferenceChecksTests testMethod=test_cached_dataset_evaluation_skips_duplicate_precomputation>
+
+    def test_cached_dataset_evaluation_skips_duplicate_precomputation(self):
+        from unittest.mock import patch
+        from trl import DPOTrainer
+        from transformers import Trainer
+        trainer=object.__new__(DPOTrainer)
+        trainer._is_vision_dataset=False
+        trainer.eval_dataset={'already_cached_reference_columns':True}
+        with patch.object(Trainer,'evaluate',return_value={'verified':True}) as parent:
+            self.assertEqual(trainer.evaluate(),{'verified':True})
+>       parent.assert_called_once_with(eval_dataset=None,ignore_keys=None,metric_key_prefix='eval')
+
+tests/test_preference_checks.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/h/405/memo/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/unittest/mock.py:951: in assert_called_once_with
+    return self.assert_called_with(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='evaluate' id='127865471838480'>, args = ()
+kwargs = {'eval_dataset': None, 'ignore_keys': None, 'metric_key_prefix': 'eval'}
+
+    def assert_called_with(self, /, *args, **kwargs):
+        """assert that the last call was made with the specified arguments.
+    
+        Raises an AssertionError if the args and keyword args passed in are
+        different to the last call to the mock."""
+        if self.call_args is None:
+            expected = self._format_mock_call_signature(args, kwargs)
+            actual = 'not called.'
+            error_message = ('expected call not found.\nExpected: %s\n  Actual: %s'
+                    % (expected, actual))
+            raise AssertionError(error_message)
+    
+        def _error_message():
+            msg = self._format_mock_failure_message(args, kwargs)
+            return msg
+        expected = self._call_matcher(_Call((args, kwargs), two=True))
+        actual = self._call_matcher(self.call_args)
+        if actual != expected:
+            cause = expected if isinstance(expected, Exception) else None
+>           raise AssertionError(_error_message()) from cause
+E           AssertionError: expected call not found.
+E           Expected: evaluate(eval_dataset=None, ignore_keys=None, metric_key_prefix='eval')
+E             Actual: evaluate()
+
+/h/405/memo/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/unittest/mock.py:939: AssertionError
+_____ PreferenceChecksTests.test_torch_fallback_scores_masks_and_gradients _____
+
+self = <test_preference_checks.PreferenceChecksTests testMethod=test_torch_fallback_scores_masks_and_gradients>
+
+    def test_torch_fallback_scores_masks_and_gradients(self):
+        import torch
+        import trl.trainer.dpo_trainer as dpo
+        use_torch_preference_logprobs()
+        logits=torch.randn(2,4,7,requires_grad=True)
+        ids=torch.tensor([[1,2,3,4],[4,3,2,1]])
+        mask=torch.tensor([[0,1,1,0],[0,0,1,1]],dtype=torch.bool)
+>       logps,entropy=dpo.selective_log_softmax_and_entropy(logits,ids,row_mask=mask,entropy_requires_grad=False)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_preference_checks.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+logits = tensor([[[ 0.6614, -0.0330, -0.1399,  1.0258, -1.9717,  0.5998,  1.3612],
+         [-0.1731,  0.7555, -0.1464, -0.0943....7251,  0.8561],
+         [ 1.2443,  1.4715, -0.3714, -0.5980, -1.3152,  0.1310,  0.0561]]],
+       requires_grad=True)
+index = tensor([[1, 2, 3, 4],
+        [4, 3, 2, 1]])
+kwargs = {'row_mask': tensor([[False,  True,  True, False],
+        [False, False,  True,  True]]), 'entropy_requires_grad': False}
+
+    def logprobs_and_entropy(logits,index,**kwargs):
+>       return utils.selective_log_softmax_and_entropy(logits.float(),index,**kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'trl.trainer.utils' has no attribute 'selective_log_softmax_and_entropy'
+
+src/country_persona/preference_checks.py:45: AttributeError
+_________________ test_all_source_tasks_have_complete_examples _________________
+
+    def test_all_source_tasks_have_complete_examples():
+        inv=json.loads((ROOT/'explorer/sources.json').read_text())
+        for mode in ['public','private']:
+>           data=json.loads((ROOT/'.cache'/f'explorer-{mode}-static/training-examples.json').read_text())
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_training_examples.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/h/405/memo/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/pathlib.py:1058: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/mfs1/u/memo/country-persona-research/audits/ci-repair-20261019-v1/git-only-checkout/.cache/explorer-public-static/training-examples.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/mfs1/u/memo/country-persona-research/audits/ci-repair-20261019-v1/git-only-checkout/.cache/explorer-public-static/training-examples.json'
+
+/h/405/memo/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/pathlib.py:1044: FileNotFoundError
+=============================== warnings summary ===============================
+tests/test_training_checks.py::test_callback_snapshots_at_training_start_not_construction
+tests/test_training_checks.py::test_saved_adapter_reload_and_corruption
+tests/test_training_checks.py::test_failed_reload_restores_in_memory_weights_and_training_mode
+  /mfs1/u/memo/country-persona-research/envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/peft/utils/save_and_load.py:286: UserWarning: Could not find a config file in  - will assume that the vocabulary was not modified.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [3] tests/test_application_fit_checks.py:15: Bounded frozen artifacts available in private handoff
+SKIPPED [1] tests/test_data_catalog.py:37: Private source snapshot not restored
+SKIPPED [1] tests/test_eval_evidence.py:35: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_eval_evidence.py:53: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_eval_evidence.py:69: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_eval_evidence.py:81: Run the source collector and two-event builder for the local integration check
+SKIPPED [1] tests/test_evidence_ledger.py:120: Build the frozen format diagnostic for its integration checks
+SKIPPED [1] tests/test_evidence_ledger.py:140: Build the frozen format diagnostic for its integration checks
+SKIPPED [1] tests/test_evidence_ledger.py:192: Build the frozen format diagnostic for its integration checks
+SKIPPED [6] tests/test_evidence_ledger.py:201: Build the frozen format diagnostic for its integration checks
+SKIPPED [1] tests/test_policy_workshop.py:71: Local source snapshot unavailable
+SKIPPED [1] tests/test_policy_workshop.py:79: Local source snapshot unavailable
+SKIPPED [1] tests/test_policy_workshop.py:91: Local source snapshot unavailable
+SKIPPED [1] tests/test_policy_workshop.py:106: Local source snapshot unavailable
+SKIPPED [3] ../../../envs/ci-data-pipeline-20261019-v1/lib/python3.11/site-packages/_pytest/unittest.py:523: Qwen3.5 runtime checks require the separate pinned Transformers 5 environment
+FAILED tests/test_coverage_loss.py::CoverageLossTests::test_pinned_chunked_loss_values_and_gradients
+FAILED tests/test_decision_posttraining.py::test_quarantined_rows_and_no_vote_leakage
+FAILED tests/test_inference_probe.py::test_case_mapping_changes_probability_semantics_not_model_logits
+FAILED tests/test_preference_checks.py::PreferenceChecksTests::test_actual_collator_and_truncation
+FAILED tests/test_preference_checks.py::PreferenceChecksTests::test_cached_dataset_evaluation_skips_duplicate_precomputation
+FAILED tests/test_preference_checks.py::PreferenceChecksTests::test_torch_fallback_scores_masks_and_gradients
+FAILED tests/test_training_examples.py::test_all_source_tasks_have_complete_examples
+7 failed, 234 passed, 24 skipped, 3 warnings in 32.40s

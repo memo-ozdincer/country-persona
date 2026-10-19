@@ -1,0 +1,19 @@
+
+==================================== ERRORS ====================================
+________________ ERROR collecting tests/test_reddit_country.py _________________
+ImportError while importing test module '/mfs1/u/memo/country-persona-research/audits/ci-repair-20261019-v1/git-only-checkout/tests/test_reddit_country.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/h/405/memo/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_reddit_country.py:7: in <module>
+    m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts/prepare_reddit_country.py:24: in <module>
+    import zstandard
+E   ModuleNotFoundError: No module named 'zstandard'
+=========================== short test summary info ============================
+ERROR tests/test_reddit_country.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 42.55s

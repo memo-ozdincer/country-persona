@@ -1,9 +1,12 @@
 """Projection invariants for complete source examples and public/private boundaries."""
 import json
 from pathlib import Path
+import pytest
 ROOT=Path(__file__).resolve().parents[1]
 
 def test_all_source_tasks_have_complete_examples():
+    if not all((ROOT/'.cache'/f'explorer-{mode}-static/training-examples.json').is_file() for mode in ['public','private']):
+        pytest.skip('Private/public staged explorer projections not restored')
     inv=json.loads((ROOT/'explorer/sources.json').read_text())
     for mode in ['public','private']:
         data=json.loads((ROOT/'.cache'/f'explorer-{mode}-static/training-examples.json').read_text())

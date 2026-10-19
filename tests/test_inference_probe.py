@@ -105,7 +105,7 @@ def test_case_mapping_changes_probability_semantics_not_model_logits(tiny_inputs
                                                  "N": baseline["probabilities"]["Y"],
                                                  "A": baseline["probabilities"]["N"]})
     assert "canonical_label_logits" not in row
-    assert row["legal_label_mass"] == baseline["legal_label_mass"]
+    assert row["legal_label_mass"] == pytest.approx(baseline["legal_label_mass"], rel=1e-12, abs=1e-15)
 
 
 def test_actual_qwen_stops_on_second_eos_only_when_enabled(tiny_inputs):
