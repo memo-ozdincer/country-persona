@@ -1,0 +1,3 @@
+# 19 October grounded-role development evidence
+
+Read [the dated report](../../docs/GROUNDED_ROLE_CHECKPOINT_20261019.md) and [portable replay](../../reports/grounded-role-replay-20261019-v1.json). Frozen `release.json` hashes preparation/code; later actual outputs/reviews are retained separately. Native inputs/IDs and raw generated token IDs are preserved. Reviews are by the same assistant who curated the sources; independent review is pending. No training or persona gain is claimed. Full dossier, quote cards, unedited reader/writer and word-target interventions must not be conflated. v1 cards are preflight-only; v2 restores the missing Charter antecedent before model calls. Original grades and every failed model output remain intact.

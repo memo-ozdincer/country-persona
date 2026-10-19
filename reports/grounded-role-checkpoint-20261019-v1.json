@@ -1,0 +1,166 @@
+{
+  "status": "measured_development_checkpoint_goal_active",
+  "date": "2026-10-19",
+  "report": "docs/GROUNDED_ROLE_CHECKPOINT_20261019.md",
+  "question": "Is the remaining error in past-only attributed source reading or evidence-preserving short statement realization?",
+  "model": "Qwen/Qwen3.5-4B",
+  "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "peft": "0.21.1"
+  },
+  "production_generation_records": 11,
+  "public_statements": 10,
+  "shared_reader_maps": 1,
+  "generated_tokens": 3774,
+  "generation_seconds": 89.05067971162498,
+  "production_optimizer_updates": 0,
+  "cumulative_qwen35_updates": 4062,
+  "scenario_branch_updates": 128,
+  "prior_paired_brazil_branch_updates": 256,
+  "separate_qwen25_reference_updates": 582,
+  "stages": {
+    "grounded-role-20261019-v1": {
+      "frozen_files_verified": 19,
+      "source_spans_replayed": 4,
+      "production_answers": 4,
+      "arms": {
+        "base": {
+          "answers": 2,
+          "units": {
+            "met": 12,
+            "unmet": 4,
+            "uncertain": 2
+          },
+          "guards": {
+            "met": 6,
+            "unmet": 4,
+            "uncertain": 2
+          },
+          "strict_passes": 0,
+          "inspection_sha256": "14d41b1820ee16f324ff728b97cb4cebe3c3bdc13f403a5c88677727edc82dc1",
+          "responses_sha256": "dbf66ad6e62fb2de488866de2f5423a3edabe0e6aa9e6f2f159af1333ddfe002"
+        },
+        "adapter": {
+          "answers": 2,
+          "units": {
+            "unmet": 6,
+            "met": 12
+          },
+          "guards": {
+            "met": 4,
+            "unmet": 8
+          },
+          "strict_passes": 0,
+          "inspection_sha256": "f219a7ca92d649b97968f2e20a1f82753bb317be09f3063f9027bdc49cdc1bbf",
+          "responses_sha256": "61bef7987b212cb14184a955520d83800d282bb1bf908b1e9a39f0167ac55f60"
+        }
+      }
+    },
+    "grounded-role-cards-20261019-v1": {
+      "frozen_files_verified": 12,
+      "source_spans_replayed": 12,
+      "production_answers": 0
+    },
+    "grounded-role-cards-20261019-v2": {
+      "frozen_files_verified": 13,
+      "source_spans_replayed": 12,
+      "production_answers": 2,
+      "arms": {
+        "base": {
+          "answers": 2,
+          "units": {
+            "met": 15,
+            "unmet": 3
+          },
+          "guards": {
+            "met": 8,
+            "unmet": 2,
+            "uncertain": 2
+          },
+          "strict_passes": 0,
+          "inspection_sha256": "ab6abbad0c9b72d2a584952e3fe18bf68b59e45855643c67a3f1843fb954a5a0",
+          "responses_sha256": "fcd5c724871ef0b91cc8aba67d325914e9966b246dd2369d989f0984c56b2ba3"
+        }
+      }
+    },
+    "grounded-role-pipeline-20261019-v1": {
+      "frozen_files_verified": 10,
+      "production_answers": 3,
+      "writer": {
+        "answers": 2,
+        "units": {
+          "met": 18
+        },
+        "guards": {
+          "met": 10,
+          "uncertain": 1,
+          "unmet": 1
+        },
+        "strict_passes": 1,
+        "inspection_sha256": "75704c1b97fb622d72f66d85e0a34b443e12ad89ee51d848796bc865e061489d",
+        "responses_sha256": "65082fdf6073e05715bc0958535f85c4891539a977e7c16507729c30e73d8947"
+      }
+    },
+    "grounded-role-budget-20261019-v1": {
+      "frozen_files_verified": 12,
+      "source_spans_replayed": 12,
+      "production_answers": 2,
+      "arms": {
+        "base": {
+          "answers": 2,
+          "units": {
+            "met": 16,
+            "unmet": 2
+          },
+          "guards": {
+            "met": 8,
+            "unmet": 3,
+            "uncertain": 1
+          },
+          "strict_passes": 0,
+          "inspection_sha256": "8acc33c05241d892c7933c7118da5b5ce4ccfaa79a1223062de5ac38eb5795da",
+          "responses_sha256": "4289478a0c57df33c59f05b26913efd8d74aea13daac589f7e74b76fb74937b3"
+        }
+      }
+    }
+  },
+  "all_outputs_hand_read": true,
+  "independent_review_complete": false,
+  "outcomes": {
+    "source_map_correctly_preserves_scored_material_facts": true,
+    "map_exhaustive_profile": false,
+    "reliable_strict_statement_gain": false,
+    "one_provisional_uk_strict_pass": true,
+    "word_target_regression_preserved": true,
+    "learned_persona_or_diplomatic_or_multiagent_or_strong_ood_gain": false
+  },
+  "limits": [
+    "Same assistant authored task/curation/grading; independent construct and semantic review pending.",
+    "One exposed historical episode/two roles; adaptive input interventions, no independent event-level inference.",
+    "Source dates precede requested statement, but historical availability at time and pretraining exposure are not established. Model adapter contains later history.",
+    "New application rubric does not replace or regrade original authentic-speech reconstruction scores.",
+    "Map intervention adds checklist/context/generation/compute; not a pure staging-only contrast.",
+    "Old adapter tested only on full dossier.",
+    "Provisional UK full pass includes temporal paraphrase and self-reference judgments; not a robust general result."
+  ],
+  "frozen_rubric_sha256": "01081d567588f1d75f92c7131182d60538664adea4abcde0351a089adf1874b2",
+  "replay_receipt": "reports/grounded-role-replay-20261019-v1.json",
+  "replay_sha256": "1de04e95178280147fa57825f1b799de9c6eae3a0d77b0607c23d5a1ce4aaa9b",
+  "resource_receipt": "reports/grounded-role-resource-exits-20261019-v1.json",
+  "resource_receipt_sha256": "e4455a726a4f730ccf78217e47b2d24b50582060742703446f9dc203b10f0235",
+  "owned_gpu_workers_exited": 4,
+  "unfamiliar_processes_altered": false,
+  "preparation_failures": [
+    "Non-PDF digitallibrary download rejected; official UN documents API succeeded.",
+    "PDF extraction first attempted in ML env without fitz; used existing pinned PDF env.",
+    "Brittle cover prefix assertion corrected before model calls.",
+    "Preflight-only compact v1 had an antecedent cut; separately frozen v2 repaired before model calls.",
+    "An inline review-writing Python command had unmatched braces; corrected before review file creation. No model calls or optimizer updates from these failures."
+  ],
+  "next_candidate": "Fresh native-chat complete-plan writer supervision on other source episodes with a separate episode and strong base-plus-map control frozen before fitting. No next pack/fit/queue prepared.",
+  "old_explicit_seed_only_control": "preserved/unrun",
+  "github_delivery": "All new bounded evidence directly in private Git. No new ignored run payload, adapter, full archive or replacement snapshot. October18 adapter release unchanged."
+}

@@ -4,9 +4,9 @@ Read `AGENTS.md`, then [the full handoff](docs/PROJECT_HANDOFF.md). Use [current
 
 ## Current research
 
-Newest measured result: [18 October authentic delegation SFT checkpoint](docs/SCENARIO_ROLE_CHECKPOINT_20261018.md). Fourteen inspected outputs and one fresh four-speech/128-update Qwen3.5-4B fit. All four fitting speeches reproduce exactly; both Ukraine development cases fail under raw and corrected native-chat adapter prompts, with worse reference likelihood and unsupported claims. This is overfitting, not a persona/agent gain. All five owned GPU workers exited. Do not expand this branch or launch atomic tokens.
+Newest evaluation: [19 October grounded-role decomposition](docs/GROUNDED_ROLE_CHECKPOINT_20261019.md). Eleven inspected generations, zero updates. Compact country-owned evidence improves attribution; an unedited model-extracted map preserves all 18 material units with one provisional UK strict pass. India fails length/grounding, and a smaller word target regresses content. No reliable persona/agent gain. All four owned workers exited. Next candidate: complete evidence-preserving native-chat writer supervision on other episodes, with a frozen separate episode and strong base-plus-map control; no next pack/fit/queue.
 
-[The source-audited setup](docs/SCENARIO_ROLE_SFT_READINESS_20261017.md) and [CoSER-grounded design](docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md) remain the method/data evidence. The next candidate is a small native-chat base/adapter comparison with source-grounded pre-target meeting/country evidence and identifiable role/topic controls, before any further fit. No next pack/queue is prepared.
+Latest training: [18 October authentic delegation SFT](docs/SCENARIO_ROLE_CHECKPOINT_20261018.md). Four exact fitting speeches, failed Ukraine transfer/worse likelihood. Keep its adapter and original failures; do not scale it or start atomic tokens. Cumulative Qwen3.5 updates remain 4,062. [Source-audited setup](docs/SCENARIO_ROLE_SFT_READINESS_20261017.md) and [CoSER-grounded design](docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md) remain method/data evidence.
 
 Earlier application-state results remain useful components, not validated national persona or multi-agent gains. The four-answer explicit seed-only control remains preserved and unrun; the latest request does not auto-launch it.
 
