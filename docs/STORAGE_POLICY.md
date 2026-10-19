@@ -23,6 +23,8 @@ Older delivery duplicates remain candidates for the same verified compaction, no
 
 ## Hardlinks, metadata and I/O
 
+Build/install the project in a disposable Git-only checkout, with environments and caches on scratch. An editable install in the authoritative evidence checkout regenerates `src/country_persona.egg-info`, which is part of the frozen payload. Preserve that historical metadata; do not update its snapshot hashes to match a new build. See the [19 October CI repair and exact restoration](CI_REPAIR_20261019.md).
+
 Historical stages share hardlinked files. Treat them as immutable; detach any linked workspace file before editing it. Count unique inodes when measuring allocation, and distinguish apparent bytes from allocated bytes. Cached runtime files already share hardlinks; deleting their names may reclaim very little.
 
 Avoid repeatedly walking every historical stage or hashing all historical archives for routine code edits. Inventory old stages from their manifests and fully verify the current recovery boundary. State the scope: this is application-level byte integrity, not certification of MFS replication, disks or cluster-wide health. Keep a concise current-state summary and link dated evidence instead of duplicating the entire chronology into every entry document.
