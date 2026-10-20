@@ -1,0 +1,747 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-19T19:59:31.150556-04:00",
+  "timezone": "America/Toronto",
+  "base_workspace_commit": "155a9c3e193deb414d6a9599c1a55335e7e60240",
+  "scope": "Consolidated report of the recorded research trajectory, software/delivery work and experiment status. Historical checkpoint dates are archived labels.",
+  "goal_status": "paused_at_user_request; this reporting task does not resume the recursive goal",
+  "qwen35": {
+    "model": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "counted_optimizer_updates": 4182,
+    "nonzero_optimization_runs_or_continuations": 42,
+    "training_checkpoint_groups": 35,
+    "includes_unsaved_pure_dpo_updates": 20,
+    "excludes": [
+      "earlier Germany/China Qwen3 pilot",
+      "separate Qwen2.5 reference",
+      "random tiny CPU engineering tests"
+    ],
+    "rows": [
+      {
+        "id": "smoke",
+        "checkpoint_date": "09-30",
+        "title": "4B CUDA smoke",
+        "updates_by_run": [
+          2
+        ],
+        "new_optimizer_updates": 2,
+        "method": "Response-only LoRA SFT, four examples",
+        "result": "Finite gradients, 496 changed tensors and exact reload; fitting-control before/after answers inspected. Technical success, no transfer claim.",
+        "evidence": "docs/AURORA_QWEN35_TRAINING_SMOKE_20260930.md",
+        "interpretation_scope": "Technical smoke on the real model; no held-out quality gain",
+        "cumulative_qwen35_updates_after": 2
+      },
+      {
+        "id": "short_corrections",
+        "checkpoint_date": "09-30",
+        "title": "Short correction fits",
+        "updates_by_run": [
+          20,
+          20
+        ],
+        "new_optimizer_updates": 40,
+        "method": "Fresh source-only corrections; then same targets plus conflicting prior notes",
+        "result": "Local content repairs, but UK draft-support reversal and false consensus survive. Target losses fall to about 1.10/1.03 without reliable synthesis.",
+        "evidence": "docs/AURORA_QWEN35_ADAPTIVE_RESULTS_20260930.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 42
+      },
+      {
+        "id": "plan_to_text",
+        "checkpoint_date": "09-30",
+        "title": "Checked-plan complete memos",
+        "updates_by_run": [
+          20
+        ],
+        "new_optimizer_updates": 20,
+        "method": "Fresh two-target plan-to-text SFT",
+        "result": "Checked plans already repair the main positions in base. Adapter removes invented dates in 3/3 answers and restores selected details, while dropping others.",
+        "evidence": "docs/AURORA_QWEN35_PLAN_TO_TEXT_20260930.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 62
+      },
+      {
+        "id": "raw_application",
+        "checkpoint_date": "10-03",
+        "title": "Raw-source national application",
+        "updates_by_run": [
+          20
+        ],
+        "new_optimizer_updates": 20,
+        "method": "Uniform response-only SFT, 20 targets",
+        "result": "Separate-family raw coverage 40/48 base to 37/48 adapter; fitting controls 18/24 to 16/24; zero strict raw passes.",
+        "evidence": "docs/AURORA_SOURCE_APPLICATION_SFT_20261003.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 82
+      },
+      {
+        "id": "coverage_weighting",
+        "checkpoint_date": "10-03",
+        "title": "Clause-weighted objective",
+        "updates_by_run": [
+          20
+        ],
+        "new_optimizer_updates": 20,
+        "method": "Same 20 texts/budget, clause-balanced CE",
+        "result": "Mali coverage: base 35/52, uniform 31/52, weighted 30/52. Local repairs coexist with new omissions/inventions; no strict pass.",
+        "evidence": "docs/AURORA_COVERAGE_OBJECTIVE_20261003.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 102
+      },
+      {
+        "id": "pure_dpo",
+        "checkpoint_date": "10-03",
+        "title": "Pure preference training",
+        "updates_by_run": [
+          20,
+          20
+        ],
+        "new_optimizer_updates": 40,
+        "method": "One completed unsaved DPO attempt; one saved DPO fit",
+        "result": "Saved DPO: 35 met, 14 unmet, 3 unratable of 52; six repairs/three regressions versus base on jointly ratable units. Fitted preference accuracy 1.0; no strict generation pass.",
+        "evidence": "docs/AURORA_SOURCE_PREFERENCE_20261003.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 142
+      },
+      {
+        "id": "minimum_country",
+        "checkpoint_date": "10-05",
+        "title": "Minimum complete-response learning",
+        "updates_by_run": [
+          16,
+          64,
+          64
+        ],
+        "new_optimizer_updates": 144,
+        "method": "Small complete country targets, short versus sufficient exposure",
+        "result": "Eight raw cases: content base 23/40, four-target fit 34/40, eight-target fit 38/40. Application/commitment 7/16 to 15/16. The 16-step arm underfits.",
+        "evidence": "docs/AURORA_MINIMAL_COUNTRY_20261005.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 286
+      },
+      {
+        "id": "complete_synthesis",
+        "checkpoint_date": "10-06",
+        "title": "One full synthesis target",
+        "updates_by_run": [
+          32
+        ],
+        "new_optimizer_updates": 32,
+        "method": "Warm continuation on one 235-word climate memo",
+        "result": "Fitting climate memo exact, 24/24. Ukraine raw 17 met+1 uncertain/25; checked plan 23/25 with unsupported condition. Retention 10/10 to 9/10.",
+        "evidence": "docs/AURORA_MINIMAL_SYNTHESIS_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 318
+      },
+      {
+        "id": "synthesis_rehearsal",
+        "checkpoint_date": "10-06",
+        "title": "Two full memos plus rehearsal",
+        "updates_by_run": [
+          96
+        ],
+        "new_optimizer_updates": 96,
+        "method": "Six rows: full memos and four short targets",
+        "result": "Climate/Ukraine fitting exact 24/24 and 25/25; short retention 10/10. WPS raw 17 met+3 uncertain/24; source/ownership failures remain.",
+        "evidence": "docs/AURORA_SYNTHESIS_REHEARSAL_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 414
+      },
+      {
+        "id": "factual_anchor",
+        "checkpoint_date": "10-06",
+        "title": "One complete factual anchor",
+        "updates_by_run": [
+          32
+        ],
+        "new_optimizer_updates": 32,
+        "method": "DPO plus chosen NLL against an actual erroneous answer",
+        "result": "Card input reproduces 24/24 target; raw input still 17/24. Own-wording request still copies target; no outside-source pass.",
+        "evidence": "docs/AURORA_FACTUAL_ANCHOR_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 446
+      },
+      {
+        "id": "raw_input_rehearsal",
+        "checkpoint_date": "10-06",
+        "title": "Retain cards and add raw input",
+        "updates_by_run": [
+          64
+        ],
+        "new_optimizer_updates": 64,
+        "method": "DPO plus chosen NLL, two input formats",
+        "result": "Raw exact-input coverage 17/24 to 24/24; card remains 24/24. Easier direct status checks 4/4, but partial-repair/full application remains deficient.",
+        "evidence": "docs/AURORA_RAW_COVERAGE_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 510
+      },
+      {
+        "id": "repaired_state",
+        "checkpoint_date": "10-06",
+        "title": "Add fully repaired state",
+        "updates_by_run": [
+          96
+        ],
+        "new_optimizer_updates": 96,
+        "method": "Three pairs, DPO plus chosen NLL",
+        "result": "Old and repaired targets exact 24/24; partial repair 18 met+1 uncertain/24 and incomplete application. Mali raw/plan regress to 4/14 and 5/14.",
+        "evidence": "docs/AURORA_REPAIRED_STATE_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 606
+      },
+      {
+        "id": "chosen_only",
+        "checkpoint_date": "10-06",
+        "title": "Matched chosen-only ablation",
+        "updates_by_run": [
+          96
+        ],
+        "new_optimizer_updates": 96,
+        "method": "Chosen NLL replaces DPO+NLL; same parent/targets/exposure",
+        "result": "Exact fitting retained 24/24; partial WPS 20/24 source but 2/4 application; Mali 4 met+1 uncertain/14 raw. Memory about 19.87 versus 29.92 GiB; no transfer solution.",
+        "evidence": "docs/AURORA_CHOSEN_SFT_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 702
+      },
+      {
+        "id": "fresh_start",
+        "checkpoint_date": "10-06",
+        "title": "Fresh-base chosen SFT",
+        "updates_by_run": [
+          96
+        ],
+        "new_optimizer_updates": 96,
+        "method": "Same positive targets, fresh zero-effect LoRA instead of inherited history",
+        "result": "Fitting exact 24/24. Mali raw 9 met+1 uncertain/14 and plan 11 met+1 uncertain/14, better than warm counterparts but no strict outside pass.",
+        "evidence": "docs/AURORA_FRESH_SFT_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 798
+      },
+      {
+        "id": "second_episode",
+        "checkpoint_date": "10-06",
+        "title": "Add one complete Mali target",
+        "updates_by_run": [
+          128
+        ],
+        "new_optimizer_updates": 128,
+        "method": "Chosen-only continuation with rehearsal",
+        "result": "Mali raw/plan 14/14; old WPS 24/24. Outside sanctions 31 met+4 uncertain/56; zero strict passes and inconsistent endorsement wording.",
+        "evidence": "docs/AURORA_TWO_EPISODE_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 926
+      },
+      {
+        "id": "endorsement_preferences",
+        "checkpoint_date": "10-06",
+        "title": "Minimal endorsement negatives",
+        "updates_by_run": [
+          128
+        ],
+        "new_optimizer_updates": 128,
+        "method": "DPO plus chosen NLL, negatives differ at one endorsement clause",
+        "result": "Exposed India endorsement clause repaired, but a Brazilian future-vote promise invented. Sanctions remains incomplete; Mali/partial-state regressions. Narrow negative recipe rejected.",
+        "evidence": "docs/AURORA_MINIMAL_ENDORSEMENT_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 1054
+      },
+      {
+        "id": "conditional_positive",
+        "checkpoint_date": "10-06",
+        "title": "Two India authority-state positives",
+        "updates_by_run": [
+          192
+        ],
+        "new_optimizer_updates": 192,
+        "method": "Six positives, chosen-only continuation from fresh96",
+        "result": "New raw India targets exact 14/14, old exact controls retained. Sanctions 46 met+2 uncertain/56 includes fitted India. Haiti 31 met+4 uncertain/56, zero strict passes.",
+        "evidence": "docs/AURORA_CONDITIONAL_INDIA_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 1246
+      },
+      {
+        "id": "diverse_complete",
+        "checkpoint_date": "10-06",
+        "title": "Eight complete country responses",
+        "updates_by_run": [
+          256
+        ],
+        "new_optimizer_updates": 256,
+        "method": "Fresh eight-target/four-context chosen-only fit",
+        "result": "Fitting exact 112/112. Somalia development coverage 24 met+3 uncertain/52 base to 43/52; one strict checked-plan pass; state/application failures remain.",
+        "evidence": "docs/AURORA_DIVERSE_COUNTRY_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 1502
+      },
+      {
+        "id": "two_contexts",
+        "checkpoint_date": "10-06",
+        "title": "Sixteen responses/eight episodes",
+        "updates_by_run": [
+          512
+        ],
+        "new_optimizer_updates": 512,
+        "method": "Fresh chosen-only fit, retain original eight pairs",
+        "result": "Fitting 224/224. Sudan coverage 28 met+3 uncertain/56 base, 40+5 smaller fit, 47+2 new fit; zero outside strict passes. Somalia plan retention regresses 26/26 to 15 met+2 uncertain/26.",
+        "evidence": "docs/AURORA_TWO_CONTEXT_COUNTRY_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 2014
+      },
+      {
+        "id": "plan_inputs",
+        "checkpoint_date": "10-06",
+        "title": "Supply full plans to writer",
+        "updates_by_run": [
+          256
+        ],
+        "new_optimizer_updates": 256,
+        "method": "Same eight preferred texts/chosen tokens as raw8; change input to full plan",
+        "result": "ICC content base 9 met+1 uncertain/28, raw8 21/28, plan8 27/28; one narrow strict pass. Later ordinary-English test reveals copying rather than real compression.",
+        "evidence": "docs/AURORA_PLAN_INPUT_20261006.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 2270
+      },
+      {
+        "id": "long_plan_compression",
+        "checkpoint_date": "10-07",
+        "title": "Long-plan compression fitting",
+        "updates_by_run": [
+          256
+        ],
+        "new_optimizer_updates": 256,
+        "method": "Eight unchanged short targets with 420-483-word plans",
+        "result": "Fitting 112/112; Libya remains 446/352 words over budget. A compact 276-word plan works with both older point8 and new compression8: 14/14 at 262/250 words. More compression fitting not needed for that component.",
+        "evidence": "docs/AURORA_COMPRESSION_REALIZATION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 2526
+      },
+      {
+        "id": "compact_source_planner",
+        "checkpoint_date": "10-07",
+        "title": "Single-source extraction fits",
+        "updates_by_run": [
+          32,
+          64
+        ],
+        "new_optimizer_updates": 96,
+        "method": "Fresh source-only fits on complete France/Ukraine",
+        "result": "Fitting 8/8 at 64. Outside Libya 7 met+1 uncertain at 308 words for 32; 2 met+1 uncertain at 309 for 64. No monotonic transfer or strict summary pass.",
+        "evidence": "docs/AURORA_COMPACT_PLANNER_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 2622
+      },
+      {
+        "id": "extraction_diversity",
+        "checkpoint_date": "10-07",
+        "title": "Two-source extraction",
+        "updates_by_run": [
+          128,
+          64
+        ],
+        "new_optimizer_updates": 192,
+        "method": "Fresh two-target fits at two inspected doses",
+        "result": "Both fitting summaries exact 16/16. New France monitor: base 3/8; prior one-source 6/8; two-source128 0/8 with cap; two-source64 2 met+2 uncertain/8. Lower dose stops repetition but not status errors.",
+        "evidence": "docs/AURORA_EXTRACTION_DIVERSITY_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 2814
+      },
+      {
+        "id": "source_status_and_application",
+        "checkpoint_date": "10-07",
+        "title": "Source-status repair and separate application",
+        "updates_by_run": [
+          64,
+          32
+        ],
+        "new_optimizer_updates": 96,
+        "method": "Two source summaries plus one full application target",
+        "result": "Fitting source/application outputs compose through point8 to 14/14, 277 words. Outside source summaries fail; untrained repaired-state application 4/6 repeats an already removed gate.",
+        "evidence": "docs/AURORA_SOURCE_STATUS_COMPOSITION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 2910
+      },
+      {
+        "id": "paired_application",
+        "checkpoint_date": "10-07",
+        "title": "Pair defective and repaired France states",
+        "updates_by_run": [
+          64
+        ],
+        "new_optimizer_updates": 64,
+        "method": "Fresh two-target application SFT",
+        "result": "Neutral untrained state 6/6, but 112 words fails intermediate 90-word cap. Unedited facts+application and compression writer yield 14/14 at 286 words.",
+        "evidence": "docs/AURORA_PAIRED_APPLICATION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 2974
+      },
+      {
+        "id": "two_country_application",
+        "checkpoint_date": "10-07",
+        "title": "Retain France and add paired India states",
+        "updates_by_run": [
+          128
+        ],
+        "new_optimizer_updates": 128,
+        "method": "Fresh four-target mixed-country application SFT",
+        "result": "Excluded Indian P/Q pass 6/6 at 76/86 words; French fitting retained. Separate France retention has two uncertain meanings. Actual composed India plan yields 14/14 at 273 words with point8.",
+        "evidence": "docs/AURORA_TWO_COUNTRY_APPLICATION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 3102
+      },
+      {
+        "id": "three_source_extraction",
+        "checkpoint_date": "10-07",
+        "title": "Add India to raw source reader",
+        "updates_by_run": [
+          96
+        ],
+        "new_optimizer_updates": 96,
+        "method": "Fresh three-source extractor retaining France targets",
+        "result": "India source exact 8/8 at 178 words. Actual source178+application77 yields a 241-word final memo, 14/14 plus four guards. Source is fitted and application intermediate 5/6; not all-stage/general raw transfer. Brazil source outside fitting 6/8.",
+        "evidence": "docs/AURORA_RAW_SOURCE_PIPELINE_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 3198
+      },
+      {
+        "id": "uk_application_continuation",
+        "checkpoint_date": "10-07",
+        "title": "Pair UK implementation states",
+        "updates_by_run": [
+          64
+        ],
+        "new_optimizer_updates": 64,
+        "method": "Continue mixed application adapter on two UK targets",
+        "result": "UK fitting R/S and excluded T/E all 6/6; earlier France/India retention loses requirements. UK final memo 14/14 at 274 words, with a later-discovered France-system/UK-user role mismatch: not clean persona evidence.",
+        "evidence": "docs/AURORA_UK_PAIRED_APPLICATION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 3262
+      },
+      {
+        "id": "joint_three_country",
+        "checkpoint_date": "10-07",
+        "title": "Joint France/India/UK rehearsal",
+        "updates_by_run": [
+          192
+        ],
+        "new_optimizer_updates": 192,
+        "method": "Fresh six-target joint SFT instead of sequential continuation",
+        "result": "All six fitting answers exact; UK T/E 6/6 and France/India retention restored. Authenticated fictional India update 6/6 versus base 1/6. Brazil J/K still 4/6 and over budget.",
+        "evidence": "docs/AURORA_THREE_COUNTRY_APPLICATION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 3454
+      },
+      {
+        "id": "one_brazil_target",
+        "checkpoint_date": "10-07",
+        "title": "Add Brazil J only",
+        "updates_by_run": [
+          224
+        ],
+        "new_optimizer_updates": 224,
+        "method": "Fresh seven-target joint SFT",
+        "result": "All seven fitting targets exact; no excluded-state strict pass. Brazil K removes an already removed gate; UK qualification drops and Indian resolution number changes. Prior six-target branch retained.",
+        "evidence": "docs/AURORA_FOUR_COUNTRY_APPLICATION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 3678
+      },
+      {
+        "id": "paired_brazil",
+        "checkpoint_date": "10-07",
+        "title": "Add repaired Brazilian counterpart",
+        "updates_by_run": [
+          256
+        ],
+        "new_optimizer_updates": 256,
+        "method": "Fresh eight-target joint SFT, seven old texts unchanged",
+        "result": "All fitting answers exact. Excluded Brazil L/M 6/6 at 85/82 words; UK E 6/6 at 84. UK T and India authority-update remain ambiguous. Strong local state-repair result, not general persona/multi-agent gain.",
+        "evidence": "docs/AURORA_PAIRED_BRAZIL_APPLICATION_20261007.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 3934
+      },
+      {
+        "id": "authentic_speeches",
+        "checkpoint_date": "10-18",
+        "title": "Scenario and delegation speech SFT",
+        "updates_by_run": [
+          128
+        ],
+        "new_optimizer_updates": 128,
+        "method": "Fresh four-authentic-speech readable-marker LoRA fit",
+        "result": "Four fitting speeches exact, 20/20. Both Ukraine development cases fail in raw and corrected native wrappers; source NLL worsens in both. Invented events/policies and an extra speaker. Atomic-token arm not launched.",
+        "evidence": "docs/SCENARIO_ROLE_CHECKPOINT_20261018.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 4062
+      },
+      {
+        "id": "native_source_writer",
+        "checkpoint_date": "10-19",
+        "title": "Native32 complete source realization",
+        "updates_by_run": [
+          32
+        ],
+        "new_optimizer_updates": 32,
+        "method": "Fresh four-target native-chat writer",
+        "result": "Fitting 35/35; WPS source base14/18 to18/18, strict0/2 to2/2. Corrected full application base23 met+1 uncertain/24 versus adapter21/24; neither strict.",
+        "evidence": "docs/NATIVE_PLAN_WRITER_CHECKPOINT_20261019.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 4094
+      },
+      {
+        "id": "native_full_application",
+        "checkpoint_date": "10-19",
+        "title": "Native40: add one full application",
+        "updates_by_run": [
+          40
+        ],
+        "new_optimizer_updates": 40,
+        "method": "Fresh five-target native-chat writer",
+        "result": "WPS source18/18; application24/24 plus18/18 source-map units. UK183 words strict, France243 fails240. Brazil base7 met/5 unmet/1 uncertain to10/1/2 of13; no strict pass. Common-draft revisions repair no seed failures.",
+        "evidence": "docs/NATIVE_APPLICATION_WRITER_CHECKPOINT_20261019.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 4134
+      },
+      {
+        "id": "native_partial_scope",
+        "checkpoint_date": "10-19",
+        "title": "Native48: add scoped partial-state target",
+        "updates_by_run": [
+          48
+        ],
+        "new_optimizer_updates": 48,
+        "method": "Fresh six-target native-chat writer",
+        "result": "All fitting53/53 plus36 guards; source WPS18/18 and Brazil9/9. Application-only scope0/3 to3/3, but state/ownership ambiguity remains. Direct full Brazil regresses10/1/2 to8/3/2; France257 words still too long.",
+        "evidence": "docs/NATIVE_SCOPE_PARTIAL_CHECKPOINT_20261019.md",
+        "interpretation_scope": "Same-assistant development; not independent persona or strong-OOD evidence",
+        "cumulative_qwen35_updates_after": 4182
+      }
+    ]
+  },
+  "no_fit_diagnostics_and_unrun_items": [
+    {
+      "id": "historical_baselines",
+      "title": "Historical evaluation/stability/deliberation",
+      "result": "Action baseline 4/7 without evidence, 5/7 with evidence; label/order controls expose sensitivity. Always-Yes on UNBench 96.73% with zero minority recall. 42-response deliberation source review:366 met/117 unmet/33 unratable; eight initial self/peer pairs identical; three of six final memos capped.",
+      "evidence": "docs/DELIBERATION_SOURCE_REVIEW_20260928.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "gaza",
+      "title": "Benchmark-grounded Gaza",
+      "result": "Base26/29 content; adapter28 met+1 unratable/29; three known corrections/zero known regressions among28 jointly ratable units. Strict fail/unresolved, not a benchmark accuracy score.",
+      "evidence": "docs/AURORA_BENCHMARK_GROUNDED_PLAN_20260930.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "raw_vs_checked",
+      "title": "Source/plan and boundary diagnostic",
+      "result": "Raw18/24 both; ordinary checked plan base18 versus adapter22; stronger checked plan base24 versus adapter22. Strong base can remove the apparent need for training.",
+      "evidence": "docs/AURORA_SOURCE_APPLICATION_CHECKPOINT_20261002.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "transfer",
+      "title": "Four-country and climate transfer",
+      "result": "Outside sanctions fitting, climate raw base12/20, four-target20/20, eight-target17/20. Original four-country initial19/24 to22/24; source guards14/16 to16/16. Historically exposed event.",
+      "evidence": "docs/AURORA_MINIMAL_TRANSFER_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "discussion",
+      "title": "Self/peer revision and aggregation",
+      "result": "Base own/peer19/24 and18/24 versus fit22/24 and22/24; no positive peer effect. Fitted aggregator removes selected dates/amounts, but all four memos falsely pool G-5 support and meet only2/5 synthesis checks.",
+      "evidence": "docs/AURORA_MINIMAL_DISCUSSION_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "reasoning",
+      "title": "Native thinking/sampling/budget",
+      "result": "Eight records: only three public answers, five capped inside reasoning. At4K sampled allowance base produces270-word answer; adapter consumes4,096 reasoning tokens without public answer. No demonstrated reasoning gain.",
+      "evidence": "docs/AURORA_NATIVE_REASONING_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "cards",
+      "title": "Source cards and joint realization",
+      "result": "Initial base20 met+2 uncertain/24 versus adapter19+1; boundary repair21+2 versus20. Even a corrected24/24 supplied card yields final base21/24 versus adapter19/24; both fail source checks.",
+      "evidence": "docs/AURORA_COUNTRY_SOURCE_CARDS_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "application_only",
+      "title": "Separate application paragraph",
+      "result": "Four retained answers across base/three adapters; no100-word strict pass and operational/waiver omissions. Five calls actually completed; one output was lost after a recording-key error and remains separately accounted.",
+      "evidence": "docs/AURORA_APPLICATION_PARAGRAPH_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "haiti_scope",
+      "title": "Remove only peer speech",
+      "result": "Adapter own-country source guards improve2 met+2 uncertain/8 to8/8; material11 met+4 uncertain/28 to14/28; zero strict passes. Base material drops.",
+      "evidence": "docs/AURORA_HAITI_SOURCE_SCOPE_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "actual_plan",
+      "title": "Actual generated plans before writing",
+      "result": "Seven actual outputs. Explicit source/application questions yield a stronger512-word plan, but matching writers still omit required material; trained writer11/14 at219 words, no strict pass.",
+      "evidence": "docs/AURORA_ACTUAL_PLAN_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "ordinary_points",
+      "title": "Ordinary-English versus shorthand plan",
+      "result": "Same complete plan expanded to378 normal words. plan8 retains14/14 but writes367 words, effectively flattening bullets; all three arms fail the full task.",
+      "evidence": "docs/AURORA_ORDINARY_POINTS_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "teacher_compression",
+      "title": "Teacher expansion audit",
+      "result": "Sixteen Qwen-generated long plans hand-read; none approved unchanged. Eight plans extensively corrected/rewritten by the same assistant before later fitting, with raw drafts retained.",
+      "evidence": "docs/AURORA_COMPRESSION_PREPARATION_20261006.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "uk_reader",
+      "title": "UK reader/source transfer",
+      "result": "Untrained UK source summary reaches8/8 at201 words under quote-backed format, but application2 met+2 uncertain/6 and final writer10 met+1 uncertain/14 at329 words fail.",
+      "evidence": "docs/AURORA_UK_SOURCE_TRANSFER_20261007.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "sanctions_interaction",
+      "title": "Latest actual peer interaction",
+      "result": "Twelve answers, all strict fail. Base initial/self/peer material9/8/9 of16; adapter8/11/10. Peer versus self repairs one base typo; adapter0 corrections/1 regression and an invented peer critique. Seed-only wording confound retained.",
+      "evidence": "docs/AURORA_SANCTIONS_INTERACTION_20261007.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "grounded_role",
+      "title": "Earlier-evidence role reading and writing",
+      "result": "Eleven records. Full raw source base/adapter12/18 material each; compact cards15/18; actual unedited map18/18 with one provisional strict writer pass. Smaller word target regresses16/18; no stable persona/collective result.",
+      "evidence": "docs/GROUNDED_ROLE_CHECKPOINT_20261019.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "source_state_controls",
+      "title": "Latest source-only and partial-state controls",
+      "result": "Eight new base/native40 answers. Base source-only9/9; native40 8 met+1 uncertain/9. All six state answers prepend unwanted source summaries; base core action0/3, native40 2/3; full contract0/3 both.",
+      "evidence": "docs/NATIVE_SCOPE_PARTIAL_CHECKPOINT_20261019.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "typed_composition",
+      "title": "Typed, unedited common-source composition",
+      "result": "Exact166-word model source reused for both arms; two new component answers. Base total221 words:10 met/1 unmet/2 uncertain of13. Native48 total233:13/13 plus6 guards, but missing literal Authority heading means full output contract fails.",
+      "evidence": "docs/NATIVE_SCOPE_PARTIAL_CHECKPOINT_20261019.md",
+      "status": "completed",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "seed_control",
+      "title": "Explicit seed-only control",
+      "result": "Four proposed answers; zero generated. Sources, H1, starting drafts, rubric, weights and decoder must stay fixed. Never launched; not a half-completed trial.",
+      "evidence": "docs/EXPLICIT_SEED_PREPARATION_20261007.md",
+      "status": "prepared_unrun",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "atomic_tokens",
+      "title": "Atomic country/structural markers",
+      "result": "CPU tokenization/capacity prototype only; seven candidate new IDs fit existing padded embedding rows. No learned-row/atomic-marker training arm launched after the readable-marker branch failed.",
+      "evidence": "docs/SCENARIO_ROLE_SEQUENCE_EXPERIMENT_20261017.md",
+      "status": "cpu_prototype_no_training",
+      "new_optimizer_updates": 0
+    },
+    {
+      "id": "role_contrast",
+      "title": "No-rule role contrast with agreement control",
+      "result": "Two full climate speeches/eight source spans verified. Four prospective role/draft cells; no executable pack, inference or training. A design only, not an incomplete trial.",
+      "evidence": "docs/ROLE_CONTRAST_DESIGN_20261019.md",
+      "status": "design_only_unrun",
+      "new_optimizer_updates": 0
+    }
+  ],
+  "published_reference": {
+    "model": "Qwen2.5-7B-Instruct",
+    "persona": "humorous",
+    "dpo_updates": 212,
+    "introspective_sft_updates": 370,
+    "total_updates": 582,
+    "raw_preference_pairs": 6806,
+    "retained_introspection_rows": 11868,
+    "classified_test_answers": 27000,
+    "pilot_answers": 24,
+    "full_outputs_semantically_hand_read": 36,
+    "default_humor_percent": {
+      "base": 10.4,
+      "constitution_prompting": 47.0,
+      "fresh_dpo": 47.8,
+      "fresh_dpo_then_sft": 58.6,
+      "author_dpo": 55.6,
+      "author_sequential_full": 65.8
+    },
+    "strongest_neutrality_humor_percent": {
+      "base": 4.2,
+      "constitution_prompting": 6.2,
+      "fresh_dpo": 27.8,
+      "fresh_dpo_then_sft": 35.2,
+      "author_dpo": 43.0,
+      "author_sequential_full": 54.2
+    },
+    "evidence": "docs/OPEN_CHARACTER_REPRODUCTION_20261004.md",
+    "limitations": "One persona, original classifier includes the default evaluation questions; recognition/persistence rather than eleven-persona macro-F1 or improved reasoning. Operational differences remain; inspected factual/mathematical errors survive."
+  },
+  "recent_checkpoint": {
+    "oct18_19_new_generation_records": 77,
+    "fresh_qwen35_fits": 4,
+    "new_qwen35_updates": 248,
+    "latest_new_records": 25,
+    "latest_deterministic_composed_documents": 2,
+    "latest_new_output_tokens": 5616,
+    "source": "reports/native-scope-partial-checkpoint-20261019-v1.json"
+  },
+  "unfinished_trial_audit": {
+    "all_started_latest_stages_complete": true,
+    "latest_actual_response_records_counted": 25,
+    "latest_expected_response_records": 25,
+    "latest_worker_pids_absent": [
+      2772780,
+      2777841,
+      2781854,
+      2793803,
+      2836018,
+      2881903
+    ],
+    "old_read_only_overlay_session_29031": "polled_to_terminal_exit_0_this_turn",
+    "new_gpu_or_model_work_started_for_this_report": false,
+    "remaining_prepared_items_never_launched": true,
+    "new_model_results_for_this_report": 0
+  },
+  "review_limits": [
+    "Most country targets/plans/criteria/grades authored by the same unblinded assistant; no independent semantic adjudication completed.",
+    "Different denominators/tasks are not one comparable benchmark; do not pool scores.",
+    "Fitting recall and changed/saved tensors do not establish held-out gains.",
+    "Exposed same-source development is not strong OOD.",
+    "Private national utility, broad persona/diplomatic improvements and autonomous multi-agent gains remain unproved."
+  ],
+  "delivery_policy": "The final committed report, both remote branch refs, post-commit overlay verification and external paused handoff pointers are verified separately in the reporting audit directory and CURRENT_HANDOFF.json."
+}

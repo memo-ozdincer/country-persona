@@ -17,6 +17,8 @@ Read `START_HERE.md`, then `docs/PROJECT_HANDOFF.md` before experiments. Current
 
 ## Current boundary — 19 October 2026
 
+The recursive research goal is **paused at the user's request**. [Consolidated work and results](docs/CONSOLIDATED_RESULTS_20261019.md) reconciles all 4,182 Qwen3.5 updates, the separate 582-update reference and the completed/unrun trial boundary. The current reporting task adds no model work. Historical recommendations and prepared controls are not an automatic run queue.
+
 Read [current state](docs/CURRENT_STATE.md) and [native scope/partial-state checkpoint](docs/NATIVE_SCOPE_PARTIAL_CHECKPOINT_20261019.md). Latest: one fresh 48-update Qwen3.5-4B fit retains five old messages/targets/units and adds one 81-word application-only partial-state target. Twenty-five new answers and two unedited compositions hand-read. Six fitting contracts pass (53 material/36 guards); WPS source18/18 retained and Brazil source9/9 at166words. Application-only scope improves0/3→3/3, but state/provenance ambiguities remain. WPS full application still1/2 strict (France257words). Original full Brazil regresses native40 10met/1unmet/2uncertain→8met/3unmet/2uncertain. Do not call native48 a general upgrade.
 
 A separate typed/common-source composition produces233words,13/13 material and6/6 source/length guards; it misses the requested literal Authority heading, so full label-format contract is not passed. Base221words has10met/1unmet/2uncertain. Same-assistant adaptive case, supplied facts/action rule, no independent/persona/diplomatic/private-value/collective/strongOOD claim. Source is reused once, no hidden writer call or human editing. Preserve all raw outputs, failed contracts, uncertain reviews and preparation errors.

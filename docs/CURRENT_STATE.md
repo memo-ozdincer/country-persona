@@ -2,6 +2,8 @@
 
 Dated reports and complete artifacts are the evidence; this file guides navigation.
 
+The recursive research goal is **paused at the user's request**. [Complete work and results](CONSOLIDATED_RESULTS_20261019.md) reconciles the training history, substantive outcomes, software/delivery work and all unfinished-item statuses. All started latest model trials are complete; this report launches none.
+
 Wrap-up source review: [role-contrast design](ROLE_CONTRAST_DESIGN_20261019.md) verifies two complete climate statements/eight source spans and defines a country-role contrast with a legitimate-agreement control, without a supplied decision rule. Design only: zero new answers/updates, no executable pack or queued run. Latest measured results below are unchanged.
 
 Wrap-up infrastructure: [CPU CI repair](CI_REPAIR_20261019.md) records the reported workflow failure, missing dependencies/runtime-profile fixes and 242 passing Git-only software tests (23 private-artifact skips). No additional production generations or optimizer updates. User requested wrapping up; no experiment is queued.
@@ -18,7 +20,7 @@ All48 input/mask/finite-gradient/exposure traces and actual generation/review re
 
 ## Next decision
 
-Test one role-only contrast grounded in genuinely differing dated national positions, **without a supplied action rule**. This distinguishes format compliance from source-based policy application. No next pack, fit or sweep is prepared. The broad research goal remains active: dependable national persona, diplomatic reasoning, multi-agent and strongOOD gains remain unproved.
+The future candidate is one role-only contrast grounded in genuinely differing dated national positions, **without a supplied action rule**. This distinguishes format compliance from source-based policy application. It is a design only; no executable pack, fit or sweep is prepared. The recursive research goal is paused. Dependable national persona, diplomatic reasoning, multi-agent and strongOOD gains remain unproved.
 
 Cumulative Qwen3.5 updates **4182**, current fresh branch48. Preserve [native40](NATIVE_APPLICATION_WRITER_CHECKPOINT_20261019.md), [native32](NATIVE_PLAN_WRITER_CHECKPOINT_20261019.md), [grounded-role decomposition](GROUNDED_ROLE_CHECKPOINT_20261019.md), raw-speech128, paired-Brazil256 and separate Qwen2.5 reference582, all original reviews/failures and Germany/China. Do not scale raw-speech SFT or launch atomic tokens. The [7October explicit seed-only control](EXPLICIT_SEED_PREPARATION_20261007.md) remains preserved/unrun, not a prerequisite.
 

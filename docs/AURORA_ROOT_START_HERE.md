@@ -1,5 +1,7 @@
 # Country Persona research on Aurora
 
+The recursive research goal is **paused at the user's request**. The workspace's `docs/CONSOLIDATED_RESULTS_20261019.md` reports the complete experiment ledger, results and limits. All started latest model trials are complete; the reporting task adds no training or inference. Unstarted controls/designs are not an automatic queue.
+
 Authoritative workspace: `/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1`.
 Stable shortcut: `/mfs1/u/memo/country-persona-research/current`.
 Read that workspace's `AGENTS.md`, `START_HERE.md`, `docs/PROJECT_HANDOFF.md` and `docs/CURRENT_STATE.md`. This scratch-root guide is navigation, not a second experiment chronology. Its tracked source is `docs/AURORA_ROOT_START_HERE.md` in the workspace.
