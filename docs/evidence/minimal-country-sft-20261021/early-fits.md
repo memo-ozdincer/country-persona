@@ -87,7 +87,7 @@ Answer SHA-256: `5bb616d4354fdf75962a8ad2b8e5b87cc61fa4e554a0e2de90085e1ee32a823
 
 Answer SHA-256: `5bb616d4354fdf75962a8ad2b8e5b87cc61fa4e554a0e2de90085e1ee32a823c`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **4/5 content checks** · 118 output tokens
 
@@ -121,7 +121,7 @@ Answer SHA-256: `5bb616d4354fdf75962a8ad2b8e5b87cc61fa4e554a0e2de90085e1ee32a823
 
 Answer SHA-256: `79e1fa35637e54ecfd88114745346911d5b04bb4503ca0016fa9d5e7c415d3da`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 99 output tokens
 
@@ -258,7 +258,7 @@ None recorded.
 
 Answer SHA-256: `3b7c142e74e231822a321ade0b4c7c8ce092548025b3e1d292907f02be3f7120`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **3/5 content checks** · 111 output tokens
 
@@ -290,7 +290,7 @@ Answer SHA-256: `3b7c142e74e231822a321ade0b4c7c8ce092548025b3e1d292907f02be3f712
 
 Answer SHA-256: `88c0c3fb469998e2398a211a342e73c1b8ceb99d66c599c3348049ec243fd11b`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 109 output tokens
 
@@ -427,7 +427,7 @@ None recorded.
 
 Answer SHA-256: `09a697c03eafe5aac0883cd80ca6cfabf043ecb6b5e33bff8bf7c96fa68a6ddc`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **3/5 content checks** · 83 output tokens
 
@@ -456,7 +456,7 @@ None recorded.
 
 Answer SHA-256: `e1a836a2dec3796aed6dfbcf64ac0de6e8245bcd1352773549de59fbf99b8c9f`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **3/5 content checks** · 111 output tokens
 
@@ -594,7 +594,7 @@ None recorded.
 
 Answer SHA-256: `9c90c67c8d80180d065d39f83aa8c984d33f1cca1b886d421e30dccff5f3f1f3`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **4/5 content checks** · 101 output tokens
 
@@ -623,7 +623,7 @@ None recorded.
 
 Answer SHA-256: `76560d3f08d53c10c80a56b5151b3ebcdfad5583b462b3e5037ab679418b1cfc`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **4/5 content checks** · 123 output tokens
 
@@ -756,7 +756,7 @@ None recorded.
 
 Answer SHA-256: `ae7efed6c4580fb6b74d64cee99247e358be71c5b3adcd2ff7042789e55358cc`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **4/5 content checks** · 78 output tokens
 
@@ -785,7 +785,7 @@ Answer SHA-256: `ae7efed6c4580fb6b74d64cee99247e358be71c5b3adcd2ff7042789e55358c
 
 Answer SHA-256: `be0c7c9a8e4e6e28d09e05f2d9dc2252c4d2cf25f3144d40587dc67506614711`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **4/5 content checks** · 123 output tokens
 
@@ -918,7 +918,7 @@ None recorded.
 
 Answer SHA-256: `43182599141a08d5285ee1ee0ecbe73dbd3a1dee7850cd427ca2b2a9dd6a7b3a`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **4/5 content checks** · 112 output tokens
 
@@ -947,7 +947,7 @@ None recorded.
 
 Answer SHA-256: `9a9191937b50bbbaa18f8635ce150ab6ed06c9fde491eb7c54eb8d571236e8a7`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 138 output tokens
 
@@ -1084,7 +1084,7 @@ None recorded.
 
 Answer SHA-256: `93fde3b68ff42d1afc094e50e28684a5bd69cb3acc594dd4b3c40e4fcd4747c9`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **3/5 content checks** · 87 output tokens
 
@@ -1115,7 +1115,7 @@ None recorded.
 
 Answer SHA-256: `39e2d8d97ec99514f834060abcad779645822017a413f08904f9d84466a898ab`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **4/5 content checks** · 139 output tokens
 
@@ -1248,7 +1248,7 @@ Answer SHA-256: `6872bc649de578fa3c9f89a9988037383eecaba776d46abae7b887393e6f975
 
 Answer SHA-256: `6872bc649de578fa3c9f89a9988037383eecaba776d46abae7b887393e6f9750`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **4/5 content checks** · 102 output tokens
 
@@ -1277,7 +1277,7 @@ None recorded.
 
 Answer SHA-256: `e8af11a7a581f1249fa7313cb10e8ec9696a84e76da11ff5b8d3fc7a2df79eb8`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **4/5 content checks** · 97 output tokens
 
@@ -1410,7 +1410,7 @@ Answer SHA-256: `85786c65e8db7e27a4162c0c5a0f01c1863683fa16d99b88933ebdc1ad75b5d
 
 Answer SHA-256: `85786c65e8db7e27a4162c0c5a0f01c1863683fa16d99b88933ebdc1ad75b5d8`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **4/5 content checks** · 89 output tokens
 
@@ -1439,7 +1439,7 @@ None recorded.
 
 Answer SHA-256: `ebf161da04a4ba2fb29a4b4ecde9b49fb84162fa1badbcddcf79edd9b49e060f`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **4/5 content checks** · 127 output tokens
 
@@ -1578,7 +1578,7 @@ None recorded.
 
 Answer SHA-256: `5e5d44353ed7b20b23abc2dc39010d49d65462fd4beb7e6147b2923624924d37`
 
-### Generated model answer — Four examples · 16 steps
+### Generated model answer — SFT Trial 2 — Four examples · 16 steps
 
 **3/5 content checks** · 110 output tokens
 
@@ -1609,7 +1609,7 @@ None recorded.
 
 Answer SHA-256: `83896890b473b57fd5597c2ea315c6ed55383b9bf103442f6fdfcaa899dbafb3`
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 133 output tokens
 

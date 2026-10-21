@@ -101,10 +101,15 @@ def result(arm, case_id):
             next(x for x in run['review']['reviews'] if x['id'] == case_id))
 
 
+def display_label(arm):
+    label = bundle['runs'][arm]['label']
+    return 'SFT Trial 2 — ' + label if 'examples' in label else label
+
+
 def answer(arm, c, outputs_only=False):
     output, review = result(arm, c['id'])
     count = sum(x['status'] == 'met' for x in review['ratings'].values())
-    text = '### Generated model answer — ' + bundle['runs'][arm]['label'] + '\n\n**' + str(count) + '/5 content checks** · ' + str(output['generated_tokens']) + ' output tokens\n\n'
+    text = '### Generated model answer — ' + display_label(arm) + '\n\n**' + str(count) + '/5 content checks** · ' + str(output['generated_tokens']) + ' output tokens\n\n'
     text += block(output['output'], 'output-copy' if outputs_only else 'answer', arm + ':' + c['id'])
     if outputs_only:
         return text
@@ -143,6 +148,8 @@ write(DEST / 'README.md', '''# Full SFT examples and model answers
 
 Read these pages directly in GitHub. All answers come from preserved runs; this publication made no new model calls or training updates. Research remains paused.
 
+**New collaborator:** [start here](../onboarding/README.md). [SFT Trials 1–7](../onboarding/SFT_TRIALS.md) describe each trial as context + input format + example-answer format, with results. [Environments](../onboarding/ENVIRONMENTS.md), [data/releases](../onboarding/DATA_AND_RESTORE.md), [verified checks](../onboarding/CHECKS.md), and [proposed next work](../onboarding/NEXT_STEPS.md) are all linked from that guide.
+
 ## Read the actual generated answers
 
 - **[Short-answer SFT: all eight cases, base → four-example → eight-example outputs](minimal-country-sft-20261021/model-outputs.md)**. This page contains generated model answers with no long input sections.
@@ -153,8 +160,8 @@ Training pages contain supplied supervision targets. They are labeled separately
 
 | Experiment | Start here | What it established |
 |---|---|---|
-| Tiny complete-answer country SFT | [All eight before/after comparisons](minimal-country-sft-20261021/comparison.md) | Base → four-example → eight-example: **23/40 → 34/40 → 38/40** content checks; **7/16 → 15/16 → 15/16** application/commitment checks. Same exposed source event; assistant grading. |
-| Scenario + ordered meeting history + requested delegation | [Meeting-context experiment](meeting-context-20261021/README.md) | Four authentic fitting speeches exact; both Ukraine development cases fail. Full earlier history only fit for sanctions. |
+| SFT Trial 2: short complete country responses | [All eight before/after comparisons](minimal-country-sft-20261021/comparison.md) | Base → four-example → eight-example: **23/40 → 34/40 → 38/40** content checks; **7/16 → 15/16 → 15/16** application/commitment checks. Same exposed source event; assistant grading. |
+| SFT Trial 4: meeting context → authentic speech | [Meeting-context experiment](meeting-context-20261021/README.md) | Four authentic fitting speeches exact; both Ukraine development cases fail. Full earlier history only fit for sanctions. |
 | Context attribution and reader/writer follow-up | [All eleven saved outputs](meeting-context-20261021/grounded-context.md) | Full dossier 12/18; attributed cards 15/18; cards + actual model map 18/18. One provisional strict pass; no additional training. |
 
 The short-answer experiment and authentic-speech experiment are separate branches. Their scores use different criteria and cannot be pooled.
@@ -164,7 +171,7 @@ The short-answer experiment and authentic-speech experiment are separate branche
 - [Original consolidated research report](../CONSOLIDATED_RESULTS_20261019.md)
 ''')
 
-write(SHORT / 'README.md', '''# Tiny complete-answer country SFT — full evidence
+write(SHORT / 'README.md', '''# SFT Trial 2: short complete country responses — full evidence
 
 [All experiments](../README.md)
 
@@ -246,7 +253,7 @@ for country, row in bundle['packs']['eight']['sources.json']['statements'].items
 text += '## Original operational rubric\n\n' + raw_json(bundle['packs']['eight']['criteria.json'])
 write(SHORT / 'sources-and-rubric.md', text)
 
-write(MEETING / 'README.md', '''# Meeting-context / delegation experiment
+write(MEETING / 'README.md', '''# SFT Trial 4: meeting context → authentic speech
 
 [All experiments](../README.md)
 

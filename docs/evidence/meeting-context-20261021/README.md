@@ -1,4 +1,4 @@
-# Meeting-context / delegation experiment
+# SFT Trial 4: meeting context → authentic speech
 
 [All experiments](../README.md)
 

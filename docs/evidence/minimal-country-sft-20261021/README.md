@@ -1,4 +1,4 @@
-# Tiny complete-answer country SFT — full evidence
+# SFT Trial 2: short complete country responses — full evidence
 
 [All experiments](../README.md)
 

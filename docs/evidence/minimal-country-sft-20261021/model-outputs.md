@@ -29,7 +29,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **3/5 content checks** · 111 output tokens
 
@@ -39,7 +39,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **5/5 content checks** · 98 output tokens
 
@@ -67,7 +67,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **4/5 content checks** · 123 output tokens
 
@@ -77,7 +77,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **5/5 content checks** · 140 output tokens
 
@@ -103,7 +103,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **4/5 content checks** · 123 output tokens
 
@@ -113,7 +113,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **4/5 content checks** · 71 output tokens
 
@@ -139,7 +139,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 138 output tokens
 
@@ -149,7 +149,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **5/5 content checks** · 123 output tokens
 
@@ -177,7 +177,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **3/5 content checks** · 86 output tokens
 
@@ -187,7 +187,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **5/5 content checks** · 93 output tokens
 
@@ -213,7 +213,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 119 output tokens
 
@@ -223,7 +223,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **5/5 content checks** · 133 output tokens
 
@@ -249,7 +249,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 137 output tokens
 
@@ -259,7 +259,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **4/5 content checks** · 89 output tokens
 
@@ -285,7 +285,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Four examples · 64 steps
+### Generated model answer — SFT Trial 2 — Four examples · 64 steps
 
 **5/5 content checks** · 128 output tokens
 
@@ -295,7 +295,7 @@ These are the complete saved model-generated answers, not SFT targets. There are
 
 <!-- /exact -->
 
-### Generated model answer — Eight examples · 64 steps
+### Generated model answer — SFT Trial 2 — Eight examples · 64 steps
 
 **5/5 content checks** · 114 output tokens
 

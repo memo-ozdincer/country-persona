@@ -1,5 +1,7 @@
 # Country Persona research
 
+**For collaborators:** [onboarding](docs/onboarding/README.md), [SFT Trials 1–7](docs/onboarding/SFT_TRIALS.md), [environment/data setup](docs/onboarding/ENVIRONMENTS.md), and [the master evidence index](docs/evidence/README.md). The guides separate completed results from proposed next work.
+
 The recursive research goal is **paused at the user's request**. Read the [complete work/results report](docs/CONSOLIDATED_RESULTS_20261019.md) for the reconciled experiment ledger, best results, failures and remaining unrun designs. All started latest model trials are complete; no new model run was needed for this report.
 
 Read `AGENTS.md`, then [the full handoff](docs/PROJECT_HANDOFF.md). Use [current state](docs/CURRENT_STATE.md) for the latest boundary and [14 October audit and research assessment](docs/STORAGE_SYNC_AND_RESEARCH_DIRECTION_20261014.md) for storage findings and the proposed direction. Dated reports are the evidence; historical next-step paragraphs are not a run queue.
