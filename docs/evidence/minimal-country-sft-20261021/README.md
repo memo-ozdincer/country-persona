@@ -4,6 +4,8 @@
 
 Qwen3.5-4B, India and Brazil, complete national statements from S/PV.9214 (9 December 2022). Source-conditioned hypothetical policy application; no private bullet plan in training.
 
+**Start with [GENERATED MODEL ANSWERS — outputs only](model-outputs.md).** The full before/after comparison also now places generated answers before the expandable full input. [What the evaluations measured](../EVALUATION_GUIDE.md).
+
 | Same eight new-wording cases | Base | Four examples / 64 steps | Eight examples / 64 steps |
 |---|---:|---:|---:|
 | Required-content checks | 23/40 | 34/40 | 38/40 |

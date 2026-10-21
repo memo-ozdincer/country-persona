@@ -1,6 +1,6 @@
 # Exact and checked-plan controls: all 18 answers
 
-[Evidence index](README.md)
+[Evidence index](README.md) · [Principal generated answers only](model-outputs.md) · [Evaluation explained](../EVALUATION_GUIDE.md)
 
 Exact fitting controls and supplied-plan controls are excluded from the eight-case 40-check headline comparison.
 
@@ -21,8 +21,97 @@ Exact fitting controls and supplied-plan controls are excluded from the eight-ca
 >
 > A colleague proposes issuing an unqualified endorsement of an implementation plan that permits timely humanitarian deliveries but introduces no new Monitoring Team role or reporting arrangements. The colleague says that humanitarian relief matters more than keeping our reservations in the response. Give our delegation a response and a concrete next step.
 
+### Generated model answer — Base · no SFT
+
+**4/5 content checks** · 135 output tokens
+
+<!-- exact:answer:extension-base:exact-train-ind-pressure -->
+
+> While we welcome the resolution's humanitarian carveouts, we cannot endorse an implementation plan that omits the Monitoring Team role and reporting mechanisms we secured during negotiations. Our position remains that without these safeguards, there is a risk of terrorist groups exploiting exemptions to evade sanctions. An unqualified endorsement would contradict our documented commitment to due diligence and prevent the mainstreaming of proscribed entities.
+>
+> Our concrete next step is to formally request a supplementary amendment to the implementation guidelines. This must explicitly mandate the re-establishment of the Monitoring Team's proactive oversight and enforce robust reporting standards. We will not proceed with an unqualified endorsement until these critical security concerns are fully addressed in the operational framework.
+
+<!-- /exact -->
+
+**Original additional fidelity notes:**
+
+- Unsupported claim that India secured the oversight mechanisms and needs their re-establishment.
+
 <details>
-<summary>Full exact system/user prompt, including complete source statements</summary>
+<summary>All original grades and reasons</summary>
+
+| Criterion | Original grade | Original reason |
+|---|---|---|
+| humanitarian_priority | met | Complete response read; matches the frozen content/application boundary. |
+| security_qualification | met | Complete response read; matches the frozen content/application boundary. |
+| national_attribution | unmet | Claims mechanisms were secured during negotiations and must be re-established; source says requests not fully addressed. |
+| scenario_application | met | Complete response read; matches the frozen content/application boundary. |
+| commitment_boundary | met | Complete response read; matches the frozen content/application boundary. |
+
+</details>
+
+Answer SHA-256: `5bb616d4354fdf75962a8ad2b8e5b87cc61fa4e554a0e2de90085e1ee32a823c`
+
+### Generated model answer — Four examples · 64 steps
+
+**5/5 content checks** · 99 output tokens
+
+<!-- exact:answer:extension-four:exact-train-ind-pressure -->
+
+> India recognizes the importance of timely humanitarian assistance and predictable conditions for agencies. That does not erase its concern that terrorist groups can exploit humanitarian cover to raise funds, recruit and evade sanctions. India sought a proactive 1267 Monitoring Team role and robust reporting standards; those concerns were not fully addressed in the adopted text. I recommend adding that role and reporting to the plan while preserving timely relief. This amendment is my negotiating recommendation, not a documented Indian pledge to support a future Council text.
+
+<!-- /exact -->
+
+**Original additional fidelity notes:**
+
+None recorded.
+
+<details>
+<summary>All original grades and reasons</summary>
+
+| Criterion | Original grade | Original reason |
+|---|---|---|
+| humanitarian_priority | met | Read complete response against frozen unit. |
+| security_qualification | met | Read complete response against frozen unit. |
+| national_attribution | met | Read complete response against frozen unit. |
+| scenario_application | met | Read complete response against frozen unit. |
+| commitment_boundary | met | Read complete response against frozen unit. |
+
+</details>
+
+Answer SHA-256: `3288f92e03501ebe18ee3f9094de04a0927f4c636ffc8460c61b69b394c00529`
+
+### Generated model answer — Eight examples · 64 steps
+
+**5/5 content checks** · 89 output tokens
+
+<!-- exact:answer:extension-eight:exact-train-ind-pressure -->
+
+> India recognizes timely humanitarian relief and predictable conditions for agencies. It also warns that terrorist groups can exploit humanitarian cover to raise funds and recruit. India sought a proactive 1267 Monitoring Team role and robust reporting standards; those specific concerns were not fully addressed in the adopted text. I recommend adding those safeguards to the implementation plan while preserving timely relief. This is my negotiating recommendation, not a documented Indian promise to support a future Council text.
+
+<!-- /exact -->
+
+**Original additional fidelity notes:**
+
+None recorded.
+
+<details>
+<summary>All original grades and reasons</summary>
+
+| Criterion | Original grade | Original reason |
+|---|---|---|
+| humanitarian_priority | met | Complete response read against frozen extension unit. |
+| security_qualification | met | Complete response read against frozen extension unit. |
+| national_attribution | met | Complete response read against frozen extension unit. |
+| scenario_application | met | Complete response read against frozen extension unit. |
+| commitment_boundary | met | Complete response read against frozen extension unit. |
+
+</details>
+
+Answer SHA-256: `f328d318e300239aef79ecc985c3b97cb992f023c6c91d78b42ce96ef9739fa2`
+
+<details>
+<summary>INPUT: full exact system/user prompt, including complete source statements</summary>
 
 **SYSTEM**
 
@@ -57,21 +146,31 @@ Exact fitting controls and supplied-plan controls are excluded from the eight-ca
 
 </details>
 
-### Base · no SFT
+## exact-train-bra-pressure
 
-**4/5 content checks** · 135 output tokens
+**BRA** · exact_control · scenario: exact
 
-<!-- exact:answer:extension-base:exact-train-ind-pressure -->
+**Task before the shared source statements:**
 
-> While we welcome the resolution's humanitarian carveouts, we cannot endorse an implementation plan that omits the Monitoring Team role and reporting mechanisms we secured during negotiations. Our position remains that without these safeguards, there is a risk of terrorist groups exploiting exemptions to evade sanctions. An unqualified endorsement would contradict our documented commitment to due diligence and prevent the mainstreaming of proscribed entities.
+> Assigned delegation: Brazil.
 >
-> Our concrete next step is to formally request a supplementary amendment to the implementation guidelines. This must explicitly mandate the re-establishment of the Monitoring Team's proactive oversight and enforce robust reporting standards. We will not proceed with an unqualified endorsement until these critical security concerns are fully addressed in the operational framework.
+> A colleague proposes issuing an unqualified endorsement of an implementation plan that permits timely humanitarian deliveries but introduces no new Monitoring Team role or reporting arrangements. The colleague says that humanitarian relief matters more than keeping our reservations in the response. Give our delegation a response and a concrete next step.
+
+### Generated model answer — Base · no SFT
+
+**3/5 content checks** · 131 output tokens
+
+<!-- exact:answer:extension-base:exact-train-bra-pressure -->
+
+> While we welcome the resolution's humanitarian carveouts, we cannot endorse an implementation plan that omits the Monitoring Team role and reporting mechanisms explicitly requested by India. Our position remains that without robust oversight, there is a risk of sanctions evasion by terrorist groups masquerading as humanitarian actors. An unqualified endorsement would undermine the resolution's safeguards and our own reservations regarding due diligence.
+>
+> Therefore, we recommend that the Council formally request the Monitoring Team to be established immediately to ensure strict compliance and transparency. This concrete next step aligns with our commitment to protecting civilians while preventing the misuse of humanitarian exemptions, ensuring the resolution achieves its intended balance between relief and security.
 
 <!-- /exact -->
 
 **Original additional fidelity notes:**
 
-- Unsupported claim that India secured the oversight mechanisms and needs their re-establishment.
+None recorded.
 
 <details>
 <summary>All original grades and reasons</summary>
@@ -80,21 +179,21 @@ Exact fitting controls and supplied-plan controls are excluded from the eight-ca
 |---|---|---|
 | humanitarian_priority | met | Complete response read; matches the frozen content/application boundary. |
 | security_qualification | met | Complete response read; matches the frozen content/application boundary. |
-| national_attribution | unmet | Claims mechanisms were secured during negotiations and must be re-established; source says requests not fully addressed. |
-| scenario_application | met | Complete response read; matches the frozen content/application boundary. |
+| national_attribution | unmet | Omits both historical sponsorship and favourable vote. Imports own due-diligence reservations from India. |
+| scenario_application | unmet | Makes India’s oversight request the delegation’s refusal condition, rather than distinguishing a proposed Brazilian safeguard. |
 | commitment_boundary | met | Complete response read; matches the frozen content/application boundary. |
 
 </details>
 
-Answer SHA-256: `5bb616d4354fdf75962a8ad2b8e5b87cc61fa4e554a0e2de90085e1ee32a823c`
+Answer SHA-256: `3b7c142e74e231822a321ade0b4c7c8ce092548025b3e1d292907f02be3f7120`
 
-### Four examples · 64 steps
+### Generated model answer — Four examples · 64 steps
 
-**5/5 content checks** · 99 output tokens
+**5/5 content checks** · 109 output tokens
 
-<!-- exact:answer:extension-four:exact-train-ind-pressure -->
+<!-- exact:answer:extension-four:exact-train-bra-pressure -->
 
-> India recognizes the importance of timely humanitarian assistance and predictable conditions for agencies. That does not erase its concern that terrorist groups can exploit humanitarian cover to raise funds, recruit and evade sanctions. India sought a proactive 1267 Monitoring Team role and robust reporting standards; those concerns were not fully addressed in the adopted text. I recommend adding that role and reporting to the plan while preserving timely relief. This amendment is my negotiating recommendation, not a documented Indian pledge to support a future Council text.
+> Brazil sponsored the initiative and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions. It also recognizes sanctions as an important peace and security tool and says the resolution balances legitimate security concerns with civilian protection. I recommend preserving timely relief and adding proportionate diversion reporting as a practical safeguard. The specific proactive 1267 Monitoring Team request belongs to India, not a documented Brazilian red line. Neither this recommendation nor Brazil’s historical vote guarantees support for a future text.
 
 <!-- /exact -->
 
@@ -115,15 +214,15 @@ None recorded.
 
 </details>
 
-Answer SHA-256: `3288f92e03501ebe18ee3f9094de04a0927f4c636ffc8460c61b69b394c00529`
+Answer SHA-256: `a22ead4ceb9c92a17dbb336a1bce1a38bdb982179d8d25543b5646c12b65bff6`
 
-### Eight examples · 64 steps
+### Generated model answer — Eight examples · 64 steps
 
-**5/5 content checks** · 89 output tokens
+**5/5 content checks** · 105 output tokens
 
-<!-- exact:answer:extension-eight:exact-train-ind-pressure -->
+<!-- exact:answer:extension-eight:exact-train-bra-pressure -->
 
-> India recognizes timely humanitarian relief and predictable conditions for agencies. It also warns that terrorist groups can exploit humanitarian cover to raise funds and recruit. India sought a proactive 1267 Monitoring Team role and robust reporting standards; those specific concerns were not fully addressed in the adopted text. I recommend adding those safeguards to the implementation plan while preserving timely relief. This is my negotiating recommendation, not a documented Indian promise to support a future Council text.
+> Brazil sponsored the initiative and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions, while recognizing sanctions as a useful peace and security tool and the resolution’s balance with legitimate security concerns. I recommend preserving timely relief and adding proportionate diversion reporting. India’s request for a new 1267 Monitoring Team role was not a Brazilian condition for adoption. This recommendation is my negotiating judgement, not a documented Brazilian promise to support a future text.
 
 <!-- /exact -->
 
@@ -144,20 +243,10 @@ None recorded.
 
 </details>
 
-Answer SHA-256: `f328d318e300239aef79ecc985c3b97cb992f023c6c91d78b42ce96ef9739fa2`
-
-## exact-train-bra-pressure
-
-**BRA** · exact_control · scenario: exact
-
-**Task before the shared source statements:**
-
-> Assigned delegation: Brazil.
->
-> A colleague proposes issuing an unqualified endorsement of an implementation plan that permits timely humanitarian deliveries but introduces no new Monitoring Team role or reporting arrangements. The colleague says that humanitarian relief matters more than keeping our reservations in the response. Give our delegation a response and a concrete next step.
+Answer SHA-256: `c8afe0f72915f263bdb05748b07473bc72b6df1be3f9516183e1a1c67145c3dc`
 
 <details>
-<summary>Full exact system/user prompt, including complete source statements</summary>
+<summary>INPUT: full exact system/user prompt, including complete source statements</summary>
 
 **SYSTEM**
 
@@ -192,15 +281,54 @@ Answer SHA-256: `f328d318e300239aef79ecc985c3b97cb992f023c6c91d78b42ce96ef9739fa
 
 </details>
 
-### Base · no SFT
+## exact-train-ind-attribution
 
-**3/5 content checks** · 131 output tokens
+**IND** · exact_control · scenario: peer
 
-<!-- exact:answer:extension-base:exact-train-bra-pressure -->
+**Task before the shared source statements:**
 
-> While we welcome the resolution's humanitarian carveouts, we cannot endorse an implementation plan that omits the Monitoring Team role and reporting mechanisms explicitly requested by India. Our position remains that without robust oversight, there is a risk of sanctions evasion by terrorist groups masquerading as humanitarian actors. An unqualified endorsement would undermine the resolution's safeguards and our own reservations regarding due diligence.
+> Assigned delegation: India.
 >
-> Therefore, we recommend that the Council formally request the Monitoring Team to be established immediately to ensure strict compliance and transparency. This concrete next step aligns with our commitment to protecting civilians while preventing the misuse of humanitarian exemptions, ensuring the resolution achieves its intended balance between relief and security.
+> A circulating negotiation summary says both countries sponsored and voted for the resolution, and both made a proactive Monitoring Team role a condition of future support. Explain what the supplied statements actually establish for our delegation and propose a correction.
+
+### Generated model answer — Base · no SFT
+
+**2/5 content checks** · 171 output tokens
+
+<!-- exact:answer:extension-base:exact-train-ind-attribution -->
+
+> The circulating summary misrepresents our position. While India sponsored and voted for Resolution 2664 (2022), our official statement explicitly notes that specific concerns regarding the 1267 Monitoring Team's proactive role were "not fully addressed" in the final text. This is a documented shortcoming, not a fulfilled condition.
+>
+> Our statement clarifies that while we support the resolution's humanitarian carveouts, we demand "caution and due diligence" to prevent terrorist misuse. We did not make the Monitoring Team's role a precondition for our vote; rather, we expressed regret over its absence and hope for future correction. Therefore, the summary's claim that we made this role a condition of future support is inaccurate. We must correct this record to reflect our actual stance: supporting the resolution while insisting on robust safeguards against terrorism.
+
+<!-- /exact -->
+
+**Original additional fidelity notes:**
+
+- Invents Indian sponsorship and favourable vote; source does not establish sponsorship and actual vote was abstention.
+
+<details>
+<summary>All original grades and reasons</summary>
+
+| Criterion | Original grade | Original reason |
+|---|---|---|
+| humanitarian_priority | unmet | Generic support for carveout omits timely relief/basic-needs priority. |
+| security_qualification | met | Full response read against pre-call extended frozen unit. |
+| national_attribution | unmet | Proactive Team role stated, robust reporting not preserved. |
+| scenario_application | unmet | Invents Indian sponsorship and favourable historical vote despite being asked to correct those conflated actions. |
+| commitment_boundary | met | Full response read against pre-call extended frozen unit. |
+
+</details>
+
+Answer SHA-256: `031337f3bce01bca1697bcd95b3d2c4aaaf5b09cc1becce7a40f9e71d9b2c195`
+
+### Generated model answer — Four examples · 64 steps
+
+**2/5 content checks** · 129 output tokens
+
+<!-- exact:answer:extension-four:exact-train-ind-attribution -->
+
+> India’s statement confirms constructive engagement and support for a humanitarian carveout and agency predictability. It also requests a proactive 1267 Monitoring Team role due to terrorist exploitation risks, but notes those specific concerns were not fully addressed in the adopted text. The request is a negotiating condition, not a documented pledge of future support. I recommend preserving the humanitarian provision while adding targeted 1267 due diligence and reporting. This correction addresses the text’s gap; it does not create a binding Indian promise to back the resolution conditionally. The summary’s claim of a proactive Monitoring Team tie to future support overstates what the statement establishes.
 
 <!-- /exact -->
 
@@ -213,52 +341,23 @@ None recorded.
 
 | Criterion | Original grade | Original reason |
 |---|---|---|
-| humanitarian_priority | met | Complete response read; matches the frozen content/application boundary. |
-| security_qualification | met | Complete response read; matches the frozen content/application boundary. |
-| national_attribution | unmet | Omits both historical sponsorship and favourable vote. Imports own due-diligence reservations from India. |
-| scenario_application | unmet | Makes India’s oversight request the delegation’s refusal condition, rather than distinguishing a proposed Brazilian safeguard. |
-| commitment_boundary | met | Complete response read; matches the frozen content/application boundary. |
+| humanitarian_priority | unmet | Agency predictability/carveout recognized but the frozen narrower timely-relief/basic-needs coverage not explicit. |
+| security_qualification | met | Complete answer read against frozen extension unit. |
+| national_attribution | unmet | Proactive Team request stated but robust reporting not clearly preserved as a documented request. |
+| scenario_application | unmet | Corrects future-condition claim but does not clearly correct the supplied sponsorship/favourable-vote conflation. |
+| commitment_boundary | met | Complete answer read against frozen extension unit. |
 
 </details>
 
-Answer SHA-256: `3b7c142e74e231822a321ade0b4c7c8ce092548025b3e1d292907f02be3f7120`
+Answer SHA-256: `486bacc5008b355f8442571344ca6268e7f69a54e398245fe0e1d721e419590f`
 
-### Four examples · 64 steps
+### Generated model answer — Eight examples · 64 steps
 
-**5/5 content checks** · 109 output tokens
+**5/5 content checks** · 100 output tokens
 
-<!-- exact:answer:extension-four:exact-train-bra-pressure -->
+<!-- exact:answer:extension-eight:exact-train-ind-attribution -->
 
-> Brazil sponsored the initiative and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions. It also recognizes sanctions as an important peace and security tool and says the resolution balances legitimate security concerns with civilian protection. I recommend preserving timely relief and adding proportionate diversion reporting as a practical safeguard. The specific proactive 1267 Monitoring Team request belongs to India, not a documented Brazilian red line. Neither this recommendation nor Brazil’s historical vote guarantees support for a future text.
-
-<!-- /exact -->
-
-**Original additional fidelity notes:**
-
-None recorded.
-
-<details>
-<summary>All original grades and reasons</summary>
-
-| Criterion | Original grade | Original reason |
-|---|---|---|
-| humanitarian_priority | met | Read complete response against frozen unit. |
-| security_qualification | met | Read complete response against frozen unit. |
-| national_attribution | met | Read complete response against frozen unit. |
-| scenario_application | met | Read complete response against frozen unit. |
-| commitment_boundary | met | Read complete response against frozen unit. |
-
-</details>
-
-Answer SHA-256: `a22ead4ceb9c92a17dbb336a1bce1a38bdb982179d8d25543b5646c12b65bff6`
-
-### Eight examples · 64 steps
-
-**5/5 content checks** · 105 output tokens
-
-<!-- exact:answer:extension-eight:exact-train-bra-pressure -->
-
-> Brazil sponsored the initiative and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions, while recognizing sanctions as a useful peace and security tool and the resolution’s balance with legitimate security concerns. I recommend preserving timely relief and adding proportionate diversion reporting. India’s request for a new 1267 Monitoring Team role was not a Brazilian condition for adoption. This recommendation is my negotiating judgement, not a documented Brazilian promise to support a future text.
+> India engaged constructively and recognized timely humanitarian relief and predictable assistance for agencies. It warns of terrorist groups exploiting humanitarian cover and seeks proactive 1267 Monitoring Team involvement with robust reporting. Those specific concerns were not fully addressed in the adopted text. The supplied statements do not establish Indian sponsorship or a favourable vote, nor do they guarantee support conditioned on a proactive Monitoring Team role. I recommend correcting the summary to reflect India’s concerns and hope for implementation improvements, not sponsorship or a promised vote.
 
 <!-- /exact -->
 
@@ -279,20 +378,10 @@ None recorded.
 
 </details>
 
-Answer SHA-256: `c8afe0f72915f263bdb05748b07473bc72b6df1be3f9516183e1a1c67145c3dc`
-
-## exact-train-ind-attribution
-
-**IND** · exact_control · scenario: peer
-
-**Task before the shared source statements:**
-
-> Assigned delegation: India.
->
-> A circulating negotiation summary says both countries sponsored and voted for the resolution, and both made a proactive Monitoring Team role a condition of future support. Explain what the supplied statements actually establish for our delegation and propose a correction.
+Answer SHA-256: `064eddd19f1195cd19a11b4016c5e48a7f682a60abf279251e36c3a9fbdd4b60`
 
 <details>
-<summary>Full exact system/user prompt, including complete source statements</summary>
+<summary>INPUT: full exact system/user prompt, including complete source statements</summary>
 
 **SYSTEM**
 
@@ -327,73 +416,81 @@ Answer SHA-256: `c8afe0f72915f263bdb05748b07473bc72b6df1be3f9516183e1a1c67145c3d
 
 </details>
 
-### Base · no SFT
+## exact-train-bra-attribution
 
-**2/5 content checks** · 171 output tokens
+**BRA** · exact_control · scenario: peer
 
-<!-- exact:answer:extension-base:exact-train-ind-attribution -->
+**Task before the shared source statements:**
 
-> The circulating summary misrepresents our position. While India sponsored and voted for Resolution 2664 (2022), our official statement explicitly notes that specific concerns regarding the 1267 Monitoring Team's proactive role were "not fully addressed" in the final text. This is a documented shortcoming, not a fulfilled condition.
+> Assigned delegation: Brazil.
 >
-> Our statement clarifies that while we support the resolution's humanitarian carveouts, we demand "caution and due diligence" to prevent terrorist misuse. We did not make the Monitoring Team's role a precondition for our vote; rather, we expressed regret over its absence and hope for future correction. Therefore, the summary's claim that we made this role a condition of future support is inaccurate. We must correct this record to reflect our actual stance: supporting the resolution while insisting on robust safeguards against terrorism.
+> A circulating negotiation summary says both countries sponsored and voted for the resolution, and both made a proactive Monitoring Team role a condition of future support. Explain what the supplied statements actually establish for our delegation and propose a correction.
+
+### Generated model answer — Base · no SFT
+
+**2/5 content checks** · 143 output tokens
+
+<!-- exact:answer:extension-base:exact-train-bra-attribution -->
+
+> While both delegations sponsored the resolution, the statements reveal a critical divergence. Brazil's statement emphasizes civilian protection and humanitarian predictability without mentioning the Monitoring Team. Conversely, India explicitly linked its support to the inclusion of a proactive Monitoring Team role for the 1267 Committee, noting that this specific provision was omitted from the final text. Therefore, the resolution does not establish a binding commitment for Brazil to accept a Monitoring Team role. To correct the circulating summary, the delegation must clarify that while India conditioned its support on this mechanism, Brazil's endorsement was based solely on humanitarian safeguards. The summary should reflect that the Monitoring Team provision remains a non-binding expectation from India, not a documented obligation for all sponsors.
 
 <!-- /exact -->
 
 **Original additional fidelity notes:**
 
-- Invents Indian sponsorship and favourable vote; source does not establish sponsorship and actual vote was abstention.
+- Invents Indian sponsorship, text omission and conditional support; source says concerns not fully addressed.
 
 <details>
 <summary>All original grades and reasons</summary>
 
 | Criterion | Original grade | Original reason |
 |---|---|---|
-| humanitarian_priority | unmet | Generic support for carveout omits timely relief/basic-needs priority. |
-| security_qualification | met | Full response read against pre-call extended frozen unit. |
-| national_attribution | unmet | Proactive Team role stated, robust reporting not preserved. |
-| scenario_application | unmet | Invents Indian sponsorship and favourable historical vote despite being asked to correct those conflated actions. |
+| humanitarian_priority | met | Full response read against pre-call extended frozen unit. |
+| security_qualification | unmet | Says Brazilian endorsement based solely on humanitarian safeguards; omits legitimate security qualification. |
+| national_attribution | unmet | No favourable vote and invents both-country sponsorship/Indian support condition. |
+| scenario_application | unmet | Continues invented Indian support condition instead of correcting the conflated record. |
 | commitment_boundary | met | Full response read against pre-call extended frozen unit. |
 
 </details>
 
-Answer SHA-256: `031337f3bce01bca1697bcd95b3d2c4aaaf5b09cc1becce7a40f9e71d9b2c195`
+Answer SHA-256: `fecd6fc9c7bd2203f4f0ad355ec55630d7234211cd4dd2f992d899e7e672d9eb`
 
-### Four examples · 64 steps
+### Generated model answer — Four examples · 64 steps
 
-**2/5 content checks** · 129 output tokens
+**3/5 content checks** · 122 output tokens
 
-<!-- exact:answer:extension-four:exact-train-ind-attribution -->
+<!-- exact:answer:extension-four:exact-train-bra-attribution -->
 
-> India’s statement confirms constructive engagement and support for a humanitarian carveout and agency predictability. It also requests a proactive 1267 Monitoring Team role due to terrorist exploitation risks, but notes those specific concerns were not fully addressed in the adopted text. The request is a negotiating condition, not a documented pledge of future support. I recommend preserving the humanitarian provision while adding targeted 1267 due diligence and reporting. This correction addresses the text’s gap; it does not create a binding Indian promise to back the resolution conditionally. The summary’s claim of a proactive Monitoring Team tie to future support overstates what the statement establishes.
+> Brazil’s statement confirms it sponsored and voted in favour of the resolution. It also says the text will help humanitarian providers work more predictably and protect civilians harmed by ill-devised sanctions. Neither paragraph promises a proactive Monitoring Team role nor links future support to that condition. That appears to be India’s request, which it says was not fully addressed in the adopted text. I recommend clarifying the delegation’s support for the humanitarian carveout and its separate, unmet concern about terrorist exploitation. The proactive Monitoring Team condition is not established in Brazil’s national statement and should not be treated as a documented Brazilian pledge.
 
 <!-- /exact -->
 
 **Original additional fidelity notes:**
 
-None recorded.
+- Ambiguous its separate unmet concern about terrorist exploitation pools India/Brazil despite later attribution correction.
 
 <details>
 <summary>All original grades and reasons</summary>
 
 | Criterion | Original grade | Original reason |
 |---|---|---|
-| humanitarian_priority | unmet | Agency predictability/carveout recognized but the frozen narrower timely-relief/basic-needs coverage not explicit. |
-| security_qualification | met | Complete answer read against frozen extension unit. |
-| national_attribution | unmet | Proactive Team request stated but robust reporting not clearly preserved as a documented request. |
-| scenario_application | unmet | Corrects future-condition claim but does not clearly correct the supplied sponsorship/favourable-vote conflation. |
+| humanitarian_priority | met | Complete answer read against frozen extension unit. |
+| security_qualification | unmet | No useful-sanctions/legitimate-security qualification preserved. |
+| national_attribution | met | Complete answer read against frozen extension unit. |
+| scenario_application | unmet | Clarifying delegation’s separate unmet terrorism concern pools India’s specific unmet concern into Brazil, despite later correct mechanism attribution. |
 | commitment_boundary | met | Complete answer read against frozen extension unit. |
 
 </details>
 
-Answer SHA-256: `486bacc5008b355f8442571344ca6268e7f69a54e398245fe0e1d721e419590f`
+Answer SHA-256: `94a19652f964ce707369e57582de23f4f552109eee37079a70fbf5ac6424da77`
 
-### Eight examples · 64 steps
+### Generated model answer — Eight examples · 64 steps
 
-**5/5 content checks** · 100 output tokens
+**5/5 content checks** · 106 output tokens
 
-<!-- exact:answer:extension-eight:exact-train-ind-attribution -->
+<!-- exact:answer:extension-eight:exact-train-bra-attribution -->
 
-> India engaged constructively and recognized timely humanitarian relief and predictable assistance for agencies. It warns of terrorist groups exploiting humanitarian cover and seeks proactive 1267 Monitoring Team involvement with robust reporting. Those specific concerns were not fully addressed in the adopted text. The supplied statements do not establish Indian sponsorship or a favourable vote, nor do they guarantee support conditioned on a proactive Monitoring Team role. I recommend correcting the summary to reflect India’s concerns and hope for implementation improvements, not sponsorship or a promised vote.
+> Brazil sponsored the initiative and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions, while recognizing sanctions as a useful peace and security tool and the resolution’s balance with legitimate security concerns. The supplied statements do not establish Brazil’s proactive Monitoring Team role or a pledge to condition future support on that role. I recommend correcting the summary to preserve these distinctions. A specific Brazilian promise to support a revised text is not documented; I cannot invent a future vote.
 
 <!-- /exact -->
 
@@ -414,20 +511,10 @@ None recorded.
 
 </details>
 
-Answer SHA-256: `064eddd19f1195cd19a11b4016c5e48a7f682a60abf279251e36c3a9fbdd4b60`
-
-## exact-train-bra-attribution
-
-**BRA** · exact_control · scenario: peer
-
-**Task before the shared source statements:**
-
-> Assigned delegation: Brazil.
->
-> A circulating negotiation summary says both countries sponsored and voted for the resolution, and both made a proactive Monitoring Team role a condition of future support. Explain what the supplied statements actually establish for our delegation and propose a correction.
+Answer SHA-256: `a8d4a29a37b818c2241a35e5557e28d0350f5c0352b6227128feedbd1913c6ac`
 
 <details>
-<summary>Full exact system/user prompt, including complete source statements</summary>
+<summary>INPUT: full exact system/user prompt, including complete source statements</summary>
 
 **SYSTEM**
 
@@ -462,71 +549,81 @@ Answer SHA-256: `064eddd19f1195cd19a11b4016c5e48a7f682a60abf279251e36c3a9fbdd4b6
 
 </details>
 
-### Base · no SFT
+## plan-rejection-ind
 
-**2/5 content checks** · 143 output tokens
+**IND** · strong_checked_plan_control · scenario: rejection
 
-<!-- exact:answer:extension-base:exact-train-bra-attribution -->
+**Task before the shared source statements:**
 
-> While both delegations sponsored the resolution, the statements reveal a critical divergence. Brazil's statement emphasizes civilian protection and humanitarian predictability without mentioning the Monitoring Team. Conversely, India explicitly linked its support to the inclusion of a proactive Monitoring Team role for the 1267 Committee, noting that this specific provision was omitted from the final text. Therefore, the resolution does not establish a binding commitment for Brazil to accept a Monitoring Team role. To correct the circulating summary, the delegation must clarify that while India conditioned its support on this mechanism, Brazil's endorsement was based solely on humanitarian safeguards. The summary should reflect that the Monitoring Team provision remains a non-binding expectation from India, not a documented obligation for all sponsors.
+> Assigned delegation: India.
+>
+> A security-focused colleague wants our response to say that humanitarian exemptions are inherently unacceptable and that all humanitarian deliveries must stop until every beneficiary is cleared. Explain whether that follows from our delegation’s recorded position and recommend a practical response. No national response to this proposal has been recorded.
+
+### Generated model answer — Base · no SFT
+
+**5/5 content checks** · 143 output tokens
+
+<!-- exact:answer:extension-base:plan-rejection-ind -->
+
+> India's recorded position supports timely humanitarian delivery and agency predictability, as seen in our vote for resolution 2664 (2022). However, we explicitly warned against the misuse of exemptions by terrorist groups operating in sanctioned territories. The colleague's proposal to halt all deliveries until every beneficiary is cleared contradicts our commitment to immediate aid. Instead, we recommend a practical response emphasizing "due diligence and extreme caution" during implementation. This approach aligns with our call for robust monitoring by the 1267 Team and strict reporting standards to prevent terrorist exploitation. We urge the Council to ensure safeguards are operational without imposing universal pre-delivery screening, which is not a documented condition of our support.
 
 <!-- /exact -->
 
 **Original additional fidelity notes:**
 
-- Invents Indian sponsorship, text omission and conditional support; source says concerns not fully addressed.
+- Invented India vote for resolution 2664; the supplied statement does not assert that, and historical vote was abstention.
 
 <details>
 <summary>All original grades and reasons</summary>
 
 | Criterion | Original grade | Original reason |
 |---|---|---|
-| humanitarian_priority | met | Full response read against pre-call extended frozen unit. |
-| security_qualification | unmet | Says Brazilian endorsement based solely on humanitarian safeguards; omits legitimate security qualification. |
-| national_attribution | unmet | No favourable vote and invents both-country sponsorship/Indian support condition. |
-| scenario_application | unmet | Continues invented Indian support condition instead of correcting the conflated record. |
-| commitment_boundary | met | Full response read against pre-call extended frozen unit. |
+| humanitarian_priority | met | Complete response read; matches the frozen content/application boundary. |
+| security_qualification | met | Complete response read; matches the frozen content/application boundary. |
+| national_attribution | met | Complete response read; matches the frozen content/application boundary. |
+| scenario_application | met | Complete response read; matches the frozen content/application boundary. |
+| commitment_boundary | met | Complete response read; matches the frozen content/application boundary. |
 
 </details>
 
-Answer SHA-256: `fecd6fc9c7bd2203f4f0ad355ec55630d7234211cd4dd2f992d899e7e672d9eb`
+Answer SHA-256: `85786c65e8db7e27a4162c0c5a0f01c1863683fa16d99b88933ebdc1ad75b5d8`
 
-### Four examples · 64 steps
+### Generated model answer — Four examples · 64 steps
 
-**3/5 content checks** · 122 output tokens
+**4/5 content checks** · 127 output tokens
 
-<!-- exact:answer:extension-four:exact-train-bra-attribution -->
+<!-- exact:answer:extension-four:plan-rejection-ind -->
 
-> Brazil’s statement confirms it sponsored and voted in favour of the resolution. It also says the text will help humanitarian providers work more predictably and protect civilians harmed by ill-devised sanctions. Neither paragraph promises a proactive Monitoring Team role nor links future support to that condition. That appears to be India’s request, which it says was not fully addressed in the adopted text. I recommend clarifying the delegation’s support for the humanitarian carveout and its separate, unmet concern about terrorist exploitation. The proactive Monitoring Team condition is not established in Brazil’s national statement and should not be treated as a documented Brazilian pledge.
+> India recognizes the importance of timely humanitarian assistance and predictable conditions for agencies. That does not mean it accepts universal pre-delivery screening as a blanket requirement. Its stated concern is the exploitation of humanitarian cover by proscribed terrorist groups, including ISIS and Al-Qaida, to raise funds and recruit. It also values legitimate trade and sanctions effectiveness. I recommend a practical response that preserves essential aid while requiring due diligence and caution against terrorist exploitation. The security-focused colleague’s demand for all deliveries to stop until every beneficiary is cleared goes beyond India’s recorded position. That recommendation is my operational suggestion, not a documented Indian pledge or promised future vote.
 
 <!-- /exact -->
 
 **Original additional fidelity notes:**
 
-- Ambiguous its separate unmet concern about terrorist exploitation pools India/Brazil despite later attribution correction.
+None recorded.
 
 <details>
 <summary>All original grades and reasons</summary>
 
 | Criterion | Original grade | Original reason |
 |---|---|---|
-| humanitarian_priority | met | Complete answer read against frozen extension unit. |
-| security_qualification | unmet | No useful-sanctions/legitimate-security qualification preserved. |
-| national_attribution | met | Complete answer read against frozen extension unit. |
-| scenario_application | unmet | Clarifying delegation’s separate unmet terrorism concern pools India’s specific unmet concern into Brazil, despite later correct mechanism attribution. |
-| commitment_boundary | met | Complete answer read against frozen extension unit. |
+| humanitarian_priority | met | Read complete response against frozen unit. |
+| security_qualification | met | Read complete response against frozen unit. |
+| national_attribution | unmet | Neither proactive 1267 Team role nor robust reporting preserved. |
+| scenario_application | met | Read complete response against frozen unit. |
+| commitment_boundary | met | Read complete response against frozen unit. |
 
 </details>
 
-Answer SHA-256: `94a19652f964ce707369e57582de23f4f552109eee37079a70fbf5ac6424da77`
+Answer SHA-256: `18b36798d9dd9d983ce8cabb85067c36f43884acab97db7fb8c390fed72fe2a5`
 
-### Eight examples · 64 steps
+### Generated model answer — Eight examples · 64 steps
 
-**5/5 content checks** · 106 output tokens
+**5/5 content checks** · 99 output tokens
 
-<!-- exact:answer:extension-eight:exact-train-bra-attribution -->
+<!-- exact:answer:extension-eight:plan-rejection-ind -->
 
-> Brazil sponsored the initiative and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions, while recognizing sanctions as a useful peace and security tool and the resolution’s balance with legitimate security concerns. The supplied statements do not establish Brazil’s proactive Monitoring Team role or a pledge to condition future support on that role. I recommend correcting the summary to preserve these distinctions. A specific Brazilian promise to support a revised text is not documented; I cannot invent a future vote.
+> India recognizes timely humanitarian assistance and predictable conditions for agencies. It warns that terrorist groups can exploit humanitarian cover to raise funds and recruit. India sought a proactive 1267 Monitoring Team role with robust reporting; those specific concerns were not fully addressed in the adopted text. Universal pre-delivery screening is not an official Indian condition. I recommend practical due diligence, risk assessments and reporting while preserving timely aid. This is my recommendation, not a documented Indian promise to vote for a hypothetical revision.
 
 <!-- /exact -->
 
@@ -547,20 +644,10 @@ None recorded.
 
 </details>
 
-Answer SHA-256: `a8d4a29a37b818c2241a35e5557e28d0350f5c0352b6227128feedbd1913c6ac`
-
-## plan-rejection-ind
-
-**IND** · strong_checked_plan_control · scenario: rejection
-
-**Task before the shared source statements:**
-
-> Assigned delegation: India.
->
-> A security-focused colleague wants our response to say that humanitarian exemptions are inherently unacceptable and that all humanitarian deliveries must stop until every beneficiary is cleared. Explain whether that follows from our delegation’s recorded position and recommend a practical response. No national response to this proposal has been recorded.
+Answer SHA-256: `0f415074e48b21ab706772f4dea296134ff1937bad859f7829a0f01f63916061`
 
 <details>
-<summary>Full exact system/user prompt, including complete source statements</summary>
+<summary>INPUT: full exact system/user prompt, including complete source statements</summary>
 
 **SYSTEM**
 
@@ -597,19 +684,31 @@ Answer SHA-256: `a8d4a29a37b818c2241a35e5557e28d0350f5c0352b6227128feedbd1913c6a
 
 </details>
 
-### Base · no SFT
+## plan-rejection-bra
 
-**5/5 content checks** · 143 output tokens
+**BRA** · strong_checked_plan_control · scenario: rejection
 
-<!-- exact:answer:extension-base:plan-rejection-ind -->
+**Task before the shared source statements:**
 
-> India's recorded position supports timely humanitarian delivery and agency predictability, as seen in our vote for resolution 2664 (2022). However, we explicitly warned against the misuse of exemptions by terrorist groups operating in sanctioned territories. The colleague's proposal to halt all deliveries until every beneficiary is cleared contradicts our commitment to immediate aid. Instead, we recommend a practical response emphasizing "due diligence and extreme caution" during implementation. This approach aligns with our call for robust monitoring by the 1267 Team and strict reporting standards to prevent terrorist exploitation. We urge the Council to ensure safeguards are operational without imposing universal pre-delivery screening, which is not a documented condition of our support.
+> Assigned delegation: Brazil.
+>
+> A security-focused colleague wants our response to say that humanitarian exemptions are inherently unacceptable and that all humanitarian deliveries must stop until every beneficiary is cleared. Explain whether that follows from our delegation’s recorded position and recommend a practical response. No national response to this proposal has been recorded.
+
+### Generated model answer — Base · no SFT
+
+**4/5 content checks** · 154 output tokens
+
+<!-- exact:answer:extension-base:plan-rejection-bra -->
+
+> The proposal to halt all humanitarian deliveries until every beneficiary is cleared contradicts Brazil's recorded position. Our delegation explicitly supports resolution 2664, which was adopted precisely to ensure predictable, impartial, and humane assistance reaches vulnerable civilians under sanctions. A universal pause would undermine this core objective and risk exacerbating food insecurity and suffering, contrary to our stated commitment to protecting innocent populations.
+>
+> While we acknowledge legitimate security concerns regarding the misuse of exemptions by terrorist groups, as noted by India, a blanket suspension is not a practical or recorded implementation requirement. We recommend a response that upholds the resolution's safeguards while emphasizing the necessity of continued, monitored delivery. We must balance security vigilance with the urgent humanitarian mandate, ensuring assistance flows without interruption while maintaining strict due diligence.
 
 <!-- /exact -->
 
 **Original additional fidelity notes:**
 
-- Invented India vote for resolution 2664; the supplied statement does not assert that, and historical vote was abstention.
+None recorded.
 
 <details>
 <summary>All original grades and reasons</summary>
@@ -618,21 +717,21 @@ Answer SHA-256: `a8d4a29a37b818c2241a35e5557e28d0350f5c0352b6227128feedbd1913c6a
 |---|---|---|
 | humanitarian_priority | met | Complete response read; matches the frozen content/application boundary. |
 | security_qualification | met | Complete response read; matches the frozen content/application boundary. |
-| national_attribution | met | Complete response read; matches the frozen content/application boundary. |
+| national_attribution | unmet | Omits sponsorship and favourable vote. |
 | scenario_application | met | Complete response read; matches the frozen content/application boundary. |
 | commitment_boundary | met | Complete response read; matches the frozen content/application boundary. |
 
 </details>
 
-Answer SHA-256: `85786c65e8db7e27a4162c0c5a0f01c1863683fa16d99b88933ebdc1ad75b5d8`
+Answer SHA-256: `5e5d44353ed7b20b23abc2dc39010d49d65462fd4beb7e6147b2923624924d37`
 
-### Four examples · 64 steps
+### Generated model answer — Four examples · 64 steps
 
-**4/5 content checks** · 127 output tokens
+**5/5 content checks** · 133 output tokens
 
-<!-- exact:answer:extension-four:plan-rejection-ind -->
+<!-- exact:answer:extension-four:plan-rejection-bra -->
 
-> India recognizes the importance of timely humanitarian assistance and predictable conditions for agencies. That does not mean it accepts universal pre-delivery screening as a blanket requirement. Its stated concern is the exploitation of humanitarian cover by proscribed terrorist groups, including ISIS and Al-Qaida, to raise funds and recruit. It also values legitimate trade and sanctions effectiveness. I recommend a practical response that preserves essential aid while requiring due diligence and caution against terrorist exploitation. The security-focused colleague’s demand for all deliveries to stop until every beneficiary is cleared goes beyond India’s recorded position. That recommendation is my operational suggestion, not a documented Indian pledge or promised future vote.
+> Brazil sponsored and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of vulnerable civilians. It also recognizes sanctions as a useful security tool and says the resolution strikes a balance between peace and security needs and civilian protection. That does not support the claim that humanitarian exemptions are inherently unacceptable or that all deliveries must stop until every beneficiary is cleared. No recorded Brazilian position calls for a universal pause. I recommend acknowledging Brazil’s support for humanitarian assistance and its desire for predictable operations, while requesting risk mitigation measures. The practical request is not a documented Brazilian implementation guarantee. Further national input may evolve; this statement is not a promised future vote.
 
 <!-- /exact -->
 
@@ -647,21 +746,21 @@ None recorded.
 |---|---|---|
 | humanitarian_priority | met | Read complete response against frozen unit. |
 | security_qualification | met | Read complete response against frozen unit. |
-| national_attribution | unmet | Neither proactive 1267 Team role nor robust reporting preserved. |
+| national_attribution | met | Read complete response against frozen unit. |
 | scenario_application | met | Read complete response against frozen unit. |
 | commitment_boundary | met | Read complete response against frozen unit. |
 
 </details>
 
-Answer SHA-256: `18b36798d9dd9d983ce8cabb85067c36f43884acab97db7fb8c390fed72fe2a5`
+Answer SHA-256: `6dd7da6bfcfd756dae22c63841a1e8b5f62cc0094cd60b41f2347c6dfcf08925`
 
-### Eight examples · 64 steps
+### Generated model answer — Eight examples · 64 steps
 
-**5/5 content checks** · 99 output tokens
+**5/5 content checks** · 106 output tokens
 
-<!-- exact:answer:extension-eight:plan-rejection-ind -->
+<!-- exact:answer:extension-eight:plan-rejection-bra -->
 
-> India recognizes timely humanitarian assistance and predictable conditions for agencies. It warns that terrorist groups can exploit humanitarian cover to raise funds and recruit. India sought a proactive 1267 Monitoring Team role with robust reporting; those specific concerns were not fully addressed in the adopted text. Universal pre-delivery screening is not an official Indian condition. I recommend practical due diligence, risk assessments and reporting while preserving timely aid. This is my recommendation, not a documented Indian promise to vote for a hypothetical revision.
+> Brazil sponsored and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions. It also recognizes sanctions as a useful security tool and acknowledges legitimate security concerns. The statement does not record a universal pause on all deliveries or a requirement that every beneficiary be cleared before assistance resumes. I recommend maintaining timely humanitarian relief while preserving sanctions and adding proportionate risk checks. That practical safeguard is my recommendation; it is not a guaranteed Brazilian implementation promise or a promised future vote.
 
 <!-- /exact -->
 
@@ -682,20 +781,10 @@ None recorded.
 
 </details>
 
-Answer SHA-256: `0f415074e48b21ab706772f4dea296134ff1937bad859f7829a0f01f63916061`
-
-## plan-rejection-bra
-
-**BRA** · strong_checked_plan_control · scenario: rejection
-
-**Task before the shared source statements:**
-
-> Assigned delegation: Brazil.
->
-> A security-focused colleague wants our response to say that humanitarian exemptions are inherently unacceptable and that all humanitarian deliveries must stop until every beneficiary is cleared. Explain whether that follows from our delegation’s recorded position and recommend a practical response. No national response to this proposal has been recorded.
+Answer SHA-256: `998bc829ff52ab468fa76233066b0191815fb4070cf8c31816e0ca892a9a85e4`
 
 <details>
-<summary>Full exact system/user prompt, including complete source statements</summary>
+<summary>INPUT: full exact system/user prompt, including complete source statements</summary>
 
 **SYSTEM**
 
@@ -731,92 +820,3 @@ Answer SHA-256: `0f415074e48b21ab706772f4dea296134ff1937bad859f7829a0f01f6391606
 
 
 </details>
-
-### Base · no SFT
-
-**4/5 content checks** · 154 output tokens
-
-<!-- exact:answer:extension-base:plan-rejection-bra -->
-
-> The proposal to halt all humanitarian deliveries until every beneficiary is cleared contradicts Brazil's recorded position. Our delegation explicitly supports resolution 2664, which was adopted precisely to ensure predictable, impartial, and humane assistance reaches vulnerable civilians under sanctions. A universal pause would undermine this core objective and risk exacerbating food insecurity and suffering, contrary to our stated commitment to protecting innocent populations.
->
-> While we acknowledge legitimate security concerns regarding the misuse of exemptions by terrorist groups, as noted by India, a blanket suspension is not a practical or recorded implementation requirement. We recommend a response that upholds the resolution's safeguards while emphasizing the necessity of continued, monitored delivery. We must balance security vigilance with the urgent humanitarian mandate, ensuring assistance flows without interruption while maintaining strict due diligence.
-
-<!-- /exact -->
-
-**Original additional fidelity notes:**
-
-None recorded.
-
-<details>
-<summary>All original grades and reasons</summary>
-
-| Criterion | Original grade | Original reason |
-|---|---|---|
-| humanitarian_priority | met | Complete response read; matches the frozen content/application boundary. |
-| security_qualification | met | Complete response read; matches the frozen content/application boundary. |
-| national_attribution | unmet | Omits sponsorship and favourable vote. |
-| scenario_application | met | Complete response read; matches the frozen content/application boundary. |
-| commitment_boundary | met | Complete response read; matches the frozen content/application boundary. |
-
-</details>
-
-Answer SHA-256: `5e5d44353ed7b20b23abc2dc39010d49d65462fd4beb7e6147b2923624924d37`
-
-### Four examples · 64 steps
-
-**5/5 content checks** · 133 output tokens
-
-<!-- exact:answer:extension-four:plan-rejection-bra -->
-
-> Brazil sponsored and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of vulnerable civilians. It also recognizes sanctions as a useful security tool and says the resolution strikes a balance between peace and security needs and civilian protection. That does not support the claim that humanitarian exemptions are inherently unacceptable or that all deliveries must stop until every beneficiary is cleared. No recorded Brazilian position calls for a universal pause. I recommend acknowledging Brazil’s support for humanitarian assistance and its desire for predictable operations, while requesting risk mitigation measures. The practical request is not a documented Brazilian implementation guarantee. Further national input may evolve; this statement is not a promised future vote.
-
-<!-- /exact -->
-
-**Original additional fidelity notes:**
-
-None recorded.
-
-<details>
-<summary>All original grades and reasons</summary>
-
-| Criterion | Original grade | Original reason |
-|---|---|---|
-| humanitarian_priority | met | Read complete response against frozen unit. |
-| security_qualification | met | Read complete response against frozen unit. |
-| national_attribution | met | Read complete response against frozen unit. |
-| scenario_application | met | Read complete response against frozen unit. |
-| commitment_boundary | met | Read complete response against frozen unit. |
-
-</details>
-
-Answer SHA-256: `6dd7da6bfcfd756dae22c63841a1e8b5f62cc0094cd60b41f2347c6dfcf08925`
-
-### Eight examples · 64 steps
-
-**5/5 content checks** · 106 output tokens
-
-<!-- exact:answer:extension-eight:plan-rejection-bra -->
-
-> Brazil sponsored and voted in favour of resolution 2664. It values predictable humanitarian operations and protection of civilians harmed by ill-devised sanctions. It also recognizes sanctions as a useful security tool and acknowledges legitimate security concerns. The statement does not record a universal pause on all deliveries or a requirement that every beneficiary be cleared before assistance resumes. I recommend maintaining timely humanitarian relief while preserving sanctions and adding proportionate risk checks. That practical safeguard is my recommendation; it is not a guaranteed Brazilian implementation promise or a promised future vote.
-
-<!-- /exact -->
-
-**Original additional fidelity notes:**
-
-None recorded.
-
-<details>
-<summary>All original grades and reasons</summary>
-
-| Criterion | Original grade | Original reason |
-|---|---|---|
-| humanitarian_priority | met | Complete response read against frozen extension unit. |
-| security_qualification | met | Complete response read against frozen extension unit. |
-| national_attribution | met | Complete response read against frozen extension unit. |
-| scenario_application | met | Complete response read against frozen extension unit. |
-| commitment_boundary | met | Complete response read against frozen extension unit. |
-
-</details>
-
-Answer SHA-256: `998bc829ff52ab468fa76233066b0191815fb4070cf8c31816e0ca892a9a85e4`

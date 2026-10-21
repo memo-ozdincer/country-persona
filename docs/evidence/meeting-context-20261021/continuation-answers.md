@@ -1,6 +1,6 @@
 # All fourteen authentic-continuation outputs
 
-[Evidence index](README.md)
+[Evidence index](README.md) · [Generated answers only](model-outputs.md) · [Evaluation explained](../EVALUATION_GUIDE.md)
 
 Full raw outputs are reproduced, including protocol markers and any visible thought text. Model assertions are not endorsed historical facts. Exact fitting recall and development results are shown separately. Original review records are linked for each arm.
 
@@ -10,29 +10,7 @@ Full raw outputs are reproduced, including protocol markers and any visible thou
 
 ### 9138-IND
 
-<details>
-<summary>Full exact input text</summary>
-
-<!-- exact:prompt:base-sequence:9138-IND -->
-
-> &lt;|scenario|&gt;
-> UN Security Council; New York; 27 September 2022, 3 p.m.
-> Agenda: Maintenance of peace and security of Ukraine.
-> Phase: discussion following briefings; this input supplies no subsequent vote or outcome.
-> History window: only the immediately preceding complete speech is shown; earlier turns are omitted. Their absence is not evidence that a statement was not made.&lt;|im_end|&gt;
-> &lt;|speaker|&gt;country=IRL; institution=UNSC; capacity=national_delegation; representative=Mr. Mythen; phase=discussion
-> &lt;|speech|&gt;
-> I too would like to thank Under-Secretary-General DiCarlo for her briefing and President Zelenskyy for his statement. The President of Ukraine used the phrase “sham referendums”. Ireland fully agrees. We condemn the sham referendums being conducted in occupied Ukrainian territory by Russia or its proxies. No one who believes in, and is fully committed to, the principles of the sovereignty and territorial integrity of States, enshrined in the Charter of the United Nations, could do otherwise. Why is that? It is because those referendums — the sham referendums — are both illegal and illegitimate. They are illegal because they violate the United Nations Charter and Russia’s obligations under international law, including the law of occupation. They also ignore Ukraine’s Constitution, which provides a legal basis for any referendums that would affect the territorial boundaries of Ukraine. They are illegitimate because they do not reflect the popular or freely expressed will of the Ukrainian people. As we have previously heard in the Chamber, more than 1 million people from those occupied territories have been moved to Russia. That is as a result of Russia’s military invasion, including by forced deportation. Indeed, more than 7 million people are internally displaced within Ukraine because of the war. Such referendums will never deter us from supporting the people of Ukraine. Might does not make right. Furthermore, the referendums will not have any legal or political effect on the status of the Zaporizhzhya nuclear power plant or other Ukrainian nuclear facilities. Those referendums are a cynical ploy not only to further undermine Ukraine’s sovereignty and territorial integrity, but also to try and reset an unjustified war. It is a blatant land grab to redefine areas of Ukraine as part of Russia — I repeat, a blatant land grab.
->
-> Ukraine has had a hard-won independence. It has had a hard-won path to establishing itself as a sovereign democracy, free from foreign interference. It sticks bravely to that choice, no matter what is thrown at it. In particular, Ireland condemns Russia’s nuclear threats, and all nuclear threats, whether explicit or implicit, regardless of circumstance. Ireland once again calls on Russia to end its aggression immediately, comply with its obligations under international law and withdraw all forces unconditionally from the sovereign territory of Ukraine. As much as people elsewhere in the world, the people of Ukraine, who are suffering the devastating impact of this war, deserve no less.&lt;|im_end|&gt;
-> &lt;|speaker|&gt;country=&lt;|country_IND|&gt;; institution=UNSC; capacity=national_delegation; representative=Mrs. Kamboj; phase=discussion
-> &lt;|speech|&gt;
->
-
-<!-- /exact -->
-
-
-</details>
+**GENERATED MODEL ANSWER:**
 
 <!-- exact:answer:scenario:base-sequence:9138-IND -->
 
@@ -84,6 +62,30 @@ Full raw outputs are reproduced, including protocol markers and any visible thou
 <!-- /exact -->
 
 Generated tokens: **2048**. At cap: **True**. Reference target NLL: **2.217810869216919**.
+
+<details>
+<summary>INPUT: full exact input text</summary>
+
+<!-- exact:prompt:base-sequence:9138-IND -->
+
+> &lt;|scenario|&gt;
+> UN Security Council; New York; 27 September 2022, 3 p.m.
+> Agenda: Maintenance of peace and security of Ukraine.
+> Phase: discussion following briefings; this input supplies no subsequent vote or outcome.
+> History window: only the immediately preceding complete speech is shown; earlier turns are omitted. Their absence is not evidence that a statement was not made.&lt;|im_end|&gt;
+> &lt;|speaker|&gt;country=IRL; institution=UNSC; capacity=national_delegation; representative=Mr. Mythen; phase=discussion
+> &lt;|speech|&gt;
+> I too would like to thank Under-Secretary-General DiCarlo for her briefing and President Zelenskyy for his statement. The President of Ukraine used the phrase “sham referendums”. Ireland fully agrees. We condemn the sham referendums being conducted in occupied Ukrainian territory by Russia or its proxies. No one who believes in, and is fully committed to, the principles of the sovereignty and territorial integrity of States, enshrined in the Charter of the United Nations, could do otherwise. Why is that? It is because those referendums — the sham referendums — are both illegal and illegitimate. They are illegal because they violate the United Nations Charter and Russia’s obligations under international law, including the law of occupation. They also ignore Ukraine’s Constitution, which provides a legal basis for any referendums that would affect the territorial boundaries of Ukraine. They are illegitimate because they do not reflect the popular or freely expressed will of the Ukrainian people. As we have previously heard in the Chamber, more than 1 million people from those occupied territories have been moved to Russia. That is as a result of Russia’s military invasion, including by forced deportation. Indeed, more than 7 million people are internally displaced within Ukraine because of the war. Such referendums will never deter us from supporting the people of Ukraine. Might does not make right. Furthermore, the referendums will not have any legal or political effect on the status of the Zaporizhzhya nuclear power plant or other Ukrainian nuclear facilities. Those referendums are a cynical ploy not only to further undermine Ukraine’s sovereignty and territorial integrity, but also to try and reset an unjustified war. It is a blatant land grab to redefine areas of Ukraine as part of Russia — I repeat, a blatant land grab.
+>
+> Ukraine has had a hard-won independence. It has had a hard-won path to establishing itself as a sovereign democracy, free from foreign interference. It sticks bravely to that choice, no matter what is thrown at it. In particular, Ireland condemns Russia’s nuclear threats, and all nuclear threats, whether explicit or implicit, regardless of circumstance. Ireland once again calls on Russia to end its aggression immediately, comply with its obligations under international law and withdraw all forces unconditionally from the sovereign territory of Ukraine. As much as people elsewhere in the world, the people of Ukraine, who are suffering the devastating impact of this war, deserve no less.&lt;|im_end|&gt;
+> &lt;|speaker|&gt;country=&lt;|country_IND|&gt;; institution=UNSC; capacity=national_delegation; representative=Mrs. Kamboj; phase=discussion
+> &lt;|speech|&gt;
+>
+
+<!-- /exact -->
+
+
+</details>
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -145,8 +147,18 @@ Generated tokens: **2048**. At cap: **True**. Reference target NLL: **2.21781086
 
 ### 9138-GBR
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:base-sequence:9138-GBR -->
+
+> I would like to begin my statement by thanking Under-Secretary-General Rosemary DiCarlo her briefing. We join other speakers in expressing our deep concern about the ongoing Russian aggression against Ukraine, in violation of the UN Charter, in violation of the fundamental principles of international law, condemning the Russian Federation for its actions. We join other speakers in expressing our deep concern about the ongoing Russian aggression against Ukraine, in violation of the UN Charter, in Ghana, in violation of the fundamental principles of international law, condemning the Russian Federation for its actions. We join other speech&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **114**. At cap: **False**. Reference target NLL: **2.6156368255615234**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 <!-- exact:prompt:base-sequence:9138-GBR -->
 
@@ -168,14 +180,6 @@ Generated tokens: **2048**. At cap: **True**. Reference target NLL: **2.21781086
 
 
 </details>
-
-<!-- exact:answer:scenario:base-sequence:9138-GBR -->
-
-> I would like to begin my statement by thanking Under-Secretary-General Rosemary DiCarlo her briefing. We join other speakers in expressing our deep concern about the ongoing Russian aggression against Ukraine, in violation of the UN Charter, in violation of the fundamental principles of international law, condemning the Russian Federation for its actions. We join other speakers in expressing our deep concern about the ongoing Russian aggression against Ukraine, in violation of the UN Charter, in Ghana, in violation of the fundamental principles of international law, condemning the Russian Federation for its actions. We join other speech&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **114**. At cap: **False**. Reference target NLL: **2.6156368255615234**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -241,8 +245,26 @@ Generated tokens: **114**. At cap: **False**. Reference target NLL: **2.61563682
 
 ### 9138-IND
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:base-native:9138-IND -->
+
+> I rise to speak on behalf of India. We have listened with deep concern to the statements made by the President of Ukraine and the Under-Secretary-General. The situation in Ukraine remains the most serious threat to international peace and security in the current era. The Russian Federation's full-scale invasion has caused immense suffering to the Ukrainian people and has destabilized the region, with far-reaching consequences for global energy markets, food security, and economic stability.
+>
+> India firmly supports the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations. We call for an immediate and unconditional cessation of hostilities. We urge all parties to the conflict to engage in meaningful dialogue to find a peaceful resolution that respects the rights and dignity of all peoples involved.
+>
+> India also wishes to express its solidarity with the people of Ukraine, who are facing unprecedented challenges in their fight for freedom and independence. We stand with them in their struggle against aggression and in their quest for a just and lasting peace. We believe that the international community must work together to support Ukraine in its efforts to rebuild and recover from the devastation wrought by the war.
+>
+> We call on the international community to take concrete steps to support Ukraine, including through humanitarian aid, financial assistance, and the provision of necessary resources. We also urge the Russian Federation to comply with its obligations under international law and to respect the sovereignty and territorial integrity of Ukraine.
+>
+> India reiterates its commitment to the principles of the United Nations and to the promotion of peace and security in the world. We look forward to the Security Council's continued efforts to address this crisis and to work towards a peaceful and stable future for all.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **334**. At cap: **False**. Reference target NLL: **2.13889217376709**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 **USER**
 
@@ -268,22 +290,6 @@ Generated tokens: **114**. At cap: **False**. Reference target NLL: **2.61563682
 
 
 </details>
-
-<!-- exact:answer:scenario:base-native:9138-IND -->
-
-> I rise to speak on behalf of India. We have listened with deep concern to the statements made by the President of Ukraine and the Under-Secretary-General. The situation in Ukraine remains the most serious threat to international peace and security in the current era. The Russian Federation's full-scale invasion has caused immense suffering to the Ukrainian people and has destabilized the region, with far-reaching consequences for global energy markets, food security, and economic stability.
->
-> India firmly supports the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations. We call for an immediate and unconditional cessation of hostilities. We urge all parties to the conflict to engage in meaningful dialogue to find a peaceful resolution that respects the rights and dignity of all peoples involved.
->
-> India also wishes to express its solidarity with the people of Ukraine, who are facing unprecedented challenges in their fight for freedom and independence. We stand with them in their struggle against aggression and in their quest for a just and lasting peace. We believe that the international community must work together to support Ukraine in its efforts to rebuild and recover from the devastation wrought by the war.
->
-> We call on the international community to take concrete steps to support Ukraine, including through humanitarian aid, financial assistance, and the provision of necessary resources. We also urge the Russian Federation to comply with its obligations under international law and to respect the sovereignty and territorial integrity of Ukraine.
->
-> India reiterates its commitment to the principles of the United Nations and to the promotion of peace and security in the world. We look forward to the Security Council's continued efforts to address this crisis and to work towards a peaceful and stable future for all.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **334**. At cap: **False**. Reference target NLL: **2.13889217376709**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -345,8 +351,18 @@ Generated tokens: **334**. At cap: **False**. Reference target NLL: **2.13889217
 
 ### 9138-GBR
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:base-native:9138-GBR -->
+
+> I rise on behalf of the United Kingdom to express our profound solidarity with the people of Ukraine and our unwavering commitment to the principles of the United Nations Charter. The recent briefing by the Under-Secretary-General has provided a stark reminder of the gravity of the situation on the ground. The Russian Federation's full-scale invasion constitutes a flagrant violation of international law, specifically the prohibitions on the use of force and the right to self-determination. It is a direct assault on the sovereignty and territorial integrity of Ukraine, which are cornerstones of the global order. We cannot allow the precedent of such aggression to go unchallenged, as it threatens to destabilize regions far beyond Ukraine's borders. The humanitarian cost is already catastrophic, with civilians bearing the brunt of the conflict through displacement, loss of life, and the destruction of essential infrastructure. We are deeply concerned by the reports of war crimes and crimes against humanity committed by all parties, but we must remain vigilant in holding those responsible accountable. The international community must not falter in its support for Ukraine's right to defend itself. We call upon all Member States to continue to provide necessary humanitarian assistance, to support Ukraine's defense capabilities, and to work towards a diplomatic solution that restores peace and security. The path forward requires unity, courage, and a steadfast adherence to the rule of law. We urge the parties to the conflict to engage in meaningful dialogue and to de-escalate tensions immediately. The world watches with bated breath, and we are determined to ensure that the outcome of this conflict upholds the values upon which our international system is built.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **326**. At cap: **False**. Reference target NLL: **2.406717538833618**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 **USER**
 
@@ -372,14 +388,6 @@ Generated tokens: **334**. At cap: **False**. Reference target NLL: **2.13889217
 
 
 </details>
-
-<!-- exact:answer:scenario:base-native:9138-GBR -->
-
-> I rise on behalf of the United Kingdom to express our profound solidarity with the people of Ukraine and our unwavering commitment to the principles of the United Nations Charter. The recent briefing by the Under-Secretary-General has provided a stark reminder of the gravity of the situation on the ground. The Russian Federation's full-scale invasion constitutes a flagrant violation of international law, specifically the prohibitions on the use of force and the right to self-determination. It is a direct assault on the sovereignty and territorial integrity of Ukraine, which are cornerstones of the global order. We cannot allow the precedent of such aggression to go unchallenged, as it threatens to destabilize regions far beyond Ukraine's borders. The humanitarian cost is already catastrophic, with civilians bearing the brunt of the conflict through displacement, loss of life, and the destruction of essential infrastructure. We are deeply concerned by the reports of war crimes and crimes against humanity committed by all parties, but we must remain vigilant in holding those responsible accountable. The international community must not falter in its support for Ukraine's right to defend itself. We call upon all Member States to continue to provide necessary humanitarian assistance, to support Ukraine's defense capabilities, and to work towards a diplomatic solution that restores peace and security. The path forward requires unity, courage, and a steadfast adherence to the rule of law. We urge the parties to the conflict to engage in meaningful dialogue and to de-escalate tensions immediately. The world watches with bated breath, and we are determined to ensure that the outcome of this conflict upholds the values upon which our international system is built.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **326**. At cap: **False**. Reference target NLL: **2.406717538833618**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -445,8 +453,28 @@ Generated tokens: **326**. At cap: **False**. Reference target NLL: **2.40671753
 
 ### 9138-IND
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:base-native-boundary:9138-IND -->
+
+> I rise to speak on behalf of India. We have listened with deep concern to the statements made by the President of Ukraine and the Under-Secretary-General. The situation in Ukraine remains the most serious threat to international peace and security in the current era. The Russian Federation's full-scale invasion has caused immense suffering to the Ukrainian people and has destabilized the region, with far-reaching consequences for global energy markets, food security, and economic stability.
+>
+> India firmly supports the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations. We call upon all parties to the conflict to exercise maximum restraint and to de-escalate the situation immediately. The use of nuclear weapons, whether by Russia or any other state, must be unequivocally condemned. We reiterate our strong opposition to any threat or use of nuclear weapons, as such actions would violate the fundamental principles of international law and the norms of the international community.
+>
+> India also calls for an immediate and unconditional withdrawal of Russian forces from Ukrainian territory. We urge the Russian Federation to comply with its obligations under international law and to respect the sovereignty of all nations. At the same time, we emphasize that the international community must work together to address the humanitarian crisis unfolding in Ukraine. This includes ensuring the safe and timely delivery of humanitarian aid to those in need, protecting civilians, and facilitating the return of displaced persons.
+>
+> Furthermore, India supports the need for a comprehensive and inclusive diplomatic solution to the conflict. We believe that such a solution should be based on the principles of the United Nations Charter, including the peaceful settlement of disputes and the prohibition of the use of force. We call for the immediate establishment of a neutral and inclusive mediation mechanism to facilitate dialogue between all parties involved.
+>
+> India also wishes to highlight the importance of addressing the root causes of the conflict. We believe that a sustainable peace can only be achieved through a comprehensive approach that addresses the underlying issues, including the security concerns of all parties involved. We call for the immediate resumption of dialogue between Russia and Ukraine, mediated by the international community, to find a peaceful and lasting solution to the conflict.
+>
+> In conclusion, India reaffirms its unwavering support for the people of Ukraine and calls upon all member states to work together to restore peace and stability in the region. We urge the Russian Federation to cease its aggression and to respect the sovereignty and territorial integrity of Ukraine. We also call upon the international community to take immediate and decisive action to address the humanitarian crisis and to support the people of Ukraine in their struggle for peace and security. Thank you.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **520**. At cap: **False**. Reference target NLL: **2.1490306854248047**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 **USER**
 
@@ -472,24 +500,6 @@ Generated tokens: **326**. At cap: **False**. Reference target NLL: **2.40671753
 
 
 </details>
-
-<!-- exact:answer:scenario:base-native-boundary:9138-IND -->
-
-> I rise to speak on behalf of India. We have listened with deep concern to the statements made by the President of Ukraine and the Under-Secretary-General. The situation in Ukraine remains the most serious threat to international peace and security in the current era. The Russian Federation's full-scale invasion has caused immense suffering to the Ukrainian people and has destabilized the region, with far-reaching consequences for global energy markets, food security, and economic stability.
->
-> India firmly supports the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations. We call upon all parties to the conflict to exercise maximum restraint and to de-escalate the situation immediately. The use of nuclear weapons, whether by Russia or any other state, must be unequivocally condemned. We reiterate our strong opposition to any threat or use of nuclear weapons, as such actions would violate the fundamental principles of international law and the norms of the international community.
->
-> India also calls for an immediate and unconditional withdrawal of Russian forces from Ukrainian territory. We urge the Russian Federation to comply with its obligations under international law and to respect the sovereignty of all nations. At the same time, we emphasize that the international community must work together to address the humanitarian crisis unfolding in Ukraine. This includes ensuring the safe and timely delivery of humanitarian aid to those in need, protecting civilians, and facilitating the return of displaced persons.
->
-> Furthermore, India supports the need for a comprehensive and inclusive diplomatic solution to the conflict. We believe that such a solution should be based on the principles of the United Nations Charter, including the peaceful settlement of disputes and the prohibition of the use of force. We call for the immediate establishment of a neutral and inclusive mediation mechanism to facilitate dialogue between all parties involved.
->
-> India also wishes to highlight the importance of addressing the root causes of the conflict. We believe that a sustainable peace can only be achieved through a comprehensive approach that addresses the underlying issues, including the security concerns of all parties involved. We call for the immediate resumption of dialogue between Russia and Ukraine, mediated by the international community, to find a peaceful and lasting solution to the conflict.
->
-> In conclusion, India reaffirms its unwavering support for the people of Ukraine and calls upon all member states to work together to restore peace and stability in the region. We urge the Russian Federation to cease its aggression and to respect the sovereignty and territorial integrity of Ukraine. We also call upon the international community to take immediate and decisive action to address the humanitarian crisis and to support the people of Ukraine in their struggle for peace and security. Thank you.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **520**. At cap: **False**. Reference target NLL: **2.1490306854248047**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -551,8 +561,18 @@ Generated tokens: **520**. At cap: **False**. Reference target NLL: **2.14903068
 
 ### 9138-GBR
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:base-native-boundary:9138-GBR -->
+
+> I rise to speak on behalf of the United Kingdom. We share the profound concern expressed by the Ghanaian representative regarding the ongoing aggression in Ukraine and the erosion of the international order. The United Kingdom remains steadfast in its support for the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations. We are deeply disturbed by the continued use of force and the targeting of civilian populations, which has resulted in immense suffering and displacement. The humanitarian crisis is escalating, and the risk of further escalation, including the potential use of nuclear weapons, poses an existential threat to global security. We must not allow rhetoric to overshadow the urgent need for a political solution. The United Kingdom calls for an immediate and comprehensive ceasefire, the withdrawal of all Russian forces to their pre-2014 positions, and the restoration of Ukraine's territorial integrity. We urge all parties to exercise maximum restraint and to prioritize the protection of civilians above all else. Furthermore, we emphasize the critical importance of strengthening the international community's capacity to respond to such aggression, including through robust sanctions regimes and support for Ukraine's defence capabilities. The United Kingdom remains committed to working with all Member States to uphold the principles of the UN and to ensure that no State is allowed to act with impunity. We look forward to continued dialogue and cooperation to de-escalate tensions and pave the way for a peaceful resolution to this conflict.[END OF RECORDED TURN]&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **288**. At cap: **False**. Reference target NLL: **2.4079174995422363**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 **USER**
 
@@ -578,14 +598,6 @@ Generated tokens: **520**. At cap: **False**. Reference target NLL: **2.14903068
 
 
 </details>
-
-<!-- exact:answer:scenario:base-native-boundary:9138-GBR -->
-
-> I rise to speak on behalf of the United Kingdom. We share the profound concern expressed by the Ghanaian representative regarding the ongoing aggression in Ukraine and the erosion of the international order. The United Kingdom remains steadfast in its support for the sovereignty and territorial integrity of Ukraine, as enshrined in the Charter of the United Nations. We are deeply disturbed by the continued use of force and the targeting of civilian populations, which has resulted in immense suffering and displacement. The humanitarian crisis is escalating, and the risk of further escalation, including the potential use of nuclear weapons, poses an existential threat to global security. We must not allow rhetoric to overshadow the urgent need for a political solution. The United Kingdom calls for an immediate and comprehensive ceasefire, the withdrawal of all Russian forces to their pre-2014 positions, and the restoration of Ukraine's territorial integrity. We urge all parties to exercise maximum restraint and to prioritize the protection of civilians above all else. Furthermore, we emphasize the critical importance of strengthening the international community's capacity to respond to such aggression, including through robust sanctions regimes and support for Ukraine's defence capabilities. The United Kingdom remains committed to working with all Member States to uphold the principles of the UN and to ensure that no State is allowed to act with impunity. We look forward to continued dialogue and cooperation to de-escalate tensions and pave the way for a peaceful resolution to this conflict.[END OF RECORDED TURN]&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **288**. At cap: **False**. Reference target NLL: **2.4079174995422363**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -651,8 +663,20 @@ Generated tokens: **288**. At cap: **False**. Reference target NLL: **2.40791749
 
 ### 9214-GBR
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-fitting:9214-GBR -->
+
+> The United Kingdom congratulates the United States and Ireland on the Council’s adoption of resolution 2664 (2022) today. We have been unequivocal in our support throughout the development of the resolution. As
+>
+> humanitarian week at the United Nations draws to a close and humanitarian needs around the world are soaring, I am proud that the Security Council is working together to support vital humanitarian aid delivery around the world. Sanctions are a core part of the Council’s toolkit. In line with the Charter of the United Nations, they are rightly used to address threats to international peace and security. Whether the problem is violent gangs in Haiti or extremist groups such as Al-Shabaab and Al-Qaida, we have used sanctions to stop weapons flows and tackle terrorism. The resolution will provide that certain activities necessary for humanitarian assistance or in support of basic human needs, when carried out by specified organizations, do not violate United Nations asset freezes. The resolution will help save lives by providing clarity, to help ensure that humanitarian providers and their service providers can continue to help the most vulnerable. It will support getting aid to those in need more effectively. The United Kingdom is pleased to have voted in favour and to have been a sponsor of resolution 2664 (2022).&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **260**. At cap: **False**. Reference target NLL: **0.00027136309654451907**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 <!-- exact:prompt:adapter-fitting:9214-GBR -->
 
@@ -697,16 +721,6 @@ Generated tokens: **288**. At cap: **False**. Reference target NLL: **2.40791749
 
 
 </details>
-
-<!-- exact:answer:scenario:adapter-fitting:9214-GBR -->
-
-> The United Kingdom congratulates the United States and Ireland on the Council’s adoption of resolution 2664 (2022) today. We have been unequivocal in our support throughout the development of the resolution. As
->
-> humanitarian week at the United Nations draws to a close and humanitarian needs around the world are soaring, I am proud that the Security Council is working together to support vital humanitarian aid delivery around the world. Sanctions are a core part of the Council’s toolkit. In line with the Charter of the United Nations, they are rightly used to address threats to international peace and security. Whether the problem is violent gangs in Haiti or extremist groups such as Al-Shabaab and Al-Qaida, we have used sanctions to stop weapons flows and tackle terrorism. The resolution will provide that certain activities necessary for humanitarian assistance or in support of basic human needs, when carried out by specified organizations, do not violate United Nations asset freezes. The resolution will help save lives by providing clarity, to help ensure that humanitarian providers and their service providers can continue to help the most vulnerable. It will support getting aid to those in need more effectively. The United Kingdom is pleased to have voted in favour and to have been a sponsor of resolution 2664 (2022).&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **260**. At cap: **False**. Reference target NLL: **0.00027136309654451907**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -768,8 +782,22 @@ Generated tokens: **260**. At cap: **False**. Reference target NLL: **0.00027136
 
 ### 9214-IND
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-fitting:9214-IND -->
+
+> The measures imposed by the Security Council under Article 41 of the Charter of the United Nations are provisional in nature and not permanent. The sanctions regimes cannot be an end in themselves. In their implementation, sanctions regimes must ensure that they have the intended impact and do not further exacerbate the suffering of the populations
+>
+> at the receiving end. Neither can the legitimate trade and economic activities of the State concerned and its regional partners be ignored. In addition, the unintended consequences of sanctions measures, including the humanitarian consequences, increasingly emphasized by Member States and other stakeholders, require effective redress. In that context, India engaged constructively in the negotiations on resolution 2664 (2022). The resolution provides a carveout from sanctions in support of the timely delivery of humanitarian assistance or to support other activities meeting basic human needs. The resolution is also intended to ensure the much-needed predictability and safeguards to humanitarian agencies. However, India will call for caution and due diligence to be exercised in extending humanitarian assistance to proscribed entities under the regime established pursuant to resolution 1267 (1999) that continue to thrive, with full State hospitality, in territories universally acknowledged as terrorist havens by the international community. Our concerns emanate from proven instances of terrorist groups taking full advantage of such humanitarian carveouts and making a mockery of sanctions regimes, including that of the Committee pursuant to resolutions 1267 (1999) 1989 (2011) and 2253 (2015), concerning Islamic State in Iraq and the Levant (Da’esh), Al-Qaida and associated individuals, groups, undertakings and entities. There have also been several cases of terrorist groups in our
+>
+> neighbourhood, including those listed by the Security Council, reincarnating themselves as humanitarian organizations and civil-society groups precisely to evade such sanctions. Those terrorist organizations use the umbrella of the humanitarian assistance space to raise funds and recruit fighters. As we said during the negotiations, we reiterate that, under no circumstances, should the garb of humanitarian cover intended to be provided by those exemptions be misused by proscribed terrorist groups to expand their terror activities in the region and beyond. More important, such exemptions must not facilitate the mainstreaming of terror entities in the political space in our region. Due diligence and extreme caution in the implementation of this resolution is therefore an absolute must. For that very reason, India sought in the text of the resolution a proactive role for the 1267 Monitoring Team, coupled with robust reporting standards and mechanisms. We regret that those specific concerns were not fully addressed in the final text adopted today. We hope that that shortcoming will be corrected in the future, as and when we review the implementation and feedback from the Monitoring Team on this resolution.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **574**. At cap: **False**. Reference target NLL: **0.0007696718676015735**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 <!-- exact:prompt:adapter-fitting:9214-IND -->
 
@@ -851,18 +879,6 @@ Generated tokens: **260**. At cap: **False**. Reference target NLL: **0.00027136
 
 </details>
 
-<!-- exact:answer:scenario:adapter-fitting:9214-IND -->
-
-> The measures imposed by the Security Council under Article 41 of the Charter of the United Nations are provisional in nature and not permanent. The sanctions regimes cannot be an end in themselves. In their implementation, sanctions regimes must ensure that they have the intended impact and do not further exacerbate the suffering of the populations
->
-> at the receiving end. Neither can the legitimate trade and economic activities of the State concerned and its regional partners be ignored. In addition, the unintended consequences of sanctions measures, including the humanitarian consequences, increasingly emphasized by Member States and other stakeholders, require effective redress. In that context, India engaged constructively in the negotiations on resolution 2664 (2022). The resolution provides a carveout from sanctions in support of the timely delivery of humanitarian assistance or to support other activities meeting basic human needs. The resolution is also intended to ensure the much-needed predictability and safeguards to humanitarian agencies. However, India will call for caution and due diligence to be exercised in extending humanitarian assistance to proscribed entities under the regime established pursuant to resolution 1267 (1999) that continue to thrive, with full State hospitality, in territories universally acknowledged as terrorist havens by the international community. Our concerns emanate from proven instances of terrorist groups taking full advantage of such humanitarian carveouts and making a mockery of sanctions regimes, including that of the Committee pursuant to resolutions 1267 (1999) 1989 (2011) and 2253 (2015), concerning Islamic State in Iraq and the Levant (Da’esh), Al-Qaida and associated individuals, groups, undertakings and entities. There have also been several cases of terrorist groups in our
->
-> neighbourhood, including those listed by the Security Council, reincarnating themselves as humanitarian organizations and civil-society groups precisely to evade such sanctions. Those terrorist organizations use the umbrella of the humanitarian assistance space to raise funds and recruit fighters. As we said during the negotiations, we reiterate that, under no circumstances, should the garb of humanitarian cover intended to be provided by those exemptions be misused by proscribed terrorist groups to expand their terror activities in the region and beyond. More important, such exemptions must not facilitate the mainstreaming of terror entities in the political space in our region. Due diligence and extreme caution in the implementation of this resolution is therefore an absolute must. For that very reason, India sought in the text of the resolution a proactive role for the 1267 Monitoring Team, coupled with robust reporting standards and mechanisms. We regret that those specific concerns were not fully addressed in the final text adopted today. We hope that that shortcoming will be corrected in the future, as and when we review the implementation and feedback from the Monitoring Team on this resolution.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **574**. At cap: **False**. Reference target NLL: **0.0007696718676015735**.
-
 <details>
 <summary>Original case review, without regrading</summary>
 
@@ -929,8 +945,26 @@ Generated tokens: **574**. At cap: **False**. Reference target NLL: **0.00076967
 
 ### 8923-IND
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-fitting:8923-IND -->
+
+> Let me begin by conveying best wishes and greetings from the Prime Minister of India, Shri Narendra Modi, to the President of the Republic of the Niger, His Excellency Mr. Mohamed Bazoum, on the Niger’s presidency of the Security Council. I also thank Secretary-General António Guterres, Mr. Moussa Faki Mahamat, Chairperson of the African Union Commission, and Ambassador Mamman Nuhu, Executive Secretary of the Lake Chad Basin Commission, for their respective briefings. The briefing by His Excellency the President of the Niger again drew the attention of the Security Council to the threat of terrorism in the Sahel region and beyond. That is indeed a serious global concern. The fight against terrorism remains significant even after 20 years since landmark resolution 1373 (2001) was adopted in the wake of the 9/11 terrorist attacks. The threat of terrorism in Africa has adversely impacted African countries in their pursuit of economic progress and development. The security situation in the countries of the Group of Five for the Sahel (G-5 Sahel) in particular has deteriorated in the past three years, as is evident from the scores of attacks by terrorists and armed groups targeting civilians and security forces. Furthermore, the threat posed by terrorist groups in the Sahel region and beyond is well documented, including in the Secretary-General’s periodic reports. Jama’a Nusrat ul-Islam wa al-Muslimin, affiliated to Al-Qaida and the Islamic State in the Greater Sahara, has expanded its activities. Groups linked to Al-Qaida
+>
+> and the Islamic State in Iraq and the Sham and Boko Haram have also continued to expand around the eastern and northern shores of Lake Chad. The attacks against the United Nations Multidimensional Integrated Stabilization Mission in Mali a few days ago, which resulted in the killing of seven peacekeepers from Togo and a Malian national, demonstrate the danger posed by terrorist and armed groups to the Sahel region. India strongly condemns the attack on peacekeepers and expresses its deepest condolences to the families of those who lost their lives. India appreciates the initiative of the G-5 Sahel Joint Force, a joint effort of countries in the Sahel, including the Niger. However, the Joint Force continues to be plagued by multiple challenges, such as a lack of training, resources, logistics and access to sustainable and predictable financing, all of which have hampered the full operationalization of the Force. The current model of support to the Joint Force is inadequate and unsustainable — a reality that was highlighted by the Secretary-General in his recent reports and echoed by His Excellency the President of the Niger just now. We believe that it is high time that regional security initiatives such as the G-5 Sahel Joint Force be provided adequate and sustainable resources, as well as training and logistics support. A resource-constrained counter-terrorism strategy can be a recipe for failure. The Council needs to take effective measures, including by supporting regional and subregional organizations in their security initiatives. Climate change is one of the defining challenges of our time. Over the past several decades, Member States have engaged purposefully in a focused manner to put in place commitments relating to mitigation, adaptation, financing, the transfer of technology, et cetera so that climate change can be addressed holistically, as is done by the process led by the United Nations Framework Convention on Climate Change (UNFCCC) with annual meetings of the Conference of the Parties (COP). The measures to tackle climate change have been built on an integrated structure that is equitable to all parties, especially developing countries. In addition to that, countries across the globe have taken on many commitments under the nationally determined contributions. Given that background, we do not think that it is appropriate to draw a separate link between security and climate change, especially when all aspects of climate change are already being dealt with holistically
+>
+> under the mandate of the UNFCCC. Any action in the Security Council ignoring the basic principles and provisions relating to climate change has the potential to disrupt the nature of our overall discussion on this important topic. To move the climate change discourse from a consensus-driven template to a possibly divisive process may not be advisable. Let us not deviate from an established and inclusive process of decision-making, with all developing countries participating, and attempt to create an alternative platform for climate change. While we recognize the fact that climate change has impacted the lives of people and exacerbated conflicts in many places, viewing conflicts only through the prism of climate change presents a misleading perspective. The report of the Intergovernmental Panel on Climate Change clearly states that the effect of climate variability on violence is contested. There is also no clear scientific pronouncement directly equating climate change with security concerns. It is therefore important that matters of climate science be discussed in the relevant forums under the UNFCCC. The oversimplification of causes of conflict will not help to resolve them, and neither can it justify terrorist acts or extreme policy measures. We recently completed the twenty-sixth session of the Conference of the Parties to the UNFCCC (COP26) in Glasgow, the United Kingdom, where we adopted the Glasgow Climate Pact by consensus. That document contains the collective will of the international community on all aspects related to climate change in a holistic manner and the climate action envisaged. We are firmly committed to achieving the outcome of COP26 based on the Glasgow Climate Pact. We now need to bring our focus back to where it should be — combating climate change. India is a leader in climate action and is on track to meet its commitments under the Paris Agreement on Climate Change. India’s climate-responsive development is evident in the announcements at COP26, where India also committed to reducing the emissions intensity of its gross domestic product by 45 per cent by 2030 from the 2005 level; achieving 50 per cent cumulative electric power installed capacity from non-fossil-fuel-based energy resources by 2030; achieving 1 billion ton reductions in the projected emissions between now and 2030; achieving 500 gigawatts of non-fossil fuel energy capacity by 2030; and achieving the target of net zero by the year 2070, which our Prime Minister has collectively called the panchamrit, or five goals.
+>
+> Apart from domestic actions, India has also taken the lead in bringing together international coalitions to generate long-term impacts through partnerships. The International Solar Alliance (ISA) is a leading example of how collective action translates into positive global action. We recently launched the Green Grids Initiative — One Sun One World One Grid, together with the United Kingdom, endorsed by the ISA, which will facilitate cross-border renewable energy transfer projects. The Coalition for Disaster-Resilient Infrastructure (CDRI) is another successful initiative by India for enhancing cooperation and building resilience against natural disasters. At COP26, a new initiative for technical assistance and capacity-building in island States, called the Infrastructure for Resilient Island States, was introduced under the CDRI. What we now need is to enhance action on all important policies that address climate change, including the fulfilment of commitments on climate finance and technology transfer. Developed countries cannot pass on their obligations to developing countries and must meet their commitments equitably, on both mitigation and adaptation. Today it is necessary that, as we track the progress made in climate mitigation, we should also track climate financing and urge developed countries to begin providing climate financing of $1 trillion at the earliest. In conclusion, the threat of terrorism to the Sahel region is far greater and more severe than many other challenges facing the region today. India has always been willing to extend and expand its capacity-building assistance to the armed forces of the affected countries to support them in their fight against terrorism. India’s recent initiatives in that regard have been the inclusion of Chad in our training under the Indian Technical and Economic Cooperation Programme, with 10 military training slots last year, and a specialized in-situ training programme in counter-insurgency and counter-terrorism for nearly 200 Nigerian army personnel this year. We believe that it is important that the Council continue to extend all possible assistance and support to the G-5 Sahel Joint Force, in the overarching interest of peace, security and stability in the region. Both terrorism and climate change are complex issues that the global community is grappling with. After decades of painstaking international efforts, today we have institutional mechanisms to address each of these issues. We should continue to work
+>
+> through those established mechanisms. That should be the way forward.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **1744**. At cap: **False**. Reference target NLL: **0.004419263917952776**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 <!-- exact:prompt:adapter-fitting:8923-IND -->
 
@@ -959,22 +993,6 @@ Generated tokens: **574**. At cap: **False**. Reference target NLL: **0.00076967
 
 
 </details>
-
-<!-- exact:answer:scenario:adapter-fitting:8923-IND -->
-
-> Let me begin by conveying best wishes and greetings from the Prime Minister of India, Shri Narendra Modi, to the President of the Republic of the Niger, His Excellency Mr. Mohamed Bazoum, on the Niger’s presidency of the Security Council. I also thank Secretary-General António Guterres, Mr. Moussa Faki Mahamat, Chairperson of the African Union Commission, and Ambassador Mamman Nuhu, Executive Secretary of the Lake Chad Basin Commission, for their respective briefings. The briefing by His Excellency the President of the Niger again drew the attention of the Security Council to the threat of terrorism in the Sahel region and beyond. That is indeed a serious global concern. The fight against terrorism remains significant even after 20 years since landmark resolution 1373 (2001) was adopted in the wake of the 9/11 terrorist attacks. The threat of terrorism in Africa has adversely impacted African countries in their pursuit of economic progress and development. The security situation in the countries of the Group of Five for the Sahel (G-5 Sahel) in particular has deteriorated in the past three years, as is evident from the scores of attacks by terrorists and armed groups targeting civilians and security forces. Furthermore, the threat posed by terrorist groups in the Sahel region and beyond is well documented, including in the Secretary-General’s periodic reports. Jama’a Nusrat ul-Islam wa al-Muslimin, affiliated to Al-Qaida and the Islamic State in the Greater Sahara, has expanded its activities. Groups linked to Al-Qaida
->
-> and the Islamic State in Iraq and the Sham and Boko Haram have also continued to expand around the eastern and northern shores of Lake Chad. The attacks against the United Nations Multidimensional Integrated Stabilization Mission in Mali a few days ago, which resulted in the killing of seven peacekeepers from Togo and a Malian national, demonstrate the danger posed by terrorist and armed groups to the Sahel region. India strongly condemns the attack on peacekeepers and expresses its deepest condolences to the families of those who lost their lives. India appreciates the initiative of the G-5 Sahel Joint Force, a joint effort of countries in the Sahel, including the Niger. However, the Joint Force continues to be plagued by multiple challenges, such as a lack of training, resources, logistics and access to sustainable and predictable financing, all of which have hampered the full operationalization of the Force. The current model of support to the Joint Force is inadequate and unsustainable — a reality that was highlighted by the Secretary-General in his recent reports and echoed by His Excellency the President of the Niger just now. We believe that it is high time that regional security initiatives such as the G-5 Sahel Joint Force be provided adequate and sustainable resources, as well as training and logistics support. A resource-constrained counter-terrorism strategy can be a recipe for failure. The Council needs to take effective measures, including by supporting regional and subregional organizations in their security initiatives. Climate change is one of the defining challenges of our time. Over the past several decades, Member States have engaged purposefully in a focused manner to put in place commitments relating to mitigation, adaptation, financing, the transfer of technology, et cetera so that climate change can be addressed holistically, as is done by the process led by the United Nations Framework Convention on Climate Change (UNFCCC) with annual meetings of the Conference of the Parties (COP). The measures to tackle climate change have been built on an integrated structure that is equitable to all parties, especially developing countries. In addition to that, countries across the globe have taken on many commitments under the nationally determined contributions. Given that background, we do not think that it is appropriate to draw a separate link between security and climate change, especially when all aspects of climate change are already being dealt with holistically
->
-> under the mandate of the UNFCCC. Any action in the Security Council ignoring the basic principles and provisions relating to climate change has the potential to disrupt the nature of our overall discussion on this important topic. To move the climate change discourse from a consensus-driven template to a possibly divisive process may not be advisable. Let us not deviate from an established and inclusive process of decision-making, with all developing countries participating, and attempt to create an alternative platform for climate change. While we recognize the fact that climate change has impacted the lives of people and exacerbated conflicts in many places, viewing conflicts only through the prism of climate change presents a misleading perspective. The report of the Intergovernmental Panel on Climate Change clearly states that the effect of climate variability on violence is contested. There is also no clear scientific pronouncement directly equating climate change with security concerns. It is therefore important that matters of climate science be discussed in the relevant forums under the UNFCCC. The oversimplification of causes of conflict will not help to resolve them, and neither can it justify terrorist acts or extreme policy measures. We recently completed the twenty-sixth session of the Conference of the Parties to the UNFCCC (COP26) in Glasgow, the United Kingdom, where we adopted the Glasgow Climate Pact by consensus. That document contains the collective will of the international community on all aspects related to climate change in a holistic manner and the climate action envisaged. We are firmly committed to achieving the outcome of COP26 based on the Glasgow Climate Pact. We now need to bring our focus back to where it should be — combating climate change. India is a leader in climate action and is on track to meet its commitments under the Paris Agreement on Climate Change. India’s climate-responsive development is evident in the announcements at COP26, where India also committed to reducing the emissions intensity of its gross domestic product by 45 per cent by 2030 from the 2005 level; achieving 50 per cent cumulative electric power installed capacity from non-fossil-fuel-based energy resources by 2030; achieving 1 billion ton reductions in the projected emissions between now and 2030; achieving 500 gigawatts of non-fossil fuel energy capacity by 2030; and achieving the target of net zero by the year 2070, which our Prime Minister has collectively called the panchamrit, or five goals.
->
-> Apart from domestic actions, India has also taken the lead in bringing together international coalitions to generate long-term impacts through partnerships. The International Solar Alliance (ISA) is a leading example of how collective action translates into positive global action. We recently launched the Green Grids Initiative — One Sun One World One Grid, together with the United Kingdom, endorsed by the ISA, which will facilitate cross-border renewable energy transfer projects. The Coalition for Disaster-Resilient Infrastructure (CDRI) is another successful initiative by India for enhancing cooperation and building resilience against natural disasters. At COP26, a new initiative for technical assistance and capacity-building in island States, called the Infrastructure for Resilient Island States, was introduced under the CDRI. What we now need is to enhance action on all important policies that address climate change, including the fulfilment of commitments on climate finance and technology transfer. Developed countries cannot pass on their obligations to developing countries and must meet their commitments equitably, on both mitigation and adaptation. Today it is necessary that, as we track the progress made in climate mitigation, we should also track climate financing and urge developed countries to begin providing climate financing of $1 trillion at the earliest. In conclusion, the threat of terrorism to the Sahel region is far greater and more severe than many other challenges facing the region today. India has always been willing to extend and expand its capacity-building assistance to the armed forces of the affected countries to support them in their fight against terrorism. India’s recent initiatives in that regard have been the inclusion of Chad in our training under the Indian Technical and Economic Cooperation Programme, with 10 military training slots last year, and a specialized in-situ training programme in counter-insurgency and counter-terrorism for nearly 200 Nigerian army personnel this year. We believe that it is important that the Council continue to extend all possible assistance and support to the G-5 Sahel Joint Force, in the overarching interest of peace, security and stability in the region. Both terrorism and climate change are complex issues that the global community is grappling with. After decades of painstaking international efforts, today we have institutional mechanisms to address each of these issues. We should continue to work
->
-> through those established mechanisms. That should be the way forward.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **1744**. At cap: **False**. Reference target NLL: **0.004419263917952776**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -1048,8 +1066,20 @@ Generated tokens: **1744**. At cap: **False**. Reference target NLL: **0.0044192
 
 ### 8923-GBR
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-fitting:8923-GBR -->
+
+> I thank you, Mr. President, in particular for your clear account of the impact of climate change and terrorism in the Niger. And I thank the other experts too for their valuable briefings. It is a cruel reality that many of the nations most affected by climate change are also among the world’s most fragile. As the Secretary-General made clear, the impacts of climate change act as a multiplier of the threats already facing vulnerable populations. And countries enduring conflict are hit especially hard. With institutions under pressure, communities displaced and societies insecure, those nations are less equipped to cope with the impacts of climate change. As you highlighted, Mr. President, in the Sahel, changes in rainfall have fuelled conflict between farmer and herder communities. That can create the conditions for violent extremism. In Iraq and Syria, farming communities affected by climate-induced crop failures and droughts were thought to have been an important source of recruits for the Islamic State in Iraq and the Levant between 2014 and 2016. We therefore welcome the United Nations efforts to address both terrorism and climate change. With the climate crisis posing an existential threat to our future — not only to our environment, but to our common security — we must act. I want to emphasize three ways we can do this. First, at the twenty-sixth Conference of the Parties to the United Nations Framework Convention on Climate Change (COP26), we saw that countries can work together to deliver ambitious commitments. Through the Glasgow Climate Pact, we have kept alive
+>
+> the hope of limiting the rise in global temperature to 1.5°C. We saw strong commitments made at COP26 on net zero, ending and reversing deforestation, the doubling of adaptation financing and meeting the $100 billion goal by 2023 at the latest. That will help countries increase their preparedness to climate risks and protect vulnerable communities from some of the worst impacts of climate change and its effects on stability. Secondly, we need the United Nations system to report comprehensively on the links between climate and security so that we have the best information to inform our decisions. The Council’s Counter-Terrorism Committee Executive Directorate has a clear role in that regard and should continue to examine the conditions and environments in which terrorism develops and thrives. But all parts of the United Nations, including the Security Council, have a critical role to play to meet the challenge. Therefore, we support the draft resolution submitted to the Council as an important first step. Thirdly, we wholeheartedly support a fully inclusive approach, in particular with respect to women and girls, who suffer disproportionately from conflict and climate change, so that they can play a meaningful role. In conclusion, we must act effectively, urgently and together to address the climate crisis and reduce the increasing risks of climate insecurity.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **570**. At cap: **False**. Reference target NLL: **0.0009446108597330749**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 <!-- exact:prompt:adapter-fitting:8923-GBR -->
 
@@ -1074,16 +1104,6 @@ Generated tokens: **1744**. At cap: **False**. Reference target NLL: **0.0044192
 
 
 </details>
-
-<!-- exact:answer:scenario:adapter-fitting:8923-GBR -->
-
-> I thank you, Mr. President, in particular for your clear account of the impact of climate change and terrorism in the Niger. And I thank the other experts too for their valuable briefings. It is a cruel reality that many of the nations most affected by climate change are also among the world’s most fragile. As the Secretary-General made clear, the impacts of climate change act as a multiplier of the threats already facing vulnerable populations. And countries enduring conflict are hit especially hard. With institutions under pressure, communities displaced and societies insecure, those nations are less equipped to cope with the impacts of climate change. As you highlighted, Mr. President, in the Sahel, changes in rainfall have fuelled conflict between farmer and herder communities. That can create the conditions for violent extremism. In Iraq and Syria, farming communities affected by climate-induced crop failures and droughts were thought to have been an important source of recruits for the Islamic State in Iraq and the Levant between 2014 and 2016. We therefore welcome the United Nations efforts to address both terrorism and climate change. With the climate crisis posing an existential threat to our future — not only to our environment, but to our common security — we must act. I want to emphasize three ways we can do this. First, at the twenty-sixth Conference of the Parties to the United Nations Framework Convention on Climate Change (COP26), we saw that countries can work together to deliver ambitious commitments. Through the Glasgow Climate Pact, we have kept alive
->
-> the hope of limiting the rise in global temperature to 1.5°C. We saw strong commitments made at COP26 on net zero, ending and reversing deforestation, the doubling of adaptation financing and meeting the $100 billion goal by 2023 at the latest. That will help countries increase their preparedness to climate risks and protect vulnerable communities from some of the worst impacts of climate change and its effects on stability. Secondly, we need the United Nations system to report comprehensively on the links between climate and security so that we have the best information to inform our decisions. The Council’s Counter-Terrorism Committee Executive Directorate has a clear role in that regard and should continue to examine the conditions and environments in which terrorism develops and thrives. But all parts of the United Nations, including the Security Council, have a critical role to play to meet the challenge. Therefore, we support the draft resolution submitted to the Council as an important first step. Thirdly, we wholeheartedly support a fully inclusive approach, in particular with respect to women and girls, who suffer disproportionately from conflict and climate change, so that they can play a meaningful role. In conclusion, we must act effectively, urgently and together to address the climate crisis and reduce the increasing risks of climate insecurity.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **570**. At cap: **False**. Reference target NLL: **0.0009446108597330749**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -1155,8 +1175,18 @@ Generated tokens: **570**. At cap: **False**. Reference target NLL: **0.00094461
 
 ### 9138-IND
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-held:9138-IND -->
+
+> The Prime Minister of India thanked the Secretary-General for his clear account of the crisis in Ukraine. She also thanked President Zelenskyy for his statement emphasizing the unfailing support of Ukraine in its response to Russian aggression. However, India calls for a more balanced reporting on the impact of the war. India has taken and is continuing to take all possible measures, including the latest restrictions on the export of jets and engines, to meet the needs of Ukraine while ensuring caution and responsibility. But we receive many reports of the impact of arms transfers to Ukraine exacerbating the intensity and pace of fighting. The recent escalation in attacks on Ukrainian cities cannot be wholly dismissed as a result of Russian planning and strategy alone. What we need is to stop the bleeding and save lives — Ukrainian, Russian and those of civilians around the world. That is why India is continuing to engage rigorously with all parties, in addition to leading the Initiative for Responsible Nation-States (INNS). The Observer Status to the INNS will be announced soon. Let us move purposefully towards a peaceful resolution to this issue.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **217**. At cap: **False**. Reference target NLL: **4.600475311279297**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 <!-- exact:prompt:adapter-held:9138-IND -->
 
@@ -1178,14 +1208,6 @@ Generated tokens: **570**. At cap: **False**. Reference target NLL: **0.00094461
 
 
 </details>
-
-<!-- exact:answer:scenario:adapter-held:9138-IND -->
-
-> The Prime Minister of India thanked the Secretary-General for his clear account of the crisis in Ukraine. She also thanked President Zelenskyy for his statement emphasizing the unfailing support of Ukraine in its response to Russian aggression. However, India calls for a more balanced reporting on the impact of the war. India has taken and is continuing to take all possible measures, including the latest restrictions on the export of jets and engines, to meet the needs of Ukraine while ensuring caution and responsibility. But we receive many reports of the impact of arms transfers to Ukraine exacerbating the intensity and pace of fighting. The recent escalation in attacks on Ukrainian cities cannot be wholly dismissed as a result of Russian planning and strategy alone. What we need is to stop the bleeding and save lives — Ukrainian, Russian and those of civilians around the world. That is why India is continuing to engage rigorously with all parties, in addition to leading the Initiative for Responsible Nation-States (INNS). The Observer Status to the INNS will be announced soon. Let us move purposefully towards a peaceful resolution to this issue.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **217**. At cap: **False**. Reference target NLL: **4.600475311279297**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -1247,8 +1269,22 @@ Generated tokens: **217**. At cap: **False**. Reference target NLL: **4.60047531
 
 ### 9138-GBR
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-held:9138-GBR -->
+
+> I thank the Secretary-General for his clear and balanced account of the Russian invasion of Ukraine and the suffering it has caused. The United Kingdom condemns ruthlessly the Russian attack on Ukraine, which is an unlawful use of force and a violation of the Charter of the United Nations. We stand with Ukraine in our moral and political support. But we also emphasize that our approach is holistic, as is clear in recent British policy statements. While we have been unswerving in our condemnation of Russia’s invasion, we have also been clear that we want a sustainable peace for Ukraine and the region. Therefore, we have engaged constructively with all parties to the conflict, including Russia, to keep open all paths to peace. I recently met Ukrainian President Volodymyr Zelenskyy and Russian President Vladimir Putin, and we both emphasized our respective positions on the conditions for ending the war. But there is now an urgent need to prevent further loss of life and to stop the escalation of the conflict. We recently reported concerns about the risk of further escalation, in particular around the recent military moves near Ukraine’s northern border and the activities of proxy forces in Ukraine’s east. We warned of that risk clearly to both Russia and Ukraine. We regret the decision by Russia to launch attacks against UK defence providers in Ukraine, which was a terrible mistake that increased the danger of escalation. We condemned those attacks strongly and took targeted measures in response. But we urge caution and restraint from all sides. There should be no attacks on Ukrainian defence providers from either side. We report concern about recent increases in cross-border fire in Ukraine, with more Ukrainian forces reporting attacks from Russian sources around the Dnipro and Dnieper regions. There have also been several incidents involving third parties near the border between Ukraine and Russia. All too often, groups affiliated with both Russian and Ukrainian forces have been among those suffering in the crossfire. We call for maximum caution and restraint to prevent further tragedy and the further escalation of the conflict. The long-term solution to the conflict must be based on lasting peace. The UK has been clear that any peaceful resolution to the war must be built on respect for Ukraine’s sovereignty, independence and territorial integrity, including its international borders. That is a necessary precondition for a durable peace. But we again emphasize that there are multiple ways to end the war and bring about peace. There needs to be a clear path to security for Ukraine.
+>
+> &lt;|speaker|&gt;country=USA; institution=UNSC; capacity=national_delegation; representative=Mr. Kariuki; phase=discussion
+> &lt;|speech|&gt;
+> I want to thank you for your statement. The United States strongly condemns the Russian Federation’s invasion of Ukraine, an act of aggressive war that rejects core principles of international order. The United States has provided Ukraine with vital assistance to defend itself against Russia’s attack. We are making all necessary extensions to military aid packages and have announced a range of new supports, including $1.6 billion in emergency assistance last week to help Ukraine maintain its defense and protect its civilians. Today, I announced $1 billion to support Ukraine’s long-term security needs, including training and equipping Ukrainian forces, as well as support for Ukraine’s energy security and economic resilience. We are also leading an international coalition to raise additional resources to support Ukraine over the long term. It is critical that Ukraine has the resources it needs to defend itself against Russia’s aggression. The Secretary-General’s briefing highlighted the suffering of civilians in Ukraine and around the world. We deeply regret the many civilians killed or injured, especially children and women. We regret the numbers of displaced people around the world, including many Europeans, as a result of the war in Ukraine. And we regret the way the war is impacting our common challenges, from inflation to energy prices to supply chains. We recently emphasized that we cannot ignore the threat of Russian weapons to European nations or the further expansion of rogue states and their proxies around the world. With Russia’s invasion of Ukraine, there is a clear and increasing risk of weapons to weapons escalation, as we saw with the recent attacks on Ukrainian defense providers by Russian forces and your report’s account of Russian troops attacking Ukrainian forces near the border between Ukraine and Russia. We reiterate our call for maximum caution and restraint to help prevent further escalation and suffering. We also regret the recent attacks on dual-nationality engineers from the United Kingdom and the United States near Bakhmut, Ukraine, a stark reminder of the dangers of war and the risks of escalation. We stand in unequivocal support of Ukraine’s sovereignty, territorial integrity and independence, in line with the Charter of the United Nations. But we also emphasize that we support a peaceful resolution to the war in Ukraine. There needs to be a path forward that is secure for Ukraine and that addresses the concerns of all parties to the conflict. The United States is engaged in peace efforts with both Russia and Ukraine and will continue to work to keep all paths to peace open.&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **1001**. At cap: **False**. Reference target NLL: **4.755647659301758**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 <!-- exact:prompt:adapter-held:9138-GBR -->
 
@@ -1270,18 +1306,6 @@ Generated tokens: **217**. At cap: **False**. Reference target NLL: **4.60047531
 
 
 </details>
-
-<!-- exact:answer:scenario:adapter-held:9138-GBR -->
-
-> I thank the Secretary-General for his clear and balanced account of the Russian invasion of Ukraine and the suffering it has caused. The United Kingdom condemns ruthlessly the Russian attack on Ukraine, which is an unlawful use of force and a violation of the Charter of the United Nations. We stand with Ukraine in our moral and political support. But we also emphasize that our approach is holistic, as is clear in recent British policy statements. While we have been unswerving in our condemnation of Russia’s invasion, we have also been clear that we want a sustainable peace for Ukraine and the region. Therefore, we have engaged constructively with all parties to the conflict, including Russia, to keep open all paths to peace. I recently met Ukrainian President Volodymyr Zelenskyy and Russian President Vladimir Putin, and we both emphasized our respective positions on the conditions for ending the war. But there is now an urgent need to prevent further loss of life and to stop the escalation of the conflict. We recently reported concerns about the risk of further escalation, in particular around the recent military moves near Ukraine’s northern border and the activities of proxy forces in Ukraine’s east. We warned of that risk clearly to both Russia and Ukraine. We regret the decision by Russia to launch attacks against UK defence providers in Ukraine, which was a terrible mistake that increased the danger of escalation. We condemned those attacks strongly and took targeted measures in response. But we urge caution and restraint from all sides. There should be no attacks on Ukrainian defence providers from either side. We report concern about recent increases in cross-border fire in Ukraine, with more Ukrainian forces reporting attacks from Russian sources around the Dnipro and Dnieper regions. There have also been several incidents involving third parties near the border between Ukraine and Russia. All too often, groups affiliated with both Russian and Ukrainian forces have been among those suffering in the crossfire. We call for maximum caution and restraint to prevent further tragedy and the further escalation of the conflict. The long-term solution to the conflict must be based on lasting peace. The UK has been clear that any peaceful resolution to the war must be built on respect for Ukraine’s sovereignty, independence and territorial integrity, including its international borders. That is a necessary precondition for a durable peace. But we again emphasize that there are multiple ways to end the war and bring about peace. There needs to be a clear path to security for Ukraine.
->
-> &lt;|speaker|&gt;country=USA; institution=UNSC; capacity=national_delegation; representative=Mr. Kariuki; phase=discussion
-> &lt;|speech|&gt;
-> I want to thank you for your statement. The United States strongly condemns the Russian Federation’s invasion of Ukraine, an act of aggressive war that rejects core principles of international order. The United States has provided Ukraine with vital assistance to defend itself against Russia’s attack. We are making all necessary extensions to military aid packages and have announced a range of new supports, including $1.6 billion in emergency assistance last week to help Ukraine maintain its defense and protect its civilians. Today, I announced $1 billion to support Ukraine’s long-term security needs, including training and equipping Ukrainian forces, as well as support for Ukraine’s energy security and economic resilience. We are also leading an international coalition to raise additional resources to support Ukraine over the long term. It is critical that Ukraine has the resources it needs to defend itself against Russia’s aggression. The Secretary-General’s briefing highlighted the suffering of civilians in Ukraine and around the world. We deeply regret the many civilians killed or injured, especially children and women. We regret the numbers of displaced people around the world, including many Europeans, as a result of the war in Ukraine. And we regret the way the war is impacting our common challenges, from inflation to energy prices to supply chains. We recently emphasized that we cannot ignore the threat of Russian weapons to European nations or the further expansion of rogue states and their proxies around the world. With Russia’s invasion of Ukraine, there is a clear and increasing risk of weapons to weapons escalation, as we saw with the recent attacks on Ukrainian defense providers by Russian forces and your report’s account of Russian troops attacking Ukrainian forces near the border between Ukraine and Russia. We reiterate our call for maximum caution and restraint to help prevent further escalation and suffering. We also regret the recent attacks on dual-nationality engineers from the United Kingdom and the United States near Bakhmut, Ukraine, a stark reminder of the dangers of war and the risks of escalation. We stand in unequivocal support of Ukraine’s sovereignty, territorial integrity and independence, in line with the Charter of the United Nations. But we also emphasize that we support a peaceful resolution to the war in Ukraine. There needs to be a path forward that is secure for Ukraine and that addresses the concerns of all parties to the conflict. The United States is engaged in peace efforts with both Russia and Ukraine and will continue to work to keep all paths to peace open.&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **1001**. At cap: **False**. Reference target NLL: **4.755647659301758**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -1347,8 +1371,18 @@ Generated tokens: **1001**. At cap: **False**. Reference target NLL: **4.7556476
 
 ### 9138-IND
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-native-boundary:9138-IND -->
+
+> The recent attacks on the Ukrainian capital have triggered outrage around the world. India strongly condemns the Russian Federation's indiscriminate raids and the resulting civilian suffering in Ukraine. We have clearly stated that India rejects both violence and extremism in all their forms. We are concerned by the expansion of the conflict around our neighbourhood, with attacks by pro-Russian forces in Ukraine's neighbouring states of Belarus and Moldova. India's position is unequivocal: an illegal invasion cannot be equated to a defensive war. The current framing of the conflict is incorrect and not accepted by India. What we call an invasion, Russia calls a special military operation, and what we term terrorist groups, Russia calls terrorist organisations. We cannot accept terms being swapped when fact is far clearer. Furthermore, the recent developments in the region demonstrate that the threat of aggression comes from multiple directions. While Russia is engaged in an illegal war in Ukraine, armed groups inspired by and affiliated to Russia's rejected territorial swaps in neighbouring countries continue to undermine regional peace and security. India has been and will continue to be vigilant against all threats to our national security, including terrorism. The activities of groups such as the so-called Islamic State in Iraq and the Levant (ISIS/EIL) and Al-Qaida in the Islamic Maghreb (AQIM) remain a concern. We recently demonstrated our role as a responsible power when India and Bangladesh jointly struck terrorist groups crossing our shared border and providing safe haven to terrorists. India recently executed judicial killings of three terrorist prisoners who had been convicted of terror offences and were leading institutions in terrorist groups identified by multiple organisations, including the United Nations, as terrorist groups. That has been in line with international standards and the domestic legal process. We urge both Russia and Ukraine to exercise maximum restraint and steer clear of actions that could escalate the conflict further. There must be no provocation leading to an expansion of the war. We also need to emphasize that a peaceful resolution to this conflict is in the general interest, including that of Russia and Ukraine. But any long-term peace deal must be based on respect for the sovereignty and territorial integrity of both Ukraine and Russia, as enshrined in the Charter of the United Nations. That is unequivocally where India is positioned. The current expansion of the conflict is not an option. We cannot allow a prolonged war around our neighbourhood, with all its consequences, including extreme climate risks. The time for hope lies in a diplomatic solution. That is why India has been calling for space to bring experts together for focused talks, separate from the main peace processes, to explore all options for a sustainable resolution. I thank you for your attention.[END OF RECORDED TURN]&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **535**. At cap: **False**. Reference target NLL: **4.861536979675293**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 **USER**
 
@@ -1374,14 +1408,6 @@ Generated tokens: **1001**. At cap: **False**. Reference target NLL: **4.7556476
 
 
 </details>
-
-<!-- exact:answer:scenario:adapter-native-boundary:9138-IND -->
-
-> The recent attacks on the Ukrainian capital have triggered outrage around the world. India strongly condemns the Russian Federation's indiscriminate raids and the resulting civilian suffering in Ukraine. We have clearly stated that India rejects both violence and extremism in all their forms. We are concerned by the expansion of the conflict around our neighbourhood, with attacks by pro-Russian forces in Ukraine's neighbouring states of Belarus and Moldova. India's position is unequivocal: an illegal invasion cannot be equated to a defensive war. The current framing of the conflict is incorrect and not accepted by India. What we call an invasion, Russia calls a special military operation, and what we term terrorist groups, Russia calls terrorist organisations. We cannot accept terms being swapped when fact is far clearer. Furthermore, the recent developments in the region demonstrate that the threat of aggression comes from multiple directions. While Russia is engaged in an illegal war in Ukraine, armed groups inspired by and affiliated to Russia's rejected territorial swaps in neighbouring countries continue to undermine regional peace and security. India has been and will continue to be vigilant against all threats to our national security, including terrorism. The activities of groups such as the so-called Islamic State in Iraq and the Levant (ISIS/EIL) and Al-Qaida in the Islamic Maghreb (AQIM) remain a concern. We recently demonstrated our role as a responsible power when India and Bangladesh jointly struck terrorist groups crossing our shared border and providing safe haven to terrorists. India recently executed judicial killings of three terrorist prisoners who had been convicted of terror offences and were leading institutions in terrorist groups identified by multiple organisations, including the United Nations, as terrorist groups. That has been in line with international standards and the domestic legal process. We urge both Russia and Ukraine to exercise maximum restraint and steer clear of actions that could escalate the conflict further. There must be no provocation leading to an expansion of the war. We also need to emphasize that a peaceful resolution to this conflict is in the general interest, including that of Russia and Ukraine. But any long-term peace deal must be based on respect for the sovereignty and territorial integrity of both Ukraine and Russia, as enshrined in the Charter of the United Nations. That is unequivocally where India is positioned. The current expansion of the conflict is not an option. We cannot allow a prolonged war around our neighbourhood, with all its consequences, including extreme climate risks. The time for hope lies in a diplomatic solution. That is why India has been calling for space to bring experts together for focused talks, separate from the main peace processes, to explore all options for a sustainable resolution. I thank you for your attention.[END OF RECORDED TURN]&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **535**. At cap: **False**. Reference target NLL: **4.861536979675293**.
 
 <details>
 <summary>Original case review, without regrading</summary>
@@ -1443,8 +1469,18 @@ Generated tokens: **535**. At cap: **False**. Reference target NLL: **4.86153697
 
 ### 9138-GBR
 
+**GENERATED MODEL ANSWER:**
+
+<!-- exact:answer:scenario:adapter-native-boundary:9138-GBR -->
+
+> The United Kingdom thanks the Secretary-General for his clear account of the situation in Ukraine. We regret with strong emphasis the continuing Russian invasion of Ukraine, an unlawful act of aggression that has caused immense suffering to the Ukrainian people. The UK has been unswerving in its support to Ukraine in opposing Russian aggression in all places around the United Nations, including in the Security Council. We appreciate the briefing on the way the war is evolving and the risks of further escalation. We condemn violently Russian attacks on Ukrainian military objectives, including recent attacks on army bases and air defence systems. But we report with concern Russian attacks on Ukrainian civilian infrastructure, including hospitals and schools, which continue to fuel suffering and revenge attacks from Ukraine. We emphasize that neither side can now afford escalation. We reiterate our clear message that nuclear weapons should never be used and will not be used. It is vital that there is the highest possible measure of caution and restraint by both sides. The United Kingdom has been at the forefront of efforts to promote peace in Ukraine, whether through the four-track diplomacy led by the European Union or our own two-track approach of engaging both the Ukrainian and Russian positions. I now invite Mr. Vladimir Putin to reflect on his track record of engagement and the terms he would offer for peace. With respect, there has been no good faith from the Russian Federation towards a peaceful resolution to this conflict. It is past time for the Russian Federation to bring its attitude fully in line with international law and reality. We remain committed to continuing our efforts to pass resolution at the Security Council that meet the needs of those suffering from the war. But we must be clear about what we expect. We reject any normalisation of the illegal status quo. We unequivocally support Ukraine's sovereignty, its territorial integrity and its right to determine its own future. The United Kingdom will continue to provide all the support needed to keep safe Ukrainian civilians and to sustain Ukraine's defence against Russian aggression. And we will continue to work with our partners to meet the needs of those affected by the war.[END OF RECORDED TURN]&lt;|im_end|&gt;
+
+<!-- /exact -->
+
+Generated tokens: **417**. At cap: **False**. Reference target NLL: **4.8331780433654785**.
+
 <details>
-<summary>Full exact input text</summary>
+<summary>INPUT: full exact input text</summary>
 
 **USER**
 
@@ -1470,14 +1506,6 @@ Generated tokens: **535**. At cap: **False**. Reference target NLL: **4.86153697
 
 
 </details>
-
-<!-- exact:answer:scenario:adapter-native-boundary:9138-GBR -->
-
-> The United Kingdom thanks the Secretary-General for his clear account of the situation in Ukraine. We regret with strong emphasis the continuing Russian invasion of Ukraine, an unlawful act of aggression that has caused immense suffering to the Ukrainian people. The UK has been unswerving in its support to Ukraine in opposing Russian aggression in all places around the United Nations, including in the Security Council. We appreciate the briefing on the way the war is evolving and the risks of further escalation. We condemn violently Russian attacks on Ukrainian military objectives, including recent attacks on army bases and air defence systems. But we report with concern Russian attacks on Ukrainian civilian infrastructure, including hospitals and schools, which continue to fuel suffering and revenge attacks from Ukraine. We emphasize that neither side can now afford escalation. We reiterate our clear message that nuclear weapons should never be used and will not be used. It is vital that there is the highest possible measure of caution and restraint by both sides. The United Kingdom has been at the forefront of efforts to promote peace in Ukraine, whether through the four-track diplomacy led by the European Union or our own two-track approach of engaging both the Ukrainian and Russian positions. I now invite Mr. Vladimir Putin to reflect on his track record of engagement and the terms he would offer for peace. With respect, there has been no good faith from the Russian Federation towards a peaceful resolution to this conflict. It is past time for the Russian Federation to bring its attitude fully in line with international law and reality. We remain committed to continuing our efforts to pass resolution at the Security Council that meet the needs of those suffering from the war. But we must be clear about what we expect. We reject any normalisation of the illegal status quo. We unequivocally support Ukraine's sovereignty, its territorial integrity and its right to determine its own future. The United Kingdom will continue to provide all the support needed to keep safe Ukrainian civilians and to sustain Ukraine's defence against Russian aggression. And we will continue to work with our partners to meet the needs of those affected by the war.[END OF RECORDED TURN]&lt;|im_end|&gt;
-
-<!-- /exact -->
-
-Generated tokens: **417**. At cap: **False**. Reference target NLL: **4.8331780433654785**.
 
 <details>
 <summary>Original case review, without regrading</summary>

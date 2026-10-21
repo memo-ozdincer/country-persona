@@ -2,6 +2,14 @@
 
 Read these pages directly in GitHub. All answers come from preserved runs; this publication made no new model calls or training updates. Research remains paused.
 
+## Read the actual generated answers
+
+- **[Short-answer SFT: all eight cases, base → four-example → eight-example outputs](minimal-country-sft-20261021/model-outputs.md)**. This page contains generated model answers with no long input sections.
+- **[Meeting-context: all 14 continuation outputs and all 11 context-follow-up outputs](meeting-context-20261021/model-outputs.md)**. Includes failures and the model-produced reader map.
+- **[What our evaluations measured, and what each model improved](EVALUATION_GUIDE.md)**. Per-criterion and per-task scores, plus limitations.
+
+Training pages contain supplied supervision targets. They are labeled separately from generated model answers.
+
 | Experiment | Start here | What it established |
 |---|---|---|
 | Tiny complete-answer country SFT | [All eight before/after comparisons](minimal-country-sft-20261021/comparison.md) | Base → four-example → eight-example: **23/40 → 34/40 → 38/40** content checks; **7/16 → 15/16 → 15/16** application/commitment checks. Same exposed source event; assistant grading. |

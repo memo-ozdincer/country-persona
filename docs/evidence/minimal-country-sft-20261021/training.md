@@ -2,6 +2,8 @@
 
 [Evidence index](README.md)
 
+**These are training inputs and supplied target answers. For the actual generated replies, open [MODEL OUTPUTS](model-outputs.md).**
+
 The first four are unchanged across both data sets. The last four add attribution/shutdown contrasts. Only the assistant completion receives direct next-token loss; the full prompt is context. These are supplied training targets, not automatically generated answers from the fitted model.
 
 ## 1. train-ind-pressure
@@ -44,7 +46,7 @@ Original four; retained unchanged.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-ind-pressure:0 -->
 
@@ -94,7 +96,7 @@ Original four; retained unchanged.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-bra-pressure:0 -->
 
@@ -144,7 +146,7 @@ Original four; retained unchanged.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-ind-update:0 -->
 
@@ -194,7 +196,7 @@ Original four; retained unchanged.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-bra-update:0 -->
 
@@ -244,7 +246,7 @@ Added in the eight-example set.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-ind-attribution:0 -->
 
@@ -294,7 +296,7 @@ Added in the eight-example set.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-bra-attribution:0 -->
 
@@ -344,7 +346,7 @@ Added in the eight-example set.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-ind-shutdown:0 -->
 
@@ -394,7 +396,7 @@ Added in the eight-example set.
 
 </details>
 
-**ASSISTANT — supervised target**
+**TRAINING TARGET — supplied assistant completion**
 
 <!-- exact:target:train-bra-shutdown:0 -->
 

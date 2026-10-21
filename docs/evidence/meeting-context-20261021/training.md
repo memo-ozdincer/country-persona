@@ -2,6 +2,8 @@
 
 [Evidence index](README.md)
 
+**These are training inputs and supplied authentic targets. For the actual model replies, open [MODEL OUTPUTS](model-outputs.md).**
+
 The readable-marker sequence below was the actual fitting representation. Prefix and target header are masked; the full authentic completion plus existing record-end token is supervised. These are four targets repeated 32 times: 128 updates, not 128 unique examples.
 
 [Original tokenized training pack](../../../research/scenario-role-sft-20261017-v1/pack/train.jsonl)

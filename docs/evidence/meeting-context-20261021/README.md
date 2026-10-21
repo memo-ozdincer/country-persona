@@ -4,6 +4,8 @@
 
 The proposed task was **scenario + earlier meeting turns in chronological order + requested country/institution/role → authentic next speech**. This is separate from the assistant-written short-answer SFT experiment.
 
+**[OPEN THE GENERATED MODEL ANSWERS — outputs only](model-outputs.md)** · [What our evaluations measured](../EVALUATION_GUIDE.md). The training page contains supplied supervision, not model-generated replies.
+
 | Stage | Result |
 |---|---|
 | Four authentic UK/India targets, sanctions and climate; fresh 128-update fit | All four training speeches reproduce exactly; 20/20 fitting content units. |
