@@ -1,0 +1,400 @@
+{
+  "status": "complete_stored_evidence_replay_passed",
+  "model": "Qwen/Qwen3.5-4B",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "selected_full_sources_read": 2,
+  "unique_training_examples_read": 8,
+  "new_actual_optimizer_steps": 144,
+  "cumulative_aurora_qwen35_steps": 286,
+  "reference_qwen25_steps_unchanged": 582,
+  "new_complete_answers_read": 94,
+  "all_prompt_ids_and_output_texts_rerendered": false,
+  "software_guards": {
+    "passed": 23,
+    "command": "PYTHONPATH=src /mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python -m pytest -q tests/test_training_checks.py tests/test_source_plan_probe.py",
+    "scope": "Existing fault-injection and source-plan checks; not model quality."
+  },
+  "raw_eight_case_comparison": {
+    "extension-base": {
+      "responses": 8,
+      "met": 23,
+      "units": 40,
+      "application_boundary_met": 7,
+      "application_boundary_units": 16
+    },
+    "extension-four": {
+      "responses": 8,
+      "met": 34,
+      "units": 40,
+      "application_boundary_met": 15,
+      "application_boundary_units": 16
+    },
+    "extension-eight": {
+      "responses": 8,
+      "met": 38,
+      "units": 40,
+      "application_boundary_met": 15,
+      "application_boundary_units": 16
+    }
+  },
+  "arms": {
+    "first-base": {
+      "groups": {
+        "exact_control": {
+          "outputs": 2,
+          "met": 7,
+          "unmet": 3,
+          "unratable": 0,
+          "application_boundary_met": 3,
+          "application_boundary_units": 4,
+          "observations": 1
+        },
+        "unseen_wording_same_exposed_event": {
+          "outputs": 6,
+          "met": 21,
+          "unmet": 9,
+          "unratable": 0,
+          "application_boundary_met": 8,
+          "application_boundary_units": 12,
+          "observations": 1
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 9,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 1
+        }
+      },
+      "run_sha256": "e8bac58d574e2cb52597f3587d369da6130e126d531eb563f5093b30b64b2f4d",
+      "review_sha256": "504c1676c095314605ee4da6f91fc523bfddc209b741cfb6e591f86225f3ff45",
+      "transcript_sha256": "c91ead55884d79e0a87dd8a9b071a065fefca88e93f64f012bdedfad8c4f050c",
+      "outputs": 10
+    },
+    "matched-base": {
+      "groups": {
+        "exact_control": {
+          "outputs": 2,
+          "met": 7,
+          "unmet": 3,
+          "unratable": 0,
+          "application_boundary_met": 3,
+          "application_boundary_units": 4,
+          "observations": 1
+        },
+        "unseen_wording_same_exposed_event": {
+          "outputs": 6,
+          "met": 21,
+          "unmet": 9,
+          "unratable": 0,
+          "application_boundary_met": 8,
+          "application_boundary_units": 12,
+          "observations": 1
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 9,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 1
+        }
+      },
+      "run_sha256": "5d2d2c2efff8c66d5a918be6ad12592c28f9271703e1affdf9c5c6cd915b509e",
+      "review_sha256": "5fde0e5a5f995cb283b2c5fdd8b9e05d59c9495c3bc9a30329a60520fdc30d54",
+      "transcript_sha256": "8aee45cfb62404b4ee9327c68f74feeb1235acba7add0a9d5415f3ec10dc462f",
+      "outputs": 10
+    },
+    "four-target-16": {
+      "groups": {
+        "exact_control": {
+          "outputs": 2,
+          "met": 7,
+          "unmet": 3,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 4
+        },
+        "unseen_wording_same_exposed_event": {
+          "outputs": 6,
+          "met": 22,
+          "unmet": 8,
+          "unratable": 0,
+          "application_boundary_met": 11,
+          "application_boundary_units": 12,
+          "observations": 1
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 7,
+          "unmet": 3,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 0
+        }
+      },
+      "run_sha256": "ef86562625df4c7d3a52624881a79c8d58a2270fc39dab026f9e9aaeafa25903",
+      "review_sha256": "3184db314131994c52e8d4ab093d5171b9ab7a90beaef3cc44b74b013ab5f74e",
+      "transcript_sha256": "889e673209a434e8155a2cb6fdbc7c95b7ecca3708889dfc1de994277a3c5038",
+      "outputs": 10
+    },
+    "four-target-64": {
+      "groups": {
+        "exact_control": {
+          "outputs": 2,
+          "met": 10,
+          "unmet": 0,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 0
+        },
+        "unseen_wording_same_exposed_event": {
+          "outputs": 6,
+          "met": 24,
+          "unmet": 6,
+          "unratable": 0,
+          "application_boundary_met": 11,
+          "application_boundary_units": 12,
+          "observations": 4
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 9,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 0
+        }
+      },
+      "run_sha256": "26de0f6769501abba9b42c7fd8a787fe00588a5b3cd7cf184947ff4aac6ceea1",
+      "review_sha256": "9679827219020e6bdb76572f7fe5515670082fe6a9d64fc524c75d6761dc9654",
+      "transcript_sha256": "285ae083f831513a53aa7c2801ee1618dcafef8782e4c906f3b509b948eecc4e",
+      "outputs": 10
+    },
+    "extension-base": {
+      "groups": {
+        "exact_control": {
+          "outputs": 4,
+          "met": 11,
+          "unmet": 9,
+          "unratable": 0,
+          "application_boundary_met": 5,
+          "application_boundary_units": 8,
+          "observations": 3
+        },
+        "unseen_wording_same_exposed_event": {
+          "outputs": 4,
+          "met": 13,
+          "unmet": 7,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 8,
+          "observations": 0
+        },
+        "new_wording_after_inspected_data_extension": {
+          "outputs": 4,
+          "met": 10,
+          "unmet": 10,
+          "unratable": 0,
+          "application_boundary_met": 3,
+          "application_boundary_units": 8,
+          "observations": 2
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 9,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 1
+        }
+      },
+      "run_sha256": "3f53c30d28f4714b10fde2cc874b765ce5909441fc559c0129c56a99e58342be",
+      "review_sha256": "cd81e17772731dce86952e4c18002621843eae97cc3926a4edacaea5345462f2",
+      "transcript_sha256": "f10ddf2cc5d6a1811efe0f17a843a717a9bc22a06f01f896f8d892601551925b",
+      "outputs": 14
+    },
+    "extension-four": {
+      "groups": {
+        "exact_control": {
+          "outputs": 4,
+          "met": 15,
+          "unmet": 5,
+          "unratable": 0,
+          "application_boundary_met": 6,
+          "application_boundary_units": 8,
+          "observations": 1
+        },
+        "unseen_wording_same_exposed_event": {
+          "outputs": 4,
+          "met": 16,
+          "unmet": 4,
+          "unratable": 0,
+          "application_boundary_met": 7,
+          "application_boundary_units": 8,
+          "observations": 3
+        },
+        "new_wording_after_inspected_data_extension": {
+          "outputs": 4,
+          "met": 18,
+          "unmet": 2,
+          "unratable": 0,
+          "application_boundary_met": 8,
+          "application_boundary_units": 8,
+          "observations": 0
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 9,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 0
+        }
+      },
+      "run_sha256": "831b22f64537ae57b3c9bbf5faba50add8777827e31e8d719f127ada181dac33",
+      "review_sha256": "a465d64f4c9b8b8bfcdc67ac9baa3b8c5075a9d4ee5a21240cae6c4f0619a6de",
+      "transcript_sha256": "d5107ec70401311cd6a0d3a712bd4e623dae4f44609ffe18425493f574a9d526",
+      "outputs": 14
+    },
+    "extension-eight": {
+      "groups": {
+        "exact_control": {
+          "outputs": 4,
+          "met": 20,
+          "unmet": 0,
+          "unratable": 0,
+          "application_boundary_met": 8,
+          "application_boundary_units": 8,
+          "observations": 0
+        },
+        "unseen_wording_same_exposed_event": {
+          "outputs": 4,
+          "met": 19,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 8,
+          "application_boundary_units": 8,
+          "observations": 2
+        },
+        "new_wording_after_inspected_data_extension": {
+          "outputs": 4,
+          "met": 19,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 7,
+          "application_boundary_units": 8,
+          "observations": 2
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 10,
+          "unmet": 0,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 0
+        }
+      },
+      "run_sha256": "e0e7f525f2a830240649deb7789a60027d7355903d74f6de994e5a659c0fb6cb",
+      "review_sha256": "5da171a4a1da11ee1eba1e0ba4bef51b687b2815a9a02d92c1f5c0f8b3508262",
+      "transcript_sha256": "77612c967afaeda1da8203bd9c8a7a5a7134eb71452a8d05bc11c9342c3bb008",
+      "outputs": 14
+    },
+    "literal-base": {
+      "groups": {
+        "literal_mechanism_state": {
+          "outputs": 2,
+          "met": 10,
+          "unmet": 0,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 2
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 10,
+          "unmet": 0,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 0
+        }
+      },
+      "run_sha256": "27bf84c82c880b864d93a968945d4e2d408ff76b5811269b2383b58fda9358ee",
+      "review_sha256": "d613000d58a0039ef819c7fe3a40aaa57c4c5509b01c6fba08a74985b028d715",
+      "transcript_sha256": "1fe687ebd57b11624ef6e7dea426089b47ca1910af0948bd0077bc30ee170cb6",
+      "outputs": 4
+    },
+    "literal-four": {
+      "groups": {
+        "literal_mechanism_state": {
+          "outputs": 2,
+          "met": 9,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 0
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 10,
+          "unmet": 0,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 1
+        }
+      },
+      "run_sha256": "e86f575ff7919f588ce23911c3bc31829862b083d9ba2237349df4b18a45485f",
+      "review_sha256": "d4ff8e0ecfc542190a57cec46d0209f1b4f94c68f23f931f392bc4c7f28ed36c",
+      "transcript_sha256": "c5f81f913f4fbc3938462e03dc12d7bdb05fd30cfaf07ea1d834ece46f8d4e06",
+      "outputs": 4
+    },
+    "literal-eight": {
+      "groups": {
+        "literal_mechanism_state": {
+          "outputs": 2,
+          "met": 9,
+          "unmet": 1,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 1
+        },
+        "strong_checked_plan_control": {
+          "outputs": 2,
+          "met": 10,
+          "unmet": 0,
+          "unratable": 0,
+          "application_boundary_met": 4,
+          "application_boundary_units": 4,
+          "observations": 1
+        }
+      },
+      "run_sha256": "9c30a488753c906c07dd92c0eab8c0b152ccb095c33580021c7878d4e2adfe9f",
+      "review_sha256": "b6ae5b6eab11a5d2a0ae8735425295dc32257becd71a8bc6ee78133153856aa3",
+      "transcript_sha256": "489431d97ac52f925906fd9c7b884fcd56edb1f67e5a3e434995372c60686b45",
+      "outputs": 4
+    }
+  },
+  "literal_mechanism_diagnosis": "All three arms distinguish both fully specified partial states, raw and with checked notes. Active/proactive ambiguity qualifies prior regression; old grades preserved. No new optimization for this clarification.",
+  "limits": [
+    "One exposed historical event, two country-institution-date roles, hypothetical proposals, given source positions/outcomes.",
+    "Same assistant selected data, authored targets/criteria and graded every answer, without independent review.",
+    "Frozen coverage/application units do not cover every unsupported source claim; additional observations preserved.",
+    "No independent persona, sealed event OOD, native vote-prediction or trained autonomous multi-agent gain established."
+  ],
+  "next_decision": "Freeze an outside-training dated policy family and compare base, both saved short adapters and strong checked plans before another fit; no next fit/queue/sweep prepared."
+}
