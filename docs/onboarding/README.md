@@ -4,6 +4,8 @@ We study whether a small language model can represent a **dated country, institu
 
 **Current status:** research is paused. The latest training was on 19 October 2026. This onboarding update adds documentation and CPU checks, not model experiments. We have useful small-task gains, but dependable national personas, stronger diplomatic reasoning, multi-agent improvement and strong OOD transfer remain unproved.
 
+**Direct data access:** [private Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) — [instructions](PRIVATE_HF_DATA.md). This contains browsable source/training/evaluation/run files and saved adapters; no Aurora access is needed to download them.
+
 ## Read in this order
 
 1. **[SFT trials, simply explained](SFT_TRIALS.md)** — what context each trial received, its input format, its example answers, training budget, evaluation and result.

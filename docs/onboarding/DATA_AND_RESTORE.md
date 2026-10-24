@@ -2,6 +2,8 @@
 
 [Start here](README.md) · [Environments](ENVIRONMENTS.md) · [Pinned release/asset manifest](artifacts.json)
 
+**Simplest direct download:** use the [private Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [its access guide](PRIVATE_HF_DATA.md). The verified export contains 15,826 browsable files / 6.44 GB, including the frozen evidence, code overlay and later adapters. The GitHub release procedure below remains an alternative recovery path.
+
 ## What a collaborator gets
 
 | Material | Where it is | Plain clone sufficient? |
@@ -9,7 +11,7 @@
 | Code, configs, trial descriptions, evaluation guide and generated-answer pages | Git `master` | Yes |
 | Eight-example short-answer data, all 94 stored answers, original logs/configs/reviews | Embedded as 130 exact text files in the tracked offline HTML | Yes; use `verify_starter.py --extract` to get normal files |
 | Meeting-context data and most recent bounded source/writer evidence | Tracked `research/` and `reports/` | Yes for those tracked files; dependencies on older sources may require v47 |
-| Earlier selected sources, frozen evaluation data, full historical run artifacts and older LoRA adapters | Private `snapshot-v47` release | No; restore the pinned snapshot |
+| Earlier selected sources, frozen evaluation data, full historical run artifacts and older LoRA adapters | Private Hugging Face dataset; also private `snapshot-v47` release | No; restore the pinned snapshot |
 | Trial 4 authentic-speech adapter/run archive | Private `meeting-context` release | No |
 | Trials 5, 6, 7 adapters | Private `source-writer`, `application-writer`, `scope-writer` releases | No |
 | Base model weights, credentials, installed environments and caches | Separate Hugging Face download / collaborator-owned credentials and environment | Deliberately external |
