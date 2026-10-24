@@ -2,9 +2,9 @@
 
 [Start here](README.md) · [Environments](ENVIRONMENTS.md) · [Pinned release/asset manifest](artifacts.json)
 
-**Simplest direct download:** use the [private Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [its access guide](PRIVATE_HF_DATA.md). The verified export contains 15,826 browsable files / 6.44 GB, including the frozen evidence, code overlay and later adapters. The GitHub release procedure below remains an alternative recovery path.
+**Simplest direct download:** use the [public Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [its access guide](PRIVATE_HF_DATA.md). The verified export contains 15,826 browsable files / 6.44 GB, including the frozen evidence, code overlay and later adapters. The GitHub release procedure below remains an alternative recovery path.
 
-**Visibility checked 24 October:** the Hub dataset is private. GitHub currently reports `country-persona` as public, and anonymous access to an existing v47 release asset succeeds. This task did not change GitHub visibility. The 21 October asset manifest retains its dated visibility observation; use this note for current access status.
+**Current visibility, 24 October:** both the Hub dataset and GitHub are public. The Hub was made public at the project owner's explicit request, and its page and complete seven-file training pack were verified without authentication. GitHub visibility was not changed. The initial private-publication receipt and 21 October asset manifest remain dated evidence; use this note and the [public-access receipt](../../reports/hf-public-access-20261024-v1.json) for current access status.
 
 ## What a collaborator gets
 
@@ -96,4 +96,4 @@ Follow the chosen adapter manifest to copy tracked metadata mirrors into fresh h
 
 The snapshot manifest explicitly excludes credentials, base weights, virtual environments/caches and large older bulk corpora. `handoff/source-inventory.json` records coverage of the selected roots after restore; it includes six partial/omitted rows, including redundant exports and some historical preparation artifacts. These omissions are preserved rather than silently filled. Ask which exact artifact is required before attempting a historical rebuild.
 
-Germany/China work and historical releases are preserved. Public source availability is not a blanket redistribution license. New collaborators need private Hub access separately from cluster/model access. Current GitHub read access is public; write access still requires authorization. The [onboarding validation receipt](CHECKS.md) states what was actually tested and what remains untested.
+Germany/China work and historical releases are preserved. Public source availability is not a blanket redistribution license. New collaborators can read GitHub and download this Hub dataset without authentication. Cluster/model access and repository write access still require separate authorization. The [onboarding validation receipt](CHECKS.md) states what was actually tested and what remains untested.

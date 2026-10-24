@@ -4,7 +4,7 @@ We study whether a small language model can represent a **dated country, institu
 
 **Current status:** research is paused. The latest training was on 19 October 2026. This onboarding update adds documentation and CPU checks, not model experiments. We have useful small-task gains, but dependable national personas, stronger diplomatic reasoning, multi-agent improvement and strong OOD transfer remain unproved.
 
-**Direct data access:** [private Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) — [instructions](PRIVATE_HF_DATA.md). This contains browsable source/training/evaluation/run files and saved adapters; no Aurora access is needed to download them.
+**Direct data access:** [public Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) — [instructions](PRIVATE_HF_DATA.md). This contains browsable source/training/evaluation/run files and saved adapters; no Aurora access is needed to download them.
 
 ## Read in this order
 
@@ -44,7 +44,7 @@ The destination must be fresh. This is a bounded text export, not a full snapsho
 
 ## What is and is not on GitHub
 
-Code, configuration, environment definitions, documentation and the recent bounded research packs are tracked. Older frozen data, transcripts and adapters are available in the **private Hugging Face dataset**, with the original snapshot and four later checkpoint sets also preserved in GitHub releases. GitHub currently reports this repository as public; those existing copies do not inherit the Hub dataset’s privacy. A plain clone is sufficient for reading and CPU checks; it is not the complete historical research workspace.
+Code, configuration, environment definitions, documentation and the recent bounded research packs are tracked. Older frozen data, transcripts and adapters are available in the **public Hugging Face dataset**, with the original snapshot and four later checkpoint sets also preserved in GitHub releases. Both GitHub and the Hub dataset are publicly readable. The Hub was made public at the project owner's request on 24 October; downloading requires no login. A plain clone is sufficient for reading and CPU checks; it is not the complete historical research workspace.
 
 Base model weights, credentials, installed virtual environments and caches are deliberately external. The snapshot excludes large older/Reddit corpora and some redundant/partial historical artifacts. The [data guide](DATA_AND_RESTORE.md) lists the precise boundary; “all files from every historical collection” is not a claim we can make.
 

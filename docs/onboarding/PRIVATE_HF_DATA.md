@@ -2,7 +2,7 @@
 
 [Onboarding](README.md) · [SFT Trials 1–7](SFT_TRIALS.md) · [Full data/restore guide](DATA_AND_RESTORE.md)
 
-**Private dataset: [memo-ozdincer/country-persona-aurora-data](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data).** Sign in with an account authorized to access it. Aurora access is not required to browse or download the files.
+**Public dataset: [memo-ozdincer/country-persona-aurora-data](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data).** Anyone can browse and download without signing in. Aurora access is not required. This guide retains its original filename so existing links keep working.
 
 The export contains **15,826 files / 6,442,905,503 bytes (6.44 GB)**. Its `workspace/` directory preserves the research's original relative paths: source material, prepared training/evaluation data, complete generated outputs, reviews, code/configuration, onboarding/environment definitions, and saved LoRA adapters.
 
@@ -10,17 +10,17 @@ The export contains **15,826 files / 6,442,905,503 bytes (6.44 GB)**. Its `works
 
 | Material | Direct folder/page |
 |---|---|
-| Training/evaluation packs | [workspace/data/prepared](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/data/prepared) |
-| Raw source material | [workspace/data/raw](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/data/raw) |
-| Full model outputs and historical adapters | [workspace/runs](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/runs) |
-| Later source/writer experiment packs | [workspace/research](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/research) |
-| Every file, size and SHA-256 | [FILE_MANIFEST.json](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/blob/aurora-20261024-v2/FILE_MANIFEST.json) |
+| Training/evaluation packs | [workspace/data/prepared](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/data/prepared) |
+| Raw source material | [workspace/data/raw](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/data/raw) |
+| Full model outputs and historical adapters | [workspace/runs](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/runs) |
+| Later source/writer experiment packs | [workspace/research](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/research) |
+| Every file, size and SHA-256 | [FILE_MANIFEST.json](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/blob/aurora-20261024-v3/FILE_MANIFEST.json) |
 
 You can open a file and use its download button. The earlier GitHub release archives remain available as an alternative recovery representation; downloading this dataset does not require reassembling those archives.
 
 ## Download everything
 
-Use the Hugging Face Hub client in your own download environment (`python -m pip install "huggingface_hub==1.33.0"` if needed). Authenticate with your own authorized account using `hf auth login`; never put a token value in a command argument or commit it. On Aurora, choose a destination under your own scratch directory, not CSlab home.
+Use the Hugging Face Hub client in your own download environment (`python -m pip install "huggingface_hub==1.33.0"` if needed). No authentication is required; `token=False` explicitly downloads without an account token. On Aurora, choose a destination under your own scratch directory, not CSlab home.
 
 ```python
 from huggingface_hub import snapshot_download
@@ -28,9 +28,9 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="memo-ozdincer/country-persona-aurora-data",
     repo_type="dataset",
-    revision="aurora-20261024-v2",
+    revision="aurora-20261024-v3",
     local_dir="country-persona-aurora-data",
-    token=True,
+    token=False,
 )
 ```
 
@@ -52,9 +52,9 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="memo-ozdincer/country-persona-aurora-data",
     repo_type="dataset",
-    revision="aurora-20261024-v2",
+    revision="aurora-20261024-v3",
     local_dir="persona-trial-2",
-    token=True,
+    token=False,
     allow_patterns=[
         "workspace/data/prepared/minimal-country-20261005-v2/**",
         "FILE_MANIFEST.json",
@@ -76,4 +76,4 @@ The payload combines the pinned v47 frozen evidence, Git source commit `6c6f5cfa
 
 The snapshot omits some larger older/Reddit corpora; this export does not silently invent or recover them. Earlier workshop/Reddit files remain in the separate [private research-files dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files). Population/community behavior and institutional government behavior remain different targets.
 
-This Hugging Face dataset is private. GitHub currently reports the project repository as public, and its existing v47 release files are accessible anonymously. This task did not change GitHub visibility or collaborator permissions. The 24 October publication adds no model calls or optimizer updates; research remains paused. The latest onboarding text remains in GitHub, while `workspace/` is a pinned copy of the stated research boundary.
+This Hugging Face dataset was made public on 24 October at the project owner's request. Anonymous page access and a complete seven-file training-pack download passed. GitHub is also public; its visibility and collaborator permissions were not changed. The original manifest's `required_private` field records the initial export requirement; its hashes and payload remain unchanged. Older private-access receipts remain historical evidence. The [public-access receipt](../../reports/hf-public-access-20261024-v1.json) records the current tag and anonymous checks. The 24 October publication adds no model calls or optimizer updates; research remains paused. The latest onboarding text remains in GitHub, while `workspace/` is a pinned copy of the stated research boundary.

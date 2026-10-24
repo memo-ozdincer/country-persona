@@ -19,7 +19,7 @@ The first isolated helper-copy attempt resolved its source path incorrectly and 
 
 The historical hosted CI also passed [242 tests with 23 explicit private-artifact skips](https://github.com/memo-ozdincer/country-persona/actions/runs/39337006149). The new local check validates the documented dependency-only setup in a fresh clone, without relying on a package editable install.
 
-## Direct private data delivery — 24 October
+## Initial private data delivery — 24 October
 
 The [private Hub export](PRIVATE_HF_DATA.md) contains 15,826 files / 6,442,905,503 bytes. All remote payload objects matched their expected size and content ID (LFS SHA-256 or Git blob SHA-1), and downloaded samples matched SHA-256. A complete seven-file training pack was downloaded through the private Hub and passed the standalone verifier. Anonymous dataset access returned HTTP 401. Separately, a 24 October check found GitHub public and an existing v47 release asset accessible anonymously (HTTP 200); no GitHub visibility setting was changed. Earlier private-GitHub observations remain dated evidence. The [publication receipt](../../reports/hf-data-publication-20261024-v1.json) pins the manifest and Hub commit/tag. No source file or original manifest was rewritten, no full archive was created, and no model work occurred.
 
@@ -32,3 +32,7 @@ The [private Hub export](PRIVATE_HF_DATA.md) contains 15,826 files / 6,442,905,5
 - Semantic grading is still mostly by the same assistant that curated the examples. Independent source/rubric review and strong OOD/persona/multi-agent gains remain open.
 
 All detailed logs, the fresh clone/environment and the preparation-error receipt are retained under `/mfs1/u/memo/country-persona-research/audits/onboarding-20261021-v1/`. The JSON receipt records their hashes and the exact helper bytes tested. No new production generation or optimizer update is attributed to this task.
+
+## Public access — 24 October
+
+The owner subsequently requested public sharing. The same 15,826-file Hub dataset is now public and ungated. An unauthenticated dataset page/API check and a complete seven-file/167,135-byte training-pack download passed; the downloaded manifest, verifier and all pack hashes match the original verified export. Only root Hub access metadata changed, with prior tags and research payload retained. The [public-access receipt](../../reports/hf-public-access-20261024-v1.json) records the new `aurora-20261024-v3` tag. [Current download instructions](PRIVATE_HF_DATA.md) require no login. Research remains paused; no model work occurred.

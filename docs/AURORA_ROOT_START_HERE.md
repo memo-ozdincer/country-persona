@@ -2,7 +2,7 @@
 
 Collaborator onboarding lives at `current/docs/onboarding/README.md`; plain trial descriptions at `current/docs/onboarding/SFT_TRIALS.md`; all prepared evidence is linked from `current/docs/evidence/README.md`. Environment definitions, data/release restore instructions and proposed next steps are in the onboarding guide.
 
-Direct private data mirror: https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data. Access and local verification instructions: `current/docs/onboarding/PRIVATE_HF_DATA.md`. The payload is a pinned research export; credentials, base weights and environments/caches remain separate.
+Direct public data mirror (no login required): https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data. Access and local verification instructions: `current/docs/onboarding/PRIVATE_HF_DATA.md`. The payload is a pinned research export; credentials, base weights and environments/caches remain separate.
 
 The recursive research goal is **paused at the user's request**. The workspace's `docs/CONSOLIDATED_RESULTS_20261019.md` reports the complete experiment ledger, results and limits. All started latest model trials are complete; the reporting task adds no training or inference. Unstarted controls/designs are not an automatic queue.
 

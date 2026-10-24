@@ -2,7 +2,7 @@
 
 **For collaborators:** [onboarding](docs/onboarding/README.md), [SFT Trials 1–7](docs/onboarding/SFT_TRIALS.md), [environment/data setup](docs/onboarding/ENVIRONMENTS.md), and [the master evidence index](docs/evidence/README.md). The guides separate completed results from proposed next work.
 
-**Direct private data:** [Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [download/verification instructions](docs/onboarding/PRIVATE_HF_DATA.md). The export adds no model work. The Hub dataset is private; GitHub currently reports public repository visibility, which this task did not change.
+**Direct public data:** [Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [download/verification instructions](docs/onboarding/PRIVATE_HF_DATA.md). The export adds no model work. The Hub dataset was made public at the project owner's request on 24 October; browsing and downloading require no login. GitHub is also public.
 
 The recursive research goal is **paused at the user's request**. Read the [complete work/results report](docs/CONSOLIDATED_RESULTS_20261019.md) for the reconciled experiment ledger, best results, failures and remaining unrun designs. All started latest model trials are complete; no new model run was needed for this report.
 
