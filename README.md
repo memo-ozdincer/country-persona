@@ -26,7 +26,7 @@ Small supervised trials improved source coverage and selected proposal-state beh
 
 ## What is available
 
-A plain clone contains the code, configuration, environment definitions, readable outputs and recent bounded research evidence. Older selected frozen data/transcripts/adapters are in private GitHub release assets. Base weights, credentials, installed environments and caches are separate. Large older/Reddit corpora are not fully included. See the data guide before assuming a clone reproduces the entire historical workspace.
+A plain clone contains the code, configuration, environment definitions, readable outputs and recent bounded research evidence. Older selected frozen data/transcripts/adapters are in the private Hugging Face dataset and GitHub release assets. **GitHub currently reports this repository as public; existing GitHub copies are not made private by the Hub mirror.** Base weights, credentials, installed environments and caches are separate. Large older/Reddit corpora are not fully included. See the data guide before assuming a clone reproduces the entire historical workspace.
 
 ## First check, no GPU or dependencies
 

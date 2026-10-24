@@ -4,7 +4,7 @@ Read these pages directly in GitHub. All answers come from preserved runs; this 
 
 **New collaborator:** [start here](../onboarding/README.md). [SFT Trials 1–7](../onboarding/SFT_TRIALS.md) describe each trial as context + input format + example-answer format, with results. [Environments](../onboarding/ENVIRONMENTS.md), [data/releases](../onboarding/DATA_AND_RESTORE.md), [verified checks](../onboarding/CHECKS.md), and [proposed next work](../onboarding/NEXT_STEPS.md) are all linked from that guide.
 
-**Direct data download:** [private Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) — [access instructions](../onboarding/PRIVATE_HF_DATA.md). Source/training/evaluation files, full recorded outputs and saved adapters are browsable without Aurora access.
+**Direct data download:** [private Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) — [access instructions](../onboarding/PRIVATE_HF_DATA.md). Source/training/evaluation files, full recorded outputs and saved adapters are browsable without Aurora access. The Hub dataset is private; GitHub currently reports public visibility, which this task did not change.
 
 ## Read the actual generated answers
 

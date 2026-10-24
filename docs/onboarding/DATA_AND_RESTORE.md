@@ -4,6 +4,8 @@
 
 **Simplest direct download:** use the [private Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [its access guide](PRIVATE_HF_DATA.md). The verified export contains 15,826 browsable files / 6.44 GB, including the frozen evidence, code overlay and later adapters. The GitHub release procedure below remains an alternative recovery path.
 
+**Visibility checked 24 October:** the Hub dataset is private. GitHub currently reports `country-persona` as public, and anonymous access to an existing v47 release asset succeeds. This task did not change GitHub visibility. The 21 October asset manifest retains its dated visibility observation; use this note for current access status.
+
 ## What a collaborator gets
 
 | Material | Where it is | Plain clone sufficient? |
@@ -11,9 +13,9 @@
 | Code, configs, trial descriptions, evaluation guide and generated-answer pages | Git `master` | Yes |
 | Eight-example short-answer data, all 94 stored answers, original logs/configs/reviews | Embedded as 130 exact text files in the tracked offline HTML | Yes; use `verify_starter.py --extract` to get normal files |
 | Meeting-context data and most recent bounded source/writer evidence | Tracked `research/` and `reports/` | Yes for those tracked files; dependencies on older sources may require v47 |
-| Earlier selected sources, frozen evaluation data, full historical run artifacts and older LoRA adapters | Private Hugging Face dataset; also private `snapshot-v47` release | No; restore the pinned snapshot |
-| Trial 4 authentic-speech adapter/run archive | Private `meeting-context` release | No |
-| Trials 5, 6, 7 adapters | Private `source-writer`, `application-writer`, `scope-writer` releases | No |
+| Earlier selected sources, frozen evaluation data, full historical run artifacts and older LoRA adapters | Private Hugging Face dataset; also GitHub `snapshot-v47` release | No; restore the pinned snapshot |
+| Trial 4 authentic-speech adapter/run archive | GitHub `meeting-context` release | No |
+| Trials 5, 6, 7 adapters | GitHub `source-writer`, `application-writer`, `scope-writer` releases | No |
 | Base model weights, credentials, installed environments and caches | Separate Hugging Face download / collaborator-owned credentials and environment | Deliberately external |
 | Large older/Reddit corpora and some historical redundant/partial exports | Not fully included in this handoff | No blanket availability claim; see the source inventory after restore |
 
@@ -34,7 +36,7 @@ The extracted text preserves the exact original relative paths and bytes. Adapte
 
 Use separate fresh scratch paths for downloads, extracted snapshot, and current clone. Never extract into the authoritative Aurora evidence tree or overwrite an existing research workspace.
 
-1. Open the private [snapshot-v47 release](https://github.com/memo-ozdincer/country-persona/releases/tag/aurora-handoff-20261007-v47). Download all six assets named under `snapshot-v47` in [artifacts.json](artifacts.json): four ordered parts, the multipart JSON and the receipt. Use authenticated GitHub access; do not place a token in a URL or command argument.
+1. Open the [snapshot-v47 release](https://github.com/memo-ozdincer/country-persona/releases/tag/aurora-handoff-20261007-v47). Download all six assets named under `snapshot-v47` in [artifacts.json](artifacts.json): four ordered parts, the multipart JSON and the receipt. Use GitHub’s download controls; do not place a token in a URL or command argument. The Hub mirror requires authorized Hugging Face access.
 2. Verify the downloaded files and assemble a fresh whole archive:
 
 ```bash
@@ -94,4 +96,4 @@ Follow the chosen adapter manifest to copy tracked metadata mirrors into fresh h
 
 The snapshot manifest explicitly excludes credentials, base weights, virtual environments/caches and large older bulk corpora. `handoff/source-inventory.json` records coverage of the selected roots after restore; it includes six partial/omitted rows, including redundant exports and some historical preparation artifacts. These omissions are preserved rather than silently filled. Ask which exact artifact is required before attempting a historical rebuild.
 
-Germany/China work and historical releases are preserved. Public source availability is not a blanket redistribution license. New collaborators need private repository/release access separately from cluster/model access. The [onboarding validation receipt](CHECKS.md) states what was actually tested and what remains untested.
+Germany/China work and historical releases are preserved. Public source availability is not a blanket redistribution license. New collaborators need private Hub access separately from cluster/model access. Current GitHub read access is public; write access still requires authorization. The [onboarding validation receipt](CHECKS.md) states what was actually tested and what remains untested.

@@ -21,7 +21,7 @@ The historical hosted CI also passed [242 tests with 23 explicit private-artifac
 
 ## Direct private data delivery — 24 October
 
-The [private Hub export](PRIVATE_HF_DATA.md) contains 15,826 files / 6,442,905,503 bytes. All remote payload objects matched their expected size and content ID (LFS SHA-256 or Git blob SHA-1), and downloaded samples matched SHA-256. A complete seven-file training pack was downloaded through the private Hub and passed the standalone verifier. Anonymous dataset access returned HTTP 401. The [publication receipt](../../reports/hf-data-publication-20261024-v1.json) pins the manifest and Hub commit/tag. No source file or original manifest was rewritten, no full archive was created, and no model work occurred.
+The [private Hub export](PRIVATE_HF_DATA.md) contains 15,826 files / 6,442,905,503 bytes. All remote payload objects matched their expected size and content ID (LFS SHA-256 or Git blob SHA-1), and downloaded samples matched SHA-256. A complete seven-file training pack was downloaded through the private Hub and passed the standalone verifier. Anonymous dataset access returned HTTP 401. Separately, a 24 October check found GitHub public and an existing v47 release asset accessible anonymously (HTTP 200); no GitHub visibility setting was changed. Earlier private-GitHub observations remain dated evidence. The [publication receipt](../../reports/hf-data-publication-20261024-v1.json) pins the manifest and Hub commit/tag. No source file or original manifest was rewritten, no full archive was created, and no model work occurred.
 
 ## Still separate or unproved
 

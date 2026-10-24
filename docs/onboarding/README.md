@@ -20,7 +20,7 @@ The [full results report](../CONSOLIDATED_RESULTS_20261019.md) covers all 42 non
 
 | Your first task | What you need | What to do |
 |---|---|---|
-| Read results or independently review answers | Access to this private GitHub repository | Read the trials and compare generated answers with the original sources. No Python, model weights or GPU needed. |
+| Read results or independently review answers | Access to this GitHub repository | Read the trials and compare generated answers with the original sources. No Python, model weights or GPU needed. |
 | Work on evaluation/code | Git, Python 3.11+, and uv for the full CPU environment | Clone, run the standard-library evidence check, then build the CPU test environment. No full data archive or GPU needed for the first checks. |
 | Reproduce historical model runs | Repository/release access, restored frozen data and adapter, separately downloaded base weights, matching GPU runtime, authorized cluster access | Follow the data and environment guides. Verify all paths/hashes and launch ownership. Do not run historical commands as a queue. |
 
@@ -44,7 +44,7 @@ The destination must be fresh. This is a bounded text export, not a full snapsho
 
 ## What is and is not on GitHub
 
-Code, configuration, environment definitions, documentation and the recent bounded research packs are tracked. Older frozen data, transcripts and adapters are in a **private release snapshot**, with later adapters in four additional private release sets. A plain clone is sufficient for reading and CPU checks; it is not the complete historical research workspace.
+Code, configuration, environment definitions, documentation and the recent bounded research packs are tracked. Older frozen data, transcripts and adapters are available in the **private Hugging Face dataset**, with the original snapshot and four later checkpoint sets also preserved in GitHub releases. GitHub currently reports this repository as public; those existing copies do not inherit the Hub dataset’s privacy. A plain clone is sufficient for reading and CPU checks; it is not the complete historical research workspace.
 
 Base model weights, credentials, installed virtual environments and caches are deliberately external. The snapshot excludes large older/Reddit corpora and some redundant/partial historical artifacts. The [data guide](DATA_AND_RESTORE.md) lists the precise boundary; “all files from every historical collection” is not a claim we can make.
 

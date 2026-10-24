@@ -10,11 +10,11 @@ The export contains **15,826 files / 6,442,905,503 bytes (6.44 GB)**. Its `works
 
 | Material | Direct folder/page |
 |---|---|
-| Training/evaluation packs | [workspace/data/prepared](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v1/workspace/data/prepared) |
-| Raw source material | [workspace/data/raw](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v1/workspace/data/raw) |
-| Full model outputs and historical adapters | [workspace/runs](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v1/workspace/runs) |
-| Later source/writer experiment packs | [workspace/research](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v1/workspace/research) |
-| Every file, size and SHA-256 | [FILE_MANIFEST.json](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/blob/aurora-20261024-v1/FILE_MANIFEST.json) |
+| Training/evaluation packs | [workspace/data/prepared](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/data/prepared) |
+| Raw source material | [workspace/data/raw](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/data/raw) |
+| Full model outputs and historical adapters | [workspace/runs](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/runs) |
+| Later source/writer experiment packs | [workspace/research](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v2/workspace/research) |
+| Every file, size and SHA-256 | [FILE_MANIFEST.json](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/blob/aurora-20261024-v2/FILE_MANIFEST.json) |
 
 You can open a file and use its download button. The earlier GitHub release archives remain available as an alternative recovery representation; downloading this dataset does not require reassembling those archives.
 
@@ -28,7 +28,7 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="memo-ozdincer/country-persona-aurora-data",
     repo_type="dataset",
-    revision="aurora-20261024-v1",
+    revision="aurora-20261024-v2",
     local_dir="country-persona-aurora-data",
     token=True,
 )
@@ -52,7 +52,7 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="memo-ozdincer/country-persona-aurora-data",
     repo_type="dataset",
-    revision="aurora-20261024-v1",
+    revision="aurora-20261024-v2",
     local_dir="persona-trial-2",
     token=True,
     allow_patterns=[
@@ -76,4 +76,4 @@ The payload combines the pinned v47 frozen evidence, Git source commit `6c6f5cfa
 
 The snapshot omits some larger older/Reddit corpora; this export does not silently invent or recover them. Earlier workshop/Reddit files remain in the separate [private research-files dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-research-files). Population/community behavior and institutional government behavior remain different targets.
 
-The dataset and existing GitHub releases stay private. No collaborator permissions were changed. The 24 October publication adds no model calls or optimizer updates; research remains paused. The latest onboarding text remains in GitHub, while `workspace/` is a pinned copy of the stated research boundary.
+This Hugging Face dataset is private. GitHub currently reports the project repository as public, and its existing v47 release files are accessible anonymously. This task did not change GitHub visibility or collaborator permissions. The 24 October publication adds no model calls or optimizer updates; research remains paused. The latest onboarding text remains in GitHub, while `workspace/` is a pinned copy of the stated research boundary.
