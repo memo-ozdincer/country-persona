@@ -4,6 +4,8 @@
 
 **Simplest direct download:** use the [public Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [its access guide](PRIVATE_HF_DATA.md). The verified export contains 15,826 browsable files / 6.44 GB, including the frozen evidence, code overlay and later adapters. The GitHub release procedure below remains an alternative recovery path.
 
+**Original China/Germany data:** [37,094 canonical records and 16,373 SFT candidates](CHINA_GERMANY_PILOT.md) are now included, with download and verification instructions.
+
 **Current visibility, 24 October:** both the Hub dataset and GitHub are public. The Hub was made public at the project owner's explicit request, and its page and complete seven-file training pack were verified without authentication. GitHub visibility was not changed. The initial private-publication receipt and 21 October asset manifest remain dated evidence; use this note and the [public-access receipt](../../reports/hf-public-access-20261024-v1.json) for current access status.
 
 ## What a collaborator gets

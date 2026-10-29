@@ -4,6 +4,8 @@
 
 **Direct public data:** [Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) and [download/verification instructions](docs/onboarding/PRIVATE_HF_DATA.md). The export adds no model work. The Hub dataset was made public at the project owner's request on 24 October; browsing and downloading require no login. GitHub is also public.
 
+**Added 29 October:** [China/Germany original pilot](docs/onboarding/CHINA_GERMANY_PILOT.md): 37,094 canonical records and 16,373 SFT-format candidates, with original splits, full answers and provenance.
+
 The recursive research goal is **paused at the user's request**. Read the [complete work/results report](docs/CONSOLIDATED_RESULTS_20261019.md) for the reconciled experiment ledger, best results, failures and remaining unrun designs. All started latest model trials are complete; no new model run was needed for this report.
 
 Read `AGENTS.md`, then [the full handoff](docs/PROJECT_HANDOFF.md). Use [current state](docs/CURRENT_STATE.md) for the latest boundary and [14 October audit and research assessment](docs/STORAGE_SYNC_AND_RESEARCH_DIRECTION_20261014.md) for storage findings and the proposed direction. Dated reports are the evidence; historical next-step paragraphs are not a run queue.

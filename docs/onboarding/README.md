@@ -6,6 +6,8 @@ We study whether a small language model can represent a **dated country, institu
 
 **Direct data access:** [public Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) — [instructions](PRIVATE_HF_DATA.md). This contains browsable source/training/evaluation/run files and saved adapters; no Aurora access is needed to download them.
 
+**Original China/Germany data:** [37,094 canonical records and 16,373 SFT candidates](CHINA_GERMANY_PILOT.md) are now included, with download and verification instructions.
+
 ## Read in this order
 
 1. **[SFT trials, simply explained](SFT_TRIALS.md)** — what context each trial received, its input format, its example answers, training budget, evaluation and result.

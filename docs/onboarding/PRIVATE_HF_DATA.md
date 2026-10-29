@@ -4,17 +4,17 @@
 
 **Public dataset: [memo-ozdincer/country-persona-aurora-data](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data).** Anyone can browse and download without signing in. Aurora access is not required. This guide retains its original filename so existing links keep working.
 
-The export contains **15,826 files / 6,442,905,503 bytes (6.44 GB)**. Its `workspace/` directory preserves the research's original relative paths: source material, prepared training/evaluation data, complete generated outputs, reviews, code/configuration, onboarding/environment definitions, and saved LoRA adapters.
+The original Aurora export contains **15,826 files / 6,442,905,503 bytes (6.44 GB)**. The [29 October China/Germany supplement](CHINA_GERMANY_PILOT.md) adds the complete original pilot: 37,094 canonical records and 16,373 SFT candidates in 53 files / 335,534,335 bytes. Combined payload: 15,879 files / 6,778,439,838 bytes. Run `VERIFY_PILOT_DOWNLOAD.py` as well as the original verifier for a combined download. Its `workspace/` directory preserves the research's original relative paths: source material, prepared training/evaluation data, complete generated outputs, reviews, code/configuration, onboarding/environment definitions, and saved LoRA adapters.
 
 ## Browse
 
 | Material | Direct folder/page |
 |---|---|
-| Training/evaluation packs | [workspace/data/prepared](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/data/prepared) |
-| Raw source material | [workspace/data/raw](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/data/raw) |
-| Full model outputs and historical adapters | [workspace/runs](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/runs) |
-| Later source/writer experiment packs | [workspace/research](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261024-v3/workspace/research) |
-| Every file, size and SHA-256 | [FILE_MANIFEST.json](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/blob/aurora-20261024-v3/FILE_MANIFEST.json) |
+| Training/evaluation packs | [workspace/data/prepared](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261029-v4/workspace/data/prepared) |
+| Raw source material | [workspace/data/raw](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261029-v4/workspace/data/raw) |
+| Full model outputs and historical adapters | [workspace/runs](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261029-v4/workspace/runs) |
+| Later source/writer experiment packs | [workspace/research](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/tree/aurora-20261029-v4/workspace/research) |
+| Every file, size and SHA-256 | [FILE_MANIFEST.json](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data/blob/aurora-20261029-v4/FILE_MANIFEST.json) |
 
 You can open a file and use its download button. The earlier GitHub release archives remain available as an alternative recovery representation; downloading this dataset does not require reassembling those archives.
 
@@ -28,7 +28,7 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="memo-ozdincer/country-persona-aurora-data",
     repo_type="dataset",
-    revision="aurora-20261024-v3",
+    revision="aurora-20261029-v4",
     local_dir="country-persona-aurora-data",
     token=False,
 )
@@ -52,7 +52,7 @@ from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="memo-ozdincer/country-persona-aurora-data",
     repo_type="dataset",
-    revision="aurora-20261024-v3",
+    revision="aurora-20261029-v4",
     local_dir="persona-trial-2",
     token=False,
     allow_patterns=[

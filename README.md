@@ -4,6 +4,8 @@
 
 **Data download:** [public Hugging Face dataset](https://huggingface.co/datasets/memo-ozdincer/country-persona-aurora-data) — [browse/download instructions](docs/onboarding/PRIVATE_HF_DATA.md). Aurora access is not required.
 
+**Added 29 October:** [China/Germany original pilot](docs/onboarding/CHINA_GERMANY_PILOT.md): 37,094 canonical records and 16,373 SFT-format candidates, with original splits, full answers and provenance.
+
 We study small models that can represent dated country–institution–role behavior, preserve documented positions and respond appropriately when a diplomatic proposal changes. The working model is Qwen3.5-4B. France, the UK, India and Brazil are the active extension; earlier Germany/China work is preserved.
 
 | What you want | Open this |
