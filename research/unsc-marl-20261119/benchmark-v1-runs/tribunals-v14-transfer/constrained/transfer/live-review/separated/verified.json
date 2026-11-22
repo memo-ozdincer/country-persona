@@ -1,0 +1,125 @@
+{
+  "launch": {
+    "host": "aurora",
+    "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "gpu_uuid": "GPU-51e9e550-a798-120d-2926-5c76e25b9e56",
+    "pid": 2251542,
+    "process_start": "Sun Nov 22 06:16:45 2026",
+    "command": [
+      "/mfs1/u/memo/country-persona-research/envs/aurora-qwen35-smoke-v1/bin/python",
+      "pair_separation.py",
+      "run"
+    ],
+    "run_directory": "/mfs1/u/memo/country-persona-research/workspaces/persona-20260929-v1/research/unsc-marl-20261119/benchmark-v1-runs/tribunals-v14-transfer/constrained/transfer/live-review/separated/evidence",
+    "checkpoint": "/mfs1/u/memo/country-persona-research/models/Qwen3.5-4B/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+    "release_sha256": "9057f941c23aedfe5819b9f59f2f6ae21b3e5bd3edf6bbade0e34a27e3749a06",
+    "protocol_sha256": "8339e608917f404bf4400af67b41f2a2cd7033acc802653fd59b1c1eacb873e9",
+    "collector_sha256": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "cases": [
+      "emergency/pair",
+      "emergency/control",
+      "myanmar/pair",
+      "myanmar/control",
+      "unama/pair",
+      "unama/control"
+    ],
+    "optimizer_updates": 0,
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "dtype": "bfloat16",
+    "decoding": "greedy, thinking disabled",
+    "attention": "sdpa"
+  },
+  "calls": {
+    "emergency/pair/coverage": {
+      "text": "[[1],[],[],[3],[3],[3]]",
+      "input_tokens": 446,
+      "output_tokens": 13,
+      "termination": "complete",
+      "elapsed_seconds": 1.2936354149132967
+    },
+    "emergency/pair/support": {
+      "text": "[\"Y\", \"Y\", \"Y\"]",
+      "input_tokens": 562,
+      "output_tokens": 10,
+      "termination": "complete",
+      "elapsed_seconds": 0.20703443512320518
+    },
+    "emergency/control/coverage": {
+      "text": "[[], [-1], [-1], [-1], [3], [3]]",
+      "input_tokens": 466,
+      "output_tokens": 18,
+      "termination": "complete",
+      "elapsed_seconds": 0.3212287425994873
+    },
+    "emergency/control/support": {
+      "text": "[\"Y\", \"Y\", \"Y\", \"N\"]",
+      "input_tokens": 582,
+      "output_tokens": 13,
+      "termination": "complete",
+      "elapsed_seconds": 0.24778339639306068
+    },
+    "myanmar/pair/coverage": {
+      "text": "[[1],[2],[3],[4]], [[1]], [[1],[2]], [[3]], [[1],[4]], [[1]], [[1]], [[2],[3],[4]], [[1]], [[1]]",
+      "input_tokens": 618,
+      "output_tokens": 45,
+      "termination": "complete",
+      "elapsed_seconds": 0.7340159509330988
+    },
+    "myanmar/pair/support": {
+      "text": "[\"Y\", \"Y\", \"Y\", \"Y\"]",
+      "input_tokens": 626,
+      "output_tokens": 13,
+      "termination": "complete",
+      "elapsed_seconds": 0.24497148022055626
+    },
+    "myanmar/control/coverage": {
+      "text": "[[1], [1], [2], [4], [4], [1], [1], [5], [1], [1]]",
+      "input_tokens": 633,
+      "output_tokens": 31,
+      "termination": "complete",
+      "elapsed_seconds": 0.5381027162075043
+    },
+    "myanmar/control/support": {
+      "text": "[\"Y\", \"Y\", \"Y\", \"Y\", \"Y\"]",
+      "input_tokens": 641,
+      "output_tokens": 16,
+      "termination": "complete",
+      "elapsed_seconds": 0.5115886349231005
+    },
+    "unama/pair/coverage": {
+      "text": "[[3],[3],[3],[[-1],[[-1],[[-1]]]",
+      "input_tokens": 395,
+      "output_tokens": 18,
+      "termination": "complete",
+      "elapsed_seconds": 0.30316727980971336
+    },
+    "unama/pair/support": {
+      "text": "[\"Y\", \"Y\", \"Y\"]",
+      "input_tokens": 515,
+      "output_tokens": 10,
+      "termination": "complete",
+      "elapsed_seconds": 0.19327270612120628
+    },
+    "unama/control/coverage": {
+      "text": "[[],[],[],[2],[-1],[-1]]",
+      "input_tokens": 353,
+      "output_tokens": 12,
+      "termination": "complete",
+      "elapsed_seconds": 0.2121798787266016
+    },
+    "unama/control/support": {
+      "text": "[\"Y\", \"Y\"]",
+      "input_tokens": 473,
+      "output_tokens": 7,
+      "termination": "complete",
+      "elapsed_seconds": 0.1518464908003807
+    }
+  },
+  "evidence_sha256": {
+    "calls.jsonl": "729bbabb298478058a5be37ba50bfc1afcb3bd8304038a2aa2d6caaf66fbf718",
+    "launch.json": "e269969eedb9702ad96ea637931794fe60ca378776b6f8c0d99296ef91e21fbe",
+    "tokens.jsonl": "8a10865d5d267e39399baf5e1c422691ba8656fe4825d8ff1a7fb156dfd4984f"
+  }
+}

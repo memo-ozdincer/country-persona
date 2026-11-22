@@ -1,0 +1,3689 @@
+{
+  "scope": "Frozen generation of unrestricted ISO date strings and source IDs. The source mapping is supplied to the receipt arm and absence gate. The output syntax and action menu are fixed. Archived policies and synthetic receipt masks drive the exact replay.",
+  "arms": {
+    "pooled_text": {
+      "exact_fields": 12,
+      "exact_handovers": 5,
+      "valid_generated_format": 8,
+      "unsupported_certifications": 1,
+      "by_action": {
+        "confirm": {
+          "correct": 8,
+          "total": 16
+        },
+        "correct": {
+          "correct": 4,
+          "total": 16
+        },
+        "verify": {
+          "correct": 0,
+          "total": 32
+        }
+      },
+      "routing": {
+        "overlap": {
+          "visible": {
+            "complete_usable": 0.17606157213480778,
+            "correct_fields_of_two": 0.4224260694026948
+          },
+          "erased": {
+            "complete_usable": 0.15538782691327077,
+            "correct_fields_of_two": 0.3836929525120494
+          }
+        },
+        "split": {
+          "visible": {
+            "complete_usable": 0.23424959364009262,
+            "correct_fields_of_two": 0.545017630768688
+          },
+          "erased": {
+            "complete_usable": 0.21358280917112038,
+            "correct_fields_of_two": 0.5078513516898817
+          }
+        }
+      },
+      "cases": [
+        {
+          "case": 0,
+          "family": "unami2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 1,
+          "family": "unami2023",
+          "generation": "F1|verify|-|REVIEW\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": false,
+          "output_tokens": 28,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 2,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 25,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 3,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 4,
+          "family": "unami2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 5,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-03-31|REVIEW\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 28,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 6,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 25,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 7,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|correct|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 8,
+          "family": "unami2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 9,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-03-31|REVIEW\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 38,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 10,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-05-31|TERM\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 25,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 11,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 12,
+          "family": "unami2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 13,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-03-31|REVIEW\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 28,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 14,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|correct|2024-05-31|TERM",
+          "format_ok": false,
+          "output_tokens": 26,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 15,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-03-31|REVIEW\nF2|correct|2024-05-31|TERM",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 16,
+          "family": "drc2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 17,
+          "family": "drc2023",
+          "generation": "F1|verify|-|EXPERTS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 30,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 18,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|verify|-|SANCTIONS",
+          "format_ok": false,
+          "output_tokens": 28,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 19,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 20,
+          "family": "drc2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 21,
+          "family": "drc2023",
+          "generation": "F1|verify|-|EXPERTS\nF2|correct|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 30,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 22,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|verify|-|SANCTIONS",
+          "format_ok": false,
+          "output_tokens": 28,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 23,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|correct|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 24,
+          "family": "drc2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 25,
+          "family": "drc2023",
+          "generation": "F1|verify|-|EXPERTS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 30,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 26,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|verify|-|SANCTIONS",
+          "format_ok": false,
+          "output_tokens": 28,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 27,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 28,
+          "family": "drc2023",
+          "generation": "F1|verify|-|\nF2|verify|-|",
+          "format_ok": false,
+          "output_tokens": 14,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 29,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-08-01|EXPERTS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 30,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 30,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|verify|-|SANCTIONS",
+          "format_ok": false,
+          "output_tokens": 28,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 31,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": false
+            }
+          ]
+        }
+      ]
+    },
+    "field_receipt": {
+      "exact_fields": 11,
+      "exact_handovers": 5,
+      "valid_generated_format": 10,
+      "unsupported_certifications": 2,
+      "by_action": {
+        "confirm": {
+          "correct": 7,
+          "total": 16
+        },
+        "correct": {
+          "correct": 4,
+          "total": 16
+        },
+        "verify": {
+          "correct": 0,
+          "total": 32
+        }
+      },
+      "routing": {
+        "overlap": {
+          "visible": {
+            "complete_usable": 0.17606157213480778,
+            "correct_fields_of_two": 0.38733545869657715
+          },
+          "erased": {
+            "complete_usable": 0.15538782691327077,
+            "correct_fields_of_two": 0.3418532192091957
+          }
+        },
+        "split": {
+          "visible": {
+            "complete_usable": 0.23424959364009262,
+            "correct_fields_of_two": 0.5153491060082038
+          },
+          "erased": {
+            "complete_usable": 0.21358280917112038,
+            "correct_fields_of_two": 0.4698821801764649
+          }
+        }
+      },
+      "cases": [
+        {
+          "case": 0,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 1,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 2,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 3,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 4,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 5,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 6,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 7,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|correct|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 8,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 9,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 10,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 11,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|correct|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 12,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 13,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-03-31|REVIEW\nF2|confirm|2024-05-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 38,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "REVIEW"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 14,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 15,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-03-31|REVIEW\nF2|confirm|2024-05-31|TERM",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 16,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 17,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 18,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 19,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 20,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 21,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 22,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 23,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|correct|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 24,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 25,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 26,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 27,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 28,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 29,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-08-01|SANCTIONS\nF2|confirm|2024-07-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "correct",
+                "2024-08-01",
+                "SANCTIONS"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "EXPERTS"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 30,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 31,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": false
+            }
+          ]
+        }
+      ]
+    },
+    "field_receipt_with_gate": {
+      "exact_fields": 43,
+      "exact_handovers": 13,
+      "valid_generated_format": 10,
+      "unsupported_certifications": 0,
+      "by_action": {
+        "confirm": {
+          "correct": 7,
+          "total": 16
+        },
+        "correct": {
+          "correct": 4,
+          "total": 16
+        },
+        "verify": {
+          "correct": 32,
+          "total": 32
+        }
+      },
+      "routing": {
+        "overlap": {
+          "visible": {
+            "complete_usable": 0.17606157213480778,
+            "correct_fields_of_two": 1.2209939304725521
+          },
+          "erased": {
+            "complete_usable": 0.15538782691327077,
+            "correct_fields_of_two": 1.17524166244258
+          }
+        },
+        "split": {
+          "visible": {
+            "complete_usable": 0.23424959364009262,
+            "correct_fields_of_two": 1.2247528978239448
+          },
+          "erased": {
+            "complete_usable": 0.21358280917112038,
+            "correct_fields_of_two": 1.1790048086537854
+          }
+        }
+      },
+      "cases": [
+        {
+          "case": 0,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 1,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 2,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 3,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 4,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 5,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 6,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 7,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|correct|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 8,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 9,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|confirm|2024-03-31|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 10,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 11,
+          "family": "unami2023",
+          "generation": "F1|confirm|2024-05-31|TERM\nF2|correct|2024-03-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "confirm",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 12,
+          "family": "unami2023",
+          "generation": "F1|verify|-|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 17,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 13,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-03-31|REVIEW\nF2|confirm|2024-05-31|REVIEW",
+          "format_ok": true,
+          "output_tokens": 38,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "REVIEW"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 14,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-05-31|TERM\nF2|verify|-|REVIEW",
+          "format_ok": false,
+          "output_tokens": 27,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 15,
+          "family": "unami2023",
+          "generation": "F1|correct|2024-03-31|REVIEW\nF2|confirm|2024-05-31|TERM",
+          "format_ok": true,
+          "output_tokens": 37,
+          "fields": [
+            {
+              "field": "end of existing UNAMI mandate",
+              "expected": [
+                "correct",
+                "2024-05-31",
+                "TERM"
+              ],
+              "observed": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "exact": false
+            },
+            {
+              "field": "deadline to deliver the independent strategic review",
+              "expected": [
+                "correct",
+                "2024-03-31",
+                "REVIEW"
+              ],
+              "observed": [
+                "confirm",
+                "2024-05-31",
+                "TERM"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 16,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 17,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 18,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 19,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 20,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 21,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 22,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 23,
+          "family": "drc2023",
+          "generation": "F1|confirm|2024-07-01|SANCTIONS\nF2|correct|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 24,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 25,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 26,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 27,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 28,
+          "family": "drc2023",
+          "generation": "F1|verify|-|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 19,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 29,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-08-01|SANCTIONS\nF2|confirm|2024-07-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-07-01",
+                "EXPERTS"
+              ],
+              "exact": false
+            }
+          ]
+        },
+        {
+          "case": 30,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|verify|-|EXPERTS",
+          "format_ok": false,
+          "output_tokens": 29,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "invalid",
+                "-",
+                "-"
+              ],
+              "exact": false
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "observed": [
+                "verify",
+                "-",
+                "-"
+              ],
+              "exact": true
+            }
+          ]
+        },
+        {
+          "case": 31,
+          "family": "drc2023",
+          "generation": "F1|correct|2024-07-01|SANCTIONS\nF2|confirm|2024-08-01|EXPERTS",
+          "format_ok": true,
+          "output_tokens": 39,
+          "fields": [
+            {
+              "field": "expiry of the renewed sanctions measures",
+              "expected": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "observed": [
+                "correct",
+                "2024-07-01",
+                "SANCTIONS"
+              ],
+              "exact": true
+            },
+            {
+              "field": "expiry of the Group of Experts mandate",
+              "expected": [
+                "correct",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "observed": [
+                "confirm",
+                "2024-08-01",
+                "EXPERTS"
+              ],
+              "exact": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

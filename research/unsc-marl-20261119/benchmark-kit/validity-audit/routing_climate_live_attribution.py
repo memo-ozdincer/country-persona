@@ -1,0 +1,63 @@
+"""Test attribution instructions with frozen transcripts and a paired chair replay."""
+import argparse
+import json
+from pathlib import Path
+from unittest.mock import patch
+
+import routing_climate_live_exchange as live
+
+runner, read, digest = live.runner, live.read, live.digest
+live_locks = live.locks
+BASE = live.transfer.base.space.OUT / "climate2021-live-exchange"
+REPAIR = (
+    "For each national statement, carry over its reason and its preferred action or scope when present. "
+    "In any shared sentence, include only common institutional preferences and common proposed actions or geographic scope "
+    "directly stated in every named annex. Keep reasons separate and attributed to the speaker who gave them."
+)
+
+
+def locks(launch_script=None):
+    return {**live_locks(), "attribution_script": digest(launch_script or Path(__file__)),
+            "live_trace": digest(BASE / "transcript.jsonl"), "live_annotations": digest(BASE / "annotations.json")}
+
+
+def requests(previous):
+    for arm in live.ARMS:
+        old = previous[f"chair-{arm}"]
+        system, user = old["messages"]
+        yield {**{key: old[key] for key in ("id", "evidence_ids", "cap")}, "messages": [
+            {**system, "content": system["content"] + " " + REPAIR}, user,
+        ]}
+
+
+def episode(previous):
+    def play(generate):
+        return [{"family": live.transfer.task()["id"], "final": generate(list(requests(previous)))}]
+    return play
+
+
+def run(directory):
+    previous = live.verify(BASE)
+    with patch.object(runner, "episode", episode(previous)), patch.object(runner, "locks", locks):
+        runner.run(Path(read(BASE / "launch.json")["model"]), directory)
+
+
+def verify(directory):
+    previous = live.verify(BASE)
+    snapshot = directory / "launch-script.py.txt"
+    expected_locks = locks(snapshot if snapshot.is_file() else None)
+    with patch.object(live, "episode", episode(previous)), patch.object(live, "locks", lambda: expected_locks):
+        amended = live.verify(directory)
+    return {**previous, **amended}
+
+
+if __name__ == "__main__":
+    cli = argparse.ArgumentParser(description=__doc__)
+    cli.add_argument("mode", choices=("run", "verify"))
+    cli.add_argument("directory", type=Path)
+    args = cli.parse_args()
+    if args.mode == "run":
+        run(args.directory)
+    else:
+        rows = verify(args.directory)
+        print(json.dumps({key: rows[key]["output"] for key in rows if key.startswith("chair-")}, indent=2))

@@ -1,0 +1,591 @@
+{
+  "scope": "Retrospective diagnostics. Exact fitting ceilings use both slot assignments and the original payoff. The order-balanced transfer ceiling uses one common policy across both slot assignments. Coverage matches public type and full observed relation pairs. Desks can have partial views.",
+  "training_ceilings": {
+    "relation_only": {
+      "adaptive": 0.21554166666666663,
+      "independent": 0.18546874999999996
+    },
+    "claim_type": {
+      "adaptive": 0.21809374999999998,
+      "independent": 0.18625
+    }
+  },
+  "training_gaps_to_ceiling": {
+    "relation_only": 0.002341066123756619,
+    "claim_type": 0.002649130171667735
+  },
+  "transfer": [
+    {
+      "cohort": "guinea_libya_exposed",
+      "layout": "split",
+      "both_slot_orders_ceilings": {
+        "relation_only": {
+          "adaptive": 0.09513247863247866,
+          "independent": 0.08333333333333333
+        },
+        "claim_type": {
+          "adaptive": 0.12120940170940174,
+          "independent": 0.10023504273504275
+        }
+      },
+      "both_slot_orders_oracle_gain": 0.02607692307692308,
+      "actual_claim_type_gain": 9.070336760050313e-06,
+      "oracle_claim_type_gain": 0.2461452991452992
+    },
+    {
+      "cohort": "guinea_libya_exposed",
+      "layout": "overlap",
+      "both_slot_orders_ceilings": {
+        "relation_only": {
+          "adaptive": 0.09172649572649576,
+          "independent": 0.08333333333333333
+        },
+        "claim_type": {
+          "adaptive": 0.11111111111111115,
+          "independent": 0.09722222222222222
+        }
+      },
+      "both_slot_orders_oracle_gain": 0.01938461538461539,
+      "actual_claim_type_gain": -3.266765489012835e-05,
+      "oracle_claim_type_gain": 0.198017094017094
+    },
+    {
+      "cohort": "gaza_bound",
+      "layout": "split",
+      "both_slot_orders_ceilings": {
+        "relation_only": {
+          "adaptive": 0.3290384615384615,
+          "independent": 0.32211538461538464
+        },
+        "claim_type": {
+          "adaptive": 0.3290384615384615,
+          "independent": 0.32211538461538464
+        }
+      },
+      "both_slot_orders_oracle_gain": 0.0,
+      "actual_claim_type_gain": -0.00020891004902640065,
+      "oracle_claim_type_gain": 0.0
+    },
+    {
+      "cohort": "gaza_bound",
+      "layout": "overlap",
+      "both_slot_orders_ceilings": {
+        "relation_only": {
+          "adaptive": 0.28646153846153855,
+          "independent": 0.2753846153846154
+        },
+        "claim_type": {
+          "adaptive": 0.28646153846153855,
+          "independent": 0.2753846153846154
+        }
+      },
+      "both_slot_orders_oracle_gain": 0.0,
+      "actual_claim_type_gain": -0.00017180485734497042,
+      "oracle_claim_type_gain": 0.0
+    },
+    {
+      "cohort": "haiti_mali",
+      "layout": "split",
+      "both_slot_orders_ceilings": {
+        "relation_only": {
+          "adaptive": 0.13175641025641027,
+          "independent": 0.10737179487179489
+        },
+        "claim_type": {
+          "adaptive": 0.16464529914529916,
+          "independent": 0.14382478632478635
+        }
+      },
+      "both_slot_orders_oracle_gain": 0.032888888888888884,
+      "actual_claim_type_gain": -0.00011944454595591569,
+      "oracle_claim_type_gain": 0.02549572649572651
+    },
+    {
+      "cohort": "haiti_mali",
+      "layout": "overlap",
+      "both_slot_orders_ceilings": {
+        "relation_only": {
+          "adaptive": 0.10962393162393164,
+          "independent": 0.09452991452991451
+        },
+        "claim_type": {
+          "adaptive": 0.1291965811965812,
+          "independent": 0.10965811965811965
+        }
+      },
+      "both_slot_orders_oracle_gain": 0.019572649572649564,
+      "actual_claim_type_gain": -8.916538478903613e-05,
+      "oracle_claim_type_gain": 0.009179487179487175
+    }
+  ],
+  "max_absolute_transfer_gain": 0.00020891004902640065,
+  "observation_coverage": {
+    "guinea_libya_exposed": [
+      {
+        "claim_kind": "vote",
+        "relation_pair": [
+          "supports",
+          "supports"
+        ],
+        "training_examples": [
+          {
+            "panel": "bosnia-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "panel": "space/S-2024-323/China-Russian Federation",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "test_examples": [
+          {
+            "panel": "guinea-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "panel": "libya-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "claim_kind": "vote",
+        "relation_pair": [
+          "contradicts",
+          "contradicts"
+        ],
+        "training_examples": [],
+        "test_examples": [
+          {
+            "panel": "guinea-1",
+            "receipt_payoffs": [
+              0,
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "panel": "libya-1",
+            "receipt_payoffs": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "claim_kind": "statement",
+        "relation_pair": [
+          "contradicts",
+          "contradicts"
+        ],
+        "training_examples": [],
+        "test_examples": [
+          {
+            "panel": "guinea-2",
+            "receipt_payoffs": [
+              0,
+              -1,
+              1,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            -1,
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "claim_kind": "statement",
+        "relation_pair": [
+          "unknown",
+          "supports"
+        ],
+        "training_examples": [
+          {
+            "panel": "afghanistan-1",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_examples": [
+          {
+            "panel": "libya-2",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": []
+      }
+    ],
+    "gaza_bound": [
+      {
+        "claim_kind": "vote",
+        "relation_pair": [
+          "supports",
+          "contradicts"
+        ],
+        "training_examples": [
+          {
+            "panel": "abyei-1",
+            "receipt_payoffs": [
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          {
+            "panel": "space/S-2024-323/Switzerland-Japan",
+            "receipt_payoffs": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "test_examples": [
+          {
+            "panel": "gaza/S-2023-792/United States-China",
+            "receipt_payoffs": [
+              0,
+              0,
+              1,
+              1
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": []
+      },
+      {
+        "claim_kind": "vote",
+        "relation_pair": [
+          "unknown",
+          "contradicts"
+        ],
+        "training_examples": [
+          {
+            "panel": "space/S-2024-302/Switzerland-Japan",
+            "receipt_payoffs": [
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "test_examples": [
+          {
+            "panel": "gaza/S-2023-792/Brazil-France",
+            "receipt_payoffs": [
+              0,
+              0,
+              1,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": []
+      },
+      {
+        "claim_kind": "vote",
+        "relation_pair": [
+          "unknown",
+          "supports"
+        ],
+        "training_examples": [],
+        "test_examples": [
+          {
+            "panel": "gaza/S-2023-795/United States-China",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "claim_kind": "vote",
+        "relation_pair": [
+          "supports",
+          "unknown"
+        ],
+        "training_examples": [],
+        "test_examples": [
+          {
+            "panel": "gaza/S-2023-795/Brazil-France",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ],
+    "haiti_mali": [
+      {
+        "claim_kind": "statement",
+        "relation_pair": [
+          "supports",
+          "supports"
+        ],
+        "training_examples": [
+          {
+            "panel": "unifil-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "panel": "colombia-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "panel": "afghanistan-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "panel": "abyei-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "panel": "central-african-republic-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "test_examples": [
+          {
+            "panel": "haiti-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "panel": "mali-0",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": []
+      },
+      {
+        "claim_kind": "vote",
+        "relation_pair": [
+          "contradicts",
+          "supports"
+        ],
+        "training_examples": [],
+        "test_examples": [
+          {
+            "panel": "haiti-1",
+            "receipt_payoffs": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "claim_kind": "statement",
+        "relation_pair": [
+          "unknown",
+          "unknown"
+        ],
+        "training_examples": [],
+        "test_examples": [
+          {
+            "panel": "haiti-2",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "claim_kind": "statement",
+        "relation_pair": [
+          "supports",
+          "unknown"
+        ],
+        "training_examples": [],
+        "test_examples": [
+          {
+            "panel": "mali-1",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "claim_kind": "statement",
+        "relation_pair": [
+          "unknown",
+          "supports"
+        ],
+        "training_examples": [
+          {
+            "panel": "afghanistan-1",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_examples": [
+          {
+            "panel": "mali-2",
+            "receipt_payoffs": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "test_payoff_patterns_absent_from_train": []
+      }
+    ]
+  },
+  "sha256": {
+    "facilitator_claim_type_audit.py": "53eb99b75f0ae123c11230a6c46dfc9ace015270a9d2955ca8a4e9ba3d9f2c86",
+    "results.json": "7c8eb82132ecb80d641289bb0cc6e4c4cfb38830569241f37430d67d4fe1cfe6"
+  }
+}

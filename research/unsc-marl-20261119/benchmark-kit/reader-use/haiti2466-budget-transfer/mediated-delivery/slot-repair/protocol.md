@@ -1,0 +1,3 @@
+# Test a narrower output grammar and missing first fields
+
+All fifteen original generations omit the requested field-number labels. Preserve the strict fail-closed result. As a sensitivity, decode exactly two bare lines as the two existing slots, with the original field ownership and source ID gate unchanged. Check whether this changes ordinary delivery or allows a withheld passage through. Then regenerate only the three withholding controls with a prompt that directly specifies the bare-line interface and demonstrates both arrangements of EMPTY. Freeze the user payload, cap, model and deterministic decoding. Report location and existence of each admitted field. This dependent repair is evaluated on the same three exposed withholding fixtures.

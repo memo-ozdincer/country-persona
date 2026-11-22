@@ -1,0 +1,51 @@
+{
+  "pins": {
+    "benchmark-v1-runs/reporting-2739/generated-purpose/purpose_study.py": "020c6b145c7fc13ed76eefd38afd495049924f677d645f5a9ce3aac60e3e0a87",
+    "benchmark-v1-runs/reporting-2739/generated-purpose/protocol.md": "3adfe23cc0b6dc6122b940c7d6e43c69def81b7fe223889e9099b5a608f7d61f",
+    "benchmark-v1-runs/reporting-2739/quoted-purpose/study_driver.py": "040ec8540c8f24affd5fb4d11b0dbd0ab035d1d4d99e42b5d0a2521654e2223d",
+    "benchmark-v1-runs/reporting-2739/quoted-purpose/plan.json": "aff5c9e63f105f5a7e9bafc7c587d3e6b91ab368451cc632b7cb92fe0d01a3ca",
+    "benchmark-v1-runs/reporting-2739/quoted-purpose/verified.json": "40324dda0238dc7827b48823dc70731ba819976dffa23e478945720838b514cb",
+    "benchmark-v1-runs/reporting-2739/quoted-purpose/scores.json": "c388c731b1262b7e14b1445a1b4dc4a139c7acf747db814b0e1b553a8a8a1993",
+    "benchmark-v1-runs/relation-support-transfer/plan.json": "3539af076072641cdd817f03d608f3b73a47c5c578268665127116f45aedc7e8",
+    "benchmark-v1-runs/reporting-2739/docket.json": "12be68efa47f0c80f79565be27f6b8128ee04ec9ed3570f5b5a55fd9b49b57ad",
+    "benchmark-v1.5/release.json": "102cf8e5456609c0b0f003c4e278ba4e6a4ce9453357a783355399c5f860bc90",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78"
+  },
+  "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "cases_in_order": [
+    "sponsors-first",
+    "algeria-first",
+    "action-first",
+    "action-second"
+  ],
+  "generator": "Read the two delivered cards. Identify the shared practical purpose that each delegation explicitly gives for continued reporting, even if they describe it in different words. Return only a short infinitive beginning with 'to', at most 14 words. No punctuation or labels. If either card supplies no delegation's stated purpose, or the purposes do not overlap, return exactly NONE. Output only that phrase or NONE.",
+  "generator_cap": 45,
+  "verifier": "Decide whether the candidate comparison is fully supported by the delivered evidence. Check the attribution of every stated reason and the exact scope of any agreement, objection, vote, or adopted requirement. Reasons for voting and reasons for supporting a particular mechanism can be different. A common purpose can be expressed in different words, but every actor named must have a source for that purpose. A procedural outcome does not establish a delegation's stated reason. Missing evidence or any overstatement means unsupported. Return only the letter of the decision.",
+  "verifier_labels": {
+    "ab": {
+      "A": "supported",
+      "B": "unsupported"
+    },
+    "ba": {
+      "A": "unsupported",
+      "B": "supported"
+    }
+  },
+  "evidence": {
+    "sponsors": {
+      "id": "sponsors",
+      "text": "Speaking for the United States and Japan after the vote, Mr. Wood explained that extending the Secretary-General’s reporting would provide the Council with accurate and timely information for future deliberations on the Houthi attacks. He said attacks threatened commerce and the flow of humanitarian assistance. Both co-sponsors voted in favour.",
+      "purpose_quote": "accurate and timely information for future deliberations on the Houthi attacks"
+    },
+    "algeria": {
+      "id": "algeria",
+      "text": "Mr. Bendjama said Algeria abstained, consistent with its January vote. It continued to value the Secretary-General’s monthly reports on attacks on merchant and commercial vessels for keeping the Council informed. Algeria attributed its abstention to concerns over implementation of resolution 2722 (2024) and what it regarded as misuse or misinterpretation of self-defence through attacks on sovereign countries’ territory.",
+      "purpose_quote": "for keeping the Council informed"
+    },
+    "action": {
+      "id": "action",
+      "text": "Operative paragraph 1 of resolution 2739 extends the Secretary-General’s reporting request under paragraph 10 of resolution 2722 (2024) until 15 January 2025. The resolution also reiterates its demand that the Houthis cease attacks on merchant and commercial vessels and release the Galaxy Leader and its crew. It urges caution, restraint and diplomatic efforts. The adopted text contains no new authorization of military action or expansion of the reporting authority."
+    }
+  },
+  "frame": "The co-sponsors and Algeria shared a reason for continued reporting: {purpose}, although Algeria abstained on the resolution."
+}

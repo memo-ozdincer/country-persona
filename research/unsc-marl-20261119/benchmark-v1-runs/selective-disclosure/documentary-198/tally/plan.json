@@ -1,0 +1,566 @@
+{
+  "requests": [
+    {
+      "id": "v02",
+      "max_output_tokens": 63,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+        },
+        {
+          "role": "user",
+          "content": "{\"checked_disposition\": \"unresolved\", \"total_compatible_completions\": 2, \"winners_or_impasse_in_those_completions\": {\"impasse\": 1, \"C\": 1}}"
+        }
+      ]
+    },
+    {
+      "id": "v03",
+      "max_output_tokens": 63,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+        },
+        {
+          "role": "user",
+          "content": "{\"checked_disposition\": \"impasse\", \"total_compatible_completions\": 2, \"winners_or_impasse_in_those_completions\": {\"impasse\": 2}}"
+        }
+      ]
+    },
+    {
+      "id": "v07",
+      "max_output_tokens": 63,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+        },
+        {
+          "role": "user",
+          "content": "{\"checked_disposition\": \"A\", \"total_compatible_completions\": 4, \"winners_or_impasse_in_those_completions\": {\"A\": 4}}"
+        }
+      ]
+    },
+    {
+      "id": "v09",
+      "max_output_tokens": 63,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+        },
+        {
+          "role": "user",
+          "content": "{\"checked_disposition\": \"unresolved\", \"total_compatible_completions\": 4, \"winners_or_impasse_in_those_completions\": {\"B\": 2, \"A\": 2}}"
+        }
+      ]
+    }
+  ],
+  "specs": {
+    "v02": {
+      "prefix": "Workshop disposition: unresolved\n\nThe Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes. The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.\n\nThis is a fictional workshop. Its disposition establishes no official Council action or commitment.\n\nFirst workshop desk: A has grade 0. Second workshop desk: A has grade 3. A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+      "facts": {
+        "checked_disposition": "unresolved",
+        "compatible_completions": [
+          {
+            "winners": [
+              "impasse"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 6
+              },
+              "B": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 3
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 5
+              }
+            }
+          },
+          {
+            "winners": [
+              "C"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 6
+              },
+              "B": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 3
+              },
+              "C": {
+                "feasible": true,
+                "minimum": 2,
+                "sum": 7
+              }
+            }
+          }
+        ],
+        "authenticated_reports": {
+          "First workshop desk": {
+            "package": "A",
+            "grade": 0
+          },
+          "Second workshop desk": {
+            "package": "A",
+            "grade": 3
+          }
+        },
+        "third_seat": {
+          "A": 3,
+          "B": 2,
+          "C": 3
+        },
+        "decision_rule": "A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+        "max_words": 65
+      },
+      "history": [
+        {
+          "id": "apr-amendment",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "counts": {
+        "checked_disposition": "unresolved",
+        "total_compatible_completions": 2,
+        "winners_or_impasse_in_those_completions": {
+          "impasse": 1,
+          "C": 1
+        }
+      },
+      "request": {
+        "id": "v02",
+        "max_output_tokens": 63,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+          },
+          {
+            "role": "user",
+            "content": "{\"checked_disposition\": \"unresolved\", \"total_compatible_completions\": 2, \"winners_or_impasse_in_those_completions\": {\"impasse\": 1, \"C\": 1}}"
+          }
+        ]
+      }
+    },
+    "v03": {
+      "prefix": "Workshop disposition: impasse\n\nThe Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes. The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.\n\nThis is a fictional workshop. Its disposition establishes no official Council action or commitment.\n\nFirst workshop desk: A has grade 0. Second workshop desk: C has grade 0. A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+      "facts": {
+        "checked_disposition": "impasse",
+        "compatible_completions": [
+          {
+            "winners": [
+              "impasse"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 4
+              },
+              "B": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 4
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 5
+              }
+            }
+          },
+          {
+            "winners": [
+              "impasse"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 6
+              },
+              "B": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 3
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 5
+              }
+            }
+          }
+        ],
+        "authenticated_reports": {
+          "First workshop desk": {
+            "package": "A",
+            "grade": 0
+          },
+          "Second workshop desk": {
+            "package": "C",
+            "grade": 0
+          }
+        },
+        "third_seat": {
+          "A": 3,
+          "B": 2,
+          "C": 3
+        },
+        "decision_rule": "A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+        "max_words": 65
+      },
+      "history": [
+        {
+          "id": "apr-amendment",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "counts": {
+        "checked_disposition": "impasse",
+        "total_compatible_completions": 2,
+        "winners_or_impasse_in_those_completions": {
+          "impasse": 2
+        }
+      },
+      "request": {
+        "id": "v03",
+        "max_output_tokens": 63,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+          },
+          {
+            "role": "user",
+            "content": "{\"checked_disposition\": \"impasse\", \"total_compatible_completions\": 2, \"winners_or_impasse_in_those_completions\": {\"impasse\": 2}}"
+          }
+        ]
+      }
+    },
+    "v07": {
+      "prefix": "Workshop disposition: A\n\nThe Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes. The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.\n\nThis is a fictional workshop. Its disposition establishes no official Council action or commitment.\n\nFirst workshop desk: B has grade 2. Second workshop desk: A has grade 3. A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+      "facts": {
+        "checked_disposition": "A",
+        "compatible_completions": [
+          {
+            "winners": [
+              "A"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 7
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 5
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 3
+              }
+            }
+          },
+          {
+            "winners": [
+              "A"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 7
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 5
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 5
+              }
+            }
+          },
+          {
+            "winners": [
+              "A"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 2,
+                "sum": 8
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 5
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 5
+              }
+            }
+          },
+          {
+            "winners": [
+              "A"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 2,
+                "sum": 8
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 5
+              },
+              "C": {
+                "feasible": true,
+                "minimum": 2,
+                "sum": 7
+              }
+            }
+          }
+        ],
+        "authenticated_reports": {
+          "First workshop desk": {
+            "package": "B",
+            "grade": 2
+          },
+          "Second workshop desk": {
+            "package": "A",
+            "grade": 3
+          }
+        },
+        "third_seat": {
+          "A": 3,
+          "B": 2,
+          "C": 3
+        },
+        "decision_rule": "A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+        "max_words": 65
+      },
+      "history": [
+        {
+          "id": "apr-amendment",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "counts": {
+        "checked_disposition": "A",
+        "total_compatible_completions": 4,
+        "winners_or_impasse_in_those_completions": {
+          "A": 4
+        }
+      },
+      "request": {
+        "id": "v07",
+        "max_output_tokens": 63,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+          },
+          {
+            "role": "user",
+            "content": "{\"checked_disposition\": \"A\", \"total_compatible_completions\": 4, \"winners_or_impasse_in_those_completions\": {\"A\": 4}}"
+          }
+        ]
+      }
+    },
+    "v09": {
+      "prefix": "Workshop disposition: unresolved\n\nThe Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes. The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.\n\nThis is a fictional workshop. Its disposition establishes no official Council action or commitment.\n\nFirst workshop desk: B has grade 2. Second workshop desk: C has grade 0. A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+      "facts": {
+        "checked_disposition": "unresolved",
+        "compatible_completions": [
+          {
+            "winners": [
+              "B"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 5
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 2,
+                "sum": 6
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 3
+              }
+            }
+          },
+          {
+            "winners": [
+              "A"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 7
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 5
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 3
+              }
+            }
+          },
+          {
+            "winners": [
+              "B"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 6
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 2,
+                "sum": 6
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 5
+              }
+            }
+          },
+          {
+            "winners": [
+              "A"
+            ],
+            "comparisons": {
+              "A": {
+                "feasible": true,
+                "minimum": 2,
+                "sum": 8
+              },
+              "B": {
+                "feasible": true,
+                "minimum": 1,
+                "sum": 5
+              },
+              "C": {
+                "feasible": false,
+                "minimum": 0,
+                "sum": 5
+              }
+            }
+          }
+        ],
+        "authenticated_reports": {
+          "First workshop desk": {
+            "package": "B",
+            "grade": 2
+          },
+          "Second workshop desk": {
+            "package": "C",
+            "grade": 0
+          }
+        },
+        "third_seat": {
+          "A": 3,
+          "B": 2,
+          "C": 3
+        },
+        "decision_rule": "A zero excludes a package. Rank feasible packages by highest minimum grade, then highest sum.",
+        "max_words": 65
+      },
+      "history": [
+        {
+          "id": "apr-amendment",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "url": "https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf",
+          "text": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "counts": {
+        "checked_disposition": "unresolved",
+        "total_compatible_completions": 4,
+        "winners_or_impasse_in_those_completions": {
+          "B": 2,
+          "A": 2
+        }
+      },
+      "request": {
+        "id": "v09",
+        "max_output_tokens": 63,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Write only a concise warrant explanation for a fictional workshop memo in at most 30 words. Report the total compatible completions and explain what their outcome counts prove. Unresolved means the compatible completions lack a common disposition; impasse means all packages are infeasible in all compatible completions. If there are conflicting outcomes, name them. Described completions are possibilities rather than claimed actual cards. Use only the provided count data. Do not mention new grades, roles, or history."
+          },
+          {
+            "role": "user",
+            "content": "{\"checked_disposition\": \"unresolved\", \"total_compatible_completions\": 4, \"winners_or_impasse_in_those_completions\": {\"B\": 2, \"A\": 2}}"
+          }
+        ]
+      }
+    }
+  },
+  "sha256": {
+    "tally.py": "894819575b24bcc918c1901119e739bb0916e007592da83414162484000d3ec4",
+    "protocol.md": "2ee5852416565e5c54911ae2093e2e9dcc353b44cfc8691d43b0835afafbe967",
+    "plan.json": "3ec25c192f5b22de1fa9c86ef954ae831b3046b10e84896799d7fb24e0518cae",
+    "rubric.json": "bc999b2579ad37f84c3fba1f7242ed036a66b7a94e677762ff86be5bb7cb11c8"
+  }
+}

@@ -1,0 +1,14 @@
+# Source-backed April discussion slice
+
+This assistant annotation covers the public meeting from the first national statement through the final April vote on pages 2–5. Record four national interventions, an amendment vote and a draft vote. Within the slice, each national speaker intervenes once. The chair's procedure and the two roll calls are separate event types. The window excludes earlier consultations and later explanations by other delegations. Counts describe this slice and the six selected decision-relevant ideas in the table. [Official transcript](https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf)
+
+| Turn | Actor | Decision-relevant ideas first observed in the selected inventory | Interaction and later status |
+|---|---|---|---|
+| 1 | United States | **I1.** Reaffirm existing treaty restrictions as the core of the draft. **I2.** Peaceful civilian and scientific services motivate the narrower action. | Introduces the Japan–US draft. The tally has 13 affirmative votes, and the proposal fails. |
+| 2 | Russian Federation | **I3.** Widen the draft's scope through an additional operative paragraph. **I4.** Seek early negotiation of verifiable binding multilateral agreements. | Direct challenge to scope in I1. The proposed amendment is formally put to the vote and fails at 7–7–1. |
+| 3 | China | **I5.** Council work should accommodate broader views and complement other forums. | Supports I3 and I4 and acknowledges the treaty content in I1. Repeated support adds no new idea. The amendment position and subsequent abstention are separate. |
+| 4 | Japan | **I6.** Objection to the verifiability and coverage of the proposed treaty. | After the amendment vote, directly addresses I3 and I4. Japan explains the choice of a narrow draft and echoes the forum distinction in I5. It still backs the draft in the final vote. |
+
+The chair records the April amendment as failing for insufficient affirmative votes and the April draft as failing on a permanent member's negative vote. The final record should preserve the common treaty ground, the competing scope and proposed instrument, and both reasons for failure. The two votes create no new authorization. The second meeting later records another draft failing for lack of affirmative votes. [April transcript, pp. 2–5](https://digitallibrary.un.org/record/4045546/files/S_PV.9616-EN.pdf) · [May transcript, p. 4](https://digitallibrary.un.org/record/4049130/files/S_PV.9630-EN.pdf)
+
+The official statement order establishes that the response came after the proposal. The proceedings supply no matched solo turn, so the observable response carries no causal peer-specific credit. Claims by delegates about negotiation motives remain attributed arguments. The six supplied ideas and their boundaries are provisional annotations for independent review.

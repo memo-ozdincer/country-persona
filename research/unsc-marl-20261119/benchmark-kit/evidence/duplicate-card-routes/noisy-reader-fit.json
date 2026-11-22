@@ -1,0 +1,577 @@
+{
+  "scope": "Exact synthetic team-reward optimization under modeled reader errors. The learned tables use only the locally predicted inventory and the peer bit.",
+  "costs_subtracted": true,
+  "training_readers": [
+    [
+      0.1,
+      0.25
+    ],
+    [
+      0.25,
+      0.1
+    ],
+    [
+      0.2,
+      0.2
+    ]
+  ],
+  "training_loss": 0.15,
+  "training_silent": [
+    1.0008679227343746,
+    1.3315574063593747,
+    1.077895216
+  ],
+  "fit": {
+    "mean": {
+      "objective": 1.5385840984755206,
+      "returns": [
+        1.3722290758195308,
+        1.767226208407031,
+        1.4762970112
+      ],
+      "table": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            2,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            1
+          ]
+        ]
+      ]
+    },
+    "worst_gain": {
+      "objective": 0.37136115308515616,
+      "returns": [
+        1.3722290758195308,
+        1.767226208407031,
+        1.4762970112
+      ],
+      "table": [
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            2,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            2,
+            1
+          ]
+        ]
+      ]
+    }
+  },
+  "evaluation": {
+    "uniform": {
+      "clean": {
+        "both_10": {
+          "mean": {
+            "net": 4.422375000000001,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 1.1786249999999998
+          },
+          "worst_gain": {
+            "net": 4.422375000000001,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 1.1786249999999998
+          },
+          "prior_frozen": {
+            "net": 4.422375000000001,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 1.1786249999999998
+          },
+          "exact_silent": 3.243750000000001,
+          "exact_communicating": 4.422375000000001
+        },
+        "both_25": {
+          "mean": {
+            "net": 2.7480468749999996,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 0.5871093749999994
+          },
+          "worst_gain": {
+            "net": 2.7480468749999996,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 0.5871093749999994
+          },
+          "prior_frozen": {
+            "net": 2.7480468749999996,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 0.5871093749999994
+          },
+          "exact_silent": 2.1609375,
+          "exact_communicating": 2.7480468749999996
+        }
+      },
+      "symmetric": {
+        "both_10": {
+          "mean": {
+            "net": 2.000576249999999,
+            "unsupported_attempt_probability": 0.3875625,
+            "gain_over_same_reader_silent": 0.5641387499999995
+          },
+          "worst_gain": {
+            "net": 2.000576249999999,
+            "unsupported_attempt_probability": 0.3875625,
+            "gain_over_same_reader_silent": 0.5641387499999995
+          },
+          "prior_frozen": {
+            "net": 2.000576249999999,
+            "unsupported_attempt_probability": 0.3875625,
+            "gain_over_same_reader_silent": 0.5641387499999995
+          },
+          "exact_silent": 1.4364374999999996,
+          "exact_communicating": 2.000576249999999
+        },
+        "both_25": {
+          "mean": {
+            "net": 1.1791992187499998,
+            "unsupported_attempt_probability": 0.38953125,
+            "gain_over_same_reader_silent": 0.2733398437500001
+          },
+          "worst_gain": {
+            "net": 1.1791992187499998,
+            "unsupported_attempt_probability": 0.38953125,
+            "gain_over_same_reader_silent": 0.2733398437500001
+          },
+          "prior_frozen": {
+            "net": 1.1791992187499998,
+            "unsupported_attempt_probability": 0.38953125,
+            "gain_over_same_reader_silent": 0.2733398437500001
+          },
+          "exact_silent": 0.9058593749999997,
+          "exact_communicating": 1.1791992187499996
+        }
+      },
+      "overaccepts": {
+        "both_10": {
+          "mean": {
+            "net": 3.32877872109375,
+            "unsupported_attempt_probability": 0.45074406250000004,
+            "gain_over_same_reader_silent": 0.8576904164062493
+          },
+          "worst_gain": {
+            "net": 3.32877872109375,
+            "unsupported_attempt_probability": 0.45074406250000004,
+            "gain_over_same_reader_silent": 0.8576904164062493
+          },
+          "prior_frozen": {
+            "net": 3.32877872109375,
+            "unsupported_attempt_probability": 0.45074406250000004,
+            "gain_over_same_reader_silent": 0.8576904164062493
+          },
+          "exact_silent": 2.4710883046875005,
+          "exact_communicating": 3.3287787210937494
+        },
+        "both_25": {
+          "mean": {
+            "net": 1.9515100561523435,
+            "unsupported_attempt_probability": 0.45224921875,
+            "gain_over_same_reader_silent": 0.344789011230469
+          },
+          "worst_gain": {
+            "net": 1.9515100561523435,
+            "unsupported_attempt_probability": 0.45224921875,
+            "gain_over_same_reader_silent": 0.344789011230469
+          },
+          "prior_frozen": {
+            "net": 1.9515100561523435,
+            "unsupported_attempt_probability": 0.45224921875,
+            "gain_over_same_reader_silent": 0.344789011230469
+          },
+          "exact_silent": 1.6067210449218745,
+          "exact_communicating": 1.9515100561523433
+        }
+      },
+      "overrejects": {
+        "both_10": {
+          "mean": {
+            "net": 1.6415340328124999,
+            "unsupported_attempt_probability": 0.07892101562500002,
+            "gain_over_same_reader_silent": 0.3736731578124999
+          },
+          "worst_gain": {
+            "net": 1.6415340328124999,
+            "unsupported_attempt_probability": 0.07892101562500002,
+            "gain_over_same_reader_silent": 0.3736731578124999
+          },
+          "prior_frozen": {
+            "net": 1.6415340328124999,
+            "unsupported_attempt_probability": 0.07892101562500002,
+            "gain_over_same_reader_silent": 0.3736731578124999
+          },
+          "exact_silent": 1.267860875,
+          "exact_communicating": 1.6415340328125
+        },
+        "both_25": {
+          "mean": {
+            "net": 1.0084318945312498,
+            "unsupported_attempt_probability": 0.07943359375,
+            "gain_over_same_reader_silent": 0.19450767578125006
+          },
+          "worst_gain": {
+            "net": 1.0084318945312498,
+            "unsupported_attempt_probability": 0.07943359375,
+            "gain_over_same_reader_silent": 0.19450767578125006
+          },
+          "prior_frozen": {
+            "net": 1.0084318945312498,
+            "unsupported_attempt_probability": 0.07943359375,
+            "gain_over_same_reader_silent": 0.19450767578125006
+          },
+          "exact_silent": 0.8139242187499998,
+          "exact_communicating": 1.0084318945312496
+        }
+      },
+      "correlated": {
+        "both_10": {
+          "mean": {
+            "net": 2.6416406250000004,
+            "unsupported_attempt_probability": 0.29765625,
+            "gain_over_same_reader_silent": 0.7267968749999998
+          },
+          "worst_gain": {
+            "net": 2.6416406250000004,
+            "unsupported_attempt_probability": 0.29765625,
+            "gain_over_same_reader_silent": 0.7267968749999998
+          },
+          "prior_frozen": {
+            "net": 2.6416406250000004,
+            "unsupported_attempt_probability": 0.29765625,
+            "gain_over_same_reader_silent": 0.7267968749999998
+          },
+          "exact_silent": 1.9148437500000006,
+          "exact_communicating": 2.6416406250000004
+        },
+        "both_25": {
+          "mean": {
+            "net": 1.5944824218749998,
+            "unsupported_attempt_probability": 0.298828125,
+            "gain_over_same_reader_silent": 0.35639648437500004
+          },
+          "worst_gain": {
+            "net": 1.5944824218749998,
+            "unsupported_attempt_probability": 0.298828125,
+            "gain_over_same_reader_silent": 0.35639648437500004
+          },
+          "prior_frozen": {
+            "net": 1.5944824218749998,
+            "unsupported_attempt_probability": 0.298828125,
+            "gain_over_same_reader_silent": 0.35639648437500004
+          },
+          "exact_silent": 1.2380859374999997,
+          "exact_communicating": 1.5944824218749998
+        }
+      }
+    },
+    "skew": {
+      "clean": {
+        "both_10": {
+          "mean": {
+            "net": 7.22628,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 0.21527999999999992
+          },
+          "worst_gain": {
+            "net": 7.22628,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 0.21527999999999992
+          },
+          "prior_frozen": {
+            "net": 7.22628,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": 0.21527999999999992
+          },
+          "exact_silent": 7.011,
+          "exact_communicating": 7.227780000000002
+        },
+        "both_25": {
+          "mean": {
+            "net": 4.683375,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": -0.07537500000000019
+          },
+          "worst_gain": {
+            "net": 4.683375,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": -0.07537500000000019
+          },
+          "prior_frozen": {
+            "net": 4.683375,
+            "unsupported_attempt_probability": 0.0,
+            "gain_over_same_reader_silent": -0.07537500000000019
+          },
+          "exact_silent": 4.75875,
+          "exact_communicating": 4.8808750000000005
+        }
+      },
+      "symmetric": {
+        "both_10": {
+          "mean": {
+            "net": 3.3984392939999992,
+            "unsupported_attempt_probability": 0.2958225,
+            "gain_over_same_reader_silent": 0.06270875399999998
+          },
+          "worst_gain": {
+            "net": 3.3984392939999992,
+            "unsupported_attempt_probability": 0.2958225,
+            "gain_over_same_reader_silent": 0.06270875399999998
+          },
+          "prior_frozen": {
+            "net": 3.3984392939999992,
+            "unsupported_attempt_probability": 0.2958225,
+            "gain_over_same_reader_silent": 0.06270875399999998
+          },
+          "exact_silent": 3.3357305399999992,
+          "exact_communicating": 3.467736659999999
+        },
+        "both_25": {
+          "mean": {
+            "net": 2.09250343125,
+            "unsupported_attempt_probability": 0.30361874999999994,
+            "gain_over_same_reader_silent": -0.12909656874999964
+          },
+          "worst_gain": {
+            "net": 2.09250343125,
+            "unsupported_attempt_probability": 0.30361874999999994,
+            "gain_over_same_reader_silent": -0.12909656874999964
+          },
+          "prior_frozen": {
+            "net": 2.09250343125,
+            "unsupported_attempt_probability": 0.30361874999999994,
+            "gain_over_same_reader_silent": -0.12909656874999964
+          },
+          "exact_silent": 2.2215999999999996,
+          "exact_communicating": 2.2979484374999997
+        }
+      },
+      "overaccepts": {
+        "both_10": {
+          "mean": {
+            "net": 6.143979316499999,
+            "unsupported_attempt_probability": 0.2663594,
+            "gain_over_same_reader_silent": -0.0791529984999988
+          },
+          "worst_gain": {
+            "net": 6.143979316499999,
+            "unsupported_attempt_probability": 0.2663594,
+            "gain_over_same_reader_silent": -0.0791529984999988
+          },
+          "prior_frozen": {
+            "net": 6.143979316499999,
+            "unsupported_attempt_probability": 0.2663594,
+            "gain_over_same_reader_silent": -0.0791529984999988
+          },
+          "exact_silent": 6.223132314999998,
+          "exact_communicating": 6.386861965
+        },
+        "both_25": {
+          "mean": {
+            "net": 3.754131164062499,
+            "unsupported_attempt_probability": 0.28638349999999996,
+            "gain_over_same_reader_silent": -0.45846883593749954
+          },
+          "worst_gain": {
+            "net": 3.754131164062499,
+            "unsupported_attempt_probability": 0.28638349999999996,
+            "gain_over_same_reader_silent": -0.45846883593749954
+          },
+          "prior_frozen": {
+            "net": 3.754131164062499,
+            "unsupported_attempt_probability": 0.28638349999999996,
+            "gain_over_same_reader_silent": -0.45846883593749954
+          },
+          "exact_silent": 4.212599999999998,
+          "exact_communicating": 4.303141328125
+        }
+      },
+      "overrejects": {
+        "both_10": {
+          "mean": {
+            "net": 2.5918527262499995,
+            "unsupported_attempt_probability": 0.06168281250000002,
+            "gain_over_same_reader_silent": 0.0987932262500002
+          },
+          "worst_gain": {
+            "net": 2.5918527262499995,
+            "unsupported_attempt_probability": 0.06168281250000002,
+            "gain_over_same_reader_silent": 0.0987932262500002
+          },
+          "prior_frozen": {
+            "net": 2.5918527262499995,
+            "unsupported_attempt_probability": 0.06168281250000002,
+            "gain_over_same_reader_silent": 0.0987932262500002
+          },
+          "exact_silent": 2.4930594999999993,
+          "exact_communicating": 2.591852726249999
+        },
+        "both_25": {
+          "mean": {
+            "net": 1.6566573656249994,
+            "unsupported_attempt_probability": 0.062632875,
+            "gain_over_same_reader_silent": 0.00013549062499995657
+          },
+          "worst_gain": {
+            "net": 1.6566573656249994,
+            "unsupported_attempt_probability": 0.062632875,
+            "gain_over_same_reader_silent": 0.00013549062499995657
+          },
+          "prior_frozen": {
+            "net": 1.6566573656249994,
+            "unsupported_attempt_probability": 0.062632875,
+            "gain_over_same_reader_silent": 0.00013549062499995657
+          },
+          "exact_silent": 1.6565218749999995,
+          "exact_communicating": 1.7046128124999995
+        }
+      },
+      "correlated": {
+        "both_10": {
+          "mean": {
+            "net": 4.404346875000001,
+            "unsupported_attempt_probability": 0.26253125,
+            "gain_over_same_reader_silent": 0.1097531250000019
+          },
+          "worst_gain": {
+            "net": 4.404346875000001,
+            "unsupported_attempt_probability": 0.26253125,
+            "gain_over_same_reader_silent": 0.1097531250000019
+          },
+          "prior_frozen": {
+            "net": 4.404346875000001,
+            "unsupported_attempt_probability": 0.26253125,
+            "gain_over_same_reader_silent": 0.1097531250000019
+          },
+          "exact_silent": 4.294593749999999,
+          "exact_communicating": 4.447248750000003
+        },
+        "both_25": {
+          "mean": {
+            "net": 2.7897832031250003,
+            "unsupported_attempt_probability": 0.265859375,
+            "gain_over_same_reader_silent": -0.10021679687500074
+          },
+          "worst_gain": {
+            "net": 2.7897832031250003,
+            "unsupported_attempt_probability": 0.265859375,
+            "gain_over_same_reader_silent": -0.10021679687500074
+          },
+          "prior_frozen": {
+            "net": 2.7897832031250003,
+            "unsupported_attempt_probability": 0.265859375,
+            "gain_over_same_reader_silent": -0.10021679687500074
+          },
+          "exact_silent": 2.890000000000001,
+          "exact_communicating": 2.9718164062500003
+        }
+      }
+    }
+  },
+  "input_hashes": {
+    "buffered-fit.json": "9a5c23a04bb8022c59eae67589c7ef8b66409d9933a90f223ffb160f043ff677",
+    "reward-fit.json": "81001014aee4dc447302cd74790f9889a174fc2b6b243a646cd71b9e914380a6",
+    "dprk-routes.json": "ff8d5c0eb405d580d5e7efab997510eaf72dde2f9e21a2baac776e6ddbb00528"
+  }
+}

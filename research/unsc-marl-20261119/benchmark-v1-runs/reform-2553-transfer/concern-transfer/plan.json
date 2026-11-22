@@ -1,0 +1,115 @@
+{
+  "pins": {
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/concern_study.py": "fa130bef258ebb9184390955d6f06cc1e86cfbeed34504079b890846e0183949",
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/protocol.md": "130addce3d77a6f0ba0aad3e3e228571ebdf8d8f1b556eb0dfe7251d4edb3439",
+    "benchmark-v1-runs/reform-2553-transfer/docket.json": "67dab398fc4b0e5df9f9d6a6069a442b4ac810ee2706c2e22a724d98dcb1c7a9",
+    "benchmark-v1-runs/reform-2553-transfer/provenance.json": "22e485b4898bbab11a9dc2b63310c6ac435b7b17c45fe5f46192ca3b773555ef",
+    "benchmark-v1-runs/reporting-2739/generated-purpose/purpose_study.py": "020c6b145c7fc13ed76eefd38afd495049924f677d645f5a9ce3aac60e3e0a87",
+    "benchmark-v1-runs/reporting-2739/generated-purpose/plan.json": "676eb6e5695650ca5247af3ba4e9510039db6d8f5eae5cc5c569e970886282a9",
+    "benchmark-v1-runs/reporting-2739/generated-purpose/scores.json": "cc96b4fcd1d21ff4ae1ba093f0d655316fd59113481cffa2cdc23937db5b45ff",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "benchmark-v1.5/release.json": "102cf8e5456609c0b0f003c4e278ba4e6a4ce9453357a783355399c5f860bc90"
+  },
+  "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "prompt": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE.",
+  "requests": {
+    "process-uk-first": {
+      "id": "process-uk-first",
+      "max_output_tokens": 45,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"owner\": \"the UK\", \"id\": \"gb-process\", \"text\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\"}, {\"owner\": \"Germany\", \"id\": \"de-process\", \"text\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}]}"
+        }
+      ]
+    },
+    "process-germany-first": {
+      "id": "process-germany-first",
+      "max_output_tokens": 45,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"owner\": \"Germany\", \"id\": \"de-process\", \"text\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}, {\"owner\": \"the UK\", \"id\": \"gb-process\", \"text\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\"}]}"
+        }
+      ]
+    },
+    "cross-uk-first": {
+      "id": "cross-uk-first",
+      "max_output_tokens": 45,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"owner\": \"the UK\", \"id\": \"gb-process\", \"text\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\"}, {\"owner\": \"Germany\", \"id\": \"de-fund\", \"text\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}]}"
+        }
+      ]
+    },
+    "cross-germany-first": {
+      "id": "cross-germany-first",
+      "max_output_tokens": 45,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"owner\": \"Germany\", \"id\": \"de-fund\", \"text\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}, {\"owner\": \"the UK\", \"id\": \"gb-process\", \"text\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\"}]}"
+        }
+      ]
+    },
+    "fund-germany-first": {
+      "id": "fund-germany-first",
+      "max_output_tokens": 45,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"owner\": \"Germany\", \"id\": \"de-fund\", \"text\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}, {\"owner\": \"Belgium\", \"id\": \"be-funding\", \"text\": \"Belgium called adequate, predictable and sustainable funding and thorough coordination essential to effective reform.\"}]}"
+        }
+      ]
+    },
+    "fund-belgium-first": {
+      "id": "fund-belgium-first",
+      "max_output_tokens": 45,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"owner\": \"Belgium\", \"id\": \"be-funding\", \"text\": \"Belgium called adequate, predictable and sustainable funding and thorough coordination essential to effective reform.\"}, {\"owner\": \"Germany\", \"id\": \"de-fund\", \"text\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}]}"
+        }
+      ]
+    },
+    "uk-only": {
+      "id": "uk-only",
+      "max_output_tokens": 45,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Read the two delivered cards. Identify the shared specific concern that both delegations explicitly express, even if they describe it in different words. Return only a short prepositional phrase beginning with 'about', at most 14 words. No punctuation or labels. If either card supplies no stated concern, or the two concerns do not match, return exactly NONE. Output only that phrase or NONE."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"owner\": \"the UK\", \"id\": \"gb-process\", \"text\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\"}]}"
+        }
+      ]
+    }
+  }
+}

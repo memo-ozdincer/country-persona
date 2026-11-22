@@ -1,0 +1,5 @@
+# Review reply admission
+
+Given an anonymized candidate, the authorized source and its three required facts, score only the candidate's own claims. List one or more exact candidate spans for each complete fact and use an empty list otherwise. Keep the actor, numbers, procedural object and qualifications. A correct amendment tally requires the zero negative votes and France among the abstentions. A correct final vote needs both the amended draft identity and the affirmative tally. A proposal to clarify funding is insufficient to establish the US reading of the original draft. France's willingness covers contribution levels from both the UN and EU. Flag each unsupported attribution, factual change or procedural implication with its exact candidate span. Leave ordinary omissions as empty support lists.
+
+Return a JSON object keyed by anonymized candidate IDs. Each row contains `required`, a list of three exact-span lists in the original fact order, and `errors`, a list of exact unsupported spans. The runner determines termination and the 52-word limit. Passing all three requirements and the material-error guard admits the card.

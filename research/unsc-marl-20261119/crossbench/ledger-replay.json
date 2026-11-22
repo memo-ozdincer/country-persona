@@ -1,0 +1,176 @@
+{
+  "transcript_sha256": "725289c6fd9f09fb6cace85e26d70e85241da5e3938e104166b77c6048b70c12",
+  "cases": {
+    "overlap": {
+      "solo": {
+        "from_supplied_messages": {
+          "state": "AGREEMENT_POSSIBLE",
+          "verified_options": {
+            "B": {
+              "role-1": [
+                "solo-1-shared"
+              ],
+              "role-2": [
+                "solo-2-overlap"
+              ]
+            }
+          },
+          "blocked_options": {
+            "A": {
+              "role-2": [
+                "solo-2-overlap"
+              ]
+            },
+            "C": {
+              "role-1": [
+                "solo-1-shared"
+              ]
+            },
+            "D": {
+              "role-1": [
+                "solo-1-shared"
+              ],
+              "role-2": [
+                "solo-2-overlap"
+              ]
+            }
+          },
+          "unresolved_options": [],
+          "unique_verified": true
+        },
+        "each_message_alone": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "message_ids_seen_by_writer": [
+          "solo-1-shared",
+          "solo-2-overlap"
+        ]
+      },
+      "peer": {
+        "from_supplied_messages": {
+          "state": "AGREEMENT_POSSIBLE",
+          "verified_options": {
+            "B": {
+              "role-1": [
+                "peer-1-overlap"
+              ],
+              "role-2": [
+                "peer-2-overlap"
+              ]
+            }
+          },
+          "blocked_options": {
+            "A": {
+              "role-2": [
+                "peer-2-overlap"
+              ]
+            },
+            "C": {
+              "role-1": [
+                "peer-1-overlap"
+              ]
+            },
+            "D": {
+              "role-1": [
+                "peer-1-overlap"
+              ],
+              "role-2": [
+                "peer-2-overlap"
+              ]
+            }
+          },
+          "unresolved_options": [],
+          "unique_verified": true
+        },
+        "each_message_alone": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "message_ids_seen_by_writer": [
+          "peer-1-overlap",
+          "peer-2-overlap"
+        ]
+      }
+    },
+    "impasse": {
+      "solo": {
+        "from_supplied_messages": {
+          "state": "IMPASSE",
+          "verified_options": {},
+          "blocked_options": {
+            "A": {
+              "role-2": [
+                "solo-2-impasse"
+              ]
+            },
+            "B": {
+              "role-2": [
+                "solo-2-impasse"
+              ]
+            },
+            "C": {
+              "role-1": [
+                "solo-1-shared"
+              ]
+            },
+            "D": {
+              "role-1": [
+                "solo-1-shared"
+              ]
+            }
+          },
+          "unresolved_options": [],
+          "unique_verified": false
+        },
+        "each_message_alone": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "message_ids_seen_by_writer": [
+          "solo-1-shared",
+          "solo-2-impasse"
+        ]
+      },
+      "peer": {
+        "from_supplied_messages": {
+          "state": "IMPASSE",
+          "verified_options": {},
+          "blocked_options": {
+            "A": {
+              "role-2": [
+                "peer-2-impasse"
+              ]
+            },
+            "B": {
+              "role-2": [
+                "peer-2-impasse"
+              ]
+            },
+            "C": {
+              "role-1": [
+                "peer-1-impasse"
+              ]
+            },
+            "D": {
+              "role-1": [
+                "peer-1-impasse"
+              ]
+            }
+          },
+          "unresolved_options": [],
+          "unique_verified": false
+        },
+        "each_message_alone": [
+          "UNRESOLVED",
+          "UNRESOLVED"
+        ],
+        "message_ids_seen_by_writer": [
+          "peer-1-impasse",
+          "peer-2-impasse"
+        ]
+      }
+    }
+  },
+  "scope": "Same-assistant quote annotations over generated submissions. Reference labels are checked after compiling."
+}

@@ -1,0 +1,177 @@
+{
+  "scope": "Same-assistant certificate review on the exposed paired prompt control. Exact cited spans are checked.",
+  "results": {
+    "venezuela/2-32/verified": {
+      "memo": "Workshop status: B\n\nUnited States (verified) submitted B=1, D=2, F=3. Russian Federation (verified) submitted B=3, D=1. The United States clarified that B is a fallback (grade 1).\n\nPackage B wins because its sum of 4 exceeds Package D's sum of 3, breaking the tie in lower grade.\n\nThe workshop has no official authority. S/2019/186: It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted. S/2019/190: It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.",
+      "words": 104,
+      "reason_words": 20,
+      "body_as_generated": "Package B wins because its sum of 4 exceeds Package D's sum of 3, breaking the tie in lower grade.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Uses the correct sum comparison and recognizes the equal lower grades.",
+      "response_spans": [
+        "its sum of 4 exceeds Package D's sum of 3, breaking the tie in lower grade"
+      ],
+      "certificate_spans": [
+        "\"sum\": 4",
+        "\"sum\": 3",
+        "\"decisive_comparison\": \"higher sum breaks an equal lower grade\""
+      ],
+      "pass": true
+    },
+    "venezuela/2-16/verified": {
+      "memo": "Workshop status: D\n\nUnited States (verified) submitted B=1, D=2, F=3. Russian Federation (verified) submitted B=1, D=3. The United States clarified that B is a fallback (grade 1).\n\nPackage D wins with a decisive lower grade of 2 versus Package B's 1.\n\nThe workshop has no official authority. S/2019/186: It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted. S/2019/190: It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.",
+      "words": 98,
+      "reason_words": 14,
+      "body_as_generated": "Package D wins with a decisive lower grade of 2 versus Package B's 1.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Correct numerical basis for selecting D.",
+      "response_spans": [
+        "lower grade of 2 versus Package B's 1"
+      ],
+      "certificate_spans": [
+        "\"decisive_comparison\": \"higher lower grade\"",
+        "\"lower_grade\": 2, \"package\": \"D\"",
+        "\"lower_grade\": 1, \"package\": \"B\""
+      ],
+      "pass": true
+    },
+    "venezuela/2-16/withheld": {
+      "memo": "Workshop status: UNRESOLVED\n\nRussian Federation (verified) submitted B=1, D=3.\n\nPackage 1 remains UNRESOLVED due to a missing scorecard from the United States preventing acceptance verification.\n\nThe workshop has no official authority. S/2019/186: It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted. S/2019/190: It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.",
+      "words": 82,
+      "reason_words": 16,
+      "body_as_generated": "Package 1 remains UNRESOLVED due to a missing scorecard from the United States preventing acceptance verification.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": false,
+      "complete_reason": false,
+      "explanation": "Invents an identifier and omits requesting the missing United States scorecard.",
+      "response_spans": [
+        "Package 1 remains UNRESOLVED"
+      ],
+      "certificate_spans": [
+        "\"disposition\": \"UNRESOLVED\"",
+        "\"next_step\": \"Request the missing card.\""
+      ],
+      "pass": false
+    },
+    "venezuela/2-64/verified": {
+      "memo": "Workshop status: IMPASSE\n\nUnited States (verified) submitted B=1, D=2, F=3. Russian Federation (verified) submitted C=2, E=3. The United States clarified that B is a fallback (grade 1).\n\nPackage B is acceptable; Package C lacks decisive evidence and is not acceptable.\n\nThe workshop has no official authority. S/2019/186: It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted. S/2019/190: It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.",
+      "words": 97,
+      "reason_words": 13,
+      "body_as_generated": "Package B is acceptable; Package C lacks decisive evidence and is not acceptable.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": false,
+      "complete_reason": false,
+      "explanation": "Erases the relevant distinction between one seat's acceptance and mutual acceptance, and says C is unacceptable.",
+      "response_spans": [
+        "Package C lacks decisive evidence and is not acceptable"
+      ],
+      "certificate_spans": [
+        "\"second_acceptable\": [\"C\", \"E\"]",
+        "\"disposition\": \"IMPASSE\""
+      ],
+      "pass": false
+    },
+    "space/2-16/verified-tie": {
+      "memo": "Workshop status: F\n\nJapan (verified) submitted A=1, D=2, F=3. China (verified) submitted A=1, D=3, F=2.\n\nPackage F and Package D are both allowed due to an exact tie in decisive comparison numbers.\n\nThe workshop has no official authority. S/2024/323: It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes. S/2024/302: The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.",
+      "words": 82,
+      "reason_words": 17,
+      "body_as_generated": "Package F and Package D are both allowed due to an exact tie in decisive comparison numbers.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": true,
+      "complete_reason": false,
+      "explanation": "Preserves both supported routes but omits the jointly decisive grade 2 and sum 5.",
+      "response_spans": [
+        "Package F and Package D are both allowed due to an exact tie"
+      ],
+      "certificate_spans": [
+        "\"decisive_comparison\": \"exact tie, either package is allowed\"",
+        "\"lower_grade\": 2, \"package\": \"F\", \"sum\": 5"
+      ],
+      "pass": false
+    },
+    "venezuela/2-32/reported": {
+      "memo": "Workshop status: B\n\nUnited States (reported) submitted B=3, D=2, F=1. Russian Federation (verified) submitted B=3, D=1.\n\nPackage B is selected with a decisive lower grade of 3 versus D's 1, though one card remains unverified.\n\nThe workshop has no official authority. S/2019/186: It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted. S/2019/190: It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.",
+      "words": 92,
+      "reason_words": 19,
+      "body_as_generated": "Package B is selected with a decisive lower grade of 3 versus D's 1, though one card remains unverified.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Correct numerical basis for provisional B.",
+      "response_spans": [
+        "lower grade of 3 versus D's 1, though one card remains unverified"
+      ],
+      "certificate_spans": [
+        "\"lower_grade\": 3, \"package\": \"B\"",
+        "\"lower_grade\": 1, \"package\": \"D\"",
+        "\"provisional\": true"
+      ],
+      "pass": true
+    },
+    "venezuela/2-16/reported": {
+      "memo": "Workshop status: D\n\nUnited States (reported) submitted B=3, D=2, F=1. Russian Federation (verified) submitted B=1, D=3.\n\nPackage D is decisive with a lower grade of 2 versus B's 1, though one card remains unverified.\n\nThe workshop has no official authority. S/2019/186: It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted. S/2019/190: It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.",
+      "words": 91,
+      "reason_words": 18,
+      "body_as_generated": "Package D is decisive with a lower grade of 2 versus B's 1, though one card remains unverified.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Uses the correct decisive minima, and preserves that a card remains unverified.",
+      "response_spans": [
+        "lower grade of 2 versus B's 1, though one card remains unverified"
+      ],
+      "certificate_spans": [
+        "\"lower_grade\": 2, \"package\": \"D\"",
+        "\"lower_grade\": 1, \"package\": \"B\"",
+        "\"provisional\": true"
+      ],
+      "pass": true
+    },
+    "venezuela/2-64/reported": {
+      "memo": "Workshop status: IMPASSE\n\nUnited States (reported) submitted B=3, D=2, F=1. Russian Federation (verified) submitted C=2, E=3.\n\nPackage B is acceptable; Package C lacks the required 'provisionally' wording due to an unverified grade card.\n\nThe workshop has no official authority. S/2019/186: It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted. S/2019/190: It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.",
+      "words": 90,
+      "reason_words": 17,
+      "body_as_generated": "Package B is acceptable; Package C lacks the required 'provisionally' wording due to an unverified grade card.",
+      "exact_heading": true,
+      "facts_intact": true,
+      "stop": "eos",
+      "within_limits": true,
+      "fact_safe": false,
+      "complete_reason": false,
+      "explanation": "Attributes a bogus wording requirement to C and fails to explain the provisional impasse.",
+      "response_spans": [
+        "Package C lacks the required 'provisionally' wording"
+      ],
+      "certificate_spans": [
+        "\"disposition\": \"IMPASSE\"",
+        "\"second_acceptable\": [\"C\", \"E\"]"
+      ],
+      "pass": false
+    }
+  }
+}

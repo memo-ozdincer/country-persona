@@ -1,0 +1,896 @@
+{
+  "scope": "Same-assistant semantic review of the six unique memo records using the arm-free deck and predeclared 70-point rubric. Evidence quotation spans are mechanically checked.",
+  "rubric_sha256": "d12850f86e311ce019fe5e2c15a4a796f0cf4611d8039258551fbda695413e74",
+  "reviews": {
+    "39cbdf8f18": {
+      "units": {
+        "D2": {
+          "status": "met",
+          "response": "Workshop actions are merely recommendations with no official authority to change official votes.",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+            }
+          ],
+          "reason": "The memo separates the workshop role from official authority."
+        },
+        "A2": {
+          "status": "met",
+          "response": "the chair recommends no package",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+            }
+          ],
+          "reason": "The chair stays within recommendation authority."
+        },
+        "P1": {
+          "status": "met",
+          "response": "The first delegate holds the \"review\" card",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "first delegate has the workshop card review."
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "Correct owner and the only package allowed by its card."
+        },
+        "P2": {
+          "status": "met",
+          "response": "the second delegate holds the \"closure\" card",
+          "source": [
+            {
+              "block": "card-2",
+              "quote": "second delegate has the workshop card closure."
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "Correct owner and package."
+        },
+        "C1": {
+          "status": "met",
+          "response": "Since delegates accepted different packages",
+          "source": [
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            },
+            {
+              "block": "card-1",
+              "quote": "first delegate has the workshop card review."
+            },
+            {
+              "block": "card-2",
+              "quote": "second delegate has the workshop card closure."
+            }
+          ],
+          "reason": "The two exclusive preferences are correctly distinguished."
+        },
+        "C2": {
+          "status": "met",
+          "response": "The first delegate holds the \"review\" card, while the second delegate holds the \"closure\" card.",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "first delegate has the workshop card review."
+            },
+            {
+              "block": "card-2",
+              "quote": "second delegate has the workshop card closure."
+            }
+          ],
+          "reason": "Names both sides of the outstanding package choice."
+        },
+        "H1": {
+          "status": "met",
+          "response": "S/2023/638 (13 for, 1 against, 1 abstention), which failed due to Russia's veto.",
+          "source": [
+            {
+              "block": "status-638",
+              "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+            }
+          ],
+          "reason": "Correct instrument, tally and veto."
+        },
+        "D1": {
+          "status": "unmet",
+          "response": "Workshop status: IMPASSE.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: IMPASSE"
+            }
+          ],
+          "reason": "Punctuation and body text follow the label on the same line."
+        },
+        "A1": {
+          "status": "unmet",
+          "response": "the chair recommends no package",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: IMPASSE"
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "States the disposition but does not refer the competing terms for further consideration."
+        },
+        "H2": {
+          "status": "unmet",
+          "response": "Russia's separate draft S/2023/639 (1 for, 1 against, 13 abstentions) also failed.",
+          "source": [
+            {
+              "block": "status-639",
+              "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+            }
+          ],
+          "reason": "Correct tally and disposition, with the reason for failure omitted."
+        }
+      },
+      "guard": {
+        "status": "clear",
+        "response": "Workshop actions are merely recommendations with no official authority",
+        "source": [
+          {
+            "block": "context",
+            "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+          },
+          {
+            "block": "status-638",
+            "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+          },
+          {
+            "block": "status-639",
+            "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+          }
+        ],
+        "reason": "No unsupported authority or workshop fact is asserted."
+      }
+    },
+    "951cd31a6d": {
+      "units": {
+        "D2": {
+          "status": "met",
+          "response": "The workshop lacks official authority; its actions are merely recommendations.",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+            }
+          ],
+          "reason": "The recommendation is framed as a workshop action."
+        },
+        "A2": {
+          "status": "met",
+          "response": "the chair recommends no action",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+            }
+          ],
+          "reason": "The chair limits its role to recommending."
+        },
+        "P1": {
+          "status": "met",
+          "response": "The first delegate holds the \"review\" card",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "first delegate has the workshop card review."
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "Correct owner and constraint."
+        },
+        "P2": {
+          "status": "met",
+          "response": "the second delegate holds the \"closure\" card",
+          "source": [
+            {
+              "block": "card-2",
+              "quote": "second delegate has the workshop card closure."
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "Correct owner and constraint."
+        },
+        "C1": {
+          "status": "met",
+          "response": "Since neither delegate accepted the same package",
+          "source": [
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            },
+            {
+              "block": "card-1",
+              "quote": "first delegate has the workshop card review."
+            },
+            {
+              "block": "card-2",
+              "quote": "second delegate has the workshop card closure."
+            }
+          ],
+          "reason": "Recognizes the exclusive positions as incompatible."
+        },
+        "C2": {
+          "status": "met",
+          "response": "The first delegate holds the \"review\" card, while the second delegate holds the \"closure\" card.",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "first delegate has the workshop card review."
+            },
+            {
+              "block": "card-2",
+              "quote": "second delegate has the workshop card closure."
+            }
+          ],
+          "reason": "States which packages remain in contention."
+        },
+        "H1": {
+          "status": "met",
+          "response": "S/2023/638 failed due to a Russian veto (13 for, 1 against, 1 abstention)",
+          "source": [
+            {
+              "block": "status-638",
+              "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+            }
+          ],
+          "reason": "Correct disposition, cause and tally."
+        },
+        "H2": {
+          "status": "met",
+          "response": "S/2023/639 failed due to insufficient support (1 for, 1 against, 13 abstentions).",
+          "source": [
+            {
+              "block": "status-639",
+              "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+            }
+          ],
+          "reason": "Correct separate instrument, count and voting-threshold explanation."
+        },
+        "D1": {
+          "status": "unmet",
+          "response": "Workshop status: IMPASSE.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: IMPASSE"
+            }
+          ],
+          "reason": "Punctuation and body text follow the label on the same line."
+        },
+        "A1": {
+          "status": "unmet",
+          "response": "the chair recommends no action",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: IMPASSE"
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "No referral or next discussion is proposed."
+        }
+      },
+      "guard": {
+        "status": "clear",
+        "response": "The workshop lacks official authority; its actions are merely recommendations.",
+        "source": [
+          {
+            "block": "context",
+            "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+          },
+          {
+            "block": "status-638",
+            "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+          },
+          {
+            "block": "status-639",
+            "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+          }
+        ],
+        "reason": "The source attributions and procedure are supported."
+      }
+    },
+    "65b2d68869": {
+      "units": {
+        "D2": {
+          "status": "met",
+          "response": "The workshop lacks official authority to change official votes or adopt resolutions.",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+            }
+          ],
+          "reason": "Distinguishes simulated action from formal authority."
+        },
+        "A2": {
+          "status": "met",
+          "response": "Its only function is to recommend packages based on delegate acceptance.",
+          "source": [
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            },
+            {
+              "block": "context",
+              "quote": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote."
+            }
+          ],
+          "reason": "States the simulated scope of authority despite choosing an unsupported substantive step elsewhere."
+        },
+        "P1": {
+          "status": "met",
+          "response": "The chair holds a \"review\" card from the first delegate.",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "first delegate has the workshop card review."
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "Correct card and owner."
+        },
+        "P2": {
+          "status": "met",
+          "response": "No second delegate card is available",
+          "source": [
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the second delegate."
+            }
+          ],
+          "reason": "Identifies the missing role card."
+        },
+        "C2": {
+          "status": "met",
+          "response": "No second delegate card is available",
+          "source": [
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the second delegate."
+            }
+          ],
+          "reason": "Identifies the concrete evidence gap."
+        },
+        "D1": {
+          "status": "unmet",
+          "response": "Workshop status: UNRESOLVED.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: UNRESOLVED"
+            }
+          ],
+          "reason": "Punctuation and body text follow the label on the same line."
+        },
+        "A1": {
+          "status": "unmet",
+          "response": "The workshop recommends reviewing draft S/2023/638 (France/ UAE) and S/2023/639 (Russia) regarding Mali sanctions",
+          "source": [
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the second delegate."
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            }
+          ],
+          "reason": "Recommends acting on the official drafts rather than obtaining the missing card."
+        },
+        "C1": {
+          "status": "unmet",
+          "response": "creating an impasse per public rules",
+          "source": [
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the second delegate."
+            },
+            {
+              "block": "rule",
+              "quote": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse."
+            },
+            {
+              "block": "checked",
+              "quote": "Workshop status: UNRESOLVED"
+            }
+          ],
+          "reason": "A missing card leaves compatibility open."
+        },
+        "H1": {
+          "status": "unmet",
+          "response": "Russia for 638",
+          "source": [
+            {
+              "block": "status-638",
+              "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+            }
+          ],
+          "reason": "Russia caused the veto; the tally is omitted."
+        },
+        "H2": {
+          "status": "unmet",
+          "response": "both failed adoption due to negative votes from permanent members (Russia for 638, Japan for 639).",
+          "source": [
+            {
+              "block": "status-639",
+              "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+            }
+          ],
+          "reason": "The second draft lacked affirmative support. The response incorrectly uses Japan to explain a permanent-member veto."
+        }
+      },
+      "guard": {
+        "status": "failed",
+        "response": "both failed adoption due to negative votes from permanent members (Russia for 638, Japan for 639).",
+        "source": [
+          {
+            "block": "status-639",
+            "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+          }
+        ],
+        "reason": "The memo fabricates a permanent-member veto as the reason for the second draft failing."
+      }
+    },
+    "2ac8218a1e": {
+      "units": {
+        "D2": {
+          "status": "met",
+          "response": "Workshop actions remain recommendations with no official authority",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+            }
+          ],
+          "reason": "The scheduling record is framed as a simulated recommendation."
+        },
+        "A2": {
+          "status": "met",
+          "response": "serving solely to coordinate scheduling for the mandated briefing.",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+            },
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "Locates the workshop role in scheduling rather than changing the mandate."
+        },
+        "P1": {
+          "status": "met",
+          "response": "The UN office holds the \"early only\" card",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            }
+          ],
+          "reason": "Correct owner and time limit."
+        },
+        "P2": {
+          "status": "met",
+          "response": "the liaison office holds the \"both\" card, forwarded by the UN office.",
+          "source": [
+            {
+              "block": "card-2",
+              "quote": "liaison office has the workshop card both."
+            }
+          ],
+          "reason": "Keeps card ownership with the source despite forwarding."
+        },
+        "C1": {
+          "status": "met",
+          "response": "These cards support the early status as the only overlapping slot.",
+          "source": [
+            {
+              "block": "rule",
+              "quote": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+            },
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            },
+            {
+              "block": "card-2",
+              "quote": "liaison office has the workshop card both."
+            }
+          ],
+          "reason": "Correctly derives the overlap from the visible cards."
+        },
+        "C2": {
+          "status": "met",
+          "response": "The UN office holds the \"early only\" card, while the liaison office holds the \"both\" card",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            },
+            {
+              "block": "card-2",
+              "quote": "liaison office has the workshop card both."
+            }
+          ],
+          "reason": "Names the timing constraint and flexibility."
+        },
+        "H2": {
+          "status": "met",
+          "response": "an oral report on UN support for the Five-Point Consensus by 15 March 2023",
+          "source": [
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "Preserves the deadline and reporting subject."
+        },
+        "D1": {
+          "status": "unmet",
+          "response": "Workshop status: EARLY.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: EARLY"
+            }
+          ],
+          "reason": "Punctuation and body text follow the label on the same line."
+        },
+        "A1": {
+          "status": "unmet",
+          "response": "These cards support the early status as the only overlapping slot.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: EARLY"
+            },
+            {
+              "block": "rule",
+              "quote": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+            }
+          ],
+          "reason": "Explains feasibility without proposing the slot as the next step."
+        },
+        "H1": {
+          "status": "unmet",
+          "response": "The official record mandates an oral report",
+          "source": [
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "The resolution, report recipient and coordination requirement are omitted."
+        }
+      },
+      "guard": {
+        "status": "clear",
+        "response": "Workshop actions remain recommendations with no official authority",
+        "source": [
+          {
+            "block": "context",
+            "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+          },
+          {
+            "block": "mandate",
+            "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+          }
+        ],
+        "reason": "The note limits workshop authority and preserves the delivered card ownership."
+      }
+    },
+    "ec888e71dc": {
+      "units": {
+        "D2": {
+          "status": "met",
+          "response": "Workshop actions remain recommendations without official authority.",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+            }
+          ],
+          "reason": "Keeps the workshop separate from recorded authority."
+        },
+        "A2": {
+          "status": "met",
+          "response": "Workshop actions remain recommendations without official authority.",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+            }
+          ],
+          "reason": "Limits the role to recommendations."
+        },
+        "P1": {
+          "status": "met",
+          "response": "The UN office holds the \"early only\" card",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            }
+          ],
+          "reason": "Preserves owner and exclusive timing."
+        },
+        "P2": {
+          "status": "met",
+          "response": "the liaison office holds the \"both\" card",
+          "source": [
+            {
+              "block": "card-2",
+              "quote": "liaison office has the workshop card both."
+            }
+          ],
+          "reason": "Preserves the second holder and flexibility."
+        },
+        "C1": {
+          "status": "met",
+          "response": "This overlap supports the early slot selection.",
+          "source": [
+            {
+              "block": "rule",
+              "quote": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+            },
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            },
+            {
+              "block": "card-2",
+              "quote": "liaison office has the workshop card both."
+            }
+          ],
+          "reason": "Explains why the preferred slot is feasible."
+        },
+        "C2": {
+          "status": "met",
+          "response": "The UN office holds the \"early only\" card, while the liaison office holds the \"both\" card.",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            },
+            {
+              "block": "card-2",
+              "quote": "liaison office has the workshop card both."
+            }
+          ],
+          "reason": "Retains both the fixed timing and the flexible card."
+        },
+        "H2": {
+          "status": "met",
+          "response": "an oral report on UN support for the Five-Point Consensus by 15 March 2023",
+          "source": [
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "Correct deadline and reporting subject."
+        },
+        "D1": {
+          "status": "unmet",
+          "response": "Workshop status: EARLY.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: EARLY"
+            }
+          ],
+          "reason": "Punctuation and body text follow the label on the same line."
+        },
+        "A1": {
+          "status": "unmet",
+          "response": "This overlap supports the early slot selection.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: EARLY"
+            },
+            {
+              "block": "rule",
+              "quote": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+            }
+          ],
+          "reason": "The checked slot is justified, but no implementation step is stated."
+        },
+        "H1": {
+          "status": "unmet",
+          "response": "The official record mandates an oral report",
+          "source": [
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "Omits the resolution and the coordination and recipient details."
+        }
+      },
+      "guard": {
+        "status": "clear",
+        "response": "Workshop actions remain recommendations without official authority.",
+        "source": [
+          {
+            "block": "context",
+            "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+          },
+          {
+            "block": "mandate",
+            "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+          }
+        ],
+        "reason": "No unsupported country position, workshop fact or official scheduling action is asserted."
+      }
+    },
+    "4fd43f211b": {
+      "units": {
+        "D2": {
+          "status": "met",
+          "response": "The workshop lacks official authority; all actions are merely recommendations.",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+            }
+          ],
+          "reason": "Workshop action is distinguished from formal authority."
+        },
+        "A2": {
+          "status": "met",
+          "response": "all actions are merely recommendations",
+          "source": [
+            {
+              "block": "context",
+              "quote": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+            }
+          ],
+          "reason": "Limits the simulated role despite the incorrect specific recommendation."
+        },
+        "P1": {
+          "status": "met",
+          "response": "The UN office holds the \"early only\" card",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            }
+          ],
+          "reason": "Correct owner and calendar constraint."
+        },
+        "D1": {
+          "status": "unmet",
+          "response": "Workshop status: UNRESOLVED.",
+          "source": [
+            {
+              "block": "checked",
+              "quote": "Workshop status: UNRESOLVED"
+            }
+          ],
+          "reason": "Punctuation and body text follow the label on the same line."
+        },
+        "A1": {
+          "status": "unmet",
+          "response": "These non-overlapping slots prevent a joint briefing, necessitating a rescheduling request per the public rule.",
+          "source": [
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the liaison office."
+            },
+            {
+              "block": "checked",
+              "quote": "Workshop status: UNRESOLVED"
+            }
+          ],
+          "reason": "Recommends rescheduling based on an unknown calendar."
+        },
+        "P2": {
+          "status": "unmet",
+          "response": "the liaison office holds the \"late only\" card",
+          "source": [
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the liaison office."
+            }
+          ],
+          "reason": "No liaison card was delivered."
+        },
+        "C1": {
+          "status": "unmet",
+          "response": "These non-overlapping slots prevent a joint briefing",
+          "source": [
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the liaison office."
+            },
+            {
+              "block": "rule",
+              "quote": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+            }
+          ],
+          "reason": "The evidence does not establish non-overlap."
+        },
+        "C2": {
+          "status": "unmet",
+          "response": "The missing card required to resolve the deadlock is the \"both slots\" availability from either office.",
+          "source": [
+            {
+              "block": "card-1",
+              "quote": "UN office has the workshop card early only."
+            },
+            {
+              "block": "missing",
+              "quote": "No workshop card was delivered from the liaison office."
+            }
+          ],
+          "reason": "The chair needs the actual liaison availability; it need not be both slots."
+        },
+        "H1": {
+          "status": "unmet",
+          "response": "The reporting mandate for Resolution 2669 remains active",
+          "source": [
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "Omits the oral-report modality, recipient, and ASEAN coordination."
+        },
+        "H2": {
+          "status": "unmet",
+          "response": "the Secretary-General's duty to report by 15 March 2023",
+          "source": [
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "The date is correct, but the subject of UN support for the Five-Point Consensus is absent."
+        }
+      },
+      "guard": {
+        "status": "failed",
+        "response": "the liaison office holds the \"late only\" card",
+        "source": [
+          {
+            "block": "missing",
+            "quote": "No workshop card was delivered from the liaison office."
+          }
+        ],
+        "reason": "Invents a missing workshop card and treats possible absence of overlap as verified."
+      }
+    }
+  }
+}

@@ -1,0 +1,667 @@
+{
+  "pins": {
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/text_study.py": "e67e9bd25f461783a8b31eb944110ca34a2022ab6eed84ade669d32ec1aacf63",
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/protocol.md": "598fab5e926a5770c70c9855636625168999ce19840bd39d351e54b016a6874c",
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/messages.json": "3908301f1cf4c01da97c68cde1255bbd4dcc015229650ef8834db455dcee6710",
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/plan.json": "1acc15f0c5f38b620c994025e6aa4cd433edafc4600e31d2669dfb8e2d77efba",
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/scores.json": "6865e900dd890d8c8e311146d708e94ca424b8a50efdc983dcf02ac2fc74482c",
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/reply-fit.json": "666ef9d26a1772dabc4fd56a71a6e3bfe532be230adeded6ee5f4fc53b650967",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "benchmark-v1-runs/reporting-2739/generated-purpose/purpose_study.py": "020c6b145c7fc13ed76eefd38afd495049924f677d645f5a9ce3aac60e3e0a87",
+    "benchmark-v1.5/release.json": "102cf8e5456609c0b0f003c4e278ba4e6a4ce9453357a783355399c5f860bc90",
+    "benchmark-v1-runs/claim-scoped-routing/collect_claims.py": "eba7ffafd86142b6f44e8068033fd139615bcd9fca59bf07121329a367c393af",
+    "benchmark-v1-runs/claim-scoped-routing/protocol.md": "9f384498fc6430c4f9727d9e22b429bd026e3b10dfedd33514f3184b1d492e69",
+    "benchmark-v1-runs/claim-scoped-routing/afghanistan-controls.json": "90dceaa3b675f0a0703f8b3b724f4311e25429dcdacbfa14fdf29fb7a39c4954",
+    "benchmark-v1-runs/afghanistan-2721-source-contrast/case.json": "a83d8ea64929b82602e3b5d762d52f5a7b89063d08698b70848853a1912d9342",
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/plan.json": "c20dace2b2776226c54cb8290975f7e98c2285b0db7278ff76b29e28859c382b",
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/results.json": "1100bb106d8a59f2a465a24d3ce666c63c94c678f36b74cd5f092b28de5c5c37",
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/readout.py": "3273d9924f394856cfb1e0432b5feb555c85568894353bcd367cacc9fa82f1ee"
+  },
+  "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "requests": [
+    {
+      "id": "canon-process/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-process/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-inclusion/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK read reform through resolutions 1325 and 2282 and said national ownership allows legitimate external monitoring.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-inclusion/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK read reform through resolutions 1325 and 2282 and said national ownership allows legitimate external monitoring.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-empty/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-empty/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-no-time/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We accepted the draft, though the timetable left delegations scant opportunity to scrutinize or refine it.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-no-time/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We accepted the draft, though the timetable left delegations scant opportunity to scrutinize or refine it.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-premature/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported adoption. Our criticism was that the penholder brought the text to a decision before delegations had a meaningful chance to revise it.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-premature/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported adoption. Our criticism was that the penholder brought the text to a decision before delegations had a meaningful chance to revise it.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-short-window/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We could vote in favour and still object that delegations were given an unreasonably short window to agree on the wording.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-short-window/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We could vote in favour and still object that delegations were given an unreasonably short window to agree on the wording.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-too/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The text could have been clearer, and we regretted that too little time had been provided for delegates to work through it.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-too/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The text could have been clearer, and we regretted that too little time had been provided for delegates to work through it.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-explicit-no-objection/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Some called the negotiations rushed, but we believed enough time had been allowed. We focused on the clarity of the text.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-explicit-no-objection/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Some called the negotiations rushed, but we believed enough time had been allowed. We focused on the clarity of the text.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-quoted/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We recorded another delegation's claim of rushed negotiations without endorsing its assessment. Our own position concerns monitoring.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-quoted/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We recorded another delegation's claim of rushed negotiations without endorsing its assessment. Our own position concerns monitoring.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-future/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The next negotiation should move quickly. We take no position on whether the time allowed for this draft was too short.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-future/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The next negotiation should move quickly. We take no position on whether the time allowed for this draft was too short.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-only/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We voted in favour, though the resolution is difficult to interpret. We make no claim about the length of the negotiations.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-only/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We voted in favour, though the resolution is difficult to interpret. We make no claim about the length of the negotiations.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-implementation-speed/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We called for speedy action once the text was adopted. The pace of implementing the reform matters for peacebuilding.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-implementation-speed/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We called for speedy action once the text was adopted. The pace of implementing the reform matters for peacebuilding.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-fund/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported voluntary funding aligned with national priorities and asked that the authority of the Fund manager be stated clearly.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-fund/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported voluntary funding aligned with national priorities and asked that the authority of the Fund manager be stated clearly.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-deadline-praise/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The penholder's short timetable was appropriate. Negotiations moved quickly and we had enough time to agree the wording.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-deadline-praise/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The penholder's short timetable was appropriate. Negotiations moved quickly and we had enough time to agree the wording.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-empty/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"No statement was delivered.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-empty/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"No statement was delivered.\", \"claim\": \"The first speaker objects that too little time was allowed to negotiate the current draft.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-explicit-condition/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We would back appointing an envoy only if the de facto authorities agree. Consultation alone would not secure our support.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-explicit-condition/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We would back appointing an envoy only if the de facto authorities agree. Consultation alone would not secure our support.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-no-assent-no-support/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The appointment would not have our delegation's support without the assent of those exercising authority in Afghanistan.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-no-assent-no-support/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The appointment would not have our delegation's support without the assent of those exercising authority in Afghanistan.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-requirement-for-our-support/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Our position is that agreement from the Afghan authorities is a prerequisite for our backing of this appointment.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-requirement-for-our-support/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Our position is that agreement from the Afghan authorities is a prerequisite for our backing of this appointment.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-answer-first-consent/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Whether we support appointing the envoy depends on consent from the de facto authorities, even after consultations with other actors.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-answer-first-consent/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Whether we support appointing the envoy depends on consent from the de facto authorities, even after consultations with other actors.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-only-consultation/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Our delegation asks that the de facto authorities be consulted. Their agreement is not a condition for our support for appointing an envoy.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-only-consultation/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Our delegation asks that the de facto authorities be consulted. Their agreement is not a condition for our support for appointing an envoy.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-reported-position/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Another delegation would withhold support absent consent from the de facto authorities. We record its statement and take no such position ourselves.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-reported-position/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Another delegation would withhold support absent consent from the de facto authorities. We record its statement and take no such position ourselves.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-legal-terms-only/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The appointment procedure requires consultation with the relevant Afghan actors. We describe the terms of the resolution without giving our delegation's voting conditions.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-legal-terms-only/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The appointment procedure requires consultation with the relevant Afghan actors. We describe the terms of the resolution without giving our delegation's voting conditions.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-shifted-object/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Our support for the envoy appointment does not depend on agreement from the de facto authorities. We would wait for their agreement before starting a separate local assistance project.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"supported\", \"B\": \"unsupported\"}}"
+        }
+      ]
+    },
+    {
+      "id": "afg-shifted-object/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Decide whether the first message supports the exact claim about its speaker. Check the speaker's own stated position, the specified action or draft, and whether the message affirms the claim. Reported speech, future proposals, objections to other actions, and mere mention of relevant terms do not establish the claim. A directly stated paraphrase does establish it. With insufficient evidence, choose unsupported. Return only the decision letter."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Our support for the envoy appointment does not depend on agreement from the de facto authorities. We would wait for their agreement before starting a separate local assistance project.\", \"claim\": \"The first speaker makes its own support for appointing an envoy conditional on agreement from the de facto Afghan authorities.\", \"responses\": {\"A\": \"unsupported\", \"B\": \"supported\"}}"
+        }
+      ]
+    }
+  ]
+}

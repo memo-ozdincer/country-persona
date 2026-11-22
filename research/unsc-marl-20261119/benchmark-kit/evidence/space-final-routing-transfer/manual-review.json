@@ -1,0 +1,496 @@
+{
+  "scope": "Same assistant unblinded read, separate from model-judge output. Strict compound-unit scoring.",
+  "trace_sha256": "6448fe84e09f4c7a4a398abd7204606ea4d4ece18c9e71fceebcc18cb170e1a2",
+  "verdicts": {
+    "64ec72c60dbbe3bb": {
+      "labels": [
+        "best-contrast.independent.final"
+      ],
+      "words": 95,
+      "reason": "Correct amendment tally and Japan position. Puts S/2024/302 in May, truncates before its tally, and misses the national comparison.",
+      "score": {
+        "final": {
+          "lower": 14,
+          "upper": 14,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "failed",
+        "strict": false
+      },
+      "verdict": {
+        "id": "64ec72c60dbbe3bb",
+        "units": [
+          {
+            "id": "april-amendment",
+            "status": "met",
+            "response": "On 24 April 2024, the Security Council voted first on S/2024/323, a Chinese and Russian amendment to draft S/2024/302.",
+            "source": [
+              {
+                "block": "apr-amendment",
+                "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-final",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-first-text",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-second-text",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "japan",
+            "status": "met",
+            "response": "Japan opposed the amendment while China supported it.",
+            "source": [
+              {
+                "block": "apr-amendment",
+                "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+              },
+              {
+                "block": "apr-final",
+                "quote": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+              },
+              {
+                "block": "japan-reason",
+                "quote": "Japan explained that the narrower draft was intended to gain broad support. It favored complementing existing forums and expressed concerns about the verifiability of the proposed treaty."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "china",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "overlap",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "open-issues",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "later-stage",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "authority",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          }
+        ],
+        "guard": {
+          "status": "failed",
+          "response": "On 20 May 2024, the Council voted on S/2024/302, the Japan–US draft.",
+          "source": [
+            {
+              "block": "apr-amendment",
+              "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+            },
+            {
+              "block": "apr-final",
+              "quote": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+            },
+            {
+              "block": "may-final",
+              "quote": "On 20 May S/2024/383 was a separate draft. It failed to obtain the required votes, with 7 for, 7 against and 1 abstention."
+            },
+            {
+              "block": "china-reason",
+              "quote": "China accepted the April draft's Outer Space Treaty content while seeking broader measures and early work toward binding multilateral agreements through the amendment."
+            }
+          ],
+          "reason": "Model-selected exact source blocks and candidate sentence IDs."
+        }
+      },
+      "selected_candidate_spans": {
+        "april-amendment": [
+          "On 24 April 2024, the Security Council voted first on S/2024/323, a Chinese and Russian amendment to draft S/2024/302.",
+          "The tally was seven votes for, seven against, and one abstention, resulting in failure to reach the required affirmative votes."
+        ],
+        "april-final": [],
+        "april-first-text": [],
+        "april-second-text": [],
+        "japan": [
+          "Japan opposed the amendment while China supported it.",
+          "Japan's position emphasized broad support and the complementarity of existing forums, though it expressed concerns regarding the proposed treaty's verifiability.",
+          "Japan supported the draft, China abstained, and Russia cast the sole negative vote."
+        ],
+        "china": [],
+        "overlap": [],
+        "open-issues": [],
+        "later-stage": [],
+        "authority": [],
+        "guard": [
+          "On 20 May 2024, the Council voted on S/2024/302, the Japan–US draft."
+        ]
+      }
+    },
+    "dec8d13f5fc51b91": {
+      "labels": [
+        "best-contrast.interactive.final",
+        "lowest-contrast.interactive.final",
+        "lowest-contrast.independent.final"
+      ],
+      "words": 91,
+      "reason": "Adds the delivered China rationale and proposed broader measures. Puts S/2024/302 in May, truncates its tally, and loses both national votes on that draft.",
+      "score": {
+        "final": {
+          "lower": 14,
+          "upper": 14,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "failed",
+        "strict": false
+      },
+      "verdict": {
+        "id": "dec8d13f5fc51b91",
+        "units": [
+          {
+            "id": "april-amendment",
+            "status": "met",
+            "response": "On 24 April 2024, the Security Council voted on S/2024/323, a Chinese and Russian amendment to S/2024/302.",
+            "source": [
+              {
+                "block": "apr-amendment",
+                "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-final",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-first-text",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-second-text",
+            "status": "met",
+            "response": "On 24 April 2024, the Security Council voted on S/2024/323, a Chinese and Russian amendment to S/2024/302.",
+            "source": [
+              {
+                "block": "apr-amendment",
+                "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+              },
+              {
+                "block": "china-reason",
+                "quote": "China accepted the April draft's Outer Space Treaty content while seeking broader measures and early work toward binding multilateral agreements through the amendment."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "japan",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "china",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "overlap",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "open-issues",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "later-stage",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "authority",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          }
+        ],
+        "guard": {
+          "status": "failed",
+          "response": "On 20 May 2024, the Council voted on S/2024/302, the Japan–US draft.",
+          "source": [
+            {
+              "block": "apr-amendment",
+              "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+            },
+            {
+              "block": "apr-final",
+              "quote": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+            },
+            {
+              "block": "may-final",
+              "quote": "On 20 May S/2024/383 was a separate draft. It failed to obtain the required votes, with 7 for, 7 against and 1 abstention."
+            },
+            {
+              "block": "china-reason",
+              "quote": "China accepted the April draft's Outer Space Treaty content while seeking broader measures and early work toward binding multilateral agreements through the amendment."
+            }
+          ],
+          "reason": "Model-selected exact source blocks and candidate sentence IDs."
+        }
+      },
+      "selected_candidate_spans": {
+        "april-amendment": [
+          "On 24 April 2024, the Security Council voted on S/2024/323, a Chinese and Russian amendment to S/2024/302.",
+          "The tally was 7 for, 7 against, and 1 abstention, resulting in failure to reach the required affirmative votes."
+        ],
+        "april-final": [],
+        "april-first-text": [],
+        "april-second-text": [
+          "On 24 April 2024, the Security Council voted on S/2024/323, a Chinese and Russian amendment to S/2024/302.",
+          "China supported it, accepting the Outer Space Treaty content while seeking broader measures and early binding multilateral agreements."
+        ],
+        "japan": [],
+        "china": [],
+        "overlap": [],
+        "open-issues": [],
+        "later-stage": [],
+        "authority": [],
+        "guard": [
+          "On 20 May 2024, the Council voted on S/2024/302, the Japan–US draft."
+        ]
+      }
+    },
+    "c2148170e30196e3": {
+      "labels": [
+        "best-contrast.pooled-solo.final",
+        "lowest-contrast.pooled-solo.final"
+      ],
+      "words": 131,
+      "reason": "Reports each instrument's chronology and the absence of authorization. Does not explicitly identify the reason for the May draft's failure or identify it as standalone. Omits Japan's affirmative final vote and China's abstention. No explicit common ground or contested scope comparison. Exceeds the requested 125 words.",
+      "score": {
+        "final": {
+          "lower": 28,
+          "upper": 28,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": false
+      },
+      "verdict": {
+        "id": "c2148170e30196e3",
+        "units": [
+          {
+            "id": "april-amendment",
+            "status": "met",
+            "response": "On 24 April, the Security Council voted on S/2024/323, the Chinese and Russian amendment to S/2024/302.",
+            "source": [
+              {
+                "block": "apr-amendment",
+                "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-final",
+            "status": "met",
+            "response": "The Council then voted on S/2024/302, the Japan–US draft.",
+            "source": [
+              {
+                "block": "apr-final",
+                "quote": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-first-text",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "april-second-text",
+            "status": "met",
+            "response": "On 24 April, the Security Council voted on S/2024/323, the Chinese and Russian amendment to S/2024/302.",
+            "source": [
+              {
+                "block": "apr-amendment",
+                "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+              },
+              {
+                "block": "china-reason",
+                "quote": "China accepted the April draft's Outer Space Treaty content while seeking broader measures and early work toward binding multilateral agreements through the amendment."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "japan",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "china",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "overlap",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "open-issues",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "later-stage",
+            "status": "unmet",
+            "response": "",
+            "source": [],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "response": "The Council is recorded as having authorized no instruments during these sessions.",
+            "source": [
+              {
+                "block": "apr-amendment",
+                "quote": "The Council voted first on S/2024/323, the Chinese and Russian amendment to S/2024/302. Japan opposed it and China supported it. It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+              },
+              {
+                "block": "apr-final",
+                "quote": "The Council then voted on S/2024/302, the Japan–US draft. Japan supported it, China abstained and Russia cast the sole negative vote. The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+              },
+              {
+                "block": "may-final",
+                "quote": "On 20 May S/2024/383 was a separate draft. It failed to obtain the required votes, with 7 for, 7 against and 1 abstention."
+              }
+            ],
+            "reason": "Model-selected exact source blocks and candidate sentence IDs."
+          }
+        ],
+        "guard": {
+          "status": "clear",
+          "response": "",
+          "source": [],
+          "reason": "Model-selected exact source blocks and candidate sentence IDs."
+        }
+      },
+      "selected_candidate_spans": {
+        "april-amendment": [
+          "On 24 April, the Security Council voted on S/2024/323, the Chinese and Russian amendment to S/2024/302.",
+          "The tally was 7 for, 7 against, and 1 abstention, resulting in failure to reach the required affirmative votes."
+        ],
+        "april-final": [
+          "The Council then voted on S/2024/302, the Japan–US draft.",
+          "The tally was 13 for, 1 against, and 1 abstention.",
+          "Russia cast the sole negative vote, preventing adoption under the veto power."
+        ],
+        "april-first-text": [],
+        "april-second-text": [
+          "On 24 April, the Security Council voted on S/2024/323, the Chinese and Russian amendment to S/2024/302.",
+          "China supported it, accepting the Outer Space Treaty content while seeking broader measures and early binding multilateral agreements."
+        ],
+        "japan": [],
+        "china": [],
+        "overlap": [],
+        "open-issues": [],
+        "later-stage": [],
+        "authority": [
+          "The Council is recorded as having authorized no instruments during these sessions."
+        ],
+        "guard": []
+      }
+    }
+  }
+}

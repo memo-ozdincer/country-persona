@@ -1,0 +1,5779 @@
+{
+  "scope": "One exact matched fit on synthetic relations with equal mass on the three disposition classes. Class labels change sampling weights, but the actors see only their own source states and receipts. Existing writer and citation reviews are replayed unchanged.",
+  "inputs": {
+    "facilitator_policy_balanced.py": "7435e6d7beb80b2d24f3e57207bebc9b8110fb79794e74f393b9b65d903d8d83",
+    "facilitator_policy.py": "b624943efb5d040dd07928a8b2249bfbb94e0dbb935db636023c2e7021a7bf87",
+    "facilitator-policy.json": "bc6c7a04af8daca62e1695dcdb7a2cf6a93a6865f819365ab03f81d7e75a0237",
+    "facilitator-citation-evidence/results.json": "ff7ecaf0041aee8ef5b1ea59fc3a6963b8b9a0e113b12eb71d48953033d23a14",
+    "routed-common-ground-evidence/results.json": "3a5752ca996fe748d8297c04eb65e364ff47db06ca09118003e8ca470ef872ab"
+  },
+  "weights": [
+    {
+      "relation_pair": [
+        "supports",
+        "supports"
+      ],
+      "mass": 0.3333333333333333
+    },
+    {
+      "relation_pair": [
+        "supports",
+        "contradicts"
+      ],
+      "mass": 0.06666666666666667
+    },
+    {
+      "relation_pair": [
+        "supports",
+        "unknown"
+      ],
+      "mass": 0.1111111111111111
+    },
+    {
+      "relation_pair": [
+        "contradicts",
+        "supports"
+      ],
+      "mass": 0.06666666666666667
+    },
+    {
+      "relation_pair": [
+        "contradicts",
+        "contradicts"
+      ],
+      "mass": 0.06666666666666667
+    },
+    {
+      "relation_pair": [
+        "contradicts",
+        "unknown"
+      ],
+      "mass": 0.06666666666666667
+    },
+    {
+      "relation_pair": [
+        "unknown",
+        "supports"
+      ],
+      "mass": 0.1111111111111111
+    },
+    {
+      "relation_pair": [
+        "unknown",
+        "contradicts"
+      ],
+      "mass": 0.06666666666666667
+    },
+    {
+      "relation_pair": [
+        "unknown",
+        "unknown"
+      ],
+      "mass": 0.1111111111111111
+    }
+  ],
+  "updates": 180,
+  "training": [
+    {
+      "step": 0,
+      "record_reward": -0.010333333333333434
+    },
+    {
+      "step": 30,
+      "record_reward": 0.24583858112771972
+    },
+    {
+      "step": 90,
+      "record_reward": 0.25850637297434964
+    },
+    {
+      "step": 180,
+      "record_reward": 0.25976101655100337
+    }
+  ],
+  "training_metrics": {
+    "learned": {
+      "retain": 0.09349095926407161,
+      "revise": 0.24797939105200537,
+      "unsupported_decisions": 0.0,
+      "cost": 0.08170933376507328,
+      "net": 0.25976101655100386
+    },
+    "learned_erased": {
+      "retain": 0.018912883777741852,
+      "revise": 0.24795897207988946,
+      "unsupported_decisions": 0.0,
+      "cost": 0.08321627367193925,
+      "net": 0.18365558218569203
+    },
+    "old_fit": {
+      "retain": 0.018032902343064504,
+      "revise": 0.2479905262099692,
+      "unsupported_decisions": 0.0,
+      "cost": 0.03759035080900183,
+      "net": 0.22843307774403213
+    },
+    "greedy": {
+      "retain": 0.10800000000000005,
+      "revise": 0.2484999999999999,
+      "unsupported_decisions": 0.0,
+      "cost": 0.10297777777777785,
+      "net": 0.25352222222222226
+    },
+    "greedy_erased": {
+      "retain": 0.09000000000000004,
+      "revise": 0.2484999999999999,
+      "unsupported_decisions": 0.0,
+      "cost": 0.12444444444444451,
+      "net": 0.21405555555555558
+    }
+  },
+  "replay": {
+    "overlap/gold": {
+      "learned": {
+        "mean": {
+          "retain": 0.08146845423647768,
+          "revise": 0.2164693652173664,
+          "unsupported_decisions": 0.0,
+          "cost": 0.07001377859954443,
+          "net": 0.22792404085430007,
+          "frozen_source_reader_actionable": 0.1896302687031841,
+          "reviewed_oracle_actionable": 0.29793781945384407
+        },
+        "proposals": [
+          {
+            "retain": 0.24440536270943305,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11485384449304838,
+            "net": 0.12955151821638589,
+            "frozen_source_reader_actionable": 0.24440536270943305,
+            "reviewed_oracle_actionable": 0.24440536270943305
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494080956520991,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0780723019653122,
+            "net": 0.5713357936867874,
+            "frozen_source_reader_actionable": 0.6489708868002385,
+            "reviewed_oracle_actionable": 0.649408095652099
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004848789477142152,
+            "net": -0.0004848789477142152,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.24440536270943305,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11485384449304838,
+            "net": 0.12955151821638589,
+            "frozen_source_reader_actionable": 0.24440536270943305,
+            "reviewed_oracle_actionable": 0.24440536270943305
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494080956520993,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0780723019653123,
+            "net": 0.5713357936867866,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6494080956520993
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.03374549973283113,
+            "net": -0.03374549973283113,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "learned_erased": {
+        "mean": {
+          "retain": 0.02085642466416161,
+          "revise": 0.21647787929218829,
+          "unsupported_decisions": 0.0,
+          "cost": 0.07250282839211687,
+          "net": 0.16483147556423275,
+          "frozen_source_reader_actionable": 0.1290121822580086,
+          "reviewed_oracle_actionable": 0.23733430395634988
+        },
+        "proposals": [
+          {
+            "retain": 0.06256927399248483,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10028691617172099,
+            "net": -0.037717642179235844,
+            "frozen_source_reader_actionable": 0.06256927399248483,
+            "reviewed_oracle_actionable": 0.06256927399248483
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494336378765647,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10008510882235686,
+            "net": 0.5493485290542068,
+            "frozen_source_reader_actionable": 0.6489345455630819,
+            "reviewed_oracle_actionable": 0.6494336378765646
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004775581449557298,
+            "net": -0.0004775581449557298,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.06256927399248483,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10028691617172099,
+            "net": -0.037717642179235844,
+            "frozen_source_reader_actionable": 0.06256927399248483,
+            "reviewed_oracle_actionable": 0.06256927399248483
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494336378765648,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10008510882235673,
+            "net": 0.549348529054207,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.649433637876565
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.033795362219589925,
+            "net": -0.033795362219589925,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy": {
+        "mean": {
+          "retain": 0.09138461538461541,
+          "revise": 0.216923076923077,
+          "unsupported_decisions": 0.0,
+          "cost": 0.08586324786324795,
+          "net": 0.22244444444444436,
+          "frozen_source_reader_actionable": 0.1998461538461539,
+          "reviewed_oracle_actionable": 0.3083076923076924
+        },
+        "proposals": [
+          {
+            "retain": 0.27415384615384625,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.140820512820513,
+            "net": 0.1333333333333333,
+            "frozen_source_reader_actionable": 0.27415384615384625,
+            "reviewed_oracle_actionable": 0.27415384615384625
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692309,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07784615384615387,
+            "net": 0.572923076923077,
+            "frozen_source_reader_actionable": 0.6507692307692309,
+            "reviewed_oracle_actionable": 0.6507692307692309
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0,
+            "net": 0.0,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.27415384615384625,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.140820512820513,
+            "net": 0.1333333333333333,
+            "frozen_source_reader_actionable": 0.27415384615384625,
+            "reviewed_oracle_actionable": 0.27415384615384625
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692311,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07784615384615391,
+            "net": 0.5729230769230766,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6507692307692311
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07784615384615391,
+            "net": -0.07784615384615391,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy_erased": {
+        "mean": {
+          "retain": 0.06923076923076925,
+          "revise": 0.216923076923077,
+          "unsupported_decisions": 0.0,
+          "cost": 0.10555555555555558,
+          "net": 0.18059829059829055,
+          "frozen_source_reader_actionable": 0.17769230769230773,
+          "reviewed_oracle_actionable": 0.28615384615384626
+        },
+        "proposals": [
+          {
+            "retain": 0.20769230769230773,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.16666666666666677,
+            "net": 0.041025641025641005,
+            "frozen_source_reader_actionable": 0.20769230769230773,
+            "reviewed_oracle_actionable": 0.20769230769230773
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692309,
+            "unsupported_decisions": 0.0,
+            "cost": 0.09999999999999999,
+            "net": 0.5507692307692307,
+            "frozen_source_reader_actionable": 0.6507692307692309,
+            "reviewed_oracle_actionable": 0.6507692307692309
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0,
+            "net": 0.0,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.20769230769230773,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.16666666666666677,
+            "net": 0.041025641025641005,
+            "frozen_source_reader_actionable": 0.20769230769230773,
+            "reviewed_oracle_actionable": 0.20769230769230773
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692311,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": 0.5507692307692306,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6507692307692311
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": -0.10000000000000002,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit": {
+        "mean": {
+          "retain": 0.022138858540066777,
+          "revise": 0.21649005148164388,
+          "unsupported_decisions": 0.0,
+          "cost": 0.03435849510034023,
+          "net": 0.20427041492137113,
+          "frozen_source_reader_actionable": 0.1303114480109401,
+          "reviewed_oracle_actionable": 0.2386289100217107
+        },
+        "proposals": [
+          {
+            "retain": 0.06641657562020033,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0245339200802399,
+            "net": 0.041882655539960935,
+            "frozen_source_reader_actionable": 0.06641657562020033,
+            "reviewed_oracle_actionable": 0.06641657562020033
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494701544449316,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07806475716802413,
+            "net": 0.571405397276909,
+            "frozen_source_reader_actionable": 0.64903553682524,
+            "reviewed_oracle_actionable": 0.6494701544449317
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00046542648997502156,
+            "net": -0.00046542648997502156,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.06641657562020033,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0245339200802399,
+            "net": 0.041882655539960935,
+            "frozen_source_reader_actionable": 0.06641657562020033,
+            "reviewed_oracle_actionable": 0.06641657562020033
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494701544449316,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07806475716802395,
+            "net": 0.5714053972769094,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6494701544449317
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00048818961553849803,
+            "net": -0.00048818961553849803,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit_erased": {
+        "mean": {
+          "retain": 2.3775359793827725e-05,
+          "revise": 0.21649846196243136,
+          "unsupported_decisions": 0.0,
+          "cost": 0.03921939566856649,
+          "net": 0.17730284165365884,
+          "frozen_source_reader_actionable": 0.10819096505677757,
+          "reviewed_oracle_actionable": 0.21652223732222511
+        },
+        "proposals": [
+          {
+            "retain": 7.132607938148317e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.017110689943610122,
+            "net": -0.017039363864228628,
+            "frozen_source_reader_actionable": 7.132607938148317e-05,
+            "reviewed_oracle_actionable": 7.132607938148317e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494953858872939,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10007763961138666,
+            "net": 0.5494177462759087,
+            "frozen_source_reader_actionable": 0.6490031381819025,
+            "reviewed_oracle_actionable": 0.6494953858872938
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00045830919594032604,
+            "net": -0.00045830919594032604,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 7.132607938148317e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.017110689943610122,
+            "net": -0.017039363864228628,
+            "frozen_source_reader_actionable": 7.132607938148317e-05,
+            "reviewed_oracle_actionable": 7.132607938148317e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.649495385887294,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1000776396113865,
+            "net": 0.5494177462759071,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6494953858872939
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004814057054651862,
+            "net": -0.0004814057054651862,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      }
+    },
+    "overlap/model": {
+      "learned": {
+        "mean": {
+          "retain": 0.08146845423647768,
+          "revise": 0.21649545150040653,
+          "unsupported_decisions": 0.0,
+          "cost": 0.08663486064274685,
+          "net": 0.21132904509413777,
+          "frozen_source_reader_actionable": 0.1724150458824045,
+          "reviewed_oracle_actionable": 0.29796390573688425
+        },
+        "proposals": [
+          {
+            "retain": 0.24440536270943305,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11485384449304838,
+            "net": 0.12955151821638589,
+            "frozen_source_reader_actionable": 0.24440536270943305,
+            "reviewed_oracle_actionable": 0.24440536270943305
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494863545012196,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11130523770236067,
+            "net": 0.5381811167988586,
+            "frozen_source_reader_actionable": 0.5456795498755609,
+            "reviewed_oracle_actionable": 0.6494863545012196
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.03374549973283113,
+            "net": -0.03374549973283113,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.24440536270943305,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11485384449304838,
+            "net": 0.12955151821638589,
+            "frozen_source_reader_actionable": 0.24440536270943305,
+            "reviewed_oracle_actionable": 0.24440536270943305
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494863545012196,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11130523770236145,
+            "net": 0.5381811167988585,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6494863545012197
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.03374549973283113,
+            "net": -0.03374549973283113,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "learned_erased": {
+        "mean": {
+          "retain": 0.02085642466416161,
+          "revise": 0.21644544471366692,
+          "unsupported_decisions": 0.0,
+          "cost": 0.08915554981524716,
+          "net": 0.1481463195625814,
+          "frozen_source_reader_actionable": 0.1117546482860261,
+          "reviewed_oracle_actionable": 0.23730186937782846
+        },
+        "proposals": [
+          {
+            "retain": 0.06256927399248483,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10028691617172099,
+            "net": -0.037717642179235844,
+            "frozen_source_reader_actionable": 0.06256927399248483,
+            "reviewed_oracle_actionable": 0.06256927399248483
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6493363341410008,
+            "unsupported_decisions": 0.0,
+            "cost": 0.13338437105442935,
+            "net": 0.5159519630865713,
+            "frozen_source_reader_actionable": 0.545389341731187,
+            "reviewed_oracle_actionable": 0.6493363341410003
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.033795362219589925,
+            "net": -0.033795362219589925,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.06256927399248483,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10028691617172099,
+            "net": -0.037717642179235844,
+            "frozen_source_reader_actionable": 0.06256927399248483,
+            "reviewed_oracle_actionable": 0.06256927399248483
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6493363341410009,
+            "unsupported_decisions": 0.0,
+            "cost": 0.13338437105443185,
+            "net": 0.5159519630865685,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6493363341410008
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.033795362219589925,
+            "net": -0.033795362219589925,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy": {
+        "mean": {
+          "retain": 0.09138461538461541,
+          "revise": 0.21692307692307708,
+          "unsupported_decisions": 0.0,
+          "cost": 0.11429059829059839,
+          "net": 0.19401709401709397,
+          "frozen_source_reader_actionable": 0.17907692307692313,
+          "reviewed_oracle_actionable": 0.3083076923076924
+        },
+        "proposals": [
+          {
+            "retain": 0.27415384615384625,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.140820512820513,
+            "net": 0.1333333333333333,
+            "frozen_source_reader_actionable": 0.27415384615384625,
+            "reviewed_oracle_actionable": 0.27415384615384625
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692312,
+            "unsupported_decisions": 0.0,
+            "cost": 0.12420512820512827,
+            "net": 0.5265641025641025,
+            "frozen_source_reader_actionable": 0.5261538461538462,
+            "reviewed_oracle_actionable": 0.6507692307692308
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07784615384615391,
+            "net": -0.07784615384615391,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.27415384615384625,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.140820512820513,
+            "net": 0.1333333333333333,
+            "frozen_source_reader_actionable": 0.27415384615384625,
+            "reviewed_oracle_actionable": 0.27415384615384625
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692312,
+            "unsupported_decisions": 0.0,
+            "cost": 0.12420512820512822,
+            "net": 0.5265641025641026,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.650769230769231
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07784615384615391,
+            "net": -0.07784615384615391,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy_erased": {
+        "mean": {
+          "retain": 0.06923076923076925,
+          "revise": 0.21692307692307708,
+          "unsupported_decisions": 0.0,
+          "cost": 0.14444444444444451,
+          "net": 0.1417094017094017,
+          "frozen_source_reader_actionable": 0.14307692307692307,
+          "reviewed_oracle_actionable": 0.2861538461538462
+        },
+        "proposals": [
+          {
+            "retain": 0.20769230769230773,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.16666666666666677,
+            "net": 0.041025641025641005,
+            "frozen_source_reader_actionable": 0.20769230769230773,
+            "reviewed_oracle_actionable": 0.20769230769230773
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692312,
+            "unsupported_decisions": 0.0,
+            "cost": 0.16666666666666677,
+            "net": 0.484102564102564,
+            "frozen_source_reader_actionable": 0.44307692307692303,
+            "reviewed_oracle_actionable": 0.6507692307692308
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": -0.10000000000000002,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.20769230769230773,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.16666666666666677,
+            "net": 0.041025641025641005,
+            "frozen_source_reader_actionable": 0.20769230769230773,
+            "reviewed_oracle_actionable": 0.20769230769230773
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6507692307692312,
+            "unsupported_decisions": 0.0,
+            "cost": 0.16666666666666677,
+            "net": 0.48410256410256414,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6507692307692309
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": -0.10000000000000002,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit": {
+        "mean": {
+          "retain": 0.022138858540066777,
+          "revise": 0.21648934529106775,
+          "unsupported_decisions": 0.0,
+          "cost": 0.03436977196358198,
+          "net": 0.2042584318675529,
+          "frozen_source_reader_actionable": 0.1303047395921588,
+          "reviewed_oracle_actionable": 0.23862820383113445
+        },
+        "proposals": [
+          {
+            "retain": 0.06641657562020033,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0245339200802399,
+            "net": 0.041882655539960935,
+            "frozen_source_reader_actionable": 0.06641657562020033,
+            "reviewed_oracle_actionable": 0.06641657562020033
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494680358732029,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07808720619496742,
+            "net": 0.5713808296782359,
+            "frozen_source_reader_actionable": 0.6489952863125521,
+            "reviewed_oracle_actionable": 0.6494680358732028
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00048818961553849803,
+            "net": -0.00048818961553849803,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.06641657562020033,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0245339200802399,
+            "net": 0.041882655539960935,
+            "frozen_source_reader_actionable": 0.06641657562020033,
+            "reviewed_oracle_actionable": 0.06641657562020033
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494680358732035,
+            "unsupported_decisions": 0.0,
+            "cost": 0.07808720619496765,
+            "net": 0.5713808296782367,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6494680358732032
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00048818961553849803,
+            "net": -0.00048818961553849803,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit_erased": {
+        "mean": {
+          "retain": 2.3775359793827725e-05,
+          "revise": 0.21649837142157682,
+          "unsupported_decisions": 0.0,
+          "cost": 0.039230882893709094,
+          "net": 0.1772912638876615,
+          "frozen_source_reader_actionable": 0.10818557965424706,
+          "reviewed_oracle_actionable": 0.21652214678137063
+        },
+        "proposals": [
+          {
+            "retain": 7.132607938148317e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.017110689943610122,
+            "net": -0.017039363864228628,
+            "frozen_source_reader_actionable": 7.132607938148317e-05,
+            "reviewed_oracle_actionable": 7.132607938148317e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494951142647305,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10010055303205193,
+            "net": 0.5493945612326785,
+            "frozen_source_reader_actionable": 0.6489708257667194,
+            "reviewed_oracle_actionable": 0.6494951142647304
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004814057054651862,
+            "net": -0.0004814057054651862,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 7.132607938148317e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.017110689943610122,
+            "net": -0.017039363864228628,
+            "frozen_source_reader_actionable": 7.132607938148317e-05,
+            "reviewed_oracle_actionable": 7.132607938148317e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.6494951142647306,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10010055303205204,
+            "net": 0.5493945612326782,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.6494951142647306
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004814057054651862,
+            "net": -0.0004814057054651862,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      }
+    },
+    "split/gold": {
+      "learned": {
+        "mean": {
+          "retain": 0.10528597008621811,
+          "revise": 0.24741606864274832,
+          "unsupported_decisions": 0.0,
+          "cost": 0.07643601442504425,
+          "net": 0.2762660243039225,
+          "frozen_source_reader_actionable": 0.22891289340782106,
+          "reviewed_oracle_actionable": 0.3527020387289663
+        },
+        "proposals": [
+          {
+            "retain": 0.31585791025865434,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.12586504259675177,
+            "net": 0.18999286766190304,
+            "frozen_source_reader_actionable": 0.31585791025865434,
+            "reviewed_oracle_actionable": 0.31585791025865434
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7422482059282451,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08631838229859909,
+            "net": 0.6559298236296467,
+            "frozen_source_reader_actionable": 0.7417615399296176,
+            "reviewed_oracle_actionable": 0.7422482059282449
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00048486962461834925,
+            "net": -0.00048486962461834925,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.31585791025865434,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.12586504259675177,
+            "net": 0.18999286766190304,
+            "frozen_source_reader_actionable": 0.31585791025865434,
+            "reviewed_oracle_actionable": 0.31585791025865434
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7422482059282447,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08631838229859909,
+            "net": 0.6559298236296459,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7422482059282445
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.033764367134945385,
+            "net": -0.033764367134945385,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "learned_erased": {
+        "mean": {
+          "retain": 0.015831871864084874,
+          "revise": 0.24742524271388464,
+          "unsupported_decisions": 0.0,
+          "cost": 0.07250282839211677,
+          "net": 0.19075428618585258,
+          "frozen_source_reader_actionable": 0.13945292452289756,
+          "reviewed_oracle_actionable": 0.2632571145779695
+        },
+        "proposals": [
+          {
+            "retain": 0.04749561559225462,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1002869161717208,
+            "net": -0.05279130057946603,
+            "frozen_source_reader_actionable": 0.04749561559225462,
+            "reviewed_oracle_actionable": 0.04749561559225462
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7422757281416539,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10008510882235688,
+            "net": 0.642190619319296,
+            "frozen_source_reader_actionable": 0.7417263159528762,
+            "reviewed_oracle_actionable": 0.7422757281416541
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004775581449557303,
+            "net": -0.0004775581449557303,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.04749561559225462,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1002869161717208,
+            "net": -0.05279130057946603,
+            "frozen_source_reader_actionable": 0.04749561559225462,
+            "reviewed_oracle_actionable": 0.04749561559225462
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7422757281416539,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10008510882235659,
+            "net": 0.6421906193192972,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7422757281416539
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.03379536221958985,
+            "net": -0.03379536221958985,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy": {
+        "mean": {
+          "retain": 0.12461538461538463,
+          "revise": 0.2480769230769232,
+          "unsupported_decisions": 0.0,
+          "cost": 0.09370940170940177,
+          "net": 0.2789829059829059,
+          "frozen_source_reader_actionable": 0.2486538461538462,
+          "reviewed_oracle_actionable": 0.3726923076923078
+        },
+        "proposals": [
+          {
+            "retain": 0.3738461538461539,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.151897435897436,
+            "net": 0.22194871794871796,
+            "frozen_source_reader_actionable": 0.3738461538461539,
+            "reviewed_oracle_actionable": 0.3738461538461539
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307695,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0861538461538462,
+            "net": 0.6580769230769229,
+            "frozen_source_reader_actionable": 0.7442307692307695,
+            "reviewed_oracle_actionable": 0.7442307692307695
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0,
+            "net": 0.0,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.3738461538461539,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.151897435897436,
+            "net": 0.22194871794871796,
+            "frozen_source_reader_actionable": 0.3738461538461539,
+            "reviewed_oracle_actionable": 0.3738461538461539
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307697,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08615384615384618,
+            "net": 0.6580769230769229,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7442307692307697
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08615384615384618,
+            "net": -0.08615384615384618,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy_erased": {
+        "mean": {
+          "retain": 0.11076923076923079,
+          "revise": 0.2480769230769232,
+          "unsupported_decisions": 0.0,
+          "cost": 0.10555555555555561,
+          "net": 0.25329059829059825,
+          "frozen_source_reader_actionable": 0.23480769230769236,
+          "reviewed_oracle_actionable": 0.358846153846154
+        },
+        "proposals": [
+          {
+            "retain": 0.33230769230769236,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1666666666666668,
+            "net": 0.16564102564102565,
+            "frozen_source_reader_actionable": 0.33230769230769236,
+            "reviewed_oracle_actionable": 0.33230769230769236
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307695,
+            "unsupported_decisions": 0.0,
+            "cost": 0.09999999999999999,
+            "net": 0.6442307692307692,
+            "frozen_source_reader_actionable": 0.7442307692307695,
+            "reviewed_oracle_actionable": 0.7442307692307695
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0,
+            "net": 0.0,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.33230769230769236,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1666666666666668,
+            "net": 0.16564102564102565,
+            "frozen_source_reader_actionable": 0.33230769230769236,
+            "reviewed_oracle_actionable": 0.33230769230769236
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307697,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": 0.644230769230769,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7442307692307697
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": -0.10000000000000002,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit": {
+        "mean": {
+          "retain": 0.013926886134888156,
+          "revise": 0.2474462908110837,
+          "unsupported_decisions": 0.0,
+          "cost": 0.036202588966515965,
+          "net": 0.22517058797945655,
+          "frozen_source_reader_actionable": 0.13756958807597264,
+          "reviewed_oracle_actionable": 0.2613731769459719
+        },
+        "proposals": [
+          {
+            "retain": 0.04178065840466447,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.021816757224681155,
+            "net": 0.01996390117998332,
+            "frozen_source_reader_actionable": 0.04178065840466447,
+            "reviewed_oracle_actionable": 0.04178065840466447
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423388724332514,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08631410431290515,
+            "net": 0.6560247681203468,
+            "frozen_source_reader_actionable": 0.7418562116465068,
+            "reviewed_oracle_actionable": 0.7423388724332515
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00046544243458391225,
+            "net": -0.00046544243458391225,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.04178065840466447,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.021816757224681155,
+            "net": 0.01996390117998332,
+            "frozen_source_reader_actionable": 0.04178065840466447,
+            "reviewed_oracle_actionable": 0.04178065840466447
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423388724332509,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0863141043129051,
+            "net": 0.6560247681203492,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.742338872433251
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004883682893393017,
+            "net": -0.0004883682893393017,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit_erased": {
+        "mean": {
+          "retain": 1.5638703646531705e-05,
+          "revise": 0.24745532789551106,
+          "unsupported_decisions": 0.0,
+          "cost": 0.03921939566856645,
+          "net": 0.20825157093059152,
+          "frozen_source_reader_actionable": 0.12365355894351206,
+          "reviewed_oracle_actionable": 0.2474709665991576
+        },
+        "proposals": [
+          {
+            "retain": 4.691611093959511e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.01711068994361014,
+            "net": -0.017063773832670544,
+            "frozen_source_reader_actionable": 4.691611093959511e-05,
+            "reviewed_oracle_actionable": 4.691611093959511e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423659836865333,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10007763961138652,
+            "net": 0.6422883440751469,
+            "frozen_source_reader_actionable": 0.7418275214391932,
+            "reviewed_oracle_actionable": 0.7423659836865334
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00045830919594032593,
+            "net": -0.00045830919594032593,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 4.691611093959511e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.01711068994361014,
+            "net": -0.017063773832670544,
+            "frozen_source_reader_actionable": 4.691611093959511e-05,
+            "reviewed_oracle_actionable": 4.691611093959511e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423659836865331,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10007763961138638,
+            "net": 0.6422883440751487,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7423659836865332
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00048140570546518547,
+            "net": -0.00048140570546518547,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      }
+    },
+    "split/model": {
+      "learned": {
+        "mean": {
+          "retain": 0.10528597008621811,
+          "revise": 0.2474563929747714,
+          "unsupported_decisions": 0.0,
+          "cost": 0.09306241748235938,
+          "net": 0.25967994557863044,
+          "frozen_source_reader_actionable": 0.20137044243962013,
+          "reviewed_oracle_actionable": 0.35274236306098955
+        },
+        "proposals": [
+          {
+            "retain": 0.31585791025865434,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.12586504259675177,
+            "net": 0.18999286766190304,
+            "frozen_source_reader_actionable": 0.31585791025865434,
+            "reviewed_oracle_actionable": 0.31585791025865434
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.742369178924314,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11955784271538046,
+            "net": 0.6228113362089339,
+            "frozen_source_reader_actionable": 0.5765068341204121,
+            "reviewed_oracle_actionable": 0.7423691789243144
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.033764367134945385,
+            "net": -0.033764367134945385,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.31585791025865434,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.12586504259675177,
+            "net": 0.18999286766190304,
+            "frozen_source_reader_actionable": 0.31585791025865434,
+            "reviewed_oracle_actionable": 0.31585791025865434
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423691789243144,
+            "unsupported_decisions": 0.0,
+            "cost": 0.11955784271538149,
+            "net": 0.6228113362089334,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7423691789243143
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.033764367134945385,
+            "net": -0.033764367134945385,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "learned_erased": {
+        "mean": {
+          "retain": 0.015831871864084874,
+          "revise": 0.2473778281323685,
+          "unsupported_decisions": 0.0,
+          "cost": 0.0891555498152471,
+          "net": 0.1740541501812066,
+          "frozen_source_reader_actionable": 0.11185062971455012,
+          "reviewed_oracle_actionable": 0.26320969999645333
+        },
+        "proposals": [
+          {
+            "retain": 0.04749561559225462,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1002869161717208,
+            "net": -0.05279130057946603,
+            "frozen_source_reader_actionable": 0.04749561559225462,
+            "reviewed_oracle_actionable": 0.04749561559225462
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7421334843971054,
+            "unsupported_decisions": 0.0,
+            "cost": 0.13338437105442946,
+            "net": 0.608749113342677,
+            "frozen_source_reader_actionable": 0.5761125471027915,
+            "reviewed_oracle_actionable": 0.7421334843971051
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.03379536221958985,
+            "net": -0.03379536221958985,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.04749561559225462,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1002869161717208,
+            "net": -0.05279130057946603,
+            "frozen_source_reader_actionable": 0.04749561559225462,
+            "reviewed_oracle_actionable": 0.04749561559225462
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7421334843971055,
+            "unsupported_decisions": 0.0,
+            "cost": 0.13338437105443193,
+            "net": 0.6087491133426742,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7421334843971057
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.03379536221958985,
+            "net": -0.03379536221958985,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy": {
+        "mean": {
+          "retain": 0.12461538461538463,
+          "revise": 0.24807692307692322,
+          "unsupported_decisions": 0.0,
+          "cost": 0.12352136752136761,
+          "net": 0.24917094017094013,
+          "frozen_source_reader_actionable": 0.21542307692307694,
+          "reviewed_oracle_actionable": 0.3726923076923077
+        },
+        "proposals": [
+          {
+            "retain": 0.3738461538461539,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.151897435897436,
+            "net": 0.22194871794871796,
+            "frozen_source_reader_actionable": 0.3738461538461539,
+            "reviewed_oracle_actionable": 0.3738461538461539
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307697,
+            "unsupported_decisions": 0.0,
+            "cost": 0.13251282051282062,
+            "net": 0.6117179487179486,
+            "frozen_source_reader_actionable": 0.544846153846154,
+            "reviewed_oracle_actionable": 0.7442307692307694
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08615384615384618,
+            "net": -0.08615384615384618,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.3738461538461539,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.151897435897436,
+            "net": 0.22194871794871796,
+            "frozen_source_reader_actionable": 0.3738461538461539,
+            "reviewed_oracle_actionable": 0.3738461538461539
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307697,
+            "unsupported_decisions": 0.0,
+            "cost": 0.13251282051282062,
+            "net": 0.6117179487179486,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7442307692307695
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08615384615384618,
+            "net": -0.08615384615384618,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "greedy_erased": {
+        "mean": {
+          "retain": 0.11076923076923079,
+          "revise": 0.24807692307692322,
+          "unsupported_decisions": 0.0,
+          "cost": 0.14444444444444454,
+          "net": 0.2144017094017094,
+          "frozen_source_reader_actionable": 0.179423076923077,
+          "reviewed_oracle_actionable": 0.358846153846154
+        },
+        "proposals": [
+          {
+            "retain": 0.33230769230769236,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1666666666666668,
+            "net": 0.16564102564102565,
+            "frozen_source_reader_actionable": 0.33230769230769236,
+            "reviewed_oracle_actionable": 0.33230769230769236
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307697,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1666666666666668,
+            "net": 0.5775641025641026,
+            "frozen_source_reader_actionable": 0.41192307692307706,
+            "reviewed_oracle_actionable": 0.7442307692307695
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": -0.10000000000000002,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.33230769230769236,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1666666666666668,
+            "net": 0.16564102564102565,
+            "frozen_source_reader_actionable": 0.33230769230769236,
+            "reviewed_oracle_actionable": 0.33230769230769236
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7442307692307697,
+            "unsupported_decisions": 0.0,
+            "cost": 0.1666666666666668,
+            "net": 0.5775641025641026,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7442307692307695
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10000000000000002,
+            "net": -0.10000000000000002,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit": {
+        "mean": {
+          "retain": 0.013926886134888156,
+          "revise": 0.24744513712378816,
+          "unsupported_decisions": 0.0,
+          "cost": 0.0362139079473128,
+          "net": 0.22515811531136343,
+          "frozen_source_reader_actionable": 0.13755889669703025,
+          "reviewed_oracle_actionable": 0.2613720232586763
+        },
+        "proposals": [
+          {
+            "retain": 0.04178065840466447,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.021816757224681155,
+            "net": 0.01996390117998332,
+            "frozen_source_reader_actionable": 0.04178065840466447,
+            "reviewed_oracle_actionable": 0.04178065840466447
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423354113713646,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08633659832791803,
+            "net": 0.6559988130434459,
+            "frozen_source_reader_actionable": 0.7417920633728526,
+            "reviewed_oracle_actionable": 0.7423354113713644
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004883682893393017,
+            "net": -0.0004883682893393017,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 0.04178065840466447,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.021816757224681155,
+            "net": 0.01996390117998332,
+            "frozen_source_reader_actionable": 0.04178065840466447,
+            "reviewed_oracle_actionable": 0.04178065840466447
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423354113713645,
+            "unsupported_decisions": 0.0,
+            "cost": 0.08633659832791787,
+            "net": 0.6559988130434466,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7423354113713645
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.0004883682893393017,
+            "net": -0.0004883682893393017,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      },
+      "uniform_fit_erased": {
+        "mean": {
+          "retain": 1.5638703646531705e-05,
+          "revise": 0.2474551954692945,
+          "unsupported_decisions": 0.0,
+          "cost": 0.03923088289370909,
+          "net": 0.20823995127923167,
+          "frozen_source_reader_actionable": 0.12364499081573949,
+          "reviewed_oracle_actionable": 0.247470834172941
+        },
+        "proposals": [
+          {
+            "retain": 4.691611093959511e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.01711068994361014,
+            "net": -0.017063773832670544,
+            "frozen_source_reader_actionable": 4.691611093959511e-05,
+            "reviewed_oracle_actionable": 4.691611093959511e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423655864078834,
+            "unsupported_decisions": 0.0,
+            "cost": 0.100100553032052,
+            "net": 0.6422650333758301,
+            "frozen_source_reader_actionable": 0.7417761126725577,
+            "reviewed_oracle_actionable": 0.7423655864078833
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00048140570546518547,
+            "net": -0.00048140570546518547,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          },
+          {
+            "retain": 4.691611093959511e-05,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.01711068994361014,
+            "net": -0.017063773832670544,
+            "frozen_source_reader_actionable": 4.691611093959511e-05,
+            "reviewed_oracle_actionable": 4.691611093959511e-05
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.7423655864078835,
+            "unsupported_decisions": 0.0,
+            "cost": 0.10010055303205187,
+            "net": 0.6422650333758315,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0.7423655864078835
+          },
+          {
+            "retain": 0.0,
+            "revise": 0.0,
+            "unsupported_decisions": 0.0,
+            "cost": 0.00048140570546518547,
+            "net": -0.00048140570546518547,
+            "frozen_source_reader_actionable": 0,
+            "reviewed_oracle_actionable": 0
+          }
+        ]
+      }
+    }
+  },
+  "policy": [
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.49970159102458117,
+        0.4997015921385743,
+        0.0005968168368444407
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007498663837827015,
+        0.9985531372336429,
+        0.0006969963825744482
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.4982051860379435,
+        0.49820518478256504,
+        0.0035896291794914794
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.998553137233654,
+        0.0007498663837769115,
+        0.0006969963825690423
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007367718025575869,
+        0.0007367718025575869,
+        0.9985264563948849
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.003522888690991943,
+        0.001954691210688626,
+        0.9945224200983194
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.998553137233654,
+        0.0007498663837769115,
+        0.0006969963825690423
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007367718025575869,
+        0.0007367718025575869,
+        0.9985264563948849
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.003522888690991943,
+        0.001954691210688626,
+        0.9945224200983194
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.998553137233654,
+        0.0007498663837769115,
+        0.0006969963825690423
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9985531372336429,
+        0.0007498663837827015,
+        0.0006969963825744482
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0035228886909144577,
+        0.001954691210679605,
+        0.9945224200984059
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007367718025535709,
+        0.0007367718025535709,
+        0.9985264563948929
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9985531372336429,
+        0.0007498663837827015,
+        0.0006969963825744482
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0035228886909144577,
+        0.001954691210679605,
+        0.9945224200984059
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007367718025535709,
+        0.0007367718025535709,
+        0.9985264563948929
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007367718025575869,
+        0.0007367718025575869,
+        0.9985264563948849
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.001336057611634483,
+        0.001336057611634483,
+        0.9973278847767311
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007367718025535709,
+        0.0007367718025535709,
+        0.9985264563948929
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9979042916495737,
+        0.000644068343137027,
+        0.0014516400072893006
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02349060687563217,
+        0.02349060687563217,
+        0.9530187862487357
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02270620176059248,
+        0.02270620176059248,
+        0.954587596478815
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02270620176059248,
+        0.02270620176059248,
+        0.954587596478815
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.022706201760592473,
+        0.022706201760592473,
+        0.9545875964788152
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.022706201760592473,
+        0.022706201760592473,
+        0.9545875964788152
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.021463646956697006,
+        0.021463646956697006,
+        0.957072706086606
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9979042916495737,
+        0.000644068343137027,
+        0.0014516400072893006
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02349060687563217,
+        0.02349060687563217,
+        0.9530187862487357
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02270620176059248,
+        0.02270620176059248,
+        0.954587596478815
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02270620176059248,
+        0.02270620176059248,
+        0.954587596478815
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.022706201760592473,
+        0.022706201760592473,
+        0.9545875964788152
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.022706201760592473,
+        0.022706201760592473,
+        0.9545875964788152
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.021463646956697006,
+        0.021463646956697006,
+        0.957072706086606
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9979042916495804,
+        0.0006440683431355347,
+        0.0014516400072841968
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9979042916495804,
+        0.0006440683431355347,
+        0.0014516400072841968
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0013127707594534671,
+        0.0013127707594534671,
+        0.9973744584810931
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.001813290464468044,
+        0.9965192456002915,
+        0.0016674639352404514
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007950591983410993,
+        0.998473144107001,
+        0.0007317966946580305
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0020358854369739885,
+        0.9960848102215705,
+        0.0018793043414555817
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008110122896877894,
+        0.0008110122896877894,
+        0.9983779754206245
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008110122896877894,
+        0.0008110122896877894,
+        0.9983779754206245
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008110122896877894,
+        0.0008110122896877894,
+        0.9983779754206245
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.998473144107001,
+        0.0007950591983410993,
+        0.0007317966946580305
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9967451289061283,
+        0.0016978132665551348,
+        0.0015570578273164238
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008250181557513704,
+        0.0008250181557513704,
+        0.9983499636884973
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.998473144107001,
+        0.0007950591983410993,
+        0.0007317966946580305
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9967451289061283,
+        0.0016978132665551348,
+        0.0015570578273164238
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008250181557513704,
+        0.0008250181557513704,
+        0.9983499636884973
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008250181557513704,
+        0.0008250181557513704,
+        0.9983499636884973
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02164435943184208,
+        0.9581059719738869,
+        0.020249668594270916
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410296,
+        0.01921083082594932
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410296,
+        0.01921083082594932
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.02164435943184208,
+        0.9581059719738869,
+        0.020249668594270916
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410296,
+        0.01921083082594932
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410296,
+        0.01921083082594932
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.996270870860242,
+        0.0019159344729085949,
+        0.0018131946668495191
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.996270870860242,
+        0.0019159344729085949,
+        0.0018131946668495191
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.001343875525796285,
+        0.0013194076350334853,
+        0.9973367168391702
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007681808595548019,
+        0.0007681808595548019,
+        0.9984636382808904
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0011479732481956165,
+        0.0011479732481956165,
+        0.9977040535036087
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020551728516752275,
+        0.020551728516752275,
+        0.9588965429664955
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020551728516752275,
+        0.020551728516752275,
+        0.9588965429664955
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020551728516752275,
+        0.020551728516752275,
+        0.9588965429664955
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007681808595548019,
+        0.0007681808595548019,
+        0.9984636382808904
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0010620530557227785,
+        0.0010620530557227785,
+        0.9978758938885545
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020316514551770064,
+        0.020316514551770064,
+        0.9593669708964598
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007681808595548019,
+        0.0007681808595548019,
+        0.9984636382808904
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0010620530557227785,
+        0.0010620530557227785,
+        0.9978758938885545
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020316514551770064,
+        0.020316514551770064,
+        0.9593669708964598
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020316514551770064,
+        0.020316514551770064,
+        0.9593669708964598
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.021937018757587395,
+        0.021937018757587395,
+        0.9561259624848253
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095488993,
+        0.020780017095488993,
+        0.9584399658090221
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095488993,
+        0.020780017095488993,
+        0.9584399658090221
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "supports"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.021937018757587395,
+        0.021937018757587395,
+        0.9561259624848253
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095488993,
+        0.020780017095488993,
+        0.9584399658090221
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095488993,
+        0.020780017095488993,
+        0.9584399658090221
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0012916549978733156,
+        0.0012907223843739413,
+        0.9974176226177528
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0012916549978733156,
+        0.0012907223843739413,
+        0.9974176226177528
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9965192456002915,
+        0.001813290464468044,
+        0.0016674639352404514
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008110122896877894,
+        0.0008110122896877894,
+        0.9983779754206245
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9960848102215705,
+        0.0020358854369739885,
+        0.0018793043414555833
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9984731441070008,
+        0.0007950591983410991,
+        0.000731796694658031
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.000825018155751369,
+        0.000825018155751369,
+        0.9983499636884973
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9967451289061283,
+        0.0016978132665551348,
+        0.0015570578273164238
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9984731441070008,
+        0.0007950591983410991,
+        0.000731796694658031
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.000825018155751369,
+        0.000825018155751369,
+        0.9983499636884973
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9967451289061283,
+        0.0016978132665551348,
+        0.0015570578273164238
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9984731441070008,
+        0.0007950591983410991,
+        0.000731796694658031
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008110122896877894,
+        0.0008110122896877894,
+        0.9983779754206245
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008110122896877894,
+        0.0008110122896877894,
+        0.9983779754206245
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.000825018155751369,
+        0.000825018155751369,
+        0.9983499636884973
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.996270870860242,
+        0.0019159344729085949,
+        0.0018131946668495191
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9581059719738869,
+        0.02164435943184208,
+        0.020249668594270916
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410303,
+        0.01921083082594934
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410303,
+        0.01921083082594934
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.996270870860242,
+        0.0019159344729085949,
+        0.0018131946668495191
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9581059719738869,
+        0.02164435943184208,
+        0.020249668594270916
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410303,
+        0.01921083082594934
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602625444446403,
+        0.020526624729410303,
+        0.01921083082594934
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.4981554882431012,
+        0.4981554882431043,
+        0.003689023513794434
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008724762184495957,
+        0.0008724762184495957,
+        0.9982550475631009
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.4986389931744451,
+        0.4986389931744451,
+        0.0027220136511096676
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008724762184495963,
+        0.0008724762184495963,
+        0.9982550475631007
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008724762184495963,
+        0.0008724762184495963,
+        0.9982550475631007
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008724762184495963,
+        0.0008724762184495963,
+        0.9982550475631007
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008724762184495957,
+        0.0008724762184495957,
+        0.9982550475631009
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008724762184495957,
+        0.0008724762184495957,
+        0.9982550475631009
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.49058743682592837,
+        0.49058743682592837,
+        0.01882512634814312
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.49058743682592837,
+        0.49058743682592837,
+        0.01882512634814312
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9965572262150799,
+        0.0017784952983970113,
+        0.0016642784865230457
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008109951108991923,
+        0.0008109951108991923,
+        0.9983780097782017
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.9974943498410629,
+        0.0013063392456293527,
+        0.0011993109133077039
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602852094807484,
+        0.020499526061885664,
+        0.019215264457365915
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602852094807484,
+        0.020499526061885664,
+        0.019215264457365915
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602852094807484,
+        0.020499526061885664,
+        0.019215264457365915
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008109951108991923,
+        0.0008109951108991923,
+        0.9983780097782017
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008109951108991923,
+        0.0008109951108991923,
+        0.9983780097782017
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9605298940658334,
+        0.020375557480692072,
+        0.019094548453474393
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "contradicts"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9605298940658334,
+        0.020375557480692072,
+        0.019094548453474393
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0013194076350334864,
+        0.001343875525796285,
+        0.9973367168391702
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020551728516752275,
+        0.020551728516752275,
+        0.9588965429664955
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0011479732481956165,
+        0.0011479732481956165,
+        0.9977040535036087
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007681808595548019,
+        0.0007681808595548019,
+        0.9984636382808904
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020316514551770064,
+        0.020316514551770064,
+        0.9593669708964598
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0010620530557227765,
+        0.0010620530557227765,
+        0.9978758938885545
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007681808595548019,
+        0.0007681808595548019,
+        0.9984636382808904
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020316514551770064,
+        0.020316514551770064,
+        0.9593669708964598
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0010620530557227765,
+        0.0010620530557227765,
+        0.9978758938885545
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "supports"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0007681808595548019,
+        0.0007681808595548019,
+        0.9984636382808904
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020551728516752275,
+        0.020551728516752275,
+        0.9588965429664955
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "supports"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020551728516752275,
+        0.020551728516752275,
+        0.9588965429664955
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              2,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020316514551770064,
+        0.020316514551770064,
+        0.9593669708964598
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0012916549978733156,
+        0.0012907223843739402,
+        0.9974176226177528
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.021937018757587405,
+        0.021937018757587405,
+        0.9561259624848253
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095489,
+        0.020780017095489,
+        0.9584399658090219
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095489,
+        0.020780017095489,
+        0.9584399658090219
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0012916549978733156,
+        0.0012907223843739402,
+        0.9974176226177528
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.021937018757587405,
+        0.021937018757587405,
+        0.9561259624848253
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095489,
+        0.020780017095489,
+        0.9584399658090219
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020780017095489,
+        0.020780017095489,
+        0.9584399658090219
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0017784952983970113,
+        0.9965572262150799,
+        0.0016642784865230457
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020499526061885664,
+        0.9602852094807484,
+        0.019215264457365915
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.001306339245629354,
+        0.9974943498410629,
+        0.0011993109133077039
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008109951108991974,
+        0.0008109951108991974,
+        0.9983780097782017
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008109951108991974,
+        0.0008109951108991974,
+        0.9983780097782017
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "contradicts"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.0008109951108991974,
+        0.0008109951108991974,
+        0.9983780097782017
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602852094807484,
+        0.020499526061885664,
+        0.019215264457365915
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "contradicts"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.9602852094807484,
+        0.020499526061885664,
+        0.019215264457365915
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020375557480692072,
+        0.9605298940658334,
+        0.019094548453474393
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020375557480692072,
+        0.9605298940658334,
+        0.019094548453474393
+      ]
+    },
+    {
+      "state": [
+        "first",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0013146328715821862,
+        0.0013146328715821873,
+        0.9973707342568358
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020558489503443418,
+        0.020558489503443418,
+        0.9588830209931131
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          null
+        ]
+      ],
+      "probabilities": [
+        0.0009503161186161417,
+        0.0009503161186161417,
+        0.9980993677627676
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020558489503443418,
+        0.020558489503443418,
+        0.9588830209931131
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020558489503443418,
+        0.020558489503443418,
+        0.9588830209931131
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            1,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020558489503443418,
+        0.020558489503443418,
+        0.9588830209931131
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020558489503443418,
+        0.020558489503443418,
+        0.9588830209931131
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              1,
+              "unknown"
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ],
+          [
+            0,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020558489503443418,
+        0.020558489503443418,
+        0.9588830209931131
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            2,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020589207790173772,
+        0.020589207790173772,
+        0.9588215844196525
+      ]
+    },
+    {
+      "state": [
+        "second",
+        [
+          [
+            [
+              0,
+              "unknown"
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ],
+          [
+            3,
+            "unknown"
+          ]
+        ]
+      ],
+      "probabilities": [
+        0.020589207790173772,
+        0.020589207790173772,
+        0.9588215844196525
+      ]
+    }
+  ]
+}

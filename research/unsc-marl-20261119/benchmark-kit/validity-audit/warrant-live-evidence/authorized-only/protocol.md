@@ -1,0 +1,3 @@
+# Transmit only the assigned grade
+
+The original experiment selected legal actions but the language writer copied the example grade and package or disclosed another grade from its private card. Preserve that run. For the correction, the writer receives only the authorized actor, package and grade. Use a format template with placeholders. For the follow-up, the request still determines the slot, but its natural-language text is not sent to the reporting writer. Keep the same frozen opening and adaptive chair, physical link events, 25-token report ceilings, verification, final prompts and final scoring. This is a targeted interface repair with two simultaneous prompt changes and the same exposed cases.

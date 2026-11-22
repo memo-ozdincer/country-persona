@@ -1,0 +1,275 @@
+{
+  "world": [
+    2,
+    4
+  ],
+  "opening": [
+    {
+      "card": 2,
+      "role": "somalia",
+      "sent": [
+        "8",
+        "5",
+        "1"
+      ],
+      "status": "normalized_literal_ids",
+      "delivered": true,
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select passage IDs that preserve this speaker's distinct position. Retain the mandate request and the specifics of localization. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"somalia\", \"stage\": \"opening\", \"private_inventory\": [\"somalia\"], \"earlier_attempt\": null, \"heard_question\": null, \"passages\": {\"8\": \"Somalia welcomed adoption as implementing its own two-year handover request.\", \"1\": \"It thanked the UK and past mission staff.\", \"5\": \"It urged local procurement and hiring Somali staff, especially women, during drawdown.\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      },
+      "reused": false,
+      "response": {
+        "text": "[8, 5, 1]",
+        "input_tokens": 196,
+        "output_tokens": 10,
+        "termination": "complete"
+      }
+    },
+    {
+      "card": 3,
+      "role": "us",
+      "sent": [
+        "7",
+        "3"
+      ],
+      "status": "normalized_literal_ids",
+      "delivered": false,
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select passage IDs that preserve this speaker's distinct position. Retain support for the decision and conditions review, and the reporting reservation. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"us\", \"stage\": \"opening\", \"private_inventory\": [\"us\"], \"earlier_attempt\": null, \"heard_question\": null, \"passages\": {\"5\": \"It valued the mission's work on reconciliation and the rule of law.\", \"7\": \"The United States voted yes and welcomed reviewing conditions before each transition phase.\", \"3\": \"It objected to fewer Council reports and briefings.\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      },
+      "reused": false,
+      "response": {
+        "text": "[7, 3]",
+        "input_tokens": 197,
+        "output_tokens": 7,
+        "termination": "complete"
+      }
+    }
+  ],
+  "arms": {
+    "interval_team": {
+      "opening_mask": 2,
+      "query": 3,
+      "heard": 3,
+      "reply": 3,
+      "delivery": {
+        "card": 3,
+        "role": "us",
+        "sent": [
+          "7",
+          "3"
+        ],
+        "status": "normalized_literal_ids",
+        "delivered": true,
+        "request": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "Select passage IDs that preserve this speaker's distinct position. Retain support for the decision and conditions review, and the reporting reservation. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+            },
+            {
+              "role": "user",
+              "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"us\", \"stage\": \"reply\", \"private_inventory\": [\"us\"], \"earlier_attempt\": \"us\", \"heard_question\": \"us\", \"passages\": {\"5\": \"It valued the mission's work on reconciliation and the rule of law.\", \"7\": \"The United States voted yes and welcomed reviewing conditions before each transition phase.\", \"3\": \"It objected to fewer Council reports and briefings.\"}}"
+            }
+          ],
+          "max_output_tokens": 72
+        },
+        "reused": false,
+        "response": {
+          "text": "[7, 3]",
+          "input_tokens": 199,
+          "output_tokens": 7,
+          "termination": "complete"
+        }
+      },
+      "receipt": 6,
+      "cost": 0.65,
+      "record": {
+        "text": "On 30 October 2024 the Council adopted UK draft S/2024/790 as resolution 2753 (2024) by 15–0–0. It renamed UNSOM as UNTMIS and began the transition on 1 November 2024. Phase one ran through 31 October 2025. The Council intended to end the mandate by 31 October 2026, subject to conditions on the ground. It requested two written Secretary-General reports before 30 March and 30 September 2025.\n\nSomalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff.\n\nUnited States: Voted yes and welcomed reviewing conditions before each transition phase. Objected to fewer Council reports and briefings.",
+        "local": {
+          "somalia": "Somalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff.",
+          "us": "United States: Voted yes and welcomed reviewing conditions before each transition phase. Objected to fewer Council reports and briefings."
+        },
+        "comparison": {},
+        "used": {
+          "china": [],
+          "somalia": [
+            "1",
+            "5",
+            "8"
+          ],
+          "us": [
+            "3",
+            "7"
+          ]
+        },
+        "words": 113
+      }
+    },
+    "query_erased": {
+      "opening_mask": 2,
+      "query": 3,
+      "heard": 0,
+      "reply": 3,
+      "delivery": {
+        "card": 3,
+        "role": "us",
+        "sent": [
+          "7",
+          "3"
+        ],
+        "status": "normalized_literal_ids",
+        "delivered": true,
+        "request": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "Select passage IDs that preserve this speaker's distinct position. Retain support for the decision and conditions review, and the reporting reservation. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+            },
+            {
+              "role": "user",
+              "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"us\", \"stage\": \"reply\", \"private_inventory\": [\"us\"], \"earlier_attempt\": \"us\", \"heard_question\": null, \"passages\": {\"5\": \"It valued the mission's work on reconciliation and the rule of law.\", \"7\": \"The United States voted yes and welcomed reviewing conditions before each transition phase.\", \"3\": \"It objected to fewer Council reports and briefings.\"}}"
+            }
+          ],
+          "max_output_tokens": 72
+        },
+        "reused": false,
+        "response": {
+          "text": "[7, 3]",
+          "input_tokens": 198,
+          "output_tokens": 7,
+          "termination": "complete"
+        }
+      },
+      "receipt": 6,
+      "cost": 0.65,
+      "record": {
+        "text": "On 30 October 2024 the Council adopted UK draft S/2024/790 as resolution 2753 (2024) by 15–0–0. It renamed UNSOM as UNTMIS and began the transition on 1 November 2024. Phase one ran through 31 October 2025. The Council intended to end the mandate by 31 October 2026, subject to conditions on the ground. It requested two written Secretary-General reports before 30 March and 30 September 2025.\n\nSomalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff.\n\nUnited States: Voted yes and welcomed reviewing conditions before each transition phase. Objected to fewer Council reports and briefings.",
+        "local": {
+          "somalia": "Somalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff.",
+          "us": "United States: Voted yes and welcomed reviewing conditions before each transition phase. Objected to fewer Council reports and briefings."
+        },
+        "comparison": {},
+        "used": {
+          "china": [],
+          "somalia": [
+            "1",
+            "5",
+            "8"
+          ],
+          "us": [
+            "3",
+            "7"
+          ]
+        },
+        "words": 113
+      }
+    },
+    "interval_fixed": {
+      "opening_mask": 2,
+      "query": 1,
+      "heard": 1,
+      "reply": 0,
+      "delivery": null,
+      "receipt": 2,
+      "cost": 0.45,
+      "record": {
+        "text": "On 30 October 2024 the Council adopted UK draft S/2024/790 as resolution 2753 (2024) by 15–0–0. It renamed UNSOM as UNTMIS and began the transition on 1 November 2024. Phase one ran through 31 October 2025. The Council intended to end the mandate by 31 October 2026, subject to conditions on the ground. It requested two written Secretary-General reports before 30 March and 30 September 2025.\n\nSomalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff.",
+        "local": {
+          "somalia": "Somalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff."
+        },
+        "comparison": {},
+        "used": {
+          "china": [],
+          "somalia": [
+            "1",
+            "5",
+            "8"
+          ],
+          "us": []
+        },
+        "words": 94
+      }
+    },
+    "fixed_us": {
+      "opening_mask": 2,
+      "query": 3,
+      "heard": 3,
+      "reply": 3,
+      "delivery": {
+        "card": 3,
+        "role": "us",
+        "sent": [
+          "7",
+          "3"
+        ],
+        "status": "normalized_literal_ids",
+        "delivered": true,
+        "request": {
+          "messages": [
+            {
+              "role": "system",
+              "content": "Select passage IDs that preserve this speaker's distinct position. Retain support for the decision and conditions review, and the reporting reservation. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+            },
+            {
+              "role": "user",
+              "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"us\", \"stage\": \"reply\", \"private_inventory\": [\"us\"], \"earlier_attempt\": \"us\", \"heard_question\": \"us\", \"passages\": {\"5\": \"It valued the mission's work on reconciliation and the rule of law.\", \"7\": \"The United States voted yes and welcomed reviewing conditions before each transition phase.\", \"3\": \"It objected to fewer Council reports and briefings.\"}}"
+            }
+          ],
+          "max_output_tokens": 72
+        },
+        "reused": true,
+        "response": {
+          "text": "[7, 3]",
+          "input_tokens": 199,
+          "output_tokens": 7,
+          "termination": "complete"
+        }
+      },
+      "receipt": 6,
+      "cost": 0.65,
+      "record": {
+        "text": "On 30 October 2024 the Council adopted UK draft S/2024/790 as resolution 2753 (2024) by 15–0–0. It renamed UNSOM as UNTMIS and began the transition on 1 November 2024. Phase one ran through 31 October 2025. The Council intended to end the mandate by 31 October 2026, subject to conditions on the ground. It requested two written Secretary-General reports before 30 March and 30 September 2025.\n\nSomalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff.\n\nUnited States: Voted yes and welcomed reviewing conditions before each transition phase. Objected to fewer Council reports and briefings.",
+        "local": {
+          "somalia": "Somalia: Welcomed adoption as implementing its own two-year handover request. Urged local procurement and hiring Somali staff, especially women, during drawdown. Thanked the UK and past mission staff.",
+          "us": "United States: Voted yes and welcomed reviewing conditions before each transition phase. Objected to fewer Council reports and briefings."
+        },
+        "comparison": {},
+        "used": {
+          "china": [],
+          "somalia": [
+            "1",
+            "5",
+            "8"
+          ],
+          "us": [
+            "3",
+            "7"
+          ]
+        },
+        "words": 113
+      }
+    }
+  },
+  "physical_calls": 4
+}

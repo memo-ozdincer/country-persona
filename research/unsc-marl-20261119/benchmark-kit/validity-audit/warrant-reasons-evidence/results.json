@@ -1,0 +1,796 @@
+{
+  "recommend/routed": {
+    "certificate": {
+      "alias": "d1cc42ba",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 52,
+      "within_format": true,
+      "material_points": 50,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "Evidence supports B via D2's high A-grade and F1's low A-grade."
+        ],
+        "scope": [
+          "met",
+          "Workshop record"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 418,
+      "output_tokens": 109,
+      "candidate": {
+        "decision": "B",
+        "evidence": [
+          "O2",
+          "F1"
+        ],
+        "memo": "Workshop record confirms D2's receipt O2 grades A as 3, while D1's receipt F1 grades A as 1. Excluding zero-grade packages leaves only B-compatible worlds. The single compatible world permits decision B. No impasse exists as a shared package is found. Evidence supports B via D2's high A-grade and F1's low A-grade."
+      },
+      "permitted": [
+        "B"
+      ]
+    },
+    "reasons": {
+      "alias": "9882dd92",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 64,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "Package A lacks a common best choice despite feasibility."
+        ],
+        "scope": [
+          "met",
+          "Workshop record"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 608,
+      "output_tokens": 113,
+      "candidate": {
+        "decision": "B",
+        "evidence": [
+          "O2",
+          "F1"
+        ],
+        "memo": "Workshop record confirms Package B is the sole shared acceptable package across all compatible worlds. Receipt O2 (D2 grade 3 for A) and F1 (D1 grade 1 for A) establish feasibility. Package C is excluded as no compatible world admits it. Package A lacks a common best choice despite feasibility. Thus, B is the only mechanically computed optimal decision supported by public grade domains."
+      },
+      "permitted": [
+        "B"
+      ]
+    }
+  },
+  "recommend/erased": {
+    "certificate": {
+      "alias": "64130f79",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 43,
+      "within_format": true,
+      "material_points": 50,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "No package survives elimination of zero-grade options."
+        ],
+        "scope": [
+          "met",
+          "Workshop record:"
+        ],
+        "material_errors": [
+          "No package survives elimination of zero-grade options."
+        ]
+      },
+      "input_tokens": 416,
+      "output_tokens": 97,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O2"
+        ],
+        "memo": "Workshop record: O2 report (grade 3 for A) confirms D2's A-grade. However, mechanically checked certificate permits only UNRESOLVED, indicating no shared acceptable package exists across all 4 compatible worlds. No package survives elimination of zero-grade options. Decision stands as UNRESOLVED per permitted outcomes."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    },
+    "reasons": {
+      "alias": "e47a63e8",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": false
+      },
+      "record_words": 77,
+      "within_format": true,
+      "material_points": 40,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "Since A is excluded"
+        ],
+        "scope": [
+          "unmet",
+          ""
+        ],
+        "material_errors": [
+          "excluding any package containing A due to the zero-grade rule"
+        ]
+      },
+      "input_tokens": 606,
+      "output_tokens": 130,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O2"
+        ],
+        "memo": "Report O2 confirms D2's grade 3 for A, excluding any package containing A due to the zero-grade rule. Package C is infeasible across all compatible worlds. While B is feasible in all worlds, the certificate indicates multiple distinct optimal completions exist (A alone, A+B, or B alone). Since A is excluded and B's optimality is not unique among feasible sets, no single shared acceptable package emerges. The admitted receipts imply conflicting best choices prevent a definitive resolution."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    }
+  },
+  "impasse/routed": {
+    "certificate": {
+      "alias": "46a02a05",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 38,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "All compatible worlds exclude every viable package."
+        ],
+        "scope": [
+          "met",
+          "Workshop record:"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 420,
+      "output_tokens": 90,
+      "candidate": {
+        "decision": "IMPASSE",
+        "evidence": [
+          "O1",
+          "F1"
+        ],
+        "memo": "Workshop record: O1 confirms D1 excludes C (grade 0). F1 confirms D2 excludes A (grade 0). No package satisfies both constraints simultaneously. The mechanically checked certificate permits only IMPASSE. All compatible worlds exclude every viable package. Decision: IMPASSE."
+      },
+      "permitted": [
+        "IMPASSE"
+      ]
+    },
+    "reasons": {
+      "alias": "857a900f",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 56,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "Package B is also infeasible in this world. Since every compatible world excludes all packages"
+        ],
+        "scope": [
+          "met",
+          "Workshop records"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 558,
+      "output_tokens": 107,
+      "candidate": {
+        "decision": "IMPASSE",
+        "evidence": [
+          "O1",
+          "F1"
+        ],
+        "memo": "Workshop records show D1 rejects C (O1) and D2 rejects A (F1). The certificate confirms only one compatible world exists, excluding both A and C. Package B is also infeasible in this world. Since every compatible world excludes all packages, no shared acceptable package can be formed. This mechanical exclusion of all options mandates an IMPASSE."
+      },
+      "permitted": [
+        "IMPASSE"
+      ]
+    }
+  },
+  "impasse/erased": {
+    "certificate": {
+      "alias": "65b25620",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": false
+      },
+      "record_words": 47,
+      "within_format": true,
+      "material_points": 40,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "D2's package with A=0, B=0 is also excluded."
+        ],
+        "scope": [
+          "unmet",
+          ""
+        ],
+        "material_errors": [
+          "D2's package with A=0, B=0 is also excluded."
+        ]
+      },
+      "input_tokens": 417,
+      "output_tokens": 106,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1"
+        ],
+        "memo": "Report O1 excludes D1's package with C=0. D2's package with A=0, B=0 is also excluded. Remaining compatible worlds allow only A and B grades. No single package satisfies all constraints across all valid completions. Permitted decisions list UNRESOLVED. No shared acceptable package exists; thus, we record UNRESOLVED."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    },
+    "reasons": {
+      "alias": "a4a7db36",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 70,
+      "within_format": true,
+      "material_points": 50,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "D2 also contains a zero-grade C option."
+        ],
+        "scope": [
+          "met",
+          "Workshop record:"
+        ],
+        "material_errors": [
+          "D2 also contains a zero-grade C option.",
+          "Receipts O1 and D1/D2 zero-grades imply C is universally excluded."
+        ]
+      },
+      "input_tokens": 607,
+      "output_tokens": 130,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1"
+        ],
+        "memo": "Workshop record: O1 confirms D1 rejects C (grade 0). D2 also contains a zero-grade C option. While A and B are feasible in some compatible worlds, no single package is best across all completions. Receipts O1 and D1/D2 zero-grades imply C is universally excluded. Since A and B differ in optimality without a shared best choice, and no impasse covers all feasible options, the decision remains UNRESOLVED per certificate constraints."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    }
+  },
+  "domain2-uniform/initial": {
+    "certificate": {
+      "alias": "754b3171",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 67,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "Since a shared acceptable package (B) is not guaranteed across all worlds, and an impasse is not certain, the outcome remains UNRESOLVED."
+        ],
+        "scope": [
+          "met",
+          "No official adoption is assigned."
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 425,
+      "output_tokens": 123,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Reports O1 and O2 confirm D1 and D2 each assign grade 0 to package A. Per the workshop rules, any package containing A is excluded. The certificate indicates three compatible worlds exist, permitting either a unanimous B or an impasse. Since a shared acceptable package (B) is not guaranteed across all worlds, and an impasse is not certain, the outcome remains UNRESOLVED. No official adoption is assigned."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    },
+    "reasons": {
+      "alias": "eee64e75",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 74,
+      "within_format": true,
+      "material_points": 50,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "divergent best choices for B and C prevent a unique decision."
+        ],
+        "scope": [
+          "met",
+          "the workshop records UNRESOLVED"
+        ],
+        "material_errors": [
+          "divergent best choices for B and C"
+        ]
+      },
+      "input_tokens": 615,
+      "output_tokens": 129,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Reports O1 and O2 exclude package A via zero grades. Package B is feasible but lacks a shared optimal completion across all compatible worlds. Package C is feasible yet never optimal. Since no single package is both universally feasible and optimally ranked, and no impasse covers all feasible options, the workshop records UNRESOLVED. Receipts O1 and O2 confirm A's exclusion; mechanical checks show divergent best choices for B and C prevent a unique decision."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    }
+  },
+  "domain2-uniform/fitted": {
+    "certificate": {
+      "alias": "34146db8",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 39,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "All compatible worlds exclude all remaining packages."
+        ],
+        "scope": [
+          "met",
+          "Workshop record:"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 420,
+      "output_tokens": 92,
+      "candidate": {
+        "decision": "IMPASSE",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Workshop record: O1 confirms D1 excludes package A (grade 0). O2 confirms D2 excludes package B (grade 0). No package remains viable for both delegates. Permitted decisions list only IMPASSE. All compatible worlds exclude all remaining packages. Decision: IMPASSE."
+      },
+      "permitted": [
+        "IMPASSE"
+      ]
+    },
+    "reasons": {
+      "alias": "d7adbb27",
+      "checked": {
+        "decision": false,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 59,
+      "within_format": true,
+      "material_points": 25,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "Package C remains feasible in compatible worlds"
+        ],
+        "scope": [
+          "met",
+          "the workshop records UNRESOLVED"
+        ],
+        "material_errors": [
+          "Package C remains feasible in compatible worlds"
+        ]
+      },
+      "input_tokens": 558,
+      "output_tokens": 108,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Reports O1 and O2 exclude packages A and B respectively due to zero grades. Package C remains feasible in compatible worlds but lacks a unique best choice across all completions. Since no single package is universally optimal and no impasse covers all feasible options, the workshop records UNRESOLVED. Admitted receipts imply conflicting optimality criteria prevent a shared acceptable package."
+      },
+      "permitted": [
+        "IMPASSE"
+      ]
+    }
+  },
+  "domain2-correlated/initial": {
+    "certificate": {
+      "alias": "4dba1bda",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 67,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "Since a shared acceptable package (B) is not guaranteed across all worlds, and an impasse is not certain, the outcome remains UNRESOLVED."
+        ],
+        "scope": [
+          "met",
+          "No official adoption is assigned."
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 425,
+      "output_tokens": 123,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Reports O1 and O2 confirm D1 and D2 each assign grade 0 to package A. Per the workshop rules, any package containing A is excluded. The certificate indicates three compatible worlds exist, permitting either a unanimous B or an impasse. Since a shared acceptable package (B) is not guaranteed across all worlds, and an impasse is not certain, the outcome remains UNRESOLVED. No official adoption is assigned."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    },
+    "reasons": {
+      "alias": "3481e74a",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 74,
+      "within_format": true,
+      "material_points": 50,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "divergent best choices for B and C prevent a unique decision."
+        ],
+        "scope": [
+          "met",
+          "the workshop records UNRESOLVED"
+        ],
+        "material_errors": [
+          "divergent best choices for B and C"
+        ]
+      },
+      "input_tokens": 615,
+      "output_tokens": 129,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Reports O1 and O2 exclude package A via zero grades. Package B is feasible but lacks a shared optimal completion across all compatible worlds. Package C is feasible yet never optimal. Since no single package is both universally feasible and optimally ranked, and no impasse covers all feasible options, the workshop records UNRESOLVED. Receipts O1 and O2 confirm A's exclusion; mechanical checks show divergent best choices for B and C prevent a unique decision."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    }
+  },
+  "domain2-correlated/fitted": {
+    "certificate": {
+      "alias": "c9ca6f77",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 39,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "All compatible worlds exclude all remaining packages."
+        ],
+        "scope": [
+          "met",
+          "Workshop record:"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 420,
+      "output_tokens": 92,
+      "candidate": {
+        "decision": "IMPASSE",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Workshop record: O1 confirms D1 excludes package A (grade 0). O2 confirms D2 excludes package B (grade 0). No package remains viable for both delegates. Permitted decisions list only IMPASSE. All compatible worlds exclude all remaining packages. Decision: IMPASSE."
+      },
+      "permitted": [
+        "IMPASSE"
+      ]
+    },
+    "reasons": {
+      "alias": "e3351d88",
+      "checked": {
+        "decision": false,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 59,
+      "within_format": true,
+      "material_points": 25,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "Package C remains feasible in compatible worlds"
+        ],
+        "scope": [
+          "met",
+          "the workshop records UNRESOLVED"
+        ],
+        "material_errors": [
+          "Package C remains feasible in compatible worlds"
+        ]
+      },
+      "input_tokens": 558,
+      "output_tokens": 108,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O1",
+          "O2"
+        ],
+        "memo": "Reports O1 and O2 exclude packages A and B respectively due to zero grades. Package C remains feasible in compatible worlds but lacks a unique best choice across all completions. Since no single package is universally optimal and no impasse covers all feasible options, the workshop records UNRESOLVED. Admitted receipts imply conflicting optimality criteria prevent a shared acceptable package."
+      },
+      "permitted": [
+        "IMPASSE"
+      ]
+    }
+  },
+  "domain7-uniform/initial": {
+    "certificate": {
+      "alias": "b7594871",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 47,
+      "within_format": true,
+      "material_points": 50,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "Excluding zero-graded packages leaves D2's {A:3,B:1,C:2} and {A:3,B:3,C:1}."
+        ],
+        "scope": [
+          "met",
+          "Workshop record:"
+        ],
+        "material_errors": [
+          "Excluding zero-graded packages leaves D2's {A:3,B:1,C:2} and {A:3,B:3,C:1}."
+        ]
+      },
+      "input_tokens": 424,
+      "output_tokens": 131,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O2",
+          "F1"
+        ],
+        "memo": "Workshop record: O2 confirms D2 grades A=3, while F1 confirms D1 grades A=0. Excluding zero-graded packages leaves D2's {A:3,B:1,C:2} and {A:3,B:3,C:1}. The certificate permits UNRESOLVED, noting compatible worlds allow different completions (B or C). No shared acceptable package exists across all valid worlds. Evidence supports UNRESOLVED status."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    },
+    "reasons": {
+      "alias": "49617d91",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": true,
+        "scope": true
+      },
+      "record_words": 60,
+      "within_format": true,
+      "material_points": 70,
+      "release_points": 70,
+      "strict_release": true,
+      "review": {
+        "reason": [
+          "met",
+          "Packages B and C are feasible but offer different optimal completions."
+        ],
+        "scope": [
+          "met",
+          "the workshop records UNRESOLVED"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 614,
+      "output_tokens": 119,
+      "candidate": {
+        "decision": "UNRESOLVED",
+        "evidence": [
+          "O2",
+          "F1"
+        ],
+        "memo": "Reports O2 and F1 confirm D2 grades A at 3 and D1 grades A at 0. Package A is infeasible due to D1's zero. Packages B and C are feasible but offer different optimal completions. Since no single package is best across all compatible worlds, and no impasse exists, the workshop records UNRESOLVED. Receipts imply conflicting optimality despite shared feasibility."
+      },
+      "permitted": [
+        "UNRESOLVED"
+      ]
+    }
+  },
+  "domain7-uniform/fitted": {
+    "certificate": {
+      "alias": "3a305948",
+      "checked": {
+        "decision": true,
+        "evidence": true,
+        "reason": false,
+        "scope": true
+      },
+      "record_words": 47,
+      "within_format": true,
+      "material_points": 50,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "only B as a viable shared package across all four compatible worlds"
+        ],
+        "scope": [
+          "met",
+          "Workshop record:"
+        ],
+        "material_errors": []
+      },
+      "input_tokens": 424,
+      "output_tokens": 101,
+      "candidate": {
+        "decision": "B",
+        "evidence": [
+          "O2",
+          "F1"
+        ],
+        "memo": "Workshop record: Delivered reports O2 and F1 confirm D2 grades C=1 and D1 grades B=2. Excluding zero-grade packages leaves only B as a viable shared package across all four compatible worlds. Receipts O2 and F1 support this consensus. No impasse exists; B is the unique common solution."
+      },
+      "permitted": [
+        "B"
+      ]
+    },
+    "reasons": {
+      "alias": "df04c72a",
+      "checked": {
+        "decision": false,
+        "evidence": false,
+        "reason": false,
+        "scope": false
+      },
+      "record_words": 62,
+      "within_format": false,
+      "material_points": 0,
+      "release_points": 0,
+      "strict_release": false,
+      "review": {
+        "reason": [
+          "unmet",
+          "no single shared acceptable package is guaranteed."
+        ],
+        "scope": [
+          "unmet",
+          ""
+        ],
+        "material_errors": [
+          "no single shared acceptable package is guaranteed."
+        ]
+      },
+      "input_tokens": 640,
+      "output_tokens": 106,
+      "candidate": {
+        "decision": null,
+        "evidence": null,
+        "memo": "{\n  \"decision\": \"UNRESOLVED\",\n  \"evidence\": [\"O2\", \"F1\"],\n  \"memo\": \"Reports O2 and F1 confirm D2's C-grade and D1's B-grade respectively. Package B is feasible in all compatible worlds, yet Package A also appears feasible in some. Since multiple best choices exist across different completions, no single shared acceptable package is guaranteed. The admitted receipts imply conflicting optimality rankings prevent a definitive recommendation.\n\"\n}"
+      },
+      "permitted": [
+        "B"
+      ]
+    }
+  }
+}

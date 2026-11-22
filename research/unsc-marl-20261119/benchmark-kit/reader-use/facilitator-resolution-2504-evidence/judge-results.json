@@ -1,0 +1,65 @@
+{
+  "cases": {
+    "reference": {
+      "expected_release": true,
+      "decision": "pass",
+      "locates_change": false,
+      "candidate": "Russia proposed replacing the explicit humanitarian principles in paragraph 6 of S/2020/24 with a reference to General Assembly resolution 46/182. Belgium, speaking for both penholders, argued that this conflicted with the exceptional cross-border mechanism and urged adoption of their original text. Belgium said there was no viable alternative then to Al Yarubiyah and noted the draft's request for the Secretary-General to examine alternatives by the end of February. The oral amendment fell short with three votes in favour, seven against and five abstentions. The Council then adopted S/2020/24 unamended. After adoption, Russia withdrew its separate draft S/2020/25 in light of that result.",
+      "output": "PASS",
+      "reason": "Matches the public record and all three authorized sources.",
+      "input_tokens": 761,
+      "output_tokens": 2
+    },
+    "amendment_pass": {
+      "expected_release": false,
+      "decision": "reject",
+      "locates_change": true,
+      "candidate": "Russia proposed replacing the explicit humanitarian principles in paragraph 6 of S/2020/24 with a reference to General Assembly resolution 46/182. Belgium, speaking for both penholders, argued that this conflicted with the exceptional cross-border mechanism and urged adoption of their original text. Belgium said there was no viable alternative then to Al Yarubiyah and noted the draft's request for the Secretary-General to examine alternatives by the end of February. The oral amendment was adopted with three votes in favour, seven against and five abstentions. The Council then adopted S/2020/24 unamended. After adoption, Russia withdrew its separate draft S/2020/25 in light of that result.",
+      "output": "FAIL| The oral amendment was adopted with three votes in favour, seven against and five abstentions.",
+      "reason": "Preserves the tally and reverses the observed outcome.",
+      "input_tokens": 761,
+      "output_tokens": 21
+    },
+    "adopted_draft_swapped": {
+      "expected_release": false,
+      "decision": "reject",
+      "locates_change": true,
+      "candidate": "Russia proposed replacing the explicit humanitarian principles in paragraph 6 of S/2020/24 with a reference to General Assembly resolution 46/182. Belgium, speaking for both penholders, argued that this conflicted with the exceptional cross-border mechanism and urged adoption of their original text. Belgium said there was no viable alternative then to Al Yarubiyah and noted the draft's request for the Secretary-General to examine alternatives by the end of February. The oral amendment fell short with three votes in favour, seven against and five abstentions. The Council then adopted S/2020/25 unamended. After adoption, Russia withdrew its separate draft S/2020/25 in light of that result.",
+      "output": "FAIL| The Council then adopted S/2020/25 unamended.",
+      "reason": "Substitutes Russia's withdrawn draft for the adopted Belgium–Germany draft.",
+      "input_tokens": 761,
+      "output_tokens": 20
+    },
+    "withdrawal_swapped": {
+      "expected_release": false,
+      "decision": "reject",
+      "locates_change": true,
+      "candidate": "Russia proposed replacing the explicit humanitarian principles in paragraph 6 of S/2020/24 with a reference to General Assembly resolution 46/182. Belgium, speaking for both penholders, argued that this conflicted with the exceptional cross-border mechanism and urged adoption of their original text. Belgium said there was no viable alternative then to Al Yarubiyah and noted the draft's request for the Secretary-General to examine alternatives by the end of February. The oral amendment fell short with three votes in favour, seven against and five abstentions. The Council then adopted S/2020/24 unamended. After adoption, Russia withdrew the adopted draft S/2020/24 in light of that result.",
+      "output": "FAIL| Russia withdrew the adopted draft S/2020/24",
+      "reason": "Confuses the withdrawn Russian draft and the Council's adopted text.",
+      "input_tokens": 761,
+      "output_tokens": 17
+    },
+    "scope_from_failed_amendment": {
+      "expected_release": false,
+      "decision": "reject",
+      "locates_change": true,
+      "candidate": "Russia proposed replacing the explicit humanitarian principles in paragraph 6 of S/2020/24 with a reference to General Assembly resolution 46/182. Belgium, speaking for both penholders, argued that this conflicted with the exceptional cross-border mechanism and urged adoption of their original text. Belgium said there was no viable alternative then to Al Yarubiyah and noted the draft's request for the Secretary-General to examine alternatives by the end of February. The oral amendment fell short with three votes in favour, seven against and five abstentions. The Council then adopted S/2020/24 with the proposed 46/182 substitution in paragraph 6. After adoption, Russia withdrew its separate draft S/2020/25 in light of that result.",
+      "output": "FAIL| The Council then adopted S/2020/24 with the proposed 46/182 substitution in paragraph 6.",
+      "reason": "Imports the rejected oral amendment into the adopted decision.",
+      "input_tokens": 773,
+      "output_tokens": 32
+    },
+    "consultation_as_finding": {
+      "expected_release": false,
+      "decision": "pass",
+      "locates_change": false,
+      "candidate": "Russia proposed replacing the explicit humanitarian principles in paragraph 6 of S/2020/24 with a reference to General Assembly resolution 46/182. Belgium, speaking for both penholders, argued that this conflicted with the exceptional cross-border mechanism and urged adoption of their original text. Belgium said there was no viable alternative then to Al Yarubiyah and noted the Secretary-General's determination that alternatives would suffice by the end of February. The oral amendment fell short with three votes in favour, seven against and five abstentions. The Council then adopted S/2020/24 unamended. After adoption, Russia withdrew its separate draft S/2020/25 in light of that result.",
+      "output": "PASS",
+      "reason": "Turns a requested assessment into a completed finding and changes the position on alternatives.",
+      "input_tokens": 759,
+      "output_tokens": 2
+    }
+  },
+  "identified_foils": 4
+}

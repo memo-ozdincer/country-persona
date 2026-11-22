@@ -1,0 +1,734 @@
+{
+  "scope": "Add a syntactic pre-object exclusion and already-held check to the existing exact-span gate. All proposed quotes come from archived model outputs or the explicitly labeled manual diagnostics. A human can supply better spans, but shared wording and unsupported role cues still challenge the grammar.",
+  "code_sha256": "3647c48fffc1623613613e3da4499c876621f9080c39ef364b1b4e686312738e",
+  "witness_sha256": "e75150a36df874868ed0022582dda0af1ca5ae0990437865c25521bcbbaa85fe",
+  "model_cases": {
+    "reserve/notification_excludes_national": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "exact": false,
+      "reason": "no_witness",
+      "manual_witness_replay": {
+        "spans": "the result letter",
+        "decision": [
+          "one",
+          [
+            "council_president"
+          ]
+        ],
+        "reason": "verified",
+        "exact": true
+      }
+    },
+    "reserve/national_excludes_notification": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "one",
+        [
+          "indonesia_national"
+        ]
+      ],
+      "exact": false,
+      "reason": "unresolved_card",
+      "manual_witness_replay": {
+        "spans": "the case Indonesia made as sponsor",
+        "decision": null,
+        "reason": "unresolved_card",
+        "exact": false
+      }
+    },
+    "reserve/notification_with_actor": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "exact": false,
+      "reason": "no_witness",
+      "manual_witness_replay": {
+        "spans": "communication gave delegates the certified voting outcome",
+        "decision": [
+          "one",
+          [
+            "council_president"
+          ]
+        ],
+        "reason": "verified",
+        "exact": true
+      }
+    },
+    "reserve/foreign_vote_explanation": {
+      "old": [
+        "one",
+        [
+          "russia"
+        ]
+      ],
+      "new": [
+        "one",
+        [
+          "russia"
+        ]
+      ],
+      "expected": [
+        "one",
+        [
+          "russia"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "reserve/both_roles": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "all",
+        [
+          "council_president",
+          "indonesia_national"
+        ]
+      ],
+      "exact": false,
+      "reason": "unresolved_card",
+      "manual_witness_replay": {
+        "spans": "what Djani argued as Indonesia's representative\nthe message he later sent as Council President",
+        "decision": null,
+        "reason": "unresolved_card",
+        "exact": false
+      }
+    },
+    "reserve/either_role": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "any",
+        [
+          "council_president",
+          "indonesia_national"
+        ]
+      ],
+      "exact": false,
+      "reason": "unresolved_card"
+    },
+    "reserve/both_delegations": {
+      "old": [
+        "all",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "new": [
+        "all",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "expected": [
+        "all",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "reserve/thin_statement_identity": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "unspecified",
+        []
+      ],
+      "exact": true,
+      "reason": "no_witness"
+    },
+    "reserve/docket_only": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "unspecified",
+        []
+      ],
+      "exact": true,
+      "reason": "no_witness"
+    },
+    "reserve/national_only": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "one",
+        [
+          "us"
+        ]
+      ],
+      "exact": false,
+      "reason": "no_witness",
+      "manual_witness_replay": {
+        "spans": "the American delegate's explanation of why her country opposed the draft",
+        "decision": [
+          "one",
+          [
+            "us"
+          ]
+        ],
+        "reason": "verified",
+        "exact": true
+      }
+    },
+    "fresh/exclude_turnaround": {
+      "old": [
+        "one",
+        [
+          "indonesia_national"
+        ]
+      ],
+      "new": [
+        "one",
+        [
+          "indonesia_national"
+        ]
+      ],
+      "expected": [
+        "one",
+        [
+          "indonesia_national"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "fresh/result_only": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "exact": false,
+      "reason": "no_witness"
+    },
+    "fresh/not_a_second_retrieval": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "one",
+        [
+          "us"
+        ]
+      ],
+      "exact": false,
+      "reason": "no_witness"
+    },
+    "fresh/separate_artifacts": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "all",
+        [
+          "council_president",
+          "indonesia_national"
+        ]
+      ],
+      "exact": false,
+      "reason": "missing_joint_member",
+      "manual_witness_replay": {
+        "spans": "the Indonesian sponsor's explanation\nthe letter reporting the completed ballot",
+        "decision": [
+          "all",
+          [
+            "council_president",
+            "indonesia_national"
+          ]
+        ],
+        "reason": "verified",
+        "exact": true
+      }
+    },
+    "fresh/compare_dissent": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "all",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "exact": false,
+      "reason": "non_exact_spans"
+    },
+    "fresh/mixed_pair": {
+      "old": [
+        "all",
+        [
+          "council_president",
+          "russia"
+        ]
+      ],
+      "new": [
+        "all",
+        [
+          "council_president",
+          "russia"
+        ]
+      ],
+      "expected": [
+        "all",
+        [
+          "council_president",
+          "russia"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "fresh/either_delegation": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "any",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "exact": false,
+      "reason": "excluded_scope",
+      "manual_witness_replay": {
+        "spans": "from Russia\nfrom the United States",
+        "decision": null,
+        "reason": "unresolved_card",
+        "exact": false
+      }
+    },
+    "fresh/either_capacity": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "any",
+        [
+          "council_president",
+          "indonesia_national"
+        ]
+      ],
+      "exact": false,
+      "reason": "unresolved_card"
+    },
+    "fresh/person_without_act": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "unspecified",
+        []
+      ],
+      "exact": false,
+      "reason": "unresolved_card"
+    },
+    "fresh/docket_without_act": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "unspecified",
+        []
+      ],
+      "exact": true,
+      "reason": "no_witness"
+    },
+    "new/official_record": {
+      "old": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "new": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "expected": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "new/two_voices": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "all",
+        [
+          "indonesia_national",
+          "russia"
+        ]
+      ],
+      "exact": false,
+      "reason": "unresolved_card",
+      "manual_witness_replay": {
+        "spans": "the Indonesian sponsor's policy case\nthe Russian delegation's vote explanation",
+        "decision": null,
+        "reason": "unresolved_card",
+        "exact": false
+      }
+    },
+    "new/either_but_not_both": {
+      "old": [
+        "any",
+        [
+          "indonesia_national",
+          "russia"
+        ]
+      ],
+      "new": [
+        "any",
+        [
+          "indonesia_national",
+          "russia"
+        ]
+      ],
+      "expected": [
+        "any",
+        [
+          "indonesia_national",
+          "russia"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "new/same_person_no_role": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "unspecified",
+        []
+      ],
+      "exact": false,
+      "reason": "unresolved_card"
+    },
+    "witness/single_procedure": {
+      "old": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "new": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "expected": [
+        "one",
+        [
+          "council_president"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "witness/single_national": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "one",
+        [
+          "indonesia_national"
+        ]
+      ],
+      "exact": false,
+      "reason": "excluded_scope"
+    },
+    "witness/negative_vote": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "one",
+        [
+          "us"
+        ]
+      ],
+      "exact": false,
+      "reason": "unresolved_card",
+      "manual_witness_replay": {
+        "spans": "the explanation of the negative vote",
+        "decision": [
+          "one",
+          [
+            "us"
+          ]
+        ],
+        "reason": "verified",
+        "exact": true
+      }
+    },
+    "witness/both_roles": {
+      "old": [
+        "all",
+        [
+          "council_president",
+          "indonesia_national"
+        ]
+      ],
+      "new": [
+        "all",
+        [
+          "council_president",
+          "indonesia_national"
+        ]
+      ],
+      "expected": [
+        "all",
+        [
+          "council_president",
+          "indonesia_national"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "witness/pair_national": {
+      "old": [
+        "all",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "new": [
+        "all",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "expected": [
+        "all",
+        [
+          "russia",
+          "us"
+        ]
+      ],
+      "exact": true,
+      "reason": "verified"
+    },
+    "witness/alternative": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "any",
+        [
+          "council_president",
+          "russia"
+        ]
+      ],
+      "exact": false,
+      "reason": "unresolved_card",
+      "manual_witness_replay": {
+        "spans": "the explanation Russia gave for its vote\nthe letter reporting the written result",
+        "decision": [
+          "any",
+          [
+            "council_president",
+            "russia"
+          ]
+        ],
+        "reason": "verified",
+        "exact": true
+      }
+    },
+    "witness/ambiguous_actor": {
+      "old": [
+        "unspecified",
+        []
+      ],
+      "new": [
+        "unspecified",
+        []
+      ],
+      "expected": [
+        "unspecified",
+        []
+      ],
+      "exact": true,
+      "reason": "no_witness"
+    },
+    "witness/ambiguous_letter": {
+      "old": null,
+      "new": null,
+      "expected": [
+        "unspecified",
+        []
+      ],
+      "exact": false,
+      "reason": "unresolved_card"
+    }
+  },
+  "context_controls": {
+    "missing_required_member": {
+      "text": "Retrieve both the United States' explanation and Russia's explanation.",
+      "supplied_spans": "the United States' explanation",
+      "expected_admission": false,
+      "prior_admission": false,
+      "new_admission": false,
+      "reason": "missing_joint_member"
+    },
+    "outside_exclusion": {
+      "text": "Retrieve Russia's explanation rather than the United States' explanation.",
+      "supplied_spans": "the United States' explanation",
+      "expected_admission": false,
+      "prior_admission": false,
+      "new_admission": false,
+      "reason": "excluded_scope"
+    },
+    "inside_sentence_negation": {
+      "text": "Do not get the United States' explanation. Get Russia's explanation.",
+      "supplied_spans": "the United States' explanation",
+      "expected_admission": false,
+      "prior_admission": true,
+      "new_admission": false,
+      "reason": "explicit_exclusion_or_possession"
+    },
+    "previously_held": {
+      "text": "I already have Russia's explanation. Get the United States' explanation.",
+      "supplied_spans": "Russia's explanation",
+      "expected_admission": false,
+      "prior_admission": true,
+      "new_admission": false,
+      "reason": "explicit_exclusion_or_possession"
+    },
+    "no_requested_acts": {
+      "text": "Djani and the vote appear on this file. Find the relevant records.",
+      "supplied_spans": "Djani",
+      "expected_admission": false,
+      "prior_admission": false,
+      "new_admission": false,
+      "reason": "unresolved_card"
+    },
+    "two_explicit_targets": {
+      "text": "Retrieve both the United States' explanation and Russia's explanation.",
+      "supplied_spans": "the United States' explanation\nRussia's explanation.",
+      "expected_admission": true,
+      "prior_admission": true,
+      "new_admission": true,
+      "reason": "verified"
+    },
+    "explicit_omission": {
+      "text": "Omit Russia's explanation. Send the United States' explanation.",
+      "supplied_spans": "Russia's explanation",
+      "expected_admission": false,
+      "prior_admission": true,
+      "new_admission": false,
+      "reason": "explicit_exclusion_or_possession"
+    },
+    "already_collected": {
+      "text": "We already received the American explanation. Find Russia's explanation.",
+      "supplied_spans": "the American explanation",
+      "expected_admission": false,
+      "prior_admission": true,
+      "new_admission": false,
+      "reason": "explicit_exclusion_or_possession"
+    },
+    "later_positive_clause": {
+      "text": "We already received the American explanation. Find Russia's explanation.",
+      "supplied_spans": "Russia's explanation",
+      "expected_admission": true,
+      "prior_admission": true,
+      "new_admission": true,
+      "reason": "verified"
+    },
+    "negative_with_initials": {
+      "text": "Ignore the U.S. explanation. Send Russia's explanation.",
+      "supplied_spans": "the U.S. explanation",
+      "expected_admission": false,
+      "prior_admission": true,
+      "new_admission": false,
+      "reason": "explicit_exclusion_or_possession"
+    },
+    "negation_after_object": {
+      "text": "The American explanation is not what I need. Send Russia's explanation.",
+      "supplied_spans": "The American explanation",
+      "expected_admission": false,
+      "prior_admission": true,
+      "new_admission": true,
+      "reason": "verified"
+    },
+    "held_after_object": {
+      "text": "The explanation from Russia is already in my file. Send the American explanation.",
+      "supplied_spans": "The explanation from Russia",
+      "expected_admission": false,
+      "prior_admission": true,
+      "new_admission": true,
+      "reason": "verified"
+    }
+  }
+}

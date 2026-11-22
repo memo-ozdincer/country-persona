@@ -1,0 +1,282 @@
+{
+  "scope": "One assistant applied the new diagnostic rubric retrospectively to two archived complete outputs. Same case and known method identity from earlier reports. No independent or fresh model run.",
+  "source_transcript": "runs/aurora-qwen35-benchmark-plan-20260930-v1/transcript.jsonl",
+  "source_sha256": "0db7ab97542c2a03e9f42bf3157c6c939d64b8d188e367a1e2a4aa081ce95fda",
+  "pairs": [
+    {
+      "family": "gaza",
+      "case": "S/2023/970",
+      "control": {
+        "packet": {
+          "id": "J43",
+          "mode": "FINAL",
+          "task": "Retrospective record of draft S/2023/970. State the outcome and its procedure, distinguish votes and nonmembership, and address a possible edit while bounding future endorsement.",
+          "evidence": [
+            {
+              "id": "roll",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "The draft received 13 yes, one no and one abstention. The United States voted no and the veto prevented adoption. France and Brazil voted yes. The United Kingdom abstained."
+            },
+            {
+              "id": "scope",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "India was not a Council member at this meeting. The packet does not supply a national statement by India."
+            },
+            {
+              "id": "uk",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "The United Kingdom said it could not vote for a draft that did not condemn the Hamas attacks. The statement does not establish a vote for any future amended draft."
+            },
+            {
+              "id": "common",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "The bounded France, UK and Brazil statements support common humanitarian concern. The France statement in this packet does not establish an explicit aid-delivery priority for France."
+            }
+          ],
+          "rubric": [
+            {
+              "id": "disposition",
+              "category": "final",
+              "weight": 14,
+              "rule": "Report the 13–1–1 tally and non-adoption."
+            },
+            {
+              "id": "veto",
+              "category": "final",
+              "weight": 14,
+              "rule": "Identify the US No as the cause of non-adoption and explicitly name the veto or permanent-member mechanism."
+            },
+            {
+              "id": "del_vote",
+              "category": "final",
+              "weight": 14,
+              "rule": "Separate France and Brazil's affirmative votes from the UK's abstention."
+            },
+            {
+              "id": "membership",
+              "category": "final",
+              "weight": 14,
+              "rule": "Describe India's absence from the Council rather than recording a vote."
+            },
+            {
+              "id": "future",
+              "category": "final",
+              "weight": 14,
+              "rule": "Preserve the unknown future UK vote and bound the effect of a hypothetical change."
+            }
+          ],
+          "answer": "**MEMORANDUM**\n\n**TO:** Policy Review Team\n**FROM:** Retrospective Analysis Unit\n**DATE:** 9 December 2023\n**SUBJECT:** Comparative Analysis of Council Vote on Draft S/2023/970 (S/PV.9499)\n\nOn 8 December 2023, the UN Security Council convened to consider draft resolution S/2023/970, recorded in the official transcript as S/PV.9499. The recorded tally was thirteen votes in favor, one against, and one abstention. The draft was not adopted because the United States, a permanent member, cast the sole recorded \"No\" vote. While a large majority supported the text, the veto power of a P5 member precluded adoption.\n\n**National Positions: France, the UK, and Brazil**\n\nFrance voted \"Yes\" on the draft. The French position emphasized the necessity of a new immediate and lasting humanitarian truce capable of evolving into a permanent ceasefire. France maintained that fighting terrorism and protecting civilians are compatible objectives under strict international humanitarian law. Although France preferred the Council to explicitly condemn the 7 October Hamas and other terrorist-group attacks, this preference did not prevent its affirmative vote. France remains committed to mobilizing the Council across security, humanitarian, and political dimensions of the crisis.\n\nBrazil also voted \"Yes\" and co-sponsored the draft. Brazil advocated for an immediate humanitarian ceasefire, the easing of humanitarian aid, and the immediate and unconditional release of all hostages. Brazil warned that inaction could irreparably harm the prospect of a two-State solution. Furthermore, Brazil proposed a more effective negotiating process with draft responsibility shared among all Member States.\n\nThe United Kingdom recorded an \"Abstention,\" distinct from a \"Yes\" or \"No\" vote. The UK expressed concern regarding civilian deaths and displacement in Gaza. It welcomed the prior humanitarian pause, hostage releases, and aid deliveries, calling for further and longer pauses to facilitate these efforts. However, the UK stated it could not support a draft omitting condemnation of the 7 October Hamas atrocities. The UK argued that the ceasefire call ignored Hamas acts of terror and continuing hostage detention. The UK maintained that Israel must be able to address the Hamas threat while abiding by international humanitarian law. Additionally, the UK supported a two-State solution delivering Palestinian statehood, Israeli security, and peace for both sides.\n\n**Common Ground and Unresolved Differences**\n\nDocumented common ground exists among France, the UK, and Brazil regarding humanitarian concerns, including civilian protection and the need for aid delivery. However, procedural outcomes diverged: France and Brazil voted \"Yes,\" while the UK abstained. Both France and the UK expressed a desire for Hamas condemnation, yet this shared concern did not uniquely determine the procedural vote. France and Brazil prioritized the immediate humanitarian truce, whereas the UK qualified its support with specific pauses for aid and hostage releases.\n\n**India and Analyst Proposals**\n\nIndia was not a member of the Security Council at the time of this vote and has no recorded Council vote on S/2023/970. The selected record supplies no Indian national statement; therefore, no position regarding the draft or Gaza can be inferred from this packet. Any implication that India opposed the draft is unsupported by the provided data.\n\nRegarding the draft's content, the text establishes that the draft was not adopted due to the US veto. It does not establish a specific Indian national position.\n\n**Future-Draft Scenario Analysis**\n\nIn an authored future-draft scenario, would adding Hamas-condemnation wording establish a UK \"Yes\" vote? The supplied statement does not announce that counterfactual vote. The UK's recorded rationale for abstaining was the omission of such condemnation. Therefore, logically, adding that clause might address the UK's stated objection. However, the UK's position is complex; it also requires a two-State solution and adherence to international humanitarian law. Consequently, while adding condemnation removes one specific barrier, it does not by itself establish a later UK \"Yes\" vote or an agreed settlement. This remains an analyst proposal, not a documented government commitment or guaranteed approval."
+        },
+        "verdict": {
+          "id": "J43",
+          "units": [
+            {
+              "id": "disposition",
+              "status": "met",
+              "source": [
+                {
+                  "block": "roll",
+                  "quote": "13 yes, one no and one abstention"
+                }
+              ],
+              "response": "thirteen votes in favor, one against, and one abstention. The draft was not adopted",
+              "reason": "Tally and failed disposition are explicit."
+            },
+            {
+              "id": "veto",
+              "status": "met",
+              "source": [
+                {
+                  "block": "roll",
+                  "quote": "the veto prevented adoption"
+                }
+              ],
+              "response": "the veto power of a P5 member precluded adoption.",
+              "reason": "The text explicitly names the P5 veto mechanism."
+            },
+            {
+              "id": "del_vote",
+              "status": "met",
+              "source": [
+                {
+                  "block": "roll",
+                  "quote": "France and Brazil voted yes. The United Kingdom abstained."
+                }
+              ],
+              "response": "France and Brazil voted \"Yes,\" while the UK abstained.",
+              "reason": "The separate votes are accurately reported."
+            },
+            {
+              "id": "membership",
+              "status": "met",
+              "source": [
+                {
+                  "block": "scope",
+                  "quote": "India was not a Council member"
+                }
+              ],
+              "response": "India was not a member of the Security Council at the time of this vote",
+              "reason": "Nonmembership is correctly distinguished from a recorded vote."
+            },
+            {
+              "id": "future",
+              "status": "met",
+              "source": [
+                {
+                  "block": "uk",
+                  "quote": "does not establish a vote for any future amended draft"
+                }
+              ],
+              "response": "it does not by itself establish a later UK \"Yes\" vote",
+              "reason": "The answer preserves the future vote as unknown."
+            }
+          ],
+          "guard": {
+            "status": "failed",
+            "source": [
+              {
+                "block": "common",
+                "quote": "does not establish an explicit aid-delivery priority for France"
+              }
+            ],
+            "response": "Documented common ground exists among France, the UK, and Brazil regarding humanitarian concerns, including civilian protection and the need for aid delivery.",
+            "reason": "Pools an aid-delivery priority into the stated common position without supporting evidence for France."
+          }
+        }
+      },
+      "candidate": {
+        "packet": {
+          "id": "P18",
+          "mode": "FINAL",
+          "task": "Retrospective record of draft S/2023/970. State the outcome and its procedure, distinguish votes and nonmembership, and address a possible edit while bounding future endorsement.",
+          "evidence": [
+            {
+              "id": "roll",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "The draft received 13 yes, one no and one abstention. The United States voted no and the veto prevented adoption. France and Brazil voted yes. The United Kingdom abstained."
+            },
+            {
+              "id": "scope",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "India was not a Council member at this meeting. The packet does not supply a national statement by India."
+            },
+            {
+              "id": "uk",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "The United Kingdom said it could not vote for a draft that did not condemn the Hamas attacks. The statement does not establish a vote for any future amended draft."
+            },
+            {
+              "id": "common",
+              "url": "https://docs.un.org/en/S/PV.9499",
+              "text": "The bounded France, UK and Brazil statements support common humanitarian concern. The France statement in this packet does not establish an explicit aid-delivery priority for France."
+            }
+          ],
+          "rubric": [
+            {
+              "id": "disposition",
+              "category": "final",
+              "weight": 14,
+              "rule": "Report the 13–1–1 tally and non-adoption."
+            },
+            {
+              "id": "veto",
+              "category": "final",
+              "weight": 14,
+              "rule": "Identify the US No as the cause of non-adoption and explicitly name the veto or permanent-member mechanism."
+            },
+            {
+              "id": "del_vote",
+              "category": "final",
+              "weight": 14,
+              "rule": "Separate France and Brazil's affirmative votes from the UK's abstention."
+            },
+            {
+              "id": "membership",
+              "category": "final",
+              "weight": 14,
+              "rule": "Describe India's absence from the Council rather than recording a vote."
+            },
+            {
+              "id": "future",
+              "category": "final",
+              "weight": 14,
+              "rule": "Preserve the unknown future UK vote and bound the effect of a hypothetical change."
+            }
+          ],
+          "answer": "On 8 December 2023, the Security Council voted on draft resolution S/2023/970 at S/PV.9499. The recorded tally was 13 Yes, one No, and one Abstain. The United States cast the No vote, preventing adoption despite a large Yes majority. France, the United Kingdom, and Brazil are the three nations whose positions are documented in this packet.\n\nFrance voted Yes. It seeks a new immediate and lasting humanitarian truce that can lead to a permanent ceasefire. France sees fighting terrorism and protecting civilians as compatible under strict international humanitarian law. It also wanted the Council to condemn the 7 October Hamas and other terrorist-group attacks; this preference did not prevent its Yes vote. France remains committed to mobilizing the Council on security, humanitarian, and especially political aspects of the crisis.\n\nThe United Kingdom recorded an Abstain, not a Yes or No vote. It expressed concern about civilian deaths and displacement in Gaza. The UK welcomed the prior humanitarian pause, hostage releases, and aid deliveries, and calls for further and longer pauses for aid and hostage releases. The UK explains that it cannot support a draft omitting condemnation of the 7 October Hamas atrocities. It argues that the ceasefire call ignores Hamas acts of terror and continuing hostage detention. The UK says Israel must be able to address the Hamas threat while abiding by international humanitarian law. It supports a two-State solution delivering Palestinian statehood, Israeli security, and peace for both sides.\n\nBrazil voted Yes on the UAE/Arab-group draft S/2023/970 and co-sponsored that draft. It advocates an immediate humanitarian ceasefire, easing humanitarian aid, and immediate and unconditional release of all hostages. Brazil warns that inaction may irreparably harm the prospect of a two-State solution. It will work with Council members to restore conditions for humanitarian action in Gaza and suggests a more effective negotiating process with draft responsibility on all Member States.\n\nIndia was not a Council member for this vote and has no recorded Council vote here. Nonmembership is not a recorded Abstain. The selected record supplies no Indian national statement; do not invent its Gaza position or imply it opposed the draft. This is bounded missing information, not a claim about all Indian policy.\n\nDocumented common ground exists among France, the UK, and Brazil regarding humanitarian concerns. However, France and Brazil voted Yes while the UK abstained. France and the UK both wanted Hamas condemnation, showing that a shared concern does not uniquely determine the procedural vote. France and Brazil support a truce/ceasefire, whereas the UK emphasizes pause qualifications.\n\nUnresolved differences include the UK's refusal to support a draft omitting condemnation of the 7 October Hamas atrocities and its view that the ceasefire call ignores Hamas acts of terror and continuing hostage detention. Analyst proposals suggest examining civilian protection, hostage release, terrorism wording, and humanitarian-law compliance. These are suggestions, not agreed government commitments, new negotiations, or guaranteed UK approval.\n\nIn an authored future-draft scenario, adding Hamas-condemnation wording does not by itself establish a later UK Yes vote or agreed settlement. The supplied statement does not announce that counterfactual vote."
+        },
+        "verdict": {
+          "id": "P18",
+          "units": [
+            {
+              "id": "disposition",
+              "status": "met",
+              "source": [
+                {
+                  "block": "roll",
+                  "quote": "13 yes, one no and one abstention"
+                }
+              ],
+              "response": "13 Yes, one No, and one Abstain. The United States cast the No vote, preventing adoption",
+              "reason": "Tally and failed disposition are explicit."
+            },
+            {
+              "id": "veto",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "roll",
+                  "quote": "the veto prevented adoption"
+                }
+              ],
+              "response": "The United States cast the No vote, preventing adoption despite a large Yes majority.",
+              "reason": "The answer names the US No as causal but leaves the veto mechanism implicit."
+            },
+            {
+              "id": "del_vote",
+              "status": "met",
+              "source": [
+                {
+                  "block": "roll",
+                  "quote": "France and Brazil voted yes. The United Kingdom abstained."
+                }
+              ],
+              "response": "France and Brazil voted Yes while the UK abstained.",
+              "reason": "The separate votes are accurately reported."
+            },
+            {
+              "id": "membership",
+              "status": "met",
+              "source": [
+                {
+                  "block": "scope",
+                  "quote": "India was not a Council member"
+                }
+              ],
+              "response": "India was not a Council member for this vote",
+              "reason": "Nonmembership is correctly distinguished from a recorded vote."
+            },
+            {
+              "id": "future",
+              "status": "met",
+              "source": [
+                {
+                  "block": "uk",
+                  "quote": "does not establish a vote for any future amended draft"
+                }
+              ],
+              "response": "does not by itself establish a later UK Yes vote",
+              "reason": "The answer preserves the future vote as unknown."
+            }
+          ],
+          "guard": {
+            "status": "clear",
+            "source": [],
+            "response": "",
+            "reason": "No material invented public act or collective endorsement under this guard."
+          }
+        }
+      }
+    }
+  ]
+}

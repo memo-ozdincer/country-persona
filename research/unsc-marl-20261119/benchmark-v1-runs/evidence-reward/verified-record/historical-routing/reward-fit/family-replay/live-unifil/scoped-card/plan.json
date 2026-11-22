@@ -1,0 +1,40 @@
+{
+  "old_prompt_hashes": [
+    "44864acacf71105882e5bf1069d60f3a53bbdbe6cafe1f0b24c8bc3877f1912b",
+    "14b0a5c973bf76e12efb3e0063d8755db033fec30a36b2e660c1053e1713843e"
+  ],
+  "new_requests": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Return one JSON object with keys card and quote. Use the given card ID and copy the entire evidence text exactly. Copy no other text."
+        },
+        {
+          "role": "user",
+          "content": "{\"desk\": \"second_reply\", \"card\": \"russia\", \"evidence\": \"Russia attributed its abstention to contentious late drafting changes and said the final text lost a prior compromise. It continued to support the mission's activities and called for coordination with Lebanon's Government.\", \"publicly_received_cards\": [\"brazil\", \"china\"], \"heard_question\": \"russia\"}"
+        }
+      ],
+      "max_output_tokens": 160
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Return one JSON object with keys card and quote. Use the given card ID and copy the entire evidence text exactly. Copy no other text."
+        },
+        {
+          "role": "user",
+          "content": "{\"desk\": \"second_reply\", \"card\": \"china\", \"evidence\": \"China supported UNIFIL's work but said the text did not fully address Lebanon's concerns. It stressed host-State sovereignty and consent in peacekeeping and supported closer communication between UNIFIL and Lebanon's Government and military.\", \"publicly_received_cards\": [\"brazil\", \"china\"], \"heard_question\": \"none\"}"
+        }
+      ],
+      "max_output_tokens": 160
+    }
+  ],
+  "expected_masks": {
+    "learned": 7,
+    "erased": 3,
+    "no_request": 3,
+    "fixed": 3
+  }
+}

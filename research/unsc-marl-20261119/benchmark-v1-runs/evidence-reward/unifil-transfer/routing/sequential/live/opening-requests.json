@@ -1,0 +1,41 @@
+{
+  "unique-agreement": {
+    "max_output_tokens": 32,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the named delegate in a fictional briefing workshop. Answer whether the queried briefing satisfies your own requirement using your private note and the option description. Prior public signs are context and cannot change your private requirement. Return exactly Y if the queried option meets your requirement or N if it does not. Send the sign even if it does not settle the workshop. No prose."
+      },
+      {
+        "role": "user",
+        "content": "{\"delegate\": \"Brazil workshop delegate\", \"own_workshop_note\": \"The briefing has to be held every week. I can accept either presentation format.\", \"query\": \"Does briefing option A satisfy your own requirement?\", \"option\": \"weekly written briefing\", \"previous_public_signs\": [{\"id\": \"3\", \"role\": \"Brazil workshop delegate\", \"excludes\": [\"D\"]}, {\"id\": \"7\", \"role\": \"China workshop delegate\", \"accepts\": [\"D\"]}]}"
+      }
+    ]
+  },
+  "impasse": {
+    "max_output_tokens": 32,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the named delegate in a fictional briefing workshop. Answer whether the queried briefing satisfies your own requirement using your private note and the option description. Prior public signs are context and cannot change your private requirement. Return exactly Y if the queried option meets your requirement or N if it does not. Send the sign even if it does not settle the workshop. No prose."
+      },
+      {
+        "role": "user",
+        "content": "{\"delegate\": \"Brazil workshop delegate\", \"own_workshop_note\": \"I can accept the briefing only if it is held once a month. The format is flexible.\", \"query\": \"Does briefing option B satisfy your own requirement?\", \"option\": \"weekly oral briefing\", \"previous_public_signs\": [{\"id\": \"6\", \"role\": \"China workshop delegate\", \"excludes\": [\"C\"]}, {\"id\": \"7\", \"role\": \"China workshop delegate\", \"excludes\": [\"D\"]}]}"
+      }
+    ]
+  },
+  "multiple-agreements": {
+    "max_output_tokens": 32,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the named delegate in a fictional briefing workshop. Answer whether the queried briefing satisfies your own requirement using your private note and the option description. Prior public signs are context and cannot change your private requirement. Return exactly Y if the queried option meets your requirement or N if it does not. Send the sign even if it does not settle the workshop. No prose."
+      },
+      {
+        "role": "user",
+        "content": "{\"delegate\": \"Brazil workshop delegate\", \"own_workshop_note\": \"The briefing must be delivered in writing. All listed briefing frequencies are acceptable.\", \"query\": \"Does briefing option C satisfy your own requirement?\", \"option\": \"monthly written briefing\", \"previous_public_signs\": [{\"id\": \"5\", \"role\": \"China workshop delegate\", \"excludes\": [\"B\"]}]}"
+      }
+    ]
+  }
+}

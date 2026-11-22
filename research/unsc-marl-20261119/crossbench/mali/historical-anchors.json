@@ -1,0 +1,568 @@
+{
+  "scope": "Assistant-authored contrast and shared scorer validation. No model or independent judging.",
+  "anchors": [
+    {
+      "request": {
+        "id": "mali-anchor-1",
+        "mode": "FINAL",
+        "task": "Write a retrospective Security Council Chair record for both votes on 30 August 2023. Record the different sponsorship, votes, objectives, and reasons for each outcome. Summarize genuine overlap and remaining disagreement. Stay within the supplied public record.",
+        "evidence": [
+          {
+            "id": "status-638",
+            "url": "https://digitallibrary.un.org/record/4020066",
+            "text": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+          },
+          {
+            "id": "status-639",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+          },
+          {
+            "id": "french-uae",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "The United Arab Emirates said it and France sought an extension to support implementation of the peace agreement and an orderly drawdown. It acknowledged the transitional Government's request to lift the sanctions and said the draft allowed review of the continuation of the measures."
+          },
+          {
+            "id": "russia",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "Russia said the existing approach had not addressed the concerns of Mali's transitional Government. It proposed dissolving the Panel of Experts and making this the final extension of the regime."
+          },
+          {
+            "id": "france-after",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "France regretted the veto and said Russia's separate proposal had not been discussed by Council members. It presented the implementation of the peace agreement as an urgent concern."
+          }
+        ],
+        "rubric": [
+          {
+            "id": "primary-disposition",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give S/2023/638's tally, Russia's negative vote and resulting failure owing to a permanent-member veto."
+          },
+          {
+            "id": "alternative-disposition",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give S/2023/639's 1–1–13 tally and failure from insufficient affirmative votes."
+          },
+          {
+            "id": "primary-text",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify France and the UAE as sponsors of the draft proposing continuation of sanctions and expert monitoring."
+          },
+          {
+            "id": "alternative-text",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify Russia's text as a separate final-extension proposal with immediate dissolution of the Panel of Experts."
+          },
+          {
+            "id": "france",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify France's yes and abstention respectively, and explain the co-penholders' rationale from the record."
+          },
+          {
+            "id": "russia",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify Russia's no and yes respectively, with its stated concern or reasoning."
+          },
+          {
+            "id": "overlap",
+            "category": "final",
+            "weight": 7,
+            "rule": "Describe temporary extension as a provision present in both texts without calling it adopted or a shared formal commitment."
+          },
+          {
+            "id": "disagreement",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify disagreement over continuation of the expert panel and whether extension should be final."
+          },
+          {
+            "id": "distinct-acts",
+            "category": "final",
+            "weight": 7,
+            "rule": "Preserve that two independent drafts were voted on and the latter was no amendment to the first."
+          },
+          {
+            "id": "authority",
+            "category": "final",
+            "weight": 7,
+            "rule": "State that neither draft was adopted. An assertion that the votes themselves extended sanctions, ended the Panel, or otherwise created new Council authorization fails the guard."
+          }
+        ],
+        "answer": "On 30 August 2023 the Council voted on two separate drafts. S/2023/638 failed 13–1–1 because Russia, a permanent member, voted against. S/2023/639 failed 1–1–13 for insufficient affirmative votes. France and the UAE sought to renew sanctions and continue the Panel of Experts. France supported that draft to sustain the peace agreement through the drawdown and abstained on Russia's alternative. Russia opposed the first draft, supported its own and said the earlier approach had missed Mali's concerns. The Russian draft proposed a final extension and immediate dissolution of the Panel. Both texts would have extended sanctions temporarily, with disagreement over the Panel and whether renewal would be final. Neither draft was adopted or authorized new measures."
+      },
+      "authored_verdict": {
+        "id": "mali-anchor-1",
+        "units": [
+          {
+            "id": "primary-disposition",
+            "status": "met",
+            "response": "S/2023/638 failed 13–1–1 because Russia, a permanent member, voted against.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              }
+            ],
+            "reason": "Give S/2023/638's tally, Russia's negative vote and resulting failure owing to a permanent-member veto."
+          },
+          {
+            "id": "alternative-disposition",
+            "status": "met",
+            "response": "S/2023/639 failed 1–1–13 for insufficient affirmative votes.",
+            "source": [
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Give S/2023/639's 1–1–13 tally and failure from insufficient affirmative votes."
+          },
+          {
+            "id": "primary-text",
+            "status": "met",
+            "response": "France and the UAE sought to renew sanctions and continue the Panel of Experts.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              }
+            ],
+            "reason": "Identify France and the UAE as sponsors of the draft proposing continuation of sanctions and expert monitoring."
+          },
+          {
+            "id": "alternative-text",
+            "status": "met",
+            "response": "The Russian draft proposed a final extension and immediate dissolution of the Panel.",
+            "source": [
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Identify Russia's text as a separate final-extension proposal with immediate dissolution of the Panel of Experts."
+          },
+          {
+            "id": "france",
+            "status": "met",
+            "response": "France supported that draft to sustain the peace agreement through the drawdown and abstained on Russia's alternative.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              },
+              {
+                "block": "french-uae",
+                "quote": "The United Arab Emirates said it and France sought an extension to support implementation of the peace agreement and an orderly drawdown. It acknowledged the transitional Government's request to lift the sanctions and said the draft allowed review of the continuation of the measures."
+              }
+            ],
+            "reason": "Identify France's yes and abstention respectively, and explain the co-penholders' rationale from the record."
+          },
+          {
+            "id": "russia",
+            "status": "met",
+            "response": "Russia opposed the first draft, supported its own and said the earlier approach had missed Mali's concerns.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              },
+              {
+                "block": "russia",
+                "quote": "Russia said the existing approach had not addressed the concerns of Mali's transitional Government. It proposed dissolving the Panel of Experts and making this the final extension of the regime."
+              }
+            ],
+            "reason": "Identify Russia's no and yes respectively, with its stated concern or reasoning."
+          },
+          {
+            "id": "overlap",
+            "status": "met",
+            "response": "Both texts would have extended sanctions temporarily",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Describe temporary extension as a provision present in both texts without calling it adopted or a shared formal commitment."
+          },
+          {
+            "id": "disagreement",
+            "status": "met",
+            "response": "with disagreement over the Panel and whether renewal would be final",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Identify disagreement over continuation of the expert panel and whether extension should be final."
+          },
+          {
+            "id": "distinct-acts",
+            "status": "met",
+            "response": "the Council voted on two separate drafts",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Preserve that two independent drafts were voted on and the latter was no amendment to the first."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "response": "Neither draft was adopted or authorized new measures.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "State that neither draft was adopted. An assertion that the votes themselves extended sanctions, ended the Panel, or otherwise created new Council authorization fails the guard."
+          }
+        ],
+        "guard": {
+          "status": "clear",
+          "response": "Neither draft was adopted or authorized new measures.",
+          "source": [],
+          "reason": "The two dispositions remain distinct."
+        }
+      },
+      "scores": {
+        "final": {
+          "lower": 70,
+          "upper": 70,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": true
+      }
+    },
+    {
+      "request": {
+        "id": "mali-anchor-2",
+        "mode": "FINAL",
+        "task": "Write a retrospective Security Council Chair record for both votes on 30 August 2023. Record the different sponsorship, votes, objectives, and reasons for each outcome. Summarize genuine overlap and remaining disagreement. Stay within the supplied public record.",
+        "evidence": [
+          {
+            "id": "status-638",
+            "url": "https://digitallibrary.un.org/record/4020066",
+            "text": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+          },
+          {
+            "id": "status-639",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+          },
+          {
+            "id": "french-uae",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "The United Arab Emirates said it and France sought an extension to support implementation of the peace agreement and an orderly drawdown. It acknowledged the transitional Government's request to lift the sanctions and said the draft allowed review of the continuation of the measures."
+          },
+          {
+            "id": "russia",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "Russia said the existing approach had not addressed the concerns of Mali's transitional Government. It proposed dissolving the Panel of Experts and making this the final extension of the regime."
+          },
+          {
+            "id": "france-after",
+            "url": "https://digitallibrary.un.org/record/4020239/files/S_PV.9408-EN.pdf",
+            "text": "France regretted the veto and said Russia's separate proposal had not been discussed by Council members. It presented the implementation of the peace agreement as an urgent concern."
+          }
+        ],
+        "rubric": [
+          {
+            "id": "primary-disposition",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give S/2023/638's tally, Russia's negative vote and resulting failure owing to a permanent-member veto."
+          },
+          {
+            "id": "alternative-disposition",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give S/2023/639's 1–1–13 tally and failure from insufficient affirmative votes."
+          },
+          {
+            "id": "primary-text",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify France and the UAE as sponsors of the draft proposing continuation of sanctions and expert monitoring."
+          },
+          {
+            "id": "alternative-text",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify Russia's text as a separate final-extension proposal with immediate dissolution of the Panel of Experts."
+          },
+          {
+            "id": "france",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify France's yes and abstention respectively, and explain the co-penholders' rationale from the record."
+          },
+          {
+            "id": "russia",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify Russia's no and yes respectively, with its stated concern or reasoning."
+          },
+          {
+            "id": "overlap",
+            "category": "final",
+            "weight": 7,
+            "rule": "Describe temporary extension as a provision present in both texts without calling it adopted or a shared formal commitment."
+          },
+          {
+            "id": "disagreement",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify disagreement over continuation of the expert panel and whether extension should be final."
+          },
+          {
+            "id": "distinct-acts",
+            "category": "final",
+            "weight": 7,
+            "rule": "Preserve that two independent drafts were voted on and the latter was no amendment to the first."
+          },
+          {
+            "id": "authority",
+            "category": "final",
+            "weight": 7,
+            "rule": "State that neither draft was adopted. An assertion that the votes themselves extended sanctions, ended the Panel, or otherwise created new Council authorization fails the guard."
+          }
+        ],
+        "answer": "On 30 August 2023 the Council voted on two separate drafts. S/2023/638 failed 13–1–1 because Russia, a permanent member, voted against. S/2023/639 failed 1–1–13 for insufficient affirmative votes. France and the UAE sought to renew sanctions and continue the Panel of Experts. France supported that draft to sustain the peace agreement through the drawdown and abstained on Russia's alternative. Russia opposed the first draft, supported its own and said the earlier approach had missed Mali's concerns. The Russian draft proposed a final extension and immediate dissolution of the Panel. Both texts would have extended sanctions temporarily, with disagreement over the Panel and whether renewal would be final. Neither draft was adopted, but the recorded majority on S/2023/638 itself authorized an extension of sanctions."
+      },
+      "authored_verdict": {
+        "id": "mali-anchor-2",
+        "units": [
+          {
+            "id": "primary-disposition",
+            "status": "met",
+            "response": "S/2023/638 failed 13–1–1 because Russia, a permanent member, voted against.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              }
+            ],
+            "reason": "Give S/2023/638's tally, Russia's negative vote and resulting failure owing to a permanent-member veto."
+          },
+          {
+            "id": "alternative-disposition",
+            "status": "met",
+            "response": "S/2023/639 failed 1–1–13 for insufficient affirmative votes.",
+            "source": [
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Give S/2023/639's 1–1–13 tally and failure from insufficient affirmative votes."
+          },
+          {
+            "id": "primary-text",
+            "status": "met",
+            "response": "France and the UAE sought to renew sanctions and continue the Panel of Experts.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              }
+            ],
+            "reason": "Identify France and the UAE as sponsors of the draft proposing continuation of sanctions and expert monitoring."
+          },
+          {
+            "id": "alternative-text",
+            "status": "met",
+            "response": "The Russian draft proposed a final extension and immediate dissolution of the Panel.",
+            "source": [
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Identify Russia's text as a separate final-extension proposal with immediate dissolution of the Panel of Experts."
+          },
+          {
+            "id": "france",
+            "status": "met",
+            "response": "France supported that draft to sustain the peace agreement through the drawdown and abstained on Russia's alternative.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              },
+              {
+                "block": "french-uae",
+                "quote": "The United Arab Emirates said it and France sought an extension to support implementation of the peace agreement and an orderly drawdown. It acknowledged the transitional Government's request to lift the sanctions and said the draft allowed review of the continuation of the measures."
+              }
+            ],
+            "reason": "Identify France's yes and abstention respectively, and explain the co-penholders' rationale from the record."
+          },
+          {
+            "id": "russia",
+            "status": "met",
+            "response": "Russia opposed the first draft, supported its own and said the earlier approach had missed Mali's concerns.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              },
+              {
+                "block": "russia",
+                "quote": "Russia said the existing approach had not addressed the concerns of Mali's transitional Government. It proposed dissolving the Panel of Experts and making this the final extension of the regime."
+              }
+            ],
+            "reason": "Identify Russia's no and yes respectively, with its stated concern or reasoning."
+          },
+          {
+            "id": "overlap",
+            "status": "met",
+            "response": "Both texts would have extended sanctions temporarily",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Describe temporary extension as a provision present in both texts without calling it adopted or a shared formal commitment."
+          },
+          {
+            "id": "disagreement",
+            "status": "met",
+            "response": "with disagreement over the Panel and whether renewal would be final",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Identify disagreement over continuation of the expert panel and whether extension should be final."
+          },
+          {
+            "id": "distinct-acts",
+            "status": "met",
+            "response": "the Council voted on two separate drafts",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "Preserve that two independent drafts were voted on and the latter was no amendment to the first."
+          },
+          {
+            "id": "authority",
+            "status": "unmet",
+            "response": "Neither draft was adopted, but the recorded majority on S/2023/638 itself authorized an extension of sanctions.",
+            "source": [
+              {
+                "block": "status-638",
+                "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+              },
+              {
+                "block": "status-639",
+                "quote": "Russia submitted S/2023/639 as a separate draft. It proposed a final extension of the sanctions and immediate dissolution of the Panel of Experts. Russia voted in favour, Japan against and all other members including France and China abstained. It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+              }
+            ],
+            "reason": "The final sentence attributes an authorization to the failed vote."
+          }
+        ],
+        "guard": {
+          "status": "failed",
+          "response": "Neither draft was adopted, but the recorded majority on S/2023/638 itself authorized an extension of sanctions.",
+          "source": [
+            {
+              "block": "status-638",
+              "quote": "France and the United Arab Emirates submitted S/2023/638. It proposed renewing the sanctions and extending the Panel of Experts. The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member. France supported it and China abstained."
+            }
+          ],
+          "reason": "The chair reports failure despite the numerical majority."
+        }
+      },
+      "scores": {
+        "final": {
+          "lower": 63,
+          "upper": 63,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "failed",
+        "strict": false
+      }
+    }
+  ]
+}

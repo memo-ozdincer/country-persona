@@ -1,0 +1,40 @@
+{
+  "method": "Same-assistant annotations of selected argument changes. An interaction gets credit for a preserved novel qualifier only if the opening lacked it, the follow-up states it and the final retains it.",
+  "opening_criteria": {
+    "local/0": {"uk_closure": "finish the 5+2 agenda before closing the office"},
+    "local/1": {
+      "russia_basis": "the High Representative post is vacant, citing circumvented Council consensus",
+      "russia_dialogue": "Bosnian dialogue free from outside interference"
+    }
+  },
+  "interactions": [
+    {
+      "arm": "adaptive",
+      "criterion": "uk_powers",
+      "followup_span": "supporting his use of executive powers if needed",
+      "final_span": "supported Christian Schmidt's use of executive powers if needed",
+      "assessment": "Adds a source-supported qualification and preserves it."
+    },
+    {
+      "arm": "adaptive",
+      "criterion": "uk_closure",
+      "followup_span": null,
+      "final_span": null,
+      "assessment": "Drops an explicit condition already present in the opening."
+    },
+    {
+      "arm": "fixed_uk",
+      "criterion": "uk_powers",
+      "followup_span": "backed Christian Schmidt's executive powers",
+      "final_span": "supported EUFOR renewal and Christian Schmidt's executive powers",
+      "assessment": "Introduces and retains the topic without its qualifying condition."
+    },
+    {
+      "arm": "fixed_russia",
+      "criterion": "russia_dialogue",
+      "followup_span": "reconciliation requires Bosnian dialogue free of outside interference",
+      "final_span": "reconciliation requires Bosnian dialogue free from outside interference",
+      "assessment": "Reiterates and retains an argument already present in the opening."
+    }
+  ]
+}

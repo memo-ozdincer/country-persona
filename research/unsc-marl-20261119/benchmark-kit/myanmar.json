@@ -1,0 +1,15 @@
+{
+  "family": "myanmar-9231",
+  "source_task": "../crossbench/myanmar/historical-task.json",
+  "source_ids": ["chair", "mandate"],
+  "scope": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only.",
+  "question": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome.",
+  "roles": ["chair", "UN office", "liaison office"],
+  "signals": [
+    {"owner": "UN office", "field": "UN calendar", "values": ["early only", "both"]},
+    {"owner": "liaison office", "field": "liaison calendar", "values": ["late only", "both"]}
+  ],
+  "answers": ["early", "late", "reschedule"],
+  "gold": [["reschedule"], ["early"], ["late"], ["early", "late"]],
+  "edges": [["liaison office", "UN office"], ["UN office", "chair"]]
+}

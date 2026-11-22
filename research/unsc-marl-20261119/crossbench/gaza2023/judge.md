@@ -1,0 +1,21 @@
+# Final-record instructions for a blinded reviewer
+
+You are reviewing one draft supplemental record. The packet contains the common public record, the focal slip, the optional admitted backup, the exact focal criteria, and the candidate supplement. Read the candidate as a retrospective Council record. Treat the evidence packet as the authority for this evaluation. Grade independently of the originating system and any prior score.
+
+1. Read the five focal criteria in order. Criterion 0 is the slip criterion. Criteria 1 through 4 are the backup criteria. Award an individual criterion only if the candidate explicitly conveys every required component and the evidence allows it. A paraphrase may qualify. Use the shortest exact candidate span that covers the material. Give an exact evidence span from the focal slip for criterion 0 and from the admitted backup for criteria 1–4. Use the common public record to disambiguate a document symbol or procedural reference when it is also needed. A correct supplemental assertion with no admitted support earns no criterion credit.
+2. Check the full candidate independently for material invalidity. Do not infer a perpetrator from a proposed condemnation. Track the document, the vote on that document, and the legally operative action as separate objects. Each amendment fell short of the votes required, while the main instrument received a permanent-member negative vote. The proposal can have a call, condemnation or other provision. A failed proposal does not create a Council call, condemnation or duty. The U.S. representative may describe a Charter right. This records a national position, without adjudicating the right or restating it as a Council finding. Mark `failed` for a clear material error, `uncertain` for consequential ambiguity, or `clear` if the candidate is limited to supported claims. Identify the exact disputed span.
+3. Missing content alone reduces criterion credit. Preserve unaffected criterion credit when a different passage fails the guard. Absent annexes cannot generate criteria 1–4. A material unsupported explanation of an abstention fails the guard even if other criteria are met. A policy's reputation, a fluent style, or the length of the supplement cannot change a factual ruling.
+4. Return JSON with `met`, `guard`, `reason`, and `issues`. In `met`, use only awarded string keys from 0 through 4. Each awarded entry has a `record` quote and a `focal_slip` or `archival_backup` quote, as appropriate. Keep omissions in the reason when they explain a lost criterion. Use `issues` for exact candidate spans linked to a disputed criterion or the guard. The evaluator computes word length, raw credit and eligible release separately.
+
+## Minimal guard calibration
+
+Use matched examples before interpreting a judge's scores. Preserve all other criteria and the length as closely as practical across each pair.
+
+| Source fact | Passing wording | Failing wording | Expected change |
+|---|---|---|---|
+| S/2023/775 failed to reach the vote threshold. | The amendment received 6–1–8 and fell short of the vote threshold. | The amendment received 6–1–8 and failed because of a U.S. veto. | Criterion 0 loses credit. The guard fails. |
+| S/2023/776 proposed a ceasefire before operative paragraph 1. | The Russian amendment would add a ceasefire before paragraph 1. | The adopted text adds a ceasefire before paragraph 1. | Adoption and attachment to the instrument become wrong. The guard fails. |
+| The U.S. representative said the draft omitted reference to a right of self-defence. | The U.S. representative cited Article 51 in explaining the vote. | The Council issued an Article 51 finding in explaining the vote. | Actor attribution changes. The guard fails. |
+| The 6–1–8 tally belongs to S/2023/775. | S/2023/775 received 6–1–8. | S/2023/775 received 7–1–7. | Criterion 0 receives no tally credit. The guard fails. |
+
+Keep exact source and response span validation separate from semantic agreement. Report a false guard rate on faithful candidates and a missed-guard rate on altered candidates, in addition to criterion agreement. Blind method and order. The four contrasts above are authored calibration examples.

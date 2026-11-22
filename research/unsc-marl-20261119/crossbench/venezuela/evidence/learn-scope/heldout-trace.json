@@ -1,0 +1,277 @@
+[
+  {
+    "row": 1457,
+    "seed": 831947,
+    "ground_truth": "impasse",
+    "opened": [
+      128,
+      0,
+      0,
+      0
+    ],
+    "options": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "before": {
+      "decision": [
+        {
+          "local_observation": {
+            "excludes_live_package": true,
+            "excludes_requested_package": true,
+            "closes_frontier": false,
+            "at_most_two_remaining": false,
+            "at_most_three_live": false,
+            "sender_knows_remaining_acceptance": true,
+            "asker_offered_remaining_package": false,
+            "excludes_asker_offer": false,
+            "known_negative_in_request": true,
+            "ordinary_target_available": true,
+            "multiple_exclusions": true,
+            "has_time_after_reply": true
+          },
+          "disclose_scope": true
+        }
+      ],
+      "outcome": {
+        "certificate": false,
+        "slots": 9,
+        "checks": 2,
+        "queries": 1,
+        "answers": 0,
+        "scope": 0
+      },
+      "role_ledger": [
+        {
+          "slot": 0,
+          "query": null,
+          "disclosed": [
+            [
+              1,
+              0,
+              4
+            ],
+            [
+              1,
+              1,
+              128
+            ]
+          ]
+        },
+        {
+          "slot": 1,
+          "query": null,
+          "disclosed": [
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "slot": 2,
+          "query": {
+            "asker": 1,
+            "respondent": 0,
+            "slot": 2,
+            "target": 32,
+            "lookup": "scope_only",
+            "reply": null,
+            "admitted": false,
+            "scope": 11,
+            "published": 11,
+            "request_set": 40,
+            "selected_after_one_receipt": true
+          },
+          "disclosed": [
+            [
+              0,
+              1,
+              11
+            ]
+          ]
+        },
+        {
+          "slot": 4,
+          "query": null,
+          "disclosed": [
+            [
+              1,
+              0,
+              32
+            ],
+            [
+              1,
+              1,
+              64
+            ]
+          ]
+        },
+        {
+          "slot": 5,
+          "query": null,
+          "disclosed": [
+            [
+              0,
+              0,
+              16
+            ]
+          ]
+        },
+        {
+          "slot": 6,
+          "query": null,
+          "disclosed": [
+            [
+              1,
+              1,
+              16
+            ]
+          ]
+        },
+        {
+          "slot": 8,
+          "query": null,
+          "disclosed": []
+        }
+      ],
+      "arm": "always_disclose"
+    },
+    "after": {
+      "decision": [
+        {
+          "local_observation": {
+            "excludes_live_package": true,
+            "excludes_requested_package": true,
+            "closes_frontier": false,
+            "at_most_two_remaining": false,
+            "at_most_three_live": false,
+            "sender_knows_remaining_acceptance": true,
+            "asker_offered_remaining_package": false,
+            "excludes_asker_offer": false,
+            "known_negative_in_request": true,
+            "ordinary_target_available": true,
+            "multiple_exclusions": true,
+            "has_time_after_reply": true
+          },
+          "disclose_scope": false
+        }
+      ],
+      "outcome": {
+        "certificate": true,
+        "slots": 7,
+        "checks": 2,
+        "queries": 1,
+        "answers": 1,
+        "scope": 0
+      },
+      "role_ledger": [
+        {
+          "slot": 0,
+          "query": null,
+          "disclosed": [
+            [
+              1,
+              0,
+              4
+            ],
+            [
+              1,
+              1,
+              128
+            ]
+          ]
+        },
+        {
+          "slot": 1,
+          "query": null,
+          "disclosed": [
+            [
+              0,
+              1,
+              4
+            ]
+          ]
+        },
+        {
+          "slot": 2,
+          "query": {
+            "asker": 1,
+            "respondent": 0,
+            "slot": 2,
+            "request_set": 40,
+            "target": 32,
+            "lookup": "joint_fields",
+            "reply": false,
+            "admitted": true,
+            "qualified_acceptance": 0,
+            "qualified_exclusions": 43,
+            "selected_after_one_receipt": true,
+            "retry_action": "immediate",
+            "retry_opportunity": true,
+            "retry_slot": 4,
+            "retry_signs": 1
+          },
+          "disclosed": [
+            [
+              0,
+              1,
+              43
+            ]
+          ]
+        },
+        {
+          "slot": 5,
+          "query": null,
+          "disclosed": [
+            [
+              1,
+              1,
+              80
+            ]
+          ]
+        }
+      ],
+      "arm": "fitted"
+    }
+  }
+]

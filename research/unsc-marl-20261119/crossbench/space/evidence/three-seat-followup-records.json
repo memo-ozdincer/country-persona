@@ -1,0 +1,210 @@
+{
+  "scope": "Deterministic records for two fictional worlds that share the same initial evidence, using only visible receipts and completions. Missing replies preserve the earlier result.",
+  "followup_leads_to_D": {
+    "initial_receipts": [
+      {
+        "delegate": "first delegate",
+        "package": "A",
+        "grade": 1
+      },
+      {
+        "delegate": "second delegate",
+        "package": "F",
+        "grade": 0
+      }
+    ],
+    "before_or_if_reply_lost": {
+      "decision": "unresolved",
+      "excluded_universal_choices": {
+        "A": {
+          "compatible_world": [
+            1,
+            0
+          ],
+          "winners": [
+            "D"
+          ]
+        },
+        "D": {
+          "compatible_world": [
+            1,
+            2
+          ],
+          "winners": [
+            "A"
+          ]
+        },
+        "F": {
+          "compatible_world": [
+            1,
+            0
+          ],
+          "winners": [
+            "D"
+          ]
+        },
+        "impasse": {
+          "compatible_world": [
+            1,
+            0
+          ],
+          "winners": [
+            "D"
+          ]
+        }
+      }
+    },
+    "question": {
+      "delegate": "second delegate",
+      "package": "A",
+      "text": "What is your grade for package A?"
+    },
+    "verified_reply": {
+      "speaker": "second delegate",
+      "package": "A",
+      "grade": 1
+    },
+    "after_successful_reply": {
+      "decision": "D",
+      "acceptable_decisions": [
+        "D"
+      ],
+      "proof": [
+        {
+          "compatible_world": [
+            1,
+            0
+          ],
+          "scores": {
+            "A": {
+              "minimum": 1,
+              "total": 5,
+              "zero_seats": []
+            },
+            "D": {
+              "minimum": 2,
+              "total": 6,
+              "zero_seats": []
+            },
+            "F": {
+              "minimum": 0,
+              "total": 6,
+              "zero_seats": [
+                "second delegate"
+              ]
+            }
+          },
+          "winners": [
+            "D"
+          ]
+        }
+      ]
+    }
+  },
+  "followup_leads_to_A": {
+    "initial_receipts": [
+      {
+        "delegate": "first delegate",
+        "package": "A",
+        "grade": 1
+      },
+      {
+        "delegate": "second delegate",
+        "package": "F",
+        "grade": 0
+      }
+    ],
+    "before_or_if_reply_lost": {
+      "decision": "unresolved",
+      "excluded_universal_choices": {
+        "A": {
+          "compatible_world": [
+            1,
+            0
+          ],
+          "winners": [
+            "D"
+          ]
+        },
+        "D": {
+          "compatible_world": [
+            1,
+            2
+          ],
+          "winners": [
+            "A"
+          ]
+        },
+        "F": {
+          "compatible_world": [
+            1,
+            0
+          ],
+          "winners": [
+            "D"
+          ]
+        },
+        "impasse": {
+          "compatible_world": [
+            1,
+            0
+          ],
+          "winners": [
+            "D"
+          ]
+        }
+      }
+    },
+    "question": {
+      "delegate": "second delegate",
+      "package": "A",
+      "text": "What is your grade for package A?"
+    },
+    "verified_reply": {
+      "speaker": "second delegate",
+      "package": "A",
+      "grade": 3
+    },
+    "after_successful_reply": {
+      "decision": "A",
+      "acceptable_decisions": [
+        "A"
+      ],
+      "proof": [
+        {
+          "compatible_world": [
+            1,
+            2
+          ],
+          "scores": {
+            "A": {
+              "minimum": 1,
+              "total": 7,
+              "zero_seats": []
+            },
+            "D": {
+              "minimum": 1,
+              "total": 5,
+              "zero_seats": []
+            },
+            "F": {
+              "minimum": 0,
+              "total": 6,
+              "zero_seats": [
+                "second delegate"
+              ]
+            }
+          },
+          "winners": [
+            "A"
+          ]
+        }
+      ]
+    }
+  },
+  "structurally_hard_world": [
+    1,
+    2
+  ],
+  "clairvoyant_query_certification_ceiling": 0.6561000000000001
+}

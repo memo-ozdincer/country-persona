@@ -1,0 +1,73 @@
+{
+  "equal_inputs": [
+    "system prompt",
+    "candidate clause",
+    "evidence"
+  ],
+  "edited": "Answer choices and layouts.",
+  "binary_stable": {
+    "clear/uncertain": 2,
+    "failed/correct": 1,
+    "failed/uncertain": 3,
+    "stable/correct": 1,
+    "stable/uncertain": 5
+  },
+  "binary_pooled": {
+    "correct": 6
+  },
+  "three_way_stable": {
+    "uncertain": 4,
+    "correct": 2
+  },
+  "cases": {
+    "gaza/recorded_vote": {
+      "expected": "clear",
+      "binary_stable": null,
+      "three_way_stable_guard": "uncertain",
+      "binary_average_margin": -0.8125,
+      "binary_pooled": "clear",
+      "pooled_grade": "correct"
+    },
+    "gaza/common_priority": {
+      "expected": "failed",
+      "binary_stable": null,
+      "three_way_stable_guard": "uncertain",
+      "binary_average_margin": 1.0,
+      "binary_pooled": "failed",
+      "pooled_grade": "correct"
+    },
+    "gaza/reversed_vote": {
+      "expected": "failed",
+      "binary_stable": null,
+      "three_way_stable_guard": "uncertain",
+      "binary_average_margin": 2.0,
+      "binary_pooled": "failed",
+      "pooled_grade": "correct"
+    },
+    "climate/conditional_proposal": {
+      "expected": "clear",
+      "binary_stable": null,
+      "three_way_stable_guard": "uncertain",
+      "binary_average_margin": -1.3125,
+      "binary_pooled": "clear",
+      "pooled_grade": "correct"
+    },
+    "climate/quota_position": {
+      "expected": "failed",
+      "binary_stable": null,
+      "three_way_stable_guard": "failed",
+      "binary_average_margin": 1.3125,
+      "binary_pooled": "failed",
+      "pooled_grade": "correct"
+    },
+    "climate/reversed_role": {
+      "expected": "failed",
+      "binary_stable": "failed",
+      "three_way_stable_guard": "failed",
+      "binary_average_margin": 3.0625,
+      "binary_pooled": "failed",
+      "pooled_grade": "correct"
+    }
+  },
+  "scope": "Equal-weight pooling uses both recorded logit margins at a fixed zero threshold. Small exposed archive comparison."
+}

@@ -1,0 +1,5 @@
+# Challenge the earlier gate's positive chronology decisions
+
+This follow-up uses the original gate's positive chronology decisions as its input population, without supplying reviewed labels. Ask the same frozen model through a different prompt to find a counterexample to full admission. Compare the reply's exact procedural object, outcome, role attribution and qualifications with each stated requirement. Require that the candidate itself state all requested facts. Permit harmless wording changes and preserve the chronology rubric. A reply passes the conjunction only if the first gate passes and the challenge produces the literal CLEAR token. A missing requirement and a false factual assertion are two different reasons to decline.
+
+Report both gates before and after the challenge, audited delivery of rejected-by-review cards, relative policy outcomes and judge resources. The prompt was authored after inspecting first-stage errors on this docket. It tests a targeted repair on those existing notes and does not establish transfer.

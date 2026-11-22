@@ -1,0 +1,5 @@
+# Clarify the distinction between draft leadership and reform authority
+
+The earlier fixed Qwen3.5-4B chair assigned assistance-setting authority to South Africa in 10 of 12 briefs. Add one sentence to the common system prompt explicitly distinguishing draft leadership from reform assistance ownership. Preserve every visible source, their order, the policies, the 12 receipt-matched requests, branch weights, model, decoding and caps. The sentence restates roles already in the public source blocks. This is a dependent prompt intervention on an exposed docket.
+
+Evaluate every new brief with the same 70-point rubric and delivered-source guard. Verify the checkpoints, tokens and output spans. Grade accuracy of the draft/authority distinction, final release, the lower raw score, and the paired expected difference between the inclusion and funding decisions. Compare to the original writer with its original frozen marks. Retain missing-evidence and invented-comparison failures. The case-level contrast applies to the same selected delivery condition as before.

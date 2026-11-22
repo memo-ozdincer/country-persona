@@ -1,0 +1,487 @@
+{
+  "scope": "Deterministic checks on five authored trace fixtures. The base witness records delivered ordinary signs and intended reply/retry signs. Argument quality and independent judgment are outside this check.",
+  "cases": {
+    "undelivered": {
+      "mechanics": {
+        "turns": 9,
+        "phases": {
+          "opening": 1,
+          "ordinary": 5,
+          "request": 1,
+          "reply": 1,
+          "resend": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 5,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 5
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": []
+      },
+      "actual": {
+        "delivered_B": {
+          "INDIA": 7
+        },
+        "complete_at_slot": null,
+        "agreement": false
+      },
+      "without_resend": {
+        "delivered_B": {
+          "INDIA": 7
+        },
+        "complete_at_slot": null,
+        "agreement": false
+      },
+      "visibility_control": {
+        "all_signatures_counted_as_public": {
+          "delivered_B": {
+            "UNITED KINGDOM": 2,
+            "INDIA": 7
+          },
+          "complete_at_slot": 7,
+          "agreement": true
+        },
+        "public_only_sender_novelty": "indeterminate_without_signed_history"
+      },
+      "without_resend_counts": {
+        "turns": 8,
+        "phases": {
+          "opening": 1,
+          "ordinary": 5,
+          "request": 1,
+          "reply": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 4,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 5
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": []
+      },
+      "exact_resend": {
+        "slot": 3,
+        "actor": "UNITED KINGDOM",
+        "event": "resend",
+        "signed": [
+          "accept B"
+        ],
+        "delivered": []
+      },
+      "final_record": "Workshop status remains unresolved. India's signed acceptance of B arrived. The United Kingdom's signed acceptance of B did not arrive. This workshop has no effect on adopted resolution 2669.",
+      "rubric_reference": {
+        "new_idea": "same",
+        "public_acceptance": "none",
+        "causal_delivery": "unchanged",
+        "authority": "clear"
+      }
+    },
+    "recovered": {
+      "mechanics": {
+        "turns": 9,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1,
+          "resend": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 5,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 6
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": [
+          "accept B"
+        ]
+      },
+      "actual": {
+        "delivered_B": {
+          "UNITED KINGDOM": 4,
+          "INDIA": 7
+        },
+        "complete_at_slot": 7,
+        "agreement": true
+      },
+      "without_resend": {
+        "delivered_B": {
+          "INDIA": 7
+        },
+        "complete_at_slot": null,
+        "agreement": false
+      },
+      "visibility_control": {
+        "all_signatures_counted_as_public": {
+          "delivered_B": {
+            "UNITED KINGDOM": 2,
+            "INDIA": 7
+          },
+          "complete_at_slot": 7,
+          "agreement": true
+        },
+        "public_only_sender_novelty": "indeterminate_without_signed_history"
+      },
+      "without_resend_counts": {
+        "turns": 8,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 4,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 5
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": []
+      },
+      "exact_resend": {
+        "slot": 4,
+        "actor": "UNITED KINGDOM",
+        "event": "resend",
+        "signed": [
+          "accept B"
+        ],
+        "delivered": [
+          "accept B"
+        ]
+      },
+      "final_record": "The workshop record establishes mutual compatibility for package B. India and the United Kingdom each have a delivered acceptance. This workshop has no effect on adopted resolution 2669.",
+      "rubric_reference": {
+        "new_idea": "same",
+        "public_acceptance": "received",
+        "causal_delivery": "changed",
+        "authority": "clear"
+      }
+    },
+    "redundant_delivery": {
+      "mechanics": {
+        "turns": 9,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1,
+          "resend": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 5,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 6
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": []
+      },
+      "actual": {
+        "delivered_B": {
+          "UNITED KINGDOM": 2,
+          "INDIA": 7
+        },
+        "complete_at_slot": 7,
+        "agreement": true
+      },
+      "without_resend": {
+        "delivered_B": {
+          "UNITED KINGDOM": 2,
+          "INDIA": 7
+        },
+        "complete_at_slot": 7,
+        "agreement": true
+      },
+      "visibility_control": {
+        "all_signatures_counted_as_public": {
+          "delivered_B": {
+            "UNITED KINGDOM": 2,
+            "INDIA": 7
+          },
+          "complete_at_slot": 7,
+          "agreement": true
+        },
+        "public_only_sender_novelty": "indeterminate_without_signed_history"
+      },
+      "without_resend_counts": {
+        "turns": 8,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 4,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 6
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": []
+      },
+      "exact_resend": {
+        "slot": 4,
+        "actor": "UNITED KINGDOM",
+        "event": "resend",
+        "signed": [
+          "accept B"
+        ],
+        "delivered": [
+          "accept B"
+        ]
+      },
+      "final_record": "The workshop record establishes mutual compatibility for package B. India and the United Kingdom each have a delivered acceptance. This workshop has no effect on adopted resolution 2669.",
+      "rubric_reference": {
+        "new_idea": "same",
+        "public_acceptance": "received",
+        "causal_delivery": "unchanged",
+        "authority": "clear"
+      }
+    },
+    "new_proposition": {
+      "mechanics": {
+        "turns": 9,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1,
+          "resend": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 5,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 6
+          }
+        },
+        "new_in_resend": [
+          "reject G"
+        ],
+        "first_public_delivery_in_resend": [
+          "accept B",
+          "reject G"
+        ]
+      },
+      "actual": {
+        "delivered_B": {
+          "UNITED KINGDOM": 4,
+          "INDIA": 7
+        },
+        "complete_at_slot": 7,
+        "agreement": true
+      },
+      "without_resend": {
+        "delivered_B": {
+          "INDIA": 7
+        },
+        "complete_at_slot": null,
+        "agreement": false
+      },
+      "visibility_control": {
+        "all_signatures_counted_as_public": {
+          "delivered_B": {
+            "UNITED KINGDOM": 2,
+            "INDIA": 7
+          },
+          "complete_at_slot": 7,
+          "agreement": true
+        },
+        "public_only_sender_novelty": "indeterminate_without_signed_history"
+      },
+      "without_resend_counts": {
+        "turns": 8,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 4,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 5
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": []
+      },
+      "exact_resend": {
+        "slot": 4,
+        "actor": "UNITED KINGDOM",
+        "event": "resend",
+        "signed": [
+          "accept B",
+          "reject G"
+        ],
+        "delivered": [
+          "accept B",
+          "reject G"
+        ]
+      },
+      "final_record": "The workshop record establishes mutual compatibility for package B. India and the United Kingdom each have a delivered acceptance. This workshop has no effect on adopted resolution 2669.",
+      "rubric_reference": {
+        "new_idea": "new",
+        "public_acceptance": "received",
+        "causal_delivery": "changed",
+        "authority": "clear"
+      }
+    },
+    "invented_authority": {
+      "mechanics": {
+        "turns": 9,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1,
+          "resend": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 5,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 6
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": [
+          "accept B"
+        ]
+      },
+      "actual": {
+        "delivered_B": {
+          "UNITED KINGDOM": 4,
+          "INDIA": 7
+        },
+        "complete_at_slot": 7,
+        "agreement": true
+      },
+      "without_resend": {
+        "delivered_B": {
+          "INDIA": 7
+        },
+        "complete_at_slot": null,
+        "agreement": false
+      },
+      "visibility_control": {
+        "all_signatures_counted_as_public": {
+          "delivered_B": {
+            "UNITED KINGDOM": 2,
+            "INDIA": 7
+          },
+          "complete_at_slot": 7,
+          "agreement": true
+        },
+        "public_only_sender_novelty": "indeterminate_without_signed_history"
+      },
+      "without_resend_counts": {
+        "turns": 8,
+        "phases": {
+          "opening": 1,
+          "ordinary": 4,
+          "request": 1,
+          "reply": 1,
+          "intervening disclosure": 1
+        },
+        "agents": {
+          "INDIA": {
+            "turns": 4,
+            "unique_signed_ideas": 4,
+            "unique_public_ideas": 4
+          },
+          "UNITED KINGDOM": {
+            "turns": 4,
+            "unique_signed_ideas": 6,
+            "unique_public_ideas": 5
+          }
+        },
+        "new_in_resend": [],
+        "first_public_delivery_in_resend": []
+      },
+      "exact_resend": {
+        "slot": 4,
+        "actor": "UNITED KINGDOM",
+        "event": "resend",
+        "signed": [
+          "accept B"
+        ],
+        "delivered": [
+          "accept B"
+        ]
+      },
+      "final_record": "The Council adopted workshop package B as part of resolution 2669.",
+      "rubric_reference": {
+        "new_idea": "same",
+        "public_acceptance": "received",
+        "causal_delivery": "changed",
+        "authority": "failed"
+      }
+    }
+  }
+}

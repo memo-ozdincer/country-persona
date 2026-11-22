@@ -1,0 +1,9 @@
+# Membership recommendation workshop
+
+The new family anchors to S/2024/312, considered on 18 April 2024. The vote was 12–1–2. France voted in favour, the United Kingdom abstained, and the US veto prevented the Council from recommending admission. France linked its support to advancing the two-State solution. The UK connected its abstention to first pursuing a humanitarian pause to bring aid in and secure hostage releases, followed by work toward a sustainable ceasefire. Admission under Article 4 requires a General Assembly decision upon a Council recommendation. [Meeting record](https://digitallibrary.un.org/record/4045076/files/S_PV.9609-EN.pdf) · [Draft](https://digitallibrary.un.org/record/4044742) · [Charter Article 4](https://legal.un.org/repertory/art4.shtml)
+
+The release audit joins the UNBench archived draft (ID 1937, no author-test vote rows) and UNSC-Bench vetoed row 7 at the pinned revision. The full UNSC-Bench tally and target vote labels match the primary UN record. [Release audit](audit.json)
+
+The seven agenda notes and both sets of private cards are workshop constructs. One pair permits a note that pairs possible renewed review with pause-first sequencing. The other pair has disjoint instructions about the procedural track. Neither the policy nor the writer can derive government commitments from a card, revise the official roll call, or announce admission or bilateral recognition. [Case and final-record rubric](case.json)
+
+Across all legal positive opening pairs, the flexible script and frozen guarded policy both certify all 12 agreement presentations and all nine impasse presentations using the same total turns. This family exercises a new authority distinction and transfers the structured integration across named cases. On this family there was no incremental routing gain. The replay uses the already tested seven-option game, with no generated dialogue or memo. [Policy and public-ledger replay](policy-replay.json)

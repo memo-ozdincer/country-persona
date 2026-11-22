@@ -1,0 +1,75 @@
+{
+  "requests": [
+    {
+      "part": "public",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Write one paragraph, at most 68 words, using only these official vote and operative blocks. Include date, exact draft and sponsor, adopted resolution, explicit full vote tally and abstainers. Preserve the mandate end date, independence without prior permission within the mandate, and continued coordination with the Government under the status-of-forces agreement. Omit optional votes and commentary. Return only the paragraph."
+          },
+          {
+            "role": "user",
+            "content": "{\"vote\": \"On 31 August 2023 in meeting S/PV.9409, the Council voted on draft S/2023/641 submitted by France. It was adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining. Brazil voted in favour.\", \"operative\": \"Operative paragraph 1 extended UNIFIL's existing mandate until 31 August 2024. Paragraph 15 reaffirmed its independence in carrying out mandated tasks without prior permission and its continued coordination with Lebanon's Government under the status-of-forces agreement.\"}"
+          }
+        ],
+        "max_output_tokens": 150
+      }
+    },
+    {
+      "part": "Brazil",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Return a JSON object with keys summary, mission_support_quote, and host_concerns. In summary give one attributed sentence of at most 23 words, starting with the delegation name. Preserve the source's material reason, specific qualifiers, and support for the mission. Write solely about this delegation. Retain differences between the mission and the text. For mission_support_quote give a short exact source substring explicitly supporting the mission, or an empty string. For host_concerns give null if the source does not assess how much the text addressed the host country's concerns. Otherwise give an object with assessment (some, insufficient or sufficient) and quote (the exact supporting substring from the source). Quote from the source, with no ellipsis. Return only the JSON object."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegation\": \"Brazil\", \"source\": \"Brazil supported UNIFIL's continuing work. It judged that the French text kept the mandate robust and allowed UNIFIL to operate freely, while addressing some of Lebanon's concerns.\"}"
+          }
+        ],
+        "max_output_tokens": 230
+      }
+    },
+    {
+      "part": "China",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Return a JSON object with keys summary, mission_support_quote, and host_concerns. In summary give one attributed sentence of at most 23 words, starting with the delegation name. Preserve the source's material reason, specific qualifiers, and support for the mission. Write solely about this delegation. Retain differences between the mission and the text. For mission_support_quote give a short exact source substring explicitly supporting the mission, or an empty string. For host_concerns give null if the source does not assess how much the text addressed the host country's concerns. Otherwise give an object with assessment (some, insufficient or sufficient) and quote (the exact supporting substring from the source). Quote from the source, with no ellipsis. Return only the JSON object."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegation\": \"China\", \"source\": \"China supported UNIFIL's work but said the text did not fully address Lebanon's concerns. It stressed host-State sovereignty and consent in peacekeeping and supported closer communication between UNIFIL and Lebanon's Government and military.\"}"
+          }
+        ],
+        "max_output_tokens": 230
+      }
+    },
+    {
+      "part": "Russia",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Return a JSON object with keys summary, mission_support_quote, and host_concerns. In summary give one attributed sentence of at most 23 words, starting with the delegation name. Preserve the source's material reason, specific qualifiers, and support for the mission. Write solely about this delegation. Retain differences between the mission and the text. For mission_support_quote give a short exact source substring explicitly supporting the mission, or an empty string. For host_concerns give null if the source does not assess how much the text addressed the host country's concerns. Otherwise give an object with assessment (some, insufficient or sufficient) and quote (the exact supporting substring from the source). Quote from the source, with no ellipsis. Return only the JSON object."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegation\": \"Russia\", \"source\": \"Russia attributed its abstention to contentious late drafting changes and said the final text lost a prior compromise. It continued to support the mission's activities and called for coordination with Lebanon's Government.\"}"
+          }
+        ],
+        "max_output_tokens": 230
+      }
+    }
+  ],
+  "sha256": {
+    "bound_writer.py": "8162875c44fa5b8543f9f205aa8846998babcf2cbb99df76e79c675b04e86e63",
+    "protocol.md": "89aaad7ae31121fde6c19afcb267cbebcf286f218560a2d340b6dea78685fbba",
+    "unifil-record.json": "9385cbbb08938a9c9743c6f2f2823b97d8dc97bc4118fc6847b7278cec05795c",
+    "triplets.json": "4bfbc2cfb61a25b8ed2a16b0cff00f833b3c97e85f56e97c074f059c57c7246b",
+    "plan.json": "ca82fd8c671d09c4d607c0716205b3a2d90d3b715b79d55a520952d3151ff106"
+  }
+}

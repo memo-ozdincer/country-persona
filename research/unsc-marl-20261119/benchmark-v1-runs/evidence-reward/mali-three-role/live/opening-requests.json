@@ -1,0 +1,28 @@
+{
+  "agreement": {
+    "max_output_tokens": 32,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the named participant in a fictional post-meeting workshop. The question asks whether package A meets your own one-field requirement. Read only your own private requirement and the matching package term. Prior disclosed requirements refer to other questions and cannot change your own requirement. Respond Y if package A meets your requirement and N if it does not. Return one letter only."
+      },
+      {
+        "role": "user",
+        "content": "{\"role\": \"Russian Federation workshop drafting desk\", \"simulated_requirement\": \"The paper circulation must be restricted.\", \"package_a_term\": \"The paper circulation is restricted.\", \"public_disclosed_requirements\": {}}"
+      }
+    ]
+  },
+  "early-impasse": {
+    "max_output_tokens": 32,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are the named participant in a fictional post-meeting workshop. The question asks whether package A meets your own one-field requirement. Read only your own private requirement and the matching package term. Prior disclosed requirements refer to other questions and cannot change your own requirement. Respond Y if package A meets your requirement and N if it does not. Return one letter only."
+      },
+      {
+        "role": "user",
+        "content": "{\"role\": \"Russian Federation workshop drafting desk\", \"simulated_requirement\": \"The paper circulation must be open.\", \"package_a_term\": \"The paper circulation is restricted.\", \"public_disclosed_requirements\": {}}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "points_per_unit": 7,
+  "words_max": 120,
+  "units": [
+    {"id": "D1", "group": "disposition", "rule": "Record the supplied workshop status accurately in the heading or body. The official record must remain a distinct event."},
+    {"id": "D2", "group": "disposition", "rule": "State whether the proposed disposition is provisional on an unverified card, supported by the received verified cards, or unresolved because a card is missing, as applicable."},
+    {"id": "A1", "group": "operative action", "rule": "Recommend the selected package for the fictional workshop, refer a proven impasse for further discussion, or call for the missing mandate when unresolved."},
+    {"id": "A2", "group": "operative action", "rule": "Explain why the status follows from the actual received grades. For agreement compare the selected package with a distinct mutually acceptable alternative using the correct lower grades or sums as applicable. For a tie identify the tie accurately. For an impasse show disjoint acceptable packages. For an unresolved case explain why the missing holder is needed to determine overlap."},
+    {"id": "P1", "group": "positions and reasons", "rule": "Accurately attribute the first role's decision-relevant grades or its missing card. Report an unverified grade as reported."},
+    {"id": "P2", "group": "positions and reasons", "rule": "Accurately attribute the second role's decision-relevant grades or its missing card."},
+    {"id": "C1", "group": "common ground and open issues", "rule": "Preserve the exact preference correction when supplied. In other cases report actual common ground, disagreement, or the evidence gap without inventing a correction."},
+    {"id": "H1", "group": "official record", "rule": "Accurately state the disposition and reason of the first numbered instrument. A supported precise historical explanation suffices even if the full tally is omitted."},
+    {"id": "H2", "group": "official record", "rule": "Accurately state the disposition and reason of the second numbered instrument. A supported precise historical explanation suffices even if the full tally is omitted."},
+    {"id": "S1", "group": "authority and scope", "rule": "Explicitly say the workshop has no official authority, or express the same limit unmistakably."}
+  ],
+  "guard": "Fail for any material invented or misattributed rank, factual reason for an official disposition, endorsement, or authority claim. Fail if a reported card is treated as verified or the memo asserts resolution when the complete visible evidence cannot support it. Evaluate the entire response, including contradictions after a correct heading.",
+  "format": "The first line must exactly equal Workshop status: followed by the supplied status code. Enforce the word limit separately from the 70-point score and the guard."
+}

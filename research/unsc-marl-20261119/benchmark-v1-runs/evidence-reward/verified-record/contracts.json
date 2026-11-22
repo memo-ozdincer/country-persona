@@ -1,0 +1,62 @@
+{
+  "mali": [
+    {
+      "id": "draft-1",
+      "source": "status-638",
+      "description": "First submitters, draft, contents, tally and reason for failure. Copy the consecutive sentences from the submission through the failure.",
+      "pattern": "(?P<sponsor>France and the United Arab Emirates) submitted (?P<draft>S/2023/638)\\. It proposed (?P<proposal>renewing the sanctions and extending the Panel of Experts)\\. The tally was (?P<yes>\\d+) in favour, (?P<no>\\d+) against and (?P<abstain>\\d+) abstention\\. (?P<actor>Russia) cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member\\.",
+      "render": "{sponsor} submitted {draft} on {date}, proposing {proposal}. The {yes}–{no}–{abstain} draft failed through {actor}'s permanent-member veto."
+    },
+    {
+      "id": "draft-2",
+      "source": "status-639",
+      "description": "Separate draft sponsor, text and failed tally. Copy all consecutive sentences through the final tally.",
+      "pattern": "(?P<sponsor>Russia) submitted (?P<draft>S/2023/639) as a separate draft\\. It proposed (?P<proposal>a final extension of the sanctions and immediate dissolution of the Panel of Experts)\\.[^.]+\\. It was not adopted, having received (?P<yes>\\d+) vote in favour, (?P<no>\\d+) against and (?P<abstain>\\d+) abstentions\\.",
+      "render": "{sponsor}'s {draft}, proposing {proposal}, failed {yes}–{no}–{abstain} for insufficient affirmative votes."
+    },
+    {
+      "id": "co-sponsor-reason",
+      "source": "french-uae",
+      "description": "First sentence of the UAE's explanation of the shared rationale.",
+      "pattern": "The (?P<speaker>United Arab Emirates) said it and (?P<partner>France) sought an extension to (?P<reason>support implementation of the peace agreement and an orderly drawdown)\\.",
+      "render": "The {speaker} said it and {partner} sought to {reason}."
+    },
+    {
+      "id": "russia-reason",
+      "source": "russia",
+      "description": "First sentence stating Russia's concern about the existing approach.",
+      "pattern": "(?P<actor>Russia) said (?P<reason>the existing approach had not addressed the concerns of Mali's transitional Government)\\.",
+      "render": "{actor} said {reason}."
+    }
+  ],
+  "cyprus": [
+    {
+      "id": "vote",
+      "source": "vote",
+      "description": "All consecutive sentences from the dated UK draft submission through the Council adoption and vote.",
+      "pattern": "On (?P<date>[^,]+), at S/PV.9252, the (?P<sponsor>United Kingdom) submitted (?P<draft>S/2023/64)\\. Japan presided\\. The Council adopted the draft unanimously, (?P<yes>\\d+) in favour, as (?P<resolution>resolution 2674 \\(2023\\))\\.",
+      "render": "On {date} the Council adopted the {sponsor}'s draft {draft} unanimously, {yes}–0–0, as {resolution}."
+    },
+    {
+      "id": "mandate",
+      "source": "mandate",
+      "description": "The two sentences on expiry, review readiness, island-wide authority and movement.",
+      "pattern": "The Council extended (?P<mission>UNFICYP)'s mandate through (?P<expiry>[^.]+?) and expressed readiness to review implementation after (?P<review>six months)\\. It stressed that UNFICYP's mandated authority extends (?P<scope>throughout Cyprus) and called for cooperation and respect for freedom of movement\\.",
+      "render": "The Council extended {mission} through {expiry} and was ready to review implementation after {review}. Its mandated authority extends {scope}."
+    },
+    {
+      "id": "positions",
+      "source": "positions",
+      "description": "All sentences on maintained party positions, the vote and the President's report on settlement.",
+      "pattern": "The (?P<speaker>Council President) reported that in meetings with representatives of the parties, the parties confirmed they maintained their established positions\\. The Council proceeded to the vote with its members' consent\\. The President did not report any settlement between the parties\\.",
+      "render": "The {speaker} reported that the parties maintained their positions and did not report a settlement between them."
+    },
+    {
+      "id": "framework",
+      "source": "settlement",
+      "description": "The first sentence specifying the Council's settlement framework.",
+      "pattern": "The Council recalled the goal of a (?P<model>bicommunal, bizonal federation with political equality)\\.",
+      "render": "The Council recalled the goal of a {model}."
+    }
+  ]
+}

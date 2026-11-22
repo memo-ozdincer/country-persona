@@ -1,0 +1,277 @@
+{
+  "records": 10,
+  "transcript_sha256": "578a20baf884c58c02b1cd831f39a48647df9588b85f50d138f47ba1a4150289",
+  "optimizer_updates": 0,
+  "outcomes": {
+    "overlap": {
+      "opening": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [
+          "A"
+        ],
+        "correct": false,
+        "distinct_valid_claims": 0,
+        "repeated_claims": 0,
+        "invalid_format": 2,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      },
+      "solo": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [
+          "A"
+        ],
+        "correct": false,
+        "distinct_valid_claims": 0,
+        "repeated_claims": 0,
+        "invalid_format": 4,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      },
+      "peer": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [
+          "A"
+        ],
+        "correct": false,
+        "distinct_valid_claims": 0,
+        "repeated_claims": 0,
+        "invalid_format": 3,
+        "untruthful_claims": 0,
+        "passes": 1,
+        "clean_correct": false
+      }
+    },
+    "impasse": {
+      "opening": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [],
+        "correct": false,
+        "distinct_valid_claims": 0,
+        "repeated_claims": 0,
+        "invalid_format": 2,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      },
+      "solo": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [],
+        "correct": false,
+        "distinct_valid_claims": 0,
+        "repeated_claims": 0,
+        "invalid_format": 4,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      },
+      "peer": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [],
+        "correct": false,
+        "distinct_valid_claims": 0,
+        "repeated_claims": 0,
+        "invalid_format": 4,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      }
+    }
+  },
+  "costs": {
+    "overlap": {
+      "opening": {
+        "input_tokens": 1353,
+        "generated_tokens": 54,
+        "cap_hits": 0
+      },
+      "solo": {
+        "input_tokens": 2730,
+        "generated_tokens": 114,
+        "cap_hits": 0
+      },
+      "peer": {
+        "input_tokens": 2768,
+        "generated_tokens": 103,
+        "cap_hits": 0
+      }
+    },
+    "impasse": {
+      "opening": {
+        "input_tokens": 1354,
+        "generated_tokens": 67,
+        "cap_hits": 0
+      },
+      "solo": {
+        "input_tokens": 2732,
+        "generated_tokens": 124,
+        "cap_hits": 0
+      },
+      "peer": {
+        "input_tokens": 2770,
+        "generated_tokens": 134,
+        "cap_hits": 0
+      }
+    }
+  },
+  "turns": {
+    "open-1-shared": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\n    \"C\",\n    \"D\"\n  ]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 676,
+      "output_tokens": 31
+    },
+    "open-2-overlap": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\"C\", \"D\"]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 677,
+      "output_tokens": 23
+    },
+    "open-2-impasse": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\n    \"A\",\n    \"B\",\n    \"D\"\n  ]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 678,
+      "output_tokens": 36
+    },
+    "solo-1-shared": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\n    \"C\",\n    \"D\"\n  ]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 688,
+      "output_tokens": 31
+    },
+    "solo-2-overlap": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\"A\", \"B\", \"C\", \"D\"]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 689,
+      "output_tokens": 29
+    },
+    "peer-1-overlap": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\n    \"C\",\n    \"D\"\n  ]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 707,
+      "output_tokens": 31
+    },
+    "peer-2-overlap": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": []\n}",
+      "judgment": {
+        "kind": "pass",
+        "admitted": null
+      },
+      "input_tokens": 708,
+      "output_tokens": 18
+    },
+    "solo-2-impasse": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\"A\", \"B\", \"D\"]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 690,
+      "output_tokens": 26
+    },
+    "peer-1-impasse": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\n    \"C\",\n    \"D\"\n  ]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 707,
+      "output_tokens": 31
+    },
+    "peer-2-impasse": {
+      "model_output": "{\n  \"accepts\": [],\n  \"excludes\": [\n    \"A\",\n    \"B\",\n    \"D\"\n  ]\n}",
+      "judgment": {
+        "kind": "invalid_format",
+        "admitted": null
+      },
+      "input_tokens": 709,
+      "output_tokens": 36
+    }
+  }
+}

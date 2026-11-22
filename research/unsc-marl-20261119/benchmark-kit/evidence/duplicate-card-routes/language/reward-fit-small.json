@@ -1,0 +1,1037 @@
+{
+  "scope": "Follow-up on the exposed two-docket probe. Only sixteen local action biases are fitted using the synthetic team objective. DPRK logits remain excluded from fitting.",
+  "steps": 240,
+  "learning_rate": 0.075,
+  "parameter_count": 16,
+  "training": {
+    "qwen_small": {
+      "initial_expected_return": 0.9004908250191629,
+      "final_expected_return": 2.0170316366791674,
+      "gradient_check": {
+        "automatic": -0.04336782873886003,
+        "finite_difference": -0.04336782873370914
+      },
+      "trace": [
+        {
+          "step": 1,
+          "training_return_before_update": 0.9004908250191629,
+          "gradient_norm": 0.3155901927442415
+        },
+        {
+          "step": 10,
+          "training_return_before_update": 1.4754856251391884,
+          "gradient_norm": 0.2009865419518792
+        },
+        {
+          "step": 40,
+          "training_return_before_update": 1.917089495346211,
+          "gradient_norm": 0.04108350373028327
+        },
+        {
+          "step": 80,
+          "training_return_before_update": 1.9716093733210172,
+          "gradient_norm": 0.016715949338423804
+        },
+        {
+          "step": 120,
+          "training_return_before_update": 1.9873793865328386,
+          "gradient_norm": 0.01089543586672461
+        },
+        {
+          "step": 240,
+          "training_return_before_update": 2.0169576054060587,
+          "gradient_norm": 0.004557464277500118
+        }
+      ],
+      "corrections": [
+        [
+          [
+            [
+              3.348854637784373,
+              -3.34885463778437
+            ]
+          ],
+          [
+            [
+              -3.2709982761299514,
+              3.270998276129955
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                [
+                  -4.744448542881187,
+                  -2.75348779849869,
+                  3.8192750669156976
+                ],
+                [
+                  -0.3372703125080051,
+                  4.058213469192227,
+                  -4.103712835760066
+                ]
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                [
+                  -5.3477647416384455,
+                  -1.3819535610896714,
+                  4.4472060761960694
+                ],
+                [
+                  -1.7359524663750845,
+                  1.3487127404048787,
+                  2.6126016274939032
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    "zero_small": {
+      "initial_expected_return": 0.35785163194444425,
+      "final_expected_return": 1.8921969320714918,
+      "gradient_check": {
+        "automatic": 0.04404748916377313,
+        "finite_difference": 0.04404748915887157
+      },
+      "trace": [
+        {
+          "step": 1,
+          "training_return_before_update": 0.35785163194444425,
+          "gradient_norm": 0.2648345403190636
+        },
+        {
+          "step": 10,
+          "training_return_before_update": 0.9324290952155047,
+          "gradient_norm": 0.2699800040864042
+        },
+        {
+          "step": 40,
+          "training_return_before_update": 1.3933940842125185,
+          "gradient_norm": 0.025155997606964783
+        },
+        {
+          "step": 80,
+          "training_return_before_update": 1.8391904115755433,
+          "gradient_norm": 0.03583749500229821
+        },
+        {
+          "step": 120,
+          "training_return_before_update": 1.8811180713260227,
+          "gradient_norm": 0.009098161813986611
+        },
+        {
+          "step": 240,
+          "training_return_before_update": 1.8921482020622886,
+          "gradient_norm": 0.004197059153603672
+        }
+      ],
+      "corrections": [
+        [
+          [
+            [
+              -2.1726955408371977,
+              2.172695540837163
+            ]
+          ],
+          [
+            [
+              -2.172695535660994,
+              2.172695535660993
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              [
+                [
+                  -3.6092512870533273,
+                  0.11894148650185778,
+                  5.539005011340656
+                ],
+                [
+                  -4.520674882132225,
+                  4.539438367697204,
+                  1.9373860238353322
+                ]
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                [
+                  -3.609251287033306,
+                  0.1189414865399981,
+                  5.539005011288552
+                ],
+                [
+                  -4.520674882782877,
+                  4.53943837783663,
+                  1.937385978948206
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "full_fit_sha256": "81001014aee4dc447302cd74790f9889a174fc2b6b243a646cd71b9e914380a6",
+  "score_hashes": {
+    "writer/scores.json": "cc06c32a8888a3778a291cc4266b8b84fb2a0909a9744cc840e929d4f2cbfd66",
+    "slots/scores.json": "368cdac4c5efeadab2faf1d0e42bfd2063def115e4f886e6041703768aadf489",
+    "dprk/scores.json": "dbf439716d5882d987888d9c745286e97873ec5cee3c92f38e587441a253fc78",
+    "dprk-qualification/scores.json": "2e70defd63215fc75ea8e1c222c484e4a25e3771afc19c40cef7d0c0786af55c"
+  },
+  "tests": {
+    "venezuela": {
+      "greedy_tables": {
+        "frozen_qwen": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "qwen_small": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              1,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ]
+          ]
+        ],
+        "zero_small": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ]
+          ]
+        ],
+        "isolated_small": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              1,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ]
+          ]
+        ]
+      },
+      "priors": {
+        "uniform": {
+          "none": {
+            "exact_silent": 39.075,
+            "typed": 40.8,
+            "full_residual": {
+              "greedy_net": 40.8,
+              "stochastic_net": 40.79018110283356,
+              "both_cards_probability": 0.4375
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 37.300000000000004,
+                "stochastic_net": 37.42159833459027
+              },
+              "qwen_small": {
+                "greedy_net": 39.95,
+                "stochastic_net": 39.92832992888957
+              },
+              "zero_small": {
+                "greedy_net": 39.900000000000006,
+                "stochastic_net": 39.87826061955206
+              },
+              "isolated_small": {
+                "greedy_net": 39.95,
+                "stochastic_net": 39.868518128352406
+              }
+            }
+          },
+          "both_10": {
+            "exact_silent": 38.243750000000006,
+            "typed": 39.422375,
+            "full_residual": {
+              "greedy_net": 39.422375,
+              "stochastic_net": 39.41526554841803,
+              "both_cards_probability": 0.33918750000000003
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 36.869625,
+                "stochastic_net": 36.909044280291475
+              },
+              "qwen_small": {
+                "greedy_net": 38.80825,
+                "stochastic_net": 38.790746986066466
+              },
+              "zero_small": {
+                "greedy_net": 38.88832500000001,
+                "stochastic_net": 38.846375336782984
+              },
+              "isolated_small": {
+                "greedy_net": 38.80825,
+                "stochastic_net": 38.730907512523174
+              }
+            }
+          },
+          "both_25": {
+            "exact_silent": 37.1609375,
+            "typed": 37.748046875,
+            "full_residual": {
+              "greedy_net": 37.748046875,
+              "stochastic_net": 37.7439877773044,
+              "both_cards_probability": 0.2197265625
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 36.268359375,
+                "stochastic_net": 36.24041869067715
+              },
+              "qwen_small": {
+                "greedy_net": 37.40078125,
+                "stochastic_net": 37.38867334307837
+              },
+              "zero_small": {
+                "greedy_net": 37.541601562500006,
+                "stochastic_net": 37.49339015174437
+              },
+              "isolated_small": {
+                "greedy_net": 37.40078125,
+                "stochastic_net": 37.3358976859414
+              }
+            }
+          }
+        },
+        "skew": {
+          "none": {
+            "exact_silent": 43.74000000000001,
+            "typed": 44.267,
+            "full_residual": {
+              "greedy_net": 44.267,
+              "stochastic_net": 44.25584185872036,
+              "both_cards_probability": 0.6900000000000001
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 41.461000000000006,
+                "stochastic_net": 39.857773664551445
+              },
+              "qwen_small": {
+                "greedy_net": 43.996,
+                "stochastic_net": 43.97661565410165
+              },
+              "zero_small": {
+                "greedy_net": 43.685,
+                "stochastic_net": 43.59612846023291
+              },
+              "isolated_small": {
+                "greedy_net": 43.996,
+                "stochastic_net": 43.87107387869678
+              }
+            }
+          },
+          "both_10": {
+            "exact_silent": 42.01100000000001,
+            "typed": 42.22628,
+            "full_residual": {
+              "greedy_net": 42.22628,
+              "stochastic_net": 42.21801236776507,
+              "both_cards_probability": 0.5443200000000001
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 40.178680000000014,
+                "stochastic_net": 38.86609822654184
+              },
+              "qwen_small": {
+                "greedy_net": 42.03076000000001,
+                "stochastic_net": 42.01037807582155
+              },
+              "zero_small": {
+                "greedy_net": 41.87888800000001,
+                "stochastic_net": 41.78842080481762
+              },
+              "isolated_small": {
+                "greedy_net": 42.03076000000001,
+                "stochastic_net": 41.87597332233909
+              }
+            }
+          },
+          "both_25": {
+            "exact_silent": 39.75874999999999,
+            "typed": 39.683375,
+            "full_residual": {
+              "greedy_net": 39.683375,
+              "stochastic_net": 39.678440216483125,
+              "both_cards_probability": 0.3628125
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 38.495125,
+                "stochastic_net": 37.577254470994866
+              },
+              "qwen_small": {
+                "greedy_net": 39.57325,
+                "stochastic_net": 39.554307677833094
+              },
+              "zero_small": {
+                "greedy_net": 39.54625000000001,
+                "stochastic_net": 39.46834230715038
+              },
+              "isolated_small": {
+                "greedy_net": 39.57325,
+                "stochastic_net": 39.41119601151413
+              }
+            }
+          }
+        }
+      }
+    },
+    "dprk": {
+      "greedy_tables": {
+        "frozen_qwen": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "qwen_small": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              1,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ]
+          ]
+        ],
+        "zero_small": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ]
+          ]
+        ],
+        "isolated_small": [
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              2,
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              2,
+              1,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ],
+            [
+              1,
+              2,
+              2,
+              2,
+              2
+            ]
+          ]
+        ]
+      },
+      "priors": {
+        "uniform": {
+          "none": {
+            "exact_silent": 60.075,
+            "typed": 61.8,
+            "full_residual": {
+              "greedy_net": 61.8,
+              "stochastic_net": 61.79004486629759,
+              "both_cards_probability": 0.4375
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 58.3125,
+                "stochastic_net": 58.45311268161116
+              },
+              "qwen_small": {
+                "greedy_net": 60.95,
+                "stochastic_net": 60.92108361975106
+              },
+              "zero_small": {
+                "greedy_net": 60.900000000000006,
+                "stochastic_net": 60.87826061955206
+              },
+              "isolated_small": {
+                "greedy_net": 60.95,
+                "stochastic_net": 60.868518128352406
+              }
+            }
+          },
+          "both_10": {
+            "exact_silent": 59.243750000000006,
+            "typed": 60.422375,
+            "full_residual": {
+              "greedy_net": 60.422375,
+              "stochastic_net": 60.415093730856455,
+              "both_cards_probability": 0.33918750000000003
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 57.882124999999995,
+                "stochastic_net": 57.93009469326074
+              },
+              "qwen_small": {
+                "greedy_net": 59.80825,
+                "stochastic_net": 59.783710370362556
+              },
+              "zero_small": {
+                "greedy_net": 59.888325000000016,
+                "stochastic_net": 59.846375336782984
+              },
+              "isolated_small": {
+                "greedy_net": 59.80825,
+                "stochastic_net": 59.730907512523174
+              }
+            }
+          },
+          "both_25": {
+            "exact_silent": 58.1609375,
+            "typed": 58.748046875,
+            "full_residual": {
+              "greedy_net": 58.748046875,
+              "stochastic_net": 58.74380592956607,
+              "both_cards_probability": 0.2197265625
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 57.280859375,
+                "stochastic_net": 57.250521463412085
+              },
+              "qwen_small": {
+                "greedy_net": 58.40078125,
+                "stochastic_net": 58.38264104877755
+              },
+              "zero_small": {
+                "greedy_net": 58.541601562500006,
+                "stochastic_net": 58.49339015174437
+              },
+              "isolated_small": {
+                "greedy_net": 58.40078125,
+                "stochastic_net": 58.3358976859414
+              }
+            }
+          }
+        },
+        "skew": {
+          "none": {
+            "exact_silent": 64.74000000000001,
+            "typed": 65.267,
+            "full_residual": {
+              "greedy_net": 65.267,
+              "stochastic_net": 65.25648884060081,
+              "both_cards_probability": 0.6900000000000001
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 62.471000000000004,
+                "stochastic_net": 61.507853195133535
+              },
+              "qwen_small": {
+                "greedy_net": 64.99600000000001,
+                "stochastic_net": 64.96966294029536
+              },
+              "zero_small": {
+                "greedy_net": 64.68499999999999,
+                "stochastic_net": 64.5961284602329
+              },
+              "isolated_small": {
+                "greedy_net": 64.99600000000001,
+                "stochastic_net": 64.87107387869678
+              }
+            }
+          },
+          "both_10": {
+            "exact_silent": 63.01100000000001,
+            "typed": 63.22628000000001,
+            "full_residual": {
+              "greedy_net": 63.22628000000001,
+              "stochastic_net": 63.218328482149914,
+              "both_cards_probability": 0.5443200000000001
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 61.18868000000002,
+                "stochastic_net": 60.377990234245985
+              },
+              "qwen_small": {
+                "greedy_net": 63.030760000000015,
+                "stochastic_net": 62.99951830471248
+              },
+              "zero_small": {
+                "greedy_net": 62.87888800000001,
+                "stochastic_net": 62.78842080481762
+              },
+              "isolated_small": {
+                "greedy_net": 63.030760000000015,
+                "stochastic_net": 62.87597332233909
+              }
+            }
+          },
+          "both_25": {
+            "exact_silent": 60.75874999999999,
+            "typed": 60.683375000000005,
+            "full_residual": {
+              "greedy_net": 60.683375000000005,
+              "stochastic_net": 60.678443247194274,
+              "both_cards_probability": 0.3628125
+            },
+            "arms": {
+              "frozen_qwen": {
+                "greedy_net": 59.50512500000001,
+                "stochastic_net": 58.915937546388065
+              },
+              "qwen_small": {
+                "greedy_net": 60.57325,
+                "stochastic_net": 60.54143809346066
+              },
+              "zero_small": {
+                "greedy_net": 60.54625000000001,
+                "stochastic_net": 60.46834230715038
+              },
+              "isolated_small": {
+                "greedy_net": 60.57325,
+                "stochastic_net": 60.41119601151413
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

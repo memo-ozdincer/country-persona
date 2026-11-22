@@ -1,0 +1,188 @@
+{
+  "scope": "Previously exposed development rows. Keep vote references out of prediction prompts.",
+  "rows": [
+    {
+      "family": "sanctions",
+      "draft": "S/2022/925",
+      "meeting": "S/PV.9214",
+      "date": "2022-12-09",
+      "benchmark": "UNBench Task 2 author test",
+      "release_sha256": "88e38c4e366b32b9a90dc93bd1a4c015b64383ce4d36fb89d0ccfc00034a89d2",
+      "original_id": "2467",
+      "vote_row_indexes": [
+        5055,
+        5056,
+        5057,
+        5058,
+        5059,
+        5060,
+        5061,
+        5062,
+        5063,
+        5064,
+        5065,
+        5066,
+        5067,
+        5068,
+        5069
+      ],
+      "draft_file_sha256": "d1625636d8bfe5c4bc2d429c1c84fece4a903df66a7f1cfa3ec19ac3c71700b7",
+      "primary_vote_record": "https://digitallibrary.un.org/record/3997276",
+      "votes": {
+        "BRAZIL": "Y",
+        "CHINA": "Y",
+        "FRANCE": "Y",
+        "RUSSIAN FEDERATION": "Y",
+        "UNITED KINGDOM": "Y",
+        "UNITED STATES": "Y",
+        "KENYA": "Y",
+        "GABON": "Y",
+        "IRELAND": "Y",
+        "NORWAY": "Y",
+        "MEXICO": "Y",
+        "GHANA": "Y",
+        "INDIA": "A",
+        "ALBANIA": "Y",
+        "UNITED ARAB EMIRATES": "Y"
+      }
+    },
+    {
+      "family": "gaza",
+      "draft": "S/2023/970",
+      "meeting": "S/PV.9499",
+      "date": "2023-12-08",
+      "benchmark": "UNSC-Bench vetoed",
+      "revision": "55bd5aa5bb317a942b9229de13dca985e642a40b",
+      "row_index": 11,
+      "source_file_sha256": "fbb45ae92a1e157fac0cd4cd7647a0e93f2fb6eca378fa9047e2c83e90b4a2fa",
+      "primary_vote_record": "https://docs.un.org/en/S/PV.9499",
+      "votes": {
+        "ALBANIA": "Y",
+        "BRAZIL": "Y",
+        "CHINA": "Y",
+        "ECUADOR": "Y",
+        "FRANCE": "Y",
+        "GABON": "Y",
+        "GHANA": "Y",
+        "JAPAN": "Y",
+        "MALTA": "Y",
+        "MOZAMBIQUE": "Y",
+        "RUSSIAN FEDERATION": "Y",
+        "SWITZERLAND": "Y",
+        "UNITED ARAB EMIRATES": "Y",
+        "UNITED STATES": "N",
+        "UNITED KINGDOM": "A"
+      }
+    }
+  ],
+  "always_yes": {
+    "sanctions": {
+      "rows": 15,
+      "accuracy": 0.9333333333333333,
+      "invalid_or_missing_rate": 0.0,
+      "macro_f1_fixed_labels": 0.3218390804597701,
+      "balanced_accuracy_observed_classes": 0.5,
+      "balanced_accuracy_all_classes": null,
+      "missing_reference_classes": [
+        "N"
+      ],
+      "per_class": {
+        "Y": {
+          "support": 14,
+          "precision": 0.9333333333333333,
+          "recall": 1.0,
+          "f1": 0.9655172413793104
+        },
+        "N": {
+          "support": 0,
+          "precision": 0.0,
+          "recall": null,
+          "f1": 0.0
+        },
+        "A": {
+          "support": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion": {
+        "Y": {
+          "Y": 14,
+          "N": 0,
+          "A": 0,
+          "INVALID": 0
+        },
+        "N": {
+          "Y": 0,
+          "N": 0,
+          "A": 0,
+          "INVALID": 0
+        },
+        "A": {
+          "Y": 1,
+          "N": 0,
+          "A": 0,
+          "INVALID": 0
+        }
+      },
+      "probability_rows": 0,
+      "probability_coverage": 0.0,
+      "nll": null,
+      "brier": null
+    },
+    "gaza": {
+      "rows": 15,
+      "accuracy": 0.8666666666666667,
+      "invalid_or_missing_rate": 0.0,
+      "macro_f1_fixed_labels": 0.30952380952380953,
+      "balanced_accuracy_observed_classes": 0.3333333333333333,
+      "balanced_accuracy_all_classes": 0.3333333333333333,
+      "missing_reference_classes": [],
+      "per_class": {
+        "Y": {
+          "support": 13,
+          "precision": 0.8666666666666667,
+          "recall": 1.0,
+          "f1": 0.9285714285714286
+        },
+        "N": {
+          "support": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "A": {
+          "support": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "confusion": {
+        "Y": {
+          "Y": 13,
+          "N": 0,
+          "A": 0,
+          "INVALID": 0
+        },
+        "N": {
+          "Y": 1,
+          "N": 0,
+          "A": 0,
+          "INVALID": 0
+        },
+        "A": {
+          "Y": 1,
+          "N": 0,
+          "A": 0,
+          "INVALID": 0
+        }
+      },
+      "probability_rows": 0,
+      "probability_coverage": 0.0,
+      "nll": null,
+      "brier": null
+    }
+  }
+}

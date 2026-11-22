@@ -1,0 +1,259 @@
+{
+  "scope": "Matched Qwen calls on three UNAMI source views and exact-span same-assistant review. The separate-clause prompt is transferred unchanged. The observed cases share one docket.",
+  "cases": {
+    "full": {
+      "original": {
+        "supported_facts": [
+          "consultation",
+          "iraqi_support",
+          "mandate_expiry",
+          "review_actor",
+          "review_deadline",
+          "review_kind"
+        ],
+        "supported_count": 6,
+        "unavailable_facts": [],
+        "points_available": 8,
+        "finished": true,
+        "words": 61,
+        "outputs_within_73_words": true,
+        "input_tokens": 380,
+        "output_tokens": 103,
+        "conflicts": [],
+        "exact_support_and_clean": false,
+        "wanted_paragraphs": 2,
+        "actual_paragraphs": 1
+      },
+      "separate": {
+        "supported_facts": [
+          "consultation",
+          "iraqi_support",
+          "mandate_expiry",
+          "review_actor",
+          "review_deadline",
+          "review_kind"
+        ],
+        "supported_count": 6,
+        "unavailable_facts": [],
+        "points_available": 8,
+        "finished": true,
+        "words": 64,
+        "outputs_within_73_words": true,
+        "input_tokens": 448,
+        "output_tokens": 98,
+        "conflicts": [],
+        "exact_support_and_clean": false,
+        "wanted_paragraphs": 2,
+        "actual_paragraphs": 1
+      }
+    },
+    "recurring_and_review": {
+      "original": {
+        "supported_facts": [
+          "periodic_report",
+          "review_actor",
+          "review_deadline",
+          "review_kind"
+        ],
+        "supported_count": 4,
+        "unavailable_facts": [],
+        "points_available": 5,
+        "finished": true,
+        "words": 61,
+        "outputs_within_73_words": true,
+        "input_tokens": 280,
+        "output_tokens": 98,
+        "conflicts": [
+          "the recipient is the Secretary-General"
+        ],
+        "exact_support_and_clean": false,
+        "wanted_paragraphs": 2,
+        "actual_paragraphs": 1
+      },
+      "separate": {
+        "supported_facts": [
+          "periodic_report",
+          "review_actor",
+          "review_deadline",
+          "review_kind"
+        ],
+        "supported_count": 4,
+        "unavailable_facts": [],
+        "points_available": 5,
+        "finished": true,
+        "words": 41,
+        "outputs_within_73_words": true,
+        "input_tokens": 348,
+        "output_tokens": 71,
+        "conflicts": [],
+        "exact_support_and_clean": false,
+        "wanted_paragraphs": 2,
+        "actual_paragraphs": 1
+      }
+    },
+    "review_only": {
+      "original": {
+        "supported_facts": [
+          "review_actor",
+          "review_deadline",
+          "review_kind",
+          "review_recipient"
+        ],
+        "supported_count": 4,
+        "unavailable_facts": [],
+        "points_available": 4,
+        "finished": true,
+        "words": 48,
+        "outputs_within_73_words": true,
+        "input_tokens": 246,
+        "output_tokens": 78,
+        "conflicts": [
+          "mandates the Secretary-General to conduct an independent strategic review"
+        ],
+        "exact_support_and_clean": false,
+        "wanted_paragraphs": 1,
+        "actual_paragraphs": 1
+      },
+      "separate": {
+        "supported_facts": [
+          "review_actor",
+          "review_deadline",
+          "review_kind",
+          "review_recipient"
+        ],
+        "supported_count": 4,
+        "unavailable_facts": [],
+        "points_available": 4,
+        "finished": true,
+        "words": 23,
+        "outputs_within_73_words": true,
+        "input_tokens": 314,
+        "output_tokens": 33,
+        "conflicts": [],
+        "exact_support_and_clean": true,
+        "wanted_paragraphs": 1,
+        "actual_paragraphs": 1
+      }
+    }
+  },
+  "annotations": {
+    "original/full": {
+      "facts": {
+        "review_kind": [
+          "an independent strategic review"
+        ],
+        "review_deadline": [
+          "by 31 March 2024"
+        ],
+        "consultation": [
+          "Iraq, UN agencies, Member States, regional organizations, independent experts, civil society, and Kuwait"
+        ],
+        "iraqi_support": [
+          "Iraq's Government expressed support for the review in a letter dated 18 May 2023."
+        ],
+        "mandate_expiry": [
+          "extended the UNAMI mandate to 31 May 2024"
+        ],
+        "review_actor": [
+          "The Secretary-General was requested to report on UNAMI responsibilities every four months and conduct an independent strategic review"
+        ]
+      },
+      "conflicts": []
+    },
+    "separate/full": {
+      "facts": {
+        "review_kind": [
+          "an independent strategic review"
+        ],
+        "review_deadline": [
+          "by 31 March 2024"
+        ],
+        "consultation": [
+          "Iraq, UN agencies, Member States, regional organizations, independent experts, civil society, and Kuwait"
+        ],
+        "iraqi_support": [
+          "Iraq's Government expressed support for the review in a letter dated 18 May 2023."
+        ],
+        "mandate_expiry": [
+          "extended the UNAMI mandate until 31 May 2024"
+        ],
+        "review_actor": [
+          "The Secretary-General was requested to report on UNAMI fulfilment every four months and to conduct an independent strategic review"
+        ]
+      },
+      "conflicts": []
+    },
+    "original/recurring_and_review": {
+      "facts": {
+        "review_deadline": [
+          "no later than 31 March 2024"
+        ],
+        "review_kind": [
+          "an independent strategic review of UNAMI"
+        ],
+        "periodic_report": [
+          "The Secretary-General is requested to report to the Council on UNAMI responsibilities every four months"
+        ],
+        "review_actor": [
+          "The Secretary-General is requested to report to the Council on UNAMI responsibilities every four months and to conduct an independent strategic review"
+        ]
+      },
+      "conflicts": [
+        "the recipient is the Secretary-General"
+      ]
+    },
+    "separate/recurring_and_review": {
+      "facts": {
+        "review_deadline": [
+          "no later than 31 March 2024"
+        ],
+        "review_kind": [
+          "an independent strategic review of UNAMI"
+        ],
+        "periodic_report": [
+          "requested the Secretary-General to report to the Council on UNAMI fulfilment every four months"
+        ],
+        "review_actor": [
+          "requested the Secretary-General to conduct and provide an independent strategic review"
+        ]
+      },
+      "conflicts": []
+    },
+    "original/review_only": {
+      "facts": {
+        "review_deadline": [
+          "no later than 31 March 2024"
+        ],
+        "review_kind": [
+          "an independent strategic review of UNAMI"
+        ],
+        "review_actor": [
+          "the Secretary-General to conduct an independent strategic review"
+        ],
+        "review_recipient": [
+          "This review must be completed and submitted to the Council"
+        ]
+      },
+      "conflicts": [
+        "mandates the Secretary-General to conduct an independent strategic review"
+      ]
+    },
+    "separate/review_only": {
+      "facts": {
+        "review_deadline": [
+          "no later than 31 March 2024"
+        ],
+        "review_kind": [
+          "an independent strategic review of UNAMI"
+        ],
+        "review_actor": [
+          "The Secretary-General was requested to conduct"
+        ],
+        "review_recipient": [
+          "provide the Council with an independent strategic review"
+        ]
+      },
+      "conflicts": []
+    }
+  }
+}

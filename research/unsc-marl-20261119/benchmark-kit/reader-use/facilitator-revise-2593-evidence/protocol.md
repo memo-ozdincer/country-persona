@@ -1,0 +1,5 @@
+# Matched revision of Resolution 2593 records
+
+Test whether one revision call repairs the observed loss of source detail, unsupported authority and length overflow. Freeze the original three records, source dossier and original exact-span rubric. Each record gets a generic and a structured revision. Every call has the same 384-token output ceiling and 210-word final limit, sees the original candidate, and has access to the same public and national evidence. The structured prompt adds a fixed word allocation and source-check sequence. It receives no prior scores, defect labels or reference answer.
+
+Use the prior ten coverage criteria and the authority guard. Review revisions behind opaque IDs, cite exact evidence for each positive finding and compare criteria to the corresponding initial record. Preserve separate counts for retained and newly met criteria, lost criteria, authority damage and release. Record actual input and output tokens. An authored reference is only a feasibility witness for the word cap. It does not enter any generation or judge prompt. This is an exposed-docket repair diagnostic with same-assistant review.

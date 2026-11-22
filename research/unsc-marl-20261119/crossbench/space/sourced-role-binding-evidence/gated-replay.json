@@ -1,0 +1,608 @@
+{
+  "scope": "Posthoc replay. Separate field results are reused only when both source and proposed text match an evaluated view exactly. The targeted fields were chosen after the broad pilot. A mismatch or unresolved field can veto confirmation without proving contradiction.",
+  "results": {
+    "direct": {
+      "blocked_confirmations": 1,
+      "valid_confirmations_remaining": 8,
+      "unsupported_remaining": 0,
+      "records": [
+        {
+          "id": "drc_review_timing/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_review_timing/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_review_timing/decline_unverified",
+          "raw": [
+            "decline_unverified",
+            null
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_midterm_recipient/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [
+            [
+              "drc_recipient",
+              "match"
+            ],
+            [
+              "drc_discussion",
+              "match"
+            ]
+          ],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_midterm_recipient/decline_conflict",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [
+            [
+              "drc_recipient",
+              "mismatch"
+            ],
+            [
+              "drc_discussion",
+              "defer"
+            ]
+          ],
+          "issued_confirmation": false,
+          "blocked": true,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_midterm_recipient/decline_unverified",
+          "raw": [
+            "decline_unverified",
+            null
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_monthly_exception/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_monthly_exception/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_monthly_exception/decline_unverified",
+          "raw": [
+            "decline_unverified",
+            null
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_affected_state/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [
+            [
+              "drc_participation",
+              "match"
+            ]
+          ],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_affected_state/decline_conflict",
+          "raw": null,
+          "used_field_checks": [
+            [
+              "drc_participation",
+              "mismatch"
+            ]
+          ],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_affected_state/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_review/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [
+            [
+              "unami_review_recipient",
+              "match"
+            ]
+          ],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_review/decline_conflict",
+          "raw": null,
+          "used_field_checks": [
+            [
+              "unami_review_recipient",
+              "mismatch"
+            ]
+          ],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_review/decline_unverified",
+          "raw": [
+            "decline_unverified",
+            null
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_recurring/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_recurring/decline_conflict",
+          "raw": [
+            "decline_conflict",
+            2
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_recurring/decline_unverified",
+          "raw": [
+            "decline_unverified",
+            null
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_consult/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_consult/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_consult/decline_unverified",
+          "raw": [
+            "decline_unverified",
+            null
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_authority/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_authority/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_authority/decline_unverified",
+          "raw": [
+            "decline_unverified",
+            null
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": true
+        }
+      ]
+    },
+    "scoped": {
+      "blocked_confirmations": 2,
+      "valid_confirmations_remaining": 8,
+      "unsupported_remaining": 0,
+      "records": [
+        {
+          "id": "drc_review_timing/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_review_timing/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_review_timing/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_midterm_recipient/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [
+            [
+              "drc_recipient",
+              "match"
+            ],
+            [
+              "drc_discussion",
+              "match"
+            ]
+          ],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_midterm_recipient/decline_conflict",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [
+            [
+              "drc_recipient",
+              "mismatch"
+            ],
+            [
+              "drc_discussion",
+              "defer"
+            ]
+          ],
+          "issued_confirmation": false,
+          "blocked": true,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_midterm_recipient/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_monthly_exception/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_monthly_exception/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_monthly_exception/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_affected_state/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [
+            [
+              "drc_participation",
+              "match"
+            ]
+          ],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "drc_affected_state/decline_conflict",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [
+            [
+              "drc_participation",
+              "mismatch"
+            ]
+          ],
+          "issued_confirmation": false,
+          "blocked": true,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "drc_affected_state/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_review/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [
+            [
+              "unami_review_recipient",
+              "match"
+            ]
+          ],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_review/decline_conflict",
+          "raw": null,
+          "used_field_checks": [
+            [
+              "unami_review_recipient",
+              "mismatch"
+            ]
+          ],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_review/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_recurring/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_recurring/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_recurring/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_consult/confirm",
+          "raw": [
+            "confirm",
+            1
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_consult/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_consult/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_authority/confirm",
+          "raw": [
+            "confirm",
+            2
+          ],
+          "used_field_checks": [],
+          "issued_confirmation": true,
+          "blocked": false,
+          "supported_confirmation": true,
+          "original_proposal_supported": true
+        },
+        {
+          "id": "unami_authority/decline_conflict",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        },
+        {
+          "id": "unami_authority/decline_unverified",
+          "raw": null,
+          "used_field_checks": [],
+          "issued_confirmation": false,
+          "blocked": false,
+          "supported_confirmation": false,
+          "original_proposal_supported": false
+        }
+      ]
+    }
+  }
+}

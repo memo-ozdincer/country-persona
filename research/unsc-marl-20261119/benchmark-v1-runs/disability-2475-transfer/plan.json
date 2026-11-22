@@ -1,0 +1,113 @@
+{
+  "initial": [
+    {
+      "id": "public",
+      "max_output_tokens": 90,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write a compact public paragraph of at most 44 words. Protect draft and resolution numbers, sponsors, vote, the two main actions and reporting conditions. Return only the paragraph."
+        },
+        {
+          "role": "user",
+          "content": "{\"public\": [{\"id\": \"decision\", \"text\": \"On 20 June 2019, the Kuwaiti Council president announced that the Poland–United Kingdom draft S/2019/503 was adopted unanimously, with 15 votes in favour, as Resolution 2475 (2019).\"}, {\"id\": \"action\", \"text\": \"The Council called on conflict parties to allow safe, timely and unimpeded humanitarian access to everyone needing aid. It urged Member States to enable meaningful participation and representation of persons with disabilities and their organizations, including in humanitarian action and conflict prevention, resolution and peacebuilding.\"}, {\"id\": \"report\", \"text\": \"The Council requested pertinent information and recommendations from the Secretary-General in reports and briefings and, where pertinent, disability-disaggregated data within existing mandates and resources.\"}]}"
+        }
+      ]
+    },
+    {
+      "id": "note-0",
+      "max_output_tokens": 74,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write an attributed working note of at most 35 words. Keep important named positions and scope limits. Use only this national evidence. Return only the note."
+        },
+        {
+          "role": "user",
+          "content": "{\"role\": \"France\", \"recorded_statements\": [{\"id\": \"fr-treaty\", \"text\": \"France welcomed the first specifically disability-focused resolution within the Council's civilian-protection agenda. It called on all UN Member States to ratify and fully implement the disability convention, whose protections apply in humanitarian emergencies including conflicts.\"}, {\"id\": \"fr-participation\", \"text\": \"France linked active participation to better protection and safety for people with disabilities in armed conflict, humanitarian response plans and post-conflict recovery.\"}]}"
+        }
+      ]
+    },
+    {
+      "id": "note-1",
+      "max_output_tokens": 74,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write an attributed working note of at most 35 words. Keep important named positions and scope limits. Use only this national evidence. Return only the note."
+        },
+        {
+          "role": "user",
+          "content": "{\"role\": \"Russian Federation\", \"recorded_statements\": [{\"id\": \"ru-article\", \"text\": \"Russia voted for the text on humanitarian grounds, saying several provisions still went beyond the Council's mandate. Russia read operative paragraph 11's call for compliance with the disability convention as pertaining only to Article 11 of the convention, on situations within the Council's purview.\"}, {\"id\": \"ru-authority\", \"text\": \"Russia expected invitations under operative paragraph 10 to follow the Council's provisional rules and preserve its methods. It opposed inventing new legal categories for civilian protection and called for practical action within existing international law and the Council mandate.\"}]}"
+        }
+      ]
+    },
+    {
+      "id": "note-2",
+      "max_output_tokens": 74,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write an attributed working note of at most 35 words. Keep important named positions and scope limits. Use only this national evidence. Return only the note."
+        },
+        {
+          "role": "user",
+          "content": "{\"role\": \"United Kingdom\", \"recorded_statements\": [{\"id\": \"uk-participation\", \"text\": \"The UK co-penholder said people with disabilities should participate in and lead decisions affecting them. It welcomed more information and disability-disaggregated data for evidence-based Council decisions.\"}, {\"id\": \"uk-authority\", \"text\": \"The UK thanked Russia and China for their yes votes despite their doubts. It agreed with Russia that new legal obligations should not be created, and said the co-penholders had avoided doing so.\"}]}"
+        }
+      ]
+    }
+  ],
+  "relation_patterns": [
+    {
+      "id": "bridge-3",
+      "max_output_tokens": 60,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Use only the attributed notes below. Write at most one sentence of no more than 27 words making a specific source-supported comparison of different or shared positions. Keep each actor's scope and capacity distinct. Use both relations if possible. If there is no evidenced comparison, return an empty line."
+        },
+        {
+          "role": "user",
+          "content": "{\"available\": [{\"speaker\": \"France\", \"note\": \"<F>\"}, {\"speaker\": \"Russian Federation\", \"note\": \"<R>\"}]}"
+        }
+      ]
+    },
+    {
+      "id": "bridge-6",
+      "max_output_tokens": 60,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Use only the attributed notes below. Write at most one sentence of no more than 27 words making a specific source-supported comparison of different or shared positions. Keep each actor's scope and capacity distinct. Use both relations if possible. If there is no evidenced comparison, return an empty line."
+        },
+        {
+          "role": "user",
+          "content": "{\"available\": [{\"speaker\": \"Russian Federation\", \"note\": \"<R>\"}, {\"speaker\": \"United Kingdom\", \"note\": \"<U>\"}]}"
+        }
+      ]
+    },
+    {
+      "id": "bridge-7",
+      "max_output_tokens": 60,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Use only the attributed notes below. Write at most one sentence of no more than 27 words making a specific source-supported comparison of different or shared positions. Keep each actor's scope and capacity distinct. Use both relations if possible. If there is no evidenced comparison, return an empty line."
+        },
+        {
+          "role": "user",
+          "content": "{\"available\": [{\"speaker\": \"France\", \"note\": \"<F>\"}, {\"speaker\": \"Russian Federation\", \"note\": \"<R>\"}, {\"speaker\": \"United Kingdom\", \"note\": \"<U>\"}]}"
+        }
+      ]
+    }
+  ],
+  "sha256": {
+    "benchmark-v1-runs/disability-2475-transfer/live_2475.py": "065f23d0a829d9b0b949179ce878161971c57be1ae58b72afed0bd560174c949",
+    "benchmark-v1-runs/disability-2475-transfer/docket.json": "fc8afc7b852511470eec993025acd0f06ce82febd34222dadb24416339e11430",
+    "benchmark-v1-runs/disability-2475-transfer/protocol.md": "97285b0060b8c227556d001d44570c3d6395736f9b94fb9d6d39e0e0f5a41b95",
+    "benchmark-v1-runs/disability-2475-transfer/provenance.json": "74a11eda87baa936a3b2ee9ecb56313ca18607323511c858d86a995cb9820e52",
+    "benchmark-v1-runs/disability-2475-transfer/join_sources.py": "ad5fc482b9504b4cea005bee95cfab34ec978e8323b0dfe1988677280ba9b293",
+    "benchmark-v1.4/release.json": "9057f941c23aedfe5819b9f59f2f6ae21b3e5bd3edf6bbade0e34a27e3749a06",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78"
+  }
+}

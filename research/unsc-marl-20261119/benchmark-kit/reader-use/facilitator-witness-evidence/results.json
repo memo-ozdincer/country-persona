@@ -1,0 +1,373 @@
+{
+  "scope": "Frozen next-text generation with exact-substring witness admission. Source excerpts and decomposed subclaims are supplied. An admitted witness still needs semantic evaluation against the authored label.",
+  "summary": {
+    "unifil": {
+      "count": 8,
+      "correct": 5,
+      "false_support": 0,
+      "false_contradiction": 2,
+      "nonnull_labels_rejected": 1
+    },
+    "colombia": {
+      "count": 8,
+      "correct": 7,
+      "false_support": 0,
+      "false_contradiction": 0,
+      "nonnull_labels_rejected": 1
+    },
+    "haiti": {
+      "count": 6,
+      "correct": 5,
+      "false_support": 1,
+      "false_contradiction": 0,
+      "nonnull_labels_rejected": 0
+    },
+    "mali": {
+      "count": 6,
+      "correct": 4,
+      "false_support": 1,
+      "false_contradiction": 0,
+      "nonnull_labels_rejected": 1
+    }
+  },
+  "full_packet_decisions": [
+    {
+      "family": "unifil",
+      "proposal": "Brazil and China supported UNIFIL's continued work.",
+      "truth": [
+        "supports",
+        "supports"
+      ],
+      "admitted": [
+        "supports",
+        "supports"
+      ],
+      "full_expected": "retain",
+      "full_action": "retain"
+    },
+    {
+      "family": "unifil",
+      "proposal": "Brazil and China each said the text fully addressed Lebanon's concerns.",
+      "truth": [
+        "unknown",
+        "contradicts"
+      ],
+      "admitted": [
+        "contradicts",
+        "contradicts"
+      ],
+      "full_expected": "revise",
+      "full_action": "revise"
+    },
+    {
+      "family": "unifil",
+      "proposal": "Brazil and China both stressed host-State sovereignty and consent.",
+      "truth": [
+        "unknown",
+        "supports"
+      ],
+      "admitted": [
+        "unknown",
+        "unknown"
+      ],
+      "full_expected": "withhold",
+      "full_action": "withhold"
+    },
+    {
+      "family": "unifil",
+      "proposal": "Brazil and China each said the text addressed some of Lebanon's concerns.",
+      "truth": [
+        "supports",
+        "unknown"
+      ],
+      "admitted": [
+        "supports",
+        "contradicts"
+      ],
+      "full_expected": "withhold",
+      "full_action": "revise"
+    },
+    {
+      "family": "colombia",
+      "proposal": "Brazil and the African members saw a possible future role for EMC ceasefire verification, subject to conditions.",
+      "truth": [
+        "supports",
+        "supports"
+      ],
+      "admitted": [
+        "supports",
+        "supports"
+      ],
+      "full_expected": "retain",
+      "full_action": "retain"
+    },
+    {
+      "family": "colombia",
+      "proposal": "Brazil and the African members called for immediate EMC ceasefire verification without further conditions.",
+      "truth": [
+        "contradicts",
+        "contradicts"
+      ],
+      "admitted": [
+        "unknown",
+        "contradicts"
+      ],
+      "full_expected": "revise",
+      "full_action": "revise"
+    },
+    {
+      "family": "colombia",
+      "proposal": "Brazil and the African members pledged to encourage progress on the Ethnic Chapter.",
+      "truth": [
+        "unknown",
+        "supports"
+      ],
+      "admitted": [
+        "unknown",
+        "supports"
+      ],
+      "full_expected": "withhold",
+      "full_action": "withhold"
+    },
+    {
+      "family": "colombia",
+      "proposal": "Both speakers said the Security Council should respond to the priorities expressed by Colombia's Government.",
+      "truth": [
+        "supports",
+        "unknown"
+      ],
+      "admitted": [
+        "supports",
+        "unknown"
+      ],
+      "full_expected": "withhold",
+      "full_action": "withhold"
+    }
+  ],
+  "reads": {
+    "unifil/0/0": {
+      "claim": "Brazil supported UNIFIL's continued work.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "Brazil supported UNIFIL's continuing work.",
+      "raw": "supports|Brazil supported UNIFIL's continuing work."
+    },
+    "unifil/0/1": {
+      "claim": "China supported UNIFIL's continued work.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "China supported UNIFIL's work",
+      "raw": "supports|China supported UNIFIL's work"
+    },
+    "unifil/1/0": {
+      "claim": "Brazil said the text fully addressed Lebanon's concerns.",
+      "expected": "unknown",
+      "proposed_label": "contradicts",
+      "admitted": "contradicts",
+      "witness": "addressing some of Lebanon's concerns",
+      "raw": "contradicts|addressing some of Lebanon's concerns"
+    },
+    "unifil/1/1": {
+      "claim": "China said the text fully addressed Lebanon's concerns.",
+      "expected": "contradicts",
+      "proposed_label": "contradicts",
+      "admitted": "contradicts",
+      "witness": "China supported UNIFIL's work but said the text did not fully address Lebanon's concerns.",
+      "raw": "contradicts|China supported UNIFIL's work but said the text did not fully address Lebanon's concerns."
+    },
+    "unifil/2/0": {
+      "claim": "Brazil stressed host-State sovereignty and consent.",
+      "expected": "unknown",
+      "proposed_label": "unknown",
+      "admitted": "unknown",
+      "witness": null,
+      "raw": "unknown"
+    },
+    "unifil/2/1": {
+      "claim": "China stressed host-State sovereignty and consent.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "unknown",
+      "witness": "China stressed host-State sovereignty and consent",
+      "raw": "supports|China stressed host-State sovereignty and consent"
+    },
+    "unifil/3/0": {
+      "claim": "Brazil said the text addressed some of Lebanon's concerns.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "addressing some of Lebanon's concerns",
+      "raw": "supports|addressing some of Lebanon's concerns"
+    },
+    "unifil/3/1": {
+      "claim": "China said the text addressed some of Lebanon's concerns.",
+      "expected": "unknown",
+      "proposed_label": "contradicts",
+      "admitted": "contradicts",
+      "witness": "China supported UNIFIL's work but said the text did not fully address Lebanon's concerns.",
+      "raw": "contradicts|China supported UNIFIL's work but said the text did not fully address Lebanon's concerns."
+    },
+    "colombia/0/0": {
+      "claim": "Brazil expressed support or hope for possible future EMC ceasefire verification subject to conditions.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "Brazil supported the Government's total peace strategy and hoped the Council could authorize verification of the EMC ceasefire when sufficiently mature.",
+      "raw": "supports|Brazil supported the Government's total peace strategy and hoped the Council could authorize verification of the EMC ceasefire when sufficiently mature."
+    },
+    "colombia/0/1": {
+      "claim": "The three African members expressed support or hope for possible future EMC ceasefire verification subject to conditions.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "The A3 welcomed the unanimous mandate extension, supported Mission monitoring and verification in the EMC case contingent on the Secretary-General's conditions",
+      "raw": "supports|The A3 welcomed the unanimous mandate extension, supported Mission monitoring and verification in the EMC case contingent on the Secretary-General's conditions"
+    },
+    "colombia/1/0": {
+      "claim": "Brazil called for immediate EMC ceasefire verification without further conditions.",
+      "expected": "contradicts",
+      "proposed_label": "contradicts",
+      "admitted": "unknown",
+      "witness": "without further conditions",
+      "raw": "contradicts|without further conditions"
+    },
+    "colombia/1/1": {
+      "claim": "The three African members called for immediate EMC ceasefire verification without further conditions.",
+      "expected": "contradicts",
+      "proposed_label": "contradicts",
+      "admitted": "contradicts",
+      "witness": "contingent on the Secretary-General's conditions",
+      "raw": "contradicts|contingent on the Secretary-General's conditions"
+    },
+    "colombia/2/0": {
+      "claim": "Brazil pledged to encourage progress on the Ethnic Chapter.",
+      "expected": "unknown",
+      "proposed_label": "unknown",
+      "admitted": "unknown",
+      "witness": null,
+      "raw": "unknown"
+    },
+    "colombia/2/1": {
+      "claim": "The three African members pledged to encourage progress on the Ethnic Chapter.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "pledged to encourage progress on the Ethnic Chapter",
+      "raw": "supports|pledged to encourage progress on the Ethnic Chapter"
+    },
+    "colombia/3/0": {
+      "claim": "Brazil said the Security Council should respond to Colombia's Government's stated priorities.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "He said the Council should respond to Colombia's priorities as expressed by its Government",
+      "raw": "supports|He said the Council should respond to Colombia's priorities as expressed by its Government"
+    },
+    "colombia/3/1": {
+      "claim": "The three African members said the Security Council should respond to Colombia's Government's stated priorities.",
+      "expected": "unknown",
+      "proposed_label": "unknown",
+      "admitted": "unknown",
+      "witness": null,
+      "raw": "unknown"
+    },
+    "haiti/0/0": {
+      "claim": "China welcomed Kenya's willingness to lead.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "China abstained. Zhang Jun welcomed Kenya's willingness to lead but urged caution in invoking Chapter VII on grounds of sovereignty and non-interference.",
+      "raw": "supports|China abstained. Zhang Jun welcomed Kenya's willingness to lead but urged caution in invoking Chapter VII on grounds of sovereignty and non-interference."
+    },
+    "haiti/0/1": {
+      "claim": "The three African members welcomed Kenya's willingness to lead.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "They welcomed Kenya's offer to lead",
+      "raw": "supports|They welcomed Kenya's offer to lead"
+    },
+    "haiti/1/0": {
+      "claim": "China voted in favour of the authorization.",
+      "expected": "contradicts",
+      "proposed_label": "contradicts",
+      "admitted": "contradicts",
+      "witness": "China abstained.",
+      "raw": "contradicts|China abstained."
+    },
+    "haiti/1/1": {
+      "claim": "The three African members voted in favour of the authorization.",
+      "expected": "unknown",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "The A3 supported adoption under Chapter VII",
+      "raw": "supports|The A3 supported adoption under Chapter VII"
+    },
+    "haiti/2/0": {
+      "claim": "China confirmed how much funding it would provide.",
+      "expected": "unknown",
+      "proposed_label": "unknown",
+      "admitted": "unknown",
+      "witness": null,
+      "raw": "unknown"
+    },
+    "haiti/2/1": {
+      "claim": "The three African members confirmed how much funding they would provide.",
+      "expected": "unknown",
+      "proposed_label": "unknown",
+      "admitted": "unknown",
+      "witness": null,
+      "raw": "unknown"
+    },
+    "mali/0/0": {
+      "claim": "France sought an extension of sanctions.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "France sought an extension to support implementation of the peace agreement and an orderly drawdown.",
+      "raw": "supports|France sought an extension to support implementation of the peace agreement and an orderly drawdown."
+    },
+    "mali/0/1": {
+      "claim": "Russia sought an extension of sanctions.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "Russia said the existing approach had not addressed the concerns of Mali's transitional Government. It proposed dissolving the Panel of Experts and making this the final extension of the regime.",
+      "raw": "supports|Russia said the existing approach had not addressed the concerns of Mali's transitional Government. It proposed dissolving the Panel of Experts and making this the final extension of the regime."
+    },
+    "mali/1/0": {
+      "claim": "France proposed keeping the Panel of Experts in operation.",
+      "expected": "unknown",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "France sought an extension to support implementation of the peace agreement and an orderly drawdown.",
+      "raw": "supports|France sought an extension to support implementation of the peace agreement and an orderly drawdown."
+    },
+    "mali/1/1": {
+      "claim": "Russia proposed keeping the Panel of Experts in operation.",
+      "expected": "contradicts",
+      "proposed_label": "contradicts",
+      "admitted": "unknown",
+      "witness": "Russia proposed dissolving the Panel of Experts",
+      "raw": "contradicts|Russia proposed dissolving the Panel of Experts"
+    },
+    "mali/2/0": {
+      "claim": "France said this would be the final extension of sanctions.",
+      "expected": "unknown",
+      "proposed_label": "unknown",
+      "admitted": "unknown",
+      "witness": null,
+      "raw": "unknown"
+    },
+    "mali/2/1": {
+      "claim": "Russia said this would be the final extension of sanctions.",
+      "expected": "supports",
+      "proposed_label": "supports",
+      "admitted": "supports",
+      "witness": "making this the final extension of the regime.",
+      "raw": "supports|making this the final extension of the regime."
+    }
+  }
+}

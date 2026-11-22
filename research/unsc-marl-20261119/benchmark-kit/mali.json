@@ -1,0 +1,15 @@
+{
+  "family": "mali-experts-2023",
+  "source_task": "../crossbench/mali/historical-task.json",
+  "source_ids": ["status-638", "status-639"],
+  "scope": "Fictional post-meeting drafting workshop. Review and closure are workshop package names. No decision changes either official vote.",
+  "question": "Which package may the workshop chair recommend? Each delegate accepts the package on their private card only. If both accept the same package, recommend it. Otherwise record an impasse.",
+  "roles": ["chair", "first delegate", "second delegate"],
+  "signals": [
+    {"owner": "first delegate", "field": "first mandate", "values": ["review", "closure"]},
+    {"owner": "second delegate", "field": "second mandate", "values": ["review", "closure"]}
+  ],
+  "answers": ["review", "closure", "impasse"],
+  "gold": [["review"], ["impasse"], ["impasse"], ["closure"]],
+  "edges": [["second delegate", "first delegate"], ["first delegate", "chair"]]
+}

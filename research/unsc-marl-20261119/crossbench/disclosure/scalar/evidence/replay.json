@@ -1,0 +1,375 @@
+{
+  "records": 10,
+  "transcript_sha256": "f3b0454e673a5add02c9c1be718f9da6c6a7f8d3b42d0f2e39e0e6ccd80e948a",
+  "optimizer_updates": 0,
+  "outcomes": {
+    "overlap": {
+      "opening": {
+        "readout": {
+          "state": "AGREEMENT_POSSIBLE",
+          "verified_options": {
+            "A": {
+              "France workshop delegate": [
+                "open-1-shared"
+              ],
+              "United Kingdom workshop delegate": [
+                "open-2-overlap"
+              ]
+            }
+          },
+          "blocked_options": {},
+          "unresolved_options": [
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [
+          "A"
+        ],
+        "correct": true,
+        "distinct_valid_claims": 2,
+        "repeated_claims": 0,
+        "invalid_format": 0,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": true
+      },
+      "solo": {
+        "readout": {
+          "state": "AGREEMENT_POSSIBLE",
+          "verified_options": {
+            "A": {
+              "France workshop delegate": [
+                "open-1-shared",
+                "solo-1-shared"
+              ],
+              "United Kingdom workshop delegate": [
+                "open-2-overlap",
+                "solo-2-overlap"
+              ]
+            }
+          },
+          "blocked_options": {},
+          "unresolved_options": [
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [
+          "A"
+        ],
+        "correct": true,
+        "distinct_valid_claims": 2,
+        "repeated_claims": 2,
+        "invalid_format": 0,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": true
+      },
+      "peer": {
+        "readout": {
+          "state": "AGREEMENT_POSSIBLE",
+          "verified_options": {
+            "A": {
+              "France workshop delegate": [
+                "open-1-shared",
+                "peer-1-overlap"
+              ],
+              "United Kingdom workshop delegate": [
+                "open-2-overlap",
+                "peer-2-overlap"
+              ]
+            }
+          },
+          "blocked_options": {},
+          "unresolved_options": [
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [
+          "A"
+        ],
+        "correct": true,
+        "distinct_valid_claims": 2,
+        "repeated_claims": 2,
+        "invalid_format": 0,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": true
+      }
+    },
+    "impasse": {
+      "opening": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [],
+        "correct": false,
+        "distinct_valid_claims": 2,
+        "repeated_claims": 0,
+        "invalid_format": 0,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      },
+      "solo": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [],
+        "correct": false,
+        "distinct_valid_claims": 2,
+        "repeated_claims": 2,
+        "invalid_format": 0,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      },
+      "peer": {
+        "readout": {
+          "state": "UNRESOLVED",
+          "verified_options": {},
+          "blocked_options": {},
+          "unresolved_options": [
+            "A",
+            "B",
+            "C",
+            "D"
+          ],
+          "unique_verified": false
+        },
+        "target_compatible": [],
+        "correct": false,
+        "distinct_valid_claims": 2,
+        "repeated_claims": 2,
+        "invalid_format": 0,
+        "untruthful_claims": 0,
+        "passes": 0,
+        "clean_correct": false
+      }
+    }
+  },
+  "costs": {
+    "overlap": {
+      "opening": {
+        "input_tokens": 1391,
+        "generated_tokens": 20,
+        "cap_hits": 0
+      },
+      "solo": {
+        "input_tokens": 2850,
+        "generated_tokens": 40,
+        "cap_hits": 0
+      },
+      "peer": {
+        "input_tokens": 2932,
+        "generated_tokens": 40,
+        "cap_hits": 0
+      }
+    },
+    "impasse": {
+      "opening": {
+        "input_tokens": 1392,
+        "generated_tokens": 20,
+        "cap_hits": 0
+      },
+      "solo": {
+        "input_tokens": 2853,
+        "generated_tokens": 40,
+        "cap_hits": 0
+      },
+      "peer": {
+        "input_tokens": 2936,
+        "generated_tokens": 40,
+        "cap_hits": 0
+      }
+    }
+  },
+  "turns": {
+    "open-1-shared": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"A\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "open-1-shared",
+          "role": "France workshop delegate",
+          "accepts": [
+            "A"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 695,
+      "output_tokens": 10
+    },
+    "open-2-overlap": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"A\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "open-2-overlap",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "A"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 696,
+      "output_tokens": 10
+    },
+    "open-2-impasse": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"C\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "open-2-impasse",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "C"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 697,
+      "output_tokens": 10
+    },
+    "solo-1-shared": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"A\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "solo-1-shared",
+          "role": "France workshop delegate",
+          "accepts": [
+            "A"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 728,
+      "output_tokens": 10
+    },
+    "solo-2-overlap": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"A\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "solo-2-overlap",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "A"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 731,
+      "output_tokens": 10
+    },
+    "peer-1-overlap": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"A\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "peer-1-overlap",
+          "role": "France workshop delegate",
+          "accepts": [
+            "A"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 770,
+      "output_tokens": 10
+    },
+    "peer-2-overlap": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"A\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "peer-2-overlap",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "A"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 771,
+      "output_tokens": 10
+    },
+    "solo-2-impasse": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"C\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "solo-2-impasse",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "C"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 733,
+      "output_tokens": 10
+    },
+    "peer-1-impasse": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"A\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "peer-1-impasse",
+          "role": "France workshop delegate",
+          "accepts": [
+            "A"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 771,
+      "output_tokens": 10
+    },
+    "peer-2-impasse": {
+      "model_output": "{\"stance\":\"accept\",\"option\":\"C\"}",
+      "judgment": {
+        "kind": "disclosure",
+        "admitted": {
+          "id": "peer-2-impasse",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "C"
+          ],
+          "excludes": []
+        }
+      },
+      "input_tokens": 773,
+      "output_tokens": 10
+    }
+  }
+}

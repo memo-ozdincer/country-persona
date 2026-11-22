@@ -1,0 +1,1019 @@
+{
+  "scope": "Prior counts remain synthetic. Select the old, recent-only, or prior-agnostic policy by predicting expected rubric scores on recent held-out pilot observations. No future inventory, realized reward or prior label enters selection. Results report both free archival access and collecting the entire pilot.",
+  "input_sha256": {
+    "report.json": "3284053d8125029e5728cc700072805f2172b84a60d378debfcadca842e331af",
+    "symmetry.json": "8ea3504beb58d85a9a43daf769f7b2f938f48314bc940145a8c0151fe4ded4a0",
+    "pilot-drift.json": "b7f006648287403e5fadf07b8421f09f0f8669a37162314ac261cd0b05edf67d"
+  },
+  "selector_sha256": "28ab58463f232e9da33ff34cfb5729edae99a3b4a3b5b39de0fa59983c1f2250",
+  "cases": {
+    "unifil": {
+      "stable_swapped": {
+        "chosen": {
+          "no_pilot_default": 20,
+          "old32": 81,
+          "recent8": 27
+        },
+        "mean_gain_over_recent_only_library": 0.06502787121046766,
+        "mean_gain_over_old_only_library": -0.08190970745771925,
+        "mean_gain_over_fresh8_hybrid": 0.08296841995233406,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.37053958346180144,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 9,
+          "profit": {
+            "16": {
+              "mean_after_collection": 2.7286333353888224,
+              "positive_trials": 97
+            },
+            "64": {
+              "mean_after_collection": 20.514533341555296,
+              "positive_trials": 97
+            },
+            "256": {
+              "mean_after_collection": 91.65813336622115,
+              "positive_trials": 100
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.37053958346180144,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 44,
+          "profit": {
+            "16": {
+              "mean_after_collection": -10.071366664611176,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": 7.714533341555292,
+              "positive_trials": 97
+            },
+            "256": {
+              "mean_after_collection": 78.85813336622117,
+              "positive_trials": 97
+            }
+          }
+        }
+      },
+      "desk_reassignment": {
+        "chosen": {
+          "no_pilot_default": 39,
+          "old32": 29,
+          "recent8": 60
+        },
+        "mean_gain_over_recent_only_library": -0.14003214170528244,
+        "mean_gain_over_old_only_library": 0.8497880837145602,
+        "mean_gain_over_fresh8_hybrid": -0.11454539882279274,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.03801995451030138,
+          "p10_future_gain": -0.8691714197920084,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 85,
+          "profit": {
+            "16": {
+              "mean_after_collection": -2.591680727835178,
+              "positive_trials": 58
+            },
+            "64": {
+              "mean_after_collection": -0.7667229113407128,
+              "positive_trials": 58
+            },
+            "256": {
+              "mean_after_collection": 6.533108354637159,
+              "positive_trials": 59
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.03801995451030138,
+          "p10_future_gain": -0.8691714197920084,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 421,
+          "profit": {
+            "16": {
+              "mean_after_collection": -15.391680727835178,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -13.566722911340712,
+              "positive_trials": 58
+            },
+            "256": {
+              "mean_after_collection": -6.266891645362847,
+              "positive_trials": 58
+            }
+          }
+        }
+      },
+      "field_reassignment": {
+        "chosen": {
+          "no_pilot_default": 18,
+          "old32": 85,
+          "recent8": 25
+        },
+        "mean_gain_over_recent_only_library": 0.03147898959200024,
+        "mean_gain_over_old_only_library": -0.09040565345909302,
+        "mean_gain_over_fresh8_hybrid": 0.04360430360605139,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.5374018394810463,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 6,
+          "profit": {
+            "16": {
+              "mean_after_collection": 5.398429431696739,
+              "positive_trials": 101
+            },
+            "64": {
+              "mean_after_collection": 31.19371772678696,
+              "positive_trials": 101
+            },
+            "256": {
+              "mean_after_collection": 134.37487090714785,
+              "positive_trials": 101
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.5374018394810463,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 30,
+          "profit": {
+            "16": {
+              "mean_after_collection": -7.40157056830326,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": 18.39371772678696,
+              "positive_trials": 99
+            },
+            "256": {
+              "mean_after_collection": 121.57487090714784,
+              "positive_trials": 101
+            }
+          }
+        }
+      },
+      "duplication_to_complementarity": {
+        "chosen": {
+          "no_pilot_default": 70,
+          "old32": 39,
+          "recent8": 19
+        },
+        "mean_gain_over_recent_only_library": 9.43689570931383e-16,
+        "mean_gain_over_old_only_library": 1.4432899320127035e-15,
+        "mean_gain_over_fresh8_hybrid": -1.4210854715202004e-14,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": -8.43769498715119e-15,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -3.200000000000136,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -3.200000000000541,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -3.200000000002161,
+              "positive_trials": 0
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": -8.43769498715119e-15,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -16.000000000000135,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -16.00000000000054,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -16.00000000000216,
+              "positive_trials": 0
+            }
+          }
+        }
+      },
+      "complementarity_to_duplication": {
+        "chosen": {
+          "no_pilot_default": 72,
+          "old32": 46,
+          "recent8": 10
+        },
+        "mean_gain_over_recent_only_library": -9.43689570931383e-16,
+        "mean_gain_over_old_only_library": 0.02877377319335772,
+        "mean_gain_over_fresh8_hybrid": -1.9262369477246466e-14,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": -3.469446951953614e-14,
+          "p10_future_gain": -3.552713678800501e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -3.200000000000556,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -3.2000000000022215,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -3.200000000008883,
+              "positive_trials": 0
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": -3.469446951953614e-14,
+          "p10_future_gain": -3.552713678800501e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -16.000000000000554,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -16.00000000000222,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -16.000000000008882,
+              "positive_trials": 0
+            }
+          }
+        }
+      }
+    },
+    "outer_space": {
+      "stable_swapped": {
+        "chosen": {
+          "no_pilot_default": 15,
+          "old32": 81,
+          "recent8": 32
+        },
+        "mean_gain_over_recent_only_library": 0.09824280908243732,
+        "mean_gain_over_old_only_library": -0.06569606849393794,
+        "mean_gain_over_fresh8_hybrid": 0.09824280908242972,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.42254315207586823,
+          "p10_future_gain": -7.105427357601002e-15,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 8,
+          "profit": {
+            "16": {
+              "mean_after_collection": 3.560690433213891,
+              "positive_trials": 90
+            },
+            "64": {
+              "mean_after_collection": 23.84276173285557,
+              "positive_trials": 102
+            },
+            "256": {
+              "mean_after_collection": 104.97104693142225,
+              "positive_trials": 102
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.42254315207586823,
+          "p10_future_gain": -7.105427357601002e-15,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 38,
+          "profit": {
+            "16": {
+              "mean_after_collection": -9.239309566786108,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": 11.042761732855567,
+              "positive_trials": 90
+            },
+            "256": {
+              "mean_after_collection": 92.17104693142227,
+              "positive_trials": 102
+            }
+          }
+        }
+      },
+      "desk_reassignment": {
+        "chosen": {
+          "no_pilot_default": 26,
+          "old32": 31,
+          "recent8": 71
+        },
+        "mean_gain_over_recent_only_library": -0.06080598776484403,
+        "mean_gain_over_old_only_library": 1.0343546463515918,
+        "mean_gain_over_fresh8_hybrid": -0.06080598776484031,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.18174962563330554,
+          "p10_future_gain": -0.7283445899200061,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 18,
+          "profit": {
+            "16": {
+              "mean_after_collection": -0.2920059898671114,
+              "positive_trials": 68
+            },
+            "64": {
+              "mean_after_collection": 8.431976040531556,
+              "positive_trials": 75
+            },
+            "256": {
+              "mean_after_collection": 43.32790416212622,
+              "positive_trials": 75
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.18174962563330554,
+          "p10_future_gain": -0.7283445899200061,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 89,
+          "profit": {
+            "16": {
+              "mean_after_collection": -13.092005989867111,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -4.368023959468445,
+              "positive_trials": 68
+            },
+            "256": {
+              "mean_after_collection": 30.52790416212622,
+              "positive_trials": 75
+            }
+          }
+        }
+      },
+      "field_reassignment": {
+        "chosen": {
+          "no_pilot_default": 23,
+          "old32": 79,
+          "recent8": 26
+        },
+        "mean_gain_over_recent_only_library": 0.09310573806765748,
+        "mean_gain_over_old_only_library": -0.08725012533337406,
+        "mean_gain_over_fresh8_hybrid": 0.09310573806765454,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.46756921292058345,
+          "p10_future_gain": -7.105427357601002e-15,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 7,
+          "profit": {
+            "16": {
+              "mean_after_collection": 4.281107406729334,
+              "positive_trials": 95
+            },
+            "64": {
+              "mean_after_collection": 26.724429626917345,
+              "positive_trials": 95
+            },
+            "256": {
+              "mean_after_collection": 116.49771850766936,
+              "positive_trials": 95
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.46756921292058345,
+          "p10_future_gain": -7.105427357601002e-15,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 35,
+          "profit": {
+            "16": {
+              "mean_after_collection": -8.518892593270664,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": 13.924429626917341,
+              "positive_trials": 83
+            },
+            "256": {
+              "mean_after_collection": 103.69771850766936,
+              "positive_trials": 95
+            }
+          }
+        }
+      },
+      "duplication_to_complementarity": {
+        "chosen": {
+          "no_pilot_default": 22,
+          "old32": 44,
+          "recent8": 62
+        },
+        "mean_gain_over_recent_only_library": -0.1676223144531273,
+        "mean_gain_over_old_only_library": 0.17188588867187432,
+        "mean_gain_over_fresh8_hybrid": -0.1676223144531263,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.16701323242186294,
+          "p10_future_gain": -2.1316282072803006e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 20,
+          "profit": {
+            "16": {
+              "mean_after_collection": -0.5277882812501928,
+              "positive_trials": 35
+            },
+            "64": {
+              "mean_after_collection": 7.488846874999229,
+              "positive_trials": 35
+            },
+            "256": {
+              "mean_after_collection": 39.55538749999691,
+              "positive_trials": 35
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.16701323242186294,
+          "p10_future_gain": -2.1316282072803006e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 96,
+          "profit": {
+            "16": {
+              "mean_after_collection": -13.327788281250193,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -5.3111531250007715,
+              "positive_trials": 35
+            },
+            "256": {
+              "mean_after_collection": 26.755387499996914,
+              "positive_trials": 35
+            }
+          }
+        }
+      },
+      "complementarity_to_duplication": {
+        "chosen": {
+          "no_pilot_default": 60,
+          "old32": 18,
+          "recent8": 50
+        },
+        "mean_gain_over_recent_only_library": -0.05205926513671866,
+        "mean_gain_over_old_only_library": 0.5523041809082019,
+        "mean_gain_over_fresh8_hybrid": -0.052059265136719546,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": -0.052059265136739974,
+          "p10_future_gain": -2.1316282072803006e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -4.032948242187841,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -6.5317929687513585,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -16.52717187500543,
+              "positive_trials": 0
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": -0.052059265136739974,
+          "p10_future_gain": -2.1316282072803006e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -16.83294824218784,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -19.33179296875136,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -29.327171875005433,
+              "positive_trials": 0
+            }
+          }
+        }
+      }
+    },
+    "mali": {
+      "stable_swapped": {
+        "chosen": {
+          "no_pilot_default": 19,
+          "old32": 57,
+          "recent8": 52
+        },
+        "mean_gain_over_recent_only_library": 0.03551869563665644,
+        "mean_gain_over_old_only_library": -0.050513108419721675,
+        "mean_gain_over_fresh8_hybrid": 0.04029203021680794,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.04408240235918692,
+          "p10_future_gain": -0.1886178396639906,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 73,
+          "profit": {
+            "16": {
+              "mean_after_collection": -2.4946815622530094,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -0.37872624901203705,
+              "positive_trials": 92
+            },
+            "256": {
+              "mean_after_collection": 8.085095003951853,
+              "positive_trials": 92
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.04408240235918692,
+          "p10_future_gain": -0.1886178396639906,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 363,
+          "profit": {
+            "16": {
+              "mean_after_collection": -15.29468156225301,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -13.178726249012037,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -4.714904996048148,
+              "positive_trials": 92
+            }
+          }
+        }
+      },
+      "desk_reassignment": {
+        "chosen": {
+          "no_pilot_default": 32,
+          "old32": 27,
+          "recent8": 69
+        },
+        "mean_gain_over_recent_only_library": -0.05054410467596904,
+        "mean_gain_over_old_only_library": 0.22079337014486955,
+        "mean_gain_over_fresh8_hybrid": -0.05523206526550262,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": -0.03713054895500001,
+          "p10_future_gain": -0.33910999313999923,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -3.794088783280001,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -5.576355133120002,
+              "positive_trials": 57
+            },
+            "256": {
+              "mean_after_collection": -12.705420532479996,
+              "positive_trials": 57
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": -0.03713054895500001,
+          "p10_future_gain": -0.33910999313999923,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -16.59408878328,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -18.37635513312,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -25.505420532480002,
+              "positive_trials": 57
+            }
+          }
+        }
+      },
+      "field_reassignment": {
+        "chosen": {
+          "no_pilot_default": 17,
+          "old32": 40,
+          "recent8": 71
+        },
+        "mean_gain_over_recent_only_library": 0.026865508206814104,
+        "mean_gain_over_old_only_library": -0.06501681475747068,
+        "mean_gain_over_fresh8_hybrid": 0.022588915645079366,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.04479834227314761,
+          "p10_future_gain": -0.04897396506001428,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 72,
+          "profit": {
+            "16": {
+              "mean_after_collection": -2.4832265236296385,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -0.332906094518553,
+              "positive_trials": 76
+            },
+            "256": {
+              "mean_after_collection": 8.26837562192579,
+              "positive_trials": 76
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.04479834227314761,
+          "p10_future_gain": -0.04897396506001428,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 358,
+          "profit": {
+            "16": {
+              "mean_after_collection": -15.283226523629638,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -13.132906094518553,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -4.531624378074213,
+              "positive_trials": 29
+            }
+          }
+        }
+      },
+      "duplication_to_complementarity": {
+        "chosen": {
+          "no_pilot_default": 15,
+          "old32": 84,
+          "recent8": 29
+        },
+        "mean_gain_over_recent_only_library": 0.008302612304681545,
+        "mean_gain_over_old_only_library": -0.0032395019531229474,
+        "mean_gain_over_fresh8_hybrid": 0.008302612304658008,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.007602905273446758,
+          "p10_future_gain": 1.4210854715202004e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 421,
+          "profit": {
+            "16": {
+              "mean_after_collection": -3.0783535156248525,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -2.7134140624994076,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -1.2536562499976296,
+              "positive_trials": 73
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.007602905273446758,
+          "p10_future_gain": 1.4210854715202004e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 2105,
+          "profit": {
+            "16": {
+              "mean_after_collection": -15.878353515624852,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -15.513414062499407,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -14.05365624999763,
+              "positive_trials": 0
+            }
+          }
+        }
+      },
+      "complementarity_to_duplication": {
+        "chosen": {
+          "no_pilot_default": 39,
+          "old32": 52,
+          "recent8": 37
+        },
+        "mean_gain_over_recent_only_library": 0.0018101562499993618,
+        "mean_gain_over_old_only_library": -0.0012719116210954673,
+        "mean_gain_over_fresh8_hybrid": 0.001810156249992867,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.000349206542914704,
+          "p10_future_gain": -0.004921093750056116,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 9164,
+          "profit": {
+            "16": {
+              "mean_after_collection": -3.194412695313366,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -3.17765078125346,
+              "positive_trials": 1
+            },
+            "256": {
+              "mean_after_collection": -3.110603125013837,
+              "positive_trials": 1
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.000349206542914704,
+          "p10_future_gain": -0.004921093750056116,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 45819,
+          "profit": {
+            "16": {
+              "mean_after_collection": -15.994412695313365,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -15.977650781253459,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -15.910603125013836,
+              "positive_trials": 1
+            }
+          }
+        }
+      }
+    },
+    "myanmar": {
+      "stable_swapped": {
+        "chosen": {
+          "no_pilot_default": 19,
+          "old32": 79,
+          "recent8": 30
+        },
+        "mean_gain_over_recent_only_library": 0.058731094476407175,
+        "mean_gain_over_old_only_library": -0.06281143203337386,
+        "mean_gain_over_fresh8_hybrid": 0.11921760850638796,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.2749058774971172,
+          "p10_future_gain": 0.0,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 12,
+          "profit": {
+            "16": {
+              "mean_after_collection": 1.1984940399538753,
+              "positive_trials": 99
+            },
+            "64": {
+              "mean_after_collection": 14.393976159815503,
+              "positive_trials": 99
+            },
+            "256": {
+              "mean_after_collection": 67.175904639262,
+              "positive_trials": 99
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.2749058774971172,
+          "p10_future_gain": 0.0,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 59,
+          "profit": {
+            "16": {
+              "mean_after_collection": -11.601505960046126,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": 1.593976159815501,
+              "positive_trials": 75
+            },
+            "256": {
+              "mean_after_collection": 54.375904639262004,
+              "positive_trials": 99
+            }
+          }
+        }
+      },
+      "desk_reassignment": {
+        "chosen": {
+          "no_pilot_default": 28,
+          "old32": 28,
+          "recent8": 72
+        },
+        "mean_gain_over_recent_only_library": -0.05464608431031026,
+        "mean_gain_over_old_only_library": 0.6237957147061841,
+        "mean_gain_over_fresh8_hybrid": -0.02546127967970202,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.08861643673464997,
+          "p10_future_gain": -0.4652209394799982,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 37,
+          "profit": {
+            "16": {
+              "mean_after_collection": -1.7821370122456002,
+              "positive_trials": 71
+            },
+            "64": {
+              "mean_after_collection": 2.4714519510175976,
+              "positive_trials": 71
+            },
+            "256": {
+              "mean_after_collection": 19.485807804070397,
+              "positive_trials": 71
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.08861643673464997,
+          "p10_future_gain": -0.4652209394799982,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 181,
+          "profit": {
+            "16": {
+              "mean_after_collection": -14.5821370122456,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -10.328548048982402,
+              "positive_trials": 54
+            },
+            "256": {
+              "mean_after_collection": 6.685807804070393,
+              "positive_trials": 71
+            }
+          }
+        }
+      },
+      "field_reassignment": {
+        "chosen": {
+          "no_pilot_default": 15,
+          "old32": 84,
+          "recent8": 29
+        },
+        "mean_gain_over_recent_only_library": 0.028101349430939393,
+        "mean_gain_over_old_only_library": -0.06233263605849909,
+        "mean_gain_over_fresh8_hybrid": 0.020572829743438825,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": 0.35729970668091604,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": 9,
+          "profit": {
+            "16": {
+              "mean_after_collection": 2.516795306894656,
+              "positive_trials": 99
+            },
+            "64": {
+              "mean_after_collection": 19.66718122757863,
+              "positive_trials": 102
+            },
+            "256": {
+              "mean_after_collection": 88.26872491031449,
+              "positive_trials": 102
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": 0.35729970668091604,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": 45,
+          "profit": {
+            "16": {
+              "mean_after_collection": -10.283204693105343,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": 6.867181227578627,
+              "positive_trials": 99
+            },
+            "256": {
+              "mean_after_collection": 75.4687249103145,
+              "positive_trials": 102
+            }
+          }
+        }
+      },
+      "duplication_to_complementarity": {
+        "chosen": {
+          "no_pilot_default": 67,
+          "old32": 38,
+          "recent8": 23
+        },
+        "mean_gain_over_recent_only_library": -3.7192471324942744e-15,
+        "mean_gain_over_old_only_library": -3.7192471324942744e-15,
+        "mean_gain_over_fresh8_hybrid": 8.93729534823251e-15,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": -1.0824674490095276e-14,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -3.2000000000001743,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -3.200000000000694,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -3.200000000002772,
+              "positive_trials": 0
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": -1.0824674490095276e-14,
+          "p10_future_gain": -1.4210854715202004e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -16.00000000000017,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -16.000000000000693,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -16.00000000000277,
+              "positive_trials": 0
+            }
+          }
+        }
+      },
+      "complementarity_to_duplication": {
+        "chosen": {
+          "no_pilot_default": 79,
+          "old32": 36,
+          "recent8": 13
+        },
+        "mean_gain_over_recent_only_library": 3.3861802251067274e-15,
+        "mean_gain_over_old_only_library": 0.02631668090820566,
+        "mean_gain_over_fresh8_hybrid": 1.4210854715202004e-14,
+        "archived_old_samples": {
+          "mean_future_gain_before_collection": -3.7470027081099033e-14,
+          "p10_future_gain": -4.263256414560601e-14,
+          "assumed_collection_cost": 3.2,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -3.2000000000006006,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -3.200000000002399,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -3.2000000000095934,
+              "positive_trials": 0
+            }
+          }
+        },
+        "collect_all_samples": {
+          "mean_future_gain_before_collection": -3.7470027081099033e-14,
+          "p10_future_gain": -4.263256414560601e-14,
+          "assumed_collection_cost": 16.0,
+          "strict_mean_break_even_episodes": null,
+          "profit": {
+            "16": {
+              "mean_after_collection": -16.0000000000006,
+              "positive_trials": 0
+            },
+            "64": {
+              "mean_after_collection": -16.000000000002398,
+              "positive_trials": 0
+            },
+            "256": {
+              "mean_after_collection": -16.000000000009592,
+              "positive_trials": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

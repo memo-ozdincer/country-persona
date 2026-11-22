@@ -1,0 +1,5 @@
+# Train follow-up features against the current opening policy
+
+Compare one 96-update CPU fit with the archived 96-update weak-start joint fit. Keep the objective, opening features, optimizer, initialization and the 30 development banks fixed. Recompute request and reply features after each opening-policy update. Compute these features from the public inventory law and opening policy distributions. Stop gradients through feature construction and differentiate the team return through the actual opening and follow-up distributions.
+
+Score the terminal weights on the archived held reply matrices, recomputing the feature context from greedy openings for deterministic evaluation and from soft openings for stochastic evaluation. Include a static-context replay of the same fitted weights and a refresh-only replay of the earlier weak-start weights. Compare exact no-request, the fixed-opening fit and the declared-channel planner. Report per-case scores, request rates and opening-action matches. The previously examined case rewards and observed admissions are excluded from both fits.

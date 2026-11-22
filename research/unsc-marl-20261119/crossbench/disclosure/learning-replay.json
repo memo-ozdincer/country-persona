@@ -1,0 +1,106 @@
+{
+  "profiles_per_arm": 225,
+  "training_runs": {
+    "terminal": {
+      "finite_updates": 160,
+      "nonzero_gradient_updates": 160,
+      "changed_parameter_tensors": [
+        "network.0.weight",
+        "network.0.bias",
+        "network.2.weight",
+        "network.2.bias"
+      ],
+      "training_initial_10_impasses": 24,
+      "training_final_10_impasses": 0,
+      "metrics": {
+        "initial": {
+          "worlds": 225,
+          "agreement": 164,
+          "agreement_denominator": 175,
+          "impasse": 0,
+          "impasse_denominator": 50,
+          "unresolved": 61,
+          "distinct_claims": 626,
+          "nonpass": 900,
+          "mean_reward": 0.6888888888888889
+        },
+        "peer": {
+          "worlds": 225,
+          "agreement": 169,
+          "agreement_denominator": 175,
+          "impasse": 0,
+          "impasse_denominator": 50,
+          "unresolved": 56,
+          "distinct_claims": 816,
+          "nonpass": 846,
+          "mean_reward": 0.7135111111111111
+        },
+        "silent": {
+          "worlds": 225,
+          "agreement": 153,
+          "agreement_denominator": 175,
+          "impasse": 0,
+          "impasse_denominator": 50,
+          "unresolved": 72,
+          "distinct_claims": 780,
+          "nonpass": 780,
+          "mean_reward": 0.6453333333333333
+        }
+      }
+    },
+    "dense": {
+      "finite_updates": 160,
+      "nonzero_gradient_updates": 160,
+      "changed_parameter_tensors": [
+        "network.0.weight",
+        "network.0.bias",
+        "network.2.weight",
+        "network.2.bias"
+      ],
+      "training_initial_10_impasses": 42,
+      "training_final_10_impasses": 634,
+      "metrics": {
+        "initial": {
+          "worlds": 225,
+          "agreement": 164,
+          "agreement_denominator": 175,
+          "impasse": 0,
+          "impasse_denominator": 50,
+          "unresolved": 61,
+          "distinct_claims": 626,
+          "nonpass": 900,
+          "mean_reward": 0.6888888888888889
+        },
+        "peer": {
+          "worlds": 225,
+          "agreement": 45,
+          "agreement_denominator": 175,
+          "impasse": 20,
+          "impasse_denominator": 50,
+          "unresolved": 160,
+          "distinct_claims": 884,
+          "nonpass": 900,
+          "mean_reward": 0.24888888888888888
+        },
+        "silent": {
+          "worlds": 225,
+          "agreement": 17,
+          "agreement_denominator": 175,
+          "impasse": 14,
+          "impasse_denominator": 50,
+          "unresolved": 194,
+          "distinct_claims": 870,
+          "nonpass": 900,
+          "mean_reward": 0.09777777777777778
+        }
+      }
+    }
+  },
+  "paired_feasible_terminal_dense": {
+    "(True, True, False)": 124,
+    "(False, False, False)": 30,
+    "(False, False, True)": 20,
+    "(True, True, True)": 45,
+    "(True, False, False)": 6
+  }
+}

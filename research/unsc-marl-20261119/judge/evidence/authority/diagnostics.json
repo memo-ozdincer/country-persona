@@ -1,0 +1,229 @@
+{
+  "scope": "Exploratory analysis of archived logits. Pair ranking assumes access to a matched foil. Each calibrated threshold is selected using the other family's labels only.",
+  "choice_comparisons": {
+    "failed": 11,
+    "clear": 4,
+    "tie": 1
+  },
+  "margins_by_order": {
+    "myanmar/workshop/clear": [
+      4.25,
+      -0.125
+    ],
+    "myanmar/workshop/failed": [
+      5.75,
+      0.625
+    ],
+    "myanmar/chair/clear": [
+      2.25,
+      -0.375
+    ],
+    "myanmar/chair/failed": [
+      1.5,
+      -0.875
+    ],
+    "mali/veto/clear": [
+      3.125,
+      0.0
+    ],
+    "mali/veto/failed": [
+      6.625,
+      1.625
+    ],
+    "mali/separate_draft/clear": [
+      2.0,
+      -1.625
+    ],
+    "mali/separate_draft/failed": [
+      4.25,
+      0.625
+    ]
+  },
+  "pooled_margins": {
+    "myanmar/workshop/clear": 2.0625,
+    "myanmar/workshop/failed": 3.1875,
+    "myanmar/chair/clear": 0.9375,
+    "myanmar/chair/failed": 0.3125,
+    "mali/veto/clear": 1.5625,
+    "mali/veto/failed": 4.125,
+    "mali/separate_draft/clear": 0.1875,
+    "mali/separate_draft/failed": 2.4375
+  },
+  "zero_threshold": {
+    "myanmar/workshop/clear": {
+      "verdict": "failed",
+      "reference": "clear",
+      "correct": false
+    },
+    "myanmar/workshop/failed": {
+      "verdict": "failed",
+      "reference": "failed",
+      "correct": true
+    },
+    "myanmar/chair/clear": {
+      "verdict": "failed",
+      "reference": "clear",
+      "correct": false
+    },
+    "myanmar/chair/failed": {
+      "verdict": "failed",
+      "reference": "failed",
+      "correct": true
+    },
+    "mali/veto/clear": {
+      "verdict": "failed",
+      "reference": "clear",
+      "correct": false
+    },
+    "mali/veto/failed": {
+      "verdict": "failed",
+      "reference": "failed",
+      "correct": true
+    },
+    "mali/separate_draft/clear": {
+      "verdict": "failed",
+      "reference": "clear",
+      "correct": false
+    },
+    "mali/separate_draft/failed": {
+      "verdict": "failed",
+      "reference": "failed",
+      "correct": true
+    }
+  },
+  "pair_ranking": {
+    "myanmar/workshop": {
+      "matched_margin_change": 1.125,
+      "ranks_foil_higher": true,
+      "rank_correct_in_each_order": [
+        true,
+        true
+      ]
+    },
+    "myanmar/chair": {
+      "matched_margin_change": -0.625,
+      "ranks_foil_higher": false,
+      "rank_correct_in_each_order": [
+        false,
+        false
+      ]
+    },
+    "mali/veto": {
+      "matched_margin_change": 2.5625,
+      "ranks_foil_higher": true,
+      "rank_correct_in_each_order": [
+        true,
+        true
+      ]
+    },
+    "mali/separate_draft": {
+      "matched_margin_change": 2.25,
+      "ranks_foil_higher": true,
+      "rank_correct_in_each_order": [
+        true,
+        true
+      ]
+    }
+  },
+  "calibrate_on_other_family": {
+    "mali": {
+      "threshold": 2.625,
+      "development": {
+        "myanmar/workshop/clear": {
+          "verdict": "clear",
+          "reference": "clear",
+          "correct": true
+        },
+        "myanmar/workshop/failed": {
+          "verdict": "failed",
+          "reference": "failed",
+          "correct": true
+        },
+        "myanmar/chair/clear": {
+          "verdict": "clear",
+          "reference": "clear",
+          "correct": true
+        },
+        "myanmar/chair/failed": {
+          "verdict": "clear",
+          "reference": "failed",
+          "correct": false
+        }
+      },
+      "test": {
+        "mali/veto/clear": {
+          "verdict": "clear",
+          "reference": "clear",
+          "correct": true
+        },
+        "mali/veto/failed": {
+          "verdict": "failed",
+          "reference": "failed",
+          "correct": true
+        },
+        "mali/separate_draft/clear": {
+          "verdict": "clear",
+          "reference": "clear",
+          "correct": true
+        },
+        "mali/separate_draft/failed": {
+          "verdict": "clear",
+          "reference": "failed",
+          "correct": false
+        }
+      }
+    },
+    "myanmar": {
+      "threshold": 2.0,
+      "development": {
+        "mali/veto/clear": {
+          "verdict": "clear",
+          "reference": "clear",
+          "correct": true
+        },
+        "mali/veto/failed": {
+          "verdict": "failed",
+          "reference": "failed",
+          "correct": true
+        },
+        "mali/separate_draft/clear": {
+          "verdict": "clear",
+          "reference": "clear",
+          "correct": true
+        },
+        "mali/separate_draft/failed": {
+          "verdict": "failed",
+          "reference": "failed",
+          "correct": true
+        }
+      },
+      "test": {
+        "myanmar/workshop/clear": {
+          "verdict": "failed",
+          "reference": "clear",
+          "correct": false
+        },
+        "myanmar/workshop/failed": {
+          "verdict": "failed",
+          "reference": "failed",
+          "correct": true
+        },
+        "myanmar/chair/clear": {
+          "verdict": "clear",
+          "reference": "clear",
+          "correct": true
+        },
+        "myanmar/chair/failed": {
+          "verdict": "clear",
+          "reference": "failed",
+          "correct": false
+        }
+      }
+    }
+  },
+  "input_tokens": 4858,
+  "answer_mass_range": [
+    0.9678735733032227,
+    0.9930263757705688
+  ]
+}

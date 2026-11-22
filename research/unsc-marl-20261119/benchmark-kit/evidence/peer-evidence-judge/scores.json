@@ -1,0 +1,223 @@
+{
+  "scope": "Three exposed historical anchors with synthetic visibility and false-claim controls. Exact archived outputs ground the anchors. The judge receives individual claims and known visibility locations. Scoring checks classification, not open-text claim or span extraction.",
+  "n_cases": 15,
+  "n_calls": 60,
+  "invalid_calls": 0,
+  "all_orders_correct": 0,
+  "correct_calls": 30,
+  "false_peer_credit_at_least_once": [
+    "outer-space/unsent-peer",
+    "outer-space/false-peer"
+  ],
+  "confusion_at_unanimity": {
+    "already_visible": {
+      "unresolved": 6
+    },
+    "new_peer_evidence": {
+      "unresolved": 3
+    },
+    "not_received": {
+      "unresolved": 3
+    },
+    "unsupported": {
+      "unresolved": 3
+    }
+  },
+  "items": [
+    {
+      "family": "sudan",
+      "condition": "dossier-only",
+      "expected": "already_visible",
+      "label_order_verdicts": [
+        "unsupported",
+        "already_visible",
+        "already_visible",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 2
+    },
+    {
+      "family": "sudan",
+      "condition": "dossier-and-peer",
+      "expected": "already_visible",
+      "label_order_verdicts": [
+        "unsupported",
+        "already_visible",
+        "already_visible",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 2
+    },
+    {
+      "family": "sudan",
+      "condition": "new-peer",
+      "expected": "new_peer_evidence",
+      "label_order_verdicts": [
+        "not_received",
+        "not_received",
+        "new_peer_evidence",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 1
+    },
+    {
+      "family": "sudan",
+      "condition": "unsent-peer",
+      "expected": "not_received",
+      "label_order_verdicts": [
+        "unsupported",
+        "unsupported",
+        "unsupported",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 1
+    },
+    {
+      "family": "sudan",
+      "condition": "false-peer",
+      "expected": "unsupported",
+      "label_order_verdicts": [
+        "unsupported",
+        "unsupported",
+        "unsupported",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 3
+    },
+    {
+      "family": "outer-space",
+      "condition": "dossier-only",
+      "expected": "already_visible",
+      "label_order_verdicts": [
+        "unsupported",
+        "already_visible",
+        "already_visible",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 2
+    },
+    {
+      "family": "outer-space",
+      "condition": "dossier-and-peer",
+      "expected": "already_visible",
+      "label_order_verdicts": [
+        "unsupported",
+        "already_visible",
+        "already_visible",
+        "already_visible"
+      ],
+      "consensus": null,
+      "correct_calls": 3
+    },
+    {
+      "family": "outer-space",
+      "condition": "new-peer",
+      "expected": "new_peer_evidence",
+      "label_order_verdicts": [
+        "not_received",
+        "already_visible",
+        "new_peer_evidence",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 1
+    },
+    {
+      "family": "outer-space",
+      "condition": "unsent-peer",
+      "expected": "not_received",
+      "label_order_verdicts": [
+        "not_received",
+        "not_received",
+        "new_peer_evidence",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 3
+    },
+    {
+      "family": "outer-space",
+      "condition": "false-peer",
+      "expected": "unsupported",
+      "label_order_verdicts": [
+        "unsupported",
+        "already_visible",
+        "new_peer_evidence",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 1
+    },
+    {
+      "family": "western-sahara",
+      "condition": "dossier-only",
+      "expected": "already_visible",
+      "label_order_verdicts": [
+        "unsupported",
+        "already_visible",
+        "already_visible",
+        "already_visible"
+      ],
+      "consensus": null,
+      "correct_calls": 3
+    },
+    {
+      "family": "western-sahara",
+      "condition": "dossier-and-peer",
+      "expected": "already_visible",
+      "label_order_verdicts": [
+        "unsupported",
+        "already_visible",
+        "already_visible",
+        "already_visible"
+      ],
+      "consensus": null,
+      "correct_calls": 3
+    },
+    {
+      "family": "western-sahara",
+      "condition": "new-peer",
+      "expected": "new_peer_evidence",
+      "label_order_verdicts": [
+        "unsupported",
+        "not_received",
+        "new_peer_evidence",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 1
+    },
+    {
+      "family": "western-sahara",
+      "condition": "unsent-peer",
+      "expected": "not_received",
+      "label_order_verdicts": [
+        "unsupported",
+        "not_received",
+        "unsupported",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 2
+    },
+    {
+      "family": "western-sahara",
+      "condition": "false-peer",
+      "expected": "unsupported",
+      "label_order_verdicts": [
+        "unsupported",
+        "not_received",
+        "unsupported",
+        "not_received"
+      ],
+      "consensus": null,
+      "correct_calls": 2
+    }
+  ]
+}

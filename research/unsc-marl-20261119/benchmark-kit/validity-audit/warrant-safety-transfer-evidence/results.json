@@ -1,0 +1,731 @@
+{
+  "domain_seed": 170824,
+  "history_seed": 170825,
+  "paired_histories": 32,
+  "domains": [
+    {
+      "domain": 0,
+      "cards": [
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            3
+          ],
+          [
+            2,
+            2,
+            0
+          ],
+          [
+            3,
+            2,
+            1
+          ],
+          [
+            2,
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            3,
+            0,
+            2
+          ],
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            3,
+            2
+          ],
+          [
+            2,
+            3,
+            3
+          ]
+        ]
+      ],
+      "intended_slots": [
+        [
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ]
+      ],
+      "observed_slots": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ]
+      ],
+      "valid_for_stable_model": true,
+      "generated": {
+        "d0/D1/card0": "A",
+        "d0/D1/card1": "A",
+        "d0/D1/card2": "A",
+        "d0/D1/card3": "A",
+        "d0/D2/card0": "C",
+        "d0/D2/card1": "A",
+        "d0/D2/card2": "A",
+        "d0/D2/card3": "A",
+        "d0/D3/card0": "D3 reports grade 0 for B.",
+        "d0/D3/card1": "D3 reports grade 2 for B.",
+        "d0/D3/card2": "D3 reports grade 3 for A.",
+        "d0/D3/card3": "D3 reports grade 3 for B."
+      },
+      "admission": {
+        "d0/D1/card0": {
+          "raw": "D1 reports grade 1 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d0/D1/card1": {
+          "raw": "D1 reports grade 2 for A.",
+          "admitted": true,
+          "intended_package": "B",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d0/D1/card2": {
+          "raw": "D1 reports grade 1 for A.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d0/D1/card3": {
+          "raw": "D1 reports grade 2 for A.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d0/D2/card0": {
+          "raw": "D2 reports grade 3 for C.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d0/D2/card1": {
+          "raw": "D2 reports grade 2 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d0/D2/card2": {
+          "raw": "D2 reports grade 3 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d0/D2/card3": {
+          "raw": "D2 reports grade 2 for A.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d0/D3/card0": {
+          "raw": "D3 reports grade 0 for B.",
+          "admitted": true,
+          "intended_package": "B",
+          "input_tokens": 91,
+          "output_tokens": 10
+        },
+        "d0/D3/card1": {
+          "raw": "D3 reports grade 2 for B.",
+          "admitted": true,
+          "intended_package": "B",
+          "input_tokens": 91,
+          "output_tokens": 10
+        },
+        "d0/D3/card2": {
+          "raw": "D3 reports grade 3 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 91,
+          "output_tokens": 10
+        },
+        "d0/D3/card3": {
+          "raw": "D3 reports grade 3 for B.",
+          "admitted": true,
+          "intended_package": "B",
+          "input_tokens": 91,
+          "output_tokens": 10
+        }
+      },
+      "priors": {
+        "uniform": {
+          "benchmark": {
+            "grade_only": {
+              "mean_net": 0.7163050000000002,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.4712500000000001
+            },
+            "partner_known": {
+              "mean_net": 0.7304800000000001,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.3700000000000001
+            },
+            "role_factored/0": {
+              "mean_net": 0.7163050000000002,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.4712500000000001
+            },
+            "role_factored/4": {
+              "mean_net": 0.70713396484375,
+              "mean_certified": 0.7703625585937501,
+              "mean_requests": 0.4516328125000001
+            },
+            "role_factored/16": {
+              "mean_net": 0.7068381250000001,
+              "mean_certified": 0.7699781250000002,
+              "mean_requests": 0.4510000000000001
+            },
+            "blend/16": {
+              "mean_net": 0.7108968261718751,
+              "mean_certified": 0.7758087011718752,
+              "mean_requests": 0.4636562500000001,
+              "mean_flexible_weight": 0.33947561587026115
+            }
+          },
+          "conservative": {
+            "grade_only": {
+              "mean_net": 0.7163050000000002,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.4712500000000001
+            },
+            "known_partner": {
+              "mean_net": 0.7304800000000001,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.3700000000000001
+            },
+            "0": {
+              "mean_net": 0.7163050000000002,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.4712500000000001,
+              "mean_lower_gain_bound": 0.0,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.0
+            },
+            "4": {
+              "mean_net": 0.7163050000000002,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.4712500000000001,
+              "mean_lower_gain_bound": 0.0,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.0
+            },
+            "16": {
+              "mean_net": 0.7163050000000002,
+              "mean_certified": 0.7822800000000002,
+              "mean_requests": 0.4712500000000001,
+              "mean_lower_gain_bound": 0.0,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.0
+            }
+          }
+        },
+        "correlated": {
+          "benchmark": {
+            "grade_only": {
+              "mean_net": 0.8171803750000002,
+              "mean_certified": 0.8640191250000002,
+              "mean_requests": 0.3345625000000001
+            },
+            "partner_known": {
+              "mean_net": 0.8250410312500002,
+              "mean_certified": 0.8637685312500002,
+              "mean_requests": 0.2766250000000001
+            },
+            "role_factored/0": {
+              "mean_net": 0.8172447812500001,
+              "mean_certified": 0.8637685312500001,
+              "mean_requests": 0.3323125000000001
+            },
+            "role_factored/4": {
+              "mean_net": 0.8128163198242189,
+              "mean_certified": 0.8580244526367189,
+              "mean_requests": 0.32291523437500014
+            },
+            "role_factored/16": {
+              "mean_net": 0.8120380000000001,
+              "mean_certified": 0.8570025000000001,
+              "mean_requests": 0.3211750000000001
+            },
+            "blend/16": {
+              "mean_net": 0.8161724672851564,
+              "mean_certified": 0.8625116469726564,
+              "mean_requests": 0.3309941406250001,
+              "mean_flexible_weight": 0.6253943966991032
+            }
+          },
+          "conservative": {
+            "grade_only": {
+              "mean_net": 0.8171803750000002,
+              "mean_certified": 0.8640191250000002,
+              "mean_requests": 0.3345625000000001
+            },
+            "known_partner": {
+              "mean_net": 0.8250410312500002,
+              "mean_certified": 0.8637685312500002,
+              "mean_requests": 0.2766250000000001
+            },
+            "0": {
+              "mean_net": 0.8171803750000002,
+              "mean_certified": 0.8640191250000002,
+              "mean_requests": 0.3345625000000001,
+              "mean_lower_gain_bound": 0.0,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.0
+            },
+            "4": {
+              "mean_net": 0.8172025146484376,
+              "mean_certified": 0.8639329833984377,
+              "mean_requests": 0.33378906250000007,
+              "mean_lower_gain_bound": 2.2139648437500017e-05,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.0007734375000000003
+            },
+            "16": {
+              "mean_net": 0.8172387431640626,
+              "mean_certified": 0.8637920244140626,
+              "mean_requests": 0.33252343750000013,
+              "mean_lower_gain_bound": 5.836816406250004e-05,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.002039062500000001
+            }
+          }
+        }
+      }
+    },
+    {
+      "domain": 1,
+      "cards": [
+        [
+          [
+            2,
+            3,
+            0
+          ],
+          [
+            3,
+            1,
+            1
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            3,
+            0,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            3,
+            0,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            3
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ]
+      ],
+      "intended_slots": [
+        [
+          2,
+          0,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          2
+        ]
+      ],
+      "observed_slots": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          2
+        ]
+      ],
+      "valid_for_stable_model": true,
+      "generated": {
+        "d1/D1/card0": "A",
+        "d1/D1/card1": "A",
+        "d1/D1/card2": "A",
+        "d1/D1/card3": "A",
+        "d1/D2/card0": "C",
+        "d1/D2/card1": "B",
+        "d1/D2/card2": "C",
+        "d1/D2/card3": "A",
+        "d1/D3/card0": "D3 reports grade 3 for C.",
+        "d1/D3/card1": "D3 reports grade 0 for A.",
+        "d1/D3/card2": "D3 reports grade 1 for A.",
+        "d1/D3/card3": "D3 reports grade 1 for C."
+      },
+      "admission": {
+        "d1/D1/card0": {
+          "raw": "D1 reports grade 2 for A.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d1/D1/card1": {
+          "raw": "D1 reports grade 3 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d1/D1/card2": {
+          "raw": "D1 reports grade 1 for A.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d1/D1/card3": {
+          "raw": "D1 reports grade 3 for A.",
+          "admitted": true,
+          "intended_package": "B",
+          "input_tokens": 141,
+          "output_tokens": 2
+        },
+        "d1/D2/card0": {
+          "raw": "D2 reports grade 2 for C.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d1/D2/card1": {
+          "raw": "D2 reports grade 1 for B.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d1/D2/card2": {
+          "raw": "D2 reports grade 1 for C.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d1/D2/card3": {
+          "raw": "D2 reports grade 3 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 120,
+          "output_tokens": 2
+        },
+        "d1/D3/card0": {
+          "raw": "D3 reports grade 3 for C.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 91,
+          "output_tokens": 10
+        },
+        "d1/D3/card1": {
+          "raw": "D3 reports grade 0 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 91,
+          "output_tokens": 10
+        },
+        "d1/D3/card2": {
+          "raw": "D3 reports grade 1 for A.",
+          "admitted": true,
+          "intended_package": "A",
+          "input_tokens": 91,
+          "output_tokens": 10
+        },
+        "d1/D3/card3": {
+          "raw": "D3 reports grade 1 for C.",
+          "admitted": true,
+          "intended_package": "C",
+          "input_tokens": 91,
+          "output_tokens": 10
+        }
+      },
+      "priors": {
+        "uniform": {
+          "benchmark": {
+            "grade_only": {
+              "mean_net": 0.8049881250000002,
+              "mean_certified": 0.8588531250000002,
+              "mean_requests": 0.38475000000000004
+            },
+            "partner_known": {
+              "mean_net": 0.8092026562500001,
+              "mean_certified": 0.8598782812500001,
+              "mean_requests": 0.36196875000000006
+            },
+            "role_factored/0": {
+              "mean_net": 0.8060132812500002,
+              "mean_certified": 0.8598782812500002,
+              "mean_requests": 0.38475000000000004
+            },
+            "role_factored/4": {
+              "mean_net": 0.8057569921875002,
+              "mean_certified": 0.8596219921875002,
+              "mean_requests": 0.38475000000000004
+            },
+            "role_factored/16": {
+              "mean_net": 0.8055647753906251,
+              "mean_certified": 0.8594297753906252,
+              "mean_requests": 0.38475000000000004
+            },
+            "blend/16": {
+              "mean_net": 0.8062802490234378,
+              "mean_certified": 0.8598462451171877,
+              "mean_requests": 0.3826142578125,
+              "mean_flexible_weight": 0.9743796154926679
+            }
+          },
+          "conservative": {
+            "grade_only": {
+              "mean_net": 0.8049881250000002,
+              "mean_certified": 0.8588531250000002,
+              "mean_requests": 0.38475000000000004
+            },
+            "known_partner": {
+              "mean_net": 0.8092026562500001,
+              "mean_certified": 0.8598782812500001,
+              "mean_requests": 0.36196875000000006
+            },
+            "0": {
+              "mean_net": 0.8049881250000002,
+              "mean_certified": 0.8588531250000002,
+              "mean_requests": 0.38475000000000004,
+              "mean_lower_gain_bound": 0.0,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.0
+            },
+            "4": {
+              "mean_net": 0.8078856152343752,
+              "mean_certified": 0.8595579199218751,
+              "mean_requests": 0.369087890625,
+              "mean_lower_gain_bound": 0.002897490234375001,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.019142578125000004
+            },
+            "16": {
+              "mean_net": 0.8090709521484376,
+              "mean_certified": 0.8598462451171875,
+              "mean_requests": 0.36268066406250005,
+              "mean_lower_gain_bound": 0.004082827148437501,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.026973632812500002
+            }
+          }
+        },
+        "correlated": {
+          "benchmark": {
+            "grade_only": {
+              "mean_net": 0.7092274921875001,
+              "mean_certified": 0.7599198515625002,
+              "mean_requests": 0.36208828125000014
+            },
+            "partner_known": {
+              "mean_net": 0.7112062968750001,
+              "mean_certified": 0.7593560156250001,
+              "mean_requests": 0.3439265625000001
+            },
+            "role_factored/0": {
+              "mean_net": 0.7013964375000001,
+              "mean_certified": 0.7503346406250001,
+              "mean_requests": 0.3495585937500001
+            },
+            "role_factored/4": {
+              "mean_net": 0.703843642089844,
+              "mean_certified": 0.7533300190429689,
+              "mean_requests": 0.3534741210937501
+            },
+            "role_factored/16": {
+              "mean_net": 0.7076554079589845,
+              "mean_certified": 0.7579640456542971,
+              "mean_requests": 0.35934741210937515
+            },
+            "blend/16": {
+              "mean_net": 0.7098570615234377,
+              "mean_certified": 0.758686460449219,
+              "mean_requests": 0.3487814208984376,
+              "mean_flexible_weight": 0.9568953514472872
+            }
+          },
+          "conservative": {
+            "grade_only": {
+              "mean_net": 0.7092274921875001,
+              "mean_certified": 0.7599198515625002,
+              "mean_requests": 0.36208828125000014
+            },
+            "known_partner": {
+              "mean_net": 0.7112062968750001,
+              "mean_certified": 0.7593560156250001,
+              "mean_requests": 0.3439265625000001
+            },
+            "0": {
+              "mean_net": 0.7092274921875001,
+              "mean_certified": 0.7599198515625002,
+              "mean_requests": 0.36208828125000014,
+              "mean_lower_gain_bound": 0.0,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.0
+            },
+            "4": {
+              "mean_net": 0.7105152854003908,
+              "mean_certified": 0.7597965124511721,
+              "mean_requests": 0.3520087646484376,
+              "mean_lower_gain_bound": 0.0012877932128906255,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.012080786132812504
+            },
+            "16": {
+              "mean_net": 0.7111276501464845,
+              "mean_certified": 0.7594088752441408,
+              "mean_requests": 0.3448658935546876,
+              "mean_lower_gain_bound": 0.0019001579589843754,
+              "min_history_gain": 0.0,
+              "negative_histories": 0,
+              "changed_request_probability": 0.019919750976562504
+            }
+          }
+        }
+      }
+    }
+  ]
+}

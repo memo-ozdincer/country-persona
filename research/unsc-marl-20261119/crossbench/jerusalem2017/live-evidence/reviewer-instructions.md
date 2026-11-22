@@ -1,0 +1,9 @@
+# Blinded review of a live chair supplement
+
+Review the eight packets separately. Each packet contains the candidate supplement, the focal slip, its five scored criteria, and the guard. The archived common paragraph already supplies the procedural record. It carries 35 points and is attached unchanged. Each focal criterion contributes seven points.
+
+Award a criterion only when every required component appears explicitly in the candidate and is supported by the evidence the chair received. For the first criterion, quote an exact span in the candidate and a supporting span in the focal slip. For criteria two through five, also quote the admitted backup note and the part of the underlying archival source that supports the note on that point. Each quote must be contiguous. The underlying source checks transport fidelity. It cannot supply a fact missing from the note. Where no backup was admitted, reserve criterion credit for the focal slip. A supported paraphrase earns the same credit as a verbatim statement.
+
+Check the guard separately. Identify the exact span if the candidate invents a reason, confuses a national statement with Council action, attaches an act to the wrong speaker or document, or presents a failed proposal as an operative requirement. Mark `failed` for a clear material error and `uncertain` for consequential ambiguity. Missing details alone reduce criterion credit. They do not fail the guard. The scorer checks the 85-word cap independently.
+
+Report, for each packet ID, the criteria met, the exact evidence spans, and the guard status with a brief reason. Method identity is absent from the packets. The analysis key is a separate file and should stay out of the review. These packets were prepared for a later blinded assessment. The scores in this directory use same-assistant review.

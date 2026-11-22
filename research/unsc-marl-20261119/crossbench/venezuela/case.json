@@ -1,0 +1,28 @@
+{
+  "family": "venezuela-dual-drafts-2019",
+  "roles": ["UNITED STATES", "RUSSIAN FEDERATION"],
+  "task": "In a fictional workshop, test compatibility on humanitarian needs assessment recommendations. You cannot adopt either historical draft or speak for the Council President.",
+  "options": [
+    {"id":"A","scope":"broad","coordination":"un","explicit_consent":false},
+    {"id":"B","scope":"staged","coordination":"joint","explicit_consent":true},
+    {"id":"C","scope":"focused","coordination":"host","explicit_consent":true},
+    {"id":"D","scope":"staged","coordination":"un","explicit_consent":true},
+    {"id":"E","scope":"focused","coordination":"joint","explicit_consent":true},
+    {"id":"F","scope":"broad","coordination":"joint","explicit_consent":true},
+    {"id":"G","scope":"staged","coordination":"joint","explicit_consent":false}
+  ],
+  "glossary": {
+    "focused":"Needs findings remain confidential in both cycles.",
+    "staged":"First-cycle findings stay confidential, with aggregate results guaranteed to be public in the second cycle.",
+    "broad":"Aggregate findings are public in the first cycle.",
+    "joint":"The United Nations and host government jointly coordinate the assessment.",
+    "host":"The host government leads coordination.",
+    "un":"The United Nations leads coordination."
+  },
+  "cards": {
+    "us": "Accept a workshop recommendation only if a UN-led or jointly coordinated assessment makes aggregate findings public by the second cycle. First-cycle publication is also acceptable. An explicit consent clause is optional.",
+    "ru-overlap": "Accept a workshop recommendation only if the assessment requires explicit host consent and either the host leads or coordination is joint. First-cycle findings must stay confidential. A public aggregate report in the second cycle is acceptable.",
+    "ru-impasse": "Accept a workshop recommendation only if the assessment requires explicit host consent and either the host leads or coordination is joint. Findings must stay confidential in both cycles. A public aggregate report in either cycle is unacceptable."
+  },
+  "later_only": {"us":["D","F"],"ru-overlap":["B","G"],"ru-impasse":["B","G"]}
+}

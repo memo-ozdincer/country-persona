@@ -1,0 +1,367 @@
+{
+  "official_two_order": {
+    "counts": {
+      "authority/correct": 4,
+      "authority/wrong": 1,
+      "causal_delivery/correct": 3,
+      "causal_delivery/uncertain": 1,
+      "causal_delivery/wrong": 1,
+      "new_idea/correct": 3,
+      "new_idea/uncertain": 1,
+      "new_idea/wrong": 1,
+      "public_acceptance/correct": 2,
+      "public_acceptance/uncertain": 3
+    },
+    "grades": {
+      "undelivered": {
+        "new_idea": "correct",
+        "public_acceptance": "uncertain",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "recovered": {
+        "new_idea": "correct",
+        "public_acceptance": "uncertain",
+        "causal_delivery": "wrong",
+        "authority": "correct"
+      },
+      "redundant_delivery": {
+        "new_idea": "correct",
+        "public_acceptance": "uncertain",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "new_proposition": {
+        "new_idea": "wrong",
+        "public_acceptance": "correct",
+        "causal_delivery": "uncertain",
+        "authority": "correct"
+      },
+      "invented_authority": {
+        "new_idea": "uncertain",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "wrong"
+      }
+    },
+    "contrasts": {
+      "undelivered": {
+        "expected_to_change": [
+          "public_acceptance",
+          "causal_delivery"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "authority"
+        ]
+      },
+      "redundant_delivery": {
+        "expected_to_change": [
+          "causal_delivery"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "authority"
+        ]
+      },
+      "new_proposition": {
+        "expected_to_change": [
+          "new_idea"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": [
+          "authority"
+        ]
+      },
+      "invented_authority": {
+        "expected_to_change": [
+          "authority"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": []
+      }
+    }
+  },
+  "exploratory_pool": {
+    "counts": {
+      "authority/correct": 4,
+      "authority/wrong": 1,
+      "causal_delivery/correct": 3,
+      "causal_delivery/wrong": 2,
+      "new_idea/correct": 4,
+      "new_idea/wrong": 1,
+      "public_acceptance/correct": 5
+    },
+    "grades": {
+      "undelivered": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "recovered": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "wrong",
+        "authority": "correct"
+      },
+      "redundant_delivery": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "new_proposition": {
+        "new_idea": "wrong",
+        "public_acceptance": "correct",
+        "causal_delivery": "wrong",
+        "authority": "correct"
+      },
+      "invented_authority": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "wrong"
+      }
+    },
+    "contrasts": {
+      "undelivered": {
+        "expected_to_change": [
+          "public_acceptance",
+          "causal_delivery"
+        ],
+        "changed_to_reference": [
+          "public_acceptance"
+        ],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "authority"
+        ]
+      },
+      "redundant_delivery": {
+        "expected_to_change": [
+          "causal_delivery"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "public_acceptance",
+          "authority"
+        ]
+      },
+      "new_proposition": {
+        "expected_to_change": [
+          "new_idea"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": [
+          "public_acceptance",
+          "authority"
+        ]
+      },
+      "invented_authority": {
+        "expected_to_change": [
+          "authority"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "public_acceptance"
+        ]
+      }
+    }
+  },
+  "typed_checks_with_model_authority": {
+    "counts": {
+      "authority/correct": 4,
+      "authority/wrong": 1,
+      "causal_delivery/correct": 5,
+      "new_idea/correct": 5,
+      "public_acceptance/correct": 5
+    },
+    "grades": {
+      "undelivered": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "recovered": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "redundant_delivery": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "new_proposition": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "correct"
+      },
+      "invented_authority": {
+        "new_idea": "correct",
+        "public_acceptance": "correct",
+        "causal_delivery": "correct",
+        "authority": "wrong"
+      }
+    },
+    "contrasts": {
+      "undelivered": {
+        "expected_to_change": [
+          "public_acceptance",
+          "causal_delivery"
+        ],
+        "changed_to_reference": [
+          "public_acceptance",
+          "causal_delivery"
+        ],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "authority"
+        ]
+      },
+      "redundant_delivery": {
+        "expected_to_change": [
+          "causal_delivery"
+        ],
+        "changed_to_reference": [
+          "causal_delivery"
+        ],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "public_acceptance",
+          "authority"
+        ]
+      },
+      "new_proposition": {
+        "expected_to_change": [
+          "new_idea"
+        ],
+        "changed_to_reference": [
+          "new_idea"
+        ],
+        "both_correct_on_unchanged": [
+          "public_acceptance",
+          "causal_delivery",
+          "authority"
+        ]
+      },
+      "invented_authority": {
+        "expected_to_change": [
+          "authority"
+        ],
+        "changed_to_reference": [],
+        "both_correct_on_unchanged": [
+          "new_idea",
+          "public_acceptance",
+          "causal_delivery"
+        ]
+      }
+    }
+  },
+  "raw_profile_order": {
+    "undelivered": [
+      [
+        [
+          "same",
+          "none",
+          "unchanged",
+          "clear"
+        ]
+      ],
+      [
+        [
+          "same",
+          "received",
+          "unchanged",
+          "clear"
+        ]
+      ]
+    ],
+    "recovered": [
+      [
+        [
+          "same",
+          "none",
+          "unchanged",
+          "clear"
+        ]
+      ],
+      [
+        [
+          "same",
+          "received",
+          "unchanged",
+          "clear"
+        ]
+      ]
+    ],
+    "redundant_delivery": [
+      [
+        [
+          "same",
+          "none",
+          "unchanged",
+          "clear"
+        ]
+      ],
+      [
+        [
+          "same",
+          "received",
+          "unchanged",
+          "clear"
+        ]
+      ]
+    ],
+    "new_proposition": [
+      [
+        [
+          "same",
+          "received",
+          "changed",
+          "clear"
+        ]
+      ],
+      [
+        [
+          "same",
+          "received",
+          "unchanged",
+          "clear"
+        ]
+      ]
+    ],
+    "invented_authority": [
+      [
+        [
+          "same",
+          "received",
+          "changed",
+          "clear"
+        ]
+      ],
+      [
+        [
+          "new",
+          "received",
+          "changed",
+          "clear"
+        ]
+      ]
+    ]
+  },
+  "input_tokens": 12786,
+  "choice_mass_range": [
+    0.9869725704193115,
+    0.9909129738807678
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "scope": "Isolated public-state test. Same requester signs, public record, credit and legal query for three peer states.",
+  "identical_pre_query_signature": true,
+  "match": {
+    "positive": {
+      "before": [
+        1,
+        0,
+        2,
+        0
+      ],
+      "after": [
+        1,
+        0,
+        3,
+        0
+      ],
+      "receipt": {
+        "asker": 0,
+        "respondent": 1,
+        "slot": 0,
+        "target": 1,
+        "reply": true,
+        "admitted": true
+      },
+      "certified": true
+    },
+    "negative": {
+      "before": [
+        1,
+        0,
+        2,
+        0
+      ],
+      "after": [
+        1,
+        0,
+        2,
+        1
+      ],
+      "receipt": {
+        "asker": 0,
+        "respondent": 1,
+        "slot": 0,
+        "target": 1,
+        "reply": false,
+        "admitted": true
+      },
+      "certified": false
+    },
+    "unknown": {
+      "before": [
+        1,
+        0,
+        2,
+        0
+      ],
+      "after": [
+        1,
+        0,
+        2,
+        0
+      ],
+      "receipt": {
+        "asker": 0,
+        "respondent": 1,
+        "slot": 0,
+        "target": 1,
+        "reply": null,
+        "admitted": false
+      },
+      "certified": false
+    }
+  },
+  "single_remaining_impasse_package": {
+    "receipt": {
+      "asker": 0,
+      "respondent": 1,
+      "slot": 1,
+      "target": 4,
+      "reply": false,
+      "admitted": true
+    },
+    "after": [
+      1,
+      2,
+      2,
+      13
+    ],
+    "certified": true
+  }
+}

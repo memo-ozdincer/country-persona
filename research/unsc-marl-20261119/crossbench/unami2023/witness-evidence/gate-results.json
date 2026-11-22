@@ -1,0 +1,123 @@
+{
+  "groups": {
+    "authored": {
+      "accepted_wrong": 0,
+      "accepted_right": 13,
+      "sent_to_review": 8,
+      "changed": [
+        {
+          "id": "reference",
+          "field": "consult",
+          "truth": "supported"
+        },
+        {
+          "id": "review-recipient",
+          "field": "deliverable",
+          "truth": "contradicted"
+        }
+      ],
+      "outcomes": {
+        "supported": 13,
+        "null": 8,
+        "omitted": 1,
+        "contradicted": 2
+      }
+    },
+    "generated": {
+      "accepted_wrong": 0,
+      "accepted_right": 14,
+      "sent_to_review": 3,
+      "changed": [
+        {
+          "id": "record-1",
+          "field": "consult",
+          "truth": "omitted"
+        },
+        {
+          "id": "record-2",
+          "field": "recommend",
+          "truth": "omitted"
+        }
+      ],
+      "outcomes": {
+        "omitted": 10,
+        "supported": 14,
+        "contradicted": 3,
+        "null": 3
+      }
+    }
+  },
+  "binding_controls": [
+    {
+      "id": "consult-positive",
+      "field": "consult",
+      "evidence": "The review must consult Iraq, Kuwait and civil society.",
+      "should_allow": true,
+      "allowed": true
+    },
+    {
+      "id": "consult-distractor",
+      "field": "consult",
+      "evidence": "The review must consult Iraq and UN agencies. Kuwait supported the extension.",
+      "should_allow": false,
+      "allowed": false
+    },
+    {
+      "id": "consult-exclusion",
+      "field": "consult",
+      "evidence": "The review must consult Iraq and civil society, excluding Kuwait.",
+      "should_allow": false,
+      "allowed": false
+    },
+    {
+      "id": "consult-paraphrase",
+      "field": "consult",
+      "evidence": "The review must seek the views of Iraq, Kuwait and civil society.",
+      "should_allow": true,
+      "allowed": false
+    },
+    {
+      "id": "review-positive",
+      "field": "deliverable",
+      "evidence": "The Secretary-General was asked to conduct the independent strategic review and submit it to the Council by 31 March 2024.",
+      "should_allow": true,
+      "allowed": true
+    },
+    {
+      "id": "review-reversed",
+      "field": "deliverable",
+      "evidence": "The Council was asked to conduct the independent strategic review and submit it to the Secretary-General by 31 March 2024.",
+      "should_allow": false,
+      "allowed": false
+    },
+    {
+      "id": "review-bystander",
+      "field": "deliverable",
+      "evidence": "The Secretary-General was asked to conduct the independent strategic review and submit it to Iraq by 31 March 2024.",
+      "should_allow": false,
+      "allowed": false
+    },
+    {
+      "id": "recommend-positive",
+      "field": "recommend",
+      "evidence": "The review was to assess relevance and make recommendations regarding the mandate, structure and staffing.",
+      "should_allow": true,
+      "allowed": true
+    },
+    {
+      "id": "recommend-evaluation",
+      "field": "recommend",
+      "evidence": "The review will assess the relevance of the mandate and its staffing.",
+      "should_allow": false,
+      "allowed": false
+    },
+    {
+      "id": "recommend-counterfactual",
+      "field": "recommend",
+      "evidence": "If the scope were broader, the review would assess relevance and make recommendations on the mandate.",
+      "should_allow": false,
+      "allowed": true
+    }
+  ],
+  "scope": "Posthoc requirements for three observed false-credit modes. A missing proof form refers a case for review. The authored controls include expected failures and do not certify entailment."
+}

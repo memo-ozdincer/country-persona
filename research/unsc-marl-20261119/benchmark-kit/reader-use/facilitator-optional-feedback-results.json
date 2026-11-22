@@ -1,0 +1,9025 @@
+{
+  "scope": "Two exact joint fits on the same synthetic relation pairs and send fees. The optional actor can decline acknowledgment and the mandatory arm is repriced during training too. The second actor sees either the delivered acknowledgment or silence. Archived language cases and grades are used only in transfer evaluation. No LLM updates.",
+  "payload_fee": 0.1,
+  "ack_attempt_fee": 0.1,
+  "updates_per_fit": 180,
+  "traces": {
+    "optional": {
+      "states": 160,
+      "trajectory_rows": 6834,
+      "training_trace": [
+        {
+          "step": 0,
+          "record_reward": -0.047066666666666666
+        },
+        {
+          "step": 30,
+          "record_reward": 0.19993483246241814
+        },
+        {
+          "step": 90,
+          "record_reward": 0.22264760983696025
+        },
+        {
+          "step": 180,
+          "record_reward": 0.22799103721077982
+        }
+      ]
+    },
+    "mandatory_priced": {
+      "states": 160,
+      "trajectory_rows": 5132,
+      "training_trace": [
+        {
+          "step": 0,
+          "record_reward": -0.0703333333333333
+        },
+        {
+          "step": 30,
+          "record_reward": 0.19436091003711134
+        },
+        {
+          "step": 90,
+          "record_reward": 0.20494708613661242
+        },
+        {
+          "step": 180,
+          "record_reward": 0.20626043258413806
+        }
+      ]
+    }
+  },
+  "evaluations": {
+    "development": {
+      "split": {
+        "optional_ack": {
+          "mean": {
+            "payload_attempts": 1.4974099139195747,
+            "ack_attempts": 0.005240389851637171,
+            "ack_deliveries": 0.004192311881309734,
+            "payoff": 0.08527954866851792,
+            "usable_retain": 0.0854212205156761,
+            "usable_revise": 0.18553217858947327,
+            "false_action": 0.18567385043663145,
+            "net": -0.06498548170860327
+          },
+          "panels": {
+            "unifil-0": {
+              "payload_attempts": 1.6654975337385176,
+              "ack_attempts": 0.0008767175674266116,
+              "ack_deliveries": 0.0007013740539412892,
+              "payoff": 0.3416848820627044,
+              "usable_retain": 0.3416848820627044,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.17504745693211
+            },
+            "unifil-3": {
+              "payload_attempts": 1.6594026680335932,
+              "ack_attempts": 0.010560602143011636,
+              "ack_deliveries": 0.008448481714409317,
+              "payoff": -0.7426954017465258,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.7426954017465258,
+              "net": -0.9096917287641862
+            },
+            "colombia-0": {
+              "payload_attempts": 1.6654975337385176,
+              "ack_attempts": 0.0008767175674266116,
+              "ack_deliveries": 0.0007013740539412892,
+              "payoff": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": -0.16663742513059443
+            },
+            "colombia-1": {
+              "payload_attempts": 0.9992419201676704,
+              "ack_attempts": 0.008647522128683825,
+              "ack_deliveries": 0.00691801770294704,
+              "payoff": 0.7421287143578931,
+              "usable_retain": 0.0,
+              "usable_revise": 0.7421287143578931,
+              "false_action": 0.0,
+              "net": 0.6413397701282576
+            }
+          }
+        },
+        "same_policy_ack_erased": {
+          "mean": {
+            "payload_attempts": 1.499741796261335,
+            "ack_attempts": 0.005240389851637171,
+            "ack_deliveries": 0.004192311881309739,
+            "payoff": 0.08527466035715323,
+            "usable_retain": 0.08541600626021648,
+            "usable_revise": 0.18553544744342984,
+            "false_action": 0.1856767933464931,
+            "net": -0.06522355825414401
+          },
+          "panels": {
+            "unifil-0": {
+              "payload_attempts": 1.6658797813408437,
+              "ack_attempts": 0.0008767175674266097,
+              "ack_deliveries": 0.0007013740539412876,
+              "payoff": 0.3416640250408659,
+              "usable_retain": 0.3416640250408659,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.17498837515003887
+            },
+            "unifil-3": {
+              "payload_attempts": 1.6656220893318614,
+              "ack_attempts": 0.010560602143011652,
+              "ack_deliveries": 0.00844848171440934,
+              "payoff": -0.7427071733859724,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.7427071733859724,
+              "net": -0.9103254425334597
+            },
+            "colombia-0": {
+              "payload_attempts": 1.6658797813408437,
+              "ack_attempts": 0.0008767175674266097,
+              "ack_deliveries": 0.0007013740539412876,
+              "payoff": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": -0.16667564989082703
+            },
+            "colombia-1": {
+              "payload_attempts": 1.0015855330317913,
+              "ack_attempts": 0.008647522128683813,
+              "ack_deliveries": 0.006918017702947043,
+              "payoff": 0.7421417897737194,
+              "usable_retain": 0.0,
+              "usable_revise": 0.7421417897737194,
+              "false_action": 0.0,
+              "net": 0.6411184842576718
+            }
+          }
+        },
+        "mandatory_priced": {
+          "mean": {
+            "payload_attempts": 0.5410353221848643,
+            "ack_attempts": 0.30165758293610623,
+            "ack_deliveries": 0.2413260663488849,
+            "payoff": 0.010377723956708697,
+            "usable_retain": 0.01049893820806553,
+            "usable_revise": 0.185456669653834,
+            "false_action": 0.18557788390519084,
+            "net": -0.07389156655538835
+          },
+          "panels": {
+            "unifil-0": {
+              "payload_attempts": 0.21859134012864437,
+              "ack_attempts": 0.15265745408339396,
+              "ack_deliveries": 0.12212596326671532,
+              "payoff": 0.04199575283226212,
+              "usable_retain": 0.04199575283226212,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.004870873411058284
+            },
+            "unifil-3": {
+              "payload_attempts": 0.8637575947137621,
+              "ack_attempts": 0.4509099911310679,
+              "ack_deliveries": 0.36072799290485436,
+              "payoff": -0.7423115356207634,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.7423115356207634,
+              "net": -0.8737782942052463
+            },
+            "colombia-0": {
+              "payload_attempts": 0.21859134012864437,
+              "ack_attempts": 0.15265745408339396,
+              "ack_deliveries": 0.12212596326671532,
+              "payoff": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": -0.037124879421203835
+            },
+            "colombia-1": {
+              "payload_attempts": 0.8632010137684064,
+              "ack_attempts": 0.45040543244656905,
+              "ack_deliveries": 0.3603243459572546,
+              "payoff": 0.741826678615336,
+              "usable_retain": 0.0,
+              "usable_revise": 0.741826678615336,
+              "false_action": 0.0,
+              "net": 0.6104660339938385
+            }
+          }
+        },
+        "learned": {
+          "mean": {
+            "net": -0.10304915610839824,
+            "usable_retain": 0.07896447756466358,
+            "usable_revise": 0.18544038498240428,
+            "false_action": 0.18559229473107858,
+            "payload_attempts": 1.1440157755187101,
+            "ack_attempts": 0.674601463725165
+          }
+        },
+        "learned_erased": {
+          "mean": {
+            "net": -0.09673871626805129,
+            "usable_retain": 0.011873903898063655,
+            "usable_revise": 0.185431578988219,
+            "false_action": 0.18553337109927642,
+            "payload_attempts": 1.0851082805505752,
+            "ack_attempts": 0.0
+          }
+        },
+        "independent": {
+          "mean": {
+            "net": -0.06467058404157283,
+            "usable_retain": 0.0854298057417833,
+            "usable_revise": 0.1853133900077952,
+            "false_action": 0.18547380048823517,
+            "payload_attempts": 1.4993997930291616,
+            "ack_attempts": 0.0
+          }
+        },
+        "greedy": {
+          "mean": {
+            "net": -0.10465384615384617,
+            "usable_retain": 0.09346153846153847,
+            "usable_revise": 0.18605769230769242,
+            "false_action": 0.18605769230769237,
+            "payload_attempts": 1.3061538461538469,
+            "ack_attempts": 0.675
+          }
+        },
+        "greedy_independent": {
+          "mean": {
+            "net": -0.06692307692307696,
+            "usable_retain": 0.08307692307692309,
+            "usable_revise": 0.18605769230769242,
+            "false_action": 0.18605769230769237,
+            "payload_attempts": 1.5000000000000009,
+            "ack_attempts": 0.0
+          }
+        }
+      },
+      "overlap": {
+        "optional_ack": {
+          "mean": {
+            "payload_attempts": 1.4968477065617132,
+            "ack_attempts": 0.005240389851637176,
+            "ack_deliveries": 0.004192311881309733,
+            "payoff": 0.062032473147295375,
+            "usable_retain": 0.06215557773537919,
+            "usable_revise": 0.16230648001733872,
+            "false_action": 0.16242958460542253,
+            "net": -0.08817633649403968
+          },
+          "panels": {
+            "unifil-0": {
+              "payload_attempts": 1.6654686626248372,
+              "ack_attempts": 0.0008767175674266112,
+              "ack_deliveries": 0.0007013740539412891,
+              "payoff": 0.24862231094151677,
+              "usable_retain": 0.24862231094151677,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.08198777292229038
+            },
+            "unifil-3": {
+              "payload_attempts": 1.6586298022606387,
+              "ack_attempts": 0.010560602143011648,
+              "ack_deliveries": 0.008448481714409315,
+              "payoff": -0.6497183384216901,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.6497183384216901,
+              "net": -0.8166373788620552
+            },
+            "colombia-0": {
+              "payload_attempts": 1.6654686626248372,
+              "ack_attempts": 0.0008767175674266112,
+              "ack_deliveries": 0.0007013740539412891,
+              "payoff": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": -0.16663453801922637
+            },
+            "colombia-1": {
+              "payload_attempts": 0.9978236987365396,
+              "ack_attempts": 0.008647522128683834,
+              "ack_deliveries": 0.006918017702947039,
+              "payoff": 0.6492259200693549,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6492259200693549,
+              "false_action": 0.0,
+              "net": 0.5485787979828325
+            }
+          }
+        },
+        "same_policy_ack_erased": {
+          "mean": {
+            "payload_attempts": 1.4997417962613375,
+            "ack_attempts": 0.005240389851637176,
+            "ack_deliveries": 0.004192311881309738,
+            "payoff": 0.062026104263284934,
+            "usable_retain": 0.0621490724178201,
+            "usable_revise": 0.1623092028656969,
+            "false_action": 0.16243217102023205,
+            "net": -0.08847211434801254
+          },
+          "panels": {
+            "unifil-0": {
+              "payload_attempts": 1.6658797813408457,
+              "ack_attempts": 0.0008767175674266092,
+              "ack_deliveries": 0.0007013740539412877,
+              "payoff": 0.2485962896712804,
+              "usable_retain": 0.2485962896712804,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.08192063978045315
+            },
+            "unifil-3": {
+              "payload_attempts": 1.6656220893318654,
+              "ack_attempts": 0.010560602143011655,
+              "ack_deliveries": 0.008448481714409328,
+              "payoff": -0.6497286840809282,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.6497286840809282,
+              "net": -0.8173469532284159
+            },
+            "colombia-0": {
+              "payload_attempts": 1.6658797813408457,
+              "ack_attempts": 0.0008767175674266092,
+              "ack_deliveries": 0.0007013740539412877,
+              "payoff": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": -0.16667564989082723
+            },
+            "colombia-1": {
+              "payload_attempts": 1.001585533031793,
+              "ack_attempts": 0.00864752212868383,
+              "ack_deliveries": 0.006918017702947047,
+              "payoff": 0.6492368114627876,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6492368114627876,
+              "false_action": 0.0,
+              "net": 0.5482135059467398
+            }
+          }
+        },
+        "mandatory_priced": {
+          "mean": {
+            "payload_attempts": 0.5133621776663277,
+            "ack_attempts": 0.3016575829361062,
+            "ack_deliveries": 0.24132606634888493,
+            "payoff": 0.016518406762490126,
+            "usable_retain": 0.01662857403680125,
+            "usable_revise": 0.16225276097049282,
+            "false_action": 0.16236292824480394,
+            "net": -0.06498356929775327
+          },
+          "panels": {
+            "unifil-0": {
+              "payload_attempts": 0.2457347910886045,
+              "ack_attempts": 0.15265745408339385,
+              "ack_deliveries": 0.12212596326671529,
+              "payoff": 0.066514296147205,
+              "usable_retain": 0.066514296147205,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.02667507163000516
+            },
+            "unifil-3": {
+              "payload_attempts": 0.781269946063031,
+              "ack_attempts": 0.450909991131068,
+              "ack_deliveries": 0.36072799290485413,
+              "payoff": -0.6494517129792158,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.6494517129792158,
+              "net": -0.7726697066986257
+            },
+            "colombia-0": {
+              "payload_attempts": 0.2457347910886045,
+              "ack_attempts": 0.15265745408339385,
+              "ack_deliveries": 0.12212596326671529,
+              "payoff": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": -0.03983922451719984
+            },
+            "colombia-1": {
+              "payload_attempts": 0.7807091824250711,
+              "ack_attempts": 0.45040543244656905,
+              "ack_deliveries": 0.36032434595725493,
+              "payoff": 0.6490110438819713,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6490110438819713,
+              "false_action": 0.0,
+              "net": 0.5258995823948073
+            }
+          }
+        },
+        "learned": {
+          "mean": {
+            "net": -0.11125897978384608,
+            "usable_retain": 0.061101340677358264,
+            "usable_revise": 0.1622427217000597,
+            "false_action": 0.16237158862530493,
+            "payload_attempts": 1.0477130716344263,
+            "ack_attempts": 0.674601463725165
+          }
+        },
+        "learned_erased": {
+          "mean": {
+            "net": -0.09296895670141603,
+            "usable_retain": 0.015642318498121206,
+            "usable_revise": 0.1622336363907706,
+            "false_action": 0.1623340835352502,
+            "payload_attempts": 1.0851082805505763,
+            "ack_attempts": 0.0
+          }
+        },
+        "independent": {
+          "mean": {
+            "net": -0.08792961864485051,
+            "usable_retain": 0.06215863497525216,
+            "usable_revise": 0.16214505044041566,
+            "false_action": 0.16229332475760205,
+            "payload_attempts": 1.4993997930291627,
+            "ack_attempts": 0.0
+          }
+        },
+        "greedy": {
+          "mean": {
+            "net": -0.11988461538461544,
+            "usable_retain": 0.06853846153846156,
+            "usable_revise": 0.16269230769230777,
+            "false_action": 0.16269230769230775,
+            "payload_attempts": 1.2092307692307702,
+            "ack_attempts": 0.675
+          }
+        },
+        "greedy_independent": {
+          "mean": {
+            "net": -0.09807692307692312,
+            "usable_retain": 0.05192307692307693,
+            "usable_revise": 0.16269230769230777,
+            "false_action": 0.16269230769230772,
+            "payload_attempts": 1.5000000000000009,
+            "ack_attempts": 0.0
+          }
+        }
+      }
+    },
+    "transfer": {
+      "split": {
+        "optional_ack": {
+          "mean": {
+            "payload_attempts": 1.6624501008860553,
+            "ack_attempts": 0.005718659855219124,
+            "ack_deliveries": 0.004574927884175304,
+            "payoff": 0.46013091886469154,
+            "usable_retain": 0.1708424410313522,
+            "usable_revise": 0.28928847783333933,
+            "false_action": 0.0,
+            "net": 0.29331404279056406
+          },
+          "panels": {
+            "abyei-0": {
+              "payload_attempts": 1.6654975337385176,
+              "ack_attempts": 0.0008767175674266116,
+              "ack_deliveries": 0.0007013740539412892,
+              "payoff": 0.3416848820627044,
+              "usable_retain": 0.3416848820627044,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.17504745693211
+            },
+            "abyei-1": {
+              "payload_attempts": 1.6594026680335932,
+              "ack_attempts": 0.010560602143011636,
+              "ack_deliveries": 0.008448481714409317,
+              "payoff": 0.7426954017465258,
+              "usable_retain": 0.0,
+              "usable_revise": 0.7426954017465258,
+              "false_action": 0.0,
+              "net": 0.5756990747288654
+            },
+            "central-african-republic-0": {
+              "payload_attempts": 1.6654975337385176,
+              "ack_attempts": 0.0008767175674266116,
+              "ack_deliveries": 0.0007013740539412892,
+              "payoff": 0.3416848820627044,
+              "usable_retain": 0.3416848820627044,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.17504745693211
+            },
+            "central-african-republic-1": {
+              "payload_attempts": 1.6594026680335932,
+              "ack_attempts": 0.010560602143011636,
+              "ack_deliveries": 0.008448481714409317,
+              "payoff": 0.41445850958683145,
+              "usable_retain": 0.0,
+              "usable_revise": 0.41445850958683145,
+              "false_action": 0.0,
+              "net": 0.24746218256917096
+            }
+          }
+        },
+        "same_policy_ack_erased": {
+          "mean": {
+            "payload_attempts": 1.6657509353363524,
+            "ack_attempts": 0.005718659855219131,
+            "ack_deliveries": 0.004574927884175314,
+            "payoff": 0.4594374524116536,
+            "usable_retain": 0.17083201252043295,
+            "usable_revise": 0.28860543989122067,
+            "false_action": 0.0,
+            "net": 0.2922904928924964
+          },
+          "panels": {
+            "abyei-0": {
+              "payload_attempts": 1.6658797813408437,
+              "ack_attempts": 0.0008767175674266097,
+              "ack_deliveries": 0.0007013740539412876,
+              "payoff": 0.3416640250408659,
+              "usable_retain": 0.3416640250408659,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.17498837515003887
+            },
+            "abyei-1": {
+              "payload_attempts": 1.6656220893318614,
+              "ack_attempts": 0.010560602143011652,
+              "ack_deliveries": 0.00844848171440934,
+              "payoff": 0.7427071733859724,
+              "usable_retain": 0.0,
+              "usable_revise": 0.7427071733859724,
+              "false_action": 0.0,
+              "net": 0.575088904238485
+            },
+            "central-african-republic-0": {
+              "payload_attempts": 1.6658797813408437,
+              "ack_attempts": 0.0008767175674266097,
+              "ack_deliveries": 0.0007013740539412876,
+              "payoff": 0.3416640250408659,
+              "usable_retain": 0.3416640250408659,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.17498837515003887
+            },
+            "central-african-republic-1": {
+              "payload_attempts": 1.6656220893318614,
+              "ack_attempts": 0.010560602143011652,
+              "ack_deliveries": 0.00844848171440934,
+              "payoff": 0.4117145861789103,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4117145861789103,
+              "false_action": 0.0,
+              "net": 0.244096317031423
+            }
+          }
+        },
+        "mandatory_priced": {
+          "mean": {
+            "payload_attempts": 0.5411744674212032,
+            "ack_attempts": 0.3017837226072309,
+            "ack_deliveries": 0.24142697808578484,
+            "payoff": 0.3919780264114207,
+            "usable_retain": 0.02099787641613106,
+            "usable_revise": 0.3709801499952896,
+            "false_action": 0.0,
+            "net": 0.30768220740857727
+          },
+          "panels": {
+            "abyei-0": {
+              "payload_attempts": 0.21859134012864437,
+              "ack_attempts": 0.15265745408339396,
+              "ack_deliveries": 0.12212596326671532,
+              "payoff": 0.04199575283226212,
+              "usable_retain": 0.04199575283226212,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.004870873411058284
+            },
+            "abyei-1": {
+              "payload_attempts": 0.8637575947137621,
+              "ack_attempts": 0.4509099911310679,
+              "ack_deliveries": 0.36072799290485436,
+              "payoff": 0.7423115356207634,
+              "usable_retain": 0.0,
+              "usable_revise": 0.7423115356207634,
+              "false_action": 0.0,
+              "net": 0.6108447770362804
+            },
+            "central-african-republic-0": {
+              "payload_attempts": 0.21859134012864437,
+              "ack_attempts": 0.15265745408339396,
+              "ack_deliveries": 0.12212596326671532,
+              "payoff": 0.04199575283226212,
+              "usable_retain": 0.04199575283226212,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.004870873411058284
+            },
+            "central-african-republic-1": {
+              "payload_attempts": 0.8637575947137621,
+              "ack_attempts": 0.4509099911310679,
+              "ack_deliveries": 0.36072799290485436,
+              "payoff": 0.7416090643603952,
+              "usable_retain": 0.0,
+              "usable_revise": 0.7416090643603952,
+              "false_action": 0.0,
+              "net": 0.6101423057759122
+            }
+          }
+        },
+        "learned": {
+          "mean": {
+            "net": 0.29000663643777946,
+            "usable_retain": 0.15792895512932717,
+            "usable_revise": 0.3297190032611812,
+            "false_action": 0.0,
+            "payload_attempts": 1.2271144265606662,
+            "ack_attempts": 0.7492987929666228
+          }
+        },
+        "learned_erased": {
+          "mean": {
+            "net": 0.2364736720580224,
+            "usable_retain": 0.02374780779612731,
+            "usable_revise": 0.32956150787497146,
+            "false_action": 0.0,
+            "payload_attempts": 1.1683564361307637,
+            "ack_attempts": 0.0
+          }
+        },
+        "independent": {
+          "mean": {
+            "net": 0.29260928823007054,
+            "usable_retain": 0.1708596114835666,
+            "usable_revise": 0.2882919492272231,
+            "false_action": 0.0,
+            "payload_attempts": 1.6654227248071918,
+            "ack_attempts": 0.0
+          }
+        },
+        "greedy": {
+          "mean": {
+            "net": 0.2919871794871795,
+            "usable_retain": 0.18692307692307694,
+            "usable_revise": 0.32226923076923086,
+            "false_action": 0.0,
+            "payload_attempts": 1.422051282051283,
+            "ack_attempts": 0.75
+          }
+        },
+        "greedy_independent": {
+          "mean": {
+            "net": 0.288525641025641,
+            "usable_retain": 0.16615384615384618,
+            "usable_revise": 0.28903846153846163,
+            "false_action": 0.0,
+            "payload_attempts": 1.6666666666666679,
+            "ack_attempts": 0.0
+          }
+        }
+      },
+      "overlap": {
+        "optional_ack": {
+          "mean": {
+            "payload_attempts": 1.662049232442738,
+            "ack_attempts": 0.00571865985521913,
+            "ack_deliveries": 0.004574927884175302,
+            "payoff": 0.39787193161872214,
+            "usable_retain": 0.12431115547075838,
+            "usable_revise": 0.27356077614796376,
+            "false_action": 0.0,
+            "net": 0.23109514238892642
+          },
+          "panels": {
+            "abyei-0": {
+              "payload_attempts": 1.6654686626248372,
+              "ack_attempts": 0.0008767175674266112,
+              "ack_deliveries": 0.0007013740539412891,
+              "payoff": 0.24862231094151677,
+              "usable_retain": 0.24862231094151677,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.08198777292229038
+            },
+            "abyei-1": {
+              "payload_attempts": 1.6586298022606387,
+              "ack_attempts": 0.010560602143011648,
+              "ack_deliveries": 0.008448481714409315,
+              "payoff": 0.6497183384216901,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6497183384216901,
+              "false_action": 0.0,
+              "net": 0.4827992979813251
+            },
+            "central-african-republic-0": {
+              "payload_attempts": 1.6654686626248372,
+              "ack_attempts": 0.0008767175674266112,
+              "ack_deliveries": 0.0007013740539412891,
+              "payoff": 0.24862231094151677,
+              "usable_retain": 0.24862231094151677,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.08198777292229038
+            },
+            "central-african-republic-1": {
+              "payload_attempts": 1.6586298022606387,
+              "ack_attempts": 0.010560602143011648,
+              "ack_deliveries": 0.008448481714409315,
+              "payoff": 0.44452476617016484,
+              "usable_retain": 0.0,
+              "usable_revise": 0.44452476617016484,
+              "false_action": 0.0,
+              "net": 0.2776057257297998
+            }
+          }
+        },
+        "same_policy_ack_erased": {
+          "mean": {
+            "payload_attempts": 1.6657509353363555,
+            "ack_attempts": 0.0057186598552191326,
+            "ack_deliveries": 0.004574927884175308,
+            "payoff": 0.3974069542000254,
+            "usable_retain": 0.1242981448356402,
+            "usable_revise": 0.2731088093643852,
+            "false_action": 0.0,
+            "net": 0.23025999468086797
+          },
+          "panels": {
+            "abyei-0": {
+              "payload_attempts": 1.6658797813408457,
+              "ack_attempts": 0.0008767175674266092,
+              "ack_deliveries": 0.0007013740539412877,
+              "payoff": 0.2485962896712804,
+              "usable_retain": 0.2485962896712804,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.08192063978045315
+            },
+            "abyei-1": {
+              "payload_attempts": 1.6656220893318654,
+              "ack_attempts": 0.010560602143011655,
+              "ack_deliveries": 0.008448481714409328,
+              "payoff": 0.6497286840809282,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6497286840809282,
+              "false_action": 0.0,
+              "net": 0.48211041493344053
+            },
+            "central-african-republic-0": {
+              "payload_attempts": 1.6658797813408457,
+              "ack_attempts": 0.0008767175674266092,
+              "ack_deliveries": 0.0007013740539412877,
+              "payoff": 0.2485962896712804,
+              "usable_retain": 0.2485962896712804,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.08192063978045315
+            },
+            "central-african-republic-1": {
+              "payload_attempts": 1.6656220893318654,
+              "ack_attempts": 0.010560602143011655,
+              "ack_deliveries": 0.008448481714409328,
+              "payoff": 0.4427065533766127,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4427065533766127,
+              "false_action": 0.0,
+              "net": 0.275088284229125
+            }
+          }
+        },
+        "mandatory_priced": {
+          "mean": {
+            "payload_attempts": 0.5135023685758178,
+            "ack_attempts": 0.3017837226072309,
+            "ack_deliveries": 0.24142697808578473,
+            "payoff": 0.35783877611626147,
+            "usable_retain": 0.0332571480736025,
+            "usable_revise": 0.324581628042659,
+            "false_action": 0.0,
+            "net": 0.27631016699795663
+          },
+          "panels": {
+            "abyei-0": {
+              "payload_attempts": 0.2457347910886045,
+              "ack_attempts": 0.15265745408339385,
+              "ack_deliveries": 0.12212596326671529,
+              "payoff": 0.066514296147205,
+              "usable_retain": 0.066514296147205,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.02667507163000516
+            },
+            "abyei-1": {
+              "payload_attempts": 0.781269946063031,
+              "ack_attempts": 0.450909991131068,
+              "ack_deliveries": 0.36072799290485413,
+              "payoff": 0.6494517129792158,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6494517129792158,
+              "false_action": 0.0,
+              "net": 0.5262337192598059
+            },
+            "central-african-republic-0": {
+              "payload_attempts": 0.2457347910886045,
+              "ack_attempts": 0.15265745408339385,
+              "ack_deliveries": 0.12212596326671529,
+              "payoff": 0.066514296147205,
+              "usable_retain": 0.066514296147205,
+              "usable_revise": 0.0,
+              "false_action": 0.0,
+              "net": 0.02667507163000516
+            },
+            "central-african-republic-1": {
+              "payload_attempts": 0.781269946063031,
+              "ack_attempts": 0.450909991131068,
+              "ack_deliveries": 0.36072799290485413,
+              "payoff": 0.6488747991914201,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6488747991914201,
+              "false_action": 0.0,
+              "net": 0.5256568054720102
+            }
+          }
+        },
+        "learned": {
+          "mean": {
+            "net": 0.2329847370545443,
+            "usable_retain": 0.12220268135471653,
+            "usable_revise": 0.298791476094195,
+            "false_action": 0.0,
+            "payload_attempts": 1.130795410977049,
+            "ack_attempts": 0.7492987929666228
+          }
+        },
+        "learned_erased": {
+          "mean": {
+            "net": 0.21313041235121122,
+            "usable_retain": 0.03128463699624241,
+            "usable_revise": 0.29868141896804523,
+            "false_action": 0.0,
+            "payload_attempts": 1.1683564361307641,
+            "ack_attempts": 0.0
+          }
+        },
+        "independent": {
+          "mean": {
+            "net": 0.2306504386918783,
+            "usable_retain": 0.12431726995050432,
+            "usable_revise": 0.2728754412220934,
+            "false_action": 0.0,
+            "payload_attempts": 1.6654227248071938,
+            "ack_attempts": 0.0
+          }
+        },
+        "greedy": {
+          "mean": {
+            "net": 0.22379487179487184,
+            "usable_retain": 0.13707692307692312,
+            "usable_revise": 0.29423076923076935,
+            "false_action": 0.0,
+            "payload_attempts": 1.325128205128206,
+            "ack_attempts": 0.75
+          }
+        },
+        "greedy_independent": {
+          "mean": {
+            "net": 0.21064102564102558,
+            "usable_retain": 0.10384615384615387,
+            "usable_revise": 0.27346153846153853,
+            "false_action": 0.0,
+            "payload_attempts": 1.6666666666666676,
+            "ack_attempts": 0.0
+          }
+        }
+      }
+    }
+  },
+  "policies": {
+    "optional": [
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0007848835161351272,
+          0.00014004018714127334,
+          0.9988999300914089,
+          0.0001461459418875261,
+          2.90002634272835e-05
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9995071753902587,
+          0.00047218711187471267,
+          2.0637497866576856e-05
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.016094927599707952,
+          0.9690072342095759,
+          0.014897838190716179
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9689634926669234,
+          0.01611728240173905,
+          0.014919224931337648
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9987834947274279,
+          0.00036180184803894823,
+          0.0008547034245331321
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01618179543474581,
+          0.01618179543474581,
+          0.9676364091305083
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9689634926669234,
+          0.01611728240173905,
+          0.014919224931337648
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9987834947274279,
+          0.00036180184803894823,
+          0.0008547034245331321
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01618179543474581,
+          0.01618179543474581,
+          0.9676364091305083
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9689634926669234,
+          0.01611728240173905,
+          0.014919224931337648
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.998562497793208,
+          0.00040943208638527295,
+          0.0010280701204065867
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9690072342095759,
+          0.016094927599707952,
+          0.014897838190716179
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.016205880327997184,
+          0.016205880327997184,
+          0.9675882393440056
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.998562497793208,
+          0.00040943208638527295,
+          0.0010280701204065867
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9690072342095759,
+          0.016094927599707952,
+          0.014897838190716179
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.016205880327997184,
+          0.016205880327997184,
+          0.9675882393440056
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.001107077281123262,
+          0.001107077281123262,
+          0.9977858454377534
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01618179543474581,
+          0.01618179543474581,
+          0.9676364091305083
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.016205880327997184,
+          0.016205880327997184,
+          0.9675882393440056
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9968450466913188,
+          0.0007572469832304867,
+          0.0002495899283882473,
+          0.00041987071920946144,
+          0.001728245677852994
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020970652653074264,
+          0.020970652653074264,
+          0.9580586946938515
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020589828572557062,
+          0.020589828572557062,
+          0.9588203428548859
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020589828572557062,
+          0.020589828572557062,
+          0.9588203428548859
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020591349741644747,
+          0.020591349741644747,
+          0.9588173005167105
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020591349741644747,
+          0.020591349741644747,
+          0.9588173005167105
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01996870141193695,
+          0.01996870141193695,
+          0.9600625971761261
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9968450466913188,
+          0.0007572469832304867,
+          0.0002495899283882473,
+          0.00041987071920946144,
+          0.001728245677852994
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020970652653074264,
+          0.020970652653074264,
+          0.9580586946938515
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020589828572557062,
+          0.020589828572557062,
+          0.9588203428548859
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020589828572557062,
+          0.020589828572557062,
+          0.9588203428548859
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020591349741644747,
+          0.020591349741644747,
+          0.9588173005167105
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020591349741644747,
+          0.020591349741644747,
+          0.9588173005167105
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01996870141193695,
+          0.01996870141193695,
+          0.9600625971761261
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9974782028232761,
+          0.0005244170513411493,
+          0.00021672178977095365,
+          0.0003684898782299313,
+          0.0014121684573817125
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9974782028232761,
+          0.0005244170513411493,
+          0.00021672178977095365,
+          0.0003684898782299313,
+          0.0014121684573817125
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0008709991073321909,
+          0.0007092741948966064,
+          0.0008709991073321909,
+          0.0007092741948966064,
+          0.9968394533955424
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.000668013773737306,
+          0.0007037025461435942,
+          0.9708007968166725,
+          0.027205488452237504,
+          0.0006219984112089327
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0015087358948146778,
+          0.9970892553324168,
+          0.0014020087727685904
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01822500961433503,
+          0.964813524258873,
+          0.016961466126791953
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0024920979118517907,
+          0.0024920979118517907,
+          0.9950158041762963
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0024920979118517907,
+          0.0024920979118517907,
+          0.9950158041762963
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0024920979118517907,
+          0.0024920979118517907,
+          0.9950158041762963
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9967719427550724,
+          0.0016641075835052714,
+          0.0015639496614221857
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.964813524258873,
+          0.01822500961433503,
+          0.016961466126791953
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0027120623005905354,
+          0.0027120623005905354,
+          0.994575875398819
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9967719427550724,
+          0.0016641075835052714,
+          0.0015639496614221857
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.964813524258873,
+          0.01822500961433503,
+          0.016961466126791953
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0027120623005905354,
+          0.0027120623005905354,
+          0.994575875398819
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0027120623005905354,
+          0.0027120623005905354,
+          0.994575875398819
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.02074908641056797,
+          0.9598723128801103,
+          0.019378600709321715
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611209589424092,
+          0.0201240312458134,
+          0.01875500981177733
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611209589424092,
+          0.0201240312458134,
+          0.01875500981177733
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.02074908641056797,
+          0.9598723128801103,
+          0.019378600709321715
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611209589424092,
+          0.0201240312458134,
+          0.01875500981177733
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611209589424092,
+          0.0201240312458134,
+          0.01875500981177733
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9792751428129918,
+          0.018642881012503415,
+          0.0007016572082004423,
+          0.0007181387343416648,
+          0.0006621802319629341
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9792751428129918,
+          0.018642881012503415,
+          0.0007016572082004423,
+          0.0007181387343416648,
+          0.0006621802319629341
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0008737904113883566,
+          0.0007088064452861682,
+          0.0008737904113883566,
+          0.0007081841495202425,
+          0.9968354285824169
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0011246998991936766,
+          0.0011246998991936766,
+          0.9977506002016128
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.017486375058520336,
+          0.017486375058520336,
+          0.9650272498829592
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019175307661664618,
+          0.019175307661664618,
+          0.9616493846766707
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019175307661664618,
+          0.019175307661664618,
+          0.9616493846766707
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019175307661664618,
+          0.019175307661664618,
+          0.9616493846766707
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0011170698123284333,
+          0.0011170698123284333,
+          0.9977658603753432
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.017486375058520336,
+          0.017486375058520336,
+          0.9650272498829592
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01913758895673947,
+          0.01913758895673947,
+          0.961724822086521
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0011170698123284333,
+          0.0011170698123284333,
+          0.9977658603753432
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.017486375058520336,
+          0.017486375058520336,
+          0.9650272498829592
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01913758895673947,
+          0.01913758895673947,
+          0.961724822086521
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01913758895673947,
+          0.01913758895673947,
+          0.961724822086521
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020153785071813486,
+          0.020153785071813486,
+          0.9596924298563729
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01938179546840605,
+          0.01938179546840605,
+          0.961236409063188
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01938179546840605,
+          0.01938179546840605,
+          0.961236409063188
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020153785071813486,
+          0.020153785071813486,
+          0.9596924298563729
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01938179546840605,
+          0.01938179546840605,
+          0.961236409063188
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01938179546840605,
+          0.01938179546840605,
+          0.961236409063188
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.000864398021073201,
+          0.0006624034009541594,
+          0.000864398021073201,
+          0.0006620298757495621,
+          0.9969467706811498
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.000864398021073201,
+          0.0006624034009541594,
+          0.000864398021073201,
+          0.0006620298757495621,
+          0.9969467706811498
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9708012766848781,
+          0.027205022467848113,
+          0.000668009317023292,
+          0.0007036972654903552,
+          0.0006219942647599863
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9970893003666373,
+          0.0015087131198281475,
+          0.0014019865135344062
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0024920980929278645,
+          0.0024920980929278645,
+          0.9950158038141443
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.964755486280357,
+          0.01825455184583698,
+          0.01698996187380591
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9967719635401641,
+          0.0016640972534926193,
+          0.0015639392063433637
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0027120624141501,
+          0.0027120624141501,
+          0.9945758751716998
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.964755486280357,
+          0.01825455184583698,
+          0.01698996187380591
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9967719635401641,
+          0.0016640972534926193,
+          0.0015639392063433637
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0027120624141501,
+          0.0027120624141501,
+          0.9945758751716998
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.964755486280357,
+          0.01825455184583698,
+          0.01698996187380591
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0024920980929278645,
+          0.0024920980929278645,
+          0.9950158038141443
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0024920980929278645,
+          0.0024920980929278645,
+          0.9950158038141443
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0027120624141501,
+          0.0027120624141501,
+          0.9945758751716998
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9792752263941756,
+          0.018642800912426205,
+          0.0007016560635654232,
+          0.0007181374771230095,
+          0.0006621791527097765
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9598639894981061,
+          0.02075330979616877,
+          0.01938270070572506
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611183283822392,
+          0.020125367910556916,
+          0.01875630370720382
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611183283822392,
+          0.020125367910556916,
+          0.01875630370720382
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9792752263941756,
+          0.018642800912426205,
+          0.0007016560635654232,
+          0.0007181374771230095,
+          0.0006621791527097765
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9598639894981061,
+          0.02075330979616877,
+          0.01938270070572506
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611183283822392,
+          0.020125367910556916,
+          0.01875630370720382
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9611183283822392,
+          0.020125367910556916,
+          0.01875630370720382
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.4963040803727655,
+          0.002531928909654799,
+          0.4963040803727655,
+          0.0025319289096809973,
+          0.0023279814351331854
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.4981582116206308,
+          0.4981582116206308,
+          0.0036835767587384814
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.003171214625094859,
+          0.003171214625094859,
+          0.9936575707498104
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0031712145394625253,
+          0.0031712145394625253,
+          0.993657570921075
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0031712145394625253,
+          0.0031712145394625253,
+          0.993657570921075
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0031712145394625253,
+          0.0031712145394625253,
+          0.993657570921075
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.003171214625094859,
+          0.003171214625094859,
+          0.9936575707498104
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.003171214625094859,
+          0.003171214625094859,
+          0.9936575707498104
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.4902668246802332,
+          0.4902668246802332,
+          0.019466350639533697
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.4902668246802332,
+          0.4902668246802332,
+          0.019466350639533697
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9839557987566656,
+          0.014231088384268889,
+          0.0006124727941280945,
+          0.0006296067190175321,
+          0.0005710333459199549
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9970685224211757,
+          0.001518547113049688,
+          0.0014129304657745853
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0026763958523994915,
+          0.0026763958523994915,
+          0.994647208295201
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9612627741347671,
+          0.02005661202751579,
+          0.018680613837717144
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9612627741347671,
+          0.02005661202751579,
+          0.018680613837717144
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9612627741347671,
+          0.02005661202751579,
+          0.018680613837717144
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0026763958523994915,
+          0.0026763958523994915,
+          0.994647208295201
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0026763958523994915,
+          0.0026763958523994915,
+          0.994647208295201
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9618438568950313,
+          0.01976006735357547,
+          0.018396075751393327
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9618438568950313,
+          0.01976006735357547,
+          0.018396075751393327
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0008737895330667869,
+          0.0007081825092578857,
+          0.0008737895330667869,
+          0.0007088044302396066,
+          0.9968354339943689
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0011246907087497202,
+          0.0011246907087497202,
+          0.9977506185825006
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019175307764023167,
+          0.019175307764023167,
+          0.9616493844719536
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.017515285194663097,
+          0.017515285194663097,
+          0.9649694296106738
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0011170662529559098,
+          0.0011170662529559098,
+          0.9977658674940882
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019137589020365806,
+          0.019137589020365806,
+          0.9617248219592684
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.017515285194663097,
+          0.017515285194663097,
+          0.9649694296106738
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0011170662529559098,
+          0.0011170662529559098,
+          0.9977658674940882
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019137589020365806,
+          0.019137589020365806,
+          0.9617248219592684
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.017515285194663097,
+          0.017515285194663097,
+          0.9649694296106738
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019175307764023167,
+          0.019175307764023167,
+          0.9616493844719536
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019175307764023167,
+          0.019175307764023167,
+          0.9616493844719536
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019137589020365806,
+          0.019137589020365806,
+          0.9617248219592684
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0008643977654873691,
+          0.0006624028989254847,
+          0.0008643977654873691,
+          0.000662029374988888,
+          0.996946772195111
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020158020865526836,
+          0.020158020865526836,
+          0.9596839582689463
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019383325312956994,
+          0.019383325312956994,
+          0.9612333493740859
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019383325312956994,
+          0.019383325312956994,
+          0.9612333493740859
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0008643977654873691,
+          0.0006624028989254847,
+          0.0008643977654873691,
+          0.000662029374988888,
+          0.996946772195111
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020158020865526836,
+          0.020158020865526836,
+          0.9596839582689463
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019383325312956994,
+          0.019383325312956994,
+          0.9612333493740859
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019383325312956994,
+          0.019383325312956994,
+          0.9612333493740859
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0006124727937542128,
+          0.000629606718734512,
+          0.9839557987674609,
+          0.01423108837451205,
+          0.0005710333455382022
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.001518547112769295,
+          0.9970685224219671,
+          0.001412930465263568
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020056612068335606,
+          0.961262774054469,
+          0.01868061387719538
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.002676395799089304,
+          0.002676395799089304,
+          0.9946472084018213
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.002676395799089304,
+          0.002676395799089304,
+          0.9946472084018213
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.002676395799089304,
+          0.002676395799089304,
+          0.9946472084018213
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.961262774054469,
+          0.020056612068335606,
+          0.01868061387719538
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.961262774054469,
+          0.020056612068335606,
+          0.01868061387719538
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019760067320947497,
+          0.9618438569591904,
+          0.018396075719862064
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019760067320947497,
+          0.9618438569591904,
+          0.018396075719862064
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0008621291384155861,
+          0.0006455571804491735,
+          0.0008621291384155861,
+          0.0006455571804495342,
+          0.99698462736227
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0011297633516969459,
+          0.0011297633516969459,
+          0.9977404732966061
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01930146820936865,
+          0.01930146820936865,
+          0.9613970635812626
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019301468169134695,
+          0.019301468169134695,
+          0.9613970636617306
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019301468169134695,
+          0.019301468169134695,
+          0.9613970636617306
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019301468169134695,
+          0.019301468169134695,
+          0.9613970636617306
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01930146820936865,
+          0.01930146820936865,
+          0.9613970635812626
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01930146820936865,
+          0.01930146820936865,
+          0.9613970635812626
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01915630276129463,
+          0.01915630276129463,
+          0.9616873944774107
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01915630276129463,
+          0.01915630276129463,
+          0.9616873944774107
+        ]
+      }
+    ],
+    "mandatory_priced": [
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.49892472941785415,
+          0.4989247294178628,
+          0.0021505411642829884
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0020349146742603026,
+          0.996155011627216,
+          0.0018100736985237553
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009452112489875135,
+          0.0009452112489875127,
+          0.9981095775020249
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.996155011627216,
+          0.002034914674260288,
+          0.0018100736985237427
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0028283907557754636,
+          0.0028283907557754636,
+          0.9943432184884491
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009080234131551752,
+          0.0011067872060532625,
+          0.9979851893807915
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.996155011627216,
+          0.002034914674260288,
+          0.0018100736985237427
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0028283907557754636,
+          0.0028283907557754636,
+          0.9943432184884491
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009080234131551752,
+          0.0011067872060532625,
+          0.9979851893807915
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.996155011627216,
+          0.002034914674260288,
+          0.0018100736985237427
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.996155011627216,
+          0.0020349146742603026,
+          0.0018100736985237553
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009080234131551752,
+          0.0011067872060532616,
+          0.9979851893807915
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0028283907557754336,
+          0.0028283907557754336,
+          0.9943432184884491
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.996155011627216,
+          0.0020349146742603026,
+          0.0018100736985237553
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009080234131551752,
+          0.0011067872060532616,
+          0.9979851893807915
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0028283907557754336,
+          0.0028283907557754336,
+          0.9943432184884491
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0028283907557754636,
+          0.0028283907557754636,
+          0.9943432184884491
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0010560374490439374,
+          0.0010560374490439374,
+          0.9978879251019123
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0028283907557754336,
+          0.0028283907557754336,
+          0.9943432184884491
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0026294685332249996,
+          0.0016830696763749558,
+          0.9956874617904
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019604895495269642,
+          0.019604895495269642,
+          0.9607902090094608
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019653642966562187,
+          0.019653642966562187,
+          0.9606927140668756
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0026294685332249996,
+          0.0016830696763749558,
+          0.9956874617904
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019604895495269642,
+          0.019604895495269642,
+          0.9607902090094608
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019623209549825302,
+          0.019623209549825302,
+          0.9607535809003493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019653642966562187,
+          0.019653642966562187,
+          0.9606927140668756
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0026294685332249974,
+          0.0016830696763749542,
+          0.9956874617904
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0026294685332249974,
+          0.0016830696763749542,
+          0.9956874617904
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013083744409220464,
+          0.0013083744409220464,
+          0.9973832511181558
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0018730255644189625,
+          0.9965188328375799,
+          0.0016081415980010493
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019293495143039553,
+          0.9626652214844921,
+          0.018041283372468356
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.001307390665684778,
+          0.9974923863779795,
+          0.0012002229563355118
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111076540722579,
+          0.0008111076540722579,
+          0.9983777846918555
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111076540722579,
+          0.0008111076540722579,
+          0.9983777846918555
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111076540722579,
+          0.0008111076540722579,
+          0.9983777846918555
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9626652214844921,
+          0.019293495143039553,
+          0.018041283372468356
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9972085614301467,
+          0.0014578190900271634,
+          0.0013336194798261659
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008251841467511711,
+          0.0008251841467511711,
+          0.9983496317064977
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9626652214844921,
+          0.019293495143039553,
+          0.018041283372468356
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9972085614301467,
+          0.0014578190900271634,
+          0.0013336194798261659
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008251841467511711,
+          0.0008251841467511711,
+          0.9983496317064977
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008251841467511711,
+          0.0008251841467511711,
+          0.9983496317064977
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019849708659395962,
+          0.9615667395302335,
+          0.018583551810370462
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.019849708659395962,
+          0.9615667395302335,
+          0.018583551810370462
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9961879846855385,
+          0.0020284772331654968,
+          0.0017835380812960388
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9961879846855385,
+          0.0020284772331654968,
+          0.0017835380812960388
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013333606163702758,
+          0.0013289088221458607,
+          0.9973377305614839
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01937144132883351,
+          0.01937144132883351,
+          0.9612571173423331
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009507093294414429,
+          0.0009507093294414429,
+          0.9980985813411172
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499147023429126,
+          0.020499147023429126,
+          0.9590017059531416
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499147023429126,
+          0.020499147023429126,
+          0.9590017059531416
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499147023429126,
+          0.020499147023429126,
+          0.9590017059531416
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01937144132883351,
+          0.01937144132883351,
+          0.9612571173423331
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009875580977909907,
+          0.0009875580977909907,
+          0.998024883804418
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020242663342386568,
+          0.020242663342386568,
+          0.9595146733152269
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01937144132883351,
+          0.01937144132883351,
+          0.9612571173423331
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009875580977909907,
+          0.0009875580977909907,
+          0.998024883804418
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020242663342386568,
+          0.020242663342386568,
+          0.9595146733152269
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020242663342386568,
+          0.020242663342386568,
+          0.9595146733152269
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020119581410167824,
+          0.020119581410167824,
+          0.9597608371796643
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "supports"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020119581410167824,
+          0.020119581410167824,
+          0.9597608371796643
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013150441360125409,
+          0.0013152119281977129,
+          0.9973697439357897
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013150441360125409,
+          0.0013152119281977129,
+          0.9973697439357897
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9965188328375799,
+          0.0018730255644189625,
+          0.0016081415980010504
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111076540722607,
+          0.0008111076540722607,
+          0.9983777846918555
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9974923863779795,
+          0.001307390665684777,
+          0.0012002229563355118
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9626652214844921,
+          0.019293495143039553,
+          0.018041283372468356
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008251841467511632,
+          0.0008251841467511632,
+          0.9983496317064977
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9972085614301467,
+          0.0014578190900271634,
+          0.0013336194798261659
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9626652214844921,
+          0.019293495143039553,
+          0.018041283372468356
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008251841467511632,
+          0.0008251841467511632,
+          0.9983496317064977
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9972085614301467,
+          0.0014578190900271634,
+          0.0013336194798261659
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9626652214844921,
+          0.019293495143039553,
+          0.018041283372468356
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111076540722607,
+          0.0008111076540722607,
+          0.9983777846918555
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111076540722607,
+          0.0008111076540722607,
+          0.9983777846918555
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008251841467511632,
+          0.0008251841467511632,
+          0.9983496317064977
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9961879846855385,
+          0.0020284772331654968,
+          0.0017835380812960388
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615667395302335,
+          0.019849708659395945,
+          0.01858355181037047
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9961879846855385,
+          0.0020284772331654968,
+          0.0017835380812960388
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615667395302335,
+          0.019849708659395945,
+          0.01858355181037047
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9615764940279437,
+          0.01984752896669642,
+          0.018575977005359866
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.4973499948801177,
+          0.4973499948801175,
+          0.005300010239764861
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008728181697900949,
+          0.0008728181697900949,
+          0.9982543636604198
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.49864056374669435,
+          0.49864056374669435,
+          0.002718872506611319
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008728181697900958,
+          0.0008728181697900958,
+          0.9982543636604198
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008728181697900958,
+          0.0008728181697900958,
+          0.9982543636604198
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008728181697900958,
+          0.0008728181697900958,
+          0.9982543636604198
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008728181697900949,
+          0.0008728181697900949,
+          0.9982543636604198
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008728181697900949,
+          0.0008728181697900949,
+          0.9982543636604198
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.4906610680535774,
+          0.4906610680535774,
+          0.018677863892845308
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.4906610680535774,
+          0.4906610680535774,
+          0.018677863892845308
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.9965233826756169,
+          0.0018693154538312494,
+          0.001607301870551901
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111063944494782,
+          0.0008111063944494782,
+          0.9983777872111009
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.997494380283342,
+          0.0013063362345863317,
+          0.0011992834820718156
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9605497927550234,
+          0.020365419150025772,
+          0.019084788094950938
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9605497927550234,
+          0.020365419150025772,
+          0.019084788094950938
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9605497927550234,
+          0.020365419150025772,
+          0.019084788094950938
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111063944494782,
+          0.0008111063944494782,
+          0.9983777872111009
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111063944494782,
+          0.0008111063944494782,
+          0.9983777872111009
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9608279616279325,
+          0.02022444445034739,
+          0.018947593921720154
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "contradicts"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9608279616279325,
+          0.02022444445034739,
+          0.018947593921720154
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013289088221458594,
+          0.0013333606163702758,
+          0.9973377305614839
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499147023429126,
+          0.020499147023429126,
+          0.9590017059531416
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009507093294414412,
+          0.0009507093294414412,
+          0.9980985813411172
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01937144132883351,
+          0.01937144132883351,
+          0.9612571173423331
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020242663342386568,
+          0.020242663342386568,
+          0.9595146733152269
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009875580977909916,
+          0.0009875580977909916,
+          0.998024883804418
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01937144132883351,
+          0.01937144132883351,
+          0.9612571173423331
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020242663342386568,
+          0.020242663342386568,
+          0.9595146733152269
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009875580977909916,
+          0.0009875580977909916,
+          0.998024883804418
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "supports"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.01937144132883351,
+          0.01937144132883351,
+          0.9612571173423331
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499147023429126,
+          0.020499147023429126,
+          0.9590017059531416
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "supports"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499147023429126,
+          0.020499147023429126,
+          0.9590017059531416
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                2,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020242663342386568,
+          0.020242663342386568,
+          0.9595146733152269
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013150441360125409,
+          0.0013152119281977129,
+          0.9973697439357897
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020119581410167817,
+          0.020119581410167817,
+          0.9597608371796643
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013150441360125409,
+          0.0013152119281977129,
+          0.9973697439357897
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "supports"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020119581410167817,
+          0.020119581410167817,
+          0.9597608371796643
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020072064376035717,
+          0.020072064376035717,
+          0.9598558712479286
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0018693154538312494,
+          0.9965233826756169,
+          0.001607301870551901
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020365419150025772,
+          0.9605497927550234,
+          0.019084788094950938
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013063362345863317,
+          0.997494380283342,
+          0.0011992834820718156
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111063944494782,
+          0.0008111063944494782,
+          0.9983777872111009
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111063944494782,
+          0.0008111063944494782,
+          0.9983777872111009
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "contradicts"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.0008111063944494782,
+          0.0008111063944494782,
+          0.9983777872111009
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9605497927550234,
+          0.020365419150025772,
+          0.019084788094950938
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "contradicts"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.9605497927550234,
+          0.020365419150025772,
+          0.019084788094950938
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.02022444445034739,
+          0.9608279616279325,
+          0.018947593921720154
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "contradicts"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.02022444445034739,
+          0.9608279616279325,
+          0.018947593921720154
+        ]
+      },
+      {
+        "state": [
+          "first",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0013278961278355768,
+          0.001327896127835578,
+          0.9973442077443289
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499573416640025,
+          0.020499573416640025,
+          0.9590008531667199
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            null
+          ]
+        ],
+        "probabilities": [
+          0.0009503909596911734,
+          0.0009503909596911734,
+          0.9980992180806176
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499573416640025,
+          0.020499573416640025,
+          0.9590008531667199
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499573416640025,
+          0.020499573416640025,
+          0.9590008531667199
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              1,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499573416640025,
+          0.020499573416640025,
+          0.9590008531667199
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                2,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499573416640025,
+          0.020499573416640025,
+          0.9590008531667199
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                1,
+                "unknown"
+              ],
+              [
+                3,
+                "unknown"
+              ]
+            ],
+            [
+              0,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020499573416640025,
+          0.020499573416640025,
+          0.9590008531667199
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              2,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020519083741824245,
+          0.020519083741824245,
+          0.9589618325163515
+        ]
+      },
+      {
+        "state": [
+          "second",
+          [
+            [
+              [
+                0,
+                "unknown"
+              ],
+              [
+                1,
+                "unknown"
+              ]
+            ],
+            [
+              3,
+              "unknown"
+            ]
+          ]
+        ],
+        "probabilities": [
+          0.020519083741824245,
+          0.020519083741824245,
+          0.9589618325163515
+        ]
+      }
+    ]
+  },
+  "file_sha256": {
+    "facilitator_optional_feedback.py": "110d450d8399396de492919847fff0ffe1ec6fa0c1d759c0f5e63a94603c8260",
+    "facilitator_feedback_cost.py": "9fcc35ffe6234cb4958731913738d7ba252bf261d7d1cf0b7b181396a783fa84",
+    "facilitator-feedback-cost-results.json": "63621351088dd727aff7d1e1412518297205c6dd24d976e2e0efe7b818bc1e88"
+  }
+}

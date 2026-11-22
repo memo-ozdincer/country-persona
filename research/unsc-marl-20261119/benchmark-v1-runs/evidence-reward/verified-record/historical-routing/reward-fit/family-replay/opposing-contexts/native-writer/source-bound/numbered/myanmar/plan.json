@@ -1,0 +1,176 @@
+{
+  "requests": [
+    {
+      "part": "uk",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select passage IDs needed for this source's contribution to the decision record. Preserve the sponsor, relevant consultation, and priorities explaining support. Return a JSON array of ID strings by importance. Prefer fewer IDs when an item is secondary. No prose."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write a retrospective record of the Council's 21 December 2022 decision on Myanmar. Identify the draft, decision, representative positions, humanitarian access and ASEAN provisions, and the reporting instruction. Keep the Council president's procedural role separate from India's national statement.\", \"delegation\": \"United Kingdom\", \"passages\": {\"4\": \"welcomed the result\", \"9\": \"The United Kingdom submitted the draft\", \"2\": \"consultations with Council members, ASEAN members and regional partners\", \"5\": \"It emphasized ending violence, humanitarian access and support for ASEAN efforts.\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      }
+    },
+    {
+      "part": "india",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select passage IDs needed for this source's contribution to the decision record. Preserve the regional concerns and quiet-diplomacy explanation for its national abstention. Return a JSON array of ID strings by importance. Prefer fewer IDs when an item is secondary. No prose."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write a retrospective record of the Council's 21 December 2022 decision on Myanmar. Identify the draft, decision, representative positions, humanitarian access and ASEAN provisions, and the reporting instruction. Keep the Council president's procedural role separate from India's national statement.\", \"delegation\": \"India as a delegation\", \"passages\": {\"3\": \"India praised the United Kingdom's consultation\", \"7\": \"noted neighbouring countries' concerns\", \"1\": \"advocated quiet, constructive diplomacy\", \"8\": \"explained its abstention in light of those concerns.\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      }
+    },
+    {
+      "part": "chair",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select passage IDs needed for this source's contribution to the decision record. Preserve the Council president's procedural acts and the subsequent national explanation as separate functions. Return a JSON array of ID strings by importance. Prefer fewer IDs when an item is secondary. No prose."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write a retrospective record of the Council's 21 December 2022 decision on Myanmar. Identify the draft, decision, representative positions, humanitarian access and ASEAN provisions, and the reporting instruction. Keep the Council president's procedural role separate from India's national statement.\", \"delegation\": \"Council procedure\", \"passages\": {\"1\": \"then resumed the duties of President.\", \"6\": \"India held the Council presidency. The President called the vote and announced adoption.\", \"3\": \"India's representative later explained the national abstention\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      }
+    }
+  ],
+  "public": {
+    "vote": [
+      {
+        "block": "vote",
+        "text": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions.",
+        "start": 0,
+        "end": 122
+      },
+      {
+        "block": "vote",
+        "text": "The United Kingdom voted in favour. China, India and Russia abstained.",
+        "start": 123,
+        "end": 193
+      }
+    ],
+    "mandate": [
+      {
+        "block": "mandate",
+        "text": "demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role",
+        "start": 16,
+        "end": 122
+      },
+      {
+        "block": "mandate",
+        "text": "the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023",
+        "start": 136,
+        "end": 283
+      }
+    ]
+  },
+  "cards": {
+    "uk": {
+      "4": {
+        "block": "uk",
+        "text": "welcomed the result",
+        "start": 43,
+        "end": 62
+      },
+      "9": {
+        "block": "uk",
+        "text": "The United Kingdom submitted the draft",
+        "start": 0,
+        "end": 38
+      },
+      "2": {
+        "block": "uk",
+        "text": "consultations with Council members, ASEAN members and regional partners",
+        "start": 69,
+        "end": 140
+      },
+      "5": {
+        "block": "uk",
+        "text": "It emphasized ending violence, humanitarian access and support for ASEAN efforts.",
+        "start": 142,
+        "end": 223
+      }
+    },
+    "india": {
+      "3": {
+        "block": "india",
+        "text": "India praised the United Kingdom's consultation",
+        "start": 0,
+        "end": 47
+      },
+      "7": {
+        "block": "india",
+        "text": "noted neighbouring countries' concerns",
+        "start": 52,
+        "end": 90
+      },
+      "1": {
+        "block": "india",
+        "text": "advocated quiet, constructive diplomacy",
+        "start": 95,
+        "end": 134
+      },
+      "8": {
+        "block": "india",
+        "text": "explained its abstention in light of those concerns.",
+        "start": 139,
+        "end": 191
+      }
+    },
+    "chair": {
+      "1": {
+        "block": "chair",
+        "text": "then resumed the duties of President.",
+        "start": 153,
+        "end": 190
+      },
+      "6": {
+        "block": "chair",
+        "text": "India held the Council presidency. The President called the vote and announced adoption.",
+        "start": 0,
+        "end": 88
+      },
+      "3": {
+        "block": "chair",
+        "text": "India's representative later explained the national abstention",
+        "start": 89,
+        "end": 151
+      }
+    }
+  },
+  "calibration": {
+    "pair": [
+      "uk",
+      "india"
+    ],
+    "mask": 3,
+    "pair_weights": {
+      "uk/india": 7,
+      "uk/chair": 0,
+      "india/chair": 0
+    }
+  },
+  "sha256": {
+    "transfer.py": "84f2c81643b75481db8368a60a0a57ba148b18d96c5aec718870e6cf733eb980",
+    "protocol.md": "4c8e2d1a01a7b81182a4529cb8d80ac0046376ba615ffba8246e470421cba6dd",
+    "score.json": "3e97a25150b72f7f2fbc573d34ce4c86356817f819fec5a628edbfd775a9817b",
+    "triplets.json": "4bfbc2cfb61a25b8ed2a16b0cff00f833b3c97e85f56e97c074f059c57c7246b",
+    "calibrate_pair.py": "4df8fce88a701072317ead1772bcf63484ada937787a1a26111a4b65032174e2",
+    "numbered.py": "00457c5885a2fa62c2273722781a1e8e0fe7bcedea584556c33837eedcd88872"
+  }
+}

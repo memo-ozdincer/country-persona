@@ -1,0 +1,436 @@
+{
+  "pins": {
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/text_study.py": "e67e9bd25f461783a8b31eb944110ca34a2022ab6eed84ade669d32ec1aacf63",
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/protocol.md": "598fab5e926a5770c70c9855636625168999ce19840bd39d351e54b016a6874c",
+    "benchmark-v1-runs/reform-2553-transfer/text-reply-transfer/messages.json": "3908301f1cf4c01da97c68cde1255bbd4dcc015229650ef8834db455dcee6710",
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/plan.json": "1acc15f0c5f38b620c994025e6aa4cd433edafc4600e31d2669dfb8e2d77efba",
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/scores.json": "6865e900dd890d8c8e311146d708e94ca424b8a50efdc983dcf02ac2fc74482c",
+    "benchmark-v1-runs/reform-2553-transfer/concern-transfer/reply-fit.json": "666ef9d26a1772dabc4fd56a71a6e3bfe532be230adeded6ee5f4fc53b650967",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "benchmark-v1-runs/reporting-2739/generated-purpose/purpose_study.py": "020c6b145c7fc13ed76eefd38afd495049924f677d645f5a9ce3aac60e3e0a87",
+    "benchmark-v1.5/release.json": "102cf8e5456609c0b0f003c4e278ba4e6a4ce9453357a783355399c5f860bc90"
+  },
+  "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "requests": [
+    {
+      "id": "canon-process/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-process/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-inclusion/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK read reform through resolutions 1325 and 2282 and said national ownership allows legitimate external monitoring.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-inclusion/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The UK read reform through resolutions 1325 and 2282 and said national ownership allows legitimate external monitoring.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-empty/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "canon-empty/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-no-time/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We accepted the draft, though the timetable left delegations scant opportunity to scrutinize or refine it.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-no-time/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We accepted the draft, though the timetable left delegations scant opportunity to scrutinize or refine it.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-premature/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported adoption. Our criticism was that the penholder brought the text to a decision before delegations had a meaningful chance to revise it.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-premature/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported adoption. Our criticism was that the penholder brought the text to a decision before delegations had a meaningful chance to revise it.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-short-window/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We could vote in favour and still object that delegations were given an unreasonably short window to agree on the wording.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-short-window/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We could vote in favour and still object that delegations were given an unreasonably short window to agree on the wording.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-too/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The text could have been clearer, and we regretted that too little time had been provided for delegates to work through it.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-too/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The text could have been clearer, and we regretted that too little time had been provided for delegates to work through it.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-explicit-no-objection/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Some called the negotiations rushed, but we believed enough time had been allowed. We focused on the clarity of the text.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-explicit-no-objection/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"Some called the negotiations rushed, but we believed enough time had been allowed. We focused on the clarity of the text.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-quoted/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We recorded another delegation's claim of rushed negotiations without endorsing its assessment. Our own position concerns monitoring.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-quoted/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We recorded another delegation's claim of rushed negotiations without endorsing its assessment. Our own position concerns monitoring.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-future/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The next negotiation should move quickly. We take no position on whether the time allowed for this draft was too short.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-future/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The next negotiation should move quickly. We take no position on whether the time allowed for this draft was too short.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-only/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We voted in favour, though the resolution is difficult to interpret. We make no claim about the length of the negotiations.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-clarity-only/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We voted in favour, though the resolution is difficult to interpret. We make no claim about the length of the negotiations.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-implementation-speed/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We called for speedy action once the text was adopted. The pace of implementing the reform matters for peacebuilding.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-implementation-speed/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We called for speedy action once the text was adopted. The pace of implementing the reform matters for peacebuilding.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-fund/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported voluntary funding aligned with national priorities and asked that the authority of the Fund manager be stated clearly.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-fund/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"We supported voluntary funding aligned with national priorities and asked that the authority of the Fund manager be stated clearly.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-deadline-praise/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The penholder's short timetable was appropriate. Negotiations moved quickly and we had enough time to agree the wording.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-deadline-praise/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"The penholder's short timetable was appropriate. Negotiations moved quickly and we had enough time to agree the wording.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-empty/ab",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"No statement was delivered.\", \"your_options\": {\"A\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\", \"B\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "held-empty/ba",
+      "max_output_tokens": 2,
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the German desk preparing a source-faithful Council record. Read the first desk's message, if any. Choose which one of your two statements should be forwarded. If one statement addresses the same concrete concern the first desk itself expresses, choose it to enable the exact connection. Distinguish a stated concern from quoting someone else, explicit disagreement, and discussing a different stage or policy. If there is no such connection, choose the statement that adds the more specific substantive standpoint on its own. Return only A or B."
+        },
+        {
+          "role": "user",
+          "content": "{\"first_message\": \"No statement was delivered.\", \"your_options\": {\"A\": \"Germany supported voluntary reform assistance and said the Secretary-General retains authority to manage the Peacebuilding Fund.\", \"B\": \"Germany also said penholding fell short of normal practice and allowed too little negotiation time.\"}}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Test a cutoff for the fitted question values
+
+The fitted advantage model still requests in every held episode. Run a dependent calibration fit using development outcomes only. Keep the regression features and frozen teammates. Of the distinct predicted values for the best legal question, consider each as a cutoff, together with zero. For each cutoff, replay the best predicted question when its value exceeds the cutoff and choose silence otherwise. Select the cutoff with maximum mean development return and prefer more silence on ties. Include zero and compare on held cases with both opening variants already defined. The held cases motivated the diagnostic and supply no values to the cutoff selection.
+
+Check development stability by leaving out one profile family at a time. Group authored profiles by their singleton weight tuple, holding all synergies and inventory laws of that family together. Treat each of the three archived event records as its own family. Refit coefficients and cutoff within each fold and evaluate signed net gains against the zero cutoff on the excluded rows. The folds are a development diagnostic.

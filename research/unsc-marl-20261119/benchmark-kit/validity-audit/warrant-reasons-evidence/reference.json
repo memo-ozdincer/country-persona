@@ -1,0 +1,497 @@
+{
+  "recommend/routed": {
+    "record": {
+      "decision": "B",
+      "evidence": [
+        "O2",
+        "F1"
+      ],
+      "memo": "Fictional workshop record. O2: D2 reports grade 3 for A. F1: D1 reports grade 1 for A. The one compatible card pair implies A lower grade 1, total 4, B lower grade 2, total 4, C excluded. The workshop recommends B under the lower-grade-first rule."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "all",
+        "best_in_compatible_worlds": "none",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          4,
+          4
+        ]
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "all",
+        "best_in_compatible_worlds": "all",
+        "feasible_lower_grades": [
+          2,
+          2
+        ],
+        "feasible_total_grades": [
+          4,
+          4
+        ]
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 1,
+      "permitted_decisions": [
+        "B"
+      ],
+      "different_possible_completions": [
+        [
+          "B"
+        ]
+      ]
+    }
+  },
+  "recommend/erased": {
+    "record": {
+      "decision": "UNRESOLVED",
+      "evidence": [
+        "O2"
+      ],
+      "memo": "Fictional workshop record. O2: D2 reports grade 3 for A. Compatible card pairs allow different outcomes with no shared permissible decision. The workshop leaves the decision unresolved."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          2
+        ],
+        "feasible_total_grades": [
+          4,
+          5
+        ]
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "all",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          2
+        ],
+        "feasible_total_grades": [
+          3,
+          5
+        ]
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 4,
+      "permitted_decisions": [
+        "UNRESOLVED"
+      ],
+      "different_possible_completions": [
+        [
+          "A"
+        ],
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B"
+        ]
+      ]
+    }
+  },
+  "impasse/routed": {
+    "record": {
+      "decision": "IMPASSE",
+      "evidence": [
+        "O1",
+        "F1"
+      ],
+      "memo": "Fictional workshop record. O1: D1 reports grade 0 for C. F1: D2 reports grade 0 for A. Every package has a zero grade from at least one delegate in every compatible card pair. The workshop records an impasse."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 1,
+      "permitted_decisions": [
+        "IMPASSE"
+      ],
+      "different_possible_completions": [
+        [
+          "impasse"
+        ]
+      ]
+    }
+  },
+  "impasse/erased": {
+    "record": {
+      "decision": "UNRESOLVED",
+      "evidence": [
+        "O1"
+      ],
+      "memo": "Fictional workshop record. O1: D1 reports grade 0 for C. Compatible card pairs allow different outcomes with no shared permissible decision. The workshop leaves the decision unresolved."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          2,
+          3
+        ]
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          2
+        ],
+        "feasible_total_grades": [
+          3,
+          4
+        ]
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 4,
+      "permitted_decisions": [
+        "UNRESOLVED"
+      ],
+      "different_possible_completions": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B"
+        ],
+        [
+          "impasse"
+        ]
+      ]
+    }
+  },
+  "domain2-uniform/initial": {
+    "record": {
+      "decision": "UNRESOLVED",
+      "evidence": [
+        "O1",
+        "O2"
+      ],
+      "memo": "Fictional workshop record. O1: D1 reports grade 0 for A. O2: D2 reports grade 0 for A. Compatible card pairs allow different outcomes with no shared permissible decision. The workshop leaves the decision unresolved."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          3,
+          4
+        ]
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "none",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          2,
+          2
+        ]
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 3,
+      "permitted_decisions": [
+        "UNRESOLVED"
+      ],
+      "different_possible_completions": [
+        [
+          "B"
+        ],
+        [
+          "impasse"
+        ]
+      ]
+    }
+  },
+  "domain2-uniform/fitted": {
+    "record": {
+      "decision": "IMPASSE",
+      "evidence": [
+        "O1",
+        "O2"
+      ],
+      "memo": "Fictional workshop record. O1: D1 reports grade 0 for A. O2: D2 reports grade 0 for B. Every package has a zero grade from at least one delegate in every compatible card pair. The workshop records an impasse."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 2,
+      "permitted_decisions": [
+        "IMPASSE"
+      ],
+      "different_possible_completions": [
+        [
+          "impasse"
+        ]
+      ]
+    }
+  },
+  "domain2-correlated/initial": {
+    "record": {
+      "decision": "UNRESOLVED",
+      "evidence": [
+        "O1",
+        "O2"
+      ],
+      "memo": "Fictional workshop record. O1: D1 reports grade 0 for A. O2: D2 reports grade 0 for A. Compatible card pairs allow different outcomes with no shared permissible decision. The workshop leaves the decision unresolved."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          3,
+          4
+        ]
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "none",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          2,
+          2
+        ]
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 3,
+      "permitted_decisions": [
+        "UNRESOLVED"
+      ],
+      "different_possible_completions": [
+        [
+          "B"
+        ],
+        [
+          "impasse"
+        ]
+      ]
+    }
+  },
+  "domain2-correlated/fitted": {
+    "record": {
+      "decision": "IMPASSE",
+      "evidence": [
+        "O1",
+        "O2"
+      ],
+      "memo": "Fictional workshop record. O1: D1 reports grade 0 for A. O2: D2 reports grade 0 for B. Every package has a zero grade from at least one delegate in every compatible card pair. The workshop records an impasse."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 2,
+      "permitted_decisions": [
+        "IMPASSE"
+      ],
+      "different_possible_completions": [
+        [
+          "impasse"
+        ]
+      ]
+    }
+  },
+  "domain7-uniform/initial": {
+    "record": {
+      "decision": "UNRESOLVED",
+      "evidence": [
+        "O2",
+        "F1"
+      ],
+      "memo": "Fictional workshop record. O2: D2 reports grade 3 for A. F1: D1 reports grade 0 for A. Compatible card pairs allow different outcomes with no shared permissible decision. The workshop leaves the decision unresolved."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "none",
+        "best_in_compatible_worlds": "none"
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          2
+        ],
+        "feasible_total_grades": [
+          3,
+          5
+        ]
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          2,
+          4
+        ]
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 6,
+      "permitted_decisions": [
+        "UNRESOLVED"
+      ],
+      "different_possible_completions": [
+        [
+          "B"
+        ],
+        [
+          "C"
+        ]
+      ]
+    }
+  },
+  "domain7-uniform/fitted": {
+    "record": {
+      "decision": "B",
+      "evidence": [
+        "O2",
+        "F1"
+      ],
+      "memo": "Fictional workshop record. O2: D2 reports grade 1 for C. F1: D1 reports grade 2 for B. B ranks first or ties for first under the lower-grade-first rule in every compatible card pair. The workshop recommends B."
+    },
+    "package_comparison": {
+      "A": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "some",
+        "feasible_lower_grades": [
+          2,
+          2
+        ],
+        "feasible_total_grades": [
+          5,
+          5
+        ]
+      },
+      "B": {
+        "feasible_in_compatible_worlds": "all",
+        "best_in_compatible_worlds": "all",
+        "feasible_lower_grades": [
+          2,
+          2
+        ],
+        "feasible_total_grades": [
+          5,
+          5
+        ]
+      },
+      "C": {
+        "feasible_in_compatible_worlds": "some",
+        "best_in_compatible_worlds": "none",
+        "feasible_lower_grades": [
+          1,
+          1
+        ],
+        "feasible_total_grades": [
+          3,
+          3
+        ]
+      }
+    },
+    "certificate": {
+      "compatible_worlds": 4,
+      "permitted_decisions": [
+        "B"
+      ],
+      "different_possible_completions": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          "B"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "requests": [
+    {
+      "id": "normal/lead",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"France\", \"capacity\": 1, \"passages\": {\"1\": \"France called on UN Member States to ratify and fully implement the disability convention, linking participation to safety.\", \"2\": \"France linked participation by persons with disabilities to better safety in conflict, humanitarian response and recovery.\"}, \"public_already_available_to_chair\": \"On 20 June 2019 the Council unanimously adopted the Poland–UK draft S/2019/503 as Resolution 2475. It called for safe, timely and unimpeded humanitarian access and urged meaningful participation by persons with disabilities. It requested pertinent disability-disaggregated reporting within existing mandates and resources.\"}"
+        }
+      ]
+    },
+    {
+      "id": "normal/request",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"France\", \"capacity\": 1, \"passages\": {\"1\": \"France called on UN Member States to ratify and fully implement the disability convention, linking participation to safety.\", \"2\": \"France linked participation by persons with disabilities to better safety in conflict, humanitarian response and recovery.\"}, \"public_already_available_to_chair\": \"On 20 June 2019 the Council unanimously adopted the Poland–UK draft S/2019/503 as Resolution 2475. It called for safe, timely and unimpeded humanitarian access and urged meaningful participation by persons with disabilities. It requested pertinent disability-disaggregated reporting within existing mandates and resources.\", \"chair_request\": \"The chair already has the public record. Send any distinct national position on the scope or implementation of a treaty or resolution if your menu contains one. Otherwise select a distinctive implementation reason or qualification.\"}"
+        }
+      ]
+    },
+    {
+      "id": "reversed/lead",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"France\", \"capacity\": 1, \"passages\": {\"2\": \"France linked participation by persons with disabilities to better safety in conflict, humanitarian response and recovery.\", \"1\": \"France called on UN Member States to ratify and fully implement the disability convention, linking participation to safety.\"}, \"public_already_available_to_chair\": \"On 20 June 2019 the Council unanimously adopted the Poland–UK draft S/2019/503 as Resolution 2475. It called for safe, timely and unimpeded humanitarian access and urged meaningful participation by persons with disabilities. It requested pertinent disability-disaggregated reporting within existing mandates and resources.\"}"
+        }
+      ]
+    },
+    {
+      "id": "reversed/request",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"France\", \"capacity\": 1, \"passages\": {\"2\": \"France linked participation by persons with disabilities to better safety in conflict, humanitarian response and recovery.\", \"1\": \"France called on UN Member States to ratify and fully implement the disability convention, linking participation to safety.\"}, \"public_already_available_to_chair\": \"On 20 June 2019 the Council unanimously adopted the Poland–UK draft S/2019/503 as Resolution 2475. It called for safe, timely and unimpeded humanitarian access and urged meaningful participation by persons with disabilities. It requested pertinent disability-disaggregated reporting within existing mandates and resources.\", \"chair_request\": \"The chair already has the public record. Send any distinct national position on the scope or implementation of a treaty or resolution if your menu contains one. Otherwise select a distinctive implementation reason or qualification.\"}"
+        }
+      ]
+    }
+  ],
+  "candidate_counts": [
+    8,
+    8,
+    8,
+    8
+  ],
+  "sha256": {
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/receiver-context/context_test.py": "5a9b6fe139e0930836852b73092ec30eb994c6457a23c9638d73c762cb847a52",
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/receiver-context/protocol.md": "10187128e3fd2602b2573d30850cef50008f8a185e344f31d61c3c1230d157d1",
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/plan.json": "1b57f3167a64992e783d4afe1346b190d5cdc3f2b6f8905f615a4d2446f12f63",
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/select_notes.py": "4e89dbc0acab02befaeaef3a0d06df4c3c894126db2e5caccc5d540f1e27dd7a",
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/scores.json": "cda81ef519f61ef33ab36eb5d06b0d3c4b8e3fc298ba79c7e6bc69002b96c772",
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/routing.json": "fe4c7595e281ebfcca14bdc0617a919d04d7d8252c791243fc098222878ecc78",
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/verified.json": "bf8dcd1ad184278eb684f727b8c0ec47be4b8bdac60774890334f0fdf660e45f"
+  }
+}

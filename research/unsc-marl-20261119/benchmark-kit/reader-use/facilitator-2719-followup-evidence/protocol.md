@@ -1,0 +1,5 @@
+# Ask for the missing French qualification
+
+Use the interactive transcript from Resolution 2719 and only the French source card for the responding desk. The prior exact-span audit has six approved atoms. Adding the French contribution-level qualification completes a seven-point criterion; the missing US interpretation could earn five. Select the French qualification from these declared marginal gains, then freeze a targeted follow-up and a generic request for one new source-backed sentence. Give both the same desk note, source and 112-token cap. Create one additional targeted negative control by withholding the supporting sentence. Evaluate exact sentence membership and identity with the authored source atom. No model judge can introduce missing evidence.
+
+The same-assistant audited set defines the baseline here. Recompose the fixed record only with a newly admitted field. The procedure does not claim that an automatic review can recover the original baseline reliably. Compare with equal-call generic follow-up and with no follow-up. Report source evidence and whether the targeted prompt succeeds with the separating qualification only when present.

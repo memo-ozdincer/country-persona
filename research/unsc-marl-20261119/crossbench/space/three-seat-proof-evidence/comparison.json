@@ -1,0 +1,425 @@
+{
+  "scope": "Six paired views. Decisions are machine scored, with same-assistant exact-span review of reason quality. The proof arm supplies the verified disposition and changes the task wording.",
+  "results": {
+    "direct": {
+      "correct_first_line": 0,
+      "adequate_and_correct": 0,
+      "records": [
+        {
+          "id": "d_before",
+          "key": [
+            "unresolved"
+          ],
+          "decision": "A",
+          "correct": false,
+          "reason": "The receipt proves Delegate 1's grade for A is 3, eliminating their first card. However, without knowing the specific grades for D and F from either delegate, no common winner or universal impasse can be confirmed across all compatible pairs.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "false",
+          "witness": "eliminating their first card",
+          "review": "The receipt selects the first card.",
+          "possible_worlds": [
+            {
+              "cards": [
+                0,
+                0
+              ],
+              "winners": [
+                "D"
+              ]
+            },
+            {
+              "cards": [
+                0,
+                1
+              ],
+              "winners": [
+                "A"
+              ]
+            },
+            {
+              "cards": [
+                0,
+                2
+              ],
+              "winners": [
+                "A"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d_with_reply",
+          "key": [
+            "D"
+          ],
+          "decision": "A",
+          "correct": false,
+          "reason": "The receipts fix A at 3 and D at 1, eliminating all zero-grade packages. Pairwise analysis shows no common winner across compatible sets, as each pair yields a different top-ranked package based on the variable third grades.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "false",
+          "witness": "D at 1",
+          "review": "The second receipt gives A a grade of one.",
+          "possible_worlds": [
+            {
+              "cards": [
+                0,
+                0
+              ],
+              "winners": [
+                "D"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "shared_before",
+          "key": [
+            "unresolved"
+          ],
+          "decision": "A",
+          "correct": false,
+          "reason": "The receipt proves Package A is zeroed out, eliminating it entirely. Only Package D remains viable across all delegate pairs, making it the sole common winner despite the public seat's lower grade.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "false",
+          "witness": "Only Package D remains viable",
+          "review": "The first seat rules out D.",
+          "possible_worlds": [
+            {
+              "cards": [
+                2,
+                0
+              ],
+              "winners": [
+                "impasse"
+              ]
+            },
+            {
+              "cards": [
+                2,
+                1
+              ],
+              "winners": [
+                "F"
+              ]
+            },
+            {
+              "cards": [
+                2,
+                2
+              ],
+              "winners": [
+                "impasse"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "impasse_with_reply",
+          "key": [
+            "impasse"
+          ],
+          "decision": "A, impasse",
+          "correct": false,
+          "reason": "Receipts prove Package A and F are zeroed for respective delegates, eliminating them. Only Package D remains viable, yet no compatible private card pair supports it, creating an impasse.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "false",
+          "witness": "Only Package D remains viable",
+          "review": "The first seat rules out D.",
+          "possible_worlds": [
+            {
+              "cards": [
+                2,
+                0
+              ],
+              "winners": [
+                "impasse"
+              ]
+            },
+            {
+              "cards": [
+                2,
+                2
+              ],
+              "winners": [
+                "impasse"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f_with_reply",
+          "key": [
+            "F"
+          ],
+          "decision": "A",
+          "correct": false,
+          "reason": "The receipts eliminate Package A (grade 0) and Package F (grade 2 vs 2), leaving only Package D viable. Since no other packages remain, no pairs can form a winner or impasse, resulting in an unresolved recommendation for the workshop.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "false",
+          "witness": "Package F (grade 2 vs 2)",
+          "review": "Positive grades satisfy the feasibility threshold.",
+          "possible_worlds": [
+            {
+              "cards": [
+                2,
+                1
+              ],
+              "winners": [
+                "F"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "still_unresolved",
+          "key": [
+            "unresolved"
+          ],
+          "decision": "A",
+          "correct": false,
+          "reason": "The receipts prove Package A has a grade of 1 and Package F has a grade of 0, eliminating F from all viable sets. This leaves only Package A as the sole compatible winner across all remaining delegate pairs, creating a definite recommendation.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "false",
+          "witness": "only Package A as the sole compatible winner",
+          "review": "A and D each win a completion.",
+          "possible_worlds": [
+            {
+              "cards": [
+                1,
+                0
+              ],
+              "winners": [
+                "D"
+              ]
+            },
+            {
+              "cards": [
+                1,
+                2
+              ],
+              "winners": [
+                "A"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "verified_proof": {
+      "correct_first_line": 5,
+      "adequate_and_correct": 2,
+      "records": [
+        {
+          "id": "d_before",
+          "key": [
+            "unresolved"
+          ],
+          "decision": "unresolved",
+          "correct": true,
+          "reason": "Verification proves that no single package is universally preferred across all possible private card combinations, as feasible outcomes exist for both A and D depending on hidden delegate scores, preventing a common winner.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "adequate",
+          "witness": "feasible outcomes exist for both A and D",
+          "review": "Both winners occur in completions.",
+          "possible_worlds": [
+            {
+              "cards": [
+                0,
+                0
+              ],
+              "winners": [
+                "D"
+              ]
+            },
+            {
+              "cards": [
+                0,
+                1
+              ],
+              "winners": [
+                "A"
+              ]
+            },
+            {
+              "cards": [
+                0,
+                2
+              ],
+              "winners": [
+                "A"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d_with_reply",
+          "key": [
+            "D"
+          ],
+          "decision": "The decision is D. Verification proves that while Package A is feasible, Package F is ruled out due to a zero grade, leaving Package D as the sole common winner among all compatible world rules.",
+          "correct": false,
+          "reason": "",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "incomplete",
+          "witness": "while Package A is feasible",
+          "review": "The reason omits D's advantage on the lowest grade.",
+          "possible_worlds": [
+            {
+              "cards": [
+                0,
+                0
+              ],
+              "winners": [
+                "D"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "shared_before",
+          "key": [
+            "unresolved"
+          ],
+          "decision": "unresolved",
+          "correct": true,
+          "reason": "The verification proves that no single package can be universally accepted across all possible private card combinations, as every feasible winning scenario either results in an impasse or fails to meet the threshold for a common winner.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "incomplete",
+          "witness": "fails to meet the threshold for a common winner",
+          "review": "The reason omits the contrast between impasse and F.",
+          "possible_worlds": [
+            {
+              "cards": [
+                2,
+                0
+              ],
+              "winners": [
+                "impasse"
+              ]
+            },
+            {
+              "cards": [
+                2,
+                1
+              ],
+              "winners": [
+                "F"
+              ]
+            },
+            {
+              "cards": [
+                2,
+                2
+              ],
+              "winners": [
+                "impasse"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "impasse_with_reply",
+          "key": [
+            "impasse"
+          ],
+          "decision": "impasse",
+          "correct": true,
+          "reason": "The verification proves that every possible combination of private cards results in a total grade exceeding the threshold for any package, as all feasible outcomes are explicitly marked as false. Consequently, no common winning disposition exists, confirming the impasse.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "false",
+          "witness": "a total grade exceeding the threshold for any package",
+          "review": "A zero in any seat excludes each package.",
+          "possible_worlds": [
+            {
+              "cards": [
+                2,
+                0
+              ],
+              "winners": [
+                "impasse"
+              ]
+            },
+            {
+              "cards": [
+                2,
+                2
+              ],
+              "winners": [
+                "impasse"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "f_with_reply",
+          "key": [
+            "F"
+          ],
+          "decision": "F",
+          "correct": true,
+          "reason": "The verification confirms that Package F is the sole feasible outcome, as Packages A and D are eliminated by the delegates' certified grades, leaving F as the only compatible world.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "incomplete",
+          "witness": "leaving F as the only compatible world",
+          "review": "F is a package. The preceding sentence correctly establishes its feasibility.",
+          "possible_worlds": [
+            {
+              "cards": [
+                2,
+                1
+              ],
+              "winners": [
+                "F"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "still_unresolved",
+          "key": [
+            "unresolved"
+          ],
+          "decision": "unresolved",
+          "correct": true,
+          "reason": "The verification proves that no single package is universally accepted as the best choice. While Package D wins in one scenario and Package A in another, the existence of multiple possible winners with no common best option means the workshop cannot reach a definitive decision.",
+          "finished": true,
+          "legal_reason_length": true,
+          "reason_status": "adequate",
+          "witness": "Package D wins in one scenario and Package A in another",
+          "review": "The possible worlds have no common winner.",
+          "possible_worlds": [
+            {
+              "cards": [
+                1,
+                0
+              ],
+              "winners": [
+                "D"
+              ]
+            },
+            {
+              "cards": [
+                1,
+                2
+              ],
+              "winners": [
+                "A"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

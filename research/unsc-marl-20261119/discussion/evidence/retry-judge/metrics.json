@@ -1,0 +1,237 @@
+{
+  "totals": {
+    "authority/correct": 4,
+    "authority/wrong": 1,
+    "causal_delivery/correct": 3,
+    "causal_delivery/uncertain": 1,
+    "causal_delivery/wrong": 1,
+    "new_idea/correct": 3,
+    "new_idea/uncertain": 1,
+    "new_idea/wrong": 1,
+    "profile/other": 5,
+    "public_acceptance/correct": 2,
+    "public_acceptance/uncertain": 3
+  },
+  "cases": {
+    "undelivered": {
+      "orders": [
+        [
+          [
+            "same",
+            "none",
+            "unchanged",
+            "clear"
+          ]
+        ],
+        [
+          [
+            "same",
+            "received",
+            "unchanged",
+            "clear"
+          ]
+        ]
+      ],
+      "reference": [
+        "same",
+        "none",
+        "unchanged",
+        "clear"
+      ],
+      "stable": {
+        "new_idea": {
+          "value": "same",
+          "status": "correct"
+        },
+        "public_acceptance": {
+          "value": null,
+          "status": "uncertain"
+        },
+        "causal_delivery": {
+          "value": "unchanged",
+          "status": "correct"
+        },
+        "authority": {
+          "value": "clear",
+          "status": "correct"
+        }
+      }
+    },
+    "recovered": {
+      "orders": [
+        [
+          [
+            "same",
+            "none",
+            "unchanged",
+            "clear"
+          ]
+        ],
+        [
+          [
+            "same",
+            "received",
+            "unchanged",
+            "clear"
+          ]
+        ]
+      ],
+      "reference": [
+        "same",
+        "received",
+        "changed",
+        "clear"
+      ],
+      "stable": {
+        "new_idea": {
+          "value": "same",
+          "status": "correct"
+        },
+        "public_acceptance": {
+          "value": null,
+          "status": "uncertain"
+        },
+        "causal_delivery": {
+          "value": "unchanged",
+          "status": "wrong"
+        },
+        "authority": {
+          "value": "clear",
+          "status": "correct"
+        }
+      }
+    },
+    "redundant_delivery": {
+      "orders": [
+        [
+          [
+            "same",
+            "none",
+            "unchanged",
+            "clear"
+          ]
+        ],
+        [
+          [
+            "same",
+            "received",
+            "unchanged",
+            "clear"
+          ]
+        ]
+      ],
+      "reference": [
+        "same",
+        "received",
+        "unchanged",
+        "clear"
+      ],
+      "stable": {
+        "new_idea": {
+          "value": "same",
+          "status": "correct"
+        },
+        "public_acceptance": {
+          "value": null,
+          "status": "uncertain"
+        },
+        "causal_delivery": {
+          "value": "unchanged",
+          "status": "correct"
+        },
+        "authority": {
+          "value": "clear",
+          "status": "correct"
+        }
+      }
+    },
+    "new_proposition": {
+      "orders": [
+        [
+          [
+            "same",
+            "received",
+            "changed",
+            "clear"
+          ]
+        ],
+        [
+          [
+            "same",
+            "received",
+            "unchanged",
+            "clear"
+          ]
+        ]
+      ],
+      "reference": [
+        "new",
+        "received",
+        "changed",
+        "clear"
+      ],
+      "stable": {
+        "new_idea": {
+          "value": "same",
+          "status": "wrong"
+        },
+        "public_acceptance": {
+          "value": "received",
+          "status": "correct"
+        },
+        "causal_delivery": {
+          "value": null,
+          "status": "uncertain"
+        },
+        "authority": {
+          "value": "clear",
+          "status": "correct"
+        }
+      }
+    },
+    "invented_authority": {
+      "orders": [
+        [
+          [
+            "same",
+            "received",
+            "changed",
+            "clear"
+          ]
+        ],
+        [
+          [
+            "new",
+            "received",
+            "changed",
+            "clear"
+          ]
+        ]
+      ],
+      "reference": [
+        "same",
+        "received",
+        "changed",
+        "failed"
+      ],
+      "stable": {
+        "new_idea": {
+          "value": null,
+          "status": "uncertain"
+        },
+        "public_acceptance": {
+          "value": "received",
+          "status": "correct"
+        },
+        "causal_delivery": {
+          "value": "changed",
+          "status": "correct"
+        },
+        "authority": {
+          "value": "clear",
+          "status": "wrong"
+        }
+      }
+    }
+  }
+}

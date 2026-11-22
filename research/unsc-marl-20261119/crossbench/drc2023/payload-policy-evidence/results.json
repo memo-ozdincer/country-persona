@@ -1,0 +1,1420 @@
+{
+  "scope": "Same-assistant exact-span review of frozen Qwen outputs on the DRC docket. Policies and scripts optimize the original typed delivery endpoint. No target prose score informs route selection. Both the source holders and message loss are simulated.",
+  "terminal_sets": {
+    "public": {
+      "licensed": 0,
+      "facts": [],
+      "unlicensed": [],
+      "exact_fields": [],
+      "conflicts": [
+        "The resolution establishes the mandate, specifies reporting requirements to the responsible institution, and sets the timing for implementation."
+      ],
+      "safe_complete": false,
+      "words": 50,
+      "output_tokens": 83,
+      "ended": true
+    },
+    "mandate": {
+      "licensed": 1,
+      "facts": [
+        "mandate_expiry"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "mandate"
+      ],
+      "conflicts": [
+        "maintaining the original reporting requirements and institutional responsibilities without altering the core terms of the mandate"
+      ],
+      "safe_complete": false,
+      "words": 56,
+      "output_tokens": 81,
+      "ended": true
+    },
+    "review": {
+      "licensed": 2,
+      "facts": [
+        "future_action",
+        "review_deadline"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "review"
+      ],
+      "conflicts": [],
+      "safe_complete": true,
+      "words": 39,
+      "output_tokens": 74,
+      "ended": true
+    },
+    "reports": {
+      "licensed": 4,
+      "facts": [
+        "committee_consultation",
+        "final_date",
+        "midterm_date",
+        "report_recipient"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "reports"
+      ],
+      "conflicts": [],
+      "safe_complete": true,
+      "words": 35,
+      "output_tokens": 65,
+      "ended": true
+    },
+    "updates": {
+      "licensed": 1,
+      "facts": [
+        "committee_cadence"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "updates"
+      ],
+      "conflicts": [],
+      "safe_complete": true,
+      "words": 46,
+      "output_tokens": 83,
+      "ended": true
+    },
+    "mandate,review": {
+      "licensed": 3,
+      "facts": [
+        "future_action",
+        "mandate_expiry",
+        "review_deadline"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "mandate",
+        "review"
+      ],
+      "conflicts": [
+        "reporting requirements tied to the specified review and extension dates"
+      ],
+      "safe_complete": false,
+      "words": 58,
+      "output_tokens": 89,
+      "ended": true
+    },
+    "mandate,reports": {
+      "licensed": 5,
+      "facts": [
+        "committee_consultation",
+        "final_date",
+        "mandate_expiry",
+        "midterm_date",
+        "report_recipient"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "mandate",
+        "reports"
+      ],
+      "conflicts": [],
+      "safe_complete": true,
+      "words": 47,
+      "output_tokens": 86,
+      "ended": true
+    },
+    "mandate,updates": {
+      "licensed": 2,
+      "facts": [
+        "committee_cadence",
+        "mandate_expiry"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "mandate",
+        "updates"
+      ],
+      "conflicts": [
+        "This requirement applies to the responsible institution, the Council, and the Committee."
+      ],
+      "safe_complete": false,
+      "words": 39,
+      "output_tokens": 62,
+      "ended": true
+    },
+    "review,reports": {
+      "licensed": 6,
+      "facts": [
+        "committee_consultation",
+        "final_date",
+        "midterm_date",
+        "report_recipient"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "reports"
+      ],
+      "conflicts": [
+        "the Council mandated a review of the Experts' mandate and considered further extension by 1 July 2024"
+      ],
+      "safe_complete": false,
+      "words": 48,
+      "output_tokens": 88,
+      "ended": true
+    },
+    "review,updates": {
+      "licensed": 3,
+      "facts": [
+        "committee_cadence"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "updates"
+      ],
+      "conflicts": [
+        "the Council mandated a review of the Experts' mandate and considered further extension by 1 July 2024"
+      ],
+      "safe_complete": false,
+      "words": 39,
+      "output_tokens": 67,
+      "ended": true
+    },
+    "reports,updates": {
+      "licensed": 5,
+      "facts": [
+        "committee_cadence",
+        "committee_consultation",
+        "final_date",
+        "midterm_date",
+        "report_recipient"
+      ],
+      "unlicensed": [],
+      "exact_fields": [
+        "reports",
+        "updates"
+      ],
+      "conflicts": [],
+      "safe_complete": true,
+      "words": 50,
+      "output_tokens": 83,
+      "ended": true
+    }
+  },
+  "inventories": {
+    "training": {
+      "rows": [
+        {
+          "focus": [
+            "mandate",
+            "review"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 2.99976960250139,
+              "preserved_facts_out_of_8": 2.540444359826909,
+              "safe_completed_rate": 0.23132640701235935,
+              "safe_preserved_facts": 0.7304372205681521,
+              "expected_writer_output_tokens": 79.7087187714279,
+              "both_publicly_requested_fields_preserved": 0.3274085636712917,
+              "preserved_field_reward": 22.297615822975043,
+              "preserved_field_net": 22.047615822975043
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.5987280840767926,
+              "preserved_facts_out_of_8": 2.37206094998937,
+              "safe_completed_rate": 0.3079022200840535,
+              "safe_preserved_facts": 0.8354352972790744,
+              "expected_writer_output_tokens": 80.4960795975692,
+              "both_publicly_requested_fields_preserved": 0.29144931136635005,
+              "preserved_field_reward": 21.8069410851959,
+              "preserved_field_net": 21.8069410851959
+            },
+            "greedy": {
+              "licensed_fact_count": 3.425499999999994,
+              "preserved_facts_out_of_8": 3.101499999999993,
+              "safe_completed_rate": 0.3375000000000002,
+              "safe_preserved_facts": 1.3690000000000002,
+              "expected_writer_output_tokens": 82.75699999999998,
+              "both_publicly_requested_fields_preserved": 0.3240000000000002,
+              "preserved_field_reward": 23.1175,
+              "preserved_field_net": 22.8675
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.594999999999995,
+              "preserved_facts_out_of_8": 2.369999999999995,
+              "safe_completed_rate": 0.30750000000000005,
+              "safe_preserved_facts": 0.8325,
+              "expected_writer_output_tokens": 80.51000000000008,
+              "both_publicly_requested_fields_preserved": 0.2925,
+              "preserved_field_reward": 21.839999999999993,
+              "preserved_field_net": 21.839999999999993
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.3789999999999942,
+              "preserved_facts_out_of_8": 3.0459999999999936,
+              "safe_completed_rate": 0.3315000000000002,
+              "safe_preserved_facts": 1.2985,
+              "expected_writer_output_tokens": 82.33999999999996,
+              "both_publicly_requested_fields_preserved": 0.3285000000000002,
+              "preserved_field_reward": 23.211999999999996,
+              "preserved_field_net": 22.961999999999996
+            }
+          }
+        },
+        {
+          "focus": [
+            "mandate",
+            "reports"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 4.002407138461106,
+              "preserved_facts_out_of_8": 3.6869323567413663,
+              "safe_completed_rate": 0.5674529723499349,
+              "safe_preserved_facts": 2.5710899536901337,
+              "expected_writer_output_tokens": 81.48045543063448,
+              "both_publicly_requested_fields_preserved": 0.3274103767869824,
+              "preserved_field_reward": 24.408778684881906,
+              "preserved_field_net": 24.158778684881906
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.5241566827954034,
+              "preserved_facts_out_of_8": 3.387966851371105,
+              "safe_completed_rate": 0.599141958574352,
+              "safe_preserved_facts": 2.679667356018895,
+              "expected_writer_output_tokens": 78.86840833342906,
+              "both_publicly_requested_fields_preserved": 0.2914532193023753,
+              "preserved_field_reward": 22.917046636965917,
+              "preserved_field_net": 22.917046636965917
+            },
+            "greedy": {
+              "licensed_fact_count": 3.7984999999999927,
+              "preserved_facts_out_of_8": 3.510499999999991,
+              "safe_completed_rate": 0.4905000000000003,
+              "safe_preserved_facts": 2.2009999999999974,
+              "expected_writer_output_tokens": 82.33849999999998,
+              "both_publicly_requested_fields_preserved": 0.3240000000000002,
+              "preserved_field_reward": 24.377499999999976,
+              "preserved_field_net": 24.127499999999976
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.5249999999999946,
+              "preserved_facts_out_of_8": 3.3449999999999935,
+              "safe_completed_rate": 0.5774999999999999,
+              "safe_preserved_facts": 2.5724999999999976,
+              "expected_writer_output_tokens": 78.37250000000007,
+              "both_publicly_requested_fields_preserved": 0.2925,
+              "preserved_field_reward": 22.785000000000004,
+              "preserved_field_net": 22.785000000000004
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.8449999999999926,
+              "preserved_facts_out_of_8": 3.5569999999999915,
+              "safe_completed_rate": 0.5115000000000003,
+              "safe_preserved_facts": 2.3044999999999978,
+              "expected_writer_output_tokens": 81.75049999999995,
+              "both_publicly_requested_fields_preserved": 0.3285000000000002,
+              "preserved_field_reward": 24.53499999999998,
+              "preserved_field_net": 24.28499999999998
+            }
+          }
+        },
+        {
+          "focus": [
+            "mandate",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 2.847812186228178,
+              "preserved_facts_out_of_8": 2.613024340254603,
+              "safe_completed_rate": 0.39292241055797406,
+              "safe_preserved_facts": 1.493925803330778,
+              "expected_writer_output_tokens": 74.5368529205196,
+              "both_publicly_requested_fields_preserved": 0.32741037235896325,
+              "preserved_field_reward": 24.691183732259397,
+              "preserved_field_net": 24.441183732259397
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.1358050722443753,
+              "preserved_facts_out_of_8": 1.954603653794914,
+              "safe_completed_rate": 0.35305739303795564,
+              "safe_preserved_facts": 0.8672610916747299,
+              "expected_writer_output_tokens": 75.55159948010085,
+              "both_publicly_requested_fields_preserved": 0.2914532186065227,
+              "preserved_field_reward": 22.759506051677963,
+              "preserved_field_net": 22.759506051677963
+            },
+            "greedy": {
+              "licensed_fact_count": 2.472499999999997,
+              "preserved_facts_out_of_8": 2.1844999999999968,
+              "safe_completed_rate": 0.22050000000000014,
+              "safe_preserved_facts": 0.6589999999999996,
+              "expected_writer_output_tokens": 74.74249999999991,
+              "both_publicly_requested_fields_preserved": 0.3240000000000002,
+              "preserved_field_reward": 24.37749999999999,
+              "preserved_field_net": 24.12749999999999
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.129999999999997,
+              "preserved_facts_out_of_8": 1.949999999999997,
+              "safe_completed_rate": 0.3525000000000001,
+              "safe_preserved_facts": 0.8624999999999992,
+              "expected_writer_output_tokens": 75.53750000000011,
+              "both_publicly_requested_fields_preserved": 0.2925,
+              "preserved_field_reward": 22.785000000000014,
+              "preserved_field_net": 22.785000000000014
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 2.5459999999999976,
+              "preserved_facts_out_of_8": 2.257999999999997,
+              "safe_completed_rate": 0.25050000000000017,
+              "safe_preserved_facts": 0.7804999999999991,
+              "expected_writer_output_tokens": 74.72149999999988,
+              "both_publicly_requested_fields_preserved": 0.3285000000000002,
+              "preserved_field_reward": 24.534999999999993,
+              "preserved_field_net": 24.284999999999993
+            }
+          }
+        },
+        {
+          "focus": [
+            "review",
+            "reports"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 4.174332403631804,
+              "preserved_facts_out_of_8": 3.3301916411670076,
+              "safe_completed_rate": 0.3799529604602161,
+              "safe_preserved_facts": 1.4451856342624219,
+              "expected_writer_output_tokens": 81.27369905007876,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.020210558334297,
+              "preserved_field_net": 14.770210558334297
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.9874903502060306,
+              "preserved_facts_out_of_8": 3.268740567267574,
+              "safe_completed_rate": 0.5472699018476538,
+              "safe_preserved_facts": 1.8381647137875703,
+              "expected_writer_output_tokens": 77.68639254124427,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.282085927343584,
+              "preserved_field_net": 14.282085927343584
+            },
+            "greedy": {
+              "licensed_fact_count": 4.102499999999993,
+              "preserved_facts_out_of_8": 3.3464999999999914,
+              "safe_completed_rate": 0.3625000000000002,
+              "safe_preserved_facts": 1.3510000000000002,
+              "expected_writer_output_tokens": 82.42449999999998,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.557500000000008,
+              "preserved_field_net": 15.307500000000008
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.989999999999993,
+              "preserved_facts_out_of_8": 3.269999999999993,
+              "safe_completed_rate": 0.5475,
+              "safe_preserved_facts": 1.8374999999999981,
+              "expected_writer_output_tokens": 77.68250000000008,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.280000000000003,
+              "preserved_field_net": 14.280000000000003
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 4.157999999999992,
+              "preserved_facts_out_of_8": 3.365999999999991,
+              "safe_completed_rate": 0.3655000000000002,
+              "safe_preserved_facts": 1.3915,
+              "expected_writer_output_tokens": 81.96249999999995,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.400000000000007,
+              "preserved_field_net": 15.150000000000007
+            }
+          }
+        },
+        {
+          "focus": [
+            "review",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.299217231001072,
+              "preserved_facts_out_of_8": 2.3743935235545774,
+              "safe_completed_rate": 0.3496175374140363,
+              "safe_preserved_facts": 1.076473057617777,
+              "expected_writer_output_tokens": 76.30528377112965,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.455412873525788,
+              "preserved_field_net": 14.205412873525788
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.598540017192335,
+              "preserved_facts_out_of_8": 1.9248127292695512,
+              "safe_completed_rate": 0.5245167787553948,
+              "safe_preserved_facts": 1.1417945548582238,
+              "expected_writer_output_tokens": 75.89633123448324,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.59723579247442,
+              "preserved_field_net": 14.59723579247442
+            },
+            "greedy": {
+              "licensed_fact_count": 2.7764999999999955,
+              "preserved_facts_out_of_8": 2.0204999999999957,
+              "safe_completed_rate": 0.2545000000000001,
+              "safe_preserved_facts": 0.619,
+              "expected_writer_output_tokens": 75.31449999999991,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.557500000000001,
+              "preserved_field_net": 15.307500000000001
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.594999999999995,
+              "preserved_facts_out_of_8": 1.8749999999999962,
+              "safe_completed_rate": 0.5025000000000002,
+              "safe_preserved_facts": 1.0274999999999996,
+              "expected_writer_output_tokens": 75.38750000000009,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.280000000000005,
+              "preserved_field_net": 14.280000000000005
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 2.858999999999996,
+              "preserved_facts_out_of_8": 2.066999999999996,
+              "safe_completed_rate": 0.2665000000000002,
+              "safe_preserved_facts": 0.6774999999999994,
+              "expected_writer_output_tokens": 75.41949999999989,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.4,
+              "preserved_field_net": 15.15
+            }
+          }
+        },
+        {
+          "focus": [
+            "reports",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.7229132211023184,
+              "preserved_facts_out_of_8": 3.407186490160981,
+              "safe_completed_rate": 0.6441509919538965,
+              "safe_preserved_facts": 2.6912498006630483,
+              "expected_writer_output_tokens": 77.59574962465204,
+              "both_publicly_requested_fields_preserved": 0.32740937626273625,
+              "preserved_field_reward": 24.407886950832374,
+              "preserved_field_net": 24.157886950832374
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.524730851558815,
+              "preserved_facts_out_of_8": 3.29800840611707,
+              "safe_completed_rate": 0.7932663300134919,
+              "safe_preserved_facts": 2.8741502774661885,
+              "expected_writer_output_tokens": 77.58889352253605,
+              "both_publicly_requested_fields_preserved": 0.2914512826155793,
+              "preserved_field_reward": 22.600136632270953,
+              "preserved_field_net": 22.600136632270953
+            },
+            "greedy": {
+              "licensed_fact_count": 3.895499999999992,
+              "preserved_facts_out_of_8": 3.715499999999992,
+              "safe_completed_rate": 0.713499999999999,
+              "safe_preserved_facts": 3.1149999999999953,
+              "expected_writer_output_tokens": 78.50499999999987,
+              "both_publicly_requested_fields_preserved": 0.3240000000000002,
+              "preserved_field_reward": 24.755499999999994,
+              "preserved_field_net": 24.505499999999994
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.524999999999993,
+              "preserved_facts_out_of_8": 3.2999999999999945,
+              "safe_completed_rate": 0.7724999999999989,
+              "safe_preserved_facts": 2.767499999999996,
+              "expected_writer_output_tokens": 77.52500000000009,
+              "both_publicly_requested_fields_preserved": 0.2925,
+              "preserved_field_reward": 22.627500000000012,
+              "preserved_field_net": 22.627500000000012
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.8849999999999936,
+              "preserved_facts_out_of_8": 3.659999999999993,
+              "safe_completed_rate": 0.6984999999999992,
+              "safe_preserved_facts": 2.9994999999999963,
+              "expected_writer_output_tokens": 78.78099999999986,
+              "both_publicly_requested_fields_preserved": 0.3285000000000002,
+              "preserved_field_reward": 24.755499999999994,
+              "preserved_field_net": 24.505499999999994
+            }
+          }
+        }
+      ],
+      "mean": {
+        "learned": {
+          "licensed_fact_count": 3.507741963820978,
+          "preserved_facts_out_of_8": 2.9920287852842407,
+          "safe_completed_rate": 0.42757054662473615,
+          "safe_preserved_facts": 1.6680602450220519,
+          "expected_writer_output_tokens": 78.48345992807374,
+          "both_publicly_requested_fields_preserved": 0.21827311484666226,
+          "preserved_field_reward": 20.8801814371348,
+          "preserved_field_net": 20.6301814371348
+        },
+        "learned_no_peer": {
+          "licensed_fact_count": 3.061575176345625,
+          "preserved_facts_out_of_8": 2.7010321929682646,
+          "safe_completed_rate": 0.5208590970521504,
+          "safe_preserved_facts": 1.706078881847447,
+          "expected_writer_output_tokens": 77.68128411822711,
+          "both_publicly_requested_fields_preserved": 0.19430117198180455,
+          "preserved_field_reward": 19.82715868765479,
+          "preserved_field_net": 19.82715868765479
+        },
+        "greedy": {
+          "licensed_fact_count": 3.4118333333333273,
+          "preserved_facts_out_of_8": 2.9798333333333265,
+          "safe_completed_rate": 0.3965,
+          "safe_preserved_facts": 1.5523333333333322,
+          "expected_writer_output_tokens": 79.34699999999994,
+          "both_publicly_requested_fields_preserved": 0.2160000000000001,
+          "preserved_field_reward": 21.290499999999998,
+          "preserved_field_net": 21.040499999999998
+        },
+        "best_independent": {
+          "licensed_fact_count": 3.0599999999999947,
+          "preserved_facts_out_of_8": 2.684999999999995,
+          "safe_completed_rate": 0.5099999999999999,
+          "safe_preserved_facts": 1.6499999999999986,
+          "expected_writer_output_tokens": 77.5025000000001,
+          "both_publicly_requested_fields_preserved": 0.19499999999999998,
+          "preserved_field_reward": 19.766250000000003,
+          "preserved_field_net": 19.766250000000003
+        },
+        "optimized_interactive": {
+          "licensed_fact_count": 3.4453333333333283,
+          "preserved_facts_out_of_8": 2.9923333333333275,
+          "safe_completed_rate": 0.4040000000000001,
+          "safe_preserved_facts": 1.5753333333333321,
+          "expected_writer_output_tokens": 79.16249999999991,
+          "both_publicly_requested_fields_preserved": 0.2190000000000001,
+          "preserved_field_reward": 21.306249999999995,
+          "preserved_field_net": 21.056249999999995
+        }
+      }
+    },
+    "overlap": {
+      "rows": [
+        {
+          "focus": [
+            "mandate",
+            "review"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.05740859558315,
+              "preserved_facts_out_of_8": 2.5961767907933524,
+              "safe_completed_rate": 0.27048674416681706,
+              "safe_preserved_facts": 0.9061025443644587,
+              "expected_writer_output_tokens": 79.38340967054738,
+              "both_publicly_requested_fields_preserved": 0.28158411774796227,
+              "preserved_field_reward": 21.060360398797812,
+              "preserved_field_net": 20.810360398797812
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.5056435501094763,
+              "preserved_facts_out_of_8": 2.3169196148869453,
+              "safe_completed_rate": 0.35442761650179294,
+              "safe_preserved_facts": 0.9750070235400436,
+              "expected_writer_output_tokens": 80.190485815366,
+              "both_publicly_requested_fields_preserved": 0.24841349710066432,
+              "preserved_field_reward": 20.60133390213002,
+              "preserved_field_net": 20.60133390213002
+            },
+            "greedy": {
+              "licensed_fact_count": 3.407076923076928,
+              "preserved_facts_out_of_8": 3.041538461538466,
+              "safe_completed_rate": 0.3489230769230769,
+              "safe_preserved_facts": 1.3869230769230767,
+              "expected_writer_output_tokens": 81.80507692307685,
+              "both_publicly_requested_fields_preserved": 0.2741538461538461,
+              "preserved_field_reward": 21.46523076923075,
+              "preserved_field_net": 21.21523076923075
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.501538461538463,
+              "preserved_facts_out_of_8": 2.3146153846153856,
+              "safe_completed_rate": 0.35423076923076907,
+              "safe_preserved_facts": 0.9726923076923075,
+              "expected_writer_output_tokens": 80.20192307692307,
+              "both_publicly_requested_fields_preserved": 0.24923076923076917,
+              "preserved_field_reward": 20.62846153846153,
+              "preserved_field_net": 20.62846153846153
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.380307692307698,
+              "preserved_facts_out_of_8": 3.010615384615389,
+              "safe_completed_rate": 0.3477692307692307,
+              "safe_preserved_facts": 1.3465384615384615,
+              "expected_writer_output_tokens": 81.57638461538454,
+              "both_publicly_requested_fields_preserved": 0.28246153846153854,
+              "preserved_field_reward": 21.72692307692306,
+              "preserved_field_net": 21.47692307692306
+            }
+          }
+        },
+        {
+          "focus": [
+            "mandate",
+            "reports"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.8838421080960552,
+              "preserved_facts_out_of_8": 3.534664360106909,
+              "safe_completed_rate": 0.5332079752868003,
+              "safe_preserved_facts": 2.375899341971836,
+              "expected_writer_output_tokens": 80.71879618333809,
+              "both_publicly_requested_fields_preserved": 0.28158654809321493,
+              "preserved_field_reward": 23.066925085828863,
+              "preserved_field_net": 22.816925085828863
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.3690805737606224,
+              "preserved_facts_out_of_8": 3.201813026408857,
+              "safe_completed_rate": 0.5716065362394268,
+              "safe_preserved_facts": 2.5109301772981985,
+              "expected_writer_output_tokens": 77.77782109495165,
+              "both_publicly_requested_fields_preserved": 0.24841864736295172,
+              "preserved_field_reward": 21.337099356684195,
+              "preserved_field_net": 21.337099356684195
+            },
+            "greedy": {
+              "licensed_fact_count": 3.7153846153846217,
+              "preserved_facts_out_of_8": 3.383076923076928,
+              "safe_completed_rate": 0.4693846153846153,
+              "safe_preserved_facts": 2.0566153846153847,
+              "expected_writer_output_tokens": 81.45615384615381,
+              "both_publicly_requested_fields_preserved": 0.2741538461538461,
+              "preserved_field_reward": 22.86092307692308,
+              "preserved_field_net": 22.61092307692308
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.36923076923077,
+              "preserved_facts_out_of_8": 3.182307692307693,
+              "safe_completed_rate": 0.5619230769230766,
+              "safe_preserved_facts": 2.463461538461538,
+              "expected_writer_output_tokens": 77.54346153846156,
+              "both_publicly_requested_fields_preserved": 0.24923076923076917,
+              "preserved_field_reward": 21.282692307692308,
+              "preserved_field_net": 21.282692307692308
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.7753846153846213,
+              "preserved_facts_out_of_8": 3.438923076923082,
+              "safe_completed_rate": 0.4889999999999999,
+              "safe_preserved_facts": 2.165307692307693,
+              "expected_writer_output_tokens": 80.96161538461536,
+              "both_publicly_requested_fields_preserved": 0.28246153846153843,
+              "preserved_field_reward": 23.137153846153836,
+              "preserved_field_net": 22.887153846153836
+            }
+          }
+        },
+        {
+          "focus": [
+            "mandate",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 2.9346007328068136,
+              "preserved_facts_out_of_8": 2.655742636124212,
+              "safe_completed_rate": 0.4009879057933976,
+              "safe_preserved_facts": 1.5102692026231912,
+              "expected_writer_output_tokens": 75.54031826803634,
+              "both_publicly_requested_fields_preserved": 0.2815865453152261,
+              "preserved_field_reward": 23.313044722286055,
+              "preserved_field_net": 23.063044722286055
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.0737124639252813,
+              "preserved_facts_out_of_8": 1.8855718984927956,
+              "safe_completed_rate": 0.3650686046617658,
+              "safe_preserved_facts": 0.8032735647640876,
+              "expected_writer_output_tokens": 76.66871748832764,
+              "both_publicly_requested_fields_preserved": 0.24841864934034152,
+              "preserved_field_reward": 21.264043783038115,
+              "preserved_field_net": 21.264043783038115
+            },
+            "greedy": {
+              "licensed_fact_count": 2.5993846153846194,
+              "preserved_facts_out_of_8": 2.2670769230769268,
+              "safe_completed_rate": 0.26169230769230767,
+              "safe_preserved_facts": 0.8243076923076924,
+              "expected_writer_output_tokens": 75.54107692307686,
+              "both_publicly_requested_fields_preserved": 0.2741538461538461,
+              "preserved_field_reward": 22.860923076923058,
+              "preserved_field_net": 22.610923076923058
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.067692307692309,
+              "preserved_facts_out_of_8": 1.8807692307692323,
+              "safe_completed_rate": 0.3646153846153845,
+              "safe_preserved_facts": 0.7984615384615384,
+              "expected_writer_output_tokens": 76.66076923076923,
+              "both_publicly_requested_fields_preserved": 0.2492307692307692,
+              "preserved_field_reward": 21.282692307692308,
+              "preserved_field_net": 21.282692307692308
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 2.6843076923076965,
+              "preserved_facts_out_of_8": 2.347846153846159,
+              "safe_completed_rate": 0.28338461538461535,
+              "safe_preserved_facts": 0.9184615384615391,
+              "expected_writer_output_tokens": 75.55123076923073,
+              "both_publicly_requested_fields_preserved": 0.28246153846153843,
+              "preserved_field_reward": 23.137153846153822,
+              "preserved_field_net": 22.887153846153822
+            }
+          }
+        },
+        {
+          "focus": [
+            "review",
+            "reports"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 4.0342750122087665,
+              "preserved_facts_out_of_8": 3.2756459202838824,
+              "safe_completed_rate": 0.4037543600833333,
+              "safe_preserved_facts": 1.5371759645132679,
+              "expected_writer_output_tokens": 80.48863706388634,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.036431434654473,
+              "preserved_field_net": 14.786431434654473
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.801313451358733,
+              "preserved_facts_out_of_8": 3.1996766862552266,
+              "safe_completed_rate": 0.5902775051718357,
+              "safe_preserved_facts": 1.9291235823559554,
+              "expected_writer_output_tokens": 76.41562221522409,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.233182218269532,
+              "preserved_field_net": 14.233182218269532
+            },
+            "greedy": {
+              "licensed_fact_count": 3.9600000000000057,
+              "preserved_facts_out_of_8": 3.2787692307692358,
+              "safe_completed_rate": 0.39830769230769225,
+              "safe_preserved_facts": 1.4907692307692304,
+              "expected_writer_output_tokens": 81.41369230769229,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.41723076923075,
+              "preserved_field_net": 15.16723076923075
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.8030769230769255,
+              "preserved_facts_out_of_8": 3.2007692307692333,
+              "safe_completed_rate": 0.5907692307692306,
+              "safe_preserved_facts": 1.9292307692307693,
+              "expected_writer_output_tokens": 76.40692307692306,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.231538461538447,
+              "preserved_field_net": 14.231538461538447
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 4.028307692307698,
+              "preserved_facts_out_of_8": 3.309692307692313,
+              "safe_completed_rate": 0.395076923076923,
+              "safe_preserved_facts": 1.5101538461538457,
+              "expected_writer_output_tokens": 81.01676923076924,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.329999999999982,
+              "preserved_field_net": 15.079999999999982
+            }
+          }
+        },
+        {
+          "focus": [
+            "review",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.3063260346252403,
+              "preserved_facts_out_of_8": 2.477381018473018,
+              "safe_completed_rate": 0.3790558512433854,
+              "safe_preserved_facts": 1.1974244013338455,
+              "expected_writer_output_tokens": 76.78861925226285,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.544198627568804,
+              "preserved_field_net": 14.294198627568804
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.5054510403060943,
+              "preserved_facts_out_of_8": 1.924697546829112,
+              "safe_completed_rate": 0.5900010777714272,
+              "safe_preserved_facts": 1.2520417823689782,
+              "expected_writer_output_tokens": 76.3254773688639,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.379348387929502,
+              "preserved_field_net": 14.379348387929502
+            },
+            "greedy": {
+              "licensed_fact_count": 2.844000000000005,
+              "preserved_facts_out_of_8": 2.1627692307692343,
+              "safe_completed_rate": 0.29861538461538456,
+              "safe_preserved_facts": 0.7984615384615383,
+              "expected_writer_output_tokens": 75.82261538461536,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.417230769230752,
+              "preserved_field_net": 15.167230769230752
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.501538461538462,
+              "preserved_facts_out_of_8": 1.8992307692307715,
+              "safe_completed_rate": 0.580384615384615,
+              "safe_preserved_facts": 1.1988461538461543,
+              "expected_writer_output_tokens": 76.08499999999997,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.231538461538442,
+              "preserved_field_net": 14.231538461538442
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 2.937230769230775,
+              "preserved_facts_out_of_8": 2.2186153846153878,
+              "safe_completed_rate": 0.30992307692307686,
+              "safe_preserved_facts": 0.8656153846153849,
+              "expected_writer_output_tokens": 75.96776923076922,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.32999999999998,
+              "preserved_field_net": 15.07999999999998
+            }
+          }
+        },
+        {
+          "focus": [
+            "reports",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.662538450294275,
+              "preserved_facts_out_of_8": 3.317308089196187,
+              "safe_completed_rate": 0.6104457382370805,
+              "safe_preserved_facts": 2.496800504393721,
+              "expected_writer_output_tokens": 77.65760214064267,
+              "both_publicly_requested_fields_preserved": 0.28158549856856785,
+              "preserved_field_reward": 23.0807297589023,
+              "preserved_field_net": 22.8307297589023
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.3695511889867276,
+              "preserved_facts_out_of_8": 3.1808340152383963,
+              "safe_completed_rate": 0.7967212348859685,
+              "safe_preserved_facts": 2.7363547835443938,
+              "expected_writer_output_tokens": 77.40077190649642,
+              "both_publicly_requested_fields_preserved": 0.2484163609172434,
+              "preserved_field_reward": 21.261968892106797,
+              "preserved_field_net": 21.261968892106797
+            },
+            "greedy": {
+              "licensed_fact_count": 3.768923076923084,
+              "preserved_facts_out_of_8": 3.536307692307699,
+              "safe_completed_rate": 0.6600000000000004,
+              "safe_preserved_facts": 2.8075384615384653,
+              "expected_writer_output_tokens": 78.0906153846154,
+              "both_publicly_requested_fields_preserved": 0.27415384615384614,
+              "preserved_field_reward": 23.209846153846158,
+              "preserved_field_net": 22.959846153846158
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.3692307692307697,
+              "preserved_facts_out_of_8": 3.182307692307693,
+              "safe_completed_rate": 0.7880769230769232,
+              "safe_preserved_facts": 2.689615384615386,
+              "expected_writer_output_tokens": 77.37269230769233,
+              "both_publicly_requested_fields_preserved": 0.2492307692307692,
+              "preserved_field_reward": 21.28269230769231,
+              "preserved_field_net": 21.28269230769231
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.7753846153846227,
+              "preserved_facts_out_of_8": 3.505384615384622,
+              "safe_completed_rate": 0.6505384615384617,
+              "safe_preserved_facts": 2.7256153846153883,
+              "expected_writer_output_tokens": 78.5016153846154,
+              "both_publicly_requested_fields_preserved": 0.28246153846153843,
+              "preserved_field_reward": 23.369769230769226,
+              "preserved_field_net": 23.119769230769226
+            }
+          }
+        }
+      ],
+      "mean": {
+        "learned": {
+          "licensed_fact_count": 3.47983182226905,
+          "preserved_facts_out_of_8": 2.9761531358295934,
+          "safe_completed_rate": 0.43298976246846904,
+          "safe_preserved_facts": 1.6706119932000536,
+          "expected_writer_output_tokens": 78.42956376311894,
+          "both_publicly_requested_fields_preserved": 0.18772378495416187,
+          "preserved_field_reward": 20.016948338006387,
+          "preserved_field_net": 19.766948338006387
+        },
+        "learned_no_peer": {
+          "licensed_fact_count": 2.9374587114078223,
+          "preserved_facts_out_of_8": 2.618252131351889,
+          "safe_completed_rate": 0.5446837625387029,
+          "safe_preserved_facts": 1.7011218189786097,
+          "expected_writer_output_tokens": 77.46314931487161,
+          "both_publicly_requested_fields_preserved": 0.16561119245353348,
+          "preserved_field_reward": 18.846162756693026,
+          "preserved_field_net": 18.846162756693026
+        },
+        "greedy": {
+          "licensed_fact_count": 3.3824615384615444,
+          "preserved_facts_out_of_8": 2.944923076923082,
+          "safe_completed_rate": 0.40615384615384614,
+          "safe_preserved_facts": 1.5607692307692311,
+          "expected_writer_output_tokens": 79.02153846153841,
+          "both_publicly_requested_fields_preserved": 0.1827692307692307,
+          "preserved_field_reward": 20.20523076923076,
+          "preserved_field_net": 19.95523076923076
+        },
+        "best_independent": {
+          "licensed_fact_count": 2.935384615384617,
+          "preserved_facts_out_of_8": 2.610000000000001,
+          "safe_completed_rate": 0.5399999999999998,
+          "safe_preserved_facts": 1.6753846153846155,
+          "expected_writer_output_tokens": 77.37846153846154,
+          "both_publicly_requested_fields_preserved": 0.16615384615384612,
+          "preserved_field_reward": 18.823269230769224,
+          "preserved_field_net": 18.823269230769224
+        },
+        "optimized_interactive": {
+          "licensed_fact_count": 3.430153846153852,
+          "preserved_facts_out_of_8": 2.9718461538461587,
+          "safe_completed_rate": 0.41261538461538455,
+          "safe_preserved_facts": 1.5886153846153854,
+          "expected_writer_output_tokens": 78.92923076923076,
+          "both_publicly_requested_fields_preserved": 0.1883076923076923,
+          "preserved_field_reward": 20.338499999999986,
+          "preserved_field_net": 20.088499999999986
+        }
+      }
+    },
+    "split": {
+      "rows": [
+        {
+          "focus": [
+            "mandate",
+            "review"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 2.9574065400881757,
+              "preserved_facts_out_of_8": 2.508218021531731,
+              "safe_completed_rate": 0.19795585278946973,
+              "safe_preserved_facts": 0.5840421073328642,
+              "expected_writer_output_tokens": 80.1541549788121,
+              "both_publicly_requested_fields_preserved": 0.3746076386317417,
+              "preserved_field_reward": 23.56912159786347,
+              "preserved_field_net": 23.31912159786347
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.6918779234774557,
+              "preserved_facts_out_of_8": 2.440986811640122,
+              "safe_completed_rate": 0.26135275347956227,
+              "safe_preserved_facts": 0.6958141771867983,
+              "expected_writer_output_tokens": 80.93221333950291,
+              "both_publicly_requested_fields_preserved": 0.34135827091630283,
+              "preserved_field_reward": 23.20513571947448,
+              "preserved_field_net": 23.20513571947448
+            },
+            "greedy": {
+              "licensed_fact_count": 3.4202307692307747,
+              "preserved_facts_out_of_8": 3.1543846153846204,
+              "safe_completed_rate": 0.33438461538461534,
+              "safe_preserved_facts": 1.3855384615384618,
+              "expected_writer_output_tokens": 83.58292307692302,
+              "both_publicly_requested_fields_preserved": 0.37384615384615383,
+              "preserved_field_reward": 24.81392307692305,
+              "preserved_field_net": 24.56392307692305
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.688461538461541,
+              "preserved_facts_out_of_8": 2.439230769230771,
+              "safe_completed_rate": 0.26076923076923075,
+              "safe_preserved_facts": 0.6923076923076922,
+              "expected_writer_output_tokens": 80.94961538461537,
+              "both_publicly_requested_fields_preserved": 0.34269230769230763,
+              "preserved_field_reward": 23.245384615384612,
+              "preserved_field_net": 23.245384615384612
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.3623076923076973,
+              "preserved_facts_out_of_8": 3.079846153846158,
+              "safe_completed_rate": 0.32076923076923075,
+              "safe_preserved_facts": 1.2766153846153852,
+              "expected_writer_output_tokens": 83.05515384615381,
+              "both_publicly_requested_fields_preserved": 0.3759230769230768,
+              "preserved_field_reward": 24.770307692307668,
+              "preserved_field_net": 24.520307692307668
+            }
+          }
+        },
+        {
+          "focus": [
+            "mandate",
+            "reports"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 4.111833794205537,
+              "preserved_facts_out_of_8": 3.824581165607355,
+              "safe_completed_rate": 0.6033788209471541,
+              "safe_preserved_facts": 2.7725650613751864,
+              "expected_writer_output_tokens": 82.13434250979515,
+              "both_publicly_requested_fields_preserved": 0.3746089303857242,
+              "preserved_field_reward": 25.7080911696201,
+              "preserved_field_net": 25.4580911696201
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.6792986066860265,
+              "preserved_facts_out_of_8": 3.574179591973597,
+              "safe_completed_rate": 0.6335404670067726,
+              "safe_preserved_facts": 2.8827928299316654,
+              "expected_writer_output_tokens": 79.9799544531461,
+              "both_publicly_requested_fields_preserved": 0.3413614158679629,
+              "preserved_field_reward": 24.593535017248566,
+              "preserved_field_net": 24.593535017248566
+            },
+            "greedy": {
+              "licensed_fact_count": 3.851769230769238,
+              "preserved_facts_out_of_8": 3.6191538461538526,
+              "safe_completed_rate": 0.5171538461538463,
+              "safe_preserved_facts": 2.3653846153846176,
+              "expected_writer_output_tokens": 83.05330769230764,
+              "both_publicly_requested_fields_preserved": 0.37384615384615383,
+              "preserved_field_reward": 25.860692307692293,
+              "preserved_field_net": 25.610692307692293
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.680769230769233,
+              "preserved_facts_out_of_8": 3.4938461538461554,
+              "safe_completed_rate": 0.5930769230769231,
+              "safe_preserved_facts": 2.6815384615384623,
+              "expected_writer_output_tokens": 79.07000000000002,
+              "both_publicly_requested_fields_preserved": 0.34269230769230763,
+              "preserved_field_reward": 24.335769230769234,
+              "preserved_field_net": 24.335769230769234
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 3.8930769230769293,
+              "preserved_facts_out_of_8": 3.6563076923076983,
+              "safe_completed_rate": 0.536769230769231,
+              "safe_preserved_facts": 2.4553846153846175,
+              "expected_writer_output_tokens": 82.39676923076918,
+              "both_publicly_requested_fields_preserved": 0.3759230769230768,
+              "preserved_field_reward": 25.918846153846136,
+              "preserved_field_net": 25.668846153846136
+            }
+          }
+        },
+        {
+          "focus": [
+            "mandate",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 2.767118842654555,
+              "preserved_facts_out_of_8": 2.562664092384531,
+              "safe_completed_rate": 0.3782917530251551,
+              "safe_preserved_facts": 1.444158500278656,
+              "expected_writer_output_tokens": 73.51744781527819,
+              "both_publicly_requested_fields_preserved": 0.37460892446660055,
+              "preserved_field_reward": 25.99788437706597,
+              "preserved_field_net": 25.74788437706597
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.1979711433616194,
+              "preserved_facts_out_of_8": 2.0099207417893243,
+              "safe_completed_rate": 0.3341626321623819,
+              "safe_preserved_facts": 0.8968960654700471,
+              "expected_writer_output_tokens": 74.28334455002027,
+              "both_publicly_requested_fields_preserved": 0.34136141329349895,
+              "preserved_field_reward": 24.30327511234266,
+              "preserved_field_net": 24.30327511234266
+            },
+            "greedy": {
+              "licensed_fact_count": 2.3660769230769265,
+              "preserved_facts_out_of_8": 2.133461538461541,
+              "safe_completed_rate": 0.18484615384615383,
+              "safe_preserved_facts": 0.5141538461538462,
+              "expected_writer_output_tokens": 74.12253846153843,
+              "both_publicly_requested_fields_preserved": 0.37384615384615383,
+              "preserved_field_reward": 25.860692307692293,
+              "preserved_field_net": 25.610692307692293
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.1923076923076934,
+              "preserved_facts_out_of_8": 2.005384615384617,
+              "safe_completed_rate": 0.3334615384615384,
+              "safe_preserved_facts": 0.8919230769230774,
+              "expected_writer_output_tokens": 74.26192307692308,
+              "both_publicly_requested_fields_preserved": 0.34269230769230763,
+              "preserved_field_reward": 24.335769230769227,
+              "preserved_field_net": 24.335769230769227
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 2.4323076923076963,
+              "preserved_facts_out_of_8": 2.195538461538466,
+              "safe_completed_rate": 0.21899999999999997,
+              "safe_preserved_facts": 0.651923076923077,
+              "expected_writer_output_tokens": 74.0080769230769,
+              "both_publicly_requested_fields_preserved": 0.3759230769230768,
+              "preserved_field_reward": 25.918846153846143,
+              "preserved_field_net": 25.668846153846143
+            }
+          }
+        },
+        {
+          "focus": [
+            "review",
+            "reports"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 4.302210312043077,
+              "preserved_facts_out_of_8": 3.369795735440858,
+              "safe_completed_rate": 0.3520329455053707,
+              "safe_preserved_facts": 1.3313921993913629,
+              "expected_writer_output_tokens": 81.89674284229497,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.942049594203644,
+              "preserved_field_net": 14.692049594203644
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 4.1737292834609265,
+              "preserved_facts_out_of_8": 3.3240899397696704,
+              "safe_completed_rate": 0.49738128087671846,
+              "safe_preserved_facts": 1.7128618290141642,
+              "expected_writer_output_tokens": 78.80585401721623,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.234886504898276,
+              "preserved_field_net": 14.234886504898276
+            },
+            "greedy": {
+              "licensed_fact_count": 4.219615384615391,
+              "preserved_facts_out_of_8": 3.388846153846159,
+              "safe_completed_rate": 0.320076923076923,
+              "safe_preserved_facts": 1.1736923076923078,
+              "expected_writer_output_tokens": 83.2697692307692,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.625615384615369,
+              "preserved_field_net": 15.375615384615369
+            },
+            "best_independent": {
+              "licensed_fact_count": 4.176923076923079,
+              "preserved_facts_out_of_8": 3.3253846153846176,
+              "safe_completed_rate": 0.49730769230769195,
+              "safe_preserved_facts": 1.7111538461538465,
+              "expected_writer_output_tokens": 78.8057692307692,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.231538461538449,
+              "preserved_field_net": 14.231538461538449
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 4.269230769230776,
+              "preserved_facts_out_of_8": 3.4010769230769284,
+              "safe_completed_rate": 0.32930769230769225,
+              "safe_preserved_facts": 1.236692307692308,
+              "expected_writer_output_tokens": 82.74823076923079,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.407538461538447,
+              "preserved_field_net": 15.157538461538447
+            }
+          }
+        },
+        {
+          "focus": [
+            "review",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.2890516058069683,
+              "preserved_facts_out_of_8": 2.273843191086667,
+              "safe_completed_rate": 0.32368284854920626,
+              "safe_preserved_facts": 0.9751861485181206,
+              "expected_writer_output_tokens": 75.83036894992097,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.362479273117945,
+              "preserved_field_net": 14.112479273117945
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 2.6917005558450873,
+              "preserved_facts_out_of_8": 1.9250030747571911,
+              "safe_completed_rate": 0.46590401682089777,
+              "safe_preserved_facts": 1.0659647986336898,
+              "expected_writer_output_tokens": 75.48824028438955,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.815477945871166,
+              "preserved_field_net": 14.815477945871166
+            },
+            "greedy": {
+              "licensed_fact_count": 2.7339230769230816,
+              "preserved_facts_out_of_8": 1.903153846153849,
+              "safe_completed_rate": 0.2203846153846154,
+              "safe_preserved_facts": 0.4855384615384615,
+              "expected_writer_output_tokens": 75.03684615384611,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.625615384615369,
+              "preserved_field_net": 15.375615384615369
+            },
+            "best_independent": {
+              "licensed_fact_count": 2.6884615384615387,
+              "preserved_facts_out_of_8": 1.8369230769230784,
+              "safe_completed_rate": 0.42461538461538434,
+              "safe_preserved_facts": 0.856153846153846,
+              "expected_writer_output_tokens": 74.5584615384615,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 14.231538461538447,
+              "preserved_field_net": 14.231538461538447
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 2.808461538461543,
+              "preserved_facts_out_of_8": 1.9403076923076947,
+              "safe_completed_rate": 0.23169230769230764,
+              "safe_preserved_facts": 0.534,
+              "expected_writer_output_tokens": 75.01999999999998,
+              "both_publicly_requested_fields_preserved": 0.0,
+              "preserved_field_reward": 15.407538461538447,
+              "preserved_field_net": 15.157538461538447
+            }
+          }
+        },
+        {
+          "focus": [
+            "reports",
+            "updates"
+          ],
+          "metrics": {
+            "learned": {
+              "licensed_fact_count": 3.7802605910582554,
+              "preserved_facts_out_of_8": 3.496767302506843,
+              "safe_completed_rate": 0.6764837308239311,
+              "safe_preserved_facts": 2.878541732246685,
+              "expected_writer_output_tokens": 77.64646979478887,
+              "both_publicly_requested_fields_preserved": 0.37460792162241857,
+              "preserved_field_reward": 25.721237985981187,
+              "preserved_field_net": 25.471237985981187
+            },
+            "learned_no_peer": {
+              "licensed_fact_count": 3.679973601873007,
+              "preserved_facts_out_of_8": 3.428966819971328,
+              "safe_completed_rate": 0.7966789354375502,
+              "safe_preserved_facts": 3.0463453523779123,
+              "expected_writer_output_tokens": 77.92830054230495,
+              "both_publicly_requested_fields_preserved": 0.34135954274196734,
+              "preserved_field_reward": 24.08288542962804,
+              "preserved_field_net": 24.08288542962804
+            },
+            "greedy": {
+              "licensed_fact_count": 4.028538461538469,
+              "preserved_facts_out_of_8": 3.895615384615392,
+              "safe_completed_rate": 0.7686923076923083,
+              "safe_preserved_facts": 3.425076923076929,
+              "expected_writer_output_tokens": 79.13046153846155,
+              "both_publicly_requested_fields_preserved": 0.3738461538461538,
+              "preserved_field_reward": 26.209615384615383,
+              "preserved_field_net": 25.959615384615383
+            },
+            "best_independent": {
+              "licensed_fact_count": 3.680769230769231,
+              "preserved_facts_out_of_8": 3.431538461538462,
+              "safe_completed_rate": 0.7569230769230771,
+              "safe_preserved_facts": 2.845384615384616,
+              "expected_writer_output_tokens": 77.80884615384619,
+              "both_publicly_requested_fields_preserved": 0.34269230769230763,
+              "preserved_field_reward": 24.117692307692316,
+              "preserved_field_net": 24.117692307692316
+            },
+            "optimized_interactive": {
+              "licensed_fact_count": 4.003846153846161,
+              "preserved_facts_out_of_8": 3.8210769230769297,
+              "safe_completed_rate": 0.7467692307692312,
+              "safe_preserved_facts": 3.274615384615389,
+              "expected_writer_output_tokens": 79.24238461538462,
+              "both_publicly_requested_fields_preserved": 0.37592307692307686,
+              "preserved_field_reward": 26.107846153846147,
+              "preserved_field_net": 25.857846153846147
+            }
+          }
+        }
+      ],
+      "mean": {
+        "learned": {
+          "licensed_fact_count": 3.534646947642761,
+          "preserved_facts_out_of_8": 3.005978251426331,
+          "safe_completed_rate": 0.42197099194004783,
+          "safe_preserved_facts": 1.6643142915238123,
+          "expected_writer_output_tokens": 78.5299211484817,
+          "both_publicly_requested_fields_preserved": 0.24973890251774752,
+          "preserved_field_reward": 21.716810666308717,
+          "preserved_field_net": 21.466810666308717
+        },
+        "learned_no_peer": {
+          "licensed_fact_count": 3.1857585191173534,
+          "preserved_facts_out_of_8": 2.783857829983539,
+          "safe_completed_rate": 0.49817001429731383,
+          "safe_preserved_facts": 1.716779175435713,
+          "expected_writer_output_tokens": 77.90298453109668,
+          "both_publicly_requested_fields_preserved": 0.22757344046995534,
+          "preserved_field_reward": 20.872532621577196,
+          "preserved_field_net": 20.872532621577196
+        },
+        "greedy": {
+          "licensed_fact_count": 3.4366923076923137,
+          "preserved_facts_out_of_8": 3.015769230769236,
+          "safe_completed_rate": 0.390923076923077,
+          "safe_preserved_facts": 1.5582307692307706,
+          "expected_writer_output_tokens": 79.69930769230766,
+          "both_publicly_requested_fields_preserved": 0.24923076923076917,
+          "preserved_field_reward": 22.332692307692295,
+          "preserved_field_net": 22.082692307692295
+        },
+        "best_independent": {
+          "licensed_fact_count": 3.184615384615386,
+          "preserved_facts_out_of_8": 2.755384615384617,
+          "safe_completed_rate": 0.47769230769230764,
+          "safe_preserved_facts": 1.6130769230769235,
+          "expected_writer_output_tokens": 77.57576923076924,
+          "both_publicly_requested_fields_preserved": 0.2284615384615384,
+          "preserved_field_reward": 20.74961538461538,
+          "preserved_field_net": 20.74961538461538
+        },
+        "optimized_interactive": {
+          "licensed_fact_count": 3.4615384615384674,
+          "preserved_facts_out_of_8": 3.0156923076923126,
+          "safe_completed_rate": 0.3973846153846155,
+          "safe_preserved_facts": 1.5715384615384629,
+          "expected_writer_output_tokens": 79.41176923076921,
+          "both_publicly_requested_fields_preserved": 0.2506153846153845,
+          "preserved_field_reward": 22.25515384615383,
+          "preserved_field_net": 22.00515384615383
+        }
+      }
+    }
+  },
+  "pins": {
+    "payload-policy.json": "f5f2fefc33eb8282f1fce043ddc4679cde3b510647051d641fe7d0fb346fa7ad",
+    "payload-policy-review.json": "235b982ebac0084a867f9fad2be9d816c75246e8ce5bec4236a6eb0803d7291f",
+    "payload_policy_evaluate.py": "f2c038e3a80645437b393d5ee3f474792a70045eaa30e15882f56ef9f2ada2de",
+    "transcript.jsonl": "c95793226a25a23d8ff3416f082ef33e06026f94412aa6dd1a40157532400505"
+  }
+}

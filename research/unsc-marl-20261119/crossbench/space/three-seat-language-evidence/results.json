@@ -1,0 +1,521 @@
+{
+  "scope": "Frozen Qwen realized and read one-grade messages. Each resulting mapping is reused across the finite exact trajectories. A grade-binding mode admits only the already selected tuple. A strict same-assistant annotation with exact spans separately requires a current grade rather than a proposal to adjust or revisit it. This tests transport through natural wording.",
+  "recorded_messages": [
+    {
+      "intended": [
+        0,
+        0
+      ],
+      "written": "I respectfully request that my grade of 0 be adjusted to match the A package letter.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        0,
+        0
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 19,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        0,
+        1
+      ],
+      "written": "I respectfully request that my grade of 1 be adjusted to match the A package letter.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        0,
+        1
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 19,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        0,
+        2
+      ],
+      "written": "I respectfully request that my grade of 2 be adjusted to match the A package letter I have submitted.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        0,
+        2
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 22,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        0,
+        3
+      ],
+      "written": "I respectfully request that my grade of 3 be adjusted to match the A package letter.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        0,
+        3
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 19,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        1,
+        0
+      ],
+      "written": "I respectfully request that my grade be adjusted from 0 to B to align with the official package letter.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        1,
+        0
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 22,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        1,
+        1
+      ],
+      "written": "I respectfully request that my grade of 1 be adjusted to match the B package letter.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        1,
+        1
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 19,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        1,
+        2
+      ],
+      "written": "I respectfully request that my grade of 2 be adjusted to match the B package letter.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        1,
+        2
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 19,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        1,
+        3
+      ],
+      "written": "I respectfully request that my grade of 3 be adjusted to match the B package letter.",
+      "force_review": "requests_adjustment",
+      "force_witness": "be adjusted",
+      "parsed": [
+        1,
+        3
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 19,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        2,
+        0
+      ],
+      "written": "I respectfully request a review of my grade of 0 for the C package.",
+      "force_review": "requests_review",
+      "force_witness": "request a review",
+      "parsed": [
+        0,
+        0
+      ],
+      "valid_format": true,
+      "exact": false,
+      "writer_finished": true,
+      "writer_output_tokens": 17,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        2,
+        1
+      ],
+      "written": "I respectfully request a review of my grade of 1 for the C package.",
+      "force_review": "requests_review",
+      "force_witness": "request a review",
+      "parsed": [
+        2,
+        1
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 17,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        2,
+        2
+      ],
+      "written": "I respectfully request that my grade of 2 be recorded alongside my package letter C.",
+      "force_review": "reports_current_grade",
+      "force_witness": "my grade of 2 be recorded",
+      "parsed": [
+        2,
+        2
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 18,
+      "reader_output_tokens": 4
+    },
+    {
+      "intended": [
+        2,
+        3
+      ],
+      "written": "I respectfully request a grade of 3 for my submission, which corresponds to the \"C\" package letter.",
+      "force_review": "requests_new_grade",
+      "force_witness": "request a grade of 3",
+      "parsed": [
+        2,
+        3
+      ],
+      "valid_format": true,
+      "exact": true,
+      "writer_finished": true,
+      "writer_output_tokens": 23,
+      "reader_output_tokens": 4
+    }
+  ],
+  "reader_controls": [
+    {
+      "id": "no_grade",
+      "message": "I favour package B, but my delegation has yet to assign it a grade.",
+      "expected": null,
+      "parsed": null,
+      "valid_format": true,
+      "correct": true
+    },
+    {
+      "id": "peer_grade",
+      "message": "The other delegation gave A a grade of one. I have not stated my own grade.",
+      "expected": null,
+      "parsed": null,
+      "valid_format": true,
+      "correct": true
+    },
+    {
+      "id": "two_grades",
+      "message": "My delegation grades A as one and B as two.",
+      "expected": null,
+      "parsed": [
+        0,
+        1
+      ],
+      "valid_format": true,
+      "correct": false
+    },
+    {
+      "id": "actual_correction",
+      "message": "My grade for C is two, correcting the earlier figure of three.",
+      "expected": [
+        2,
+        2
+      ],
+      "parsed": [
+        0,
+        2
+      ],
+      "valid_format": true,
+      "correct": false
+    }
+  ],
+  "exact_declaration_control": [
+    "My delegation gives package A a confirmed grade of 0.",
+    "My delegation gives package A a confirmed grade of 1.",
+    "My delegation gives package A a confirmed grade of 2.",
+    "My delegation gives package A a confirmed grade of 3.",
+    "My delegation gives package B a confirmed grade of 0.",
+    "My delegation gives package B a confirmed grade of 1.",
+    "My delegation gives package B a confirmed grade of 2.",
+    "My delegation gives package B a confirmed grade of 3.",
+    "My delegation gives package C a confirmed grade of 0.",
+    "My delegation gives package C a confirmed grade of 1.",
+    "My delegation gives package C a confirmed grade of 2.",
+    "My delegation gives package C a confirmed grade of 3."
+  ],
+  "exact_roundtrips": 11,
+  "scores": [
+    {
+      "grid": 196,
+      "known_independent_net": 0.6942857142857143,
+      "modes": {
+        "typed": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9958109016148863,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.3289556577463489,
+          "certified_impasse": 0.40286200244294323,
+          "net": 0.7019433331408454,
+          "agreement_recall": 0.6579113154926979,
+          "impasse_recall": 0.8057240048858865
+        },
+        "prose_with_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9958109016148857,
+          "uncached_model_calls": 4.596648721291908,
+          "uncached_generated_tokens": 47.96599156231193,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.1843865659638103,
+          "certified_impasse": 0.11695882821661913,
+          "net": 0.2714710671319829,
+          "agreement_recall": 0.3687731319276207,
+          "impasse_recall": 0.23391765643323825
+        },
+        "prose_without_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9958109016148856,
+          "uncached_model_calls": 4.596648721291908,
+          "uncached_generated_tokens": 47.90880233557488,
+          "unsupported_certificate": 0.08210273889026559,
+          "false_certificate": 0.08210273889026559,
+          "certified_agreement": 0.1843865659638103,
+          "certified_impasse": 0.11695882821661913,
+          "net": 0.2714710671319829,
+          "agreement_recall": 0.3687731319276207,
+          "impasse_recall": 0.23391765643323825
+        },
+        "strict_same_assistant_force_review": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9958109016148862,
+          "uncached_model_calls": 4.596648721291917,
+          "uncached_generated_tokens": 48.15910163710814,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.002264695964201346,
+          "certified_impasse": 0.0,
+          "net": -0.02760963108424524,
+          "agreement_recall": 0.004529391928402693,
+          "impasse_recall": 0.0
+        }
+      }
+    },
+    {
+      "grid": 198,
+      "known_independent_net": 0.6942857142857142,
+      "modes": {
+        "typed": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9975228129539542,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.38491935022978857,
+          "certified_impasse": 0.3890526885022522,
+          "net": 0.7440463543434221,
+          "agreement_recall": 0.7698387004595774,
+          "impasse_recall": 0.7781053770045044
+        },
+        "prose_with_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9975228129539537,
+          "uncached_model_calls": 4.59801825036316,
+          "uncached_generated_tokens": 48.11408235975884,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.23788811351064595,
+          "certified_impasse": 0.11624456403820795,
+          "net": 0.3242069931602353,
+          "agreement_recall": 0.475776227021292,
+          "impasse_recall": 0.2324891280764159
+        },
+        "prose_without_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9975228129539533,
+          "uncached_model_calls": 4.59801825036316,
+          "uncached_generated_tokens": 48.0219216363713,
+          "unsupported_certificate": 0.08090676273251689,
+          "false_certificate": 0.08090676273251689,
+          "certified_agreement": 0.23788811351064595,
+          "certified_impasse": 0.11624456403820795,
+          "net": 0.3242069931602353,
+          "agreement_recall": 0.475776227021292,
+          "impasse_recall": 0.2324891280764159
+        },
+        "strict_same_assistant_force_review": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9975228129539542,
+          "uncached_model_calls": 4.598018250363168,
+          "uncached_generated_tokens": 48.3774048719628,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.0,
+          "certified_impasse": 0.0,
+          "net": -0.029925684388618624,
+          "agreement_recall": 0.0,
+          "impasse_recall": 0.0
+        }
+      }
+    },
+    {
+      "grid": 199,
+      "known_independent_net": 0.752142857142857,
+      "modes": {
+        "typed": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9966098454439977,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.378760600266944,
+          "certified_impasse": 0.39927878879693485,
+          "net": 0.7481410937005589,
+          "agreement_recall": 0.7575212005338883,
+          "impasse_recall": 0.7985575775938697
+        },
+        "prose_with_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9966098454439977,
+          "uncached_model_calls": 4.5972878763552,
+          "uncached_generated_tokens": 47.24974675310454,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.30203988935179105,
+          "certified_impasse": 0.10860955285476909,
+          "net": 0.3807511468432402,
+          "agreement_recall": 0.6040797787035822,
+          "impasse_recall": 0.21721910570953817
+        },
+        "prose_without_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9966098454439977,
+          "uncached_model_calls": 4.5972878763552,
+          "uncached_generated_tokens": 47.24974675310454,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.30203988935179105,
+          "certified_impasse": 0.10860955285476909,
+          "net": 0.3807511468432402,
+          "agreement_recall": 0.6040797787035822,
+          "impasse_recall": 0.21721910570953817
+        },
+        "strict_same_assistant_force_review": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9966098454439962,
+          "uncached_model_calls": 4.59728787635519,
+          "uncached_generated_tokens": 47.28778460868159,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.004320571793006176,
+          "certified_impasse": 0.0,
+          "net": -0.02557772357031371,
+          "agreement_recall": 0.008641143586012354,
+          "impasse_recall": 0.0
+        }
+      }
+    },
+    {
+      "grid": 217,
+      "known_independent_net": 0.7521428571428571,
+      "modes": {
+        "typed": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9969686699056032,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.3852098031161763,
+          "certified_impasse": 0.4027855118890356,
+          "net": 0.7580862549080438,
+          "agreement_recall": 0.7704196062323528,
+          "impasse_recall": 0.8055710237780712
+        },
+        "prose_with_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9969686699056028,
+          "uncached_model_calls": 4.597574935924492,
+          "uncached_generated_tokens": 47.95040318838514,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.15615648521944792,
+          "certified_impasse": 0.11514403309192131,
+          "net": 0.24139145821420116,
+          "agreement_recall": 0.3123129704388959,
+          "impasse_recall": 0.23028806618384262
+        },
+        "prose_without_grade_binding": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.9969686699056031,
+          "uncached_model_calls": 4.59757493592449,
+          "uncached_generated_tokens": 47.895701086085566,
+          "unsupported_certificate": 0.08520818675671857,
+          "false_certificate": 0.08520818675671857,
+          "certified_agreement": 0.15615648521944792,
+          "certified_impasse": 0.11514403309192131,
+          "net": 0.24139145821420116,
+          "agreement_recall": 0.3123129704388959,
+          "impasse_recall": 0.23028806618384262
+        },
+        "strict_same_assistant_force_review": {
+          "impasse_mass": 0.5,
+          "agree_mass": 0.4999999999999999,
+          "peer_send": 0.996968669905603,
+          "uncached_model_calls": 4.5975749359244915,
+          "uncached_generated_tokens": 48.19982135676608,
+          "unsupported_certificate": 0.0,
+          "false_certificate": 0.0,
+          "certified_agreement": 0.0,
+          "certified_impasse": 0.0,
+          "net": -0.029909060097168087,
+          "agreement_recall": 0.0,
+          "impasse_recall": 0.0
+        }
+      }
+    }
+  ]
+}

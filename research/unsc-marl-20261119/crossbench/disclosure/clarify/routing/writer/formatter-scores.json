@@ -1,0 +1,644 @@
+{
+  "origin": "Deterministic formatter. Case-specific assistant annotations.",
+  "records": [
+    {
+      "record": "impasse-AC-script",
+      "model_id": "impasse-AC-script",
+      "mechanics": {
+        "headings": true,
+        "exact_disposition_line": true,
+        "supported_disposition_prefix": true,
+        "words": 79,
+        "word_limit_met": true
+      },
+      "judge": {
+        "final": {
+          "lower": 70,
+          "upper": 70,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": true
+      },
+      "full_contract": true,
+      "verdict": {
+        "id": "impasse-AC-script",
+        "units": [
+          {
+            "id": "disposition",
+            "status": "met",
+            "source": [
+              {
+                "block": "historical-instrument",
+                "quote": "{\"draft\": \"S/2022/925\", \"meeting\": \"S/PV.9214\", \"date\": \"2022-12-09\"}"
+              },
+              {
+                "block": "roll",
+                "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-9\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"C\": {\"India workshop delegate\": [\"claim-8\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"UNRESOLVED\", \"unique_verified\": false, \"unresolved_options\": [\"F\"], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: UNRESOLVED",
+            "reason": "The rendered historical and workshop identifiers and dispositions match the input."
+          },
+          {
+            "id": "operative",
+            "status": "met",
+            "source": [
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-9\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"C\": {\"India workshop delegate\": [\"claim-8\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"UNRESOLVED\", \"unique_verified\": false, \"unresolved_options\": [\"F\"], \"verified_options\": {}}"
+              }
+            ],
+            "response": "Evidence: Package F lacks a disclosure from India.",
+            "reason": "The record gives the relevant package terms, exclusion coverage or missing disclosure."
+          },
+          {
+            "id": "positions",
+            "status": "met",
+            "source": [
+              {
+                "block": "claim-1",
+                "quote": "India workshop delegate accepts option A."
+              },
+              {
+                "block": "claim-7",
+                "quote": "Brazil workshop delegate accepts option F."
+              }
+            ],
+            "response": "Positions: India accepts A (claim-1). Brazil accepts F (claim-7).",
+            "reason": "The two scoped claims point to actual, correctly attributed admissions."
+          },
+          {
+            "id": "unresolved",
+            "status": "met",
+            "source": [
+              {
+                "block": "india",
+                "quote": "India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-9\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"C\": {\"India workshop delegate\": [\"claim-8\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"UNRESOLVED\", \"unique_verified\": false, \"unresolved_options\": [\"F\"], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: UNRESOLVED\nEvidence: Package F lacks a disclosure from India.",
+            "reason": "Both recorded concerns and the decision-relevant evidence are preserved."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "source": [
+              {
+                "block": "scope",
+                "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+              }
+            ],
+            "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+            "reason": "The record treats proposals as fictional and preserves official authority."
+          }
+        ],
+        "guard": {
+          "status": "clear",
+          "source": [
+            {
+              "block": "scope",
+              "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+            },
+            {
+              "block": "roll",
+              "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+            }
+          ],
+          "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+          "reason": "No vote, commitment or amendment is invented."
+        }
+      }
+    },
+    {
+      "record": "impasse-AC-guarded",
+      "model_id": "impasse-AC-guarded",
+      "mechanics": {
+        "headings": true,
+        "exact_disposition_line": true,
+        "supported_disposition_prefix": true,
+        "words": 83,
+        "word_limit_met": true
+      },
+      "judge": {
+        "final": {
+          "lower": 70,
+          "upper": 70,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": true
+      },
+      "full_contract": true,
+      "verdict": {
+        "id": "impasse-AC-guarded",
+        "units": [
+          {
+            "id": "disposition",
+            "status": "met",
+            "source": [
+              {
+                "block": "historical-instrument",
+                "quote": "{\"draft\": \"S/2022/925\", \"meeting\": \"S/PV.9214\", \"date\": \"2022-12-09\"}"
+              },
+              {
+                "block": "roll",
+                "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-8\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"C\": {\"India workshop delegate\": [\"claim-9\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-5\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"India workshop delegate\": [\"claim-7\"]}}, \"state\": \"IMPASSE\", \"unique_verified\": false, \"unresolved_options\": [], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: IMPASSE",
+            "reason": "The rendered historical and workshop identifiers and dispositions match the input."
+          },
+          {
+            "id": "operative",
+            "status": "met",
+            "source": [
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-8\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"C\": {\"India workshop delegate\": [\"claim-9\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-5\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"India workshop delegate\": [\"claim-7\"]}}, \"state\": \"IMPASSE\", \"unique_verified\": false, \"unresolved_options\": [], \"verified_options\": {}}"
+              }
+            ],
+            "response": "Evidence: At least one delegate excludes each of the 7 offered packages.",
+            "reason": "The record gives the relevant package terms, exclusion coverage or missing disclosure."
+          },
+          {
+            "id": "positions",
+            "status": "met",
+            "source": [
+              {
+                "block": "claim-7",
+                "quote": "India workshop delegate excludes option G."
+              },
+              {
+                "block": "claim-3",
+                "quote": "Brazil workshop delegate excludes option B."
+              }
+            ],
+            "response": "Positions: India excludes G (claim-7). Brazil excludes B (claim-3).",
+            "reason": "The two scoped claims point to actual, correctly attributed admissions."
+          },
+          {
+            "id": "unresolved",
+            "status": "met",
+            "source": [
+              {
+                "block": "india",
+                "quote": "India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-8\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"C\": {\"India workshop delegate\": [\"claim-9\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-5\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"India workshop delegate\": [\"claim-7\"]}}, \"state\": \"IMPASSE\", \"unique_verified\": false, \"unresolved_options\": [], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: IMPASSE\nEvidence: At least one delegate excludes each of the 7 offered packages.",
+            "reason": "Both recorded concerns and the decision-relevant evidence are preserved."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "source": [
+              {
+                "block": "scope",
+                "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+              }
+            ],
+            "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+            "reason": "The record treats proposals as fictional and preserves official authority."
+          }
+        ],
+        "guard": {
+          "status": "clear",
+          "source": [
+            {
+              "block": "scope",
+              "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+            },
+            {
+              "block": "roll",
+              "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+            }
+          ],
+          "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+          "reason": "No vote, commitment or amendment is invented."
+        }
+      }
+    },
+    {
+      "record": "impasse-BC-script",
+      "model_id": "impasse-BC-script",
+      "mechanics": {
+        "headings": true,
+        "exact_disposition_line": true,
+        "supported_disposition_prefix": true,
+        "words": 79,
+        "word_limit_met": true
+      },
+      "judge": {
+        "final": {
+          "lower": 70,
+          "upper": 70,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": true
+      },
+      "full_contract": true,
+      "verdict": {
+        "id": "impasse-BC-script",
+        "units": [
+          {
+            "id": "disposition",
+            "status": "met",
+            "source": [
+              {
+                "block": "historical-instrument",
+                "quote": "{\"draft\": \"S/2022/925\", \"meeting\": \"S/PV.9214\", \"date\": \"2022-12-09\"}"
+              },
+              {
+                "block": "roll",
+                "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-9\"]}, \"C\": {\"India workshop delegate\": [\"claim-8\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"UNRESOLVED\", \"unique_verified\": false, \"unresolved_options\": [\"F\"], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: UNRESOLVED",
+            "reason": "The rendered historical and workshop identifiers and dispositions match the input."
+          },
+          {
+            "id": "operative",
+            "status": "met",
+            "source": [
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-9\"]}, \"C\": {\"India workshop delegate\": [\"claim-8\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"UNRESOLVED\", \"unique_verified\": false, \"unresolved_options\": [\"F\"], \"verified_options\": {}}"
+              }
+            ],
+            "response": "Evidence: Package F lacks a disclosure from India.",
+            "reason": "The record gives the relevant package terms, exclusion coverage or missing disclosure."
+          },
+          {
+            "id": "positions",
+            "status": "met",
+            "source": [
+              {
+                "block": "claim-1",
+                "quote": "India workshop delegate accepts option B."
+              },
+              {
+                "block": "claim-7",
+                "quote": "Brazil workshop delegate accepts option F."
+              }
+            ],
+            "response": "Positions: India accepts B (claim-1). Brazil accepts F (claim-7).",
+            "reason": "The two scoped claims point to actual, correctly attributed admissions."
+          },
+          {
+            "id": "unresolved",
+            "status": "met",
+            "source": [
+              {
+                "block": "india",
+                "quote": "India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-9\"]}, \"C\": {\"India workshop delegate\": [\"claim-8\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"UNRESOLVED\", \"unique_verified\": false, \"unresolved_options\": [\"F\"], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: UNRESOLVED\nEvidence: Package F lacks a disclosure from India.",
+            "reason": "Both recorded concerns and the decision-relevant evidence are preserved."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "source": [
+              {
+                "block": "scope",
+                "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+              }
+            ],
+            "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+            "reason": "The record treats proposals as fictional and preserves official authority."
+          }
+        ],
+        "guard": {
+          "status": "clear",
+          "source": [
+            {
+              "block": "scope",
+              "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+            },
+            {
+              "block": "roll",
+              "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+            }
+          ],
+          "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+          "reason": "No vote, commitment or amendment is invented."
+        }
+      }
+    },
+    {
+      "record": "impasse-BC-guarded",
+      "model_id": "impasse-BC-guarded",
+      "mechanics": {
+        "headings": true,
+        "exact_disposition_line": true,
+        "supported_disposition_prefix": true,
+        "words": 83,
+        "word_limit_met": true
+      },
+      "judge": {
+        "final": {
+          "lower": 70,
+          "upper": 70,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": true
+      },
+      "full_contract": true,
+      "verdict": {
+        "id": "impasse-BC-guarded",
+        "units": [
+          {
+            "id": "disposition",
+            "status": "met",
+            "source": [
+              {
+                "block": "historical-instrument",
+                "quote": "{\"draft\": \"S/2022/925\", \"meeting\": \"S/PV.9214\", \"date\": \"2022-12-09\"}"
+              },
+              {
+                "block": "roll",
+                "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-8\"]}, \"C\": {\"India workshop delegate\": [\"claim-9\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-5\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"India workshop delegate\": [\"claim-7\"]}}, \"state\": \"IMPASSE\", \"unique_verified\": false, \"unresolved_options\": [], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: IMPASSE",
+            "reason": "The rendered historical and workshop identifiers and dispositions match the input."
+          },
+          {
+            "id": "operative",
+            "status": "met",
+            "source": [
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-8\"]}, \"C\": {\"India workshop delegate\": [\"claim-9\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-5\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"India workshop delegate\": [\"claim-7\"]}}, \"state\": \"IMPASSE\", \"unique_verified\": false, \"unresolved_options\": [], \"verified_options\": {}}"
+              }
+            ],
+            "response": "Evidence: At least one delegate excludes each of the 7 offered packages.",
+            "reason": "The record gives the relevant package terms, exclusion coverage or missing disclosure."
+          },
+          {
+            "id": "positions",
+            "status": "met",
+            "source": [
+              {
+                "block": "claim-7",
+                "quote": "India workshop delegate excludes option G."
+              },
+              {
+                "block": "claim-8",
+                "quote": "Brazil workshop delegate excludes option B."
+              }
+            ],
+            "response": "Positions: India excludes G (claim-7). Brazil excludes B (claim-8).",
+            "reason": "The two scoped claims point to actual, correctly attributed admissions."
+          },
+          {
+            "id": "unresolved",
+            "status": "met",
+            "source": [
+              {
+                "block": "india",
+                "quote": "India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"B\": {\"Brazil workshop delegate\": [\"claim-8\"]}, \"C\": {\"India workshop delegate\": [\"claim-9\"]}, \"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"India workshop delegate\": [\"claim-5\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"India workshop delegate\": [\"claim-7\"]}}, \"state\": \"IMPASSE\", \"unique_verified\": false, \"unresolved_options\": [], \"verified_options\": {}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: IMPASSE\nEvidence: At least one delegate excludes each of the 7 offered packages.",
+            "reason": "Both recorded concerns and the decision-relevant evidence are preserved."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "source": [
+              {
+                "block": "scope",
+                "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+              }
+            ],
+            "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+            "reason": "The record treats proposals as fictional and preserves official authority."
+          }
+        ],
+        "guard": {
+          "status": "clear",
+          "source": [
+            {
+              "block": "scope",
+              "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+            },
+            {
+              "block": "roll",
+              "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+            }
+          ],
+          "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+          "reason": "No vote, commitment or amendment is invented."
+        }
+      }
+    },
+    {
+      "record": "overlap-BC-shared",
+      "model_id": "overlap-BC-shared",
+      "mechanics": {
+        "headings": true,
+        "exact_disposition_line": true,
+        "supported_disposition_prefix": true,
+        "words": 88,
+        "word_limit_met": true
+      },
+      "judge": {
+        "final": {
+          "lower": 70,
+          "upper": 70,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": true
+      },
+      "full_contract": true,
+      "verdict": {
+        "id": "overlap-BC-shared",
+        "units": [
+          {
+            "id": "disposition",
+            "status": "met",
+            "source": [
+              {
+                "block": "historical-instrument",
+                "quote": "{\"draft\": \"S/2022/925\", \"meeting\": \"S/PV.9214\", \"date\": \"2022-12-09\"}"
+              },
+              {
+                "block": "roll",
+                "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"AGREEMENT_POSSIBLE\", \"unique_verified\": false, \"unresolved_options\": [\"B\", \"C\"], \"verified_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-7\"], \"India workshop delegate\": [\"claim-8\"]}}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: AGREEMENT_POSSIBLE A",
+            "reason": "The rendered historical and workshop identifiers and dispositions match the input."
+          },
+          {
+            "id": "operative",
+            "status": "met",
+            "source": [
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"AGREEMENT_POSSIBLE\", \"unique_verified\": false, \"unresolved_options\": [\"B\", \"C\"], \"verified_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-7\"], \"India workshop delegate\": [\"claim-8\"]}}}"
+              },
+              {
+                "block": "package-A",
+                "quote": "{\"id\": \"A\", \"convener\": \"monitoring-team\", \"public_report\": \"aggregate\", \"interval\": \"six months\"}"
+              }
+            ],
+            "response": "Evidence: Under package A, the Monitoring Team would convene, with aggregate public reporting every six months.",
+            "reason": "The record gives the relevant package terms, exclusion coverage or missing disclosure."
+          },
+          {
+            "id": "positions",
+            "status": "met",
+            "source": [
+              {
+                "block": "claim-8",
+                "quote": "India workshop delegate accepts option A."
+              },
+              {
+                "block": "claim-7",
+                "quote": "Brazil workshop delegate accepts option A."
+              }
+            ],
+            "response": "Positions: India accepts A (claim-8). Brazil accepts A (claim-7).",
+            "reason": "The two scoped claims point to actual, correctly attributed admissions."
+          },
+          {
+            "id": "unresolved",
+            "status": "met",
+            "source": [
+              {
+                "block": "india",
+                "quote": "India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text."
+              },
+              {
+                "block": "public-proof",
+                "quote": "{\"blocked_options\": {\"D\": {\"India workshop delegate\": [\"claim-4\"]}, \"E\": {\"Brazil workshop delegate\": [\"claim-3\"]}, \"F\": {\"India workshop delegate\": [\"claim-6\"]}, \"G\": {\"Brazil workshop delegate\": [\"claim-5\"]}}, \"state\": \"AGREEMENT_POSSIBLE\", \"unique_verified\": false, \"unresolved_options\": [\"B\", \"C\"], \"verified_options\": {\"A\": {\"Brazil workshop delegate\": [\"claim-7\"], \"India workshop delegate\": [\"claim-8\"]}}}"
+              }
+            ],
+            "response": "History: The Council adopted draft S/2022/925 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained. India asked for a proactive role for the 1267 Monitoring Team and robust reporting. It said those concerns were not fully addressed in the adopted text.\nWorkshop: AGREEMENT_POSSIBLE A\nEvidence: Under package A, the Monitoring Team would convene, with aggregate public reporting every six months.",
+            "reason": "Both recorded concerns and the decision-relevant evidence are preserved."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "source": [
+              {
+                "block": "scope",
+                "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+              }
+            ],
+            "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+            "reason": "The record treats proposals as fictional and preserves official authority."
+          }
+        ],
+        "guard": {
+          "status": "clear",
+          "source": [
+            {
+              "block": "scope",
+              "quote": "The package menu and private cards are fictional post-vote workshop inputs. No package alters the adopted resolution or asserts a future national position."
+            },
+            {
+              "block": "roll",
+              "quote": "The Council adopted the draft 14–0–1 as resolution 2664 (2022). Brazil voted yes and India abstained."
+            }
+          ],
+          "response": "Authority: These are fictional proposals. They do not amend resolution 2664 or record a new national decision.",
+          "reason": "No vote, commitment or amendment is invented."
+        }
+      }
+    }
+  ]
+}

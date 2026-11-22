@@ -1,0 +1,102 @@
+{
+  "scope": "Same-assistant review of unedited reasoning spans against the supplied certificate, with exact span verification.",
+  "reviews": {
+    "be1a467943": {
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Correct comparison of D's 2 with B's 1, and the decision remains provisional.",
+      "response_spans": [
+        "lower grade of 2 and sum of 5 compared to the alternative package B's lower grade of 1 and sum of 4"
+      ],
+      "certificate_spans": [
+        "\"lower_grade\": 2, \"package\": \"D\", \"sum\": 5",
+        "\"lower_grade\": 1, \"package\": \"B\", \"sum\": 4"
+      ]
+    },
+    "5743cc529c": {
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Preserves D and accurately gives both package evaluations.",
+      "response_spans": [
+        "lower grade of 2 and a sum of 5, over the alternative package B with a lower grade of 1 and a sum of 2"
+      ],
+      "certificate_spans": [
+        "\"lower_grade\": 2, \"package\": \"D\", \"sum\": 5",
+        "\"lower_grade\": 1, \"package\": \"B\", \"sum\": 2"
+      ]
+    },
+    "bcdab7f830": {
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Preserves provisional B and the decisive difference in lower grades.",
+      "response_spans": [
+        "lower grade of 3 and sum of 6 over the alternative package D with a lower grade of 1 and sum of 3"
+      ],
+      "certificate_spans": [
+        "\"lower_grade\": 3, \"package\": \"B\", \"sum\": 6",
+        "\"lower_grade\": 1, \"package\": \"D\", \"sum\": 3"
+      ]
+    },
+    "2b0359d680": {
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Uses the correct sum comparison after the equal lower grades.",
+      "response_spans": [
+        "the selected package B with a sum of 4 exceeds the alternative package D's sum of 3 despite both having a lower grade of 1"
+      ],
+      "certificate_spans": [
+        "\"decisive_comparison\": \"higher sum breaks an equal lower grade\"",
+        "\"sum\": 4",
+        "\"sum\": 3"
+      ]
+    },
+    "c342e7f8d3": {
+      "fact_safe": true,
+      "complete_reason": false,
+      "explanation": "Lists the correct sets and seeks further discussion, but a generic comparison gap leaves why the sets prevent a choice implicit.",
+      "response_spans": [
+        "a comparison gap between the United States and Russian Federation regarding evidence for B, D, and F versus C and E"
+      ],
+      "certificate_spans": [
+        "\"first_acceptable\": [\"B\", \"D\", \"F\"]",
+        "\"second_acceptable\": [\"C\", \"E\"]"
+      ]
+    },
+    "a01455650d": {
+      "fact_safe": false,
+      "complete_reason": false,
+      "explanation": "Calls an established workshop impasse provisional and describes acceptable options as gaps.",
+      "response_spans": [
+        "this provisional status requires referring the impasse for further discussion"
+      ],
+      "certificate_spans": [
+        "\"provisional\": false",
+        "\"disposition\": \"IMPASSE\""
+      ]
+    },
+    "80bf6d1139": {
+      "fact_safe": false,
+      "complete_reason": false,
+      "explanation": "Correctly states the gap but asks the missing-card owner to request its own card.",
+      "response_spans": [
+        "requiring the United States to request the missing card"
+      ],
+      "certificate_spans": [
+        "\"missing_owner\": \"United States\"",
+        "\"next_step\": \"Request the missing card.\""
+      ]
+    },
+    "bca9955ea4": {
+      "fact_safe": true,
+      "complete_reason": true,
+      "explanation": "Correctly preserves both ties and either acceptable choice.",
+      "response_spans": [
+        "an exact tie between packages F and D, both with a lower grade of 2 and a sum of 5"
+      ],
+      "certificate_spans": [
+        "\"lower_grade\": 2, \"package\": \"F\", \"sum\": 5",
+        "\"lower_grade\": 2, \"package\": \"D\", \"sum\": 5"
+      ]
+    }
+  }
+}

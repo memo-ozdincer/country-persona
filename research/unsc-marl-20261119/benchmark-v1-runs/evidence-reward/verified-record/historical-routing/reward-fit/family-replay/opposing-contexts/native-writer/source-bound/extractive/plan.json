@@ -1,0 +1,75 @@
+{
+  "requests": [
+    {
+      "part": "public",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Write one complete compact paragraph of at most 62 words from these two official blocks. Use the exact draft symbol with its sponsor, meeting date, adopted resolution, and three vote counts with the abstainers. Next state mandate expiry and that UNIFIL acts without prior permission within its mandate and continues coordination with Lebanon's Government under the status-of-forces agreement. Omit meeting ID, optional votes and commentary."
+          },
+          {
+            "role": "user",
+            "content": "{\"vote\": \"On 31 August 2023 in meeting S/PV.9409, the Council voted on draft S/2023/641 submitted by France. It was adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining. Brazil voted in favour.\", \"operative\": \"Operative paragraph 1 extended UNIFIL's existing mandate until 31 August 2024. Paragraph 15 reaffirmed its independence in carrying out mandated tasks without prior permission and its continued coordination with Lebanon's Government under the status-of-forces agreement.\"}"
+          }
+        ],
+        "max_output_tokens": 150
+      }
+    },
+    {
+      "part": "Brazil",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Return JSON only with keys excerpts, mission_support_quote, and host_concerns. Choose one or two exact contiguous excerpts in source order, totaling at most 25 words. Each excerpt must be a verbatim substring. Do not paraphrase or add ellipses. Preserve mission support, whether the draft kept operational freedom, and the extent it addressed Lebanon's concerns. For mission_support_quote copy an exact continuous phrase from one chosen excerpt that expresses mission support; use an empty string if none. For host_concerns return null or an object with assessment (some, insufficient or sufficient) and quote (an exact span from a chosen excerpt). Fill host_concerns only if a selected passage evaluates how much the text addresses the host's concerns."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegation\": \"Brazil\", \"source\": \"Brazil supported UNIFIL's continuing work. It judged that the French text kept the mandate robust and allowed UNIFIL to operate freely, while addressing some of Lebanon's concerns.\"}"
+          }
+        ],
+        "max_output_tokens": 230
+      }
+    },
+    {
+      "part": "China",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Return JSON only with keys excerpts, mission_support_quote, and host_concerns. Choose one or two exact contiguous excerpts in source order, totaling at most 25 words. Each excerpt must be a verbatim substring. Do not paraphrase or add ellipses. Preserve mission support, the extent it addressed Lebanon's concerns, and what China emphasized about host authority or consent. For mission_support_quote copy an exact continuous phrase from one chosen excerpt that expresses mission support; use an empty string if none. For host_concerns return null or an object with assessment (some, insufficient or sufficient) and quote (an exact span from a chosen excerpt). Fill host_concerns only if a selected passage evaluates how much the text addresses the host's concerns."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegation\": \"China\", \"source\": \"China supported UNIFIL's work but said the text did not fully address Lebanon's concerns. It stressed host-State sovereignty and consent in peacekeeping and supported closer communication between UNIFIL and Lebanon's Government and military.\"}"
+          }
+        ],
+        "max_output_tokens": 230
+      }
+    },
+    {
+      "part": "Russia",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Return JSON only with keys excerpts, mission_support_quote, and host_concerns. Choose one or two exact contiguous excerpts in source order, totaling at most 25 words. Each excerpt must be a verbatim substring. Do not paraphrase or add ellipses. Preserve mission support, the late-drafting reason for abstention, and what happened to the earlier compromise. For mission_support_quote copy an exact continuous phrase from one chosen excerpt that expresses mission support; use an empty string if none. For host_concerns return null or an object with assessment (some, insufficient or sufficient) and quote (an exact span from a chosen excerpt). Fill host_concerns only if a selected passage evaluates how much the text addresses the host's concerns."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegation\": \"Russia\", \"source\": \"Russia attributed its abstention to contentious late drafting changes and said the final text lost a prior compromise. It continued to support the mission's activities and called for coordination with Lebanon's Government.\"}"
+          }
+        ],
+        "max_output_tokens": 230
+      }
+    }
+  ],
+  "sha256": {
+    "extract_writer.py": "ba689203686a389299d74eae02f668c527075d371a3f9a2dbb959664c09acda3",
+    "protocol.md": "05a7f419fe4b46950ec966e2cd40b6b8bede9d52eafdbc9c80f38fa296e022e5",
+    "plan.json": "d2aca9155259c2c7346e5da214121139ef84ba69f8021ac002951f95e42a1eef",
+    "bound_eval.py": "474c2e167e61b66f19f1d69274352334f80fc17d7b5f525fbb6bcfbc50dca28f",
+    "population.py": "7a28431b7a83ecb59b5f00eb7b23f77a9b5b7d7372718efd2a76420c5ac5f0ee"
+  }
+}

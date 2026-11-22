@@ -1,0 +1,7 @@
+# Check whether the response features can learn a better greedy responder
+
+The response-aware chair improved on the matched feature-policy fit in eleven of twelve held rows. Its learned reserve changes no held net scores, and responder updates make little difference. Test one alternative response fit using the same 180 budgeted development conditions and frozen opening policies. Compute the exact training planner using the scored development bank, and integrate the expected marginal return of every legal responder action given its inventory, prior opening action and heard request. Regress these signed margins against the existing public response features, centered at no-send. Weight states by their visitation and divide among eligible nonzero candidate sends. Retain the same exact silence-relative chair with its extra reserve set to zero.
+
+Score this fit as a dependent supervised diagnostic on exactly the same held conditions. Report comparison with archived responder, trained soft-policy responder, and known-model exact controls. Trainer has access to development outcomes only. Preserve rollout orientation, measured held admissions and the previous result. This test changes the fitting objective and leaves existing four-feature response representation intact.
+
+The initial running summary stated twelve wins. The row-level check corrected that count to eleven. This correction leaves the fitted data, objectives and evaluation conditions unchanged.

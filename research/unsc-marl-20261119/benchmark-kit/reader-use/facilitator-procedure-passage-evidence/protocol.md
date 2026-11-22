@@ -1,0 +1,5 @@
+# Retain the procedural tally and its reason in one passage
+
+On the Resolution 2504 procedural source, the previous model never selects the detached tally fragment. Test a new passage-selection contract that keeps the original tally and failure reason together in a complete sentence. Keep the two required facts separate in scoring. Preserve the full introductory sentence on the vote sequence. Offer one public distractor and a field description. Use one model call for each of the four existing question contexts, plus one matched withholding control missing the tally/reason sentence. Request a space-separated set of IDs, so accepted meaning comes from the catalog. A selected approved sentence can certify all fields registered for it; an absent or unrelated ID cannot.
+
+Report this as a targeted repair after inspecting this case. Keep the original ordered and identity-based results, and change only the observed procedural column in the frozen replay when substituting the new results. Use the same two inventory laws, terminal reward and no-request comparison. Track output tokens and confirm exact authorized text for each emitted field.

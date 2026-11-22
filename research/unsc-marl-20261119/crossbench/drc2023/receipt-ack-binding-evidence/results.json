@@ -1,0 +1,565 @@
+{
+  "scope": "Same-assistant authored receipt envelopes and exact documentary excerpt bodies. The separate model sees paragraph boundaries supplied by the harness. The DRC replay projects the slot readings onto the same abstract delivery game; no DRC prose composer is scored.",
+  "counts": {
+    "unami": {
+      "separate": {
+        "correct_positive": 3,
+        "correct_negative": 6,
+        "false_receipt": 0,
+        "order_disagreement": 1
+      },
+      "joint": {
+        "correct_positive": 2,
+        "correct_negative": 6,
+        "false_receipt": 0,
+        "order_disagreement": 1
+      }
+    },
+    "drc": {
+      "separate": {
+        "correct_positive": 3,
+        "correct_negative": 6,
+        "false_receipt": 0,
+        "order_disagreement": 1
+      },
+      "joint": {
+        "correct_positive": 3,
+        "correct_negative": 6,
+        "false_receipt": 0,
+        "order_disagreement": 0
+      }
+    }
+  },
+  "examples": {
+    "unami": [
+      {
+        "kind": "absent",
+        "field": null,
+        "message": "No receipt has been communicated.",
+        "expected": 4,
+        "field_choices": [
+          null,
+          null
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 0,
+        "message": "The chair confirmed it received and recorded this passage: The Secretary-General was requested to conduct an independent strategic review of UNAMI, to be delivered to the Council by 31 March 2024.",
+        "expected": 0,
+        "field_choices": [
+          0,
+          0
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          0,
+          0
+        ],
+        "separate": 0,
+        "joint": 0
+      },
+      {
+        "kind": "planned",
+        "field": 0,
+        "message": "The first desk intends to forward this passage. The chair has not confirmed receipt: The Secretary-General was requested to conduct an independent strategic review of UNAMI, to be delivered to the Council by 31 March 2024.",
+        "expected": 4,
+        "field_choices": [
+          0,
+          0
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 1,
+        "message": "The chair confirmed it received and recorded this passage: The Secretary-General was requested to report to the Council on fulfilment of UNAMI responsibilities every four months.",
+        "expected": 1,
+        "field_choices": [
+          1,
+          1
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          1,
+          1
+        ],
+        "separate": 1,
+        "joint": 1
+      },
+      {
+        "kind": "planned",
+        "field": 1,
+        "message": "The first desk intends to forward this passage. The chair has not confirmed receipt: The Secretary-General was requested to report to the Council on fulfilment of UNAMI responsibilities every four months.",
+        "expected": 4,
+        "field_choices": [
+          1,
+          1
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 2,
+        "message": "The chair confirmed it received and recorded this passage: Resolution 2682, para. 1. The Council extended the existing UN Assistance Mission for Iraq (UNAMI) mandate until 31 May 2024.",
+        "expected": 2,
+        "field_choices": [
+          2,
+          2
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 2,
+        "joint": 4
+      },
+      {
+        "kind": "planned",
+        "field": 2,
+        "message": "The first desk intends to forward this passage. The chair has not confirmed receipt: Resolution 2682, para. 1. The Council extended the existing UN Assistance Mission for Iraq (UNAMI) mandate until 31 May 2024.",
+        "expected": 4,
+        "field_choices": [
+          2,
+          2
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 3,
+        "message": "The chair confirmed it received and recorded this passage: Resolution 2682, para. 3. The review was to consult Iraq, UN agencies, Member States, regional organizations, independent experts, civil society and Kuwait. Iraq's Government had expressed support for the independent review in a letter dated 18 May 2023.",
+        "expected": 3,
+        "field_choices": [
+          3,
+          0
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          3,
+          0
+        ],
+        "separate": null,
+        "joint": null
+      },
+      {
+        "kind": "planned",
+        "field": 3,
+        "message": "The first desk intends to forward this passage. The chair has not confirmed receipt: Resolution 2682, para. 3. The review was to consult Iraq, UN agencies, Member States, regional organizations, independent experts, civil society and Kuwait. Iraq's Government had expressed support for the independent review in a letter dated 18 May 2023.",
+        "expected": 4,
+        "field_choices": [
+          3,
+          0
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "withdrawn",
+        "field": 1,
+        "message": "The chair had confirmed this passage earlier: The Secretary-General was requested to report to the Council on fulfilment of UNAMI responsibilities every four months. That acknowledgment was withdrawn after checking. The passage is no longer logged as received.",
+        "expected": 4,
+        "field_choices": [
+          1,
+          1
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      }
+    ],
+    "drc": [
+      {
+        "kind": "absent",
+        "field": null,
+        "message": "No receipt has been communicated.",
+        "expected": 4,
+        "field_choices": [
+          null,
+          null
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 0,
+        "message": "The chair logged the following excerpt as received: It requested a midterm report to the Council after discussion with the Committee by 30 December 2023 and a final report by 15 June 2024.",
+        "expected": 0,
+        "field_choices": [
+          0,
+          0
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          0,
+          0
+        ],
+        "separate": 0,
+        "joint": 0
+      },
+      {
+        "kind": "planned",
+        "field": 0,
+        "message": "The desk expects to send this next, but no receipt was logged: It requested a midterm report to the Council after discussion with the Committee by 30 December 2023 and a final report by 15 June 2024.",
+        "expected": 4,
+        "field_choices": [
+          0,
+          0
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 1,
+        "message": "The chair logged the following excerpt as received: The Group was to send monthly updates to the Committee except in the two report-due months.",
+        "expected": 1,
+        "field_choices": [
+          1,
+          1
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          1,
+          1
+        ],
+        "separate": 1,
+        "joint": 1
+      },
+      {
+        "kind": "planned",
+        "field": 1,
+        "message": "The desk expects to send this next, but no receipt was logged: The Group was to send monthly updates to the Committee except in the two report-due months.",
+        "expected": 4,
+        "field_choices": [
+          1,
+          1
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 2,
+        "message": "The chair logged the following excerpt as received: The Council extended the Group of Experts mandate to 1 August 2024",
+        "expected": 2,
+        "field_choices": [
+          3,
+          2
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          3,
+          3
+        ],
+        "separate": null,
+        "joint": 3
+      },
+      {
+        "kind": "planned",
+        "field": 2,
+        "message": "The desk expects to send this next, but no receipt was logged: The Council extended the Group of Experts mandate to 1 August 2024",
+        "expected": 4,
+        "field_choices": [
+          3,
+          2
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "received",
+        "field": 3,
+        "message": "The chair logged the following excerpt as received: intended to review it and act on a possible further extension by 1 July 2024.",
+        "expected": 3,
+        "field_choices": [
+          3,
+          3
+        ],
+        "status_choices": [
+          0,
+          0
+        ],
+        "joint_choices": [
+          3,
+          3
+        ],
+        "separate": 3,
+        "joint": 3
+      },
+      {
+        "kind": "planned",
+        "field": 3,
+        "message": "The desk expects to send this next, but no receipt was logged: intended to review it and act on a possible further extension by 1 July 2024.",
+        "expected": 4,
+        "field_choices": [
+          3,
+          3
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      },
+      {
+        "kind": "withdrawn",
+        "field": 1,
+        "message": "The chair had confirmed this passage earlier: The Group was to send monthly updates to the Committee except in the two report-due months. That acknowledgment was withdrawn after checking. The passage is no longer logged as received.",
+        "expected": 4,
+        "field_choices": [
+          1,
+          1
+        ],
+        "status_choices": [
+          1,
+          1
+        ],
+        "joint_choices": [
+          4,
+          4
+        ],
+        "separate": 4,
+        "joint": 4
+      }
+    ]
+  },
+  "replay": {
+    "unami": {
+      "separate": {
+        "overlap": {
+          "host_typed_learned": {
+            "complete": 0.28169851541569246,
+            "calendar": 0.5624234010646335,
+            "record_points": 43.16439069756821
+          },
+          "decoded_learned": {
+            "complete": 0.28169851541569246,
+            "calendar": 0.5728643888932825,
+            "record_points": 43.28110877070786
+          },
+          "decoded_no_ack": {
+            "complete": 0.24862052306123322,
+            "calendar": 0.5833383894840631,
+            "record_points": 43.166280897366285
+          }
+        },
+        "split": {
+          "host_typed_learned": {
+            "complete": 0.3747993498241482,
+            "calendar": 0.6121475479080223,
+            "record_points": 44.03417345728987
+          },
+          "decoded_learned": {
+            "complete": 0.3747993498241482,
+            "calendar": 0.628806393725212,
+            "record_points": 44.15089152200056
+          },
+          "decoded_no_ack": {
+            "complete": 0.34173249467379263,
+            "calendar": 0.645485866781127,
+            "record_points": 44.03614160065876
+          }
+        }
+      },
+      "joint": {
+        "overlap": {
+          "host_typed_learned": {
+            "complete": 0.28169851541569246,
+            "calendar": 0.5624234010646335,
+            "record_points": 43.16439069756821
+          },
+          "decoded_learned": {
+            "complete": 0.28169851541569246,
+            "calendar": 0.5833053767219314,
+            "record_points": 43.39782684384751
+          },
+          "decoded_no_ack": {
+            "complete": 0.24862052306123322,
+            "calendar": 0.5833383894840631,
+            "record_points": 43.166280897366285
+          }
+        },
+        "split": {
+          "host_typed_learned": {
+            "complete": 0.3747993498241482,
+            "calendar": 0.6121475479080223,
+            "record_points": 44.03417345728987
+          },
+          "decoded_learned": {
+            "complete": 0.3747993498241482,
+            "calendar": 0.6454652395424014,
+            "record_points": 44.26760958671126
+          },
+          "decoded_no_ack": {
+            "complete": 0.34173249467379263,
+            "calendar": 0.645485866781127,
+            "record_points": 44.03614160065876
+          }
+        }
+      }
+    },
+    "drc": {
+      "separate": {
+        "overlap": {
+          "host_typed_learned": {
+            "complete": 0.28169851541569246
+          },
+          "decoded_learned": {
+            "complete": 0.28169851541569246
+          },
+          "decoded_no_ack": {
+            "complete": 0.24862052306123322
+          }
+        },
+        "split": {
+          "host_typed_learned": {
+            "complete": 0.3747993498241482
+          },
+          "decoded_learned": {
+            "complete": 0.3747993498241482
+          },
+          "decoded_no_ack": {
+            "complete": 0.34173249467379263
+          }
+        }
+      },
+      "joint": {
+        "overlap": {
+          "host_typed_learned": {
+            "complete": 0.28169851541569246
+          },
+          "decoded_learned": {
+            "complete": 0.28169851541569246
+          },
+          "decoded_no_ack": {
+            "complete": 0.24862052306123322
+          }
+        },
+        "split": {
+          "host_typed_learned": {
+            "complete": 0.3747993498241482
+          },
+          "decoded_learned": {
+            "complete": 0.3747993498241482
+          },
+          "decoded_no_ack": {
+            "complete": 0.34173249467379263
+          }
+        }
+      }
+    }
+  }
+}

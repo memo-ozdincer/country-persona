@@ -1,0 +1,7 @@
+The first plan-only invocation stopped at the parent plan assertion.
+The scoped path override also affected the parent helper. No model was
+loaded and no run directory was created. The corrected plan resets the
+parent path for that check. It also rejects the legacy prose schema.
+The first offline scoring batch also tried to read the score bank before
+its export. Export order was corrected and the sealed model outputs
+were preserved and replayed.

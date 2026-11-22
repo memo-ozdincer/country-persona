@@ -1,0 +1,378 @@
+{
+  "scope": "Same-assistant exact-span review of three frozen Qwen role notes and seven downstream responses. Private points need source-faithful evidence in the language note as well as the final response. This score accepts the emitted notes at their actual token cap. The strict word-budget counterfactual is reported separately.",
+  "plan_sha256": "a5eed16303d1b64ccbeb9286b08179a10131edd958386dd2618d15aaf9452d2b",
+  "annotations_sha256": "8a3ca6148e7a0a50cd8d8be62dbd62836dec6ee6448e05c76fb7bc1c365d85e4",
+  "trace_sha256": "c8b00c9c070771bc632475890adae78ff57e1096634b1999c90749e8fc9dfc68",
+  "arms": {
+    "visible": {
+      "raw": [
+        35,
+        42,
+        42,
+        56,
+        42,
+        42,
+        35,
+        56
+      ],
+      "release": [
+        35,
+        42,
+        0,
+        56,
+        42,
+        42,
+        35,
+        56
+      ],
+      "records": [
+        {
+          "id": "visible-1",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 37,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia"
+          ]
+        },
+        {
+          "id": "visible-2",
+          "raw": 42,
+          "eligible_points": 0,
+          "words": 40,
+          "ended": true,
+          "guard": "failed",
+          "credit": [
+            "india"
+          ]
+        },
+        {
+          "id": "visible-3",
+          "raw": 56,
+          "eligible_points": 56,
+          "words": 52,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia",
+            "forum",
+            "sahel"
+          ]
+        },
+        {
+          "id": "visible-4",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 63,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "china"
+          ]
+        },
+        {
+          "id": "visible-5",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 30,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia"
+          ]
+        },
+        {
+          "id": "visible-6",
+          "raw": 35,
+          "eligible_points": 35,
+          "words": 42,
+          "ended": true,
+          "guard": "clear",
+          "credit": []
+        },
+        {
+          "id": "visible-7",
+          "raw": 56,
+          "eligible_points": 56,
+          "words": 39,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia",
+            "forum",
+            "sahel"
+          ]
+        }
+      ],
+      "results": {
+        "raw": {
+          "uniform": {
+            "nets": {
+              "learned": 44.72258422910177,
+              "independent": 44.01581189826591,
+              "scripted": 44.040998925746536,
+              "informed_independence": 44.558124999999976,
+              "erase_questions": 44.205748284337815
+            },
+            "learned_gains": {
+              "independent": 0.7067723308358609,
+              "scripted": 0.6815853033552344,
+              "informed_independence": 0.16445922910179434,
+              "erase_questions": 0.5168359447639546
+            }
+          },
+          "asymmetric": {
+            "nets": {
+              "learned": 46.23076998280574,
+              "independent": 44.94159852799687,
+              "scripted": 44.86570263005145,
+              "informed_independence": 46.69117712200001,
+              "erase_questions": 45.55983154390053
+            },
+            "learned_gains": {
+              "independent": 1.2891714548088729,
+              "scripted": 1.3650673527542878,
+              "informed_independence": -0.4604071391942739,
+              "erase_questions": 0.6709384389052104
+            }
+          },
+          "correlated_duplicates": {
+            "nets": {
+              "learned": 43.702543139689546,
+              "independent": 43.61360383945669,
+              "scripted": 43.282589732255744,
+              "informed_independence": 43.973406250000004,
+              "erase_questions": 43.730668973350824
+            },
+            "learned_gains": {
+              "independent": 0.0889393002328589,
+              "scripted": 0.41995340743380183,
+              "informed_independence": -0.27086311031045796,
+              "erase_questions": -0.028125833661277966
+            }
+          },
+          "swapped_desks": {
+            "nets": {
+              "learned": 46.132653562110086,
+              "independent": 45.119401859268365,
+              "scripted": 45.2432819003002,
+              "informed_independence": 46.69117712200001,
+              "erase_questions": 45.16571427064953
+            },
+            "learned_gains": {
+              "independent": 1.0132517028417212,
+              "scripted": 0.8893716618098892,
+              "informed_independence": -0.5585235598899274,
+              "erase_questions": 0.9669392914605552
+            }
+          },
+          "shifted_fields": {
+            "nets": {
+              "learned": 45.47232551424897,
+              "independent": 44.29343101252016,
+              "scripted": 44.41355234689911,
+              "informed_independence": 46.2819692156,
+              "erase_questions": 45.09120446233168
+            },
+            "learned_gains": {
+              "independent": 1.1788945017288128,
+              "scripted": 1.0587731673498624,
+              "informed_independence": -0.8096437013510283,
+              "erase_questions": 0.3811210519172903
+            }
+          },
+          "more_duplicates": {
+            "nets": {
+              "learned": 43.14615709091928,
+              "independent": 43.394217625560714,
+              "scripted": 42.86891199035165,
+              "informed_independence": 43.66835156249999,
+              "erase_questions": 43.47153480372153
+            },
+            "learned_gains": {
+              "independent": -0.24806053464143218,
+              "scripted": 0.2772451005676331,
+              "informed_independence": -0.5221944715807112,
+              "erase_questions": -0.3253777128022506
+            }
+          },
+          "mostly_complementary": {
+            "nets": {
+              "learned": 45.897223012745584,
+              "independent": 44.85326045410411,
+              "scripted": 45.17395017916996,
+              "informed_independence": 46.54262500000002,
+              "erase_questions": 45.739859839528
+            },
+            "learned_gains": {
+              "independent": 1.043962558641475,
+              "scripted": 0.7232728335756278,
+              "informed_independence": -0.6454019872544379,
+              "erase_questions": 0.15736317321758264
+            }
+          }
+        },
+        "release": {
+          "uniform": {
+            "nets": {
+              "learned": 35.648627283623824,
+              "independent": 34.90593277439301,
+              "scripted": 35.326099403471815,
+              "informed_independence": 40.96062499999999,
+              "erase_questions": 34.22743698928419
+            },
+            "learned_gains": {
+              "independent": 0.7426945092308159,
+              "scripted": 0.32252788015200906,
+              "informed_independence": -5.311997716376169,
+              "erase_questions": 1.421190294339631
+            }
+          },
+          "asymmetric": {
+            "nets": {
+              "learned": 39.174421841941495,
+              "independent": 37.90795934764289,
+              "scripted": 38.25425610840814,
+              "informed_independence": 41.245899538,
+              "erase_questions": 37.921474789154885
+            },
+            "learned_gains": {
+              "independent": 1.266462494298608,
+              "scripted": 0.9201657335333522,
+              "informed_independence": -2.0714776960585084,
+              "erase_questions": 1.2529470527866096
+            }
+          },
+          "correlated_duplicates": {
+            "nets": {
+              "learned": 35.7194249896553,
+              "independent": 34.24598499880054,
+              "scripted": 33.76672273593197,
+              "informed_independence": 40.51175,
+              "erase_questions": 33.232090773912795
+            },
+            "learned_gains": {
+              "independent": 1.4734399908547644,
+              "scripted": 1.9527022537233307,
+              "informed_independence": -4.7923250103446975,
+              "erase_questions": 2.487334215742507
+            }
+          },
+          "swapped_desks": {
+            "nets": {
+              "learned": 38.37243556720682,
+              "independent": 37.63818816244153,
+              "scripted": 38.12888570268681,
+              "informed_independence": 41.245899538,
+              "erase_questions": 37.13793753146951
+            },
+            "learned_gains": {
+              "independent": 0.7342474047652914,
+              "scripted": 0.2435498645200127,
+              "informed_independence": -2.873463970793182,
+              "erase_questions": 1.2344980357373103
+            }
+          },
+          "shifted_fields": {
+            "nets": {
+              "learned": 38.09015557256067,
+              "independent": 37.01175862543984,
+              "scripted": 37.3698532592326,
+              "informed_independence": 41.097929099999995,
+              "erase_questions": 36.708145365421245
+            },
+            "learned_gains": {
+              "independent": 1.0783969471208295,
+              "scripted": 0.7203023133280695,
+              "informed_independence": -3.0077735274393262,
+              "erase_questions": 1.3820102071394231
+            }
+          },
+          "more_duplicates": {
+            "nets": {
+              "learned": 35.7580419202179,
+              "independent": 33.88601348484097,
+              "scripted": 32.91615364454658,
+              "informed_independence": 41.36225,
+              "erase_questions": 32.689174656437466
+            },
+            "learned_gains": {
+              "independent": 1.8720284353769259,
+              "scripted": 2.841888275671316,
+              "informed_independence": -5.604208079782104,
+              "erase_questions": 3.068867263780433
+            }
+          },
+          "mostly_complementary": {
+            "nets": {
+              "learned": 38.36316163311122,
+              "independent": 37.502204886069414,
+              "scripted": 38.52041697420445,
+              "informed_independence": 43.69640625,
+              "erase_questions": 38.1192812172598
+            },
+            "learned_gains": {
+              "independent": 0.8609567470418042,
+              "scripted": -0.15725534109323291,
+              "informed_independence": -5.333244616888784,
+              "erase_questions": 0.24388041585142162
+            }
+          }
+        }
+      }
+    }
+  },
+  "notes": {
+    "note-russia-explanation": {
+      "reason": "The rejection of an automatic link, UNFCCC preference and multifactor regional focus all survive. The last sentence repeats attribution.",
+      "spans": {
+        "faithful": [
+          "opposed the draft's generic, automatic link between climate change and security",
+          "an alternative draft addressing the Sahel's specific circumstances and multiple sources of insecurity"
+        ]
+      },
+      "source_spans": [
+        "generic, automatic link between climate change and security",
+        "the Sahel's specific circumstances and multiple sources of insecurity"
+      ],
+      "ended": true,
+      "words": 48,
+      "tokens": 62
+    },
+    "note-india-explanation": {
+      "reason": "The national representation reason and the geographic limit survive. It keeps the statement that climate may exacerbate conflict separate from the Sahel boundary.",
+      "spans": {
+        "faithful": [
+          "noting that most developing countries lack a voice there",
+          "India supported a draft limited to that region"
+        ]
+      },
+      "source_spans": [
+        "most developing countries lack a voice",
+        "supported a draft limited to that region"
+      ],
+      "ended": true,
+      "words": 58,
+      "tokens": 74
+    },
+    "note-china-explanation": {
+      "reason": "The abstention, country-specific Council role and differentiated responsibilities survive. The final meta-sentence is unnecessary.",
+      "spans": {
+        "faithful": [
+          "favoring country-specific Council consideration of climate risks in peace and security",
+          "common but differentiated responsibilities"
+        ]
+      },
+      "source_spans": [
+        "country-specific Council consideration of climate risks in peace and security",
+        "common but differentiated responsibilities"
+      ],
+      "ended": true,
+      "words": 61,
+      "tokens": 75
+    }
+  },
+  "verified_source_baseline_sha256": "5feb9aebd866accbad481c3506590d45b4ffcbdb5b076cff766da3bca2f7d528"
+}

@@ -1,0 +1,465 @@
+{
+  "scope": "Condition on a conjunctive request already having one of its two required cards protected at the requester. The hidden focus is the other required card. Enumerate every possible focus and responder roster in each synthetic prior. Train one pair from scratch against completing that request, using the same one-bit and loss model as the existing experiment. The exact symbolic control uses the same development prior. Named requests have a larger alphabet and a reply only after delivery and local match. The cost model does not price bandwidth. If neither requested card is protected, this one-reply protocol cannot complete the pair.",
+  "host": "aurora",
+  "device": "CPU",
+  "optimizer_steps": 96,
+  "seed": 20231120,
+  "code_sha256": "7dbefa82708987a427d994cd1c0ca4ab04252ef660163ebd3683e3a2ff12d5d2",
+  "reused_fit_sha256": "9e5a1d0f20e6a95065098614899c6a4e81d1d9e8098609eb273b92739361206d",
+  "initial_policy": [
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        2
+      ]
+    ]
+  ],
+  "learned": [
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ]
+  ],
+  "exact": [
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ]
+  ],
+  "training_trace": [
+    48.551751446731636,
+    48.712155360884516,
+    48.887469461285455,
+    49.086541594444896,
+    49.31650918668866,
+    49.57777322037206,
+    49.86322963108595,
+    50.16279766265659,
+    50.46596819950161,
+    50.76315339086983,
+    51.04646961838076,
+    51.310098640102176,
+    51.55033579322166,
+    51.76543921495111,
+    51.955356456654364,
+    52.12136066629273,
+    52.26561673842908,
+    52.39071955579258,
+    52.499272700557796,
+    52.59357886127833,
+    52.67548633364202,
+    52.746391972300856,
+    52.80735790831811,
+    52.859273270932015,
+    52.9029929892027,
+    52.939412196999925,
+    52.96947198191935,
+    52.99412024358376,
+    53.014259329796225,
+    53.03070359245309,
+    53.04415620090563,
+    53.05520411196649,
+    53.064325492745574,
+    53.07190356936061,
+    53.07824243692904,
+    53.083582191499325,
+    53.0881121495184,
+    53.091981794585394,
+    53.09530954958464,
+    53.09818966621734,
+    53.10069757237071,
+    53.102893996846504,
+    53.104828143612465,
+    53.10654013554541,
+    53.10806290008212,
+    53.10942362948175,
+    53.11064491676665,
+    53.111745643891965,
+    53.11274168000414,
+    53.11364643353276,
+    53.11447129125205,
+    53.11522596948958,
+    53.1159187966873,
+    53.1165569420286,
+    53.117146601458984,
+    53.11769314986443,
+    53.118201266223075,
+    53.1186750370585,
+    53.11911804238141,
+    53.11953342742671,
+    53.1199239628111,
+    53.120292095205706,
+    53.12063999020262,
+    53.12096956872791,
+    53.121282538095365,
+    53.12158041859066,
+    53.1218645663122,
+    53.12213619286411,
+    53.122396382391756,
+    53.12264610636504,
+    53.122886236445936,
+    53.12311755572057,
+    53.12334076853017,
+    53.12355650909784,
+    53.12376534911671,
+    53.12396780443985,
+    53.124164340990696,
+    53.12435537999525,
+    53.12454130262257,
+    53.12472245410748,
+    53.12489914741938,
+    53.12507166653168,
+    53.12524026933986,
+    53.12540519026874,
+    53.12556664260508,
+    53.12572482058676,
+    53.12587990127559,
+    53.12603204623779,
+    53.126181403053224,
+    53.126328106671686,
+    53.126472280632704,
+    53.12661403816324,
+    53.12675348316603,
+    53.126890711109965,
+    53.12702580983256,
+    53.12715886026345,
+    53.12728993707699
+  ],
+  "outcomes": {
+    "design_mixture": {
+      "named": {
+        "request_fulfillment": 0.43580825268597256,
+        "net_completion_bonus": 12.05578479683257,
+        "physical_reply_only_ceiling": 0.48423139187330283
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.40593555378321794,
+        "net_completion_bonus": 11.142686667508286
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.40593555378321794,
+        "net_completion_bonus": 11.142686667508286
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.2837307473610586,
+        "net_completion_bonus": 7.744460926109639
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.40593555378321794,
+        "net_completion_bonus": 11.142686667508286
+      }
+    },
+    "uniform": {
+      "named": {
+        "request_fulfillment": 0.405,
+        "net_completion_bonus": 11.2,
+        "physical_reply_only_ceiling": 0.45
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.36,
+        "net_completion_bonus": 9.854999999999997
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.36,
+        "net_completion_bonus": 9.854999999999997
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.22500000000000003,
+        "net_completion_bonus": 6.099999999999994
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.36,
+        "net_completion_bonus": 9.854999999999997
+      }
+    },
+    "correlated_development": {
+      "named": {
+        "request_fulfillment": 0.49012738853503185,
+        "net_completion_bonus": 13.564649681528662,
+        "physical_reply_only_ceiling": 0.5445859872611465
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.4606050955414013,
+        "net_completion_bonus": 12.674331210191085
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.4606050955414013,
+        "net_completion_bonus": 12.674331210191085
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.32961783439490444,
+        "net_completion_bonus": 9.02929936305732
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.4998726114649682,
+        "net_completion_bonus": 13.780509554140124
+      }
+    },
+    "correlated_diagnostic_2": {
+      "named": {
+        "request_fulfillment": 0.4013946587537092,
+        "net_completion_bonus": 11.099851632047478,
+        "physical_reply_only_ceiling": 0.4459940652818991
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.36988130563798227,
+        "net_completion_bonus": 10.136498516320472
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.36988130563798227,
+        "net_completion_bonus": 10.136498516320472
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.328486646884273,
+        "net_completion_bonus": 8.99762611275964
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.42436201780415433,
+        "net_completion_bonus": 11.64771513353115
+      }
+    },
+    "correlated_diagnostic_3": {
+      "named": {
+        "request_fulfillment": 0.44671096345514955,
+        "net_completion_bonus": 12.358637873754153,
+        "physical_reply_only_ceiling": 0.49634551495016616
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.43325581395348844,
+        "net_completion_bonus": 11.904916943521592
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.43325581395348844,
+        "net_completion_bonus": 11.904916943521592
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.3617940199335548,
+        "net_completion_bonus": 9.93023255813953
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.46823920265780733,
+        "net_completion_bonus": 12.897906976744181
+      }
+    },
+    "unselected_1": {
+      "named": {
+        "request_fulfillment": 0.4646319018404908,
+        "net_completion_bonus": 12.85644171779141,
+        "physical_reply_only_ceiling": 0.5162576687116565
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.4522085889570552,
+        "net_completion_bonus": 12.442822085889567
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.4522085889570552,
+        "net_completion_bonus": 12.442822085889567
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.3533742331288343,
+        "net_completion_bonus": 9.694478527607359
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.45303680981595085,
+        "net_completion_bonus": 12.462638036809807
+      }
+    },
+    "unselected_2": {
+      "named": {
+        "request_fulfillment": 0.40279891304347826,
+        "net_completion_bonus": 11.138858695652173,
+        "physical_reply_only_ceiling": 0.44755434782608694
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.3409239130434783,
+        "net_completion_bonus": 9.318423913043482
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.3409239130434783,
+        "net_completion_bonus": 9.318423913043482
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.29836956521739133,
+        "net_completion_bonus": 8.154347826086955
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.3944836956521739,
+        "net_completion_bonus": 10.8208152173913
+      }
+    },
+    "unselected_3": {
+      "named": {
+        "request_fulfillment": 0.36148760330578517,
+        "net_completion_bonus": 9.991322314049587,
+        "physical_reply_only_ceiling": 0.4016528925619835
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.35504132231404956,
+        "net_completion_bonus": 9.713884297520657
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.35504132231404956,
+        "net_completion_bonus": 9.713884297520657
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.2553719008264463,
+        "net_completion_bonus": 6.950413223140494
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.3773553719008264,
+        "net_completion_bonus": 10.338677685950415
+      }
+    },
+    "unselected_4": {
+      "named": {
+        "request_fulfillment": 0.41896551724137937,
+        "net_completion_bonus": 11.587931034482759,
+        "physical_reply_only_ceiling": 0.4655172413793104
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.42940438871473363,
+        "net_completion_bonus": 11.805924764890285
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.42940438871473363,
+        "net_completion_bonus": 11.805924764890285
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.358307210031348,
+        "net_completion_bonus": 9.832601880877746
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.43645768025078374,
+        "net_completion_bonus": 11.99777429467084
+      }
+    },
+    "unselected_5": {
+      "named": {
+        "request_fulfillment": 0.460060422960725,
+        "net_completion_bonus": 12.729456193353473,
+        "physical_reply_only_ceiling": 0.5111782477341389
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.40241691842900307,
+        "net_completion_bonus": 11.040483383685796
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.40241691842900307,
+        "net_completion_bonus": 11.040483383685796
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.31812688821752266,
+        "net_completion_bonus": 8.70755287009063
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.44891238670694866,
+        "net_completion_bonus": 12.34477341389728
+      }
+    },
+    "unselected_6": {
+      "named": {
+        "request_fulfillment": 0.37328313253012047,
+        "net_completion_bonus": 10.318975903614456,
+        "physical_reply_only_ceiling": 0.41475903614457826
+      },
+      "learned_one_bit": {
+        "request_fulfillment": 0.3646084337349397,
+        "net_completion_bonus": 9.981626506024092
+      },
+      "design_optimal_one_bit": {
+        "request_fulfillment": 0.3646084337349397,
+        "net_completion_bonus": 9.981626506024092
+      },
+      "prior_informed_silent": {
+        "request_fulfillment": 0.30632530120481927,
+        "net_completion_bonus": 8.377108433734932
+      },
+      "prior_informed_one_bit": {
+        "request_fulfillment": 0.39578313253012043,
+        "net_completion_bonus": 10.860090361445778
+      }
+    }
+  }
+}

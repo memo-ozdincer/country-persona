@@ -10,6 +10,7 @@ We study small models that can represent dated country–institution–role beha
 
 | What you want | Open this |
 |---|---|
+| UN simulation strategy, experiments and results | [UN deliberation benchmark and MARL research](research/unsc-marl-20261119/RESEARCH_GUIDE.md) |
 | Understand the project and join | [Onboarding](docs/onboarding/README.md) |
 | Understand each experiment simply | [SFT Trial 1–7: context, format, example answers, evals and results](docs/onboarding/SFT_TRIALS.md) |
 | Read actual model answers | [Master evidence index](docs/evidence/README.md) |
@@ -20,9 +21,13 @@ We study small models that can represent dated country–institution–role beha
 | See what was actually verified | [Onboarding checks](docs/onboarding/CHECKS.md) |
 | Read the full research history | [Consolidated results](docs/CONSOLIDATED_RESULTS_20261019.md) and [full handoff](docs/PROJECT_HANDOFF.md) |
 
-## Current status
+## UN deliberation and MARL
 
-Research is **paused at the user's request**. The latest training checkpoint is 19 October 2026; the onboarding/evidence pages were prepared on 21 October. All started model trials are complete. Historical next-step paragraphs and prepared controls are not an experiment queue.
+[UN deliberation benchmark and MARL research](research/unsc-marl-20261119/RESEARCH_GUIDE.md) covers the simulation design, evaluation, saved runs, and reproducible results. [Download the frozen v1.7 benchmark](research/unsc-marl-20261119/un-deliberation-benchmark-v1.7.zip).
+
+## October persona training status
+
+Persona training is **paused at the user's request**. The latest training checkpoint is 19 October 2026; the onboarding/evidence pages were prepared on 21 October. All started model trials are complete. Historical next-step paragraphs and prepared controls are not an experiment queue.
 
 Small supervised trials improved source coverage and selected proposal-state behaviors. The separate published humorous-persona reproduction produced clear persistent-style gains. Dependable broad national personas, diplomatic reasoning, multi-agent improvement and strong OOD gains remain unproved. The newest adapter is not a universal upgrade; failed and ambiguous results are retained.
 

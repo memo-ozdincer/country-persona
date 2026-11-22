@@ -1,0 +1,203 @@
+{
+  "scope": "Clairvoyant availability bound. It assumes all supported signs can be published within turns. At most one source per role and at most one late package answer total.",
+  "cases": {
+    "uk-overlap": {
+      "initial_and_late": {
+        "india": {
+          "initial": [
+            [
+              "A",
+              "B",
+              "G"
+            ],
+            [
+              "D",
+              "F"
+            ]
+          ],
+          "later": [
+            [],
+            [
+              "C",
+              "E"
+            ]
+          ],
+          "scope_excludes": [
+            "C",
+            "D"
+          ]
+        },
+        "uk-overlap": {
+          "initial": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E",
+              "G"
+            ]
+          ],
+          "later": [
+            [
+              "B"
+            ],
+            [
+              "F"
+            ]
+          ],
+          "scope_excludes": [
+            "A",
+            "F"
+          ]
+        }
+      },
+      "full_information_possible_proofs": [
+        {
+          "state": "AGREEMENT_POSSIBLE",
+          "sources": [
+            "none",
+            "package"
+          ],
+          "overlap": [
+            "B"
+          ],
+          "excluded": [
+            "A",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        },
+        {
+          "state": "AGREEMENT_POSSIBLE",
+          "sources": [
+            "scope",
+            "package"
+          ],
+          "overlap": [
+            "B"
+          ],
+          "excluded": [
+            "A",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        }
+      ]
+    },
+    "uk-impasse": {
+      "initial_and_late": {
+        "india": {
+          "initial": [
+            [
+              "A",
+              "B",
+              "G"
+            ],
+            [
+              "D",
+              "F"
+            ]
+          ],
+          "later": [
+            [],
+            [
+              "C",
+              "E"
+            ]
+          ],
+          "scope_excludes": [
+            "C",
+            "D"
+          ]
+        },
+        "uk-impasse": {
+          "initial": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "A",
+              "E",
+              "G"
+            ]
+          ],
+          "later": [
+            [],
+            [
+              "B",
+              "F"
+            ]
+          ],
+          "scope_excludes": [
+            "A",
+            "B",
+            "E",
+            "F",
+            "G"
+          ]
+        }
+      },
+      "full_information_possible_proofs": [
+        {
+          "state": "IMPASSE",
+          "sources": [
+            "scope",
+            "scope"
+          ],
+          "overlap": [],
+          "excluded": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        },
+        {
+          "state": "IMPASSE",
+          "sources": [
+            "scope",
+            "package"
+          ],
+          "overlap": [],
+          "excluded": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        },
+        {
+          "state": "IMPASSE",
+          "sources": [
+            "package",
+            "scope"
+          ],
+          "overlap": [],
+          "excluded": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        }
+      ]
+    }
+  }
+}

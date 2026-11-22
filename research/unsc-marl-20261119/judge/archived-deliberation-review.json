@@ -1,0 +1,453 @@
+{
+  "scope": "Retrospective assistant application to archived outputs, with methods known. New rubric is diagnostic. Existing reviews are preserved.",
+  "source_transcript": "runs/deliberation-999389-base-v1/transcript.jsonl",
+  "source_sha256": "14caf96c4e75fc9307affffae305a97ae87f64edff22442ca856bad682587dfc",
+  "pairs": [
+    {
+      "family": "climate",
+      "case": "2021-12-09 debate",
+      "control": {
+        "packet": {
+          "id": "Z16",
+          "mode": "FINAL",
+          "task": "Synthesize the four positions in the 9 December 2021 debate, compare shared ground and disagreements, and propose a bounded next step.",
+          "evidence": [
+            {
+              "id": "positions",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "France and the United Kingdom support Council attention to security effects. India opposes a separate Council track. Brazil urges caution about moving the primary climate forum away from the UNFCCC."
+            },
+            {
+              "id": "common",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "Acknowledgment of climate harms does not establish a common institutional position. France and India discuss the G5 Sahel force. The supplied UK and Brazil statements do not establish support for the G5 force."
+            },
+            {
+              "id": "no_quota_position",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "The supplied UK statement does not state a position on binding national carbon quotas imposed by the Council."
+            },
+            {
+              "id": "scope",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "Use the 9 December 2021 debate. Proposed next steps are analyst suggestions; the dossier establishes no approval for such a step."
+            }
+          ],
+          "rubric": [
+            {
+              "id": "positions",
+              "category": "final",
+              "weight": 14,
+              "rule": "Preserve each delegation’s position without attributing an unsupported position."
+            },
+            {
+              "id": "common",
+              "category": "final",
+              "weight": 14,
+              "rule": "State accurate cross-role common ground and avoid inventing collective positions."
+            },
+            {
+              "id": "difference",
+              "category": "final",
+              "weight": 14,
+              "rule": "State an explicit institutional difference, with qualifications intact."
+            },
+            {
+              "id": "action",
+              "category": "final",
+              "weight": 14,
+              "rule": "Propose a specific, relevant complete next step."
+            },
+            {
+              "id": "scope",
+              "category": "final",
+              "weight": 14,
+              "rule": "Use the dated debate and keep any proposed new action distinct from historical commitments."
+            }
+          ],
+          "answer": "**Policy-Analysis Memo: Climate/Security Debate – 9 December 2021**\n\n**France (FRA):**  \nFrance called for the Security Council to play a central role in addressing climate-related insecurity, emphasizing the need to anticipate, prevent, and seek solutions to counter the effects of climate change, particularly for vulnerable populations. A response limited to armed forces and peacekeepers would be insufficient, as it fails to address root causes like resource scarcity and desertification, which fuel conflict. France supported the Great Green Wall project in the Sahel as a complementary measure, combining environmental restoration with security and development.\n\n**United Kingdom (GBR):**  \nThe UK supported the draft resolution on climate-security reporting and emphasized the need for comprehensive UN reporting on climate-security links. It endorsed the Glasgow Climate Pact and progress on climate finance and adaptation. However, the UK did not approve binding national carbon quotas imposed by the Council. Its focus was on multilateral cooperation and institutional mechanisms rather than binding measures.\n\n**India (IND):**  \nIndia did not deny that climate change could exacerbate conflict but cautioned against oversimplifying the relationship. It preferred the UNFCCC as the exclusive mechanism for climate action, avoiding a Security Council role that could fragment the climate discourse. India qualified its position by acknowledging climate impacts on conflict but warned against reducing complex conflicts to a single cause. It supported regional security initiatives like the G-5 Sahel Joint Force.\n\n**Brazil (BRA):**  \nBrazil advocated for a cautious institutional response to climate change, emphasizing the UNFCCC as the primary mechanism. It viewed climate change as a systemic challenge with wide-ranging impacts, particularly in the Sahel, where resource depletion exacerbates tensions. Brazil’s priority was to ensure fulfillment of existing commitments, especially climate financing from developed nations, to support developing countries. It cautioned against shifting the climate agenda to the Security Council, fearing duplication and undermining established processes.\n\n**Common Ground:**  \nAll four delegations acknowledged the link between climate change and security, supported regional initiatives like the G-5 Sahel Joint Force, and emphasized the need for multilateral cooperation. They also recognized the importance of climate financing and sustainable development.\n\n**Unresolved Differences:**  \nFrance and the UK called for a stronger Security Council role, while India and Brazil preferred maintaining the UNFCCC’s exclusive mandate. India and Brazil cautioned against oversimplifying climate-security links, while France and the UK emphasized the need for integrated, long-term strategies.\n\n**Proposed Next Steps:**  \nA non-binding working group could be"
+        },
+        "verdict": {
+          "id": "Z16",
+          "units": [
+            {
+              "id": "positions",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "no_quota_position",
+                  "quote": "The supplied UK statement does not state a position"
+                }
+              ],
+              "response": "the UK did not approve binding national carbon quotas imposed by the Council.",
+              "reason": "The explicit negative position on quotas lacks support."
+            },
+            {
+              "id": "common",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "common",
+                  "quote": "do not establish support for the G5 force"
+                }
+              ],
+              "response": "All four delegations acknowledged the link between climate change and security, supported regional initiatives like the G-5 Sahel Joint Force",
+              "reason": "Attributes support to all four."
+            },
+            {
+              "id": "difference",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "positions",
+                  "quote": "Brazil urges caution"
+                }
+              ],
+              "response": "India and Brazil preferred maintaining the UNFCCC’s exclusive mandate.",
+              "reason": "The answer hardens Brazil’s position into exclusivity."
+            },
+            {
+              "id": "action",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "scope",
+                  "quote": "Proposed next steps are analyst suggestions"
+                }
+              ],
+              "response": "A non-binding working group could be",
+              "reason": "The proposal stops mid-sentence."
+            },
+            {
+              "id": "scope",
+              "status": "met",
+              "source": [
+                {
+                  "block": "scope",
+                  "quote": "the dossier establishes no approval for such a step"
+                }
+              ],
+              "response": "A non-binding working group could be",
+              "reason": "The heading dates the debate and the cutoff proposal is framed as hypothetical."
+            }
+          ],
+          "guard": {
+            "status": "failed",
+            "source": [
+              {
+                "block": "no_quota_position",
+                "quote": "does not state a position on binding national carbon quotas"
+              }
+            ],
+            "response": "the UK did not approve binding national carbon quotas imposed by the Council",
+            "reason": "The memo states an official negative position that is absent from the supplied statement."
+          }
+        },
+        "archive_id": "6dd5f6e230f93d4e587a7059",
+        "arm": "independent_revision",
+        "generated_tokens": 512
+      },
+      "candidate": {
+        "packet": {
+          "id": "X04",
+          "mode": "FINAL",
+          "task": "Synthesize the four positions in the 9 December 2021 debate, compare shared ground and disagreements, and propose a bounded next step.",
+          "evidence": [
+            {
+              "id": "positions",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "France and the United Kingdom support Council attention to security effects. India opposes a separate Council track. Brazil urges caution about moving the primary climate forum away from the UNFCCC."
+            },
+            {
+              "id": "common",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "Acknowledgment of climate harms does not establish a common institutional position. France and India discuss the G5 Sahel force. The supplied UK and Brazil statements do not establish support for the G5 force."
+            },
+            {
+              "id": "no_quota_position",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "The supplied UK statement does not state a position on binding national carbon quotas imposed by the Council."
+            },
+            {
+              "id": "scope",
+              "url": "https://docs.un.org/en/S/PV.8923",
+              "text": "Use the 9 December 2021 debate. Proposed next steps are analyst suggestions; the dossier establishes no approval for such a step."
+            }
+          ],
+          "rubric": [
+            {
+              "id": "positions",
+              "category": "final",
+              "weight": 14,
+              "rule": "Preserve each delegation’s position without attributing an unsupported position."
+            },
+            {
+              "id": "common",
+              "category": "final",
+              "weight": 14,
+              "rule": "State accurate cross-role common ground and avoid inventing collective positions."
+            },
+            {
+              "id": "difference",
+              "category": "final",
+              "weight": 14,
+              "rule": "State an explicit institutional difference, with qualifications intact."
+            },
+            {
+              "id": "action",
+              "category": "final",
+              "weight": 14,
+              "rule": "Propose a specific, relevant complete next step."
+            },
+            {
+              "id": "scope",
+              "category": "final",
+              "weight": 14,
+              "rule": "Use the dated debate and keep any proposed new action distinct from historical commitments."
+            }
+          ],
+          "answer": "**Policy-Analysis Memo: Climate/Security Debate – 9 December 2021**\n\n**France (FRA):**  \nFrance advocated for the Security Council to play a central role in addressing climate-related insecurity by anticipating, preventing, and seeking solutions to counter the effects of climate change, particularly for vulnerable populations. It argued that a response limited to armed forces and peacekeepers would be insufficient, as it fails to address root causes like resource scarcity, desertification, and food shortages, which fuel conflict. France supported the Great Green Wall project in the Sahel as a complementary measure, combining environmental restoration with security and development.\n\n**United Kingdom (GBR):**  \nThe UK emphasized the need for comprehensive climate-security reporting by the UN system to inform decision-making. It supported the draft resolution as a first step and endorsed the Glasgow Climate Pact and COP26 outcomes, including net-zero commitments and adaptation financing. However, the UK did not approve binding national carbon quotas imposed by the Council, focusing instead on multilateral cooperation and inclusive approaches, particularly involving women and girls.\n\n**India (IND):**  \nIndia did not deny that climate change could exacerbate conflict, as the analyst’s characterization is inaccurate. Instead, it cautioned against oversimplifying the relationship between climate and security. India preferred the UNFCCC’s exclusive mandate for climate action, avoiding a Security Council role that could fragment the climate discourse. It acknowledged climate change’s impact on conflict but warned against reducing complex conflicts to a single cause, stressing the importance of scientific evidence and inclusive, consensus-driven processes.\n\n**Brazil (BRA):**  \nBrazil advocated for a cautious institutional response to climate change, emphasizing the UNFCCC as the primary mechanism for addressing climate-related issues. It viewed climate change as a systemic challenge with wide-ranging impacts, particularly in the Sahel, where resource depletion and drought exacerbate tensions. Brazil cautioned against framing climate change solely through the security lens, arguing that this risks diverting attention from the UNFCCC’s established mandate. Its proposed priority was to ensure the fulfillment of existing commitments, particularly climate financing from developed nations to support developing countries."
+        },
+        "verdict": {
+          "id": "X04",
+          "units": [
+            {
+              "id": "positions",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "no_quota_position",
+                  "quote": "The supplied UK statement does not state a position"
+                }
+              ],
+              "response": "the UK did not approve binding national carbon quotas imposed by the Council",
+              "reason": "The explicit quota position lacks support."
+            },
+            {
+              "id": "common",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "common",
+                  "quote": "Acknowledgment of climate harms"
+                }
+              ],
+              "response": "",
+              "reason": "Country summaries supply no explicit shared analysis."
+            },
+            {
+              "id": "difference",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "positions",
+                  "quote": "Brazil urges caution"
+                }
+              ],
+              "response": "",
+              "reason": "The memo lacks an explicit comparative statement of the institutional difference."
+            },
+            {
+              "id": "action",
+              "status": "unmet",
+              "source": [
+                {
+                  "block": "scope",
+                  "quote": "Proposed next steps are analyst suggestions"
+                }
+              ],
+              "response": "",
+              "reason": "There is no next step."
+            },
+            {
+              "id": "scope",
+              "status": "met",
+              "source": [
+                {
+                  "block": "scope",
+                  "quote": "Use the 9 December 2021 debate"
+                }
+              ],
+              "response": "Climate/Security Debate – 9 December 2021",
+              "reason": "The memo uses the target debate and makes no new proposal requiring an authority label."
+            }
+          ],
+          "guard": {
+            "status": "failed",
+            "source": [
+              {
+                "block": "no_quota_position",
+                "quote": "does not state a position on binding national carbon quotas"
+              }
+            ],
+            "response": "the UK did not approve binding national carbon quotas imposed by the Council",
+            "reason": "The memo states an official negative position that is absent from the supplied statement."
+          }
+        },
+        "archive_id": "2b00443595a63ca0584f7e32",
+        "arm": "peer_revision",
+        "generated_tokens": 429
+      }
+    }
+  ],
+  "direct": {
+    "packet": {
+      "id": "B77",
+      "mode": "FINAL",
+      "task": "Synthesize the four positions in the 9 December 2021 debate, compare shared ground and disagreements, and propose a bounded next step.",
+      "evidence": [
+        {
+          "id": "positions",
+          "url": "https://docs.un.org/en/S/PV.8923",
+          "text": "France and the United Kingdom support Council attention to security effects. India opposes a separate Council track. Brazil urges caution about moving the primary climate forum away from the UNFCCC."
+        },
+        {
+          "id": "common",
+          "url": "https://docs.un.org/en/S/PV.8923",
+          "text": "Acknowledgment of climate harms does not establish a common institutional position. France and India discuss the G5 Sahel force. The supplied UK and Brazil statements do not establish support for the G5 force."
+        },
+        {
+          "id": "no_quota_position",
+          "url": "https://docs.un.org/en/S/PV.8923",
+          "text": "The supplied UK statement does not state a position on binding national carbon quotas imposed by the Council."
+        },
+        {
+          "id": "scope",
+          "url": "https://docs.un.org/en/S/PV.8923",
+          "text": "Use the 9 December 2021 debate. Proposed next steps are analyst suggestions; the dossier establishes no approval for such a step."
+        }
+      ],
+      "rubric": [
+        {
+          "id": "positions",
+          "category": "final",
+          "weight": 14,
+          "rule": "Preserve each delegation’s position without attributing an unsupported position."
+        },
+        {
+          "id": "common",
+          "category": "final",
+          "weight": 14,
+          "rule": "State accurate cross-role common ground and avoid inventing collective positions."
+        },
+        {
+          "id": "difference",
+          "category": "final",
+          "weight": 14,
+          "rule": "State an explicit institutional difference, with qualifications intact."
+        },
+        {
+          "id": "action",
+          "category": "final",
+          "weight": 14,
+          "rule": "Propose a specific, relevant complete next step."
+        },
+        {
+          "id": "scope",
+          "category": "final",
+          "weight": 14,
+          "rule": "Use the dated debate and keep any proposed new action distinct from historical commitments."
+        }
+      ],
+      "answer": "**Policy-Analysis Memo: Climate/Security Debate – 9 December 2021**\n\n**France:**  \nFrance argued that the Security Council should play a central role in addressing climate-related insecurity, emphasizing that climate change exacerbates existing security threats such as desertification, water scarcity, and resource competition. It contended that reliance solely on armed forces and peacekeepers is insufficient, as these measures are reactive and do not address root causes. France supported the Great Green Wall project as a complementary measure to restore degraded land and build long-term resilience.\n\n**UK:**  \nThe UK supported the draft resolution on climate-security reporting and participation, emphasizing the need for the Security Council to report comprehensively on the links between climate and security. It welcomed UN efforts to address both terrorism and climate change and stressed the importance of inclusive approaches, particularly involving women and girls. However, the UK did not approve binding national carbon quotas imposed by the Council.\n\n**India:**  \nIndia acknowledged that climate change can impact people and exacerbate conflicts in some places but cautioned against viewing conflicts solely through the prism of climate change. It preferred to keep climate change discussions within the UNFCCC framework, emphasizing an inclusive, consensus-driven process. India’s institutional preference was to maintain the existing UNFCCC process, which it viewed as the appropriate forum for addressing climate change in an equitable and inclusive manner.\n\n**Brazil:**  \nBrazil preferred an institutional response to climate change that focused on sustainable development and financial support rather than a strict security lens. It argued that climate change is a systemic issue requiring comprehensive solutions and that the UNFCCC is the appropriate forum for addressing it. Brazil emphasized the need for developed countries to fulfill climate finance commitments and support developing nations, cautioning against diverting attention from existing mechanisms to the Security Council.\n\n**Common Ground and Next Steps:**  \nCommon ground includes the recognition of climate change as a security concern and the need for international cooperation. France and the UK emphasized the importance of the Security Council in addressing climate-related insecurity, while India and Brazil preferred to keep climate discussions within the UNFCCC framework. A proposed next step could be the establishment of a working group to explore synergies between climate and security initiatives, ensuring that climate action remains within the UNFCCC while enhancing Security Council engagement on security-related impacts."
+    },
+    "verdict": {
+      "id": "B77",
+      "units": [
+        {
+          "id": "positions",
+          "status": "unmet",
+          "source": [
+            {
+              "block": "no_quota_position",
+              "quote": "The supplied UK statement does not state a position"
+            }
+          ],
+          "response": "the UK did not approve binding national carbon quotas imposed by the Council.",
+          "reason": "The explicit quota position lacks support."
+        },
+        {
+          "id": "common",
+          "status": "uncertain",
+          "source": [
+            {
+              "block": "common",
+              "quote": "Acknowledgment of climate harms does not establish a common institutional position"
+            }
+          ],
+          "response": "Common ground includes the recognition of climate change as a security concern",
+          "reason": "It could refer to conditional impacts or a common security framing."
+        },
+        {
+          "id": "difference",
+          "status": "met",
+          "source": [
+            {
+              "block": "positions",
+              "quote": "India opposes a separate Council track"
+            }
+          ],
+          "response": "France and the UK emphasized the importance of the Security Council in addressing climate-related insecurity, while India and Brazil preferred to keep climate discussions within the UNFCCC framework.",
+          "reason": "Identifies the institutional divide while avoiding a shared formal UK/India action."
+        },
+        {
+          "id": "action",
+          "status": "met",
+          "source": [
+            {
+              "block": "scope",
+              "quote": "Proposed next steps are analyst suggestions"
+            }
+          ],
+          "response": "A proposed next step could be the establishment of a working group to explore synergies between climate and security initiatives",
+          "reason": "Concrete suggestion addresses the institutional divide."
+        },
+        {
+          "id": "scope",
+          "status": "met",
+          "source": [
+            {
+              "block": "scope",
+              "quote": "the dossier establishes no approval for such a step"
+            }
+          ],
+          "response": "A proposed next step could be",
+          "reason": "An analyst suggestion is distinguished from a recorded commitment."
+        }
+      ],
+      "guard": {
+        "status": "failed",
+        "source": [
+          {
+            "block": "no_quota_position",
+            "quote": "does not state a position on binding national carbon quotas"
+          }
+        ],
+        "response": "the UK did not approve binding national carbon quotas imposed by the Council",
+        "reason": "The memo states an official negative position that is absent from the supplied statement."
+      }
+    },
+    "archive_id": "13ab72d195f81af5504a93b5",
+    "arm": "single_analyst",
+    "generated_tokens": 460
+  },
+  "direct_score": {
+    "final": {
+      "lower": 42,
+      "upper": 56,
+      "possible": 70
+    },
+    "points": {
+      "lower": 0,
+      "upper": 0,
+      "possible": 0
+    },
+    "arguments": {
+      "lower": 0,
+      "upper": 0,
+      "possible": 0
+    },
+    "guard": "failed",
+    "strict": false
+  }
+}

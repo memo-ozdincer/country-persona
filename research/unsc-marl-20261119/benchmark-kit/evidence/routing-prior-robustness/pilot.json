@@ -1,0 +1,1056 @@
+{
+  "scope": "One simulated 32-episode pilot before choosing a single strategy and orientation for future episodes. The pilot supplies previous joint inventory frequency counts. This is added information relative to the prior-agnostic controls. Counts are synthetic. Policy selection uses the intended rubric. Future net points exclude collecting the pilot.",
+  "seed": 291406,
+  "pilot_size": 32,
+  "uniform_pseudocounts": 16,
+  "trials": 128,
+  "prior_report_sha256": "3284053d8125029e5728cc700072805f2172b84a60d378debfcadca842e331af",
+  "results": {
+    "unifil": {
+      "uniform": {
+        "independent_oracle": 47.712656249999974,
+        "robust_fixed": 48.96340624999999,
+        "nominal_fixed": 48.96340624999999,
+        "pilot_learned": {
+          "mean": 48.93174609375001,
+          "p10": 48.836765625,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.031660156249984084
+        },
+        "pilot_independent": {
+          "mean": 47.498785400390624,
+          "p10": 47.0925,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 39,
+          "mean_gain_over_robust": -1.4646208496093678
+        },
+        "pilot_hybrid": {
+          "mean": 48.93174609375001,
+          "p10": 48.836765625,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.031660156249984084
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 1.432960693359382,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 11,
+          "forward:original_mean-102": 9,
+          "forward:paired_high_mean-012": 30,
+          "forward:paired_high_mean-102": 21,
+          "swapped:original_mean-012": 8,
+          "swapped:original_mean-102": 4,
+          "swapped:paired_high_mean-012": 24,
+          "swapped:paired_high_mean-102": 21
+        }
+      },
+      "asymmetric": {
+        "independent_oracle": 50.71111781752001,
+        "robust_fixed": 51.063237542640024,
+        "nominal_fixed": 50.03010117264002,
+        "pilot_learned": {
+          "mean": 51.07206149311942,
+          "p10": 50.405117131303996,
+          "wins_vs_independent_oracle": 106,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.008823950479396103
+        },
+        "pilot_independent": {
+          "mean": 50.333328390747795,
+          "p10": 49.55707661283999,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 53,
+          "mean_gain_over_robust": -0.7299091518922296
+        },
+        "pilot_hybrid": {
+          "mean": 51.07206149311942,
+          "p10": 50.405117131303996,
+          "wins_vs_independent_oracle": 106,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.008823950479396103
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.7387331023716268,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 3,
+          "forward:original_mean-102": 6,
+          "forward:paired_high_mean-012": 1,
+          "forward:paired_high_mean-102": 31,
+          "swapped:original_mean-012": 2,
+          "swapped:original_mean-102": 6,
+          "swapped:paired_high_mean-012": 75,
+          "swapped:paired_high_mean-102": 4
+        }
+      },
+      "correlated_duplicates": {
+        "independent_oracle": 46.94189062500003,
+        "robust_fixed": 47.45288281250003,
+        "nominal_fixed": 47.45288281250003,
+        "pilot_learned": {
+          "mean": 47.44066423950194,
+          "p10": 47.45288281250001,
+          "wins_vs_independent_oracle": 125,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.01221857299808704
+        },
+        "pilot_independent": {
+          "mean": 46.725977966308605,
+          "p10": 46.20213281250001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 84,
+          "mean_gain_over_robust": -0.7269048461914238
+        },
+        "pilot_hybrid": {
+          "mean": 47.44066423950194,
+          "p10": 47.45288281250001,
+          "wins_vs_independent_oracle": 125,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.01221857299808704
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.714686273193361,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-102": 2,
+          "forward:paired_high_mean-012": 32,
+          "forward:paired_high_mean-102": 32,
+          "swapped:original_mean-102": 1,
+          "swapped:paired_high_mean-012": 34,
+          "swapped:paired_high_mean-102": 27
+        }
+      },
+      "swapped_desks": {
+        "independent_oracle": 50.71111781752001,
+        "robust_fixed": 49.29430582160002,
+        "nominal_fixed": 51.32696680160002,
+        "pilot_learned": {
+          "mean": 51.10468991832652,
+          "p10": 50.693916270264,
+          "wins_vs_independent_oracle": 106,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 1.8103840967265015
+        },
+        "pilot_independent": {
+          "mean": 50.33665382926936,
+          "p10": 49.62309373601199,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 43,
+          "mean_gain_over_robust": 1.0423480076693394
+        },
+        "pilot_hybrid": {
+          "mean": 51.10468991832652,
+          "p10": 50.693916270264,
+          "wins_vs_independent_oracle": 106,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 1.8103840967265015
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.7680360890571531,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 5,
+          "forward:paired_high_mean-012": 73,
+          "swapped:original_mean-012": 2,
+          "swapped:original_mean-102": 12,
+          "swapped:paired_high_mean-012": 3,
+          "swapped:paired_high_mean-102": 33
+        }
+      },
+      "shifted_fields": {
+        "independent_oracle": 50.50844729632001,
+        "robust_fixed": 50.785521714480005,
+        "nominal_fixed": 49.34004593448,
+        "pilot_learned": {
+          "mean": 50.733713335723806,
+          "p10": 50.313167326818,
+          "wins_vs_independent_oracle": 110,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.05180837875619915
+        },
+        "pilot_independent": {
+          "mean": 50.27738283173407,
+          "p10": 49.75526285351201,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 63,
+          "mean_gain_over_robust": -0.5081388827459321
+        },
+        "pilot_hybrid": {
+          "mean": 50.733713335723806,
+          "p10": 50.313167326818,
+          "wins_vs_independent_oracle": 110,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.05180837875619915
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.45633050398974984,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 1,
+          "forward:original_mean-102": 5,
+          "forward:paired_high_mean-012": 1,
+          "forward:paired_high_mean-102": 40,
+          "swapped:original_mean-012": 6,
+          "swapped:paired_high_mean-012": 70,
+          "swapped:paired_high_mean-102": 5
+        }
+      },
+      "more_duplicates": {
+        "independent_oracle": 46.56979687500004,
+        "robust_fixed": 46.62896093750003,
+        "nominal_fixed": 46.62896093750003,
+        "pilot_learned": {
+          "mean": 46.6289609375,
+          "p10": 46.628960937500004,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -3.552713678800501e-14
+        },
+        "pilot_independent": {
+          "mean": 46.50376684570311,
+          "p10": 46.41032812499999,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 108,
+          "mean_gain_over_robust": -0.12519409179692076
+        },
+        "pilot_hybrid": {
+          "mean": 46.6289609375,
+          "p10": 46.628960937500004,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -3.552713678800501e-14
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.125194091796896,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:paired_high_mean-012": 44,
+          "forward:paired_high_mean-102": 30,
+          "swapped:paired_high_mean-012": 26,
+          "swapped:paired_high_mean-102": 28
+        }
+      },
+      "mostly_complementary": {
+        "independent_oracle": 50.618531250000004,
+        "robust_fixed": 50.84868125000001,
+        "nominal_fixed": 50.84868125000001,
+        "pilot_learned": {
+          "mean": 50.84852243652347,
+          "p10": 50.84868125000003,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.00015881347654556066
+        },
+        "pilot_independent": {
+          "mean": 50.55360864257816,
+          "p10": 50.51221875000003,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 100,
+          "mean_gain_over_robust": -0.2950726074218508
+        },
+        "pilot_hybrid": {
+          "mean": 50.84852243652347,
+          "p10": 50.84868125000003,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.00015881347654556066
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.2949137939453097,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:paired_high_mean-012": 32,
+          "forward:paired_high_mean-102": 33,
+          "swapped:original_mean-102": 1,
+          "swapped:paired_high_mean-012": 36,
+          "swapped:paired_high_mean-102": 26
+        }
+      }
+    },
+    "outer_space": {
+      "uniform": {
+        "independent_oracle": 37.72890624999998,
+        "robust_fixed": 38.9265,
+        "nominal_fixed": 39.316312499999995,
+        "pilot_learned": {
+          "mean": 39.18485510253905,
+          "p10": 38.92649999999999,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.25835510253905625
+        },
+        "pilot_independent": {
+          "mean": 37.54948852539062,
+          "p10": 37.10875,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 46,
+          "mean_gain_over_robust": -1.3770114746093753
+        },
+        "pilot_hybrid": {
+          "mean": 39.18485510253905,
+          "p10": 38.92649999999999,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.25835510253905625
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 1.635366577148436,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 3,
+          "forward:original_mean-102": 18,
+          "forward:paired_high_mean-012": 33,
+          "forward:paired_high_mean-102": 10,
+          "swapped:original_mean-012": 4,
+          "swapped:original_mean-102": 19,
+          "swapped:paired_high_mean-012": 28,
+          "swapped:paired_high_mean-102": 13
+        }
+      },
+      "asymmetric": {
+        "independent_oracle": 41.04177930680001,
+        "robust_fixed": 41.50191443704001,
+        "nominal_fixed": 40.506751695040016,
+        "pilot_learned": {
+          "mean": 41.58559993147566,
+          "p10": 40.92631872160801,
+          "wins_vs_independent_oracle": 109,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.08368549443565598
+        },
+        "pilot_independent": {
+          "mean": 40.46905700406218,
+          "p10": 39.28588247012,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 27,
+          "mean_gain_over_robust": -1.0328574329778277
+        },
+        "pilot_hybrid": {
+          "mean": 41.58559993147566,
+          "p10": 40.92631872160801,
+          "wins_vs_independent_oracle": 109,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.08368549443565598
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 1.1165429274134777,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 3,
+          "forward:original_mean-102": 17,
+          "forward:paired_high_mean-012": 3,
+          "forward:paired_high_mean-102": 17,
+          "swapped:original_mean-012": 1,
+          "swapped:original_mean-102": 9,
+          "swapped:paired_high_mean-012": 75,
+          "swapped:paired_high_mean-102": 3
+        }
+      },
+      "correlated_duplicates": {
+        "independent_oracle": 36.33010937500002,
+        "robust_fixed": 37.01641875000002,
+        "nominal_fixed": 37.19183437500002,
+        "pilot_learned": {
+          "mean": 37.11600784912109,
+          "p10": 37.01641875,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.09958909912106861
+        },
+        "pilot_independent": {
+          "mean": 35.993314697265625,
+          "p10": 35.599801562500005,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 39,
+          "mean_gain_over_robust": -1.0231040527343964
+        },
+        "pilot_hybrid": {
+          "mean": 37.11600784912109,
+          "p10": 37.01641875,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.09958909912106861
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 1.122693151855465,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-102": 5,
+          "forward:paired_high_mean-012": 46,
+          "forward:paired_high_mean-102": 19,
+          "swapped:original_mean-102": 2,
+          "swapped:paired_high_mean-012": 40,
+          "swapped:paired_high_mean-102": 16
+        }
+      },
+      "swapped_desks": {
+        "independent_oracle": 41.0417793068,
+        "robust_fixed": 38.90320856688002,
+        "nominal_fixed": 41.963440874880014,
+        "pilot_learned": {
+          "mean": 41.66308116066947,
+          "p10": 41.30528350088801,
+          "wins_vs_independent_oracle": 120,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 2.759872593789453
+        },
+        "pilot_independent": {
+          "mean": 40.57822467040155,
+          "p10": 39.52067537083999,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 31,
+          "mean_gain_over_robust": 1.6750161035215356
+        },
+        "pilot_hybrid": {
+          "mean": 41.66308116066947,
+          "p10": 41.30528350088801,
+          "wins_vs_independent_oracle": 120,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 2.759872593789453
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 1.0848564902679114,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 1,
+          "forward:original_mean-102": 2,
+          "forward:paired_high_mean-012": 74,
+          "forward:paired_high_mean-102": 1,
+          "swapped:original_mean-012": 1,
+          "swapped:original_mean-102": 21,
+          "swapped:paired_high_mean-012": 3,
+          "swapped:paired_high_mean-102": 25
+        }
+      },
+      "shifted_fields": {
+        "independent_oracle": 40.82339507360001,
+        "robust_fixed": 41.2532221948,
+        "nominal_fixed": 39.9582566404,
+        "pilot_learned": {
+          "mean": 41.19200857004603,
+          "p10": 40.601215482168,
+          "wins_vs_independent_oracle": 109,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.06121362475397518
+        },
+        "pilot_independent": {
+          "mean": 40.45297980775437,
+          "p10": 39.654811841,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 29,
+          "mean_gain_over_robust": -0.8002423870456354
+        },
+        "pilot_hybrid": {
+          "mean": 41.19200857004603,
+          "p10": 40.601215482168,
+          "wins_vs_independent_oracle": 109,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.06121362475397518
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.7390287622916651,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 2,
+          "forward:original_mean-102": 20,
+          "forward:paired_high_mean-012": 2,
+          "forward:paired_high_mean-102": 18,
+          "swapped:original_mean-012": 3,
+          "swapped:original_mean-102": 9,
+          "swapped:paired_high_mean-012": 71,
+          "swapped:paired_high_mean-102": 3
+        }
+      },
+      "more_duplicates": {
+        "independent_oracle": 35.85170312500002,
+        "robust_fixed": 35.97455625000002,
+        "nominal_fixed": 36.03302812500002,
+        "pilot_learned": {
+          "mean": 36.01820904541015,
+          "p10": 35.974556250000006,
+          "wins_vs_independent_oracle": 127,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.04365279541013223
+        },
+        "pilot_independent": {
+          "mean": 35.67068194580077,
+          "p10": 35.38117187499999,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 86,
+          "mean_gain_over_robust": -0.30387430419924755
+        },
+        "pilot_hybrid": {
+          "mean": 36.01820904541015,
+          "p10": 35.974556250000006,
+          "wins_vs_independent_oracle": 127,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.04365279541013223
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.34752709960937916,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-102": 1,
+          "forward:paired_high_mean-012": 56,
+          "forward:paired_high_mean-102": 6,
+          "swapped:paired_high_mean-012": 51,
+          "swapped:paired_high_mean-102": 14
+        }
+      },
+      "mostly_complementary": {
+        "independent_oracle": 42.42240625000001,
+        "robust_fixed": 41.421300000000016,
+        "nominal_fixed": 41.49926250000002,
+        "pilot_learned": {
+          "mean": 42.04941245117189,
+          "p10": 41.928375625,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.628112451171873
+        },
+        "pilot_independent": {
+          "mean": 41.98843530273438,
+          "p10": 41.201781249999996,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 52,
+          "mean_gain_over_robust": 0.5671353027343642
+        },
+        "pilot_hybrid": {
+          "mean": 42.04941245117189,
+          "p10": 41.928375625,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.628112451171873
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.060977148437501405,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-102": 56,
+          "forward:paired_high_mean-012": 5,
+          "forward:paired_high_mean-102": 1,
+          "swapped:original_mean-102": 59,
+          "swapped:paired_high_mean-012": 7
+        }
+      }
+    },
+    "mali": {
+      "uniform": {
+        "independent_oracle": 63.73249999999998,
+        "robust_fixed": 63.73249999999998,
+        "nominal_fixed": 63.94099999999998,
+        "pilot_learned": {
+          "mean": 63.93951184082033,
+          "p10": 63.938390625000004,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.20701184082034985
+        },
+        "pilot_independent": {
+          "mean": 63.66467041015624,
+          "p10": 63.55531249999999,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 79,
+          "mean_gain_over_robust": -0.06782958984373977
+        },
+        "pilot_hybrid": {
+          "mean": 63.93951184082033,
+          "p10": 63.938390625000004,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.20701184082034985
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.27484143066407946,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 19,
+          "forward:original_mean-102": 15,
+          "forward:paired_high_mean-012": 16,
+          "forward:paired_high_mean-102": 15,
+          "swapped:original_mean-012": 20,
+          "swapped:original_mean-102": 19,
+          "swapped:paired_high_mean-012": 15,
+          "swapped:paired_high_mean-102": 9
+        }
+      },
+      "asymmetric": {
+        "independent_oracle": 64.8943591,
+        "robust_fixed": 64.8943591,
+        "nominal_fixed": 64.61322239580001,
+        "pilot_learned": {
+          "mean": 64.87590662023865,
+          "p10": 64.700290457144,
+          "wins_vs_independent_oracle": 70,
+          "ties_vs_independent_oracle": 2,
+          "mean_gain_over_robust": -0.01845247976135056
+        },
+        "pilot_independent": {
+          "mean": 64.78137849643375,
+          "p10": 64.43751644968,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 97,
+          "mean_gain_over_robust": -0.11298060356625683
+        },
+        "pilot_hybrid": {
+          "mean": 64.87590662023865,
+          "p10": 64.700290457144,
+          "wins_vs_independent_oracle": 70,
+          "ties_vs_independent_oracle": 2,
+          "mean_gain_over_robust": -0.01845247976135056
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.09452812380490438,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 11,
+          "forward:original_mean-102": 31,
+          "forward:paired_high_mean-012": 2,
+          "forward:paired_high_mean-102": 25,
+          "forward:independent_uniform": 2,
+          "swapped:original_mean-012": 3,
+          "swapped:original_mean-102": 7,
+          "swapped:paired_high_mean-012": 45,
+          "swapped:paired_high_mean-102": 2
+        }
+      },
+      "correlated_duplicates": {
+        "independent_oracle": 62.952874999999985,
+        "robust_fixed": 62.952874999999985,
+        "nominal_fixed": 62.92748750000005,
+        "pilot_learned": {
+          "mean": 62.934282586669944,
+          "p10": 62.92748750000001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 29,
+          "mean_gain_over_robust": -0.018592413330040358
+        },
+        "pilot_independent": {
+          "mean": 62.921521118164094,
+          "p10": 62.87314062500001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 107,
+          "mean_gain_over_robust": -0.03135388183589072
+        },
+        "pilot_hybrid": {
+          "mean": 62.934282586669944,
+          "p10": 62.92748750000001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 29,
+          "mean_gain_over_robust": -0.018592413330040358
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.01276146850586335,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 17,
+          "forward:original_mean-102": 13,
+          "forward:paired_high_mean-012": 10,
+          "forward:paired_high_mean-102": 12,
+          "forward:independent_uniform": 18,
+          "swapped:original_mean-012": 18,
+          "swapped:original_mean-102": 11,
+          "swapped:paired_high_mean-012": 8,
+          "swapped:paired_high_mean-102": 10,
+          "swapped:independent_uniform": 11
+        }
+      },
+      "swapped_desks": {
+        "independent_oracle": 64.8943591,
+        "robust_fixed": 63.965329600000025,
+        "nominal_fixed": 64.96074677036,
+        "pilot_learned": {
+          "mean": 64.90020883659801,
+          "p10": 64.87682145062399,
+          "wins_vs_independent_oracle": 78,
+          "ties_vs_independent_oracle": 1,
+          "mean_gain_over_robust": 0.9348792365979861
+        },
+        "pilot_independent": {
+          "mean": 64.78211657273685,
+          "p10": 64.43751644968,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 100,
+          "mean_gain_over_robust": 0.8167869727368284
+        },
+        "pilot_hybrid": {
+          "mean": 64.89830977259533,
+          "p10": 64.87682145062399,
+          "wins_vs_independent_oracle": 78,
+          "ties_vs_independent_oracle": 1,
+          "mean_gain_over_robust": 0.9329801725953004
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.11619319985846904,
+        "hybrid_portfolio_draws": 127,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 5,
+          "forward:original_mean-102": 1,
+          "forward:paired_high_mean-012": 41,
+          "swapped:original_mean-012": 4,
+          "swapped:original_mean-102": 37,
+          "swapped:paired_high_mean-012": 2,
+          "swapped:paired_high_mean-102": 37,
+          "swapped:independent_uniform": 1
+        }
+      },
+      "shifted_fields": {
+        "independent_oracle": 64.59678188000002,
+        "robust_fixed": 64.59678188000002,
+        "nominal_fixed": 64.12115889564001,
+        "pilot_learned": {
+          "mean": 64.51699562656478,
+          "p10": 64.376160416404,
+          "wins_vs_independent_oracle": 29,
+          "ties_vs_independent_oracle": 7,
+          "mean_gain_over_robust": -0.0797862534352447
+        },
+        "pilot_independent": {
+          "mean": 64.52916899046875,
+          "p10": 64.31409813320002,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 108,
+          "mean_gain_over_robust": -0.06761288953127575
+        },
+        "pilot_hybrid": {
+          "mean": 64.51699562656478,
+          "p10": 64.376160416404,
+          "wins_vs_independent_oracle": 29,
+          "ties_vs_independent_oracle": 7,
+          "mean_gain_over_robust": -0.0797862534352447
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": -0.012173363903974,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 3,
+          "forward:original_mean-102": 37,
+          "forward:paired_high_mean-102": 29,
+          "forward:independent_uniform": 7,
+          "swapped:original_mean-012": 17,
+          "swapped:original_mean-102": 1,
+          "swapped:paired_high_mean-012": 32,
+          "swapped:paired_high_mean-102": 2
+        }
+      },
+      "more_duplicates": {
+        "independent_oracle": 62.527624999999986,
+        "robust_fixed": 62.527624999999986,
+        "nominal_fixed": 62.37466250000004,
+        "pilot_learned": {
+          "mean": 62.493892138671896,
+          "p10": 62.37958359375001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 99,
+          "mean_gain_over_robust": -0.03373286132809028
+        },
+        "pilot_independent": {
+          "mean": 62.5255485839844,
+          "p10": 62.527625000000015,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 118,
+          "mean_gain_over_robust": -0.0020764160155835043
+        },
+        "pilot_hybrid": {
+          "mean": 62.4967389343262,
+          "p10": 62.37958359375001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 99,
+          "mean_gain_over_robust": -0.03088606567378349
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": -0.028809649658203318,
+        "hybrid_portfolio_draws": 125,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 6,
+          "forward:original_mean-102": 8,
+          "forward:paired_high_mean-012": 1,
+          "forward:paired_high_mean-102": 3,
+          "forward:independent_uniform": 61,
+          "swapped:original_mean-012": 7,
+          "swapped:original_mean-102": 3,
+          "swapped:paired_high_mean-102": 1,
+          "swapped:independent_uniform": 38
+        }
+      },
+      "mostly_complementary": {
+        "independent_oracle": 64.86650000000004,
+        "robust_fixed": 64.86650000000004,
+        "nominal_fixed": 64.8482,
+        "pilot_learned": {
+          "mean": 64.85251833496096,
+          "p10": 64.84820000000002,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 5,
+          "mean_gain_over_robust": -0.013981665039082714
+        },
+        "pilot_independent": {
+          "mean": 64.85957861328129,
+          "p10": 64.83106250000003,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 103,
+          "mean_gain_over_robust": -0.0069213867187585265
+        },
+        "pilot_hybrid": {
+          "mean": 64.85251833496096,
+          "p10": 64.84820000000002,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 5,
+          "mean_gain_over_robust": -0.013981665039082714
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": -0.007060278320323521,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 28,
+          "forward:original_mean-102": 26,
+          "forward:paired_high_mean-012": 2,
+          "forward:paired_high_mean-102": 6,
+          "forward:independent_uniform": 3,
+          "swapped:original_mean-012": 23,
+          "swapped:original_mean-102": 26,
+          "swapped:paired_high_mean-012": 7,
+          "swapped:paired_high_mean-102": 5,
+          "swapped:independent_uniform": 2
+        }
+      }
+    },
+    "myanmar": {
+      "uniform": {
+        "independent_oracle": 53.11796875000001,
+        "robust_fixed": 53.872593749999986,
+        "nominal_fixed": 53.872593749999986,
+        "pilot_learned": {
+          "mean": 53.850468994140606,
+          "p10": 53.763671874999986,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.02212475585938023
+        },
+        "pilot_independent": {
+          "mean": 52.95739257812499,
+          "p10": 52.58640624999998,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 60,
+          "mean_gain_over_robust": -0.9152011718749975
+        },
+        "pilot_hybrid": {
+          "mean": 53.850468994140606,
+          "p10": 53.763671874999986,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.02212475585938023
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.8930764160156281,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 9,
+          "forward:original_mean-102": 6,
+          "forward:paired_high_mean-012": 32,
+          "forward:paired_high_mean-102": 26,
+          "swapped:original_mean-012": 8,
+          "swapped:original_mean-102": 3,
+          "swapped:paired_high_mean-012": 24,
+          "swapped:paired_high_mean-102": 20
+        }
+      },
+      "asymmetric": {
+        "independent_oracle": 55.03264991576002,
+        "robust_fixed": 55.17547479064002,
+        "nominal_fixed": 54.486717210640016,
+        "pilot_learned": {
+          "mean": 55.23524928612567,
+          "p10": 54.744939787703984,
+          "wins_vs_independent_oracle": 107,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.059774495485655166
+        },
+        "pilot_independent": {
+          "mean": 54.792765359883106,
+          "p10": 54.070502528635984,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 91,
+          "mean_gain_over_robust": -0.3827094307569112
+        },
+        "pilot_hybrid": {
+          "mean": 55.23524928612567,
+          "p10": 54.744939787703984,
+          "wins_vs_independent_oracle": 107,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 0.059774495485655166
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.4424839262425674,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 2,
+          "forward:original_mean-102": 5,
+          "forward:paired_high_mean-102": 28,
+          "swapped:original_mean-012": 4,
+          "swapped:original_mean-102": 6,
+          "swapped:paired_high_mean-012": 79,
+          "swapped:paired_high_mean-102": 4
+        }
+      },
+      "correlated_duplicates": {
+        "independent_oracle": 52.48452343750004,
+        "robust_fixed": 52.732392187500025,
+        "nominal_fixed": 52.732392187500025,
+        "pilot_learned": {
+          "mean": 52.728686163330075,
+          "p10": 52.73239218750001,
+          "wins_vs_independent_oracle": 127,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.0037060241699506946
+        },
+        "pilot_independent": {
+          "mean": 52.3920537109375,
+          "p10": 52.16558593750001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 93,
+          "mean_gain_over_robust": -0.3403384765625219
+        },
+        "pilot_hybrid": {
+          "mean": 52.728686163330075,
+          "p10": 52.73239218750001,
+          "wins_vs_independent_oracle": 127,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.0037060241699506946
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.3366324523925853,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-102": 1,
+          "forward:paired_high_mean-012": 33,
+          "forward:paired_high_mean-102": 30,
+          "swapped:paired_high_mean-012": 36,
+          "swapped:paired_high_mean-102": 28
+        }
+      },
+      "swapped_desks": {
+        "independent_oracle": 55.03264991576001,
+        "robust_fixed": 54.06205176960002,
+        "nominal_fixed": 55.41715908960002,
+        "pilot_learned": {
+          "mean": 55.26310358956246,
+          "p10": 54.914175092343996,
+          "wins_vs_independent_oracle": 110,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 1.2010518199624443
+        },
+        "pilot_independent": {
+          "mean": 54.85026011775874,
+          "p10": 54.4636945142,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 86,
+          "mean_gain_over_robust": 0.7882083481587188
+        },
+        "pilot_hybrid": {
+          "mean": 55.26310358956246,
+          "p10": 54.914175092343996,
+          "wins_vs_independent_oracle": 110,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": 1.2010518199624443
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.4128434718037209,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 5,
+          "forward:paired_high_mean-012": 82,
+          "forward:paired_high_mean-102": 1,
+          "swapped:original_mean-012": 2,
+          "swapped:original_mean-102": 7,
+          "swapped:paired_high_mean-012": 3,
+          "swapped:paired_high_mean-102": 28
+        }
+      },
+      "shifted_fields": {
+        "independent_oracle": 54.99109630016002,
+        "robust_fixed": 55.10557852408,
+        "nominal_fixed": 54.14192800408,
+        "pilot_learned": {
+          "mean": 55.100571019553485,
+          "p10": 54.777205833284,
+          "wins_vs_independent_oracle": 111,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.005007504526517437
+        },
+        "pilot_independent": {
+          "mean": 54.868222745798754,
+          "p10": 54.7894114064,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 91,
+          "mean_gain_over_robust": -0.23735577828124832
+        },
+        "pilot_hybrid": {
+          "mean": 55.100571019553485,
+          "p10": 54.777205833284,
+          "wins_vs_independent_oracle": 111,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.005007504526517437
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.23234827375472433,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:original_mean-012": 1,
+          "forward:original_mean-102": 3,
+          "forward:paired_high_mean-012": 1,
+          "forward:paired_high_mean-102": 36,
+          "swapped:original_mean-012": 5,
+          "swapped:original_mean-102": 2,
+          "swapped:paired_high_mean-012": 75,
+          "swapped:paired_high_mean-102": 5
+        }
+      },
+      "more_duplicates": {
+        "independent_oracle": 52.13900781250004,
+        "robust_fixed": 52.110464062500036,
+        "nominal_fixed": 52.110464062500036,
+        "pilot_learned": {
+          "mean": 52.11046406249999,
+          "p10": 52.110464062499986,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -4.263256414560601e-14
+        },
+        "pilot_independent": {
+          "mean": 52.12170434570315,
+          "p10": 52.08585156250001,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 112,
+          "mean_gain_over_robust": 0.011240283203115098
+        },
+        "pilot_hybrid": {
+          "mean": 52.11046406249999,
+          "p10": 52.110464062499986,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -4.263256414560601e-14
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": -0.011240283203144519,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:paired_high_mean-012": 42,
+          "forward:paired_high_mean-102": 41,
+          "swapped:paired_high_mean-012": 22,
+          "swapped:paired_high_mean-102": 23
+        }
+      },
+      "mostly_complementary": {
+        "independent_oracle": 54.99615625000001,
+        "robust_fixed": 55.16251875000001,
+        "nominal_fixed": 55.16251875000002,
+        "pilot_learned": {
+          "mean": 55.16238762207031,
+          "p10": 55.16251874999999,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.00013112792969849352
+        },
+        "pilot_independent": {
+          "mean": 54.90077954101562,
+          "p10": 54.446874999999984,
+          "wins_vs_independent_oracle": 0,
+          "ties_vs_independent_oracle": 88,
+          "mean_gain_over_robust": -0.2617392089843875
+        },
+        "pilot_hybrid": {
+          "mean": 55.16238762207031,
+          "p10": 55.16251874999999,
+          "wins_vs_independent_oracle": 128,
+          "ties_vs_independent_oracle": 0,
+          "mean_gain_over_robust": -0.00013112792969849352
+        },
+        "hybrid_mean_gain_vs_same_pilot_independence": 0.2616080810546965,
+        "hybrid_portfolio_draws": 128,
+        "chosen_portfolio_arms": {
+          "forward:paired_high_mean-012": 35,
+          "forward:paired_high_mean-102": 37,
+          "swapped:original_mean-102": 1,
+          "swapped:paired_high_mean-012": 29,
+          "swapped:paired_high_mean-102": 26
+        }
+      }
+    }
+  }
+}

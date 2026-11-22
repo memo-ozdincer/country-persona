@@ -1,0 +1,91 @@
+{
+  "threshold": "Use all correct nonabstained per-option signs from these predictions. Ignore role sequencing and call costs.",
+  "classification": {
+    "sanctions/partially_matches/correct": 4,
+    "sanctions/eligible/correct": 2,
+    "sanctions/matches_no_requirement/correct": 1,
+    "sanctions/matches_no_requirement/abstain": 2,
+    "sanctions/partially_matches/abstain": 3,
+    "sanctions/eligible/abstain": 2,
+    "membership/eligible/correct": 4,
+    "membership/partially_matches/correct": 2,
+    "membership/matches_no_requirement/correct": 8
+  },
+  "evidence_ceiling": {
+    "sanctions": {
+      "typed_outcome": "agreement",
+      "potential_joint_from_all_correct_signs": [],
+      "unexcluded_after_all_correct_signs": [
+        "D",
+        "F"
+      ],
+      "qualifying_openings": 4,
+      "evidence_is_sufficient_in_principle": false
+    },
+    "membership": {
+      "typed_outcome": "impasse",
+      "potential_joint_from_all_correct_signs": [],
+      "unexcluded_after_all_correct_signs": [],
+      "qualifying_openings": 4,
+      "evidence_is_sufficient_in_principle": true
+    }
+  },
+  "one_field_switches": [
+    {
+      "family": "sanctions",
+      "role_index": 0,
+      "changed_field": "interval",
+      "eligible": "F",
+      "ineligible": "C",
+      "both_correct": true
+    },
+    {
+      "family": "sanctions",
+      "role_index": 0,
+      "changed_field": "public_report",
+      "eligible": "F",
+      "ineligible": "E",
+      "both_correct": true
+    },
+    {
+      "family": "sanctions",
+      "role_index": 1,
+      "changed_field": "convener",
+      "eligible": "E",
+      "ineligible": "B",
+      "both_correct": false
+    },
+    {
+      "family": "sanctions",
+      "role_index": 1,
+      "changed_field": "interval",
+      "eligible": "F",
+      "ineligible": "C",
+      "both_correct": false
+    },
+    {
+      "family": "sanctions",
+      "role_index": 1,
+      "changed_field": "convener",
+      "eligible": "F",
+      "ineligible": "D",
+      "both_correct": false
+    },
+    {
+      "family": "membership",
+      "role_index": 0,
+      "changed_field": "track",
+      "eligible": "A",
+      "ineligible": "D",
+      "both_correct": true
+    },
+    {
+      "family": "membership",
+      "role_index": 1,
+      "changed_field": "product",
+      "eligible": "F",
+      "ineligible": "E",
+      "both_correct": true
+    }
+  ]
+}

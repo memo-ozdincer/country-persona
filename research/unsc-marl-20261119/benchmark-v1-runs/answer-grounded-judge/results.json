@@ -1,0 +1,994 @@
+{
+  "calls": 50,
+  "selection": {
+    "archived": {
+      "cited_true": 4,
+      "cited_false": 4,
+      "calls": 28,
+      "input_tokens": 10605,
+      "n": 12
+    },
+    "mutations": {
+      "cited_true": 0,
+      "cited_false": 3,
+      "calls": 10,
+      "input_tokens": 3995,
+      "n": 4
+    },
+    "cross_family": {
+      "cited_true": 2,
+      "cited_false": 2,
+      "calls": 12,
+      "input_tokens": 6009,
+      "n": 4
+    }
+  },
+  "metrics": {
+    "archived": {
+      "ab": {
+        "true_accepted": 0,
+        "true": 4,
+        "false_accepted": 0,
+        "false": 8,
+        "correct": 8,
+        "mean_reward_error": -4.5
+      },
+      "ba": {
+        "true_accepted": 4,
+        "true": 4,
+        "false_accepted": 4,
+        "false": 8,
+        "correct": 8,
+        "mean_reward_error": 6.0
+      },
+      "mean": {
+        "true_accepted": 4,
+        "true": 4,
+        "false_accepted": 1,
+        "false": 8,
+        "correct": 11,
+        "mean_reward_error": 1.83333333
+      },
+      "agreement": {
+        "true_accepted": 0,
+        "true": 4,
+        "false_accepted": 0,
+        "false": 8,
+        "correct": 8,
+        "mean_reward_error": -4.5
+      }
+    },
+    "mutations": {
+      "ab": {
+        "true_accepted": 0,
+        "true": 0,
+        "false_accepted": 0,
+        "false": 4,
+        "correct": 4,
+        "mean_reward_error": 0.0
+      },
+      "ba": {
+        "true_accepted": 0,
+        "true": 0,
+        "false_accepted": 3,
+        "false": 4,
+        "correct": 1,
+        "mean_reward_error": 12.0
+      },
+      "mean": {
+        "true_accepted": 0,
+        "true": 0,
+        "false_accepted": 2,
+        "false": 4,
+        "correct": 2,
+        "mean_reward_error": 11.0
+      },
+      "agreement": {
+        "true_accepted": 0,
+        "true": 0,
+        "false_accepted": 0,
+        "false": 4,
+        "correct": 4,
+        "mean_reward_error": 0.0
+      }
+    },
+    "cross_family": {
+      "ab": {
+        "true_accepted": 0,
+        "true": 2,
+        "false_accepted": 0,
+        "false": 2,
+        "correct": 2,
+        "mean_reward_error": -6.5
+      },
+      "ba": {
+        "true_accepted": 2,
+        "true": 2,
+        "false_accepted": 2,
+        "false": 2,
+        "correct": 2,
+        "mean_reward_error": 6.5
+      },
+      "mean": {
+        "true_accepted": 1,
+        "true": 2,
+        "false_accepted": 1,
+        "false": 2,
+        "correct": 2,
+        "mean_reward_error": 0.5
+      },
+      "agreement": {
+        "true_accepted": 0,
+        "true": 2,
+        "false_accepted": 0,
+        "false": 2,
+        "correct": 2,
+        "mean_reward_error": -6.5
+      }
+    }
+  },
+  "previous_averaged": {
+    "archived": {
+      "true_accepted": 3,
+      "true": 4,
+      "false_accepted": 1,
+      "false": 8,
+      "correct": 10,
+      "mean_reward_error": 1.5
+    },
+    "mutations": {
+      "true_accepted": 0,
+      "true": 0,
+      "false_accepted": 1,
+      "false": 4,
+      "correct": 3,
+      "mean_reward_error": 1.0
+    }
+  },
+  "cases": {
+    "reform/uk-explanation/fund": {
+      "calls": 3,
+      "input_tokens": 1138,
+      "met": false,
+      "mutation": false,
+      "weight": 6,
+      "scope": {
+        "first": 5,
+        "last": 5,
+        "start": 399,
+        "stop": 509,
+        "text": "The UK voted yes but criticized rushed, insufficiently rigorous negotiations and said the text lacked clarity."
+      },
+      "selector": "S5",
+      "margins": {
+        "ab": -2.25,
+        "ba": 1.375,
+        "mean": -0.4375
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": false,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "reform/uk-explanation/process": {
+      "calls": 3,
+      "input_tokens": 1134,
+      "met": true,
+      "mutation": false,
+      "weight": 6,
+      "scope": {
+        "first": 8,
+        "last": 8,
+        "start": 733,
+        "stop": 798,
+        "text": "The UK and Germany shared concerns about compressed negotiations."
+      },
+      "selector": "S8",
+      "margins": {
+        "ab": -2.0,
+        "ba": 2.125,
+        "mean": 0.0625
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "reform/uk-explanation/process/mutated": {
+      "calls": 1,
+      "input_tokens": 393,
+      "met": false,
+      "mutation": true,
+      "weight": 6,
+      "scope": null,
+      "selector": "NONE",
+      "margins": {},
+      "judgments": {
+        "ab": false,
+        "ba": false,
+        "mean": false,
+        "agreement": false,
+        "span_exists": false
+      }
+    },
+    "reform/uk-inclusion/fund": {
+      "calls": 1,
+      "input_tokens": 341,
+      "met": false,
+      "mutation": false,
+      "weight": 6,
+      "scope": null,
+      "selector": "NONE",
+      "margins": {},
+      "judgments": {
+        "ab": false,
+        "ba": false,
+        "mean": false,
+        "agreement": false,
+        "span_exists": false
+      }
+    },
+    "reform/uk-inclusion/process": {
+      "calls": 1,
+      "input_tokens": 339,
+      "met": false,
+      "mutation": false,
+      "weight": 6,
+      "scope": null,
+      "selector": "NONE",
+      "margins": {},
+      "judgments": {
+        "ab": false,
+        "ba": false,
+        "mean": false,
+        "agreement": false,
+        "span_exists": false
+      }
+    },
+    "reform/belgium-explanation/fund": {
+      "calls": 3,
+      "input_tokens": 1120,
+      "met": true,
+      "mutation": false,
+      "weight": 4,
+      "scope": {
+        "first": 8,
+        "last": 8,
+        "start": 742,
+        "stop": 828,
+        "text": "Belgium emphasized funding predictability and Germany clarified the Fund's governance."
+      },
+      "selector": "S8",
+      "margins": {
+        "ab": -1.875,
+        "ba": 2.0,
+        "mean": 0.0625
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "reform/belgium-explanation/fund/mutated": {
+      "calls": 3,
+      "input_tokens": 1129,
+      "met": false,
+      "mutation": true,
+      "weight": 4,
+      "scope": {
+        "first": 8,
+        "last": 8,
+        "start": 742,
+        "stop": 830,
+        "text": "Belgium said it should control management of the Peacebuilding Fund, and Germany agreed."
+      },
+      "selector": "S8",
+      "margins": {
+        "ab": -2.125,
+        "ba": 1.625,
+        "mean": -0.25
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": false,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "reform/belgium-explanation/process": {
+      "calls": 1,
+      "input_tokens": 358,
+      "met": false,
+      "mutation": false,
+      "weight": 4,
+      "scope": null,
+      "selector": "NONE",
+      "margins": {},
+      "judgments": {
+        "ab": false,
+        "ba": false,
+        "mean": false,
+        "agreement": false,
+        "span_exists": false
+      }
+    },
+    "afghanistan/russia-full/fund": {
+      "calls": 3,
+      "input_tokens": 1183,
+      "met": false,
+      "mutation": false,
+      "weight": 22,
+      "scope": {
+        "first": 4,
+        "last": 5,
+        "start": 423,
+        "stop": 639,
+        "text": "Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities."
+      },
+      "selector": "S4-S5",
+      "margins": {
+        "ab": -1.125,
+        "ba": 1.625,
+        "mean": 0.25
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "afghanistan/russia-full/process": {
+      "calls": 3,
+      "input_tokens": 1241,
+      "met": true,
+      "mutation": false,
+      "weight": 22,
+      "scope": {
+        "first": 8,
+        "last": 8,
+        "start": 910,
+        "stop": 1010,
+        "text": "The adopted consultation requirement is distinct from Russia’s stated condition for its own support."
+      },
+      "selector": "S8",
+      "margins": {
+        "ab": -1.25,
+        "ba": 2.5,
+        "mean": 0.625
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "afghanistan/russia-full/process/mutated": {
+      "calls": 3,
+      "input_tokens": 1252,
+      "met": false,
+      "mutation": true,
+      "weight": 22,
+      "scope": {
+        "first": 4,
+        "last": 5,
+        "start": 423,
+        "stop": 639,
+        "text": "Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities."
+      },
+      "selector": "S4-S5",
+      "margins": {
+        "ab": -1.375,
+        "ba": 1.625,
+        "mean": 0.125
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "afghanistan/ghana-full/fund": {
+      "calls": 3,
+      "input_tokens": 1169,
+      "met": true,
+      "mutation": false,
+      "weight": 22,
+      "scope": {
+        "first": 6,
+        "last": 6,
+        "start": 729,
+        "stop": 836,
+        "text": "The African members’ account of a complementary envoy is consistent with paragraph 3’s safeguard for UNAMA."
+      },
+      "selector": "S6",
+      "margins": {
+        "ab": -1.625,
+        "ba": 2.25,
+        "mean": 0.3125
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "afghanistan/ghana-full/fund/mutated": {
+      "calls": 3,
+      "input_tokens": 1221,
+      "met": false,
+      "mutation": true,
+      "weight": 22,
+      "scope": {
+        "first": 4,
+        "last": 5,
+        "start": 423,
+        "stop": 727,
+        "text": "Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\n\nParagraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative."
+      },
+      "selector": "S4-S5",
+      "margins": {
+        "ab": -1.375,
+        "ba": 1.5,
+        "mean": 0.0625
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "afghanistan/ghana-full/process": {
+      "calls": 3,
+      "input_tokens": 1239,
+      "met": false,
+      "mutation": false,
+      "weight": 22,
+      "scope": {
+        "first": 4,
+        "last": 5,
+        "start": 423,
+        "stop": 754,
+        "text": "Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\n\nParagraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community."
+      },
+      "selector": "S4-S5",
+      "margins": {
+        "ab": -1.625,
+        "ba": 1.125,
+        "mean": -0.25
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": false,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "afghanistan/china-full/fund": {
+      "calls": 1,
+      "input_tokens": 326,
+      "met": false,
+      "mutation": false,
+      "weight": 22,
+      "scope": null,
+      "selector": "NONE",
+      "margins": {},
+      "judgments": {
+        "ab": false,
+        "ba": false,
+        "mean": false,
+        "agreement": false,
+        "span_exists": false
+      }
+    },
+    "afghanistan/china-full/process": {
+      "calls": 3,
+      "input_tokens": 1017,
+      "met": false,
+      "mutation": false,
+      "weight": 22,
+      "scope": {
+        "first": 5,
+        "last": 5,
+        "start": 637,
+        "stop": 690,
+        "text": "Its appointment terms contain no consent requirement."
+      },
+      "selector": "S5",
+      "margins": {
+        "ab": -2.25,
+        "ba": 1.625,
+        "mean": -0.3125
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": false,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "control/2739/canonical_record": {
+      "calls": 3,
+      "input_tokens": 1593,
+      "met": true,
+      "mutation": false,
+      "weight": 14,
+      "scope": {
+        "first": 7,
+        "last": 7,
+        "start": 663,
+        "stop": 822,
+        "text": "Japan, the United States and Algeria valued continued reporting as a way to inform the Council about the attacks, although Algeria abstained on the resolution."
+      },
+      "selector": "S7",
+      "margins": {
+        "ab": -2.25,
+        "ba": 2.5,
+        "mean": 0.125
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "control/2739/fixed_record": {
+      "calls": 3,
+      "input_tokens": 1532,
+      "met": false,
+      "mutation": false,
+      "weight": 14,
+      "scope": {
+        "first": 5,
+        "last": 5,
+        "start": 406,
+        "stop": 514,
+        "text": "Algeria valued monthly reporting on attacks on merchant and commercial vessels to keep the Council informed."
+      },
+      "selector": "S5",
+      "margins": {
+        "ab": -2.125,
+        "ba": 2.375,
+        "mean": 0.125
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": true,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "control/2664/canonical_record": {
+      "calls": 3,
+      "input_tokens": 1467,
+      "met": true,
+      "mutation": false,
+      "weight": 12,
+      "scope": {
+        "first": 6,
+        "last": 6,
+        "start": 654,
+        "stop": 829,
+        "text": "The Council assigned monitoring to the 1267 Committee, while India judged that its call for proactive Monitoring Team involvement and robust reporting was not fully addressed."
+      },
+      "selector": "S6",
+      "margins": {
+        "ab": -1.25,
+        "ba": 1.25,
+        "mean": 0.0
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": false,
+        "agreement": false,
+        "span_exists": true
+      }
+    },
+    "control/2664/fixed_record": {
+      "calls": 3,
+      "input_tokens": 1417,
+      "met": false,
+      "mutation": false,
+      "weight": 12,
+      "scope": {
+        "first": 5,
+        "last": 5,
+        "start": 498,
+        "stop": 653,
+        "text": "India raised diversion risks, sought proactive involvement of the 1267 Monitoring Team and robust reporting, and judged those concerns not fully addressed."
+      },
+      "selector": "S5",
+      "margins": {
+        "ab": -1.625,
+        "ba": 1.0,
+        "mean": -0.3125
+      },
+      "judgments": {
+        "ab": false,
+        "ba": true,
+        "mean": false,
+        "agreement": false,
+        "span_exists": true
+      }
+    }
+  },
+  "downstream": {
+    "ab": {
+      "judged_complete_score_table": [
+        [
+          [
+            41.0,
+            39.0
+          ],
+          [
+            35.0,
+            33.0
+          ],
+          [
+            36.0,
+            34.0
+          ]
+        ],
+        [
+          [
+            48.0,
+            48.0
+          ],
+          [
+            48.0,
+            48.0
+          ],
+          [
+            40.0,
+            40.0
+          ]
+        ]
+      ],
+      "overall": {
+        "reply_conditioned_declared": {
+          "utility": 31.45259375,
+          "release": 32.23939931,
+          "cost": 0.78680556,
+          "matches": 740,
+          "mean_regret": 0.77202865,
+          "n": 1152
+        },
+        "oracle": {
+          "utility": 32.2246224,
+          "release": 34.62253906,
+          "cost": 2.39791667,
+          "matches": 1152,
+          "mean_regret": 0.0,
+          "n": 1152
+        }
+      },
+      "by_family": {
+        "reform": {
+          "reply_conditioned_declared": {
+            "utility": 24.7801875,
+            "release": 26.35379861,
+            "cost": 1.57361111,
+            "matches": 488,
+            "mean_regret": 0.08844444,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 24.86863194,
+            "release": 27.08807639,
+            "cost": 2.21944444,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        },
+        "afghanistan": {
+          "reply_conditioned_declared": {
+            "utility": 38.125,
+            "release": 38.125,
+            "cost": 0.0,
+            "matches": 252,
+            "mean_regret": 1.45561285,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 39.58061285,
+            "release": 42.15700174,
+            "cost": 2.57638889,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        }
+      }
+    },
+    "ba": {
+      "judged_complete_score_table": [
+        [
+          [
+            47.0,
+            45.0
+          ],
+          [
+            35.0,
+            33.0
+          ],
+          [
+            40.0,
+            34.0
+          ]
+        ],
+        [
+          [
+            70.0,
+            70.0
+          ],
+          [
+            70.0,
+            70.0
+          ],
+          [
+            40.0,
+            62.0
+          ]
+        ]
+      ],
+      "overall": {
+        "reply_conditioned_declared": {
+          "utility": 31.37399349,
+          "release": 35.66496571,
+          "cost": 4.29097222,
+          "matches": 764,
+          "mean_regret": 0.85062891,
+          "n": 1152
+        },
+        "oracle": {
+          "utility": 32.2246224,
+          "release": 34.62253906,
+          "cost": 2.39791667,
+          "matches": 1152,
+          "mean_regret": 0.0,
+          "n": 1152
+        }
+      },
+      "by_family": {
+        "reform": {
+          "reply_conditioned_declared": {
+            "utility": 24.78457639,
+            "release": 27.64846528,
+            "cost": 2.86388889,
+            "matches": 502,
+            "mean_regret": 0.08405556,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 24.86863194,
+            "release": 27.08807639,
+            "cost": 2.21944444,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        },
+        "afghanistan": {
+          "reply_conditioned_declared": {
+            "utility": 37.96341059,
+            "release": 43.68146615,
+            "cost": 5.71805556,
+            "matches": 262,
+            "mean_regret": 1.61720226,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 39.58061285,
+            "release": 42.15700174,
+            "cost": 2.57638889,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        }
+      }
+    },
+    "mean": {
+      "judged_complete_score_table": [
+        [
+          [
+            41.0,
+            45.0
+          ],
+          [
+            35.0,
+            33.0
+          ],
+          [
+            40.0,
+            34.0
+          ]
+        ],
+        [
+          [
+            70.0,
+            70.0
+          ],
+          [
+            70.0,
+            48.0
+          ],
+          [
+            40.0,
+            40.0
+          ]
+        ]
+      ],
+      "overall": {
+        "reply_conditioned_declared": {
+          "utility": 31.89785503,
+          "release": 35.1520217,
+          "cost": 3.25416667,
+          "matches": 928,
+          "mean_regret": 0.32676736,
+          "n": 1152
+        },
+        "oracle": {
+          "utility": 32.2246224,
+          "release": 34.62253906,
+          "cost": 2.39791667,
+          "matches": 1152,
+          "mean_regret": 0.0,
+          "n": 1152
+        }
+      },
+      "by_family": {
+        "reform": {
+          "reply_conditioned_declared": {
+            "utility": 24.86863194,
+            "release": 27.08807639,
+            "cost": 2.21944444,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 24.86863194,
+            "release": 27.08807639,
+            "cost": 2.21944444,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        },
+        "afghanistan": {
+          "reply_conditioned_declared": {
+            "utility": 38.92707813,
+            "release": 43.21596701,
+            "cost": 4.28888889,
+            "matches": 352,
+            "mean_regret": 0.65353472,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 39.58061285,
+            "release": 42.15700174,
+            "cost": 2.57638889,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        }
+      }
+    },
+    "agreement": {
+      "judged_complete_score_table": [
+        [
+          [
+            41.0,
+            39.0
+          ],
+          [
+            35.0,
+            33.0
+          ],
+          [
+            36.0,
+            34.0
+          ]
+        ],
+        [
+          [
+            48.0,
+            48.0
+          ],
+          [
+            48.0,
+            48.0
+          ],
+          [
+            40.0,
+            40.0
+          ]
+        ]
+      ],
+      "overall": {
+        "reply_conditioned_declared": {
+          "utility": 31.45259375,
+          "release": 32.23939931,
+          "cost": 0.78680556,
+          "matches": 740,
+          "mean_regret": 0.77202865,
+          "n": 1152
+        },
+        "oracle": {
+          "utility": 32.2246224,
+          "release": 34.62253906,
+          "cost": 2.39791667,
+          "matches": 1152,
+          "mean_regret": 0.0,
+          "n": 1152
+        }
+      },
+      "by_family": {
+        "reform": {
+          "reply_conditioned_declared": {
+            "utility": 24.7801875,
+            "release": 26.35379861,
+            "cost": 1.57361111,
+            "matches": 488,
+            "mean_regret": 0.08844444,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 24.86863194,
+            "release": 27.08807639,
+            "cost": 2.21944444,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        },
+        "afghanistan": {
+          "reply_conditioned_declared": {
+            "utility": 38.125,
+            "release": 38.125,
+            "cost": 0.0,
+            "matches": 252,
+            "mean_regret": 1.45561285,
+            "n": 576
+          },
+          "oracle": {
+            "utility": 39.58061285,
+            "release": 42.15700174,
+            "cost": 2.57638889,
+            "matches": 576,
+            "mean_regret": 0.0,
+            "n": 576
+          }
+        }
+      }
+    }
+  }
+}

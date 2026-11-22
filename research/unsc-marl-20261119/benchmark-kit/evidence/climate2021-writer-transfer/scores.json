@@ -1,0 +1,646 @@
+{
+  "scope": "Same-assistant exact-span adjudication. Historical truth, evidence delivery, private credit and release are scored separately. The identical full-receipt generation and annotation are reused.",
+  "plan_sha256": "a5eed16303d1b64ccbeb9286b08179a10131edd958386dd2618d15aaf9452d2b",
+  "annotations_sha256": "b2537d6382f9e2ff63589c62acbf49da18867c9442e06157b28863bfbe875cc4",
+  "trace_sha256": "3676e80e443b618352765ef20d92a61e0626937d61277b963c89f183a2f8bfde",
+  "arms": {
+    "all": {
+      "raw": [
+        35,
+        42,
+        35,
+        56,
+        42,
+        42,
+        35,
+        56
+      ],
+      "release": [
+        35,
+        42,
+        0,
+        56,
+        42,
+        42,
+        35,
+        56
+      ],
+      "records": [
+        {
+          "id": "all-1",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 61,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia"
+          ]
+        },
+        {
+          "id": "all-2",
+          "raw": 35,
+          "eligible_points": 0,
+          "words": 50,
+          "ended": true,
+          "guard": "uncertain",
+          "credit": []
+        },
+        {
+          "id": "all-3",
+          "raw": 56,
+          "eligible_points": 56,
+          "words": 40,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia",
+            "forum",
+            "sahel"
+          ]
+        },
+        {
+          "id": "all-4",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 39,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "china"
+          ]
+        },
+        {
+          "id": "all-5",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 52,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia"
+          ]
+        },
+        {
+          "id": "all-6",
+          "raw": 35,
+          "eligible_points": 35,
+          "words": 63,
+          "ended": true,
+          "guard": "clear",
+          "credit": []
+        },
+        {
+          "id": "all-7",
+          "raw": 56,
+          "eligible_points": 56,
+          "words": 41,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia",
+            "forum",
+            "sahel"
+          ]
+        }
+      ],
+      "results": {
+        "raw": {
+          "uniform": {
+            "nets": {
+              "learned": 43.2102580715221,
+              "independent": 42.49749871095375,
+              "scripted": 42.58851567203408,
+              "informed_independence": 42.79078124999999,
+              "erase_questions": 42.54269640182888
+            },
+            "learned_gains": {
+              "independent": 0.7127593605683487,
+              "scripted": 0.6217423994880207,
+              "informed_independence": 0.4194768215221103,
+              "erase_questions": 0.667561669693221
+            }
+          },
+          "asymmetric": {
+            "nets": {
+              "learned": 45.05471195932839,
+              "independent": 43.7693253312712,
+              "scripted": 43.76379487644424,
+              "informed_independence": 45.154657554040014,
+              "erase_questions": 44.286772084776246
+            },
+            "learned_gains": {
+              "independent": 1.2853866280571893,
+              "scripted": 1.2909170828841496,
+              "informed_independence": -0.09994559471162745,
+              "erase_questions": 0.7679398745521411
+            }
+          },
+          "correlated_duplicates": {
+            "nets": {
+              "learned": 42.372023448017195,
+              "independent": 42.05233403268066,
+              "scripted": 41.69661189953512,
+              "informed_independence": 42.365531250000025,
+              "erase_questions": 41.98090594011116
+            },
+            "learned_gains": {
+              "independent": 0.3196894153365335,
+              "scripted": 0.6754115484820744,
+              "informed_independence": 0.006492198017170381,
+              "erase_questions": 0.3911175079060385
+            }
+          },
+          "swapped_desks": {
+            "nets": {
+              "learned": 44.839283896292834,
+              "independent": 43.87253290979722,
+              "scripted": 44.057549200697956,
+              "informed_independence": 45.154657554040014,
+              "erase_questions": 43.82775148078618
+            },
+            "learned_gains": {
+              "independent": 0.9667509864956116,
+              "scripted": 0.7817346955948778,
+              "informed_independence": -0.3153736577471804,
+              "erase_questions": 1.0115324155066503
+            }
+          },
+          "shifted_fields": {
+            "nets": {
+              "learned": 44.241963857300945,
+              "independent": 43.07981894800676,
+              "scripted": 43.23960249895469,
+              "informed_independence": 44.66973012364001,
+              "erase_questions": 43.69402794617995
+            },
+            "learned_gains": {
+              "independent": 1.1621449092941845,
+              "scripted": 1.0023613583462563,
+              "informed_independence": -0.4277662663390629,
+              "erase_questions": 0.5479359111209945
+            }
+          },
+          "more_duplicates": {
+            "nets": {
+              "learned": 41.914804562469044,
+              "independent": 41.80951693544076,
+              "scripted": 41.21011893271747,
+              "informed_independence": 42.47184375000001,
+              "erase_questions": 41.674474779174176
+            },
+            "learned_gains": {
+              "independent": 0.10528762702828232,
+              "scripted": 0.7046856297515731,
+              "informed_independence": -0.5570391875309681,
+              "erase_questions": 0.2403297832948681
+            }
+          },
+          "mostly_complementary": {
+            "nets": {
+              "learned": 44.641546116139864,
+              "independent": 43.62808452609832,
+              "scripted": 44.06502797834237,
+              "informed_independence": 45.98015625000001,
+              "erase_questions": 44.469763402483316
+            },
+            "learned_gains": {
+              "independent": 1.013461590041544,
+              "scripted": 0.5765181377974926,
+              "informed_independence": -1.3386101338601435,
+              "erase_questions": 0.17178271365654751
+            }
+          }
+        },
+        "release": {
+          "uniform": {
+            "nets": {
+              "learned": 35.648627283623824,
+              "independent": 34.90593277439301,
+              "scripted": 35.326099403471815,
+              "informed_independence": 40.96062499999999,
+              "erase_questions": 34.22743698928419
+            },
+            "learned_gains": {
+              "independent": 0.7426945092308159,
+              "scripted": 0.32252788015200906,
+              "informed_independence": -5.311997716376169,
+              "erase_questions": 1.421190294339631
+            }
+          },
+          "asymmetric": {
+            "nets": {
+              "learned": 39.174421841941495,
+              "independent": 37.90795934764289,
+              "scripted": 38.25425610840814,
+              "informed_independence": 41.245899538,
+              "erase_questions": 37.921474789154885
+            },
+            "learned_gains": {
+              "independent": 1.266462494298608,
+              "scripted": 0.9201657335333522,
+              "informed_independence": -2.0714776960585084,
+              "erase_questions": 1.2529470527866096
+            }
+          },
+          "correlated_duplicates": {
+            "nets": {
+              "learned": 35.7194249896553,
+              "independent": 34.24598499880054,
+              "scripted": 33.76672273593197,
+              "informed_independence": 40.51175,
+              "erase_questions": 33.232090773912795
+            },
+            "learned_gains": {
+              "independent": 1.4734399908547644,
+              "scripted": 1.9527022537233307,
+              "informed_independence": -4.7923250103446975,
+              "erase_questions": 2.487334215742507
+            }
+          },
+          "swapped_desks": {
+            "nets": {
+              "learned": 38.37243556720682,
+              "independent": 37.63818816244153,
+              "scripted": 38.12888570268681,
+              "informed_independence": 41.245899538,
+              "erase_questions": 37.13793753146951
+            },
+            "learned_gains": {
+              "independent": 0.7342474047652914,
+              "scripted": 0.2435498645200127,
+              "informed_independence": -2.873463970793182,
+              "erase_questions": 1.2344980357373103
+            }
+          },
+          "shifted_fields": {
+            "nets": {
+              "learned": 38.09015557256067,
+              "independent": 37.01175862543984,
+              "scripted": 37.3698532592326,
+              "informed_independence": 41.097929099999995,
+              "erase_questions": 36.708145365421245
+            },
+            "learned_gains": {
+              "independent": 1.0783969471208295,
+              "scripted": 0.7203023133280695,
+              "informed_independence": -3.0077735274393262,
+              "erase_questions": 1.3820102071394231
+            }
+          },
+          "more_duplicates": {
+            "nets": {
+              "learned": 35.7580419202179,
+              "independent": 33.88601348484097,
+              "scripted": 32.91615364454658,
+              "informed_independence": 41.36225,
+              "erase_questions": 32.689174656437466
+            },
+            "learned_gains": {
+              "independent": 1.8720284353769259,
+              "scripted": 2.841888275671316,
+              "informed_independence": -5.604208079782104,
+              "erase_questions": 3.068867263780433
+            }
+          },
+          "mostly_complementary": {
+            "nets": {
+              "learned": 38.36316163311122,
+              "independent": 37.502204886069414,
+              "scripted": 38.52041697420445,
+              "informed_independence": 43.69640625,
+              "erase_questions": 38.1192812172598
+            },
+            "learned_gains": {
+              "independent": 0.8609567470418042,
+              "scripted": -0.15725534109323291,
+              "informed_independence": -5.333244616888784,
+              "erase_questions": 0.24388041585142162
+            }
+          }
+        }
+      }
+    },
+    "visible": {
+      "raw": [
+        35,
+        42,
+        42,
+        56,
+        42,
+        42,
+        42,
+        56
+      ],
+      "release": [
+        35,
+        42,
+        0,
+        56,
+        42,
+        42,
+        42,
+        56
+      ],
+      "records": [
+        {
+          "id": "visible-1",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 26,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia"
+          ]
+        },
+        {
+          "id": "visible-2",
+          "raw": 42,
+          "eligible_points": 0,
+          "words": 42,
+          "ended": true,
+          "guard": "failed",
+          "credit": [
+            "india"
+          ]
+        },
+        {
+          "id": "visible-3",
+          "raw": 56,
+          "eligible_points": 56,
+          "words": 52,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia",
+            "forum",
+            "sahel"
+          ]
+        },
+        {
+          "id": "visible-4",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 46,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "china"
+          ]
+        },
+        {
+          "id": "visible-5",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 24,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia"
+          ]
+        },
+        {
+          "id": "visible-6",
+          "raw": 42,
+          "eligible_points": 42,
+          "words": 42,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "china"
+          ]
+        },
+        {
+          "id": "visible-7",
+          "raw": 56,
+          "eligible_points": 56,
+          "words": 41,
+          "ended": true,
+          "guard": "clear",
+          "credit": [
+            "russia",
+            "forum",
+            "sahel"
+          ]
+        }
+      ],
+      "results": {
+        "raw": {
+          "uniform": {
+            "nets": {
+              "learned": 45.46921206681907,
+              "independent": 44.67948713895954,
+              "scripted": 44.65726871495108,
+              "informed_independence": 44.87765624999997,
+              "erase_questions": 44.7773873887613
+            },
+            "learned_gains": {
+              "independent": 0.7897249278595311,
+              "scripted": 0.8119433518679884,
+              "informed_independence": 0.5915558168190955,
+              "erase_questions": 0.6918246780577704
+            }
+          },
+          "asymmetric": {
+            "nets": {
+              "learned": 46.84824699889593,
+              "independent": 45.636263366370095,
+              "scripted": 45.50405137696672,
+              "informed_independence": 46.87570163404002,
+              "erase_questions": 46.0695812938935
+            },
+            "learned_gains": {
+              "independent": 1.2119836325258362,
+              "scripted": 1.3441956219292095,
+              "informed_independence": -0.027454635144088968,
+              "erase_questions": 0.7786657050024317
+            }
+          },
+          "correlated_duplicates": {
+            "nets": {
+              "learned": 44.391207277619884,
+              "independent": 44.05758171253182,
+              "scripted": 43.67219404693883,
+              "informed_independence": 44.146757812500006,
+              "erase_questions": 44.03976013475793
+            },
+            "learned_gains": {
+              "independent": 0.33362556508806307,
+              "scripted": 0.7190132306810568,
+              "informed_independence": 0.24444946511987808,
+              "erase_questions": 0.3514471428619572
+            }
+          },
+          "swapped_desks": {
+            "nets": {
+              "learned": 46.701723742227905,
+              "independent": 45.6460967043153,
+              "scripted": 45.740093477564216,
+              "informed_independence": 46.87570163404002,
+              "erase_questions": 45.635503813250374
+            },
+            "learned_gains": {
+              "independent": 1.0556270379126076,
+              "scripted": 0.9616302646636896,
+              "informed_independence": -0.17397789181211465,
+              "erase_questions": 1.0662199289775316
+            }
+          },
+          "shifted_fields": {
+            "nets": {
+              "learned": 46.3340407497836,
+              "independent": 45.189978493342146,
+              "scripted": 45.240595963876785,
+              "informed_independence": 46.53227200204001,
+              "erase_questions": 45.78204531174497
+            },
+            "learned_gains": {
+              "independent": 1.144062256441451,
+              "scripted": 1.0934447859068115,
+              "informed_independence": -0.19823125225641292,
+              "erase_questions": 0.5519954380386238
+            }
+          },
+          "more_duplicates": {
+            "nets": {
+              "learned": 43.80320466532943,
+              "independent": 43.71836057084394,
+              "scripted": 43.134880591659396,
+              "informed_independence": 43.748085937499994,
+              "erase_questions": 43.637417996210644
+            },
+            "learned_gains": {
+              "independent": 0.08484409448549002,
+              "scripted": 0.6683240736700355,
+              "informed_independence": 0.05511872782943783,
+              "erase_questions": 0.1657866691187877
+            }
+          },
+          "mostly_complementary": {
+            "nets": {
+              "learned": 46.71496424368738,
+              "independent": 45.76437588735266,
+              "scripted": 45.940043823155925,
+              "informed_independence": 46.64953125,
+              "erase_questions": 46.446248357951376
+            },
+            "learned_gains": {
+              "independent": 0.9505883563347268,
+              "scripted": 0.7749204205314584,
+              "informed_independence": 0.06543299368738076,
+              "erase_questions": 0.26871588573600746
+            }
+          }
+        },
+        "release": {
+          "uniform": {
+            "nets": {
+              "learned": 36.395255121341116,
+              "independent": 35.569608015086644,
+              "scripted": 35.94236919267637,
+              "informed_independence": 40.96062499999999,
+              "erase_questions": 34.799076093707676
+            },
+            "learned_gains": {
+              "independent": 0.8256471062544719,
+              "scripted": 0.45288592866474886,
+              "informed_independence": -4.565369878658878,
+              "erase_questions": 1.5961790276334398
+            }
+          },
+          "asymmetric": {
+            "nets": {
+              "learned": 39.791898858031665,
+              "independent": 38.602624186016115,
+              "scripted": 38.89260485532341,
+              "informed_independence": 41.81896360300001,
+              "erase_questions": 38.43122453914783
+            },
+            "learned_gains": {
+              "independent": 1.18927467201555,
+              "scripted": 0.8992940027082525,
+              "informed_independence": -2.0270647449683423,
+              "erase_questions": 1.360674318883838
+            }
+          },
+          "correlated_duplicates": {
+            "nets": {
+              "learned": 36.408089127585626,
+              "independent": 34.68996287187567,
+              "scripted": 34.15632705061506,
+              "informed_independence": 40.671218749999994,
+              "erase_questions": 33.541181935319905
+            },
+            "learned_gains": {
+              "independent": 1.7181262557099544,
+              "scripted": 2.2517620769705644,
+              "informed_independence": -4.263129622414368,
+              "erase_questions": 2.866907192265721
+            }
+          },
+          "swapped_desks": {
+            "nets": {
+              "learned": 38.941505747324626,
+              "independent": 38.16488300748847,
+              "scripted": 38.62569727995083,
+              "informed_independence": 41.818963603000014,
+              "erase_questions": 37.607727074070404
+            },
+            "learned_gains": {
+              "independent": 0.7766227398361565,
+              "scripted": 0.31580846737379886,
+              "informed_independence": -2.877457855675388,
+              "erase_questions": 1.3337786732542227
+            }
+          },
+          "shifted_fields": {
+            "nets": {
+              "learned": 38.951870808095286,
+              "independent": 37.90830610626183,
+              "scripted": 38.19689687621027,
+              "informed_independence": 41.515051602999996,
+              "erase_questions": 37.39898621483454
+            },
+            "learned_gains": {
+              "independent": 1.0435647018334535,
+              "scripted": 0.7549739318850186,
+              "informed_independence": -2.56318079490471,
+              "erase_questions": 1.5528845932607496
+            }
+          },
+          "more_duplicates": {
+            "nets": {
+              "learned": 36.41508949462807,
+              "independent": 34.2101564301242,
+              "scripted": 33.18212224585432,
+              "informed_independence": 41.41540625,
+              "erase_questions": 32.85505784892656
+            },
+            "learned_gains": {
+              "independent": 2.2049330645038694,
+              "scripted": 3.232967248773747,
+              "informed_independence": -5.0003167553719265,
+              "erase_questions": 3.560031645701507
+            }
+          },
+          "mostly_complementary": {
+            "nets": {
+              "learned": 39.180902864053024,
+              "independent": 38.41332031931796,
+              "scripted": 39.28651061819042,
+              "informed_independence": 43.76728125,
+              "erase_questions": 38.82566973568317
+            },
+            "learned_gains": {
+              "independent": 0.7675825447350633,
+              "scripted": -0.1056077541373952,
+              "informed_independence": -4.586378385946979,
+              "erase_questions": 0.35523312836985355
+            }
+          }
+        }
+      }
+    }
+  }
+}

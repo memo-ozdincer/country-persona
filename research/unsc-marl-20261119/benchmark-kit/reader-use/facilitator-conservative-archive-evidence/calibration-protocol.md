@@ -1,0 +1,5 @@
+# Calibrate singleton score drift and test unobservable conjunctions
+
+Review only the archived public record and the three singleton receipt records. Correct the declared score offset and the three individual contributions. Preserve the declared nonadditive interactions. Evaluate on the complete archived record banks, under the same four team/prior conditions per bank. Compare no review, singleton review and all eight reviewed receipts. Use the same nominal opening assumption and independent fallback to isolate the score-table intervention.
+
+For each dossier with a nonzero public pair bonus, add an authored control that moves the bonus to another pair while preserving all four observed calibration scores and the full-record score. This synthetic change tests whether the singleton procedure can distinguish joint source interactions. Neither the control nor the archived anchor labels are estimated from fresh model writing. Report any efficiency gains in number of reviewed records separately from the unmeasured annotation workload.

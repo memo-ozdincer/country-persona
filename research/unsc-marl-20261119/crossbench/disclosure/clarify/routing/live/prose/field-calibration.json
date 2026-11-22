@@ -1,0 +1,18 @@
+{
+  "scope": "Assistant-authored minimal pairs based on observed private-mandate mistakes. No independent or model grading run.",
+  "judge_instruction": "Grade quote containment in the identified mandate separately from whether the quote supports the exact interpreted restriction. An explicit allowance of either sequence supports an unrestricted value. A generic or option-derived quote cannot certify a mandate. A quote can be exact and fail to entail the proposed restriction.",
+  "cases": [
+    {"id":"france-unrestricted","card":"membership/France workshop delegate","field":"sequence","value":null,
+     "quote":"I can consider either sequence and any of the listed products",
+     "expected":{"exact_mandate_span":true,"supports_value":true}},
+    {"id":"france-narrowed","card":"membership/France workshop delegate","field":"sequence","value":"parallel",
+     "quote":"I can consider either sequence and any of the listed products",
+     "expected":{"exact_mandate_span":true,"supports_value":false}},
+    {"id":"uk-briefings","card":"membership/United Kingdom workshop delegate/impasse","field":"track","value":"briefings-only",
+     "quote":"My workshop instructions allow the agenda to cover briefings only.",
+     "expected":{"exact_mandate_span":true,"supports_value":true}},
+    {"id":"uk-package-not-mandate","card":"membership/United Kingdom workshop delegate/impasse","field":"sequence","value":"parallel",
+     "quote":"work on a humanitarian pause in parallel",
+     "expected":{"exact_mandate_span":false,"supports_value":false}}
+  ]
+}

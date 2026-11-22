@@ -1,0 +1,3 @@
+# Preserve meaning while removing or reversing the word-overlap signal
+
+The original native editor tied a declared lexical control. Test two new anonymized source paraphrases with no shared content tokens under that control, then add a single lexical cue favoring the wrong option to each. The cue is a topic heading, not a change to either statement's position. Keep the exact same two adopted clauses, prompt instruction, two letter orders and model. Check the fixed lexical rule before inference. Reuse the original two no-receipt and two arrival-only calls. Record raw choices, averaged mapped margins and resulting documentary scores. The four semantic observations are author-written variants of the same two exposed statements.

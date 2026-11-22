@@ -1,0 +1,711 @@
+{
+  "scope": "Frozen Qwen judges exact archived spans without seeing the previous relation. Authored contrast rows never enter the router. Option-order disagreements resolve to unknown.",
+  "summary": {
+    "routed": {
+      "total": 19,
+      "correct": 15,
+      "wrong_actionable_relation": 1,
+      "valid_relation_withheld": 3,
+      "order_disagreement": 7,
+      "true_contradictions": 3,
+      "true_contradictions_recovered": 3
+    },
+    "control": {
+      "total": 8,
+      "correct": 8,
+      "wrong_actionable_relation": 0,
+      "valid_relation_withheld": 0,
+      "order_disagreement": 2,
+      "true_contradictions": 2,
+      "true_contradictions_recovered": 2
+    }
+  },
+  "decisions": {
+    "routed/unifil/0/0": {
+      "assertion": "Brazil supported UNIFIL's continued work.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/unifil/0/1": {
+      "assertion": "China supported UNIFIL's continued work.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/unifil/1/0": {
+      "assertion": "Brazil said the text fully addressed Lebanon's concerns.",
+      "expected": "unknown",
+      "votes": [
+        "unknown",
+        "contradicts"
+      ],
+      "stable_relation": "unknown"
+    },
+    "routed/unifil/1/1": {
+      "assertion": "China said the text fully addressed Lebanon's concerns.",
+      "expected": "contradicts",
+      "votes": [
+        "contradicts",
+        "contradicts"
+      ],
+      "stable_relation": "contradicts"
+    },
+    "routed/unifil/3/0": {
+      "assertion": "Brazil said the text addressed some of Lebanon's concerns.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/unifil/3/1": {
+      "assertion": "China said the text addressed some of Lebanon's concerns.",
+      "expected": "unknown",
+      "votes": [
+        "unknown",
+        "supports"
+      ],
+      "stable_relation": "unknown"
+    },
+    "routed/colombia/0/0": {
+      "assertion": "Brazil expressed support or hope for possible future EMC ceasefire verification subject to conditions.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/colombia/0/1": {
+      "assertion": "The three African members expressed support or hope for possible future EMC ceasefire verification subject to conditions.",
+      "expected": "supports",
+      "votes": [
+        "unknown",
+        "supports"
+      ],
+      "stable_relation": "unknown"
+    },
+    "routed/colombia/1/1": {
+      "assertion": "The three African members called for immediate EMC ceasefire verification without further conditions.",
+      "expected": "contradicts",
+      "votes": [
+        "contradicts",
+        "contradicts"
+      ],
+      "stable_relation": "contradicts"
+    },
+    "routed/colombia/2/1": {
+      "assertion": "The three African members pledged to encourage progress on the Ethnic Chapter.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/colombia/3/0": {
+      "assertion": "Brazil said the Security Council should respond to Colombia's Government's stated priorities.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/haiti/0/0": {
+      "assertion": "China welcomed Kenya's willingness to lead.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/haiti/0/1": {
+      "assertion": "The three African members welcomed Kenya's willingness to lead.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "routed/haiti/1/0": {
+      "assertion": "China voted in favour of the authorization.",
+      "expected": "contradicts",
+      "votes": [
+        "contradicts",
+        "contradicts"
+      ],
+      "stable_relation": "contradicts"
+    },
+    "routed/haiti/1/1": {
+      "assertion": "The three African members voted in favour of the authorization.",
+      "expected": "unknown",
+      "votes": [
+        "unknown",
+        "supports"
+      ],
+      "stable_relation": "unknown"
+    },
+    "routed/mali/0/0": {
+      "assertion": "France sought an extension of sanctions.",
+      "expected": "supports",
+      "votes": [
+        "unknown",
+        "supports"
+      ],
+      "stable_relation": "unknown"
+    },
+    "routed/mali/0/1": {
+      "assertion": "Russia sought an extension of sanctions.",
+      "expected": "supports",
+      "votes": [
+        "unknown",
+        "supports"
+      ],
+      "stable_relation": "unknown"
+    },
+    "routed/mali/1/0": {
+      "assertion": "France proposed keeping the Panel of Experts in operation.",
+      "expected": "unknown",
+      "votes": [
+        "unknown",
+        "supports"
+      ],
+      "stable_relation": "unknown"
+    },
+    "routed/mali/2/1": {
+      "assertion": "Russia said this would be the final extension of sanctions.",
+      "expected": "supports",
+      "votes": [
+        "contradicts",
+        "contradicts"
+      ],
+      "stable_relation": "contradicts"
+    },
+    "control/partial/not_every": {
+      "assertion": "China said the text did not address every concern Lebanon raised.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "control/partial/none": {
+      "assertion": "China said the text addressed none of Lebanon's concerns.",
+      "expected": "unknown",
+      "votes": [
+        "unknown",
+        "contradicts"
+      ],
+      "stable_relation": "unknown"
+    },
+    "control/vote/endorsement": {
+      "assertion": "The three African members supported adoption under Chapter VII.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "control/vote/opposition": {
+      "assertion": "The three African members opposed adoption under Chapter VII.",
+      "expected": "contradicts",
+      "votes": [
+        "contradicts",
+        "contradicts"
+      ],
+      "stable_relation": "contradicts"
+    },
+    "control/abstention/no_vote": {
+      "assertion": "China cast neither an affirmative nor a negative vote on the authorization.",
+      "expected": "supports",
+      "votes": [
+        "supports",
+        "supports"
+      ],
+      "stable_relation": "supports"
+    },
+    "control/abstention/negative_vote": {
+      "assertion": "China cast a negative vote on the authorization.",
+      "expected": "contradicts",
+      "votes": [
+        "contradicts",
+        "contradicts"
+      ],
+      "stable_relation": "contradicts"
+    },
+    "control/actor/brazil": {
+      "assertion": "Brazil supported UNIFIL's continued work.",
+      "expected": "unknown",
+      "votes": [
+        "unknown",
+        "unknown"
+      ],
+      "stable_relation": "unknown"
+    },
+    "control/condition/satisfied": {
+      "assertion": "The three African members stated that the Secretary-General's conditions were already met.",
+      "expected": "unknown",
+      "votes": [
+        "unknown",
+        "contradicts"
+      ],
+      "stable_relation": "unknown"
+    }
+  },
+  "full_packets": {
+    "quote_only": [
+      {
+        "proposal": "Brazil and China supported UNIFIL's continued work.",
+        "expected": "retain",
+        "action": "retain"
+      },
+      {
+        "proposal": "Brazil and China each said the text fully addressed Lebanon's concerns.",
+        "expected": "revise",
+        "action": "revise"
+      },
+      {
+        "proposal": "Brazil and China both stressed host-State sovereignty and consent.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Brazil and China each said the text addressed some of Lebanon's concerns.",
+        "expected": "withhold",
+        "action": "revise"
+      },
+      {
+        "proposal": "Brazil and the African members saw a possible future role for EMC ceasefire verification, subject to conditions.",
+        "expected": "retain",
+        "action": "retain"
+      },
+      {
+        "proposal": "Brazil and the African members called for immediate EMC ceasefire verification without further conditions.",
+        "expected": "revise",
+        "action": "revise"
+      },
+      {
+        "proposal": "Brazil and the African members pledged to encourage progress on the Ethnic Chapter.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Both speakers said the Security Council should respond to the priorities expressed by Colombia's Government.",
+        "expected": "withhold",
+        "action": "withhold"
+      }
+    ],
+    "source_relation_gate": [
+      {
+        "proposal": "Brazil and China supported UNIFIL's continued work.",
+        "expected": "retain",
+        "action": "retain"
+      },
+      {
+        "proposal": "Brazil and China each said the text fully addressed Lebanon's concerns.",
+        "expected": "revise",
+        "action": "revise"
+      },
+      {
+        "proposal": "Brazil and China both stressed host-State sovereignty and consent.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Brazil and China each said the text addressed some of Lebanon's concerns.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Brazil and the African members saw a possible future role for EMC ceasefire verification, subject to conditions.",
+        "expected": "retain",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Brazil and the African members called for immediate EMC ceasefire verification without further conditions.",
+        "expected": "revise",
+        "action": "revise"
+      },
+      {
+        "proposal": "Brazil and the African members pledged to encourage progress on the Ethnic Chapter.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Both speakers said the Security Council should respond to the priorities expressed by Colombia's Government.",
+        "expected": "withhold",
+        "action": "withhold"
+      }
+    ],
+    "source_relation_replace": [
+      {
+        "proposal": "Brazil and China supported UNIFIL's continued work.",
+        "expected": "retain",
+        "action": "retain"
+      },
+      {
+        "proposal": "Brazil and China each said the text fully addressed Lebanon's concerns.",
+        "expected": "revise",
+        "action": "revise"
+      },
+      {
+        "proposal": "Brazil and China both stressed host-State sovereignty and consent.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Brazil and China each said the text addressed some of Lebanon's concerns.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Brazil and the African members saw a possible future role for EMC ceasefire verification, subject to conditions.",
+        "expected": "retain",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Brazil and the African members called for immediate EMC ceasefire verification without further conditions.",
+        "expected": "revise",
+        "action": "revise"
+      },
+      {
+        "proposal": "Brazil and the African members pledged to encourage progress on the Ethnic Chapter.",
+        "expected": "withhold",
+        "action": "withhold"
+      },
+      {
+        "proposal": "Both speakers said the Security Council should respond to the priorities expressed by Colombia's Government.",
+        "expected": "withhold",
+        "action": "withhold"
+      }
+    ]
+  },
+  "replay": {
+    "overlap": {
+      "learned": {
+        "original": {
+          "cost": 0.09923045688438248,
+          "true_retain": 0.061101340677358264,
+          "true_revise": 0.16236180626916488,
+          "false_action": 0.14228713499001072,
+          "net": -0.01805444492787006
+        },
+        "ungated": {
+          "cost": 0.08405484696874357,
+          "true_retain": 0.061101340677358264,
+          "true_revise": 0.17483576843373466,
+          "false_action": 0.1356657956408761,
+          "net": 0.016216466501473237
+        },
+        "witness": {
+          "cost": 0.0752694727498308,
+          "true_retain": 0.061101340677358264,
+          "true_revise": 0.1413538955092679,
+          "false_action": 0.1356657956408761,
+          "net": -0.008480032204080737
+        },
+        "semantic_veto": {
+          "cost": 0.060946708882866574,
+          "true_retain": 0.061101340677358264,
+          "true_revise": 0.16235202391302483,
+          "false_action": 0.0,
+          "net": 0.16250665570751652
+        },
+        "perfect": {
+          "cost": 0.06973208310177935,
+          "true_retain": 0.061101340677358264,
+          "true_revise": 0.19583389683749156,
+          "false_action": 0.0,
+          "net": 0.18720315441307045
+        },
+        "source_relation_gate": {
+          "cost": 0.05080816578783965,
+          "true_retain": 0.030550670338679132,
+          "true_revise": 0.16235202391302483,
+          "false_action": 0.0,
+          "net": 0.14209452846386433
+        },
+        "source_relation_replace": {
+          "cost": 0.05080816578783965,
+          "true_retain": 0.030550670338679132,
+          "true_revise": 0.16235202391302483,
+          "false_action": 0.0,
+          "net": 0.14209452846386433
+        }
+      },
+      "learned_erased": {
+        "original": {
+          "cost": 0.1002246097297118,
+          "true_retain": 0.015642318498121206,
+          "true_revise": 0.16234624650219573,
+          "false_action": 0.0968093602657463,
+          "net": -0.019045404995141166
+        },
+        "ungated": {
+          "cost": 0.09602389296374993,
+          "true_retain": 0.015642318498121206,
+          "true_revise": 0.18617391001027353,
+          "false_action": 0.12431631972458729,
+          "net": -0.018523984179942485
+        },
+        "witness": {
+          "cost": 0.08356687770388067,
+          "true_retain": 0.015642318498121206,
+          "true_revise": 0.1526915207612263,
+          "false_action": 0.12431631972458729,
+          "net": -0.03954935816912046
+        },
+        "semantic_veto": {
+          "cost": 0.06282596184898581,
+          "true_retain": 0.015642318498121206,
+          "true_revise": 0.16235840946914126,
+          "false_action": 0.0,
+          "net": 0.11517476611827665
+        },
+        "perfect": {
+          "cost": 0.07528297710885505,
+          "true_retain": 0.015642318498121206,
+          "true_revise": 0.1958407987181885,
+          "false_action": 0.0,
+          "net": 0.13620014010745463
+        },
+        "source_relation_gate": {
+          "cost": 0.054514517604969774,
+          "true_retain": 0.007821159249060603,
+          "true_revise": 0.16235840946914126,
+          "false_action": 0.0,
+          "net": 0.11566505111323208
+        },
+        "source_relation_replace": {
+          "cost": 0.054514517604969774,
+          "true_retain": 0.007821159249060603,
+          "true_revise": 0.16235840946914126,
+          "false_action": 0.0,
+          "net": 0.11566505111323208
+        }
+      },
+      "greedy": {
+        "original": {
+          "cost": 0.12092307692307702,
+          "true_retain": 0.06853846153846156,
+          "true_revise": 0.16269230769230775,
+          "false_action": 0.14988461538461542,
+          "net": -0.03957692307692315
+        },
+        "ungated": {
+          "cost": 0.10866666666666674,
+          "true_retain": 0.06853846153846156,
+          "true_revise": 0.1638461538461539,
+          "false_action": 0.14711538461538465,
+          "net": -0.023397435897435925
+        },
+        "witness": {
+          "cost": 0.09429487179487187,
+          "true_retain": 0.06853846153846156,
+          "true_revise": 0.13038461538461543,
+          "false_action": 0.14711538461538465,
+          "net": -0.04248717948717953
+        },
+        "semantic_veto": {
+          "cost": 0.08385897435897444,
+          "true_retain": 0.06853846153846156,
+          "true_revise": 0.16269230769230777,
+          "false_action": 0.0,
+          "net": 0.14737179487179491
+        },
+        "perfect": {
+          "cost": 0.09823076923076932,
+          "true_retain": 0.06853846153846156,
+          "true_revise": 0.1961538461538462,
+          "false_action": 0.0,
+          "net": 0.16646153846153847
+        },
+        "source_relation_gate": {
+          "cost": 0.07598717948717955,
+          "true_retain": 0.03426923076923078,
+          "true_revise": 0.16269230769230777,
+          "false_action": 0.0,
+          "net": 0.120974358974359
+        },
+        "source_relation_replace": {
+          "cost": 0.07598717948717955,
+          "true_retain": 0.03426923076923078,
+          "true_revise": 0.16269230769230777,
+          "false_action": 0.0,
+          "net": 0.120974358974359
+        }
+      }
+    },
+    "split": {
+      "learned": {
+        "original": {
+          "cost": 0.10783232565641432,
+          "true_retain": 0.07896447756466358,
+          "true_revise": 0.18557717310656985,
+          "false_action": 0.17176062493020286,
+          "net": -0.015051299915383759
+        },
+        "ungated": {
+          "cost": 0.08853242448364132,
+          "true_retain": 0.07896447756466358,
+          "true_revise": 0.18199695557201395,
+          "false_action": 0.14785330575283645,
+          "net": 0.024575702900199753
+        },
+        "witness": {
+          "cost": 0.08043238717246237,
+          "true_retain": 0.07896447756466358,
+          "true_revise": 0.15625092433338897,
+          "false_action": 0.14785330575283645,
+          "net": 0.006929708972753745
+        },
+        "semantic_veto": {
+          "cost": 0.0657681026025201,
+          "true_retain": 0.07896447756466358,
+          "true_revise": 0.18556205148206112,
+          "false_action": 0.0,
+          "net": 0.1987584264442046
+        },
+        "perfect": {
+          "cost": 0.07386813991369902,
+          "true_retain": 0.07896447756466358,
+          "true_revise": 0.21130808272068607,
+          "false_action": 0.0,
+          "net": 0.21640442037165064
+        },
+        "source_relation_gate": {
+          "cost": 0.05425551816979457,
+          "true_retain": 0.03948223878233179,
+          "true_revise": 0.18556205148206112,
+          "false_action": 0.0,
+          "net": 0.17078877209459833
+        },
+        "source_relation_replace": {
+          "cost": 0.05425551816979457,
+          "true_retain": 0.03948223878233179,
+          "true_revise": 0.18556205148206112,
+          "false_action": 0.0,
+          "net": 0.17078877209459833
+        }
+      },
+      "learned_erased": {
+        "original": {
+          "cost": 0.10022460972971169,
+          "true_retain": 0.011873903898063655,
+          "true_revise": 0.18555115156734495,
+          "false_action": 0.10464058944770185,
+          "net": -0.007440143712004951
+        },
+        "ungated": {
+          "cost": 0.09602389296374979,
+          "true_retain": 0.011873903898063655,
+          "true_revise": 0.19874470123563984,
+          "false_action": 0.13108377991171527,
+          "net": -0.01648906774176158
+        },
+        "witness": {
+          "cost": 0.08356687770388056,
+          "true_retain": 0.011873903898063655,
+          "true_revise": 0.17299826945448812,
+          "false_action": 0.13108377991171527,
+          "net": -0.029778484263044067
+        },
+        "semantic_veto": {
+          "cost": 0.06282596184898569,
+          "true_retain": 0.011873903898063655,
+          "true_revise": 0.18556893203541347,
+          "false_action": 0.0,
+          "net": 0.1346168740844914
+        },
+        "perfect": {
+          "cost": 0.07528297710885491,
+          "true_retain": 0.011873903898063655,
+          "true_revise": 0.2113153638165652,
+          "false_action": 0.0,
+          "net": 0.14790629060577393
+        },
+        "source_relation_gate": {
+          "cost": 0.05451451760496967,
+          "true_retain": 0.005936951949031827,
+          "true_revise": 0.18556893203541347,
+          "false_action": 0.0,
+          "net": 0.13699136637947562
+        },
+        "source_relation_replace": {
+          "cost": 0.05451451760496967,
+          "true_retain": 0.005936951949031827,
+          "true_revise": 0.18556893203541347,
+          "false_action": 0.0,
+          "net": 0.13699136637947562
+        }
+      },
+      "greedy": {
+        "original": {
+          "cost": 0.1306153846153847,
+          "true_retain": 0.09346153846153847,
+          "true_revise": 0.1860576923076924,
+          "false_action": 0.18649038461538464,
+          "net": -0.03758653846153848
+        },
+        "ungated": {
+          "cost": 0.11628205128205134,
+          "true_retain": 0.09346153846153847,
+          "true_revise": 0.16929807692307697,
+          "false_action": 0.1611346153846154,
+          "net": -0.01465705128205129
+        },
+        "witness": {
+          "cost": 0.10156410256410262,
+          "true_retain": 0.09346153846153847,
+          "true_revise": 0.14362500000000006,
+          "false_action": 0.1611346153846154,
+          "net": -0.025612179487179476
+        },
+        "semantic_veto": {
+          "cost": 0.09182051282051286,
+          "true_retain": 0.09346153846153847,
+          "true_revise": 0.18605769230769242,
+          "false_action": 0.0,
+          "net": 0.18769871794871806
+        },
+        "perfect": {
+          "cost": 0.1065384615384616,
+          "true_retain": 0.09346153846153847,
+          "true_revise": 0.2117307692307693,
+          "false_action": 0.0,
+          "net": 0.19865384615384618
+        },
+        "source_relation_gate": {
+          "cost": 0.08360256410256414,
+          "true_retain": 0.046730769230769235,
+          "true_revise": 0.18605769230769242,
+          "false_action": 0.0,
+          "net": 0.14918589743589752
+        },
+        "source_relation_replace": {
+          "cost": 0.08360256410256414,
+          "true_retain": 0.046730769230769235,
+          "true_revise": 0.18605769230769242,
+          "false_action": 0.0,
+          "net": 0.14918589743589752
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "results.json": "77894a3d74b045c22d1b4e4ea4429eb4f3764763533aa23d61142f6c4bb295e6"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "scope": "Exact policy replay on the announced rubric, assuming perfect execution of literal instructions. Differences forecast a possible implementation gap in the selected component. They do not estimate language output quality.",
+  "component_weight": 0.4739235060188574,
+  "worlds": 64,
+  "different_worlds": [
+    {
+      "requester_mask": 1,
+      "responder_mask": 5,
+      "query": 2,
+      "sent": 1,
+      "trained_reply": 3,
+      "literal_guide_reply": 1
+    },
+    {
+      "requester_mask": 2,
+      "responder_mask": 6,
+      "query": 1,
+      "sent": 2,
+      "trained_reply": 3,
+      "literal_guide_reply": 2
+    },
+    {
+      "requester_mask": 5,
+      "responder_mask": 5,
+      "query": 2,
+      "sent": 1,
+      "trained_reply": 3,
+      "literal_guide_reply": 1
+    },
+    {
+      "requester_mask": 6,
+      "responder_mask": 6,
+      "query": 1,
+      "sent": 2,
+      "trained_reply": 3,
+      "literal_guide_reply": 2
+    }
+  ],
+  "priors": {
+    "uniform": {
+      "trained": 13.963406249999993,
+      "literal_guide": 13.644468749999993,
+      "net_loss_under_literal_guide": 0.31893750000000054,
+      "probability_of_a_different_reply": 0.05625
+    },
+    "asymmetric": {
+      "trained": 16.32696680160001,
+      "literal_guide": 15.969752106840003,
+      "net_loss_under_literal_guide": 0.357214694760005,
+      "probability_of_a_different_reply": 0.063000828
+    },
+    "correlated_duplicates": {
+      "trained": 12.4528828125,
+      "literal_guide": 11.607698437500002,
+      "net_loss_under_literal_guide": 0.8451843749999988,
+      "probability_of_a_different_reply": 0.14906250000000001
+    },
+    "swapped_desks": {
+      "trained": 15.030101172640002,
+      "literal_guide": 14.867730856840002,
+      "net_loss_under_literal_guide": 0.1623703158000005,
+      "probability_of_a_different_reply": 0.028636739999999997
+    },
+    "shifted_fields": {
+      "trained": 15.89208612828,
+      "literal_guide": 15.551099177640003,
+      "net_loss_under_literal_guide": 0.34098695063999784,
+      "probability_of_a_different_reply": 0.06013879199999999
+    },
+    "more_duplicates": {
+      "trained": 11.628960937500004,
+      "literal_guide": 10.496732812500003,
+      "net_loss_under_literal_guide": 1.132228125000001,
+      "probability_of_a_different_reply": 0.1996875
+    },
+    "mostly_complementary": {
+      "trained": 15.848681250000011,
+      "literal_guide": 15.78489375000001,
+      "net_loss_under_literal_guide": 0.06378750000000011,
+      "probability_of_a_different_reply": 0.011250000000000001
+    }
+  }
+}

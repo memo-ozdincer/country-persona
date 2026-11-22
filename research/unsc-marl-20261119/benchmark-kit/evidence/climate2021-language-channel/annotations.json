@@ -1,0 +1,71 @@
+{
+  "scope": "Same-assistant exact-span review of three frozen Qwen role notes and seven downstream responses. Private points need source-faithful evidence in the language note as well as the final response. This score accepts the emitted notes at their actual token cap. The strict word-budget counterfactual is reported separately.",
+  "notes": {
+    "note-russia-explanation": {
+      "reason": "The rejection of an automatic link, UNFCCC preference and multifactor regional focus all survive. The last sentence repeats attribution.",
+      "spans": {"faithful": ["opposed the draft's generic, automatic link between climate change and security", "an alternative draft addressing the Sahel's specific circumstances and multiple sources of insecurity"]},
+      "source_spans": ["generic, automatic link between climate change and security", "the Sahel's specific circumstances and multiple sources of insecurity"]
+    },
+    "note-india-explanation": {
+      "reason": "The national representation reason and the geographic limit survive. It keeps the statement that climate may exacerbate conflict separate from the Sahel boundary.",
+      "spans": {"faithful": ["noting that most developing countries lack a voice there", "India supported a draft limited to that region"]},
+      "source_spans": ["most developing countries lack a voice", "supported a draft limited to that region"]
+    },
+    "note-china-explanation": {
+      "reason": "The abstention, country-specific Council role and differentiated responsibilities survive. The final meta-sentence is unnecessary.",
+      "spans": {"faithful": ["favoring country-specific Council consideration of climate risks in peace and security", "common but differentiated responsibilities"]},
+      "source_spans": ["country-specific Council consideration of climate risks in peace and security", "common but differentiated responsibilities"]
+    }
+  },
+  "rows": {
+    "visible-1": {
+      "met": {"russia": "Russia opposed the draft's automatic link between climate change and security, preferring substantive work through specialist forums like the UNFCCC. Instead, it advocated for an alternative draft addressing the Sahel's specific circumstances and multiple sources of insecurity."},
+      "note_support": {"russia": {"russia-explanation": "opposed the draft's generic, automatic link between climate change and security. It preferred substantive climate work through specialist forums, principally the UNFCCC, and an alternative draft addressing the Sahel's specific circumstances and multiple sources of insecurity"}},
+      "guard": "clear", "reason": "The Russian grounds and alternative are preserved.", "issues": {}
+    },
+    "visible-2": {
+      "met": {"india": "India sought to preserve the universal, consensus-based UNFCCC process for climate decisions, arguing that most developing nations lack a voice in the Security Council. Instead, it supported a narrower alternative draft"},
+      "note_support": {"india": {"india-explanation": "India opposed shifting climate decisions from the universal, consensus-based UNFCCC to the Security Council, noting that most developing countries lack a voice there. While recognizing climate pressures may exacerbate conflicts in the Sahel, India supported a draft limited to that region."}},
+      "guard": "failed", "reason": "The note gives a geographic limit. The chair turns it into a subject-matter limit.",
+      "issues": {"guard": "limited specifically to climate pressures in the Sahel region"}
+    },
+    "visible-3": {
+      "met": {"russia": "Russia opposed an automatic climate-security link, preferring substantive work at the UNFCCC and a draft focused on the Sahel.",
+              "forum": "Both delegations shared a preference for the UNFCCC",
+              "sahel": "Both delegations shared a preference for the UNFCCC and supported a Sahel-specific alternative."},
+      "note_support": {
+        "russia": {"russia-explanation": "opposed the draft's generic, automatic link between climate change and security. It preferred substantive climate work through specialist forums, principally the UNFCCC, and an alternative draft addressing the Sahel's specific circumstances"},
+        "forum": {"russia-explanation": "It preferred substantive climate work through specialist forums, principally the UNFCCC", "india-explanation": "India opposed shifting climate decisions from the universal, consensus-based UNFCCC"},
+        "sahel": {"russia-explanation": "an alternative draft addressing the Sahel's specific circumstances", "india-explanation": "India supported a draft limited to that region"}
+      },
+      "guard": "clear", "reason": "The two notes establish the shared positions. The chair omits India's specific developing-country participation reason.", "issues": {}
+    },
+    "visible-4": {
+      "met": {"china": "China abstained to support country-specific Council consideration of climate risks in peace and security rather than treating climate change as a universal security challenge. This position emphasizes common but differentiated responsibilities"},
+      "note_support": {"china": {"china-explanation": "China abstained, favoring country-specific Council consideration of climate risks in peace and security rather than treating climate change as a universal security challenge. It emphasized common but differentiated responsibilities"}},
+      "guard": "clear", "reason": "The country-specific Council role and differentiated responsibilities are stated.", "issues": {}
+    },
+    "visible-5": {
+      "met": {"russia": "Russia opposed the draft's automatic climate-security link, preferring Sahel-specific analysis and work through the UNFCCC."},
+      "note_support": {"russia": {"russia-explanation": "opposed the draft's generic, automatic link between climate change and security. It preferred substantive climate work through specialist forums, principally the UNFCCC, and an alternative draft addressing the Sahel's specific circumstances"}},
+      "guard": "clear", "reason": "Russia is preserved. China has country-specific analysis without explicit affirmative Council treatment.",
+      "issues": {"china": "favoring country-specific risk assessment"}
+    },
+    "visible-6": {
+      "met": {}, "note_support": {},
+      "guard": "clear", "reason": "The reasons are incomplete. India's representation objection and China's explicit Council-specific role are absent.",
+      "issues": {"india": "preserve the universal, consensus-based UNFCCC framework", "china": "favored country-specific analysis"}
+    },
+    "visible-7": {
+      "met": {"russia": "Russia opposed an automatic climate-security link, preferring UNFCCC work and a Sahel-specific alternative.",
+              "forum": "Both delegations favored the UNFCCC",
+              "sahel": "Both delegations favored the UNFCCC and a Sahel-focused approach."},
+      "note_support": {
+        "russia": {"russia-explanation": "opposed the draft's generic, automatic link between climate change and security. It preferred substantive climate work through specialist forums, principally the UNFCCC, and an alternative draft addressing the Sahel's specific circumstances"},
+        "forum": {"russia-explanation": "It preferred substantive climate work through specialist forums, principally the UNFCCC", "india-explanation": "India opposed shifting climate decisions from the universal, consensus-based UNFCCC"},
+        "sahel": {"russia-explanation": "an alternative draft addressing the Sahel's specific circumstances", "india-explanation": "India supported a draft limited to that region"}
+      },
+      "guard": "clear", "reason": "The supplied notes license the bridge. India's participation reason and China's explanation are omitted.", "issues": {}
+    }
+  }
+}

@@ -1,0 +1,6 @@
+The native token verifier's original schema allowed three files.
+The live transport adds a fourth, dispatch.json. audit_live.py
+checks all four digests, then supplies just the token-verification
+subset to the original helper. The dispatcher itself is replayed
+against the sealed output. The original launch and call logs remain
+the evidence.

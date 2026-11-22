@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "purpose": "Compare source-faithful final records made by a solo analyst, independent role drafts plus a chair, and an interactive team.",
+  "status": "Two event families selected from primary UN records. No model inference or rubric judgments on this pilot yet. Keep every translation, draft and related stage in its event family.",
+  "protocol": {
+    "shared_task": "Write an internal chair's record in at most 160 words. State the instrument and recorded outcome, the material position of each supplied delegation, the documented limits of agreement and any analytical next step. Attribute claims and cite the evidence IDs. Preserve the distinction between a proposed text and an adopted instrument. Label any invented next step as a hypothetical analytical suggestion.",
+    "generation_ceiling": {"opening_1": 160, "opening_2": 160, "revision_1": 160, "revision_2": 160, "chair": 256},
+    "arms": {
+      "pooled_solo": "One analyst receives all evidence. Two opening passes cover the disposition and the supplied national statements. Two self-review passes can revise those openings. The same actor produces the final record.",
+      "independent_drafts": "Both delegate agents see the common docket and their own national evidence. They each draft and then independently review their contribution. The chair gets the docket, all source blocks and both revised contributions.",
+      "interactive": "Use the same local evidence and opening messages as independent_drafts. Each delegate reviews its own opening and the delivered peer opening once in a simultaneous round. The chair gets the docket, the same source blocks and the same number of contributions."
+    },
+    "comparability": "Use the same model, decoding and five output token ceilings. Exact chair task and source menu remain fixed. Openings in the two delegate arms are byte-identical. Record actual token counts, latency, caps, pass counts and delivery boundaries. Report matched source access and realized resource use.",
+    "primary_endpoint": "Paired difference in verified final-record points out of 70 and the rate of critical errors by event family. Critical errors include wrong vote or instrument status, invented Council authority, and factual misattribution of the minority position.",
+    "mechanism_endpoint": "Ask independent blinded reviewers to align a peer-originated proposition with a later revision and final span, and compare against the matched independent revision and solo record. Record unresolved attribution. Report strict guard, minority preservation and full per-criterion reviewer disagreements.",
+    "interpretation": "Two related regional cases form a procedural calibration, not a broad transfer estimate. The matched comparison can identify an interaction effect within the frozen protocol. Exposure of a base model during pretraining is unknown."
+  },
+  "cases": [
+    {
+      "family": "gaza-ceasefire-2009-01-08",
+      "source_links": {
+        "meeting": "https://digitallibrary.un.org/record/645727/files/S_PV.6063-EN.pdf",
+        "roll_call": "https://digitallibrary.un.org/record/645652",
+        "instrument": "https://digitallibrary.un.org/record/645525"
+      },
+      "docket": {
+        "VOTE": "On 8 January 2009 at the Security Council's 6063rd meeting, draft S/2009/23 received 14 votes in favour, zero against and one abstention. The United States abstained. The draft was adopted as resolution 1860 (2009).",
+        "TEXT": "The resolution called for a durable immediate ceasefire leading to the complete withdrawal of Israeli forces from Gaza and for humanitarian aid to get through without impediment. Adoption does not establish that these measures were implemented."
+      },
+      "delegate_evidence": {
+        "United States": {
+          "US-A": "Condoleezza Rice said the resolution was a step towards a durable and sustainable ceasefire and acknowledged the humanitarian emergency.",
+          "US-B": "Rice explained the abstention as a decision to wait for the results of Egyptian mediation so the United States could see what the resolution would support."
+        },
+        "United Kingdom": {
+          "UK-A": "David Miliband treated resolution 1860 as a basis for addressing the crisis and as a complement to decisions that needed to be taken on the ground."
+        }
+      },
+      "criterion_pairs": {
+        "disposition": ["Identifies draft S/2009/23 and adopted resolution 1860 (2009).", "States the 14–0–1 vote and attributes the abstention accurately."],
+        "operative_action": ["Records the ceasefire and withdrawal relationship.", "Preserves the call for unimpeded humanitarian assistance."],
+        "positions_and_reasons": ["Preserves the United States' reason for abstaining and attributes it to the United States.", "Preserves the United Kingdom's description of the resolution as complementary to decisions on the ground."],
+        "overlap_and_open_issues": ["Accurately identifies the common ceasefire objective.", "Keeps the outcome of Egyptian mediation open at the meeting."],
+        "authority_and_scope": ["Keeps abstention distinct from endorsement and veto.", "Keeps adoption distinct from verified implementation."]
+      }
+    },
+    {
+      "family": "jerusalem-draft-2017-12-18",
+      "source_links": {
+        "meeting": "https://digitallibrary.un.org/record/1327435",
+        "draft": "https://digitallibrary.un.org/record/1326934/files/S_2017_1060-EN.pdf"
+      },
+      "docket": {
+        "VOTE": "On 18 December 2017 at the Security Council's 8139th meeting, the Egypt-submitted draft S/2017/1060 received 14 votes in favour and one against. The United States cast the sole negative vote. The Council did not adopt the text because a permanent member voted against.",
+        "TEXT": "The draft addressed measures purporting to alter Jerusalem's status and called upon states to refrain from establishing diplomatic missions in Jerusalem. These were provisions of the draft."
+      },
+      "delegate_evidence": {
+        "United States": {
+          "US-A": "Nikki Haley framed the United States no vote as defending its authority to decide the location of its embassy.",
+          "US-B": "Haley rejected the claim that United States recognition of Jerusalem as Israel's capital harmed the peace process and affirmed continued United States commitment to peace."
+        },
+        "United Kingdom": {
+          "UK-A": "Matthew Rycroft said the United Kingdom supported the draft as consistent with previous Council resolutions and its longstanding position. He disagreed with unilateral recognition before a final status agreement and with moving the United States embassy.",
+          "UK-B": "Rycroft said the city's status should be determined through negotiations between Israelis and Palestinians and supported Jerusalem as the eventual shared capital of the two states."
+        }
+      },
+      "criterion_pairs": {
+        "disposition": ["Names S/2017/1060 as the Egypt-submitted draft and records non-adoption.", "Reports 14–1 and attributes non-adoption to the United States permanent-member negative vote."],
+        "operative_action": ["Accurately identifies what the draft would have said about measures altering the city's status.", "Reports the diplomatic-mission provision as proposed wording."],
+        "positions_and_reasons": ["Preserves the United States objection about authority over embassy location.", "Preserves the United Kingdom's support for the draft and its negotiated-status position."],
+        "overlap_and_open_issues": ["Recognizes the stated desire for peace without claiming agreement on Jerusalem.", "Records the concrete dispute about unilateral recognition or the embassy move."],
+        "authority_and_scope": ["Does not convert the draft or the affirmative majority into an adopted Council mandate.", "Does not say that the vote determined sovereignty or an agreed final status."]
+      }
+    }
+  ]
+}

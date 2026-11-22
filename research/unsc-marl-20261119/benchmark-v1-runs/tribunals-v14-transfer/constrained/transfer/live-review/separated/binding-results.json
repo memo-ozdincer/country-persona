@@ -1,0 +1,883 @@
+{
+  "grades": {
+    "emergency/pair": {
+      "expected_score": 46.0,
+      "expected_guard": "clear",
+      "accepted": true,
+      "grade": 46,
+      "guard": "clear",
+      "met": [
+        "S3-1",
+        "S3-2",
+        "S3-3"
+      ],
+      "coverage": [
+        [
+          1
+        ],
+        [],
+        [],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y",
+        "Y"
+      ],
+      "exact": true,
+      "binding_rejections": [
+        "S2-1"
+      ]
+    },
+    "emergency/control": {
+      "expected_score": 0,
+      "expected_guard": "failed",
+      "accepted": false,
+      "grade": 0,
+      "guard": "failed",
+      "met": [
+        "S3-2",
+        "S3-3"
+      ],
+      "coverage": [
+        [],
+        [
+          -1
+        ],
+        [
+          -1
+        ],
+        [
+          -1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y",
+        "Y",
+        "N"
+      ],
+      "binding_rejections": []
+    },
+    "myanmar/pair": {
+      "expected_score": 63.0,
+      "expected_guard": "clear",
+      "accepted": false,
+      "reason": "invalid JSON"
+    },
+    "myanmar/control": {
+      "expected_score": 70,
+      "expected_guard": "clear",
+      "accepted": true,
+      "grade": 70,
+      "guard": "clear",
+      "met": [
+        "draft-act",
+        "vote-count",
+        "uk",
+        "india",
+        "role",
+        "humanitarian",
+        "asean",
+        "overlap",
+        "reporting",
+        "authority"
+      ],
+      "coverage": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      "exact": true,
+      "binding_rejections": []
+    },
+    "unama/pair": {
+      "expected_score": 46.0,
+      "expected_guard": "clear",
+      "accepted": false,
+      "reason": "invalid JSON"
+    },
+    "unama/control": {
+      "expected_score": 34,
+      "expected_guard": "clear",
+      "accepted": false,
+      "grade": 34,
+      "guard": "clear",
+      "met": [],
+      "coverage": [
+        [],
+        [],
+        [],
+        [
+          2
+        ],
+        [
+          -1
+        ],
+        [
+          -1
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y"
+      ],
+      "binding_rejections": [
+        "S3-1"
+      ]
+    }
+  },
+  "summary": {
+    "net_mean_over_original": 0.013327571173913656,
+    "wins": 6,
+    "ties": 17,
+    "losses": 0,
+    "below_informed_silence": 4
+  },
+  "rows": [
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": 0,
+      "original": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "bound": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": 7,
+      "original": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "bound": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "original": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "bound": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "original": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "bound": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": 0,
+      "original": {
+        "released": 42.59601538000001,
+        "cost": 0.3208000000000001,
+        "net": 42.27521538000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.058928531499987,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "bound": {
+        "released": 42.59601538000001,
+        "cost": 0.3208000000000001,
+        "net": 42.27521538000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.058928531499987,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": 7,
+      "original": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "bound": {
+        "released": 42.59601538000001,
+        "cost": 0.3208000000000001,
+        "net": 42.27521538000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.058928531499987,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "original": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "bound": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "original": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "bound": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "exact",
+      "offset": 0,
+      "original": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "bound": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "exact",
+      "offset": 7,
+      "original": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "bound": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "original": {
+        "released": 41.757026020000005,
+        "cost": 0.3032,
+        "net": 41.45382602000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.057693913499996086,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "bound": {
+        "released": 41.757026020000005,
+        "cost": 0.3032,
+        "net": 41.45382602000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.057693913499996086,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "original": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "bound": {
+        "released": 41.757026020000005,
+        "cost": 0.3032,
+        "net": 41.45382602000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.057693913499996086,
+        "over_informed_silence_quality": 0.0
+      }
+    },
+    {
+      "case": "myanmar",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": -7,
+      "original": {
+        "released": 56.158819822568404,
+        "cost": 0.5303466235250001,
+        "net": 55.628473199043405,
+        "queries": 0.4654041175000001,
+        "over_informed_fixed": -0.24771594205710556,
+        "over_informed_silence_quality": -0.19110352358159588
+      },
+      "separated": {
+        "released": 56.158819822568404,
+        "cost": 0.5303466235250001,
+        "net": 55.628473199043405,
+        "queries": 0.4654041175000001,
+        "over_informed_fixed": -0.24771594205710556,
+        "over_informed_silence_quality": -0.19110352358159588
+      },
+      "bound": {
+        "released": 56.158819822568404,
+        "cost": 0.5303466235250001,
+        "net": 55.628473199043405,
+        "queries": 0.4654041175000001,
+        "over_informed_fixed": -0.24771594205710556,
+        "over_informed_silence_quality": -0.19110352358159588
+      }
+    },
+    {
+      "case": "myanmar",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": -7,
+      "original": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      },
+      "separated": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      },
+      "bound": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      }
+    },
+    {
+      "case": "myanmar",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": -7,
+      "original": {
+        "released": 56.40167761349479,
+        "cost": 0.48686070205201004,
+        "net": 55.91481691144278,
+        "queries": 0.593439888403,
+        "over_informed_fixed": -0.11856565898185778,
+        "over_informed_silence_quality": -0.12076813337021974
+      },
+      "separated": {
+        "released": 56.40167761349479,
+        "cost": 0.48686070205201004,
+        "net": 55.91481691144278,
+        "queries": 0.593439888403,
+        "over_informed_fixed": -0.11856565898185778,
+        "over_informed_silence_quality": -0.12076813337021974
+      },
+      "bound": {
+        "released": 56.40167761349479,
+        "cost": 0.48686070205201004,
+        "net": 55.91481691144278,
+        "queries": 0.593439888403,
+        "over_informed_fixed": -0.11856565898185778,
+        "over_informed_silence_quality": -0.12076813337021974
+      }
+    },
+    {
+      "case": "unama",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": 0,
+      "original": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      },
+      "separated": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      },
+      "bound": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      }
+    },
+    {
+      "case": "unama",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "original": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      },
+      "separated": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      },
+      "bound": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      }
+    },
+    {
+      "case": "unama",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "original": {
+        "released": 49.06577595427001,
+        "cost": 0.429822975945,
+        "net": 48.63595297832501,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": -0.08697298767499717,
+        "over_informed_silence_quality": -0.03449298572999737
+      },
+      "separated": {
+        "released": 49.06577595427001,
+        "cost": 0.429822975945,
+        "net": 48.63595297832501,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": -0.08697298767499717,
+        "over_informed_silence_quality": -0.03449298572999737
+      },
+      "bound": {
+        "released": 49.06577595427001,
+        "cost": 0.429822975945,
+        "net": 48.63595297832501,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": -0.08697298767499717,
+        "over_informed_silence_quality": -0.03449298572999737
+      }
+    },
+    {
+      "case": "unama",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": 0,
+      "original": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "separated": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "bound": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      }
+    },
+    {
+      "case": "unama",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "original": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "separated": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "bound": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      }
+    },
+    {
+      "case": "unama",
+      "law": "correlated_duplicates",
+      "prior_information": "exact",
+      "offset": 0,
+      "original": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      },
+      "separated": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      },
+      "bound": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      }
+    },
+    {
+      "case": "unama",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "original": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "separated": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "bound": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      }
+    },
+    {
+      "case": "unama",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "original": {
+        "released": 48.061100825458006,
+        "cost": 0.4219386060029999,
+        "net": 47.639162219455,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": -0.04920285444499939,
+        "over_informed_silence_quality": -0.02185112554199975
+      },
+      "separated": {
+        "released": 48.061100825458006,
+        "cost": 0.4219386060029999,
+        "net": 47.639162219455,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": -0.04920285444499939,
+        "over_informed_silence_quality": -0.02185112554199975
+      },
+      "bound": {
+        "released": 48.061100825458006,
+        "cost": 0.4219386060029999,
+        "net": 47.639162219455,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": -0.04920285444499939,
+        "over_informed_silence_quality": -0.02185112554199975
+      }
+    }
+  ],
+  "sha256": {
+    "binding.py": "fd7c7a155a0d5703043d5ce79e49fe55f012e9be65107ef17b91b376f2f4c366",
+    "binding-protocol.md": "fb7ba1596b358e57110cb3b96df79d6955a385690619862451adc1d0f1e20be4",
+    "results.json": "b6caae5e117a2be2eae8d5f1f4e9d95a6508d9aaf45bd6f7b87715ea8a3e9b15",
+    "plan.json": "3e18c611397a5cfc894b74f9aec2b57ca2e11e01d384db64f2cfdcc59a32d108"
+  }
+}

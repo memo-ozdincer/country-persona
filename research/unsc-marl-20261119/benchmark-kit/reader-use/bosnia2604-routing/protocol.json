@@ -1,0 +1,33 @@
+{
+  "event": {"date": "2021-11-03", "resolution": "S/RES/2604 (2021)", "draft": "S/2021/913", "meeting": "S/PV.8896", "unbench_event": "2408", "unsc_index": 251},
+  "sources": {
+    "meeting": "https://digitallibrary.un.org/record/3947096/files/S_PV.8896-EN.pdf",
+    "resolution": "https://digitallibrary.un.org/record/3946754/files/S_RES_2604_%282021%29-EN.pdf"
+  },
+  "public": "On 3 November 2021 France submitted draft S/2021/913. The Council adopted it 15–0–0 as resolution 2604 (2021). Under Chapter VII it authorized Member States acting through or in cooperation with the EU to continue EUFOR ALTHEA for twelve months. The adopted text has six operative paragraphs on military authorization and remaining seized. It contains no decision appointing or removing a High Representative or deciding the status of that civilian office.",
+  "desks": {
+    "United Kingdom": "Ms Farrey welcomed the twelve-month EUFOR renewal for stabilizing the country and enabling the civilian work of the High Representative. She backed Christian Schmidt as High Representative, supported his use of executive powers if needed, and opposed closing the office prematurely. She said closure still required completing the 5+2 agenda and urged Bosnia and Herzegovina's authorities to work toward it.",
+    "Russian Federation": "Mr Nebenzia argued that Christian Schmidt had been appointed by circumventing the Council and the practice of consensus and therefore maintained, as the Russian position, that the High Representative post remained vacant. He argued that the Office undermined Dayton and that reconciliation required dialogue among Bosnians free of outside interference, with responsibility resting with elected authorities. Russia was among the fifteen Council members voting for the draft."
+  },
+  "caps": {"opening": 64, "followup": 80, "final": 190},
+  "opening_instruction": "Write one compact documentary note, at most 30 words, for an editor. Summarize the speaker's main position and reason from the source. Preserve attribution. Use only the provided documents.",
+  "followup_instruction": "Write one documentary note of at most 40 words. Answer the editorial request using only the source owned by the named desk, or the supplied sources if assigned to the pooled editor. Keep ownership of claims clear. Where evidence is absent, say so. Prior notes serve as context only.",
+  "neutral_request": "Supply any additional documentary detail that is most useful to the final record.",
+  "final_instruction": "Write a source-faithful final record in at most 120 words. Cover the decision, sponsorship, vote, authority and duration, then the two desks' differing statements about the civilian High Representative and their supporting reasons if available. Distinguish adopted text from speaker claims. Omit evidence you cannot support. Use only the public record and notes provided. Output the record only.",
+  "questions": [
+    {"id": "russia_basis", "desk": "Russian Federation", "weight": 8, "patterns": ["vacan|did not recogni|no(?: legitimate)? high representative", "circumvent|consensus|without.{0,20}council|bypass"], "request": "What did this speaker claim about whether the High Representative office was occupied and what appointment procedure supported that claim?"},
+    {"id": "uk_closure", "desk": "United Kingdom", "weight": 8, "patterns": ["clos|end", "5\\s*\\+\\s*2"], "request": "What did this speaker say must happen before the High Representative office could close?"},
+    {"id": "uk_powers", "desk": "United Kingdom", "weight": 7, "patterns": ["schmidt", "executive power"], "request": "What did this speaker say about Schmidt and the conditions for use of executive powers?"},
+    {"id": "russia_dialogue", "desk": "Russian Federation", "weight": 7, "patterns": ["dialogue|reconciliation", "outside|external|foreign interference"], "request": "What approach and condition for reconciliation did this speaker advance?"}
+  ],
+  "rubric": [
+    ["decision", 12, "France submitted the draft and it became resolution 2604 by a 15–0–0 or explicitly unanimous Council vote."],
+    ["authority", 12, "Under Chapter VII the Council authorized EUFOR ALTHEA through or in cooperation with the EU for a further twelve months."],
+    ["civilian_scope", 16, "The adopted measure did not decide the civilian office's status or appoint or remove its holder."],
+    ["russia_basis", 8, "Russia maintained the post was vacant or rejected Schmidt and gave the absence of Council involvement or consensus as its ground."],
+    ["uk_closure", 8, "The UK made completion of the 5+2 agenda a condition for closing the office."],
+    ["uk_powers", 7, "The UK backed Schmidt and supported executive powers if required."],
+    ["russia_dialogue", 7, "Russia advocated internal Bosnian dialogue free of outside interference."]
+  ],
+  "release_failures": ["false vote or sponsorship", "civilian institutional outcome attributed to Council", "national view reversed or misattributed", "assertion of unsupported material fact", "more than 120 words"]
+}

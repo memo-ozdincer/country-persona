@@ -1,0 +1,2280 @@
+{
+  "scope": "Shared local policy chooses whether to disclose verified exclusions when no compatible requested positive is available. Immediate retry and all other decisions are fixed.",
+  "seeds": {
+    "training": 606929,
+    "development": 456343,
+    "holdout": 831947,
+    "archives": 691093
+  },
+  "features": [
+    "excludes_live_package",
+    "excludes_requested_package",
+    "closes_frontier",
+    "at_most_two_remaining",
+    "at_most_three_live",
+    "sender_knows_remaining_acceptance",
+    "asker_offered_remaining_package",
+    "excludes_asker_offer",
+    "known_negative_in_request",
+    "ordinary_target_available",
+    "multiple_exclusions",
+    "has_time_after_reply"
+  ],
+  "policy": [
+    [
+      false,
+      [
+        [
+          0,
+          true
+        ],
+        [
+          9,
+          true
+        ]
+      ]
+    ],
+    [
+      false,
+      [
+        [
+          0,
+          true
+        ],
+        [
+          10,
+          false
+        ]
+      ]
+    ]
+  ],
+  "fit": [
+    {
+      "step": 0,
+      "passing": {
+        "training_guard": 110,
+        "development_guard": 58
+      },
+      "accepted": [
+        false,
+        [
+          [
+            0,
+            true
+          ],
+          [
+            9,
+            true
+          ]
+        ]
+      ],
+      "training_delta": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "development_delta": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "step": 1,
+      "passing": {
+        "training_guard": 27,
+        "development_guard": 4
+      },
+      "accepted": [
+        false,
+        [
+          [
+            0,
+            true
+          ],
+          [
+            10,
+            false
+          ]
+        ]
+      ],
+      "training_delta": [
+        [
+          0,
+          0,
+          -2
+        ],
+        [
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          -1,
+          0
+        ]
+      ],
+      "development_delta": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "step": 2,
+      "passing": {
+        "training_guard": 23
+      }
+    }
+  ],
+  "guard_groups": [
+    [
+      "independent",
+      "agreement"
+    ],
+    [
+      "independent",
+      "impasse"
+    ],
+    [
+      "persistent",
+      "agreement"
+    ],
+    [
+      "persistent",
+      "impasse"
+    ]
+  ],
+  "training": {
+    "independent": {
+      "always_disclose": {
+        "counts": {
+          "agreement/answers": 390,
+          "agreement/certificate": 902,
+          "agreement/checks": 1220,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 731,
+          "agreement/retries": 125,
+          "agreement/retry_signs": 91,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 30,
+          "agreement/slots": 5681,
+          "agreement/withheld": 0,
+          "impasse/answers": 125,
+          "impasse/certificate": 537,
+          "impasse/checks": 2300,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 738,
+          "impasse/retries": 42,
+          "impasse/retry_signs": 34,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8089,
+          "impasse/withheld": 0
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 498,
+          "agreement/True/True": 902,
+          "impasse/False/False": 863,
+          "impasse/True/True": 537
+        }
+      },
+      "never_disclose": {
+        "counts": {
+          "agreement/answers": 397,
+          "agreement/certificate": 902,
+          "agreement/checks": 1217,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 731,
+          "agreement/retries": 129,
+          "agreement/retry_signs": 95,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 30,
+          "agreement/slots": 5681,
+          "agreement/withheld": 30,
+          "impasse/answers": 128,
+          "impasse/certificate": 537,
+          "impasse/checks": 2299,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 738,
+          "impasse/retries": 43,
+          "impasse/retry_signs": 35,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8090,
+          "impasse/withheld": 33
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 498,
+          "agreement/True/True": 902,
+          "impasse/False/False": 862,
+          "impasse/False/True": 1,
+          "impasse/True/False": 1,
+          "impasse/True/True": 536
+        }
+      },
+      "disclose_if_closes_frontier": {
+        "counts": {
+          "agreement/answers": 397,
+          "agreement/certificate": 902,
+          "agreement/checks": 1217,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 731,
+          "agreement/retries": 129,
+          "agreement/retry_signs": 95,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 30,
+          "agreement/slots": 5681,
+          "agreement/withheld": 30,
+          "impasse/answers": 128,
+          "impasse/certificate": 537,
+          "impasse/checks": 2299,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 738,
+          "impasse/retries": 43,
+          "impasse/retry_signs": 35,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8090,
+          "impasse/withheld": 33
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 498,
+          "agreement/True/True": 902,
+          "impasse/False/False": 862,
+          "impasse/False/True": 1,
+          "impasse/True/False": 1,
+          "impasse/True/True": 536
+        }
+      },
+      "fit": {
+        "counts": {
+          "agreement/answers": 395,
+          "agreement/certificate": 902,
+          "agreement/checks": 1218,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 731,
+          "agreement/retries": 129,
+          "agreement/retry_signs": 94,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 30,
+          "agreement/slots": 5681,
+          "agreement/withheld": 10,
+          "impasse/answers": 127,
+          "impasse/certificate": 538,
+          "impasse/checks": 2300,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 738,
+          "impasse/retries": 43,
+          "impasse/retry_signs": 35,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8088,
+          "impasse/withheld": 22
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 498,
+          "agreement/True/True": 902,
+          "impasse/False/False": 862,
+          "impasse/False/True": 1,
+          "impasse/True/True": 537
+        }
+      }
+    },
+    "persistent": {
+      "always_disclose": {
+        "counts": {
+          "agreement/answers": 300,
+          "agreement/certificate": 785,
+          "agreement/checks": 1235,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 739,
+          "agreement/retries": 157,
+          "agreement/retry_signs": 18,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 28,
+          "agreement/slots": 5901,
+          "agreement/withheld": 0,
+          "impasse/answers": 100,
+          "impasse/certificate": 487,
+          "impasse/checks": 2295,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 741,
+          "impasse/retries": 46,
+          "impasse/retry_signs": 6,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8132,
+          "impasse/withheld": 0
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 615,
+          "agreement/True/True": 785,
+          "impasse/False/False": 913,
+          "impasse/True/True": 487
+        }
+      },
+      "never_disclose": {
+        "counts": {
+          "agreement/answers": 305,
+          "agreement/certificate": 785,
+          "agreement/checks": 1234,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 739,
+          "agreement/retries": 159,
+          "agreement/retry_signs": 19,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 28,
+          "agreement/slots": 5901,
+          "agreement/withheld": 28,
+          "impasse/answers": 103,
+          "impasse/certificate": 488,
+          "impasse/checks": 2295,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 741,
+          "impasse/retries": 46,
+          "impasse/retry_signs": 7,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8131,
+          "impasse/withheld": 33
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 615,
+          "agreement/True/True": 785,
+          "impasse/False/False": 912,
+          "impasse/False/True": 1,
+          "impasse/True/True": 487
+        }
+      },
+      "disclose_if_closes_frontier": {
+        "counts": {
+          "agreement/answers": 305,
+          "agreement/certificate": 785,
+          "agreement/checks": 1234,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 739,
+          "agreement/retries": 159,
+          "agreement/retry_signs": 19,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 28,
+          "agreement/slots": 5901,
+          "agreement/withheld": 28,
+          "impasse/answers": 103,
+          "impasse/certificate": 488,
+          "impasse/checks": 2295,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 741,
+          "impasse/retries": 46,
+          "impasse/retry_signs": 7,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8131,
+          "impasse/withheld": 33
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 615,
+          "agreement/True/True": 785,
+          "impasse/False/False": 912,
+          "impasse/False/True": 1,
+          "impasse/True/True": 487
+        }
+      },
+      "fit": {
+        "counts": {
+          "agreement/answers": 303,
+          "agreement/certificate": 785,
+          "agreement/checks": 1234,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1400,
+          "agreement/queries": 739,
+          "agreement/retries": 159,
+          "agreement/retry_signs": 18,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 28,
+          "agreement/slots": 5901,
+          "agreement/withheld": 9,
+          "impasse/answers": 102,
+          "impasse/certificate": 488,
+          "impasse/checks": 2295,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1400,
+          "impasse/queries": 741,
+          "impasse/retries": 47,
+          "impasse/retry_signs": 7,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 33,
+          "impasse/slots": 8131,
+          "impasse/withheld": 22
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 615,
+          "agreement/True/True": 785,
+          "impasse/False/False": 912,
+          "impasse/False/True": 1,
+          "impasse/True/True": 487
+        }
+      }
+    }
+  },
+  "development": {
+    "independent": {
+      "always_disclose": {
+        "counts": {
+          "agreement/answers": 221,
+          "agreement/certificate": 341,
+          "agreement/checks": 675,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 376,
+          "agreement/retries": 66,
+          "agreement/retry_signs": 48,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 14,
+          "agreement/slots": 2981,
+          "agreement/withheld": 0,
+          "impasse/answers": 64,
+          "impasse/certificate": 216,
+          "impasse/checks": 1074,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 24,
+          "impasse/retry_signs": 22,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3702,
+          "impasse/withheld": 0
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 259,
+          "agreement/True/True": 341,
+          "impasse/False/False": 384,
+          "impasse/True/True": 216
+        }
+      },
+      "never_disclose": {
+        "counts": {
+          "agreement/answers": 223,
+          "agreement/certificate": 341,
+          "agreement/checks": 675,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 376,
+          "agreement/retries": 66,
+          "agreement/retry_signs": 48,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 14,
+          "agreement/slots": 2981,
+          "agreement/withheld": 14,
+          "impasse/answers": 64,
+          "impasse/certificate": 216,
+          "impasse/checks": 1074,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 24,
+          "impasse/retry_signs": 22,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3702,
+          "impasse/withheld": 9
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 259,
+          "agreement/True/True": 341,
+          "impasse/False/False": 384,
+          "impasse/True/True": 216
+        }
+      },
+      "disclose_if_closes_frontier": {
+        "counts": {
+          "agreement/answers": 223,
+          "agreement/certificate": 341,
+          "agreement/checks": 675,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 376,
+          "agreement/retries": 66,
+          "agreement/retry_signs": 48,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 14,
+          "agreement/slots": 2981,
+          "agreement/withheld": 14,
+          "impasse/answers": 64,
+          "impasse/certificate": 216,
+          "impasse/checks": 1074,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 24,
+          "impasse/retry_signs": 22,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3702,
+          "impasse/withheld": 9
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 259,
+          "agreement/True/True": 341,
+          "impasse/False/False": 384,
+          "impasse/True/True": 216
+        }
+      },
+      "fit": {
+        "counts": {
+          "agreement/answers": 223,
+          "agreement/certificate": 341,
+          "agreement/checks": 675,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 376,
+          "agreement/retries": 66,
+          "agreement/retry_signs": 48,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 14,
+          "agreement/slots": 2981,
+          "agreement/withheld": 5,
+          "impasse/answers": 64,
+          "impasse/certificate": 216,
+          "impasse/checks": 1074,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 24,
+          "impasse/retry_signs": 22,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3702,
+          "impasse/withheld": 4
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 259,
+          "agreement/True/True": 341,
+          "impasse/False/False": 384,
+          "impasse/True/True": 216
+        }
+      }
+    },
+    "persistent": {
+      "always_disclose": {
+        "counts": {
+          "agreement/answers": 180,
+          "agreement/certificate": 296,
+          "agreement/checks": 679,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 378,
+          "agreement/retries": 73,
+          "agreement/retry_signs": 9,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 13,
+          "agreement/slots": 3032,
+          "agreement/withheld": 0,
+          "impasse/answers": 57,
+          "impasse/certificate": 204,
+          "impasse/checks": 1075,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 11,
+          "impasse/retry_signs": 1,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3704,
+          "impasse/withheld": 0
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 304,
+          "agreement/True/True": 296,
+          "impasse/False/False": 396,
+          "impasse/True/True": 204
+        }
+      },
+      "never_disclose": {
+        "counts": {
+          "agreement/answers": 181,
+          "agreement/certificate": 296,
+          "agreement/checks": 680,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 378,
+          "agreement/retries": 70,
+          "agreement/retry_signs": 7,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 13,
+          "agreement/slots": 3032,
+          "agreement/withheld": 13,
+          "impasse/answers": 58,
+          "impasse/certificate": 204,
+          "impasse/checks": 1075,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 11,
+          "impasse/retry_signs": 1,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3704,
+          "impasse/withheld": 9
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 304,
+          "agreement/True/True": 296,
+          "impasse/False/False": 396,
+          "impasse/True/True": 204
+        }
+      },
+      "disclose_if_closes_frontier": {
+        "counts": {
+          "agreement/answers": 181,
+          "agreement/certificate": 296,
+          "agreement/checks": 680,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 378,
+          "agreement/retries": 70,
+          "agreement/retry_signs": 7,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 13,
+          "agreement/slots": 3032,
+          "agreement/withheld": 13,
+          "impasse/answers": 58,
+          "impasse/certificate": 204,
+          "impasse/checks": 1075,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 11,
+          "impasse/retry_signs": 1,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3704,
+          "impasse/withheld": 9
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 304,
+          "agreement/True/True": 296,
+          "impasse/False/False": 396,
+          "impasse/True/True": 204
+        }
+      },
+      "fit": {
+        "counts": {
+          "agreement/answers": 181,
+          "agreement/certificate": 296,
+          "agreement/checks": 679,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 600,
+          "agreement/queries": 378,
+          "agreement/retries": 71,
+          "agreement/retry_signs": 8,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 13,
+          "agreement/slots": 3032,
+          "agreement/withheld": 5,
+          "impasse/answers": 57,
+          "impasse/certificate": 204,
+          "impasse/checks": 1075,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 600,
+          "impasse/queries": 297,
+          "impasse/retries": 11,
+          "impasse/retry_signs": 1,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 9,
+          "impasse/slots": 3704,
+          "impasse/withheld": 3
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 304,
+          "agreement/True/True": 296,
+          "impasse/False/False": 396,
+          "impasse/True/True": 204
+        }
+      }
+    }
+  },
+  "heldout": {
+    "independent": {
+      "always_disclose": {
+        "counts": {
+          "agreement/answers": 335,
+          "agreement/certificate": 648,
+          "agreement/checks": 898,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 582,
+          "agreement/retries": 128,
+          "agreement/retry_signs": 97,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 53,
+          "agreement/slots": 5050,
+          "agreement/withheld": 0,
+          "impasse/answers": 109,
+          "impasse/certificate": 404,
+          "impasse/checks": 1741,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 562,
+          "impasse/retries": 48,
+          "impasse/retry_signs": 38,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 71,
+          "impasse/slots": 7178,
+          "impasse/withheld": 0
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 352,
+          "agreement/True/True": 648,
+          "impasse/False/False": 596,
+          "impasse/True/True": 404
+        }
+      },
+      "never_disclose": {
+        "counts": {
+          "agreement/answers": 338,
+          "agreement/certificate": 648,
+          "agreement/checks": 895,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 582,
+          "agreement/retries": 122,
+          "agreement/retry_signs": 96,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 53,
+          "agreement/slots": 5050,
+          "agreement/withheld": 53,
+          "impasse/answers": 117,
+          "impasse/certificate": 404,
+          "impasse/checks": 1742,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 562,
+          "impasse/retries": 44,
+          "impasse/retry_signs": 36,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 71,
+          "impasse/slots": 7179,
+          "impasse/withheld": 71
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 352,
+          "agreement/True/True": 648,
+          "impasse/False/False": 595,
+          "impasse/False/True": 1,
+          "impasse/True/False": 1,
+          "impasse/True/True": 403
+        }
+      },
+      "disclose_if_closes_frontier": {
+        "counts": {
+          "agreement/answers": 338,
+          "agreement/certificate": 648,
+          "agreement/checks": 895,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 582,
+          "agreement/retries": 122,
+          "agreement/retry_signs": 96,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 53,
+          "agreement/slots": 5050,
+          "agreement/withheld": 53,
+          "impasse/answers": 117,
+          "impasse/certificate": 404,
+          "impasse/checks": 1742,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 562,
+          "impasse/retries": 44,
+          "impasse/retry_signs": 36,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 71,
+          "impasse/slots": 7179,
+          "impasse/withheld": 71
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 352,
+          "agreement/True/True": 648,
+          "impasse/False/False": 595,
+          "impasse/False/True": 1,
+          "impasse/True/False": 1,
+          "impasse/True/True": 403
+        }
+      },
+      "fit": {
+        "counts": {
+          "agreement/answers": 338,
+          "agreement/certificate": 648,
+          "agreement/checks": 898,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 582,
+          "agreement/retries": 128,
+          "agreement/retry_signs": 99,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 53,
+          "agreement/slots": 5050,
+          "agreement/withheld": 19,
+          "impasse/answers": 117,
+          "impasse/certificate": 405,
+          "impasse/checks": 1741,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 562,
+          "impasse/retries": 49,
+          "impasse/retry_signs": 39,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 71,
+          "impasse/slots": 7176,
+          "impasse/withheld": 41
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 352,
+          "agreement/True/True": 648,
+          "impasse/False/False": 595,
+          "impasse/False/True": 1,
+          "impasse/True/True": 404
+        }
+      }
+    },
+    "persistent": {
+      "always_disclose": {
+        "counts": {
+          "agreement/answers": 236,
+          "agreement/certificate": 520,
+          "agreement/checks": 954,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 593,
+          "agreement/retries": 180,
+          "agreement/retry_signs": 29,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 51,
+          "agreement/slots": 5583,
+          "agreement/withheld": 0,
+          "impasse/answers": 87,
+          "impasse/certificate": 366,
+          "impasse/checks": 1729,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 568,
+          "impasse/retries": 58,
+          "impasse/retry_signs": 6,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 76,
+          "impasse/slots": 7246,
+          "impasse/withheld": 0
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 480,
+          "agreement/True/True": 520,
+          "impasse/False/False": 634,
+          "impasse/True/True": 366
+        }
+      },
+      "never_disclose": {
+        "counts": {
+          "agreement/answers": 239,
+          "agreement/certificate": 520,
+          "agreement/checks": 955,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 593,
+          "agreement/retries": 174,
+          "agreement/retry_signs": 26,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 51,
+          "agreement/slots": 5583,
+          "agreement/withheld": 51,
+          "impasse/answers": 96,
+          "impasse/certificate": 366,
+          "impasse/checks": 1733,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 568,
+          "impasse/retries": 55,
+          "impasse/retry_signs": 5,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 76,
+          "impasse/slots": 7246,
+          "impasse/withheld": 76
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 480,
+          "agreement/True/True": 520,
+          "impasse/False/False": 634,
+          "impasse/True/True": 366
+        }
+      },
+      "disclose_if_closes_frontier": {
+        "counts": {
+          "agreement/answers": 239,
+          "agreement/certificate": 520,
+          "agreement/checks": 955,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 593,
+          "agreement/retries": 174,
+          "agreement/retry_signs": 26,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 51,
+          "agreement/slots": 5583,
+          "agreement/withheld": 51,
+          "impasse/answers": 96,
+          "impasse/certificate": 366,
+          "impasse/checks": 1733,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 568,
+          "impasse/retries": 55,
+          "impasse/retry_signs": 5,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 76,
+          "impasse/slots": 7246,
+          "impasse/withheld": 76
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 480,
+          "agreement/True/True": 520,
+          "impasse/False/False": 634,
+          "impasse/True/True": 366
+        }
+      },
+      "fit": {
+        "counts": {
+          "agreement/answers": 239,
+          "agreement/certificate": 520,
+          "agreement/checks": 955,
+          "agreement/handoffs": 0,
+          "agreement/presentations": 1000,
+          "agreement/queries": 593,
+          "agreement/retries": 180,
+          "agreement/retry_signs": 29,
+          "agreement/scope": 0,
+          "agreement/scope_decisions": 51,
+          "agreement/slots": 5583,
+          "agreement/withheld": 18,
+          "impasse/answers": 96,
+          "impasse/certificate": 366,
+          "impasse/checks": 1732,
+          "impasse/handoffs": 0,
+          "impasse/presentations": 1000,
+          "impasse/queries": 568,
+          "impasse/retries": 59,
+          "impasse/retry_signs": 6,
+          "impasse/scope": 0,
+          "impasse/scope_decisions": 76,
+          "impasse/slots": 7246,
+          "impasse/withheld": 45
+        },
+        "paired_vs_disclose": {
+          "agreement/False/False": 480,
+          "agreement/True/True": 520,
+          "impasse/False/False": 634,
+          "impasse/True/True": 366
+        }
+      }
+    }
+  },
+  "un_fit_families": {
+    "venezuela": {
+      "clean": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 30,
+            "agreement/certificate": 30,
+            "agreement/checks": 30,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 30,
+            "agreement/queries": 30,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 126,
+            "agreement/withheld": 0,
+            "impasse/answers": 10,
+            "impasse/certificate": 20,
+            "impasse/checks": 20,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 20,
+            "impasse/queries": 20,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 20,
+            "impasse/slots": 100,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 30,
+            "impasse/True/True": 20
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 30,
+            "agreement/certificate": 30,
+            "agreement/checks": 30,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 30,
+            "agreement/queries": 30,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 126,
+            "agreement/withheld": 0,
+            "impasse/answers": 10,
+            "impasse/certificate": 10,
+            "impasse/checks": 20,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 20,
+            "impasse/queries": 20,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 20,
+            "impasse/slots": 130,
+            "impasse/withheld": 20
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 30,
+            "impasse/True/False": 10,
+            "impasse/True/True": 10
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 30,
+            "agreement/certificate": 30,
+            "agreement/checks": 30,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 30,
+            "agreement/queries": 30,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 126,
+            "agreement/withheld": 0,
+            "impasse/answers": 10,
+            "impasse/certificate": 10,
+            "impasse/checks": 20,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 20,
+            "impasse/queries": 20,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 20,
+            "impasse/slots": 130,
+            "impasse/withheld": 20
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 30,
+            "impasse/True/False": 10,
+            "impasse/True/True": 10
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 30,
+            "agreement/certificate": 30,
+            "agreement/checks": 30,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 30,
+            "agreement/queries": 30,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 126,
+            "agreement/withheld": 0,
+            "impasse/answers": 10,
+            "impasse/certificate": 20,
+            "impasse/checks": 20,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 20,
+            "impasse/queries": 20,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 20,
+            "impasse/slots": 100,
+            "impasse/withheld": 10
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 30,
+            "impasse/True/True": 20
+          }
+        }
+      },
+      "independent": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 273,
+            "agreement/certificate": 263,
+            "agreement/checks": 349,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 134,
+            "agreement/retry_signs": 117,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2071,
+            "agreement/withheld": 0,
+            "impasse/answers": 82,
+            "impasse/certificate": 148,
+            "impasse/checks": 255,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 161,
+            "impasse/retry_signs": 180,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1713,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 97,
+            "agreement/True/True": 263,
+            "impasse/False/False": 92,
+            "impasse/True/True": 148
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 273,
+            "agreement/certificate": 263,
+            "agreement/checks": 349,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 134,
+            "agreement/retry_signs": 117,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2071,
+            "agreement/withheld": 0,
+            "impasse/answers": 82,
+            "impasse/certificate": 77,
+            "impasse/checks": 245,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 69,
+            "impasse/retry_signs": 77,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1820,
+            "impasse/withheld": 202
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 97,
+            "agreement/True/True": 263,
+            "impasse/False/False": 92,
+            "impasse/True/False": 71,
+            "impasse/True/True": 77
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 273,
+            "agreement/certificate": 263,
+            "agreement/checks": 349,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 134,
+            "agreement/retry_signs": 117,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2071,
+            "agreement/withheld": 0,
+            "impasse/answers": 82,
+            "impasse/certificate": 77,
+            "impasse/checks": 245,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 69,
+            "impasse/retry_signs": 77,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1820,
+            "impasse/withheld": 202
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 97,
+            "agreement/True/True": 263,
+            "impasse/False/False": 92,
+            "impasse/True/False": 71,
+            "impasse/True/True": 77
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 273,
+            "agreement/certificate": 263,
+            "agreement/checks": 349,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 134,
+            "agreement/retry_signs": 117,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2071,
+            "agreement/withheld": 0,
+            "impasse/answers": 82,
+            "impasse/certificate": 148,
+            "impasse/checks": 255,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 161,
+            "impasse/retry_signs": 180,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1713,
+            "impasse/withheld": 91
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 97,
+            "agreement/True/True": 263,
+            "impasse/False/False": 92,
+            "impasse/True/True": 148
+          }
+        }
+      },
+      "persistent": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 225,
+            "agreement/certificate": 187,
+            "agreement/checks": 357,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 159,
+            "agreement/retry_signs": 22,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2232,
+            "agreement/withheld": 0,
+            "impasse/answers": 64,
+            "impasse/certificate": 45,
+            "impasse/checks": 279,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 164,
+            "impasse/retry_signs": 33,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1825,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 173,
+            "agreement/True/True": 187,
+            "impasse/False/False": 195,
+            "impasse/True/True": 45
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 225,
+            "agreement/certificate": 187,
+            "agreement/checks": 357,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 159,
+            "agreement/retry_signs": 22,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2232,
+            "agreement/withheld": 0,
+            "impasse/answers": 64,
+            "impasse/certificate": 24,
+            "impasse/checks": 254,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 78,
+            "impasse/retry_signs": 19,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1879,
+            "impasse/withheld": 202
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 173,
+            "agreement/True/True": 187,
+            "impasse/False/False": 195,
+            "impasse/True/False": 21,
+            "impasse/True/True": 24
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 225,
+            "agreement/certificate": 187,
+            "agreement/checks": 357,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 159,
+            "agreement/retry_signs": 22,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2232,
+            "agreement/withheld": 0,
+            "impasse/answers": 64,
+            "impasse/certificate": 24,
+            "impasse/checks": 254,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 78,
+            "impasse/retry_signs": 19,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1879,
+            "impasse/withheld": 202
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 173,
+            "agreement/True/True": 187,
+            "impasse/False/False": 195,
+            "impasse/True/False": 21,
+            "impasse/True/True": 24
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 225,
+            "agreement/certificate": 187,
+            "agreement/checks": 357,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 360,
+            "agreement/queries": 360,
+            "agreement/retries": 159,
+            "agreement/retry_signs": 22,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 2232,
+            "agreement/withheld": 0,
+            "impasse/answers": 64,
+            "impasse/certificate": 45,
+            "impasse/checks": 279,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 240,
+            "impasse/queries": 240,
+            "impasse/retries": 164,
+            "impasse/retry_signs": 33,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 202,
+            "impasse/slots": 1825,
+            "impasse/withheld": 91
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 173,
+            "agreement/True/True": 187,
+            "impasse/False/False": 195,
+            "impasse/True/True": 45
+          }
+        }
+      }
+    },
+    "myanmar": {
+      "clean": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 18,
+            "agreement/certificate": 18,
+            "agreement/checks": 18,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 18,
+            "agreement/queries": 18,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 78,
+            "agreement/withheld": 0,
+            "impasse/answers": 9,
+            "impasse/certificate": 12,
+            "impasse/checks": 24,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 12,
+            "impasse/queries": 9,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 9,
+            "impasse/slots": 63,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 18,
+            "impasse/True/True": 12
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 18,
+            "agreement/certificate": 18,
+            "agreement/checks": 18,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 18,
+            "agreement/queries": 18,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 78,
+            "agreement/withheld": 0,
+            "impasse/answers": 9,
+            "impasse/certificate": 12,
+            "impasse/checks": 24,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 12,
+            "impasse/queries": 9,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 9,
+            "impasse/slots": 63,
+            "impasse/withheld": 9
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 18,
+            "impasse/True/True": 12
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 18,
+            "agreement/certificate": 18,
+            "agreement/checks": 18,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 18,
+            "agreement/queries": 18,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 78,
+            "agreement/withheld": 0,
+            "impasse/answers": 9,
+            "impasse/certificate": 12,
+            "impasse/checks": 24,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 12,
+            "impasse/queries": 9,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 9,
+            "impasse/slots": 63,
+            "impasse/withheld": 9
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 18,
+            "impasse/True/True": 12
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 18,
+            "agreement/certificate": 18,
+            "agreement/checks": 18,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 18,
+            "agreement/queries": 18,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 78,
+            "agreement/withheld": 0,
+            "impasse/answers": 9,
+            "impasse/certificate": 12,
+            "impasse/checks": 24,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 12,
+            "impasse/queries": 9,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 9,
+            "impasse/slots": 63,
+            "impasse/withheld": 9
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 18,
+            "impasse/True/True": 12
+          }
+        }
+      },
+      "independent": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 195,
+            "agreement/certificate": 164,
+            "agreement/checks": 258,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 95,
+            "agreement/retry_signs": 89,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1247,
+            "agreement/withheld": 0,
+            "impasse/answers": 109,
+            "impasse/certificate": 122,
+            "impasse/checks": 288,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 90,
+            "impasse/retry_signs": 87,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 899,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 52,
+            "agreement/True/True": 164,
+            "impasse/False/False": 22,
+            "impasse/True/True": 122
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 195,
+            "agreement/certificate": 164,
+            "agreement/checks": 258,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 95,
+            "agreement/retry_signs": 89,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1247,
+            "agreement/withheld": 29,
+            "impasse/answers": 109,
+            "impasse/certificate": 122,
+            "impasse/checks": 288,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 90,
+            "impasse/retry_signs": 87,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 899,
+            "impasse/withheld": 121
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 52,
+            "agreement/True/True": 164,
+            "impasse/False/False": 22,
+            "impasse/True/True": 122
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 195,
+            "agreement/certificate": 164,
+            "agreement/checks": 258,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 95,
+            "agreement/retry_signs": 89,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1247,
+            "agreement/withheld": 29,
+            "impasse/answers": 109,
+            "impasse/certificate": 122,
+            "impasse/checks": 288,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 90,
+            "impasse/retry_signs": 87,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 899,
+            "impasse/withheld": 121
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 52,
+            "agreement/True/True": 164,
+            "impasse/False/False": 22,
+            "impasse/True/True": 122
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 195,
+            "agreement/certificate": 164,
+            "agreement/checks": 258,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 95,
+            "agreement/retry_signs": 89,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1247,
+            "agreement/withheld": 29,
+            "impasse/answers": 109,
+            "impasse/certificate": 122,
+            "impasse/checks": 288,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 90,
+            "impasse/retry_signs": 87,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 899,
+            "impasse/withheld": 121
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 52,
+            "agreement/True/True": 164,
+            "impasse/False/False": 22,
+            "impasse/True/True": 122
+          }
+        }
+      },
+      "persistent": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 149,
+            "agreement/certificate": 105,
+            "agreement/checks": 266,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 116,
+            "agreement/retry_signs": 14,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1351,
+            "agreement/withheld": 0,
+            "impasse/answers": 86,
+            "impasse/certificate": 61,
+            "impasse/checks": 273,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 99,
+            "impasse/retry_signs": 16,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 1013,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 111,
+            "agreement/True/True": 105,
+            "impasse/False/False": 83,
+            "impasse/True/True": 61
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 149,
+            "agreement/certificate": 105,
+            "agreement/checks": 266,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 116,
+            "agreement/retry_signs": 14,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1351,
+            "agreement/withheld": 29,
+            "impasse/answers": 86,
+            "impasse/certificate": 61,
+            "impasse/checks": 273,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 99,
+            "impasse/retry_signs": 16,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 1013,
+            "impasse/withheld": 121
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 111,
+            "agreement/True/True": 105,
+            "impasse/False/False": 83,
+            "impasse/True/True": 61
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 149,
+            "agreement/certificate": 105,
+            "agreement/checks": 266,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 116,
+            "agreement/retry_signs": 14,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1351,
+            "agreement/withheld": 29,
+            "impasse/answers": 86,
+            "impasse/certificate": 61,
+            "impasse/checks": 273,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 99,
+            "impasse/retry_signs": 16,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 1013,
+            "impasse/withheld": 121
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 111,
+            "agreement/True/True": 105,
+            "impasse/False/False": 83,
+            "impasse/True/True": 61
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 149,
+            "agreement/certificate": 105,
+            "agreement/checks": 266,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 216,
+            "agreement/queries": 216,
+            "agreement/retries": 116,
+            "agreement/retry_signs": 14,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 29,
+            "agreement/slots": 1351,
+            "agreement/withheld": 29,
+            "impasse/answers": 86,
+            "impasse/certificate": 61,
+            "impasse/checks": 273,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 144,
+            "impasse/queries": 121,
+            "impasse/retries": 99,
+            "impasse/retry_signs": 16,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 121,
+            "impasse/slots": 1013,
+            "impasse/withheld": 121
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 111,
+            "agreement/True/True": 105,
+            "impasse/False/False": 83,
+            "impasse/True/True": 61
+          }
+        }
+      }
+    },
+    "mali": {
+      "clean": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 12,
+            "agreement/certificate": 12,
+            "agreement/checks": 12,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 12,
+            "agreement/queries": 12,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 56,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 8,
+            "impasse/checks": 16,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 8,
+            "impasse/queries": 0,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 40,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 12,
+            "impasse/True/True": 8
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 12,
+            "agreement/certificate": 12,
+            "agreement/checks": 12,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 12,
+            "agreement/queries": 12,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 56,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 8,
+            "impasse/checks": 16,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 8,
+            "impasse/queries": 0,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 40,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 12,
+            "impasse/True/True": 8
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 12,
+            "agreement/certificate": 12,
+            "agreement/checks": 12,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 12,
+            "agreement/queries": 12,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 56,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 8,
+            "impasse/checks": 16,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 8,
+            "impasse/queries": 0,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 40,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 12,
+            "impasse/True/True": 8
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 12,
+            "agreement/certificate": 12,
+            "agreement/checks": 12,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 12,
+            "agreement/queries": 12,
+            "agreement/retries": 0,
+            "agreement/retry_signs": 0,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 56,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 8,
+            "impasse/checks": 16,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 8,
+            "impasse/queries": 0,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 40,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/True/True": 12,
+            "impasse/True/True": 8
+          }
+        }
+      },
+      "independent": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 130,
+            "agreement/certificate": 115,
+            "agreement/checks": 158,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 57,
+            "agreement/retry_signs": 50,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 826,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 95,
+            "impasse/checks": 191,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 13,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 518,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 29,
+            "agreement/True/True": 115,
+            "impasse/False/False": 1,
+            "impasse/True/True": 95
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 130,
+            "agreement/certificate": 115,
+            "agreement/checks": 158,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 57,
+            "agreement/retry_signs": 50,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 826,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 95,
+            "impasse/checks": 191,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 13,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 518,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 29,
+            "agreement/True/True": 115,
+            "impasse/False/False": 1,
+            "impasse/True/True": 95
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 130,
+            "agreement/certificate": 115,
+            "agreement/checks": 158,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 57,
+            "agreement/retry_signs": 50,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 826,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 95,
+            "impasse/checks": 191,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 13,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 518,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 29,
+            "agreement/True/True": 115,
+            "impasse/False/False": 1,
+            "impasse/True/True": 95
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 130,
+            "agreement/certificate": 115,
+            "agreement/checks": 158,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 57,
+            "agreement/retry_signs": 50,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 826,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 95,
+            "impasse/checks": 191,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 13,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 518,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 29,
+            "agreement/True/True": 115,
+            "impasse/False/False": 1,
+            "impasse/True/True": 95
+          }
+        }
+      },
+      "persistent": {
+        "always_disclose": {
+          "counts": {
+            "agreement/answers": 105,
+            "agreement/certificate": 93,
+            "agreement/checks": 183,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 53,
+            "agreement/retry_signs": 7,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 856,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 96,
+            "impasse/checks": 192,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 12,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 515,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 51,
+            "agreement/True/True": 93,
+            "impasse/True/True": 96
+          }
+        },
+        "never_disclose": {
+          "counts": {
+            "agreement/answers": 105,
+            "agreement/certificate": 93,
+            "agreement/checks": 183,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 53,
+            "agreement/retry_signs": 7,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 856,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 96,
+            "impasse/checks": 192,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 12,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 515,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 51,
+            "agreement/True/True": 93,
+            "impasse/True/True": 96
+          }
+        },
+        "disclose_if_closes_frontier": {
+          "counts": {
+            "agreement/answers": 105,
+            "agreement/certificate": 93,
+            "agreement/checks": 183,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 53,
+            "agreement/retry_signs": 7,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 856,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 96,
+            "impasse/checks": 192,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 12,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 515,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 51,
+            "agreement/True/True": 93,
+            "impasse/True/True": 96
+          }
+        },
+        "fit": {
+          "counts": {
+            "agreement/answers": 105,
+            "agreement/certificate": 93,
+            "agreement/checks": 183,
+            "agreement/handoffs": 0,
+            "agreement/presentations": 144,
+            "agreement/queries": 144,
+            "agreement/retries": 53,
+            "agreement/retry_signs": 7,
+            "agreement/scope": 0,
+            "agreement/scope_decisions": 0,
+            "agreement/slots": 856,
+            "agreement/withheld": 0,
+            "impasse/answers": 0,
+            "impasse/certificate": 96,
+            "impasse/checks": 192,
+            "impasse/handoffs": 0,
+            "impasse/presentations": 96,
+            "impasse/queries": 12,
+            "impasse/retries": 0,
+            "impasse/retry_signs": 0,
+            "impasse/scope": 0,
+            "impasse/scope_decisions": 0,
+            "impasse/slots": 515,
+            "impasse/withheld": 0
+          },
+          "paired_vs_disclose": {
+            "agreement/False/False": 51,
+            "agreement/True/True": 93,
+            "impasse/True/True": 96
+          }
+        }
+      }
+    }
+  }
+}

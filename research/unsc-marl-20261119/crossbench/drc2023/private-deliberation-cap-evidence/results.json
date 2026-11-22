@@ -1,0 +1,400 @@
+{
+  "scope": "Same-assistant exact-span review. The reporting prompt stays identical to baseline. Only its generation cap is raised. The final prompt and cap stay fixed. Verbatim forwarding uses two accepted source passages and no desk inference.",
+  "dockets": {
+    "drc": {
+      "arms": {
+        "independent": {
+          "supported_facts": [
+            "final_date",
+            "mandate_expiry",
+            "midterm_date"
+          ],
+          "count_of_8": 3,
+          "correct_but_unwitnessed": [],
+          "conflicts": [
+            "A review for further extension is scheduled for 1 July 2024.",
+            "midterm report to the Committee by 30 December 2023"
+          ],
+          "reporter": {
+            "supported": [
+              "final_date",
+              "midterm_date"
+            ],
+            "new_vs_first_note": [
+              "final_date",
+              "midterm_date"
+            ],
+            "repeat_from_first_note": [],
+            "unsupported_correct_facts": [],
+            "conflicts": [
+              "midterm report to Committee by 30 Dec 2023"
+            ],
+            "ended": true,
+            "tokens": 72,
+            "base_cap_ended": false,
+            "base_tokens": 62,
+            "common_output_prefix_tokens": 62
+          },
+          "final_ended": true,
+          "final_words": 64,
+          "strict_contract": false,
+          "inference_calls": 3,
+          "input_tokens": 732,
+          "output_tokens": 243,
+          "configured_output_cap": 278,
+          "base_count_of_8": 3
+        },
+        "interactive": {
+          "supported_facts": [
+            "committee_cadence",
+            "final_date",
+            "mandate_expiry",
+            "midterm_date",
+            "report_recipient"
+          ],
+          "count_of_8": 5,
+          "correct_but_unwitnessed": [],
+          "conflicts": [
+            "A review for further extension is scheduled for 1 July 2024."
+          ],
+          "reporter": {
+            "supported": [
+              "committee_cadence",
+              "final_date",
+              "midterm_date",
+              "report_recipient"
+            ],
+            "new_vs_first_note": [
+              "committee_cadence",
+              "final_date",
+              "midterm_date",
+              "report_recipient"
+            ],
+            "repeat_from_first_note": [],
+            "unsupported_correct_facts": [],
+            "conflicts": [],
+            "ended": true,
+            "tokens": 72,
+            "base_cap_ended": false,
+            "base_tokens": 62,
+            "common_output_prefix_tokens": 62
+          },
+          "final_ended": true,
+          "final_words": 63,
+          "strict_contract": false,
+          "inference_calls": 3,
+          "input_tokens": 792,
+          "output_tokens": 241,
+          "configured_output_cap": 278,
+          "base_count_of_8": 4
+        },
+        "verbatim": {
+          "supported_facts": [
+            "committee_cadence",
+            "final_date",
+            "future_action",
+            "mandate_expiry",
+            "midterm_date",
+            "report_recipient",
+            "review_deadline"
+          ],
+          "count_of_8": 7,
+          "correct_but_unwitnessed": [],
+          "conflicts": [],
+          "reporter": null,
+          "final_ended": true,
+          "final_words": 58,
+          "strict_contract": false,
+          "inference_calls": 1,
+          "input_tokens": 268,
+          "output_tokens": 88,
+          "configured_output_cap": 112,
+          "base_count_of_8": null
+        }
+      },
+      "interactive_only": [
+        "committee_cadence",
+        "report_recipient"
+      ],
+      "independent_only": []
+    },
+    "unami": {
+      "arms": {
+        "independent": {
+          "supported_facts": [
+            "mandate_expiry",
+            "review_deadline"
+          ],
+          "count_of_8": 2,
+          "correct_but_unwitnessed": [],
+          "conflicts": [],
+          "reporter": {
+            "supported": [
+              "iraqi_support",
+              "review_deadline"
+            ],
+            "new_vs_first_note": [
+              "iraqi_support",
+              "review_deadline"
+            ],
+            "repeat_from_first_note": [],
+            "unsupported_correct_facts": [],
+            "conflicts": [],
+            "ended": true,
+            "tokens": 72,
+            "base_cap_ended": false,
+            "base_tokens": 62,
+            "common_output_prefix_tokens": 35
+          },
+          "final_ended": false,
+          "final_words": 65,
+          "strict_contract": false,
+          "inference_calls": 3,
+          "input_tokens": 910,
+          "output_tokens": 246,
+          "configured_output_cap": 278,
+          "base_count_of_8": 2
+        },
+        "interactive": {
+          "supported_facts": [
+            "consultation",
+            "mandate_expiry",
+            "review_deadline",
+            "review_kind"
+          ],
+          "count_of_8": 4,
+          "correct_but_unwitnessed": [],
+          "conflicts": [],
+          "reporter": {
+            "supported": [
+              "consultation",
+              "review_deadline",
+              "review_kind"
+            ],
+            "new_vs_first_note": [
+              "consultation",
+              "review_deadline",
+              "review_kind"
+            ],
+            "repeat_from_first_note": [],
+            "unsupported_correct_facts": [],
+            "conflicts": [],
+            "ended": true,
+            "tokens": 71,
+            "base_cap_ended": true,
+            "base_tokens": 62,
+            "common_output_prefix_tokens": 58
+          },
+          "final_ended": true,
+          "final_words": 55,
+          "strict_contract": false,
+          "inference_calls": 3,
+          "input_tokens": 970,
+          "output_tokens": 234,
+          "configured_output_cap": 278,
+          "base_count_of_8": 4
+        },
+        "verbatim": {
+          "supported_facts": [
+            "consultation",
+            "iraqi_support",
+            "mandate_expiry",
+            "review_actor",
+            "review_deadline",
+            "review_kind"
+          ],
+          "count_of_8": 6,
+          "correct_but_unwitnessed": [],
+          "conflicts": [],
+          "reporter": null,
+          "final_ended": true,
+          "final_words": 61,
+          "strict_contract": false,
+          "inference_calls": 1,
+          "input_tokens": 380,
+          "output_tokens": 104,
+          "configured_output_cap": 112,
+          "base_count_of_8": null
+        }
+      },
+      "interactive_only": [
+        "consultation",
+        "review_kind"
+      ],
+      "independent_only": []
+    }
+  },
+  "annotations": {
+    "drc/report_independent": {
+      "facts": {
+        "midterm_date": [
+          "midterm report to Committee by 30 Dec 2023"
+        ],
+        "final_date": [
+          "final report by 15 June 2024"
+        ]
+      },
+      "conflicts": [
+        "midterm report to Committee by 30 Dec 2023"
+      ]
+    },
+    "drc/report_interactive": {
+      "facts": {
+        "midterm_date": [
+          "midterm report to Council by 30 Dec 2023"
+        ],
+        "final_date": [
+          "final report by 15 June 2024"
+        ],
+        "report_recipient": [
+          "midterm report to Council by 30 Dec 2023 and final report by 15 June 2024"
+        ],
+        "committee_cadence": [
+          "monthly updates to the Committee except during report-due months"
+        ]
+      },
+      "conflicts": []
+    },
+    "drc/independent": {
+      "facts": {
+        "mandate_expiry": [
+          "extending the Group of Experts mandate to 1 August 2024"
+        ],
+        "midterm_date": [
+          "midterm report to the Committee by 30 December 2023"
+        ],
+        "final_date": [
+          "a final report by 15 June 2024"
+        ]
+      },
+      "conflicts": [
+        "A review for further extension is scheduled for 1 July 2024.",
+        "midterm report to the Committee by 30 December 2023"
+      ]
+    },
+    "drc/interactive": {
+      "facts": {
+        "mandate_expiry": [
+          "extending the Group of Experts mandate to 1 August 2024"
+        ],
+        "midterm_date": [
+          "midterm report to the Council by 30 December 2023"
+        ],
+        "final_date": [
+          "a final report by 15 June 2024"
+        ],
+        "report_recipient": [
+          "a midterm report to the Council by 30 December 2023 and a final report by 15 June 2024"
+        ],
+        "committee_cadence": [
+          "monthly updates to the Committee except during report-due months"
+        ]
+      },
+      "conflicts": [
+        "A review for further extension is scheduled for 1 July 2024."
+      ]
+    },
+    "drc/verbatim": {
+      "facts": {
+        "mandate_expiry": [
+          "extended the Group of Experts mandate to 1 August 2024"
+        ],
+        "review_deadline": [
+          "intending to review and potentially further extend it by 1 July 2024"
+        ],
+        "future_action": [
+          "intending to review and potentially further extend it by 1 July 2024"
+        ],
+        "midterm_date": [
+          "midterm report to the Council by 30 December 2023"
+        ],
+        "final_date": [
+          "a final report by 15 June 2024"
+        ],
+        "report_recipient": [
+          "a midterm report to the Council by 30 December 2023 and a final report by 15 June 2024"
+        ],
+        "committee_cadence": [
+          "monthly updates to the Committee, excluding the two report-due months"
+        ]
+      },
+      "conflicts": []
+    },
+    "unami/report_independent": {
+      "facts": {
+        "review_deadline": [
+          "UNAMI strategic review by 31 March 2024"
+        ],
+        "iraqi_support": [
+          "Iraq's government expressed support via 18 May 2023 letter."
+        ]
+      },
+      "conflicts": []
+    },
+    "unami/report_interactive": {
+      "facts": {
+        "review_kind": [
+          "an independent strategic review"
+        ],
+        "review_deadline": [
+          "an independent strategic review due by 31 March 2024"
+        ],
+        "consultation": [
+          "Consultations include Iraq, UN agencies, Member States, regional orgs, experts, civil society, and Kuwait."
+        ]
+      },
+      "conflicts": []
+    },
+    "unami/independent": {
+      "facts": {
+        "mandate_expiry": [
+          "extending UNAMI's mandate to 31 May 2024"
+        ],
+        "review_deadline": [
+          "A strategic review by 31 March 2024"
+        ]
+      },
+      "conflicts": []
+    },
+    "unami/interactive": {
+      "facts": {
+        "mandate_expiry": [
+          "extending UNAMI's mandate to 31 May 2024"
+        ],
+        "review_kind": [
+          "An independent strategic review"
+        ],
+        "review_deadline": [
+          "An independent strategic review is due by 31 March 2024"
+        ],
+        "consultation": [
+          "Consultations include Iraq, UN agencies, Member States, regional organizations, experts, civil society, and Kuwait."
+        ]
+      },
+      "conflicts": []
+    },
+    "unami/verbatim": {
+      "facts": {
+        "mandate_expiry": [
+          "extended the UNAMI mandate to 31 May 2024"
+        ],
+        "review_kind": [
+          "an independent strategic review"
+        ],
+        "review_actor": [
+          "The Secretary-General was requested to report on UNAMI fulfilment every four months and conduct an independent strategic review"
+        ],
+        "review_deadline": [
+          "an independent strategic review by 31 March 2024"
+        ],
+        "consultation": [
+          "consulting Iraq, UN agencies, Member States, regional organizations, independent experts, civil society, and Kuwait"
+        ],
+        "iraqi_support": [
+          "Iraq's Government expressed support for the review in a letter dated 18 May 2023."
+        ]
+      },
+      "conflicts": []
+    }
+  }
+}

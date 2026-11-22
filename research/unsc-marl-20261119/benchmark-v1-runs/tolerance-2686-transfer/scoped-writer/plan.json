@@ -1,0 +1,69 @@
+{
+  "requests": [
+    {
+      "id": "public",
+      "max_output_tokens": 102,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write one compact public Council record paragraph in at most 46 words. Preserve draft and adopted symbols, both sponsors and the voting outcome. State what was urged publicly and its legal limit. Preserve the actor, public oral form, recipient and date of the requested briefing. Use only the supplied public blocks and return the paragraph alone."
+        },
+        {
+          "role": "user",
+          "content": "{\"public\": [{\"id\": \"decision\", \"text\": \"On 14 June 2023 at meeting S/PV.9347, the Council unanimously adopted UAE and UK draft S/2023/427, 15 in favour, as resolution 2686 (2023). The UAE representative made a national statement as a co-sponsor, resumed the Council presidency, took the vote and announced the outcome.\"}, {\"id\": \"operative\", \"text\": \"The resolution urges States and international and regional organizations to condemn publicly violence, hate speech and extremism motivated by discrimination, consistent with applicable international law, including freedom of expression. It encourages civil society participation and interreligious and intercultural dialogue.\"}, {\"id\": \"follow-up\", \"text\": \"The Council requests monitoring and regular reporting from UN peacekeeping and special political missions under their existing mandates. It requests a public oral briefing from the Secretary-General by 14 June 2024 and swift alerts on related threats. The text does not create a censorship power.\"}]}"
+        }
+      ]
+    },
+    {
+      "id": "role-0",
+      "max_output_tokens": 62,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write one attributed paragraph in at most 40 words. Use only this delegation's note. Preserve the distinct claims, reasons and qualifications. Keep independent concerns about different objects separate. Never attach one objection to an instrument mentioned in another. Drop filler before dropping a specific fact. Return the paragraph alone."
+        },
+        {
+          "role": "user",
+          "content": "{\"role\": \"France\", \"note\": \"France voted affirmatively, citing ambiguity in \\\"fraternity and tolerance.\\\" It urged focus on the Charter, international law, and human rights, directing such debates to the General Assembly and Human Rights Council. France objected to religious discussions in the Council, insisting on freedom of expression and warning against broad extremism interpretations.\"}"
+        }
+      ]
+    },
+    {
+      "id": "role-1",
+      "max_output_tokens": 62,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write one attributed paragraph in at most 40 words. Use only this delegation's note. Preserve the distinct claims, reasons and qualifications. Keep independent concerns about different objects separate. Never attach one objection to an instrument mentioned in another. Drop filler before dropping a specific fact. Return the paragraph alone."
+        },
+        {
+          "role": "user",
+          "content": "{\"role\": \"Switzerland\", \"note\": \"Switzerland supported the compromise text but warned that defining 'extremism' without 'violence' risks suppressing free expression, insisting it describe actions, not ideas. It regretted omitting the ICCPR and failed protections for women's rights and gender equality.\"}"
+        }
+      ]
+    },
+    {
+      "id": "role-2",
+      "max_output_tokens": 62,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write one attributed paragraph in at most 40 words. Use only this delegation's note. Preserve the distinct claims, reasons and qualifications. Keep independent concerns about different objects separate. Never attach one objection to an instrument mentioned in another. Drop filler before dropping a specific fact. Return the paragraph alone."
+        },
+        {
+          "role": "user",
+          "content": "{\"role\": \"United Kingdom\", \"note\": \"The UK co-sponsored the text, emphasizing UN monitoring for minority persecution and incitement risks. It welcomed grassroots engagement in conflict resolution, insisting responses to extremism must comply with international human rights law while protecting freedom of expression.\"}"
+        }
+      ]
+    }
+  ],
+  "sha256": {
+    "benchmark-v1-runs/tolerance-2686-transfer/scoped-writer/scoped_writer.py": "a76457ac343c6aa2d6dbd15444bdb013887a120c7544916f000f4ac61f14331a",
+    "benchmark-v1-runs/tolerance-2686-transfer/scoped-writer/protocol.md": "4d8f8bedff3456c87206edbb6ba9c55ee84bc63fb9dccd2d2a5d7ae2b290fd4a",
+    "benchmark-v1-runs/tolerance-2686-transfer/docket.json": "6d697943e74d94dfb319e266e268041458ac31a2e70886c8695977d6afda9289",
+    "benchmark-v1-runs/tolerance-2686-transfer/verified.json": "493ad5d9f3839227f5c781fac50e897cf2f3a0c421451b34a029d9223fa69fc1",
+    "benchmark-v1-runs/tolerance-2686-transfer/assemble.py": "b10d0ccb2557d99b0c40f13bd0d1bbf8c37c4ba702b62ccdd09e4b36b8e6741e",
+    "benchmark-v1.4/release.json": "9057f941c23aedfe5819b9f59f2f6ae21b3e5bd3edf6bbade0e34a27e3749a06",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78"
+  }
+}

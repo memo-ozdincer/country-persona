@@ -1,0 +1,5 @@
+# Recover a supplied passage by its registered identity
+
+The explicit missing-slot prompt yields the same three answers as the original withholding prompts. Test an additional decoder on these existing generations. Require exactly two bare lines, each consisting of an ID or EMPTY. Admit a field when its uniquely registered supporting ID appears anywhere in those two lines and is in the source's offered set. The host assigns passage ownership and field from the registry. The wrong-slot selection remains a model error in the positional comparison. The identity decoder can recover independently reviewed evidence despite that error.
+
+As a constructed stress replay, replace only the matching-question cell for each desk with its measured missing-field response. Compare the position-based and identity-based gates with the same saved policies and original ordinary responses. This does not estimate the prevalence of missing evidence. Check whether a gate difference on a desk has a practical effect on the full rollout and on the predeclared opportunity world.

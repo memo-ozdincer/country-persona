@@ -1,0 +1,85 @@
+{
+  "pins": {
+    "benchmark-v1-runs/humanitarian-2664-admission/source-preserving/study.py": "78380371f5f6bfce59684c489c80449da5c64cd5c3601c60f83f3f50bb7813de",
+    "benchmark-v1-runs/humanitarian-2664-admission/source-preserving/protocol.md": "9ddd7b88246e9ca25df2bd532368df3f2bb3d1d08b139dc130643eaf4dc99f41",
+    "benchmark-v1-runs/humanitarian-2664-admission/case.json": "6d3e0b6236eeb8aa4c22960ba1f208c6821b8b275bc41a75971c3bc2e0f6cb1c",
+    "benchmark-v1-runs/humanitarian-2664-admission/replay.py": "084c8fa637b7785e369de8a6bd42ca7bd4d80626ceb3c5f24626286dcbe2f93b",
+    "benchmark-v1-runs/humanitarian-2664-admission/anchors.json": "0a345936a5ce24130c744674dded4fa47128b11a5053ffcb9987adb8c6b7b415",
+    "benchmark-v1-runs/humanitarian-2664-admission/drafting-crossover/scores.json": "96e26e8d5e355207b89fbd11e51e39e3814fb475d1f5e9396303a1189a765ab2",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "benchmark-v1.5/release.json": "102cf8e5456609c0b0f003c4e278ba4e6a4ce9453357a783355399c5f860bc90"
+  },
+  "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "requests": {
+    "none": {
+      "id": "none",
+      "max_output_tokens": 85,
+      "messages": [
+        {
+          "role": "system",
+          "content": "A neutral record already reports the standalone facts in each delivered evidence block. Supply only an optional comparison between the adopted safeguards and the national assessment. If fewer than two delivered blocks support a useful comparison, return exactly NONE. Otherwise write one sentence of at most 38 words using only the delivered blocks. Explain how the adopted oversight and the national assessment relate while preserving whose judgment it is. End after the comparison."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": []}"
+        }
+      ]
+    },
+    "safeguards": {
+      "id": "safeguards",
+      "max_output_tokens": 85,
+      "messages": [
+        {
+          "role": "system",
+          "content": "A neutral record already reports the standalone facts in each delivered evidence block. Supply only an optional comparison between the adopted safeguards and the national assessment. If fewer than two delivered blocks support a useful comparison, return exactly NONE. Otherwise write one sentence of at most 38 words using only the delivered blocks. Explain how the adopted oversight and the national assessment relate while preserving whose judgment it is. End after the comparison."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"kind\": \"safeguards\", \"text\": \"At adoption the exemption applied for two years to the 1267/1989/2253 ISIL and Al-Qaida regime, with the Council intending to decide on extension before expiry. The Council requested that providers use reasonable efforts to minimize prohibited benefits to listed persons or entities, including through due diligence. The text gave the 1267 Committee a monitoring role, required sanctions committees to monitor implementation with expert assistance, and requested recurring briefings from the Emergency Relief Coordinator.\"}]}"
+        }
+      ]
+    },
+    "india": {
+      "id": "india",
+      "max_output_tokens": 85,
+      "messages": [
+        {
+          "role": "system",
+          "content": "A neutral record already reports the standalone facts in each delivered evidence block. Supply only an optional comparison between the adopted safeguards and the national assessment. If fewer than two delivered blocks support a useful comparison, return exactly NONE. Otherwise write one sentence of at most 38 words using only the delivered blocks. Explain how the adopted oversight and the national assessment relate while preserving whose judgment it is. End after the comparison."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"kind\": \"india\", \"text\": \"Speaking for India, the representative warned of diversion under the ISIL and Al-Qaida regime. India had sought proactive involvement by the 1267 Monitoring Team and robust reporting standards and mechanisms. India judged those specific concerns not fully addressed in the adopted text.\"}]}"
+        }
+      ]
+    },
+    "safeguards-first": {
+      "id": "safeguards-first",
+      "max_output_tokens": 85,
+      "messages": [
+        {
+          "role": "system",
+          "content": "A neutral record already reports the standalone facts in each delivered evidence block. Supply only an optional comparison between the adopted safeguards and the national assessment. If fewer than two delivered blocks support a useful comparison, return exactly NONE. Otherwise write one sentence of at most 38 words using only the delivered blocks. Explain how the adopted oversight and the national assessment relate while preserving whose judgment it is. End after the comparison."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"kind\": \"safeguards\", \"text\": \"At adoption the exemption applied for two years to the 1267/1989/2253 ISIL and Al-Qaida regime, with the Council intending to decide on extension before expiry. The Council requested that providers use reasonable efforts to minimize prohibited benefits to listed persons or entities, including through due diligence. The text gave the 1267 Committee a monitoring role, required sanctions committees to monitor implementation with expert assistance, and requested recurring briefings from the Emergency Relief Coordinator.\"}, {\"kind\": \"india\", \"text\": \"Speaking for India, the representative warned of diversion under the ISIL and Al-Qaida regime. India had sought proactive involvement by the 1267 Monitoring Team and robust reporting standards and mechanisms. India judged those specific concerns not fully addressed in the adopted text.\"}]}"
+        }
+      ]
+    },
+    "india-first": {
+      "id": "india-first",
+      "max_output_tokens": 85,
+      "messages": [
+        {
+          "role": "system",
+          "content": "A neutral record already reports the standalone facts in each delivered evidence block. Supply only an optional comparison between the adopted safeguards and the national assessment. If fewer than two delivered blocks support a useful comparison, return exactly NONE. Otherwise write one sentence of at most 38 words using only the delivered blocks. Explain how the adopted oversight and the national assessment relate while preserving whose judgment it is. End after the comparison."
+        },
+        {
+          "role": "user",
+          "content": "{\"delivered\": [{\"kind\": \"india\", \"text\": \"Speaking for India, the representative warned of diversion under the ISIL and Al-Qaida regime. India had sought proactive involvement by the 1267 Monitoring Team and robust reporting standards and mechanisms. India judged those specific concerns not fully addressed in the adopted text.\"}, {\"kind\": \"safeguards\", \"text\": \"At adoption the exemption applied for two years to the 1267/1989/2253 ISIL and Al-Qaida regime, with the Council intending to decide on extension before expiry. The Council requested that providers use reasonable efforts to minimize prohibited benefits to listed persons or entities, including through due diligence. The text gave the 1267 Committee a monitoring role, required sanctions committees to monitor implementation with expert assistance, and requested recurring briefings from the Emergency Relief Coordinator.\"}]}"
+        }
+      ]
+    }
+  }
+}

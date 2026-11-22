@@ -1,0 +1,2437 @@
+{
+  "scope": "Reuse frozen action traces. The compiler receives delivered masks and the proposed action. The public domain defines warrant. Curated exact source spans provide official history. Scores are mechanical trace and format checks.",
+  "inputs": {
+    "relay_compiled_record.py": "22c7125bf04850f3a8054ef8d747d4ffbc3a51039c069755e4c0f12769a3907d",
+    "benchmark-kit/compiled-record-sources.json": "92184c2d2bc1eeffbb55c483268a6104f96842f0107d2ca22e693dcdf7a87348",
+    "benchmark-kit/evidence/relay-marl/balanced.json": "f371711f8240aa21e34ca9e004bad273e5dd1897d82e2fcf3161fbcc28bf52cb",
+    "benchmark-kit/evidence/relay-text/context.json": "65ab73e5a324cc78cf35e4021885ebcf9d3694c792030f4078d444acbb47110b",
+    "relay_marl.py": "fbdb5510450cd991b080bdc9a96bd8baf330013340bfdbd3c3adc0bf6f9792ca",
+    "relay_raw_signs.py": "3e22a5992932a3eb1788fe2d114ad5c7aa62dd696e6f004478b99193257251d7",
+    "crossbench/mali/historical-task.json": "9e4af8023120c95e9f02c7d007b7664252c71ae713b4322a7e073e8785cd62bd",
+    "crossbench/myanmar/historical-task.json": "6a2171f069b7d2b5d14e621f7de64ae4cf8b861e08843cd4eb78a36fde29072e",
+    "crossbench/venezuela/facts.json": "63a350632515819e03ccfcfbb28848e96e5cbcc42705c26edb8575ae2c1210a7",
+    "crossbench/space/historical-task.json": "85f711568ee333f8ab3622f5d4115055fd3f8df74ba2e75ef7f2790dc0cc3009"
+  },
+  "metrics": {
+    "qwen_head/mali/mute_both/decisions": 0,
+    "qwen_head/mali/mute_both/records": 4,
+    "qwen_head/mali/mute_both/within_cap": 4,
+    "qwen_head/mali/mute_far/decisions": 0,
+    "qwen_head/mali/mute_far/records": 4,
+    "qwen_head/mali/mute_far/within_cap": 4,
+    "qwen_head/mali/mute_near/decisions": 0,
+    "qwen_head/mali/mute_near/records": 4,
+    "qwen_head/mali/mute_near/within_cap": 4,
+    "qwen_head/mali/peer/decisions": 4,
+    "qwen_head/mali/peer/records": 4,
+    "qwen_head/mali/peer/within_cap": 4,
+    "qwen_head/myanmar/mute_both/decisions": 0,
+    "qwen_head/myanmar/mute_both/records": 4,
+    "qwen_head/myanmar/mute_both/within_cap": 4,
+    "qwen_head/myanmar/mute_far/decisions": 0,
+    "qwen_head/myanmar/mute_far/records": 4,
+    "qwen_head/myanmar/mute_far/within_cap": 4,
+    "qwen_head/myanmar/mute_near/decisions": 0,
+    "qwen_head/myanmar/mute_near/records": 4,
+    "qwen_head/myanmar/mute_near/within_cap": 4,
+    "qwen_head/myanmar/peer/decisions": 4,
+    "qwen_head/myanmar/peer/records": 4,
+    "qwen_head/myanmar/peer/within_cap": 4,
+    "typed/mali/mute_both/decisions": 0,
+    "typed/mali/mute_both/records": 4,
+    "typed/mali/mute_both/within_cap": 4,
+    "typed/mali/mute_far/decisions": 0,
+    "typed/mali/mute_far/records": 4,
+    "typed/mali/mute_far/within_cap": 4,
+    "typed/mali/mute_near/decisions": 0,
+    "typed/mali/mute_near/records": 4,
+    "typed/mali/mute_near/within_cap": 4,
+    "typed/mali/peer/decisions": 4,
+    "typed/mali/peer/records": 4,
+    "typed/mali/peer/within_cap": 4,
+    "typed/myanmar/mute_both/decisions": 0,
+    "typed/myanmar/mute_both/records": 4,
+    "typed/myanmar/mute_both/within_cap": 4,
+    "typed/myanmar/mute_far/decisions": 0,
+    "typed/myanmar/mute_far/records": 4,
+    "typed/myanmar/mute_far/within_cap": 4,
+    "typed/myanmar/mute_near/decisions": 0,
+    "typed/myanmar/mute_near/records": 4,
+    "typed/myanmar/mute_near/within_cap": 4,
+    "typed/myanmar/peer/decisions": 4,
+    "typed/myanmar/peer/records": 4,
+    "typed/myanmar/peer/within_cap": 4,
+    "typed/outer_space/mute_both/decisions": 0,
+    "typed/outer_space/mute_both/records": 4,
+    "typed/outer_space/mute_both/within_cap": 4,
+    "typed/outer_space/mute_far/decisions": 2,
+    "typed/outer_space/mute_far/records": 4,
+    "typed/outer_space/mute_far/within_cap": 4,
+    "typed/outer_space/mute_near/decisions": 2,
+    "typed/outer_space/mute_near/records": 4,
+    "typed/outer_space/mute_near/within_cap": 4,
+    "typed/outer_space/peer/decisions": 4,
+    "typed/outer_space/peer/records": 4,
+    "typed/outer_space/peer/within_cap": 4,
+    "typed/venezuela/mute_both/decisions": 0,
+    "typed/venezuela/mute_both/records": 4,
+    "typed/venezuela/mute_both/within_cap": 4,
+    "typed/venezuela/mute_far/decisions": 2,
+    "typed/venezuela/mute_far/records": 4,
+    "typed/venezuela/mute_far/within_cap": 4,
+    "typed/venezuela/mute_near/decisions": 2,
+    "typed/venezuela/mute_near/records": 4,
+    "typed/venezuela/mute_near/within_cap": 4,
+    "typed/venezuela/peer/decisions": 4,
+    "typed/venezuela/peer/records": 4,
+    "typed/venezuela/peer/within_cap": 4
+  },
+  "mutations": [
+    {
+      "family": "mali",
+      "rejected": [
+        "Role swapped its owned card",
+        "Wrong round or route",
+        "Wrong round or route",
+        "Card value or delivery is invalid",
+        "Relay forwarded a card it did not receive",
+        "Source span mismatch for status-638"
+      ]
+    },
+    {
+      "family": "myanmar",
+      "rejected": [
+        "Role swapped its owned card",
+        "Wrong round or route",
+        "Wrong round or route",
+        "Card value or delivery is invalid",
+        "Relay forwarded a card it did not receive",
+        "Source span mismatch for mandate"
+      ]
+    }
+  ],
+  "records": {
+    "typed/mali/peer/0": {
+      "memo": "Workshop status: REVIEW\nThe first delegate workshop card permits only review. The second delegate workshop card permits only review. Both delivered cards permit package review. The chair should recommend it. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "review",
+      "checked_status": "REVIEW",
+      "warranted_actions": [
+        "review"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "typed/mali/peer/1": {
+      "memo": "Workshop status: IMPASSE\nThe first delegate workshop card permits only review. The second delegate workshop card permits only closure. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "typed/mali/peer/2": {
+      "memo": "Workshop status: IMPASSE\nThe first delegate workshop card permits only closure. The second delegate workshop card permits only review. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "typed/mali/peer/3": {
+      "memo": "Workshop status: CLOSURE\nThe first delegate workshop card permits only closure. The second delegate workshop card permits only closure. Both delivered cards permit package closure. The chair should recommend it. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "closure",
+      "checked_status": "CLOSURE",
+      "warranted_actions": [
+        "closure"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "typed/mali/mute_far/0": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only review. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_far/1": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only review. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_far/2": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only closure. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_far/3": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only closure. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_near/0": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only review. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_near/1": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only closure. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_near/2": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only review. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_near/3": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only closure. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "typed/mali/mute_both/0": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/mali/mute_both/1": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/mali/mute_both/2": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/mali/mute_both/3": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/myanmar/peer/0": {
+      "memo": "Workshop status: RESCHEDULE\nThe UN office workshop card permits only early. The liaison office workshop card permits only late. The public rule and delivered evidence establish no common slot. The chair should request new briefing availability. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "RESCHEDULE",
+      "warranted_actions": [
+        "reschedule"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 79,
+      "word_cap": true
+    },
+    "typed/myanmar/peer/1": {
+      "memo": "Workshop status: EARLY\nThe UN office workshop card permits only early. The liaison office workshop card permits only early/late. Both delivered cards permit slot early. The chair should recommend it. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "early",
+      "checked_status": "EARLY",
+      "warranted_actions": [
+        "early"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 73,
+      "word_cap": true
+    },
+    "typed/myanmar/peer/2": {
+      "memo": "Workshop status: LATE\nThe UN office workshop card permits only early/late. The liaison office workshop card permits only late. Both delivered cards permit slot late. The chair should recommend it. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "late",
+      "checked_status": "LATE",
+      "warranted_actions": [
+        "late"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 73,
+      "word_cap": true
+    },
+    "typed/myanmar/peer/3": {
+      "memo": "Workshop status: EARLY\nThe UN office workshop card permits only early/late. The liaison office workshop card permits only early/late. Both delivered cards permit slot early. The chair should recommend it. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "early",
+      "checked_status": "EARLY",
+      "warranted_actions": [
+        "early",
+        "late"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 73,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_far/0": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early. liaison office's workshop card is missing. The chair should request liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_far/1": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early. liaison office's workshop card is missing. The chair should request liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_far/2": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early/late. liaison office's workshop card is missing. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "late"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_far/3": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early/late. liaison office's workshop card is missing. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "late"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_near/0": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only late. The chair should request UN office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_near/1": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only early/late. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "early"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_near/2": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only late. The chair should request UN office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_near/3": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only early/late. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "early"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_both/0": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_both/1": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_both/2": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    },
+    "typed/myanmar/mute_both/3": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    },
+    "typed/venezuela/peer/0": {
+      "memo": "Workshop status: B\nThe United States workshop card permits only A/B/D/F/G. The Russian Federation workshop card permits only B/C/E. Both delivered cards permit package B. The chair should recommend it. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "B",
+      "checked_status": "B",
+      "warranted_actions": [
+        "B"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "United States": 107,
+        "Russian Federation": 22
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 90,
+      "word_cap": true
+    },
+    "typed/venezuela/peer/1": {
+      "memo": "Workshop status: IMPASSE\nThe United States workshop card permits only A/B/D/F/G. The Russian Federation workshop card permits only C/E. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "United States": 107,
+        "Russian Federation": 20
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 99,
+      "word_cap": true
+    },
+    "typed/venezuela/peer/2": {
+      "memo": "Workshop status: IMPASSE\nThe United States workshop card permits only A/F. The Russian Federation workshop card permits only B/C/E. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "United States": 33,
+        "Russian Federation": 22
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 99,
+      "word_cap": true
+    },
+    "typed/venezuela/peer/3": {
+      "memo": "Workshop status: IMPASSE\nThe United States workshop card permits only A/F. The Russian Federation workshop card permits only C/E. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "United States": 33,
+        "Russian Federation": 20
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 99,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_far/0": {
+      "memo": "Workshop status: UNRESOLVED\nThe United States workshop card permits only A/B/D/F/G. Russian Federation's workshop card is missing. The chair should request Russian Federation's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 107,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_far/1": {
+      "memo": "Workshop status: UNRESOLVED\nThe United States workshop card permits only A/B/D/F/G. Russian Federation's workshop card is missing. The chair should request Russian Federation's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 107,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_far/2": {
+      "memo": "Workshop status: IMPASSE\nThe United States workshop card permits only A/F. Russian Federation's workshop card is missing. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 33,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_far/3": {
+      "memo": "Workshop status: IMPASSE\nThe United States workshop card permits only A/F. Russian Federation's workshop card is missing. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 33,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_near/0": {
+      "memo": "Workshop status: UNRESOLVED\nUnited States's workshop card is missing. The Russian Federation workshop card permits only B/C/E. The chair should request United States's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 22
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_near/1": {
+      "memo": "Workshop status: IMPASSE\nUnited States's workshop card is missing. The Russian Federation workshop card permits only C/E. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 20
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_near/2": {
+      "memo": "Workshop status: UNRESOLVED\nUnited States's workshop card is missing. The Russian Federation workshop card permits only B/C/E. The chair should request United States's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 22
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_near/3": {
+      "memo": "Workshop status: IMPASSE\nUnited States's workshop card is missing. The Russian Federation workshop card permits only C/E. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 20
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_both/0": {
+      "memo": "Workshop status: UNRESOLVED\nUnited States's workshop card is missing. Russian Federation's workshop card is missing. The chair should request United States's card and Russian Federation's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 91,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_both/1": {
+      "memo": "Workshop status: UNRESOLVED\nUnited States's workshop card is missing. Russian Federation's workshop card is missing. The chair should request United States's card and Russian Federation's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 91,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_both/2": {
+      "memo": "Workshop status: UNRESOLVED\nUnited States's workshop card is missing. Russian Federation's workshop card is missing. The chair should request United States's card and Russian Federation's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 91,
+      "word_cap": true
+    },
+    "typed/venezuela/mute_both/3": {
+      "memo": "Workshop status: UNRESOLVED\nUnited States's workshop card is missing. Russian Federation's workshop card is missing. The chair should request United States's card and Russian Federation's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2019/186 records “It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted.” S/2019/190 records “It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "United States": 0,
+        "Russian Federation": 0
+      },
+      "source_receipts": [
+        {
+          "id": "first_vote",
+          "label": "S/2019/186",
+          "quote": "It received nine votes in favour, three against and three abstentions. China and the Russian Federation voted against it as permanent members, and the draft was not adopted."
+        },
+        {
+          "id": "second_vote",
+          "label": "S/2019/190",
+          "quote": "It received four votes in favour, seven against and four abstentions and failed to reach the required number of affirmative votes."
+        }
+      ],
+      "words": 91,
+      "word_cap": true
+    },
+    "typed/outer_space/peer/0": {
+      "memo": "Workshop status: F\nThe Japan workshop card permits only A/D/F. The China workshop card permits only B/F/G. Both delivered cards permit package F. The chair should recommend it. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "F",
+      "checked_status": "F",
+      "warranted_actions": [
+        "F"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "Japan": 41,
+        "China": 98
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 81,
+      "word_cap": true
+    },
+    "typed/outer_space/peer/1": {
+      "memo": "Workshop status: IMPASSE\nThe Japan workshop card permits only A/D/F. The China workshop card permits only B/G. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "Japan": 41,
+        "China": 66
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 90,
+      "word_cap": true
+    },
+    "typed/outer_space/peer/2": {
+      "memo": "Workshop status: IMPASSE\nThe Japan workshop card permits only A/D. The China workshop card permits only B/F/G. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "Japan": 9,
+        "China": 98
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 90,
+      "word_cap": true
+    },
+    "typed/outer_space/peer/3": {
+      "memo": "Workshop status: IMPASSE\nThe Japan workshop card permits only A/D. The China workshop card permits only B/G. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "Japan": 9,
+        "China": 66
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 90,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_far/0": {
+      "memo": "Workshop status: UNRESOLVED\nThe Japan workshop card permits only A/D/F. China's workshop card is missing. The chair should request China's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 41,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 79,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_far/1": {
+      "memo": "Workshop status: UNRESOLVED\nThe Japan workshop card permits only A/D/F. China's workshop card is missing. The chair should request China's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 41,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 79,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_far/2": {
+      "memo": "Workshop status: IMPASSE\nThe Japan workshop card permits only A/D. China's workshop card is missing. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 9,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_far/3": {
+      "memo": "Workshop status: IMPASSE\nThe Japan workshop card permits only A/D. China's workshop card is missing. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 9,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_near/0": {
+      "memo": "Workshop status: UNRESOLVED\nJapan's workshop card is missing. The China workshop card permits only B/F/G. The chair should request Japan's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 98
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 79,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_near/1": {
+      "memo": "Workshop status: IMPASSE\nJapan's workshop card is missing. The China workshop card permits only B/G. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 66
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_near/2": {
+      "memo": "Workshop status: UNRESOLVED\nJapan's workshop card is missing. The China workshop card permits only B/F/G. The chair should request Japan's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 98
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 79,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_near/3": {
+      "memo": "Workshop status: IMPASSE\nJapan's workshop card is missing. The China workshop card permits only B/G. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 66
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_both/0": {
+      "memo": "Workshop status: UNRESOLVED\nJapan's workshop card is missing. China's workshop card is missing. The chair should request Japan's card and China's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 80,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_both/1": {
+      "memo": "Workshop status: UNRESOLVED\nJapan's workshop card is missing. China's workshop card is missing. The chair should request Japan's card and China's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 80,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_both/2": {
+      "memo": "Workshop status: UNRESOLVED\nJapan's workshop card is missing. China's workshop card is missing. The chair should request Japan's card and China's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 80,
+      "word_cap": true
+    },
+    "typed/outer_space/mute_both/3": {
+      "memo": "Workshop status: UNRESOLVED\nJapan's workshop card is missing. China's workshop card is missing. The chair should request Japan's card and China's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2024/323 records “It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes.” S/2024/302 records “The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "Japan": 0,
+        "China": 0
+      },
+      "source_receipts": [
+        {
+          "id": "apr-amendment",
+          "label": "S/2024/323",
+          "quote": "It received 7 votes for, 7 against and 1 abstention and failed to reach the required affirmative votes."
+        },
+        {
+          "id": "apr-final",
+          "label": "S/2024/302",
+          "quote": "The draft had 13 votes for, 1 against and 1 abstention. It was not adopted due to the negative vote of a permanent member."
+        }
+      ],
+      "words": 80,
+      "word_cap": true
+    },
+    "qwen_head/mali/peer/0": {
+      "memo": "Workshop status: REVIEW\nThe first delegate workshop card permits only review. The second delegate workshop card permits only review. Both delivered cards permit package review. The chair should recommend it. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "review",
+      "checked_status": "REVIEW",
+      "warranted_actions": [
+        "review"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "qwen_head/mali/peer/1": {
+      "memo": "Workshop status: IMPASSE\nThe first delegate workshop card permits only review. The second delegate workshop card permits only closure. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "qwen_head/mali/peer/2": {
+      "memo": "Workshop status: IMPASSE\nThe first delegate workshop card permits only closure. The second delegate workshop card permits only review. The public rule and delivered evidence establish no common package. The chair should refer the choices for further workshop discussion. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "IMPASSE",
+      "warranted_actions": [
+        "impasse"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 97,
+      "word_cap": true
+    },
+    "qwen_head/mali/peer/3": {
+      "memo": "Workshop status: CLOSURE\nThe first delegate workshop card permits only closure. The second delegate workshop card permits only closure. Both delivered cards permit package closure. The chair should recommend it. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "closure",
+      "checked_status": "CLOSURE",
+      "warranted_actions": [
+        "closure"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 88,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_far/0": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only review. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_far/1": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only review. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 1,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_far/2": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only closure. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_far/3": {
+      "memo": "Workshop status: UNRESOLVED\nThe first delegate workshop card permits only closure. second delegate's workshop card is missing. The chair should request second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 2,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_near/0": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only review. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_near/1": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only closure. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_near/2": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only review. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 1
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_near/3": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. The second delegate workshop card permits only closure. The chair should request first delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 2
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 87,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_both/0": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_both/1": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_both/2": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "qwen_head/mali/mute_both/3": {
+      "memo": "Workshop status: UNRESOLVED\nfirst delegate's workshop card is missing. second delegate's workshop card is missing. The chair should request first delegate's card and second delegate's card and keep the decision pending. This workshop recommendation has no official authority.\nS/2023/638 records “The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member.” S/2023/639 records “It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions.”",
+      "candidate_action": "impasse",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "first delegate": 0,
+        "second delegate": 0
+      },
+      "source_receipts": [
+        {
+          "id": "status-638",
+          "label": "S/2023/638",
+          "quote": "The tally was 13 in favour, 1 against and 1 abstention. Russia cast the sole negative vote and the draft was not adopted due to the negative vote of a permanent member."
+        },
+        {
+          "id": "status-639",
+          "label": "S/2023/639",
+          "quote": "It was not adopted, having received 1 vote in favour, 1 against and 13 abstentions."
+        }
+      ],
+      "words": 89,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/peer/0": {
+      "memo": "Workshop status: RESCHEDULE\nThe UN office workshop card permits only early. The liaison office workshop card permits only late. The public rule and delivered evidence establish no common slot. The chair should request new briefing availability. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "RESCHEDULE",
+      "warranted_actions": [
+        "reschedule"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 79,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/peer/1": {
+      "memo": "Workshop status: EARLY\nThe UN office workshop card permits only early. The liaison office workshop card permits only early/late. Both delivered cards permit slot early. The chair should recommend it. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "early",
+      "checked_status": "EARLY",
+      "warranted_actions": [
+        "early"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 73,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/peer/2": {
+      "memo": "Workshop status: LATE\nThe UN office workshop card permits only early/late. The liaison office workshop card permits only late. Both delivered cards permit slot late. The chair should recommend it. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "late",
+      "checked_status": "LATE",
+      "warranted_actions": [
+        "late"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 73,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/peer/3": {
+      "memo": "Workshop status: EARLY\nThe UN office workshop card permits only early/late. The liaison office workshop card permits only early/late. Both delivered cards permit slot early. The chair should recommend it. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "early",
+      "checked_status": "EARLY",
+      "warranted_actions": [
+        "early",
+        "late"
+      ],
+      "compatible_worlds": 1,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 73,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_far/0": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early. liaison office's workshop card is missing. The chair should request liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_far/1": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early. liaison office's workshop card is missing. The chair should request liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 1,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_far/2": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early/late. liaison office's workshop card is missing. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "late"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_far/3": {
+      "memo": "Workshop status: UNRESOLVED\nThe UN office workshop card permits only early/late. liaison office's workshop card is missing. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "late"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 3,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_near/0": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only late. The chair should request UN office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_near/1": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only early/late. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "early"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_near/2": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only late. The chair should request UN office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 2
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 72,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_near/3": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. The liaison office workshop card permits only early/late. The chair should review the available evidence before making a recommendation. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [
+        "early"
+      ],
+      "compatible_worlds": 2,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 3
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 71,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_both/0": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_both/1": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_both/2": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    },
+    "qwen_head/myanmar/mute_both/3": {
+      "memo": "Workshop status: UNRESOLVED\nUN office's workshop card is missing. liaison office's workshop card is missing. The chair should request UN office's card and liaison office's card and keep the decision pending. This workshop recommendation has no official authority.\nResolution 2669 records “It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.”",
+      "candidate_action": "reschedule",
+      "checked_status": "UNRESOLVED",
+      "warranted_actions": [],
+      "compatible_worlds": 4,
+      "delivered_cards": {
+        "UN office": 0,
+        "liaison office": 0
+      },
+      "source_receipts": [
+        {
+          "id": "mandate",
+          "label": "Resolution 2669",
+          "quote": "It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        }
+      ],
+      "words": 74,
+      "word_cap": true
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "scope": "Development evaluation. Reference-only labels. Existing public cases may be in model pretraining.",
+  "workshop_file_sha256": "995dd884f47bf7d6967cc31391091bd984e19d2cb2573d2583b368f9f6a9523d",
+  "families": {
+    "iraq-unami-mandate-review-2023": {
+      "benchmark": {
+        "unbench_draft_path": "data/raw/unbench-audit-20260926/full/UNBench-all/drafts_adopted/2484/S_2023_378-EN.json",
+        "unbench_draft_sha256": "26ac254ba18e426d86828d2bc508ffb5556df8bb630c0f26f380571d913038d2",
+        "unbench_task2_test_rows": [
+          5310,
+          5311,
+          5312,
+          5313,
+          5314,
+          5315,
+          5316,
+          5317,
+          5318,
+          5319,
+          5320,
+          5321,
+          5322,
+          5323,
+          5324
+        ],
+        "unsc_bench_config": "adopted",
+        "unsc_bench_index": 256,
+        "unsc_bench_revision": "55bd5aa5bb317a942b9229de13dca985e642a40b"
+      },
+      "prediction_ref_only": {
+        "ALBANIA": "Y",
+        "BRAZIL": "Y",
+        "CHINA": "Y",
+        "ECUADOR": "Y",
+        "FRANCE": "Y",
+        "GABON": "Y",
+        "GHANA": "Y",
+        "JAPAN": "Y",
+        "MALTA": "Y",
+        "MOZAMBIQUE": "Y",
+        "RUSSIAN FEDERATION": "Y",
+        "SWITZERLAND": "Y",
+        "UNITED ARAB EMIRATES": "Y",
+        "UNITED KINGDOM": "Y",
+        "UNITED STATES": "Y"
+      },
+      "workshop_refs_only": {
+        "overlap": {
+          "allowed_by_role": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "D"
+            ]
+          ],
+          "joint_packages": [
+            "A"
+          ],
+          "truth": "agreement_possible"
+        },
+        "impasse": {
+          "allowed_by_role": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ],
+          "joint_packages": [],
+          "truth": "impasse"
+        }
+      }
+    },
+    "syria-cross-border-aid-july-2023": {
+      "benchmark": {
+        "unbench_draft_path": "data/raw/unbench-audit-20260926/full/UNBench-all/all_drafts/1889/S_2023_506-EN.json",
+        "unbench_draft_sha256": "1aa163218c2a5f166b933d85d114344d952d808aed6a9d9cd998c05b2b281a7f",
+        "unbench_task2_test_rows": [],
+        "unsc_bench_config": "vetoed",
+        "unsc_bench_index": 15,
+        "unsc_bench_revision": "55bd5aa5bb317a942b9229de13dca985e642a40b"
+      },
+      "prediction_ref_only": {
+        "ALBANIA": "Y",
+        "BRAZIL": "Y",
+        "ECUADOR": "Y",
+        "FRANCE": "Y",
+        "GABON": "Y",
+        "GHANA": "Y",
+        "JAPAN": "Y",
+        "MALTA": "Y",
+        "MOZAMBIQUE": "Y",
+        "SWITZERLAND": "Y",
+        "UNITED ARAB EMIRATES": "Y",
+        "UNITED KINGDOM": "Y",
+        "UNITED STATES": "Y",
+        "RUSSIAN FEDERATION": "N",
+        "CHINA": "A"
+      },
+      "workshop_refs_only": {
+        "overlap": {
+          "allowed_by_role": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ],
+          "joint_packages": [
+            "B"
+          ],
+          "truth": "agreement_possible"
+        },
+        "impasse": {
+          "allowed_by_role": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "D"
+            ]
+          ],
+          "joint_packages": [],
+          "truth": "impasse"
+        }
+      }
+    }
+  }
+}

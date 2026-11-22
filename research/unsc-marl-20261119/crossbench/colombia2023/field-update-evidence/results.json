@@ -1,0 +1,1279 @@
+{
+  "scope": "Measurements with review-based selection across exposed variants. Selection uses same-assistant predicates, so the result is a writer diagnostic and not a blind release test. All body fragments are actual frozen-model text, composed with the earlier authored vote line. Routing decisions are kept fixed.",
+  "chosen_variant": {
+    "OPERATIVE": "first",
+    "ADDITIONAL": "update",
+    "BRAZIL": "revised",
+    "A3": "first",
+    "overlap": "authority"
+  },
+  "observed_variants": {
+    "first": {
+      "OPERATIVE": {
+        "text": "The Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].",
+        "input_tokens": 253,
+        "output_tokens": 46,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "renewal": [
+            "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+          ],
+          "further": [
+            "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+          ]
+        },
+        "guard_issues": []
+      },
+      "ADDITIONAL": {
+        "text": "The earlier ELN monitoring authority stems from Resolution 2694. Regarding Government–EMC verification, the legal stage remains a willingness to consider future monitoring, contingent upon Secretary-General confirmation of a ceasefire with appropriate protocols, while taking into account the implementation update on Resolution 2694. [ADDITIONAL]",
+        "input_tokens": 328,
+        "output_tokens": 66,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "emc": [
+            "Regarding Government–EMC verification, the legal stage remains a willingness to consider future monitoring, contingent upon Secretary-General confirmation of a ceasefire with appropriate protocols, while taking into account the implementation update on Resolution 2694."
+          ]
+        },
+        "guard_issues": []
+      },
+      "BRAZIL": {
+        "text": "The presiding representative spoke for Brazil, supporting Colombia's sovereign will and total peace strategy. Brazil urged the Council to respond to Colombia's priorities and hoped for future authorization of EMC verification when sufficiently mature. [BRAZIL]",
+        "input_tokens": 332,
+        "output_tokens": 46,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "brazil_hope": [
+            "hoped for future authorization of EMC verification when sufficiently mature"
+          ]
+        },
+        "guard_issues": []
+      },
+      "A3": {
+        "text": "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "input_tokens": 320,
+        "output_tokens": 43,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "a3_condition": [
+            "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+          ],
+          "a3_ethnic": [
+            "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+          ]
+        },
+        "guard_issues": []
+      },
+      "overlap": {
+        "text": "Limited overlap exists between Brazil and African members on future EMC verification; neither granted actual authority, both awaiting Secretary-General confirmation and maturity. [BRAZIL, A3, ADDITIONAL]",
+        "input_tokens": 701,
+        "output_tokens": 38,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": false,
+        "met": {},
+        "guard_issues": [
+          {
+            "span": "neither granted actual authority, both awaiting Secretary-General confirmation and maturity.",
+            "reason": "Both statements support a qualified future role, but the condition of sufficient maturity comes from Brazil and the Secretary-General's conditions come from the A3. The Council, rather than either delegation alone, grants authority."
+          }
+        ]
+      }
+    },
+    "revised": {
+      "ADDITIONAL": {
+        "text": "Resolution 2694 already authorized both monitoring and verification of the Government–ELN ceasefire. The Mission expressed willingness to consider Government–EMC verification upon the Secretary-General's confirmation of a ceasefire with appropriate verification protocols, taking into account his update on implementation of Resolution 2694. [ADDITIONAL]",
+        "input_tokens": 324,
+        "output_tokens": 66,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": false,
+        "met": {
+          "eln": [
+            "Resolution 2694 already authorized both monitoring and verification of the Government–ELN ceasefire."
+          ]
+        },
+        "guard_issues": [
+          {
+            "span": "The Mission expressed willingness to consider Government–EMC verification",
+            "reason": "The Council's resolution expresses the willingness to consider. The Mission is the proposed verifier."
+          }
+        ]
+      },
+      "BRAZIL": {
+        "text": "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]",
+        "input_tokens": 315,
+        "output_tokens": 49,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "brazil_capacity": [
+            "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+          ],
+          "brazil_hope": [
+            "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+          ]
+        },
+        "guard_issues": []
+      },
+      "overlap": {
+        "text": "Brazil and A3 support a possible future Government–EMC verification role subject to a condition, while ADDITIONAL expresses willingness to consider that role with no EMC verification authority granted. Consequently, the shared position remains conditional, and the actual legal status currently grants no EMC verification authority. [BRAZIL, A3, ADDITIONAL] End.",
+        "input_tokens": 165,
+        "output_tokens": 69,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "common_ground": [
+            "Brazil and A3 support a possible future Government–EMC verification role subject to a condition",
+            "actual legal status currently grants no EMC verification authority"
+          ]
+        },
+        "guard_issues": []
+      }
+    },
+    "authority": {
+      "ADDITIONAL": {
+        "text": "Resolution 2694 already authorized monitoring and verification of the Government–ELN ceasefire. The Council expressed willingness to consider Government–EMC monitoring and verification when the Secretary-General confirms a ceasefire with appropriate verification protocols and takes into account the implementation update of resolution 2694. [ADDITIONAL]",
+        "input_tokens": 322,
+        "output_tokens": 64,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": false,
+        "met": {
+          "eln": [
+            "Resolution 2694 already authorized monitoring and verification of the Government–ELN ceasefire."
+          ]
+        },
+        "guard_issues": [
+          {
+            "span": "the Secretary-General confirms a ceasefire with appropriate verification protocols and takes into account the implementation update",
+            "reason": "The sentence assigns both verbs to the Secretary-General. He confirms the ceasefire, and Council consideration takes his update into account."
+          }
+        ]
+      },
+      "overlap": {
+        "text": "Brazil and A3 support a conditional future Government–EMC verification role, while Resolution 2704 granted no such authority. [BRAZIL, A3, ADDITIONAL]",
+        "input_tokens": 181,
+        "output_tokens": 39,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "common_ground": [
+            "Brazil and A3 support a conditional future Government–EMC verification role, while Resolution 2704 granted no such authority."
+          ]
+        },
+        "guard_issues": []
+      }
+    },
+    "update": {
+      "ADDITIONAL": {
+        "text": "Resolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]",
+        "input_tokens": 341,
+        "output_tokens": 69,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "eln": [
+            "Resolution 2694 already authorized Government–ELN monitoring and verification."
+          ],
+          "emc": [
+            "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+            "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+          ]
+        },
+        "guard_issues": []
+      }
+    }
+  },
+  "composed": {
+    "scope": "The final body concatenates five individually generated field types with an authored roll call. The comparison is generated and available only with its three underlying sources. One to four model calls are used per packet. The original route probabilities and simulated desk labels do not change. Semantics are reviewed by the same assistant.",
+    "fields": {
+      "OPERATIVE": {
+        "text": "The Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].",
+        "input_tokens": 253,
+        "output_tokens": 46,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "renewal": [
+            "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+          ],
+          "further": [
+            "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+          ]
+        },
+        "guard_issues": []
+      },
+      "ADDITIONAL": {
+        "text": "Resolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]",
+        "input_tokens": 341,
+        "output_tokens": 69,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "eln": [
+            "Resolution 2694 already authorized Government–ELN monitoring and verification."
+          ],
+          "emc": [
+            "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+            "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+          ]
+        },
+        "guard_issues": []
+      },
+      "BRAZIL": {
+        "text": "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]",
+        "input_tokens": 315,
+        "output_tokens": 49,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "brazil_capacity": [
+            "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+          ],
+          "brazil_hope": [
+            "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+          ]
+        },
+        "guard_issues": []
+      },
+      "A3": {
+        "text": "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "input_tokens": 320,
+        "output_tokens": 43,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "a3_condition": [
+            "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+          ],
+          "a3_ethnic": [
+            "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+          ]
+        },
+        "guard_issues": []
+      },
+      "overlap": {
+        "text": "Brazil and A3 support a conditional future Government–EMC verification role, while Resolution 2704 granted no such authority. [BRAZIL, A3, ADDITIONAL]",
+        "input_tokens": 181,
+        "output_tokens": 39,
+        "complete": true,
+        "citation_ids_clear": true,
+        "semantic_clear": true,
+        "met": {
+          "common_ground": [
+            "Brazil and A3 support a conditional future Government–EMC verification role, while Resolution 2704 granted no such authority."
+          ]
+        },
+        "guard_issues": []
+      }
+    },
+    "packets": {
+      "OPERATIVE": {
+        "points": 21,
+        "word_count": 53,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "renewal": {
+            "source_ids": "VOTE, OPERATIVE",
+            "final": [
+              "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+            ]
+          },
+          "further": {
+            "source_ids": "OPERATIVE",
+            "final": [
+              "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "a3_condition",
+          "a3_ethnic",
+          "brazil_capacity",
+          "brazil_hope",
+          "common_ground",
+          "eln",
+          "emc"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].",
+        "delivered_criteria_complete": true,
+        "writers": 1,
+        "input_tokens": 253,
+        "output_tokens": 46,
+        "semantic_issues": []
+      },
+      "ADDITIONAL": {
+        "points": 21,
+        "word_count": 65,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "eln": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "Resolution 2694 already authorized Government–ELN monitoring and verification."
+            ]
+          },
+          "emc": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+              "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "a3_condition",
+          "a3_ethnic",
+          "brazil_capacity",
+          "brazil_hope",
+          "common_ground",
+          "further",
+          "renewal"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nResolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]",
+        "delivered_criteria_complete": true,
+        "writers": 1,
+        "input_tokens": 341,
+        "output_tokens": 69,
+        "semantic_issues": []
+      },
+      "BRAZIL": {
+        "points": 21,
+        "word_count": 61,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "brazil_capacity": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+            ]
+          },
+          "brazil_hope": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "a3_condition",
+          "a3_ethnic",
+          "common_ground",
+          "eln",
+          "emc",
+          "further",
+          "renewal"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]",
+        "delivered_criteria_complete": true,
+        "writers": 1,
+        "input_tokens": 315,
+        "output_tokens": 49,
+        "semantic_issues": []
+      },
+      "A3": {
+        "points": 21,
+        "word_count": 52,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "a3_condition": {
+            "source_ids": "A3",
+            "final": [
+              "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+            ]
+          },
+          "a3_ethnic": {
+            "source_ids": "A3",
+            "final": [
+              "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "brazil_capacity",
+          "brazil_hope",
+          "common_ground",
+          "eln",
+          "emc",
+          "further",
+          "renewal"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nGhana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "delivered_criteria_complete": true,
+        "writers": 1,
+        "input_tokens": 320,
+        "output_tokens": 43,
+        "semantic_issues": []
+      },
+      "ADDITIONAL,OPERATIVE": {
+        "points": 35,
+        "word_count": 97,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "renewal": {
+            "source_ids": "VOTE, OPERATIVE",
+            "final": [
+              "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+            ]
+          },
+          "further": {
+            "source_ids": "OPERATIVE",
+            "final": [
+              "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+            ]
+          },
+          "eln": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "Resolution 2694 already authorized Government–ELN monitoring and verification."
+            ]
+          },
+          "emc": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+              "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "a3_condition",
+          "a3_ethnic",
+          "brazil_capacity",
+          "brazil_hope",
+          "common_ground"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].\n\nResolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]",
+        "delivered_criteria_complete": true,
+        "writers": 2,
+        "input_tokens": 594,
+        "output_tokens": 115,
+        "semantic_issues": []
+      },
+      "BRAZIL,OPERATIVE": {
+        "points": 35,
+        "word_count": 93,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "renewal": {
+            "source_ids": "VOTE, OPERATIVE",
+            "final": [
+              "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+            ]
+          },
+          "further": {
+            "source_ids": "OPERATIVE",
+            "final": [
+              "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+            ]
+          },
+          "brazil_capacity": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+            ]
+          },
+          "brazil_hope": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "a3_condition",
+          "a3_ethnic",
+          "common_ground",
+          "eln",
+          "emc"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].\n\nThe presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]",
+        "delivered_criteria_complete": true,
+        "writers": 2,
+        "input_tokens": 568,
+        "output_tokens": 95,
+        "semantic_issues": []
+      },
+      "A3,OPERATIVE": {
+        "points": 35,
+        "word_count": 84,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "renewal": {
+            "source_ids": "VOTE, OPERATIVE",
+            "final": [
+              "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+            ]
+          },
+          "further": {
+            "source_ids": "OPERATIVE",
+            "final": [
+              "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+            ]
+          },
+          "a3_condition": {
+            "source_ids": "A3",
+            "final": [
+              "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+            ]
+          },
+          "a3_ethnic": {
+            "source_ids": "A3",
+            "final": [
+              "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "brazil_capacity",
+          "brazil_hope",
+          "common_ground",
+          "eln",
+          "emc"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].\n\nGhana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "delivered_criteria_complete": true,
+        "writers": 2,
+        "input_tokens": 573,
+        "output_tokens": 89,
+        "semantic_issues": []
+      },
+      "ADDITIONAL,BRAZIL": {
+        "points": 35,
+        "word_count": 105,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "eln": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "Resolution 2694 already authorized Government–ELN monitoring and verification."
+            ]
+          },
+          "emc": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+              "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+            ]
+          },
+          "brazil_capacity": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+            ]
+          },
+          "brazil_hope": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "a3_condition",
+          "a3_ethnic",
+          "common_ground",
+          "further",
+          "renewal"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nResolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]\n\nThe presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]",
+        "delivered_criteria_complete": true,
+        "writers": 2,
+        "input_tokens": 656,
+        "output_tokens": 118,
+        "semantic_issues": []
+      },
+      "A3,ADDITIONAL": {
+        "points": 35,
+        "word_count": 96,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "eln": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "Resolution 2694 already authorized Government–ELN monitoring and verification."
+            ]
+          },
+          "emc": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+              "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+            ]
+          },
+          "a3_condition": {
+            "source_ids": "A3",
+            "final": [
+              "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+            ]
+          },
+          "a3_ethnic": {
+            "source_ids": "A3",
+            "final": [
+              "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "brazil_capacity",
+          "brazil_hope",
+          "common_ground",
+          "further",
+          "renewal"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nResolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]\n\nGhana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "delivered_criteria_complete": true,
+        "writers": 2,
+        "input_tokens": 661,
+        "output_tokens": 112,
+        "semantic_issues": []
+      },
+      "A3,BRAZIL": {
+        "points": 35,
+        "word_count": 92,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "brazil_capacity": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+            ]
+          },
+          "brazil_hope": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+            ]
+          },
+          "a3_condition": {
+            "source_ids": "A3",
+            "final": [
+              "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+            ]
+          },
+          "a3_ethnic": {
+            "source_ids": "A3",
+            "final": [
+              "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "common_ground",
+          "eln",
+          "emc",
+          "further",
+          "renewal"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]\n\nGhana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "delivered_criteria_complete": true,
+        "writers": 2,
+        "input_tokens": 635,
+        "output_tokens": 92,
+        "semantic_issues": []
+      },
+      "ADDITIONAL,BRAZIL,OPERATIVE": {
+        "points": 49,
+        "word_count": 137,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "renewal": {
+            "source_ids": "VOTE, OPERATIVE",
+            "final": [
+              "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+            ]
+          },
+          "further": {
+            "source_ids": "OPERATIVE",
+            "final": [
+              "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+            ]
+          },
+          "eln": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "Resolution 2694 already authorized Government–ELN monitoring and verification."
+            ]
+          },
+          "emc": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+              "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+            ]
+          },
+          "brazil_capacity": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+            ]
+          },
+          "brazil_hope": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "a3_condition",
+          "a3_ethnic",
+          "common_ground"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].\n\nResolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]\n\nThe presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]",
+        "delivered_criteria_complete": true,
+        "writers": 3,
+        "input_tokens": 909,
+        "output_tokens": 164,
+        "semantic_issues": []
+      },
+      "A3,ADDITIONAL,OPERATIVE": {
+        "points": 49,
+        "word_count": 128,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "renewal": {
+            "source_ids": "VOTE, OPERATIVE",
+            "final": [
+              "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+            ]
+          },
+          "further": {
+            "source_ids": "OPERATIVE",
+            "final": [
+              "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+            ]
+          },
+          "eln": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "Resolution 2694 already authorized Government–ELN monitoring and verification."
+            ]
+          },
+          "emc": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+              "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+            ]
+          },
+          "a3_condition": {
+            "source_ids": "A3",
+            "final": [
+              "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+            ]
+          },
+          "a3_ethnic": {
+            "source_ids": "A3",
+            "final": [
+              "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "brazil_capacity",
+          "brazil_hope",
+          "common_ground"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].\n\nResolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]\n\nGhana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "delivered_criteria_complete": true,
+        "writers": 3,
+        "input_tokens": 914,
+        "output_tokens": 158,
+        "semantic_issues": []
+      },
+      "A3,BRAZIL,OPERATIVE": {
+        "points": 49,
+        "word_count": 124,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "renewal": {
+            "source_ids": "VOTE, OPERATIVE",
+            "final": [
+              "The Council extended the UN Verification Mission in Colombia until 31 October 2024"
+            ]
+          },
+          "further": {
+            "source_ids": "OPERATIVE",
+            "final": [
+              "It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties"
+            ]
+          },
+          "brazil_capacity": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+            ]
+          },
+          "brazil_hope": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+            ]
+          },
+          "a3_condition": {
+            "source_ids": "A3",
+            "final": [
+              "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+            ]
+          },
+          "a3_ethnic": {
+            "source_ids": "A3",
+            "final": [
+              "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "common_ground",
+          "eln",
+          "emc"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nThe Council extended the UN Verification Mission in Colombia until 31 October 2024 [OPERATIVE]. It expressed willingness to work with Colombia's Government on further extension based on agreement between the parties [OPERATIVE].\n\nThe presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]\n\nGhana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].",
+        "delivered_criteria_complete": true,
+        "writers": 3,
+        "input_tokens": 888,
+        "output_tokens": 138,
+        "semantic_issues": []
+      },
+      "A3,ADDITIONAL,BRAZIL": {
+        "points": 56,
+        "word_count": 156,
+        "source_guard_clear": true,
+        "complete": true,
+        "strict": false,
+        "evidence_spans": {
+          "procedure": {
+            "source_ids": "VOTE",
+            "final": [
+              "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]"
+            ]
+          },
+          "eln": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "Resolution 2694 already authorized Government–ELN monitoring and verification."
+            ]
+          },
+          "emc": {
+            "source_ids": "ADDITIONAL",
+            "final": [
+              "The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols.",
+              "The Council would take into account the Secretary-General's update on the implementation of resolution 2694."
+            ]
+          },
+          "brazil_capacity": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "The presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government."
+            ]
+          },
+          "brazil_hope": {
+            "source_ids": "BRAZIL",
+            "final": [
+              "Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature."
+            ]
+          },
+          "a3_condition": {
+            "source_ids": "A3",
+            "final": [
+              "Ghana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions"
+            ]
+          },
+          "a3_ethnic": {
+            "source_ids": "A3",
+            "final": [
+              "pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people"
+            ]
+          },
+          "common_ground": {
+            "source_ids": "BRAZIL, A3, ADDITIONAL",
+            "final": [
+              "Brazil and A3 support a conditional future Government–EMC verification role, while Resolution 2704 granted no such authority."
+            ]
+          }
+        },
+        "missing_or_contradicted": [
+          "further",
+          "renewal"
+        ],
+        "cited_sources_clear": true,
+        "release": true,
+        "record": "On 30 October 2023 the Council adopted United Kingdom draft S/2023/808 by 15 votes to none as resolution 2704 (2023). [VOTE]\n\nResolution 2694 already authorized Government–ELN monitoring and verification. The Council expressed willingness to consider Government–EMC monitoring and verification if the Secretary-General confirms a ceasefire with appropriate verification protocols. The Council would take into account the Secretary-General's update on the implementation of resolution 2694. [ADDITIONAL]\n\nThe presiding representative speaking nationally for Brazil stated that the Council should follow the priorities expressed by Colombia's Government. Brazil expressed hope that the Council could authorize verification of the EMC ceasefire later when the situation is sufficiently mature. [BRAZIL]\n\nGhana spoke for the three African members, who supported EMC verification contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people [A3].\n\nBrazil and A3 support a conditional future Government–EMC verification role, while Resolution 2704 granted no such authority. [BRAZIL, A3, ADDITIONAL]",
+        "delivered_criteria_complete": true,
+        "writers": 4,
+        "input_tokens": 1157,
+        "output_tokens": 200,
+        "semantic_issues": []
+      }
+    },
+    "retained_counts": {
+      "procedure": 14,
+      "renewal": 7,
+      "further": 7,
+      "eln": 7,
+      "emc": 7,
+      "brazil_capacity": 7,
+      "brazil_hope": 7,
+      "a3_condition": 7,
+      "a3_ethnic": 7,
+      "common_ground": 1
+    },
+    "route_outcomes": {
+      "strong_label_correct": {
+        "old_frozen": {
+          "record_points": 44.31558464209029,
+          "release_probability": 0.9999999999999996,
+          "released_points": 44.31558464209029,
+          "writer_calls": 2.7434402105416416,
+          "input_tokens": 823.2165745362832,
+          "output_tokens": 139.9829775533826,
+          "delivered_criteria_complete": 0.9999999999999996,
+          "raw_change": 9.688481255497848,
+          "release_change": 0.462036986587094,
+          "released_score_change": 27.067463655543612,
+          "licensed_points": 44.31558464209031,
+          "whole_packet_input_tokens": 606.6915301139983,
+          "whole_packet_output_tokens": 187.73408120964916,
+          "whole_packet_release": 0.5379630134129055,
+          "whole_packet_points": 34.627103386592445
+        },
+        "specialist": {
+          "record_points": 44.823563831257545,
+          "release_probability": 0.9999999999999997,
+          "released_points": 44.823563831257545,
+          "writer_calls": 2.782033353405609,
+          "input_tokens": 834.4913166269944,
+          "output_tokens": 141.92129536240196,
+          "delivered_criteria_complete": 0.9999999999999997,
+          "raw_change": 9.870313530388664,
+          "release_change": 0.45477954520825703,
+          "released_score_change": 27.307584864246763,
+          "licensed_points": 44.82356383125752,
+          "whole_packet_input_tokens": 612.4166175865914,
+          "whole_packet_output_tokens": 188.5338625759267,
+          "whole_packet_release": 0.5452204547917426,
+          "whole_packet_points": 34.95325030086888
+        },
+        "specialist_canonical_reply": {
+          "record_points": 44.20633225757466,
+          "release_probability": 1.0000000000000004,
+          "released_points": 44.20633225757466,
+          "writer_calls": 2.7330467205736357,
+          "input_tokens": 820.6770861683781,
+          "output_tokens": 139.51115302706893,
+          "delivered_criteria_complete": 1.0000000000000004,
+          "raw_change": 9.618848815184514,
+          "release_change": 0.44824799416399463,
+          "released_score_change": 26.644632433254035,
+          "licensed_points": 44.206332257574665,
+          "whole_packet_input_tokens": 605.8099537053193,
+          "whole_packet_output_tokens": 186.57113148712563,
+          "whole_packet_release": 0.5517520058360058,
+          "whole_packet_points": 34.587483442390145
+        },
+        "fixed_script": {
+          "record_points": 44.62757996618853,
+          "release_probability": 0.9999999999999996,
+          "released_points": 44.62757996618853,
+          "writer_calls": 2.7663120870901636,
+          "input_tokens": 830.4927454139342,
+          "output_tokens": 140.90143637397543,
+          "delivered_criteria_complete": 0.9999999999999996,
+          "raw_change": 9.727638618852467,
+          "release_change": 0.4514810389344258,
+          "released_score_change": 27.007076206967216,
+          "licensed_points": 44.62757996618853,
+          "whole_packet_input_tokens": 610.8558038647542,
+          "whole_packet_output_tokens": 187.84022591803281,
+          "whole_packet_release": 0.5485189610655737,
+          "whole_packet_points": 34.89994134733606
+        },
+        "adaptive_script": {
+          "record_points": 44.976126368852455,
+          "release_probability": 1.0000000000000002,
+          "released_points": 44.976126368852455,
+          "writer_calls": 2.7939745,
+          "input_tokens": 836.3519100327868,
+          "output_tokens": 142.76862081147542,
+          "delivered_criteria_complete": 1.0000000000000002,
+          "raw_change": 10.053614045081957,
+          "release_change": 0.44634216803278715,
+          "released_score_change": 27.194673811475408,
+          "licensed_points": 44.97612636885247,
+          "whole_packet_input_tokens": 612.4268182295083,
+          "whole_packet_output_tokens": 188.0130836065574,
+          "whole_packet_release": 0.5536578319672131,
+          "whole_packet_points": 34.9225123237705
+        },
+        "pooled_all_three": {
+          "record_points": 50.74999999999999,
+          "release_probability": 1.0,
+          "released_points": 50.74999999999999,
+          "writer_calls": 3.2500000000000004,
+          "input_tokens": 966.9999999999998,
+          "output_tokens": 164.99999999999997,
+          "delivered_criteria_complete": 1.0,
+          "raw_change": 12.249999999999993,
+          "release_change": 0.5,
+          "released_score_change": 33.24999999999999,
+          "licensed_points": 50.75,
+          "whole_packet_input_tokens": 676.25,
+          "whole_packet_output_tokens": 206.25,
+          "whole_packet_release": 0.5,
+          "whole_packet_points": 38.5
+        }
+      },
+      "strong_label_wrong": {
+        "old_frozen": {
+          "record_points": 44.31558464209029,
+          "release_probability": 0.9999999999999996,
+          "released_points": 44.31558464209029,
+          "writer_calls": 2.7434402105416416,
+          "input_tokens": 823.2165745362832,
+          "output_tokens": 139.9829775533826,
+          "delivered_criteria_complete": 0.9999999999999996,
+          "raw_change": 9.688481255497848,
+          "release_change": 0.462036986587094,
+          "released_score_change": 27.067463655543612,
+          "licensed_points": 44.31558464209031,
+          "whole_packet_input_tokens": 606.6915301139983,
+          "whole_packet_output_tokens": 187.73408120964916,
+          "whole_packet_release": 0.5379630134129055,
+          "whole_packet_points": 34.627103386592445
+        },
+        "specialist": {
+          "record_points": 42.729668611580976,
+          "release_probability": 1.0,
+          "released_points": 42.729668611580976,
+          "writer_calls": 2.61930391254493,
+          "input_tokens": 787.8169838135634,
+          "output_tokens": 133.8357669611126,
+          "delivered_criteria_complete": 1.0,
+          "raw_change": 9.06759726592778,
+          "release_change": 0.4579418663308136,
+          "released_score_change": 25.670868540747744,
+          "licensed_points": 42.72966861158099,
+          "whole_packet_input_tokens": 589.4272916969579,
+          "whole_packet_output_tokens": 183.5100722775796,
+          "whole_packet_release": 0.5420581336691864,
+          "whole_packet_points": 33.662071345653196
+        },
+        "specialist_canonical_reply": {
+          "record_points": 42.51075368610117,
+          "release_probability": 1.0,
+          "released_points": 42.51075368610117,
+          "writer_calls": 2.601929712110023,
+          "input_tokens": 782.91745929092,
+          "output_tokens": 132.98095629971527,
+          "delivered_criteria_complete": 1.0,
+          "raw_change": 8.97840970369527,
+          "release_change": 0.45562530627282616,
+          "released_score_change": 25.435737694862024,
+          "licensed_points": 42.510753686101175,
+          "whole_packet_input_tokens": 587.0840911983036,
+          "whole_packet_output_tokens": 182.81394598015436,
+          "whole_packet_release": 0.5443746937271738,
+          "whole_packet_points": 33.5323439824059
+        },
+        "fixed_script": {
+          "record_points": 44.62757996618853,
+          "release_probability": 0.9999999999999996,
+          "released_points": 44.62757996618853,
+          "writer_calls": 2.7663120870901636,
+          "input_tokens": 830.4927454139342,
+          "output_tokens": 140.90143637397543,
+          "delivered_criteria_complete": 0.9999999999999996,
+          "raw_change": 9.727638618852467,
+          "release_change": 0.4514810389344258,
+          "released_score_change": 27.007076206967216,
+          "licensed_points": 44.62757996618853,
+          "whole_packet_input_tokens": 610.8558038647542,
+          "whole_packet_output_tokens": 187.84022591803281,
+          "whole_packet_release": 0.5485189610655737,
+          "whole_packet_points": 34.89994134733606
+        },
+        "adaptive_script": {
+          "record_points": 44.976126368852455,
+          "release_probability": 1.0000000000000002,
+          "released_points": 44.976126368852455,
+          "writer_calls": 2.7939745,
+          "input_tokens": 836.3519100327868,
+          "output_tokens": 142.76862081147542,
+          "delivered_criteria_complete": 1.0000000000000002,
+          "raw_change": 10.053614045081957,
+          "release_change": 0.44634216803278715,
+          "released_score_change": 27.194673811475408,
+          "licensed_points": 44.97612636885247,
+          "whole_packet_input_tokens": 612.4268182295083,
+          "whole_packet_output_tokens": 188.0130836065574,
+          "whole_packet_release": 0.5536578319672131,
+          "whole_packet_points": 34.9225123237705
+        },
+        "pooled_all_three": {
+          "record_points": 50.74999999999999,
+          "release_probability": 1.0,
+          "released_points": 50.74999999999999,
+          "writer_calls": 3.2500000000000004,
+          "input_tokens": 966.9999999999998,
+          "output_tokens": 164.99999999999997,
+          "delivered_criteria_complete": 1.0,
+          "raw_change": 12.249999999999993,
+          "release_change": 0.5,
+          "released_score_change": 33.24999999999999,
+          "licensed_points": 50.75,
+          "whole_packet_input_tokens": 676.25,
+          "whole_packet_output_tokens": 206.25,
+          "whole_packet_release": 0.5,
+          "whole_packet_points": 38.5
+        }
+      }
+    }
+  }
+}

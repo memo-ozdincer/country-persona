@@ -1,0 +1,3235 @@
+{
+  "checks": {
+    "0/full": {
+      "source_only_ready": false,
+      "absent_field": null
+    },
+    "0/withheld": {
+      "source_only_ready": false,
+      "absent_field": "empty"
+    },
+    "1/full": {
+      "source_only_ready": true,
+      "absent_field": null
+    },
+    "1/withheld": {
+      "source_only_ready": false,
+      "absent_field": "empty"
+    },
+    "2/full": {
+      "source_only_ready": true,
+      "absent_field": null
+    },
+    "2/withheld": {
+      "source_only_ready": false,
+      "absent_field": "empty"
+    }
+  },
+  "release_edges": [
+    {
+      "before": 0,
+      "after": 1,
+      "source_validated": 0,
+      "earlier": -42
+    },
+    {
+      "before": 0,
+      "after": 2,
+      "source_validated": 7,
+      "earlier": 7
+    },
+    {
+      "before": 0,
+      "after": 4,
+      "source_validated": 7,
+      "earlier": 7
+    },
+    {
+      "before": 1,
+      "after": 3,
+      "source_validated": 7,
+      "earlier": 0
+    },
+    {
+      "before": 1,
+      "after": 5,
+      "source_validated": 7,
+      "earlier": 0
+    },
+    {
+      "before": 2,
+      "after": 3,
+      "source_validated": 0,
+      "earlier": -49
+    },
+    {
+      "before": 2,
+      "after": 6,
+      "source_validated": 14,
+      "earlier": -49
+    },
+    {
+      "before": 3,
+      "after": 7,
+      "source_validated": 14,
+      "earlier": 0
+    },
+    {
+      "before": 4,
+      "after": 5,
+      "source_validated": 0,
+      "earlier": -49
+    },
+    {
+      "before": 4,
+      "after": 6,
+      "source_validated": 14,
+      "earlier": -49
+    },
+    {
+      "before": 5,
+      "after": 7,
+      "source_validated": 14,
+      "earlier": 0
+    },
+    {
+      "before": 6,
+      "after": 7,
+      "source_validated": 0,
+      "earlier": 0
+    }
+  ],
+  "controls": {
+    "uniform": {
+      "same_priority": {
+        "no_request": {
+          "net": 48.63770312500001,
+          "guarded_points": 49.137703125,
+          "complete_probability": 0.0,
+          "expected_requests": 0.0,
+          "release_probability": 1.0000000000000002,
+          "expected_distinct_cards": 1.610859375
+        },
+        "score_known_request": {
+          "net": 50.103325000000005,
+          "guarded_points": 50.620762500000005,
+          "complete_probability": 0.0,
+          "expected_requests": 0.34875,
+          "release_probability": 1.0000000000000002,
+          "expected_distinct_cards": 1.7167921875000003
+        },
+        "net_gain": 1.4656218749999965
+      },
+      "opposite_priority": {
+        "no_request": {
+          "net": 51.41659375,
+          "guarded_points": 51.916593750000004,
+          "complete_probability": 0.0,
+          "expected_requests": 0.0,
+          "release_probability": 1.0000000000000002,
+          "expected_distinct_cards": 1.6349062500000002
+        },
+        "score_known_request": {
+          "net": 51.46674062500001,
+          "guarded_points": 51.98038125000001,
+          "complete_probability": 0.0,
+          "expected_requests": 0.2728125,
+          "release_probability": 1.0000000000000002,
+          "expected_distinct_cards": 1.6394625000000003
+        },
+        "net_gain": 0.05014687500001003
+      }
+    },
+    "correlated_duplicates": {
+      "same_priority": {
+        "no_request": {
+          "net": 48.965057031250005,
+          "guarded_points": 49.465057031250005,
+          "complete_probability": 0.0,
+          "expected_requests": 0.0,
+          "release_probability": 1.0,
+          "expected_distinct_cards": 1.4967632812500002
+        },
+        "score_known_request": {
+          "net": 49.036952265625004,
+          "guarded_points": 49.543994062500005,
+          "complete_probability": 0.0,
+          "expected_requests": 0.1408359375,
+          "release_probability": 1.0,
+          "expected_distinct_cards": 1.502401640625
+        },
+        "net_gain": 0.071895234374999
+      },
+      "opposite_priority": {
+        "no_request": {
+          "net": 48.718914062500005,
+          "guarded_points": 49.218914062500005,
+          "complete_probability": 0.0,
+          "expected_requests": 0.0,
+          "release_probability": 1.0,
+          "expected_distinct_cards": 1.3914
+        },
+        "score_known_request": {
+          "net": 50.37636109375,
+          "guarded_points": 50.89493062500001,
+          "complete_probability": 0.0,
+          "expected_requests": 0.37139062500000003,
+          "release_probability": 1.0,
+          "expected_distinct_cards": 1.5111154687500001
+        },
+        "net_gain": 1.657447031249994
+      }
+    }
+  },
+  "paths": {
+    "material_bank": {
+      "points": [
+        42,
+        42,
+        49,
+        49,
+        49,
+        49,
+        63,
+        63
+      ],
+      "conditions": {
+        "uniform": {
+          "monotone": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 3.517040625000002,
+                "nominal_regret": 0.9038859375000001,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  3,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.4162171875,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.36140625000000004,
+                    "record_points": 49.935046875
+                  },
+                  "opposite_priority": {
+                    "net": 50.9138734375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.47109375000000003,
+                    "record_points": 51.438187500000005
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49
+                },
+                "bound": 0.8706796874999991,
+                "nominal_regret": 0.3019406250000003,
+                "policy": [
+                  0,
+                  3,
+                  3,
+                  1,
+                  3,
+                  3,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.045935937500005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.8535937500000002,
+                    "record_points": 50.58886875
+                  },
+                  "opposite_priority": {
+                    "net": 50.99663125000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.7396875,
+                    "record_points": 51.53386875
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49
+                },
+                "bound": 0.022804687499999865,
+                "nominal_regret": 0.006890625000004036,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.10079375000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.460412500000004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  5,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63
+                },
+                "bound": 0.006890624999998707,
+                "nominal_regret": 0.006890625000004036,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.10079375000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.460412500000004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  5,
+                  6,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.103325000000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.34875,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.46674062500001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.2728125,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          },
+          "independent": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 12.942710156250001,
+                "nominal_regret": 0.9541875000000033,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.63770312500001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 49.137703125
+                  },
+                  "opposite_priority": {
+                    "net": 51.41659375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 51.916593750000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "7": 63
+                },
+                "bound": 8.700496875,
+                "nominal_regret": 0.5772703124999978,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.486178125,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.25312500000000004,
+                    "record_points": 49.998834375
+                  },
+                  "opposite_priority": {
+                    "net": 51.403937500000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.25312500000000004,
+                    "record_points": 51.916593750000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "5": 49,
+                  "7": 63
+                },
+                "bound": 5.6706562499999995,
+                "nominal_regret": 0.8723203125000012,
+                "policy": [
+                  0,
+                  3,
+                  0,
+                  1,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.431320312500006,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.70734375,
+                    "record_points": 49.96694062500001
+                  },
+                  "opposite_priority": {
+                    "net": 50.94015625000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.5934375000000001,
+                    "record_points": 51.47008125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 2.970810937499999,
+                "nominal_regret": 0.00902343749999801,
+                "policy": [
+                  0,
+                  3,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.0836375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.7425,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.45823281250001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.44296875,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5,
+                  6,
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.103325000000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.34875,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.46674062500001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.2728125,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          }
+        },
+        "correlated_duplicates": {
+          "monotone": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 3.318097031250002,
+                "nominal_regret": 0.8714092968750009,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  2,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.97905835937501,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.28722656250000006,
+                    "record_points": 49.49376140625
+                  },
+                  "opposite_priority": {
+                    "net": 49.8066653125,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.48403125,
+                    "record_points": 50.331208593750006
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "6": 63
+                },
+                "bound": 1.5985321875000016,
+                "nominal_regret": 0.879422578125002,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  2,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.97514195312501,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.36555468750000003,
+                    "record_points": 49.49376140625
+                  },
+                  "opposite_priority": {
+                    "net": 49.799352812500004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.63028125,
+                    "record_points": 50.331208593750006
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63
+                },
+                "bound": 0.2666873437499997,
+                "nominal_regret": 0.26668734374999303,
+                "policy": [
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  2,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  2,
+                  2,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.974312265625,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.8149921874999999,
+                    "record_points": 49.5152896875
+                  },
+                  "opposite_priority": {
+                    "net": 50.326324609375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.7934765625,
+                    "record_points": 50.866226250000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5,
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63
+                },
+                "bound": 0.005111718749999383,
+                "nominal_regret": 0.005111718749994054,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.03581320312501,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.1636171875,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.3707290625,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.48403125,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5,
+                  3,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.036952265625004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.1408359375,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.37636109375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.37139062500000003,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          },
+          "independent": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 10.866073007812503,
+                "nominal_regret": 0.9067603124999977,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.965057031250005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 49.465057031250005
+                  },
+                  "opposite_priority": {
+                    "net": 48.718914062500005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 49.218914062500005
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49
+                },
+                "bound": 8.023636289062502,
+                "nominal_regret": 1.1683359374999966,
+                "policy": [
+                  0,
+                  2,
+                  1,
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.903556093750005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.651375,
+                    "record_points": 49.43635265625001
+                  },
+                  "opposite_priority": {
+                    "net": 48.674509609375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.3094453125,
+                    "record_points": 49.1902096875
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "7": 63
+                },
+                "bound": 4.859691562500001,
+                "nominal_regret": 0.8624125781249958,
+                "policy": [
+                  0,
+                  2,
+                  1,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  0,
+                  2,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.964723750000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.71971875,
+                    "record_points": 49.500937500000006
+                  },
+                  "opposite_priority": {
+                    "net": 49.8066428125,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.63028125,
+                    "record_points": 50.33838468750001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  7,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 2.6662699218749997,
+                "nominal_regret": 0.009990234374996021,
+                "policy": [
+                  0,
+                  2,
+                  0,
+                  2,
+                  2,
+                  2,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.014480390625,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.5902734374999999,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.368201328125004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.5345859375,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  7,
+                  6,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.036952265625004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.1408359375,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.37636109375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.37139062500000003,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          }
+        }
+      }
+    },
+    "released_bank": {
+      "points": [
+        42,
+        42,
+        49,
+        49,
+        49,
+        49,
+        63,
+        63
+      ],
+      "conditions": {
+        "uniform": {
+          "monotone": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 3.517040625000002,
+                "nominal_regret": 0.9038859375000001,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  3,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.4162171875,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.36140625000000004,
+                    "record_points": 49.935046875
+                  },
+                  "opposite_priority": {
+                    "net": 50.9138734375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.47109375000000003,
+                    "record_points": 51.438187500000005
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49
+                },
+                "bound": 0.8706796874999991,
+                "nominal_regret": 0.3019406250000003,
+                "policy": [
+                  0,
+                  3,
+                  3,
+                  1,
+                  3,
+                  3,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.045935937500005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.8535937500000002,
+                    "record_points": 50.58886875
+                  },
+                  "opposite_priority": {
+                    "net": 50.99663125000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.7396875,
+                    "record_points": 51.53386875
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49
+                },
+                "bound": 0.022804687499999865,
+                "nominal_regret": 0.006890625000004036,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.10079375000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.460412500000004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  5,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63
+                },
+                "bound": 0.006890624999998707,
+                "nominal_regret": 0.006890625000004036,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.10079375000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.460412500000004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.39937500000000004,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  5,
+                  6,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.103325000000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.34875,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.46674062500001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.2728125,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          },
+          "independent": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 12.942710156250001,
+                "nominal_regret": 0.9541875000000033,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.63770312500001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 49.137703125
+                  },
+                  "opposite_priority": {
+                    "net": 51.41659375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 51.916593750000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "7": 63
+                },
+                "bound": 8.700496875,
+                "nominal_regret": 0.5772703124999978,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.486178125,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.25312500000000004,
+                    "record_points": 49.998834375
+                  },
+                  "opposite_priority": {
+                    "net": 51.403937500000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.25312500000000004,
+                    "record_points": 51.916593750000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "5": 49,
+                  "7": 63
+                },
+                "bound": 5.6706562499999995,
+                "nominal_regret": 0.8723203125000012,
+                "policy": [
+                  0,
+                  3,
+                  0,
+                  1,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.431320312500006,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.70734375,
+                    "record_points": 49.96694062500001
+                  },
+                  "opposite_priority": {
+                    "net": 50.94015625000001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.5934375000000001,
+                    "record_points": 51.47008125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 2.970810937499999,
+                "nominal_regret": 0.00902343749999801,
+                "policy": [
+                  0,
+                  3,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.0836375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.7425,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.45823281250001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.44296875,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5,
+                  6,
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 50.103325000000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.34875,
+                    "record_points": 50.620762500000005
+                  },
+                  "opposite_priority": {
+                    "net": 51.46674062500001,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.2728125,
+                    "record_points": 51.98038125000001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          }
+        },
+        "correlated_duplicates": {
+          "monotone": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 3.318097031250002,
+                "nominal_regret": 0.8714092968750009,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  2,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.97905835937501,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.28722656250000006,
+                    "record_points": 49.49376140625
+                  },
+                  "opposite_priority": {
+                    "net": 49.8066653125,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.48403125,
+                    "record_points": 50.331208593750006
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "6": 63
+                },
+                "bound": 1.5985321875000016,
+                "nominal_regret": 0.879422578125002,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  2,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.97514195312501,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.36555468750000003,
+                    "record_points": 49.49376140625
+                  },
+                  "opposite_priority": {
+                    "net": 49.799352812500004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.63028125,
+                    "record_points": 50.331208593750006
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63
+                },
+                "bound": 0.2666873437499997,
+                "nominal_regret": 0.26668734374999303,
+                "policy": [
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  2,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  2,
+                  2,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.974312265625,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.8149921874999999,
+                    "record_points": 49.5152896875
+                  },
+                  "opposite_priority": {
+                    "net": 50.326324609375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.7934765625,
+                    "record_points": 50.866226250000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5,
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63
+                },
+                "bound": 0.005111718749999383,
+                "nominal_regret": 0.005111718749994054,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.03581320312501,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.1636171875,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.3707290625,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.48403125,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5,
+                  3,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.036952265625004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.1408359375,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.37636109375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.37139062500000003,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          },
+          "independent": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 10.866073007812503,
+                "nominal_regret": 0.9067603124999977,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.965057031250005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 49.465057031250005
+                  },
+                  "opposite_priority": {
+                    "net": 48.718914062500005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.0,
+                    "record_points": 49.218914062500005
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49
+                },
+                "bound": 8.023636289062502,
+                "nominal_regret": 1.1683359374999966,
+                "policy": [
+                  0,
+                  2,
+                  1,
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.903556093750005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.651375,
+                    "record_points": 49.43635265625001
+                  },
+                  "opposite_priority": {
+                    "net": 48.674509609375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.3094453125,
+                    "record_points": 49.1902096875
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "7": 63
+                },
+                "bound": 4.859691562500001,
+                "nominal_regret": 0.8624125781249958,
+                "policy": [
+                  0,
+                  2,
+                  1,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2,
+                  1,
+                  0,
+                  1,
+                  1,
+                  0,
+                  2,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 48.964723750000005,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.71971875,
+                    "record_points": 49.500937500000006
+                  },
+                  "opposite_priority": {
+                    "net": 49.8066428125,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.63028125,
+                    "record_points": 50.33838468750001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  7,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 2.6662699218749997,
+                "nominal_regret": 0.009990234374996021,
+                "policy": [
+                  0,
+                  2,
+                  0,
+                  2,
+                  2,
+                  2,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.014480390625,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.5902734374999999,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.368201328125004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.5345859375,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  7,
+                  6,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 42,
+                  "2": 49,
+                  "3": 49,
+                  "4": 49,
+                  "5": 49,
+                  "6": 63,
+                  "7": 63
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 49.036952265625004,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.1408359375,
+                    "record_points": 49.543994062500005
+                  },
+                  "opposite_priority": {
+                    "net": 50.37636109375,
+                    "complete_probability": 0.0,
+                    "expected_requests": 0.37139062500000003,
+                    "record_points": 50.89493062500001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          }
+        }
+      }
+    },
+    "fixed_renderer": {
+      "points": [
+        42,
+        49,
+        49,
+        56,
+        49,
+        56,
+        63,
+        70
+      ],
+      "conditions": {
+        "uniform": {
+          "monotone": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 3.5130703125000005,
+                "nominal_regret": 0.5917734374999952,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 56.62450312500001,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.31359375,
+                    "record_points": 54.91667343750001
+                  },
+                  "opposite_priority": {
+                    "net": 58.33773750000001,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.42328125000000005,
+                    "record_points": 55.893862500000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49,
+                  "6": 63
+                },
+                "bound": 1.7360437499999977,
+                "nominal_regret": 0.32969999999999544,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  3,
+                  1,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 56.63313750000001,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.45984375000000005,
+                    "record_points": 54.932620312500006
+                  },
+                  "opposite_priority": {
+                    "net": 58.625442187500006,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.56953125,
+                    "record_points": 56.188879687500005
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "6": 63
+                },
+                "bound": 0.43955624999999676,
+                "nominal_regret": 0.030417187499992338,
+                "policy": [
+                  0,
+                  3,
+                  3,
+                  1,
+                  3,
+                  3,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 57.21943125000001,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.8535937500000002,
+                    "record_points": 55.538601562500006
+                  },
+                  "opposite_priority": {
+                    "net": 58.38570468750001,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.7396875,
+                    "record_points": 55.95765000000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  3,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63
+                },
+                "bound": 0.006890624999998707,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 57.24828750000001,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.4359375000000001,
+                    "record_points": 55.546575000000004
+                  },
+                  "opposite_priority": {
+                    "net": 58.40338125,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.545625,
+                    "record_points": 55.96562343750001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  3,
+                  5,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63,
+                  "7": 70
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 57.24828750000001,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.4359375000000001,
+                    "record_points": 55.546575000000004
+                  },
+                  "opposite_priority": {
+                    "net": 58.40338125,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.545625,
+                    "record_points": 55.96562343750001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          },
+          "independent": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 12.720635156250005,
+                "nominal_regret": 2.69388984375,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 54.49532812500001,
+                    "complete_probability": 0.045562500000000006,
+                    "expected_requests": 0.0,
+                    "record_points": 54.06351562500001
+                  },
+                  "opposite_priority": {
+                    "net": 56.931656249999996,
+                    "complete_probability": 0.09112500000000001,
+                    "expected_requests": 0.0,
+                    "record_points": 55.543031250000006
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49,
+                  "7": 70
+                },
+                "bound": 6.580743750000002,
+                "nominal_regret": 0.614643749999999,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 56.6355,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.25312500000000004,
+                    "record_points": 54.92464687500001
+                  },
+                  "opposite_priority": {
+                    "net": 58.35421875,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.25312500000000004,
+                    "record_points": 55.90183593750001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49,
+                  "5": 56,
+                  "7": 70
+                },
+                "bound": 3.2148375,
+                "nominal_regret": 0.6007968750000003,
+                "policy": [
+                  0,
+                  3,
+                  0,
+                  1,
+                  3,
+                  3,
+                  3,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 56.60481562500001,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.70734375,
+                    "record_points": 54.91667343750001
+                  },
+                  "opposite_priority": {
+                    "net": 58.32922968750001,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.5934375000000001,
+                    "record_points": 55.893862500000004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5,
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "7": 70
+                },
+                "bound": 2.019773437500001,
+                "nominal_regret": 0.34551562499999733,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  0,
+                  3,
+                  1,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 56.61958125,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.41203125000000007,
+                    "record_points": 54.91667343750001
+                  },
+                  "opposite_priority": {
+                    "net": 58.611885937500006,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.52171875,
+                    "record_points": 56.17293281250001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  7,
+                  5,
+                  3,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63,
+                  "7": 70
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  3,
+                  1,
+                  0,
+                  0,
+                  3,
+                  0,
+                  3,
+                  3,
+                  3,
+                  1,
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 57.24828750000001,
+                    "complete_probability": 0.10707187500000001,
+                    "expected_requests": 0.4359375000000001,
+                    "record_points": 55.546575000000004
+                  },
+                  "opposite_priority": {
+                    "net": 58.40338125,
+                    "complete_probability": 0.1423828125,
+                    "expected_requests": 0.545625,
+                    "record_points": 55.96562343750001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          }
+        },
+        "correlated_duplicates": {
+          "monotone": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 3.257921484375003,
+                "nominal_regret": 0.3736650000000026,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  3,
+                  2,
+                  1,
+                  3,
+                  1,
+                  1,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 54.16131984375,
+                    "complete_probability": 0.05023265625000001,
+                    "expected_requests": 0.33862500000000006,
+                    "record_points": 53.6483653125
+                  },
+                  "opposite_priority": {
+                    "net": 56.28585492187501,
+                    "complete_probability": 0.112140703125,
+                    "expected_requests": 0.57403125,
+                    "record_points": 54.48460171875
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49,
+                  "6": 63
+                },
+                "bound": 1.540333593750001,
+                "nominal_regret": 0.31375476562500637,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  1,
+                  0,
+                  0,
+                  3,
+                  2,
+                  1,
+                  3,
+                  1,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 54.152968125,
+                    "complete_probability": 0.05023265625000001,
+                    "expected_requests": 0.4338984375,
+                    "record_points": 53.644777265624995
+                  },
+                  "opposite_priority": {
+                    "net": 56.274107109375,
+                    "complete_probability": 0.112140703125,
+                    "expected_requests": 0.7372265625,
+                    "record_points": 54.481013671875004
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63
+                },
+                "bound": 0.36420421875000053,
+                "nominal_regret": 0.004501875000002542,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  0,
+                  3,
+                  2,
+                  1,
+                  3,
+                  1,
+                  1,
+                  2,
+                  0,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 54.160343203125,
+                    "complete_probability": 0.05023265625000001,
+                    "expected_requests": 0.5016796875,
+                    "record_points": 53.655541406249995
+                  },
+                  "opposite_priority": {
+                    "net": 56.538226875,
+                    "complete_probability": 0.112140703125,
+                    "expected_requests": 0.8050078125,
+                    "record_points": 54.74852250000001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5,
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63
+                },
+                "bound": 0.005111718749999383,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  3,
+                  2,
+                  3,
+                  3,
+                  1,
+                  1,
+                  2,
+                  0,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 54.170908359375,
+                    "complete_probability": 0.05023265625000001,
+                    "expected_requests": 0.4338984375,
+                    "record_points": 53.6627175
+                  },
+                  "opposite_priority": {
+                    "net": 56.54879203125,
+                    "complete_probability": 0.112140703125,
+                    "expected_requests": 0.7372265625,
+                    "record_points": 54.75569859375001
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  6,
+                  5,
+                  3,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63,
+                  "7": 70
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  3,
+                  2,
+                  3,
+                  3,
+                  1,
+                  1,
+                  2,
+                  0,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 54.170908359375,
+                    "complete_probability": 0.05023265625000001,
+                    "expected_requests": 0.4338984375,
+                    "record_points": 53.6627175
+                  },
+                  "opposite_priority": {
+                    "net": 56.54879203125,
+                    "complete_probability": 0.112140703125,
+                    "expected_requests": 0.7372265625,
+                    "record_points": 54.75569859375001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          },
+          "independent": {
+            "steps": [
+              {
+                "reviewed": [],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "4": 49
+                },
+                "bound": 10.654745976562504,
+                "nominal_regret": 2.2187396484375057,
+                "policy": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 53.84815078125,
+                    "complete_probability": 0.04100625000000001,
+                    "expected_requests": 0.0,
+                    "record_points": 53.51201953125
+                  },
+                  "opposite_priority": {
+                    "net": 54.85501875,
+                    "complete_probability": 0.070621875,
+                    "expected_requests": 0.0,
+                    "record_points": 53.896959374999994
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49
+                },
+                "bound": 7.289978789062506,
+                "nominal_regret": 1.9342442578125087,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 53.84523,
+                    "complete_probability": 0.04100625000000001,
+                    "expected_requests": 0.20193750000000002,
+                    "record_points": 53.519195625
+                  },
+                  "opposite_priority": {
+                    "net": 55.015547109375,
+                    "complete_probability": 0.070621875,
+                    "expected_requests": 0.14625000000000002,
+                    "record_points": 54.064800234375
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  6
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "6": 63
+                },
+                "bound": 3.658367226562504,
+                "nominal_regret": 1.5605792578125062,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  0,
+                  2,
+                  0,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 53.854818515625006,
+                    "complete_probability": 0.04100625000000001,
+                    "expected_requests": 0.29721093750000005,
+                    "record_points": 53.533547812500004
+                  },
+                  "opposite_priority": {
+                    "net": 55.27848421875,
+                    "complete_probability": 0.070621875,
+                    "expected_requests": 0.3094453125,
+                    "record_points": 54.335897109375
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  6,
+                  5
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63
+                },
+                "bound": 1.5605792578125022,
+                "nominal_regret": 1.5605792578125062,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  0,
+                  0,
+                  3,
+                  0,
+                  1,
+                  0,
+                  2,
+                  0,
+                  0,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 53.854818515625006,
+                    "complete_probability": 0.04100625000000001,
+                    "expected_requests": 0.29721093750000005,
+                    "record_points": 53.533547812500004
+                  },
+                  "opposite_priority": {
+                    "net": 55.27848421875,
+                    "complete_probability": 0.070621875,
+                    "expected_requests": 0.3094453125,
+                    "record_points": 54.335897109375
+                  }
+                }
+              },
+              {
+                "reviewed": [
+                  3,
+                  6,
+                  5,
+                  7
+                ],
+                "anchors": {
+                  "0": 42,
+                  "1": 49,
+                  "2": 49,
+                  "3": 56,
+                  "4": 49,
+                  "5": 56,
+                  "6": 63,
+                  "7": 70
+                },
+                "bound": 0.0,
+                "nominal_regret": 0.0,
+                "policy": [
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  0,
+                  3,
+                  2,
+                  3,
+                  3,
+                  1,
+                  1,
+                  2,
+                  0,
+                  1,
+                  2
+                ],
+                "bound_holds": true,
+                "teams": {
+                  "same_priority": {
+                    "net": 54.170908359375,
+                    "complete_probability": 0.05023265625000001,
+                    "expected_requests": 0.4338984375,
+                    "record_points": 53.6627175
+                  },
+                  "opposite_priority": {
+                    "net": 56.54879203125,
+                    "complete_probability": 0.112140703125,
+                    "expected_requests": 0.7372265625,
+                    "record_points": 54.75569859375001
+                  }
+                }
+              }
+            ],
+            "contradictory_anchors": []
+          }
+        }
+      }
+    }
+  },
+  "sha256": {
+    "facilitator_validated_accounts_replay.py": "5fc61960a15dffe7097f6e399eadac0b4d7f1921ed19bdbe956bf78f25ef5210",
+    "facilitator_validated_accounts.py": "30107799cc85a5f642565e3b404e4f3a6a2e8bdf10cde9b0bcda671d9adf55f4",
+    "facilitator_fixed_public_bank_score.py": "160897f03abd1d8ec6e2a38ae0b457bc93c3cba6cce231df8456160e91162689",
+    "facilitator_free_record_bank_plan.py": "c27562b40b09b48dd802a83e550986bc4a7a96d1798e0f90d83aa63dee593723",
+    "facilitator-fixed-public-bank-evidence/results.json": "84727abf5ddda7a20bad774da679e45d0df76840549e027c89f4d3c704828b6b"
+  }
+}

@@ -1,0 +1,3294 @@
+{
+  "inputs": {
+    "judge/entailment/package-evidence/metrics.json": "99d656e576fc92da98cb4000676190df273ec47c85bf2979bcdd796efd8eac69",
+    "judge/entailment/field-evidence/invariant-dispatch.json": "3fddad0d3d62b90049a9c3c5b4f9d451ef4d51d5188dd0a026992dc6e5288192",
+    "judge_predictions": "ccacce9718788f252b2f93cf2baa7ef22a04f712b4a06bce5f7f4db26570a80a"
+  },
+  "metrics": {
+    "sanctions/peer_one/correct": 2,
+    "sanctions/peer_one/slots": 20,
+    "sanctions/peer_one/checks": 4,
+    "sanctions/score_one/correct": 4,
+    "sanctions/score_one/slots": 10,
+    "sanctions/score_one/checks": 4,
+    "sanctions/peer_two/correct": 4,
+    "sanctions/peer_two/slots": 14,
+    "sanctions/peer_two/checks": 6,
+    "membership/peer_one/correct": 3,
+    "membership/peer_one/slots": 30,
+    "membership/peer_one/checks": 0,
+    "membership/score_one/correct": 3,
+    "membership/score_one/slots": 30,
+    "membership/score_one/checks": 0,
+    "membership/peer_two/correct": 3,
+    "membership/peer_two/slots": 30,
+    "membership/peer_two/checks": 0
+  },
+  "traces": {
+    "sanctions/DE/peer_one": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "India workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "G": {
+            "India workshop delegate": [
+              "claim-5"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "B",
+          "C",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "D"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-4",
+          "role": "India workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "India workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "E",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "D",
+          "score": 0.25,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 1,
+          "status": "pass"
+        },
+        {
+          "turn": 4,
+          "role": 0,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 1,
+          "status": "pass"
+        },
+        {
+          "turn": 6,
+          "role": 0,
+          "option": "G",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 1,
+          "status": "pass"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/DE/score_one": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-3"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "D"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-3",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "E",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/DE/peer_two": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-3"
+            ],
+            "Brazil workshop delegate": [
+              "claim-4"
+            ]
+          }
+        },
+        "blocked_options": {
+          "D": {
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "D"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-4",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "E",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "D",
+          "score": 0.25,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/DF/peer_one": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "India workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "G": {
+            "India workshop delegate": [
+              "claim-5"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "B",
+          "C",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "D"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-4",
+          "role": "India workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "India workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "D",
+          "score": 0.25,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 1,
+          "status": "pass"
+        },
+        {
+          "turn": 4,
+          "role": 0,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 1,
+          "status": "pass"
+        },
+        {
+          "turn": 6,
+          "role": 0,
+          "option": "G",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 1,
+          "status": "pass"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/DF/score_one": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-3"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "D"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-3",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/DF/peer_two": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-3"
+            ],
+            "Brazil workshop delegate": [
+              "claim-4"
+            ]
+          }
+        },
+        "blocked_options": {
+          "D": {
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "D"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-4",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "D",
+          "score": 0.25,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/FE/peer_one": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-1"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "E",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/FE/score_one": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-1"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "E",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/FE/peer_two": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-1"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "E",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/FF/peer_one": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-1"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/FF/score_one": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-1"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "sanctions/FF/peer_two": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "India workshop delegate": [
+              "claim-1"
+            ],
+            "Brazil workshop delegate": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "India workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "Brazil workshop delegate",
+          "accepts": [
+            "F"
+          ],
+          "excludes": []
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "checked": "F",
+          "score": 1.0,
+          "status": "resolved"
+        },
+        {
+          "turn": 1,
+          "role": 1,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ]
+    },
+    "membership/AB/peer_one": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-8"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "A",
+          "status": "unknown"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/AB/score_one": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-8"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "A",
+          "status": "unknown"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/AB/peer_two": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-8"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "A",
+          "status": "unknown"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/AF/peer_one": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "A",
+          "status": "unknown"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/AF/score_one": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "A",
+          "status": "unknown"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/AF/peer_two": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "A",
+          "status": "unknown"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/CB/peer_one": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-8"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/CB/score_one": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-8"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/CB/peer_two": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "E": {
+            "United Kingdom workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-7"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-8"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/CF/peer_one": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "E": {
+            "France workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-8"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-7"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/CF/score_one": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "E": {
+            "France workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-8"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-7"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    },
+    "membership/CF/peer_two": {
+      "public": {
+        "state": "IMPASSE",
+        "verified_options": {},
+        "blocked_options": {
+          "A": {
+            "United Kingdom workshop delegate": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "France workshop delegate": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "United Kingdom workshop delegate": [
+              "claim-5"
+            ]
+          },
+          "D": {
+            "France workshop delegate": [
+              "claim-4"
+            ]
+          },
+          "E": {
+            "France workshop delegate": [
+              "claim-6"
+            ]
+          },
+          "F": {
+            "France workshop delegate": [
+              "claim-8"
+            ]
+          },
+          "G": {
+            "United Kingdom workshop delegate": [
+              "claim-7"
+            ]
+          }
+        },
+        "unresolved_options": [],
+        "unique_verified": false
+      },
+      "claims": [
+        {
+          "id": "claim-1",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [
+            "B"
+          ],
+          "excludes": []
+        },
+        {
+          "id": "claim-2",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "B"
+          ]
+        },
+        {
+          "id": "claim-3",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "A"
+          ]
+        },
+        {
+          "id": "claim-4",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "D"
+          ]
+        },
+        {
+          "id": "claim-5",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "C"
+          ]
+        },
+        {
+          "id": "claim-6",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "E"
+          ]
+        },
+        {
+          "id": "claim-7",
+          "role": "United Kingdom workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "G"
+          ]
+        },
+        {
+          "id": "claim-8",
+          "role": "France workshop delegate",
+          "accepts": [],
+          "excludes": [
+            "F"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "turn": -2,
+          "role": 0,
+          "option": "C",
+          "status": "untruthful"
+        },
+        {
+          "turn": -1,
+          "role": 1,
+          "option": "F",
+          "status": "unknown"
+        },
+        {
+          "turn": 0,
+          "role": 1,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 1,
+          "role": 0,
+          "option": "B",
+          "status": "admitted"
+        },
+        {
+          "turn": 2,
+          "role": 1,
+          "option": "A",
+          "status": "admitted"
+        },
+        {
+          "turn": 3,
+          "role": 0,
+          "option": "D",
+          "status": "admitted"
+        },
+        {
+          "turn": 4,
+          "role": 1,
+          "option": "C",
+          "status": "admitted"
+        },
+        {
+          "turn": 5,
+          "role": 0,
+          "option": "E",
+          "status": "admitted"
+        },
+        {
+          "turn": 6,
+          "role": 1,
+          "option": "G",
+          "status": "admitted"
+        },
+        {
+          "turn": 7,
+          "role": 0,
+          "option": "F",
+          "status": "admitted"
+        }
+      ],
+      "first_check_shortlist": []
+    }
+  },
+  "target_controls": {
+    "sanctions/DE": {
+      "all_first_targets": {
+        "A": false,
+        "B": false,
+        "C": false,
+        "D": false,
+        "E": false,
+        "F": true,
+        "G": false
+      },
+      "chance_uniform": 0.14285714285714285
+    },
+    "sanctions/DF": {
+      "all_first_targets": {
+        "A": false,
+        "B": false,
+        "C": false,
+        "D": false,
+        "E": false,
+        "F": true,
+        "G": false
+      },
+      "chance_uniform": 0.14285714285714285
+    },
+    "sanctions/FE": {
+      "all_first_targets": {
+        "A": false,
+        "B": false,
+        "C": false,
+        "D": false,
+        "E": false,
+        "F": true,
+        "G": false
+      },
+      "chance_uniform": 0.14285714285714285
+    },
+    "sanctions/FF": {
+      "all_first_targets": {
+        "A": false,
+        "B": false,
+        "C": false,
+        "D": false,
+        "E": false,
+        "F": true,
+        "G": false
+      },
+      "chance_uniform": 0.14285714285714285
+    },
+    "membership/AB": {
+      "all_first_targets": {},
+      "chance_uniform": 1.0
+    },
+    "membership/AF": {
+      "all_first_targets": {},
+      "chance_uniform": 0.0
+    },
+    "membership/CB": {
+      "all_first_targets": {},
+      "chance_uniform": 1.0
+    },
+    "membership/CF": {
+      "all_first_targets": {},
+      "chance_uniform": 1.0
+    }
+  }
+}

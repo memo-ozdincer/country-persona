@@ -1,0 +1,685 @@
+{
+  "scope": "Frozen Qwen one-letter classification. Candidate claim and exact quote are supplied. Each decision must agree over two label assignments. Authored contrast labels and same-assistant labels on previously generated prose are separate.",
+  "results": {
+    "matched_author_controls": {
+      "cases": 16,
+      "by_gold": {
+        "admit": 8,
+        "reject": 8
+      },
+      "scores": {
+        "direct": {
+          "correct": 6,
+          "false_admits": 1,
+          "true_admits": 3,
+          "deferred": 9
+        },
+        "checklist": {
+          "correct": 6,
+          "false_admits": 1,
+          "true_admits": 5,
+          "deferred": 9
+        },
+        "quote_only": {
+          "correct": 8,
+          "false_admits": 8,
+          "true_admits": 8,
+          "deferred": 0
+        }
+      }
+    },
+    "exposed_generated_controls": {
+      "cases": 8,
+      "by_gold": {
+        "reject": 4,
+        "admit": 4
+      },
+      "scores": {
+        "direct": {
+          "correct": 2,
+          "false_admits": 2,
+          "true_admits": 2,
+          "deferred": 4
+        },
+        "checklist": {
+          "correct": 2,
+          "false_admits": 0,
+          "true_admits": 2,
+          "deferred": 6
+        },
+        "quote_only": {
+          "correct": 4,
+          "false_admits": 4,
+          "true_admits": 4,
+          "deferred": 0
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "id": "speaker/admit",
+      "group": "matched_author_controls",
+      "message": "My delegation confirms that its grade for package B is two.",
+      "p": "B",
+      "grade": 2,
+      "span": "package B is two",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "speaker/reject",
+      "group": "matched_author_controls",
+      "message": "The other delegation said its grade for package B is two. We have not given a grade.",
+      "p": "B",
+      "grade": 2,
+      "span": "package B is two",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "withdrawal/admit",
+      "group": "matched_author_controls",
+      "message": "Our confirmed grade for package C is zero. Earlier suggestions are withdrawn.",
+      "p": "C",
+      "grade": 0,
+      "span": "package C is zero",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "withdrawal/reject",
+      "group": "matched_author_controls",
+      "message": "Our earlier grade for package C is zero. I now withdraw that grade and leave C ungraded.",
+      "p": "C",
+      "grade": 0,
+      "span": "package C is zero",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "reject",
+          "reject"
+        ],
+        "stable": "reject"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "reject"
+        ],
+        "stable": "reject"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "proposal/admit",
+      "group": "matched_author_controls",
+      "message": "Under our confirmed mandate, our grade for package A is one.",
+      "p": "A",
+      "grade": 1,
+      "span": "package A is one",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "proposal/reject",
+      "group": "matched_author_controls",
+      "message": "If the chair accepts the amendment, our proposed grade for package A is one. There is no current grade.",
+      "p": "A",
+      "grade": 1,
+      "span": "package A is one",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "admit",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "multiple/admit",
+      "group": "matched_author_controls",
+      "message": "My grade for package B is three. I make no assessment of the other packages.",
+      "p": "B",
+      "grade": 3,
+      "span": "package B is three",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "multiple/reject",
+      "group": "matched_author_controls",
+      "message": "My grade for package B is three. My grade for package A is two.",
+      "p": "B",
+      "grade": 3,
+      "span": "package B is three",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "supersession/admit",
+      "group": "matched_author_controls",
+      "message": "I correct the earlier grade of zero. Our current grade for package C is two.",
+      "p": "C",
+      "grade": 2,
+      "span": "package C is two",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "supersession/reject",
+      "group": "matched_author_controls",
+      "message": "I correct the earlier report that our grade for package C is two. Our current grade for C is zero.",
+      "p": "C",
+      "grade": 2,
+      "span": "package C is two",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "reject",
+          "reject"
+        ],
+        "stable": "reject"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "negated/admit",
+      "group": "matched_author_controls",
+      "message": "I confirm our grade for package A is zero.",
+      "p": "A",
+      "grade": 0,
+      "span": "package A is zero",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "negated/reject",
+      "group": "matched_author_controls",
+      "message": "I reject the suggestion that our grade for package A is zero. Our grade remains undisclosed.",
+      "p": "A",
+      "grade": 0,
+      "span": "package A is zero",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "reject",
+          "reject"
+        ],
+        "stable": "reject"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "chair_voice/admit",
+      "group": "matched_author_controls",
+      "message": "Speaking for my delegation, I confirm our grade for package C is one.",
+      "p": "C",
+      "grade": 1,
+      "span": "package C is one",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "chair_voice/reject",
+      "group": "matched_author_controls",
+      "message": "Speaking only as chair, I record that another delegation's grade for package C is one.",
+      "p": "C",
+      "grade": 1,
+      "span": "package C is one",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "unsent_draft/admit",
+      "group": "matched_author_controls",
+      "message": "Our current grade for package A is three. I authorize this disclosure.",
+      "p": "A",
+      "grade": 3,
+      "span": "package A is three",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "unsent_draft/reject",
+      "group": "matched_author_controls",
+      "message": "The unsent draft says that our grade for package A is three. I am circulating it only as a draft.",
+      "p": "A",
+      "grade": 3,
+      "span": "package A is three",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "admit",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/A0/reject",
+      "group": "exposed_generated_controls",
+      "message": "I respectfully request that my grade of 0 be adjusted to match the A package letter.",
+      "p": "A",
+      "grade": 0,
+      "span": "I respectfully request that my grade of 0 be adjusted to match the A package letter.",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/A0/admit",
+      "group": "exposed_generated_controls",
+      "message": "The package identified as A has been confirmed with a numerical grade of 0.",
+      "p": "A",
+      "grade": 0,
+      "span": "The package identified as A has been confirmed with a numerical grade of 0.",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/B0/reject",
+      "group": "exposed_generated_controls",
+      "message": "I respectfully request that my grade be adjusted from 0 to B to align with the official package letter.",
+      "p": "B",
+      "grade": 0,
+      "span": "I respectfully request that my grade be adjusted from 0 to B to align with the official package letter.",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/B0/admit",
+      "group": "exposed_generated_controls",
+      "message": "The package identified as B has been confirmed with a numerical grade of 0.",
+      "p": "B",
+      "grade": 0,
+      "span": "The package identified as B has been confirmed with a numerical grade of 0.",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "defer"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/C0/reject",
+      "group": "exposed_generated_controls",
+      "message": "I respectfully request a review of my grade of 0 for the C package.",
+      "p": "C",
+      "grade": 0,
+      "span": "I respectfully request a review of my grade of 0 for the C package.",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/C0/admit",
+      "group": "exposed_generated_controls",
+      "message": "The package identified as C has been confirmed with a numerical grade of 0.",
+      "p": "C",
+      "grade": 0,
+      "span": "The package identified as C has been confirmed with a numerical grade of 0.",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/C3/reject",
+      "group": "exposed_generated_controls",
+      "message": "I respectfully request a grade of 3 for my submission, which corresponds to the \"C\" package letter.",
+      "p": "C",
+      "grade": 3,
+      "span": "I respectfully request a grade of 3 for my submission, which corresponds to the \"C\" package letter.",
+      "gold": "reject",
+      "direct": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "checklist": {
+        "decisions": [
+          "reject",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    },
+    {
+      "id": "archive/C3/admit",
+      "group": "exposed_generated_controls",
+      "message": "The delegation confirms that package C has been assigned a numerical grade of 3.",
+      "p": "C",
+      "grade": 3,
+      "span": "The delegation confirms that package C has been assigned a numerical grade of 3.",
+      "gold": "admit",
+      "direct": {
+        "decisions": [
+          "defer",
+          "admit"
+        ],
+        "stable": "defer"
+      },
+      "checklist": {
+        "decisions": [
+          "admit",
+          "admit"
+        ],
+        "stable": "admit"
+      },
+      "quote_only": {
+        "stable": "admit"
+      }
+    }
+  ]
+}

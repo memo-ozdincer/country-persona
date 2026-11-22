@@ -1,0 +1,8 @@
+Before the inference lock was created, the first invocation resolved a different
+module named transfer. AttributeError: module 'transfer' has no attribute 'SETS'.
+Loading the Mali module by its explicit path fixed the collision.
+
+The first deferral-bound invocation re-entered the patched context function.
+RecursionError: maximum recursion depth exceeded. Capturing the original
+compound context manager fixed the replay. Neither failure produced a model
+prediction, a fitted rule or a partial bound.

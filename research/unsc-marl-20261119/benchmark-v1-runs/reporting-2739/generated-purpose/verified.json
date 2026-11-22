@@ -1,0 +1,159 @@
+{
+  "manifest": {
+    "calls.jsonl": "bb0b5a1d497e7dd5a02fb7b5b03af0a474567f9e20f9327aa0e41923cf3ec05f",
+    "candidates.json": "7da5cb43f42431a8baccaaec44c578cd64494457c4828baa177fb577aae56794",
+    "launch.json": "f3718f69be4d9c17a4a4c50124885b2e206a4f9e42613cd6f91680328f5c19cb",
+    "tokens.jsonl": "199f9a0a17395acf2b97f56a759fbd8dd6a04280264dd47eeba0cf55b077d046"
+  },
+  "calls": 12,
+  "cases": {
+    "sponsors-first": {
+      "cards": [
+        "sponsors",
+        "algeria"
+      ],
+      "generated": {
+        "text": "to keep the Council informed",
+        "input_tokens": 302,
+        "output_tokens": 6,
+        "termination": "complete",
+        "logits": {}
+      },
+      "candidate": "The co-sponsors and Algeria shared a reason for continued reporting: to keep the Council informed, although Algeria abstained on the resolution.",
+      "verifier": {
+        "ab": {
+          "text": "B",
+          "input_tokens": 340,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 24.0,
+            "B": 25.375
+          }
+        },
+        "ba": {
+          "text": "B",
+          "input_tokens": 340,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 24.75,
+            "B": 25.25
+          }
+        }
+      },
+      "exact_quote_pair": true
+    },
+    "algeria-first": {
+      "cards": [
+        "algeria",
+        "sponsors"
+      ],
+      "generated": {
+        "text": "to keep the Council informed",
+        "input_tokens": 302,
+        "output_tokens": 6,
+        "termination": "complete",
+        "logits": {}
+      },
+      "candidate": "The co-sponsors and Algeria shared a reason for continued reporting: to keep the Council informed, although Algeria abstained on the resolution.",
+      "verifier": {
+        "ab": {
+          "text": "B",
+          "input_tokens": 340,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 23.875,
+            "B": 25.25
+          }
+        },
+        "ba": {
+          "text": "B",
+          "input_tokens": 340,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 24.375,
+            "B": 25.25
+          }
+        }
+      },
+      "exact_quote_pair": true
+    },
+    "action-first": {
+      "cards": [
+        "action",
+        "algeria"
+      ],
+      "generated": {
+        "text": "to keep the Council informed",
+        "input_tokens": 320,
+        "output_tokens": 6,
+        "termination": "complete",
+        "logits": {}
+      },
+      "candidate": "The co-sponsors and Algeria shared a reason for continued reporting: to keep the Council informed, although Algeria abstained on the resolution.",
+      "verifier": {
+        "ab": {
+          "text": "B",
+          "input_tokens": 378,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 24.0,
+            "B": 25.0
+          }
+        },
+        "ba": {
+          "text": "B",
+          "input_tokens": 378,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 24.5,
+            "B": 25.0
+          }
+        }
+      },
+      "exact_quote_pair": false
+    },
+    "action-second": {
+      "cards": [
+        "algeria",
+        "action"
+      ],
+      "generated": {
+        "text": "to keep the Council informed",
+        "input_tokens": 320,
+        "output_tokens": 6,
+        "termination": "complete",
+        "logits": {}
+      },
+      "candidate": "The co-sponsors and Algeria shared a reason for continued reporting: to keep the Council informed, although Algeria abstained on the resolution.",
+      "verifier": {
+        "ab": {
+          "text": "B",
+          "input_tokens": 378,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 24.75,
+            "B": 25.0
+          }
+        },
+        "ba": {
+          "text": "B",
+          "input_tokens": 378,
+          "output_tokens": 2,
+          "termination": "complete",
+          "logits": {
+            "A": 23.875,
+            "B": 25.25
+          }
+        }
+      },
+      "exact_quote_pair": false
+    }
+  }
+}

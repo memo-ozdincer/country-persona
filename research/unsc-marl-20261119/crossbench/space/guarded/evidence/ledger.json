@@ -1,0 +1,81 @@
+{
+  "scope": "Recorded and constructed boundaries. Owner binding is supplied by the trusted scheduler. The last control deliberately violates that boundary.",
+  "outcomes": {
+    "true_bundle": {
+      "admitted": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "accepts": [
+          "E"
+        ],
+        "excludes": [
+          "C"
+        ]
+      },
+      "receipt": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "withheld": []
+      },
+      "state": "AGREEMENT_POSSIBLE"
+    },
+    "one_missing_selective": {
+      "admitted": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "accepts": [
+          "E"
+        ],
+        "excludes": []
+      },
+      "receipt": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "withheld": [
+          "C"
+        ]
+      },
+      "state": "AGREEMENT_POSSIBLE"
+    },
+    "one_missing_atomic": {
+      "admitted": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "accepts": [],
+        "excludes": []
+      },
+      "receipt": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "withheld": [
+          "C",
+          "E"
+        ]
+      },
+      "state": "UNRESOLVED"
+    },
+    "mandate_foil": {
+      "admitted": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "accepts": [],
+        "excludes": []
+      },
+      "receipt": {
+        "id": "claim-3",
+        "role": "FRANCE",
+        "withheld": [
+          "A",
+          "E"
+        ]
+      },
+      "state": "UNRESOLVED"
+    },
+    "question_has_no_signed_event": {
+      "state": "UNRESOLVED"
+    },
+    "parser_claims_owner_binding": {
+      "state": "AGREEMENT_POSSIBLE"
+    }
+  }
+}

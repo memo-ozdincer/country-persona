@@ -1,0 +1,1120 @@
+{
+  "review": "Same-assistant exact-span review. A revision must preserve the specific contradictory side; a withhold must preserve any known side and leave the remaining position unverified. Only explicitly documented positions can be attributed. Exact citation IDs must be available in the input. End-of-sentence citations are allowed when the sentence names the speakers and distinct positions. Ordinary meeting references are not substitutes for the requested card IDs.",
+  "arms": {
+    "direct": {
+      "counts": {
+        "format_ok": 10,
+        "disposition_right": 15,
+        "source_clear": 23,
+        "attribution_complete": 11,
+        "limits_clear": 19,
+        "strict": 3,
+        "retain_with_wrong_disposition": 5,
+        "retain_without_release_support": 6
+      },
+      "by_required": {
+        "retain": {
+          "cases": 2,
+          "strict": 1
+        },
+        "revise": {
+          "cases": 4,
+          "strict": 0
+        },
+        "withhold": {
+          "cases": 18,
+          "strict": 2
+        }
+      },
+      "replay": {
+        "overlap/visible": {
+          "strict": 0.08540208163317117,
+          "valid_published_replacement": 0.04694975256928208,
+          "valid_contradiction_replacement": 0
+        },
+        "overlap/erased": {
+          "strict": 0.06877307594174482,
+          "valid_published_replacement": 0.04143675384353887,
+          "valid_contradiction_replacement": 0
+        },
+        "split/visible": {
+          "strict": 0.09053427218398784,
+          "valid_published_replacement": 0.0624665583040247,
+          "valid_contradiction_replacement": 0
+        },
+        "split/erased": {
+          "strict": 0.07390712349600326,
+          "valid_published_replacement": 0.056955415778965436,
+          "valid_contradiction_replacement": 0
+        }
+      },
+      "citation_only_failures": [
+        3
+      ],
+      "records": [
+        {
+          "id": 0,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "Evidence is insufficient as no documentary passages support the claim.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 15
+        },
+        {
+          "id": 1,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "withhold",
+          "decision": "retain",
+          "brief": "China and the three African members welcomed Kenya's willingness to lead, as Mozambique's representative spoke on behalf of the three African Council members who supported adoption under Chapter VII. [A3]",
+          "format_ok": true,
+          "disposition_right": false,
+          "known_sides_required": [
+            "A3"
+          ],
+          "known_sides_preserved": {
+            "A3": "China and the three African members welcomed Kenya's willingness to lead"
+          },
+          "ids": [
+            "A3"
+          ],
+          "issues": [
+            [
+              "China and the three African members welcomed Kenya's willingness to lead",
+              "Only the A3 passage arrived. The cited support for adopting the resolution does not document China’s view."
+            ]
+          ],
+          "limits_clear": false,
+          "source_clear": false,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 42
+        },
+        {
+          "id": 2,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "withhold",
+          "decision": "retain",
+          "brief": "China welcomed Kenya's willingness to lead, as Zhang Jun stated in S/PV.9430, pp. 3–4, though he also urged caution regarding Chapter VII.",
+          "format_ok": true,
+          "disposition_right": false,
+          "known_sides_required": [
+            "CHINA"
+          ],
+          "known_sides_preserved": {
+            "CHINA": "China welcomed Kenya's willingness to lead"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": false,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 42
+        },
+        {
+          "id": 3,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "retain",
+          "decision": "retain",
+          "brief": "China's stance is documented as welcoming Kenya's leadership while urging caution, whereas the three African members explicitly welcomed the offer and called for a national consensus.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "A3",
+            "CHINA"
+          ],
+          "known_sides_preserved": {
+            "CHINA": "China's stance is documented as welcoming Kenya's leadership",
+            "A3": "the three African members explicitly welcomed the offer"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 34
+        },
+        {
+          "id": 4,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 19
+        },
+        {
+          "id": 5,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 24
+        },
+        {
+          "id": 6,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "revise",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": false,
+          "known_sides_required": [
+            "CHINA"
+          ],
+          "known_sides_preserved": {
+            "CHINA": "China abstained rather than voting in favor"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": false,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 22
+        },
+        {
+          "id": 7,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "revise",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": false,
+          "known_sides_required": [
+            "CHINA"
+          ],
+          "known_sides_preserved": {
+            "CHINA": "China's record shows an abstention"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": false,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 26
+        },
+        {
+          "id": 8,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 15
+        },
+        {
+          "id": 9,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 38
+        },
+        {
+          "id": 10,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 26
+        },
+        {
+          "id": 11,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 30
+        },
+        {
+          "id": 12,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 15
+        },
+        {
+          "id": 13,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 30
+        },
+        {
+          "id": 14,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "withhold",
+          "decision": "retain",
+          "brief": "France sought an extension of sanctions to support the peace agreement, but the provided text does not document Russia's position. [french-uae]",
+          "format_ok": true,
+          "disposition_right": false,
+          "known_sides_required": [
+            "french-uae"
+          ],
+          "known_sides_preserved": {
+            "french-uae": "France sought an extension of sanctions to support the peace agreement"
+          },
+          "ids": [
+            "french-uae"
+          ],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 33
+        },
+        {
+          "id": 15,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "retain",
+          "decision": "retain",
+          "brief": "France and Russia each sought an extension of sanctions, as the French-UAE passage confirms France's request and the Russian passage confirms Russia's proposal for a final extension. [french-uae], [russia]",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "french-uae",
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "french-uae": "France and Russia each sought an extension of sanctions",
+            "russia": "the Russian passage confirms Russia's proposal for a final extension"
+          },
+          "ids": [
+            "french-uae",
+            "russia"
+          ],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 47
+        },
+        {
+          "id": 16,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "Evidence is insufficient as no documentary passages support the claim that France and Russia proposed keeping the Panel of Experts in operation.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 27
+        },
+        {
+          "id": 17,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "revise",
+          "decision": "withhold",
+          "brief": "The provided Russian passage states Russia proposed dissolving the Panel of Experts, which contradicts the claim that both France and Russia proposed keeping it in operation.",
+          "format_ok": true,
+          "disposition_right": false,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia proposed dissolving the Panel of Experts"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 34
+        },
+        {
+          "id": 18,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 26
+        },
+        {
+          "id": 19,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "revise",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": false,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia proposed dissolving the Panel of Experts"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 34
+        },
+        {
+          "id": 20,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 15
+        },
+        {
+          "id": 21,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "retain",
+          "brief": "Russia stated this would be the final extension of the regime, but the claim that both sides said this is unverified as no supporting passage exists for the second side.",
+          "format_ok": true,
+          "disposition_right": false,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia stated this would be the final extension of the regime"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 37
+        },
+        {
+          "id": 22,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "",
+          "format_ok": false,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 23
+        },
+        {
+          "id": 23,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "retain",
+          "brief": "Both sides are documented: France/UEA sought an extension for peace implementation, while Russia proposed dissolving the Panel to make this the final extension of the regime. [french-uae], [russia]",
+          "format_ok": true,
+          "disposition_right": false,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia proposed dissolving the Panel to make this the final extension"
+          },
+          "ids": [
+            "french-uae",
+            "russia"
+          ],
+          "issues": [],
+          "limits_clear": false,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 47
+        }
+      ]
+    },
+    "staged": {
+      "counts": {
+        "format_ok": 24,
+        "disposition_right": 24,
+        "source_clear": 19,
+        "attribution_complete": 10,
+        "limits_clear": 23,
+        "strict": 8,
+        "retain_with_wrong_disposition": 0,
+        "retain_without_release_support": 1
+      },
+      "by_required": {
+        "retain": {
+          "cases": 2,
+          "strict": 1
+        },
+        "revise": {
+          "cases": 4,
+          "strict": 0
+        },
+        "withhold": {
+          "cases": 18,
+          "strict": 7
+        }
+      },
+      "replay": {
+        "overlap/visible": {
+          "strict": 0.20925649233023141,
+          "valid_published_replacement": 0.04694975256928208,
+          "valid_contradiction_replacement": 0
+        },
+        "overlap/erased": {
+          "strict": 0.1648824739816956,
+          "valid_published_replacement": 0.04143675384353887,
+          "valid_contradiction_replacement": 0
+        },
+        "split/visible": {
+          "strict": 0.2091362582479388,
+          "valid_published_replacement": 0.0624665583040247,
+          "valid_contradiction_replacement": 0
+        },
+        "split/erased": {
+          "strict": 0.16476595470904434,
+          "valid_published_replacement": 0.056955415778965436,
+          "valid_contradiction_replacement": 0
+        }
+      },
+      "citation_only_failures": [
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        17,
+        19
+      ],
+      "records": [
+        {
+          "id": 0,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The evidence is insufficient as no documentary passages support the claim that China and African members welcomed Kenya's leadership.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 25
+        },
+        {
+          "id": 1,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The claim that China welcomed Kenya's leadership is not supported by the provided passage, which only documents the African members' support.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "A3"
+          ],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 29
+        },
+        {
+          "id": 2,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided passage attributes the welcome of Kenya's leadership to China, but the source explicitly states China abstained and only Zhang Jun welcomed the initiative, making the claim unverified for the country as a whole.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "CHINA"
+          ],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [
+            [
+              "making the claim unverified for the country as a whole",
+              "The supplied passage describes an official statement on behalf of China. Abstention does not erase the separate welcome."
+            ]
+          ],
+          "limits_clear": false,
+          "source_clear": false,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 45
+        },
+        {
+          "id": 3,
+          "proposed": "China and the three African members welcomed Kenya's willingness to lead.",
+          "expected": "retain",
+          "decision": "retain",
+          "brief": "China and the three African members welcomed Kenya's willingness to lead, as documented in passages CHINA and A3.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "A3",
+            "CHINA"
+          ],
+          "known_sides_preserved": {
+            "CHINA": "China and the three African members welcomed Kenya's willingness to lead",
+            "A3": "China and the three African members welcomed Kenya's willingness to lead"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 26
+        },
+        {
+          "id": 4,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "Evidence is insufficient as no documentary passages support the claim regarding China's or African members' voting record.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 24
+        },
+        {
+          "id": 5,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided passage only confirms Mozambique spoke for the African members and supported adoption; it does not explicitly state they voted in favor of the authorization.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 33
+        },
+        {
+          "id": 6,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "revise",
+          "decision": "revise",
+          "brief": "China abstained rather than voting in favor, as documented in S/PV.9430, pp. 3–4.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "CHINA"
+          ],
+          "known_sides_preserved": {
+            "CHINA": "China abstained rather than voting in favor"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 32
+        },
+        {
+          "id": 7,
+          "proposed": "China and the three African members voted in favour of the authorization.",
+          "expected": "revise",
+          "decision": "revise",
+          "brief": "China abstained on the authorization vote, as documented in S/PV.9430, pp. 3–4, contradicting the claim that it voted in favor.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "CHINA"
+          ],
+          "known_sides_preserved": {
+            "CHINA": "China abstained on the authorization vote"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 41
+        },
+        {
+          "id": 8,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided documentary passages are empty, so there is no evidence to support the claim that both sides documented their funding pledges.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 28
+        },
+        {
+          "id": 9,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided passage only documents Mozambique's representative speaking on behalf of African Council members regarding Chapter VII support and election processes, offering no evidence of funding pledges or speaker-specific financial commitments.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 40
+        },
+        {
+          "id": 10,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided China passage details diplomatic positions and abstentions but contains no information regarding funding pledges or speaker confirmations of financial amounts.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 29
+        },
+        {
+          "id": 11,
+          "proposed": "Both confirmed how much funding they would provide.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided passages document voting behavior and general policy positions but contain no specific details regarding the exact funding amounts or financial pledges offered by the speakers.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 32
+        },
+        {
+          "id": 12,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The evidence is insufficient as no documentary passages support the claim that France and Russia sought an extension of sanctions.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 25
+        },
+        {
+          "id": 13,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided Russian passage discusses Mali's transitional government and the Panel of Experts, offering no evidence regarding France's stance or a joint sanction extension.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 32
+        },
+        {
+          "id": 14,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided text only documents France's request for a review of sanctions, not a joint effort with Russia to seek an extension.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "french-uae"
+          ],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [
+            [
+              "documents France's request for a review of sanctions",
+              "The source documents seeking extension and says the draft allowed review. It does not describe a review request as France's position."
+            ]
+          ],
+          "limits_clear": true,
+          "source_clear": false,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 29
+        },
+        {
+          "id": 15,
+          "proposed": "France and Russia each sought an extension of sanctions.",
+          "expected": "retain",
+          "decision": "retain",
+          "brief": "France and Russia each sought an extension of sanctions, as documented in the French-UAE passage regarding France's request and the Russian passage proposing a final extension. [french-uae], [russia]",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "french-uae",
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "french-uae": "France and Russia each sought an extension of sanctions",
+            "russia": "the Russian passage proposing a final extension"
+          },
+          "ids": [
+            "french-uae",
+            "russia"
+          ],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 44
+        },
+        {
+          "id": 16,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided documentary passages are empty, so there is insufficient evidence to verify the claim that France and Russia proposed keeping the Panel of Experts in operation.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 33
+        },
+        {
+          "id": 17,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "revise",
+          "decision": "revise",
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia proposed keeping it in operation.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia proposed dissolving the Panel of Experts"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 28
+        },
+        {
+          "id": 18,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided French-UAE passage only documents the UAE's position on sanctions and the draft, offering no evidence that France or Russia proposed keeping the Panel of Experts in operation.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [
+            [
+              "only documents the UAE's position on sanctions and the draft",
+              "The UAE statement expressly documents the proposal sought jointly with France."
+            ]
+          ],
+          "limits_clear": true,
+          "source_clear": false,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 38
+        },
+        {
+          "id": 19,
+          "proposed": "France and Russia each proposed keeping the Panel of Experts in operation.",
+          "expected": "revise",
+          "decision": "revise",
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia sought to keep it in operation.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia proposed dissolving the Panel of Experts"
+          },
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 29
+        },
+        {
+          "id": 20,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "Evidence is insufficient as no documentary passages support the claim that both sides stated this would be the final extension of sanctions.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 27
+        },
+        {
+          "id": 21,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The claim that both sides agreed on a final extension is unsupported; only Russia's proposal for a final extension is documented in passage [1].",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia's proposal for a final extension is documented"
+          },
+          "ids": [
+            "1"
+          ],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": false,
+          "attribution_complete": false,
+          "strict": false,
+          "output_tokens": 32
+        },
+        {
+          "id": 22,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The provided text only documents the UAE's position on sanctions extension; it contains no evidence of France's statement on this specific matter.",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [],
+          "known_sides_preserved": {},
+          "ids": [],
+          "issues": [
+            [
+              "only documents the UAE's position on sanctions extension",
+              "The supplied text explicitly attributes the extension proposal to France and the UAE."
+            ]
+          ],
+          "limits_clear": true,
+          "source_clear": false,
+          "attribution_complete": true,
+          "strict": false,
+          "output_tokens": 30
+        },
+        {
+          "id": 23,
+          "proposed": "Both said this would be the final extension of sanctions.",
+          "expected": "withhold",
+          "decision": "withhold",
+          "brief": "The claim that both sides agreed on a final extension is inaccurate; only Russia explicitly proposed making the extension final, while France and the UAE sought an extension to support implementation. [french-uae] [russia]",
+          "format_ok": true,
+          "disposition_right": true,
+          "known_sides_required": [
+            "russia"
+          ],
+          "known_sides_preserved": {
+            "russia": "Russia explicitly proposed making the extension final"
+          },
+          "ids": [
+            "french-uae",
+            "russia"
+          ],
+          "issues": [],
+          "limits_clear": true,
+          "source_clear": true,
+          "attribution_complete": true,
+          "strict": true,
+          "output_tokens": 48
+        }
+      ]
+    }
+  }
+}

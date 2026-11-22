@@ -1,0 +1,3 @@
+# Give credit to machine-verified individual fields
+
+Replay the same source certificate calls with the archived criterion graphs for Resolutions 2719 and 2504. A checked field may contribute to an independent or joint rubric requirement while the other fields are withheld. Use the same public anchor, authored weight and whole-card initial receipts. The score credits only supplied, verified fields. The six missing-evidence calls are negative controls outside model-policy scoring. Verify the original ceiling for all eight combinations of complete role cards. Keep no-request and frozen-policy comparisons alongside hindsight planning. No writer invents text in this field-credit replay.

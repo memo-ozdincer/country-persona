@@ -1,0 +1,5 @@
+# Live rendering comparison
+
+Freeze the planned worlds and original routing maps. Use canonical desk order for every final writer. For each reached source mask, generate once with the best set of complete clauses that fits 70 words and once with all clauses from those same sources. Reuse the same generation for identical inputs, including pooled and fully received all-clause arms. Pooled has access to the entire source packet without communication. The model sees no action labels, score hints, source-missing names or protected decision paragraph. Give every final a shared 70-word supplementary limit and 170-token generation cap.
+
+The primary comparison separates the frozen routing decision, exact evidence selection, and final writer retention. Use the seven weighted items in the packet and source-span review. Score the France–Russia contrast only when each position and its actual scope are attributed correctly. Gate release for false facts, attribution, authority and excess length. The source excerpts are curator paraphrases. Exact-mask availability and excerpt scores are mechanical under those annotations.

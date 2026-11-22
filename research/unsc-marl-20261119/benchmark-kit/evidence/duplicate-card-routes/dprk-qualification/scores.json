@@ -1,0 +1,319 @@
+{
+  "scope": "Same-assistant exact-span review of the original China output and three new outputs. All six fields must be preserved with a clear factual guard. Reordering and exact withholding are reported alongside the primary unchanged-source prompt comparison.",
+  "annotation_sha256": "a7aa99941982a47711b06b4cc3906b2a284a79bb4b1eb96f9e2078bc91ef1b18",
+  "source_transcript_sha256": "715dcdc034c9c5c8f41fe7a27aa8b0220a9dc96412f12ae05f2aee91d72f9db2",
+  "field_checks": {
+    "CHINA": {
+      "fields": [
+        "vote",
+        "objection",
+        "panel",
+        "time_limit",
+        "reviews"
+      ],
+      "missing": [
+        "consultations"
+      ],
+      "guard": "clear",
+      "words": 24,
+      "tokens": 32,
+      "ended": true,
+      "cited_ids": [
+        "CHINA"
+      ],
+      "eligible_for_hybrid": false
+    },
+    "same_card": {
+      "fields": [
+        "vote",
+        "panel",
+        "time_limit",
+        "reviews"
+      ],
+      "missing": [
+        "objection",
+        "consultations"
+      ],
+      "guard": "failed",
+      "words": 23,
+      "tokens": 32,
+      "ended": true,
+      "cited_ids": [
+        "CHINA"
+      ],
+      "eligible_for_hybrid": false
+    },
+    "reordered_card": {
+      "fields": [
+        "vote",
+        "objection",
+        "consultations",
+        "panel",
+        "time_limit",
+        "reviews"
+      ],
+      "missing": [],
+      "guard": "clear",
+      "words": 25,
+      "tokens": 36,
+      "ended": true,
+      "cited_ids": [
+        "CHINA"
+      ],
+      "eligible_for_hybrid": true
+    },
+    "withheld_qualification": {
+      "fields": [
+        "vote",
+        "objection",
+        "panel",
+        "time_limit",
+        "reviews"
+      ],
+      "missing": [
+        "consultations"
+      ],
+      "guard": "clear",
+      "words": 24,
+      "tokens": 34,
+      "ended": true,
+      "cited_ids": [
+        "CHINA"
+      ],
+      "eligible_for_hybrid": false
+    }
+  },
+  "withheld_control_passed": true,
+  "primary_original_order": {
+    "four_records": [
+      {
+        "received": [],
+        "covered_accounts": [],
+        "unedited_model_clauses": {},
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 87,
+        "authored_plus_reviewed_points": 56
+      },
+      {
+        "received": [
+          "JAPAN"
+        ],
+        "covered_accounts": [
+          "JAPAN"
+        ],
+        "unedited_model_clauses": {
+          "JAPAN": "Council President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations."
+        },
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nCouncil President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations. [JAPAN]\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 107,
+        "authored_plus_reviewed_points": 63
+      },
+      {
+        "received": [
+          "CHINA"
+        ],
+        "covered_accounts": [],
+        "unedited_model_clauses": {},
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 87,
+        "authored_plus_reviewed_points": 56
+      },
+      {
+        "received": [
+          "JAPAN",
+          "CHINA"
+        ],
+        "covered_accounts": [
+          "JAPAN"
+        ],
+        "unedited_model_clauses": {
+          "JAPAN": "Council President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations."
+        },
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nCouncil President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations. [JAPAN]\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 107,
+        "authored_plus_reviewed_points": 63
+      }
+    ],
+    "arms": {
+      "uniform": {
+        "silent": {
+          "prior_writer_points": 60.375,
+          "new_writer_points": 60.375,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 8.45
+        },
+        "always": {
+          "prior_writer_points": 59.9375,
+          "new_writer_points": 59.9375,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 8.8625
+        },
+        "optional": {
+          "prior_writer_points": 60.375,
+          "new_writer_points": 60.375,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 9.299999999999999
+        },
+        "learned": {
+          "prior_writer_points": 60.375,
+          "new_writer_points": 60.375,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 9.299999999999999
+        }
+      },
+      "skew": {
+        "silent": {
+          "prior_writer_points": 61.74,
+          "new_writer_points": 61.74,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 11.120000000000001
+        },
+        "always": {
+          "prior_writer_points": 61.6,
+          "new_writer_points": 61.6,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 11.221
+        },
+        "optional": {
+          "prior_writer_points": 61.74,
+          "new_writer_points": 61.74,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 11.367
+        },
+        "learned": {
+          "prior_writer_points": 61.74,
+          "new_writer_points": 61.74,
+          "both_accounts_probability": 0,
+          "china_account_probability": 0,
+          "routing_reward_unchanged": 11.367
+        }
+      }
+    }
+  },
+  "source_order_diagnostic": {
+    "four_records": [
+      {
+        "received": [],
+        "covered_accounts": [],
+        "unedited_model_clauses": {},
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 87,
+        "authored_plus_reviewed_points": 56
+      },
+      {
+        "received": [
+          "JAPAN"
+        ],
+        "covered_accounts": [
+          "JAPAN"
+        ],
+        "unedited_model_clauses": {
+          "JAPAN": "Council President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations."
+        },
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nCouncil President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations. [JAPAN]\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 107,
+        "authored_plus_reviewed_points": 63
+      },
+      {
+        "received": [
+          "CHINA"
+        ],
+        "covered_accounts": [
+          "CHINA"
+        ],
+        "unedited_model_clauses": {
+          "CHINA": "China abstained due to unaddressed Russian views and noted remaining consultation time, while supporting the Panel's independence, a sanctions time limit, and periodic reviews [CHINA]."
+        },
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nChina abstained due to unaddressed Russian views and noted remaining consultation time, while supporting the Panel's independence, a sanctions time limit, and periodic reviews [CHINA].\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 112,
+        "authored_plus_reviewed_points": 63
+      },
+      {
+        "received": [
+          "JAPAN",
+          "CHINA"
+        ],
+        "covered_accounts": [
+          "JAPAN",
+          "CHINA"
+        ],
+        "unedited_model_clauses": {
+          "JAPAN": "Council President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations.",
+          "CHINA": "China abstained due to unaddressed Russian views and noted remaining consultation time, while supporting the Panel's independence, a sanctions time limit, and periodic reviews [CHINA]."
+        },
+        "record": "On 28 March 2024, U.S. draft S/2024/255 received 13 votes in favour, a Russian veto and a Chinese abstention [VOTE]. The draft proposed extending the 1718 Committee’s Panel of Experts through 30 April 2025, preserving independent, fact-based assessments and requesting midterm and final reports to the Committee [MANDATE, REPORTING]. Neither the extension nor the proposed reporting obligations took effect. The Panel mandate ended on 30 April 2024. The Committee continued and existing sanctions remained in force [SCOPE].\n\nCouncil President Yamazaki, speaking as Japan's representative, stated that Russia's veto forced the Panel of Experts to end operations. [JAPAN]\n\nChina abstained due to unaddressed Russian views and noted remaining consultation time, while supporting the Panel's independence, a sanctions time limit, and periodic reviews [CHINA].\n\nAnalytical suggestion: assess options for continued reporting to the Committee.",
+        "words": 132,
+        "authored_plus_reviewed_points": 70
+      }
+    ],
+    "arms": {
+      "uniform": {
+        "silent": {
+          "prior_writer_points": 60.375,
+          "new_writer_points": 64.75,
+          "both_accounts_probability": 0.3125,
+          "china_account_probability": 0.625,
+          "routing_reward_unchanged": 8.45
+        },
+        "always": {
+          "prior_writer_points": 59.9375,
+          "new_writer_points": 65.1875,
+          "both_accounts_probability": 0.375,
+          "china_account_probability": 0.75,
+          "routing_reward_unchanged": 8.8625
+        },
+        "optional": {
+          "prior_writer_points": 60.375,
+          "new_writer_points": 65.625,
+          "both_accounts_probability": 0.4375,
+          "china_account_probability": 0.75,
+          "routing_reward_unchanged": 9.299999999999999
+        },
+        "learned": {
+          "prior_writer_points": 60.375,
+          "new_writer_points": 65.625,
+          "both_accounts_probability": 0.4375,
+          "china_account_probability": 0.75,
+          "routing_reward_unchanged": 9.299999999999999
+        }
+      },
+      "skew": {
+        "silent": {
+          "prior_writer_points": 61.74,
+          "new_writer_points": 67.48,
+          "both_accounts_probability": 0.65,
+          "china_account_probability": 0.82,
+          "routing_reward_unchanged": 11.120000000000001
+        },
+        "always": {
+          "prior_writer_points": 61.6,
+          "new_writer_points": 67.62,
+          "both_accounts_probability": 0.67,
+          "china_account_probability": 0.86,
+          "routing_reward_unchanged": 11.221
+        },
+        "optional": {
+          "prior_writer_points": 61.74,
+          "new_writer_points": 67.76,
+          "both_accounts_probability": 0.69,
+          "china_account_probability": 0.86,
+          "routing_reward_unchanged": 11.367
+        },
+        "learned": {
+          "prior_writer_points": 61.74,
+          "new_writer_points": 67.76,
+          "both_accounts_probability": 0.69,
+          "china_account_probability": 0.86,
+          "routing_reward_unchanged": 11.367
+        }
+      }
+    }
+  }
+}

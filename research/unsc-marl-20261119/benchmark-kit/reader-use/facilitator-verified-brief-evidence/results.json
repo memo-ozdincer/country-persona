@@ -1,0 +1,629 @@
+{
+  "scope": "The verifier prompt, allowed separator whitespace and vote rule are carried over unchanged. Direct and hybrid use matched call counts. Pooled is a one-call reference. These are normalized source cards and a same-assistant evaluation with a full-evidence final writer.",
+  "verified_generations": 28,
+  "gate_summary": {
+    "direct": {
+      "checks": 8,
+      "correct": 6,
+      "raw_proposed_correct": 6,
+      "supported_correct": 4,
+      "false_conflict": 0,
+      "rules_applied": 0
+    },
+    "hybrid": {
+      "checks": 8,
+      "correct": 7,
+      "raw_proposed_correct": 5,
+      "supported_correct": 5,
+      "false_conflict": 0,
+      "rules_applied": 4
+    }
+  },
+  "record_summary": {
+    "pooled": {
+      "records": 4,
+      "strict": 0,
+      "correct_disposition": 0,
+      "points": 98,
+      "council_complete": 2,
+      "fidelity_errors": 4,
+      "calls": 4,
+      "input_tokens": 1714,
+      "output_tokens": 346
+    },
+    "direct": {
+      "records": 4,
+      "strict": 0,
+      "correct_disposition": 0,
+      "points": 118,
+      "council_complete": 2,
+      "fidelity_errors": 2,
+      "calls": 12,
+      "input_tokens": 3741,
+      "output_tokens": 544
+    },
+    "hybrid": {
+      "records": 4,
+      "strict": 0,
+      "correct_disposition": 0,
+      "points": 128,
+      "council_complete": 2,
+      "fidelity_errors": 1,
+      "calls": 12,
+      "input_tokens": 3893,
+      "output_tokens": 520
+    }
+  },
+  "checks": {
+    "gaza-2728/vote/S1/direct": {
+      "verdict": "conflict",
+      "proposed": "conflict",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "conflict",
+      "review": {
+        "id": "gaza-2728/vote/S1/direct",
+        "grounded": "yes",
+        "span": "Abstaining and voting in favour are mutually exclusive actions regarding a single resolution.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "gaza-2728/vote/S1/compare_first": {
+      "verdict": "conflict",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": true,
+      "expected": "conflict",
+      "review": {
+        "id": "gaza-2728/vote/S1/compare_first",
+        "grounded": "no",
+        "span": "Abstention and voting in favor are distinct roll-call acts that can coexist.",
+        "issue": "Treats distinct votes as compatible occurrences for the same resolution."
+      },
+      "grounded": true
+    },
+    "gaza-2728/vote/S2/direct": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "gaza-2728/vote/S2/direct",
+        "grounded": "yes",
+        "span": "The cited words are identical to the assertion, confirming France supported the resolution and called for a ceasefire.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "gaza-2728/vote/S2/compare_first": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": true,
+      "expected": "open",
+      "review": {
+        "id": "gaza-2728/vote/S2/compare_first",
+        "grounded": "yes",
+        "span": "The cited words are identical to the assertion, establishing a direct match with no conflict.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "gaza-2728/scope/S1/direct": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "gaza-2728/scope/S1/direct",
+        "grounded": "no",
+        "span": "The US supported ceasefire goals and stated diplomacy was still working, which is compatible with saying further work was no longer needed.",
+        "issue": "Does not distinguish the ongoing diplomacy in the card from the asserted future work of the Council."
+      },
+      "grounded": false
+    },
+    "gaza-2728/scope/S1/compare_first": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "gaza-2728/scope/S1/compare_first",
+        "grounded": "no",
+        "span": "Abstention means no vote, while supporting objectives is a separate diplomatic stance; both can be true.",
+        "issue": "Compares a procedural abstention to support for the objectives and omits the asserted future Council role."
+      },
+      "grounded": false
+    },
+    "gaza-2728/scope/S2/direct": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "conflict",
+      "review": {
+        "id": "gaza-2728/scope/S2/direct",
+        "grounded": "no",
+        "span": "France voted for the resolution but simultaneously stated the Council must remain engaged to work toward a ceasefire.",
+        "issue": "Compares the vote and the speech instead of the opposite positions about future Council work."
+      },
+      "grounded": false
+    },
+    "gaza-2728/scope/S2/compare_first": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "conflict",
+      "review": {
+        "id": "gaza-2728/scope/S2/compare_first",
+        "grounded": "no",
+        "span": "France's vote for the resolution and its statement for continued engagement are consistent actions by the same speaker.",
+        "issue": "Checks compatibility of France's factual vote and speech, leaving the opposite assertion untested."
+      },
+      "grounded": false
+    },
+    "myanmar-2669/vote/S1/direct": {
+      "verdict": "unclassified",
+      "proposed": "open",
+      "valid": false,
+      "bound_vote_rule": false,
+      "expected": "conflict",
+      "review": {
+        "id": "myanmar-2669/vote/S1/direct",
+        "grounded": "yes",
+        "span": "The cited words describe the specific vote action (abstention), while the assertion claims a different vote action (favour), making them mutually exclusive for the same speaker on the same resolution.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "myanmar-2669/vote/S1/compare_first": {
+      "verdict": "conflict",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": true,
+      "expected": "conflict",
+      "review": {
+        "id": "myanmar-2669/vote/S1/compare_first",
+        "grounded": "no",
+        "span": "Abstention and voting in favor are distinct roll-call acts that can coexist for the same resolution.",
+        "issue": "Verdict and proof allow incompatible votes on the same instrument."
+      },
+      "grounded": true
+    },
+    "myanmar-2669/vote/S2/direct": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "myanmar-2669/vote/S2/direct",
+        "grounded": "yes",
+        "span": "The cited words are identical to the assertion, confirming the same speaker made the same statement.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "myanmar-2669/vote/S2/compare_first": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": true,
+      "expected": "open",
+      "review": {
+        "id": "myanmar-2669/vote/S2/compare_first",
+        "grounded": "yes",
+        "span": "The cited words are identical to the assertion, establishing the same fact without contradiction.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "myanmar-2669/format/S1/direct": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "myanmar-2669/format/S1/direct",
+        "grounded": "yes",
+        "span": "China preferred a presidential statement for better tone and balance while still supporting ASEAN's role.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "myanmar-2669/format/S1/compare_first": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "myanmar-2669/format/S1/compare_first",
+        "grounded": "yes",
+        "span": "The cited words confirm China's preference for a presidential statement, which is consistent with abstaining rather than voting for the resolution.",
+        "issue": ""
+      },
+      "grounded": true
+    },
+    "myanmar-2669/format/S2/direct": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "myanmar-2669/format/S2/direct",
+        "grounded": "no",
+        "span": "Norway supported the resolution while arguing a presidential statement would have been more suitable for the specific context.",
+        "issue": "Attributes preference for a presidential statement to Norway without evidence."
+      },
+      "grounded": false
+    },
+    "myanmar-2669/format/S2/compare_first": {
+      "verdict": "open",
+      "proposed": "open",
+      "valid": true,
+      "bound_vote_rule": false,
+      "expected": "open",
+      "review": {
+        "id": "myanmar-2669/format/S2/compare_first",
+        "grounded": "no",
+        "span": "Norway's vote supports the resolution while its statement expresses preference for a presidential statement, allowing both to coexist.",
+        "issue": "Attributes preference for a presidential statement to Norway without evidence."
+      },
+      "grounded": false
+    }
+  },
+  "finals": {
+    "gaza-2728/vote/pooled/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 26,
+      "criteria": {
+        "disposition": 0,
+        "council": 0,
+        "s1": 10,
+        "s2": 10,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "gaza-2728/vote/pooled/final",
+        "council": "",
+        "s1": "United States abstained [S1]",
+        "s2": "France voted in favour [S2]",
+        "issue": "No amendments or policy preferences were recorded.",
+        "reason": "The cards contain policy preferences. There is no basis to assert no amendments."
+      },
+      "text": "Retain|The Council recorded the disposition as: United States abstained [S1]; France voted in favour [S2]. Vote count: 14 in favour, 0 against, 1 abstention [S0]. Both speakers' claims are established by the source text. No amendments or policy preferences were recorded. Implementation details remain pending."
+    },
+    "gaza-2728/vote/direct/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 36,
+      "criteria": {
+        "disposition": 0,
+        "council": 0,
+        "s1": 10,
+        "s2": 10,
+        "citation": 0,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "gaza-2728/vote/direct/final",
+        "council": "",
+        "s1": "The US position remains an abstention while supporting ceasefire objectives [S1]",
+        "s2": "France voting in favour [S0]",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "Retain|The Council recorded a 14-0-1 vote for Resolution 2728 (2024), with the United States abstaining [S0] and France voting in favour [S0]. The US position remains an abstention while supporting ceasefire objectives [S1], and France supports continued engagement for a permanent ceasefire [S2]. Both factual attributions are verified against the source text."
+    },
+    "gaza-2728/vote/hybrid/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 36,
+      "criteria": {
+        "disposition": 0,
+        "council": 0,
+        "s1": 10,
+        "s2": 10,
+        "citation": 0,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "gaza-2728/vote/hybrid/final",
+        "council": "",
+        "s1": "The US position remains an abstention while supporting ceasefire objectives [S1]",
+        "s2": "France voting in favour [S0]",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "Retain|The Council recorded a 14-0-1 vote for Resolution 2728 (2024), with the United States abstaining [S0] and France voting in favour [S0]. The US position remains an abstention while supporting ceasefire objectives [S1], and France supports continued engagement for a permanent ceasefire [S2]. Both factual attributions are verified against the source text."
+    },
+    "gaza-2728/scope/pooled/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 18,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 0,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "gaza-2728/scope/pooled/final",
+        "council": "The Council adopted Resolution 2728 (2024) by 14-0-1, establishing the ceasefire framework [S0]",
+        "s1": "",
+        "s2": "",
+        "issue": "the US explicitly denied it",
+        "reason": "The US source discusses ongoing diplomacy and leaves the future Council role open."
+      },
+      "text": "Retain|The Council adopted Resolution 2728 (2024) by 14-0-1, establishing the ceasefire framework [S0]. However, the US abstained and stated diplomacy continues [S1], while France voted in favor but insisted the Council must remain engaged post-adoption [S2]. Both speakers contradict the claim that adoption ended all further work; the US explicitly denied it, and France affirmed continued engagement. No amendment was adopted; the record reflects divergent policy preferences regarding post-resolution mandates [S0][S1][S2]."
+    },
+    "gaza-2728/scope/direct/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 18,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 0,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "gaza-2728/scope/direct/final",
+        "council": "The Council adopted Resolution 2728 (2024) by 14-0-1",
+        "s1": "",
+        "s2": "",
+        "issue": "establishing the need for continued engagement on Gaza (S0)",
+        "reason": "The Council source records adoption and its demands. The statement on continued Council engagement belongs to France."
+      },
+      "text": "Retain|The Council adopted Resolution 2728 (2024) by 14-0-1, establishing the need for continued engagement on Gaza (S0). The US abstained, stating diplomacy remains active (S1). France voted in favor, asserting the Council must remain engaged post-adoption (S2). Both speakers' claims regarding the resolution's status are supported by the record, though their specific positions on future work differ."
+    },
+    "gaza-2728/scope/hybrid/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 18,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 0,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "gaza-2728/scope/hybrid/final",
+        "council": "The Council adopted Resolution 2728 (2024) by 14-0-1",
+        "s1": "",
+        "s2": "",
+        "issue": "establishing the need for continued engagement on Gaza (S0)",
+        "reason": "The Council source records adoption and its demands. The statement on continued Council engagement belongs to France."
+      },
+      "text": "Retain|The Council adopted Resolution 2728 (2024) by 14-0-1, establishing the need for continued engagement on Gaza (S0). The US abstained, stating diplomacy remains active (S1). France voted in favor, asserting the Council must remain engaged post-adoption (S2). Both speakers' claims regarding the resolution's status are supported by the record, though their specific positions on future work differ."
+    },
+    "myanmar-2669/vote/pooled/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 26,
+      "criteria": {
+        "disposition": 0,
+        "council": 0,
+        "s1": 10,
+        "s2": 10,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "myanmar-2669/vote/pooled/final",
+        "council": "",
+        "s1": "China abstained is confirmed by the official record [S1]",
+        "s2": "Norway voted in favour is confirmed by the official record [S2]",
+        "issue": "unanimous approval",
+        "reason": "There were three abstentions."
+      },
+      "text": "Retain|The Council recorded disposition was unanimous approval of the vote count [S0]. Speaker S1's claim that China abstained is confirmed by the official record [S1]. Speaker S2's claim that Norway voted in favour is confirmed by the official record [S2]. Both assertions are fully supported by the source documents."
+    },
+    "myanmar-2669/vote/direct/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 26,
+      "criteria": {
+        "disposition": 0,
+        "council": 0,
+        "s1": 10,
+        "s2": 10,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "myanmar-2669/vote/direct/final",
+        "council": "",
+        "s1": "China abstained [S1]",
+        "s2": "Norway voted in favour [S2]",
+        "issue": "Implementation remains pending.",
+        "reason": "The source establishes the decision and its demand, with implementation status unspecified."
+      },
+      "text": "Retain|The Council recorded disposition: Both claims are established. Vote count [S0]: 12 in favour, 0 against, 3 abstentions. China abstained [S1]; Norway voted in favour [S2]. Evidence gaps: None for these specific assertions. Source citations [S0] confirm the vote tally; [S1] and [S2] provide individual state positions. Implementation remains pending."
+    },
+    "myanmar-2669/vote/hybrid/final": {
+      "expected": "revise",
+      "disposition": "retain",
+      "points": 36,
+      "criteria": {
+        "disposition": 0,
+        "council": 0,
+        "s1": 10,
+        "s2": 10,
+        "citation": 0,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "myanmar-2669/vote/hybrid/final",
+        "council": "",
+        "s1": "China abstained",
+        "s2": "Norway voted in favour of resolution 2669 (2022)",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "Retain|The Council recorded disposition is that China abstained and Norway voted in favour of resolution 2669 (2022), with 12 votes in favour, none against, and three abstentions [S0]. This aligns with the verified sources [S1][S2]. The witness checks confirm no contradictions exist for these specific factual attributions."
+    },
+    "myanmar-2669/format/pooled/final": {
+      "expected": "withhold",
+      "disposition": "retain",
+      "points": 28,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 10,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "myanmar-2669/format/pooled/final",
+        "council": "The Council adopted resolution 2669 (2022) by 12-0-3",
+        "s1": "China abstaining and arguing a presidential statement was more appropriate due to tonal imbalances [S1]",
+        "s2": "",
+        "issue": "Both speakers' positions regarding the preference for a presidential statement are established",
+        "reason": "Norway's card leaves its instrument preference open."
+      },
+      "text": "Retain|The Council adopted resolution 2669 (2022) by 12-0-3, with China abstaining and arguing a presidential statement was more appropriate due to tonal imbalances [S1]. Norway voted in favor, welcoming the adoption and calling for an end to violence [S2]. Both speakers' positions regarding the preference for a presidential statement are established by their respective records."
+    },
+    "myanmar-2669/format/direct/final": {
+      "expected": "withhold",
+      "disposition": "retain",
+      "points": 38,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 10,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "myanmar-2669/format/direct/final",
+        "council": "The Council adopted resolution 2669 (2022) by 12-0-3",
+        "s1": "China abstaining and arguing a presidential statement was more appropriate due to tonal imbalances [S1]",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "Retain|The Council adopted resolution 2669 (2022) by 12-0-3, with China abstaining and arguing a presidential statement was more appropriate due to tonal imbalances [S1]. Norway voted in favour, welcoming the adoption and calling for an end to violence [S2]. Both speakers' positions are supported by the record."
+    },
+    "myanmar-2669/format/hybrid/final": {
+      "expected": "withhold",
+      "disposition": "retain",
+      "points": 38,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 10,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "id": "myanmar-2669/format/hybrid/final",
+        "council": "The Council adopted resolution 2669 (2022) by 12-0-3",
+        "s1": "China abstaining and arguing a presidential statement was more appropriate due to tonal imbalances [S1]",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "Retain|The Council adopted resolution 2669 (2022) by 12-0-3, with China abstaining and arguing a presidential statement was more appropriate due to tonal imbalances [S1]. Norway voted in favour, welcoming the adoption and calling for an end to violence [S2]. Both speakers' positions are supported by the record."
+    }
+  },
+  "paired_input_audit": {
+    "gaza-2728/vote": {
+      "direct_labels": {
+        "S1": "conflict",
+        "S2": "open"
+      },
+      "hybrid_labels": {
+        "S1": "conflict",
+        "S2": "open"
+      },
+      "direct_hybrid_prompt_differs": false,
+      "direct_hybrid_output_differs": false
+    },
+    "gaza-2728/scope": {
+      "direct_labels": {
+        "S1": "open",
+        "S2": "open"
+      },
+      "hybrid_labels": {
+        "S1": "open",
+        "S2": "open"
+      },
+      "direct_hybrid_prompt_differs": false,
+      "direct_hybrid_output_differs": false
+    },
+    "myanmar-2669/vote": {
+      "direct_labels": {
+        "S1": "unclassified",
+        "S2": "open"
+      },
+      "hybrid_labels": {
+        "S1": "conflict",
+        "S2": "open"
+      },
+      "direct_hybrid_prompt_differs": true,
+      "direct_hybrid_output_differs": true
+    },
+    "myanmar-2669/format": {
+      "direct_labels": {
+        "S1": "open",
+        "S2": "open"
+      },
+      "hybrid_labels": {
+        "S1": "open",
+        "S2": "open"
+      },
+      "direct_hybrid_prompt_differs": false,
+      "direct_hybrid_output_differs": false
+    }
+  },
+  "sha256": {
+    "facilitator_verified_brief_score.py": "c23a3688ebef0eb394d0e42f797e149b2509cfadeb6ffd5e1f9c58ef25ceb37c",
+    "review.tsv": "e84b0c00b4fef249e75b7653989f0e0b3c07a21f88939754ffc1ed936f3a9d7a",
+    "checks-review.tsv": "2abe7459c4bab9b88022ae5a52f7601a45c4fcf99168a361a10e712187d4a9c9",
+    "transcript.jsonl": "17c40ed7b57d7f48c41b19a65fe6017f7f936122c25355aeaec00d3d26b96ca2"
+  }
+}

@@ -1,0 +1,656 @@
+{
+  "scope": "Frozen model disposition and source-local claim reading. The side statements are authored. Replayed output publishes the existing proposed sentence only after supported retain. No replacement prose is generated on revise or withhold. Inventories and receipt losses are simulated.",
+  "relations": {
+    "0": {
+      "CHINA": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "supports"
+      },
+      "A3": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "supports"
+      }
+    },
+    "1": {
+      "CHINA": {
+        "votes": [
+          "contradicts",
+          "contradicts"
+        ],
+        "expected": "contradicts"
+      },
+      "A3": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "unknown"
+      }
+    },
+    "2": {
+      "CHINA": {
+        "votes": [
+          "unknown",
+          "unknown"
+        ],
+        "expected": "unknown"
+      },
+      "A3": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "unknown"
+      }
+    },
+    "3": {
+      "french-uae": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "supports"
+      },
+      "russia": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "supports"
+      }
+    },
+    "4": {
+      "french-uae": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "unknown"
+      },
+      "russia": {
+        "votes": [
+          "contradicts",
+          "contradicts"
+        ],
+        "expected": "contradicts"
+      }
+    },
+    "5": {
+      "french-uae": {
+        "votes": [
+          null,
+          "unknown"
+        ],
+        "expected": "unknown"
+      },
+      "russia": {
+        "votes": [
+          "supports",
+          "supports"
+        ],
+        "expected": "supports"
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": 0,
+      "docket": "haiti",
+      "proposal": "China and the three African members welcomed Kenya's willingness to lead.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {},
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 1,
+      "docket": "haiti",
+      "proposal": "China and the three African members welcomed Kenya's willingness to lead.",
+      "expected": "withhold",
+      "direct_votes": [
+        "retain",
+        "retain"
+      ],
+      "direct": "retain",
+      "separate_relations": {
+        "A3": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 2,
+      "docket": "haiti",
+      "proposal": "China and the three African members welcomed Kenya's willingness to lead.",
+      "expected": "withhold",
+      "direct_votes": [
+        "retain",
+        "retain"
+      ],
+      "direct": "retain",
+      "separate_relations": {
+        "CHINA": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 3,
+      "docket": "haiti",
+      "proposal": "China and the three African members welcomed Kenya's willingness to lead.",
+      "expected": "retain",
+      "direct_votes": [
+        "retain",
+        "retain"
+      ],
+      "direct": "retain",
+      "separate_relations": {
+        "CHINA": "supports",
+        "A3": "supports"
+      },
+      "separate": "retain",
+      "oracle": "retain",
+      "published_original": "China and the three African members welcomed Kenya's willingness to lead."
+    },
+    {
+      "id": 4,
+      "docket": "haiti",
+      "proposal": "China and the three African members voted in favour of the authorization.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {},
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 5,
+      "docket": "haiti",
+      "proposal": "China and the three African members voted in favour of the authorization.",
+      "expected": "withhold",
+      "direct_votes": [
+        "retain",
+        null
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "A3": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 6,
+      "docket": "haiti",
+      "proposal": "China and the three African members voted in favour of the authorization.",
+      "expected": "revise",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "CHINA": "contradicts"
+      },
+      "separate": "revise",
+      "oracle": "revise",
+      "published_original": null
+    },
+    {
+      "id": 7,
+      "docket": "haiti",
+      "proposal": "China and the three African members voted in favour of the authorization.",
+      "expected": "revise",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "CHINA": "contradicts",
+        "A3": "supports"
+      },
+      "separate": "revise",
+      "oracle": "revise",
+      "published_original": null
+    },
+    {
+      "id": 8,
+      "docket": "haiti",
+      "proposal": "Both confirmed how much funding they would provide.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {},
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 9,
+      "docket": "haiti",
+      "proposal": "Both confirmed how much funding they would provide.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "A3": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 10,
+      "docket": "haiti",
+      "proposal": "Both confirmed how much funding they would provide.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "CHINA": "unknown"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 11,
+      "docket": "haiti",
+      "proposal": "Both confirmed how much funding they would provide.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "CHINA": "unknown",
+        "A3": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 12,
+      "docket": "mali",
+      "proposal": "France and Russia each sought an extension of sanctions.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {},
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 13,
+      "docket": "mali",
+      "proposal": "France and Russia each sought an extension of sanctions.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "russia": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 14,
+      "docket": "mali",
+      "proposal": "France and Russia each sought an extension of sanctions.",
+      "expected": "withhold",
+      "direct_votes": [
+        "retain",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "french-uae": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 15,
+      "docket": "mali",
+      "proposal": "France and Russia each sought an extension of sanctions.",
+      "expected": "retain",
+      "direct_votes": [
+        null,
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "french-uae": "supports",
+        "russia": "supports"
+      },
+      "separate": "retain",
+      "oracle": "retain",
+      "published_original": "France and Russia each sought an extension of sanctions."
+    },
+    {
+      "id": 16,
+      "docket": "mali",
+      "proposal": "France and Russia each proposed keeping the Panel of Experts in operation.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {},
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 17,
+      "docket": "mali",
+      "proposal": "France and Russia each proposed keeping the Panel of Experts in operation.",
+      "expected": "revise",
+      "direct_votes": [
+        "revise",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "russia": "contradicts"
+      },
+      "separate": "revise",
+      "oracle": "revise",
+      "published_original": null
+    },
+    {
+      "id": 18,
+      "docket": "mali",
+      "proposal": "France and Russia each proposed keeping the Panel of Experts in operation.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "french-uae": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 19,
+      "docket": "mali",
+      "proposal": "France and Russia each proposed keeping the Panel of Experts in operation.",
+      "expected": "revise",
+      "direct_votes": [
+        "revise",
+        "revise"
+      ],
+      "direct": "revise",
+      "separate_relations": {
+        "french-uae": "supports",
+        "russia": "contradicts"
+      },
+      "separate": "revise",
+      "oracle": "revise",
+      "published_original": null
+    },
+    {
+      "id": 20,
+      "docket": "mali",
+      "proposal": "Both said this would be the final extension of sanctions.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {},
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 21,
+      "docket": "mali",
+      "proposal": "Both said this would be the final extension of sanctions.",
+      "expected": "withhold",
+      "direct_votes": [
+        "retain",
+        "retain"
+      ],
+      "direct": "retain",
+      "separate_relations": {
+        "russia": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 22,
+      "docket": "mali",
+      "proposal": "Both said this would be the final extension of sanctions.",
+      "expected": "withhold",
+      "direct_votes": [
+        "withhold",
+        "withhold"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "french-uae": null
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    },
+    {
+      "id": 23,
+      "docket": "mali",
+      "proposal": "Both said this would be the final extension of sanctions.",
+      "expected": "withhold",
+      "direct_votes": [
+        "revise",
+        "retain"
+      ],
+      "direct": "withhold",
+      "separate_relations": {
+        "french-uae": null,
+        "russia": "supports"
+      },
+      "separate": "withhold",
+      "oracle": "withhold",
+      "published_original": null
+    }
+  ],
+  "measured": {
+    "direct": {
+      "by_required_action": {
+        "withhold": {
+          "correct": 15,
+          "total": 18
+        },
+        "retain": {
+          "correct": 1,
+          "total": 2
+        },
+        "revise": {
+          "correct": 1,
+          "total": 4
+        }
+      },
+      "false_retain": 3,
+      "all_four_views_correct": 1,
+      "total_correct": 17
+    },
+    "separate": {
+      "by_required_action": {
+        "withhold": {
+          "correct": 18,
+          "total": 18
+        },
+        "retain": {
+          "correct": 2,
+          "total": 2
+        },
+        "revise": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "false_retain": 0,
+      "all_four_views_correct": 6,
+      "total_correct": 24
+    },
+    "oracle": {
+      "by_required_action": {
+        "withhold": {
+          "correct": 18,
+          "total": 18
+        },
+        "retain": {
+          "correct": 2,
+          "total": 2
+        },
+        "revise": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "false_retain": 0,
+      "all_four_views_correct": 6,
+      "total_correct": 24
+    }
+  },
+  "routing": {
+    "direct": {
+      "overlap": {
+        "visible": {
+          "decision_accuracy": 0.6583315147890658,
+          "documented_common_ground_released": 0.04694975256928208,
+          "false_retention": 0.14727823050693029,
+          "correct_revision": 0.04694975256928208
+        },
+        "erased": {
+          "decision_accuracy": 0.6382166776944007,
+          "documented_common_ground_released": 0.04143675384353887,
+          "false_retention": 0.16734806284449638,
+          "correct_revision": 0.04143675384353887
+        }
+      },
+      "split": {
+        "visible": {
+          "decision_accuracy": 0.6551763475326506,
+          "documented_common_ground_released": 0.0624665583040247,
+          "false_retention": 0.12972428443663936,
+          "correct_revision": 0.0624665583040247
+        },
+        "erased": {
+          "decision_accuracy": 0.6329928123658152,
+          "documented_common_ground_released": 0.056955415778965436,
+          "false_retention": 0.15186095904707134,
+          "correct_revision": 0.056955415778965436
+        }
+      }
+    },
+    "separate": {
+      "overlap": {
+        "visible": {
+          "decision_accuracy": 1.0000000000000002,
+          "documented_common_ground_released": 0.09389950513856415,
+          "false_retention": 0.0,
+          "correct_revision": 0.19439025470400423
+        },
+        "erased": {
+          "decision_accuracy": 0.9999999999999994,
+          "documented_common_ground_released": 0.08287350768707774,
+          "false_retention": 0.0,
+          "correct_revision": 0.1944352594611025
+        }
+      },
+      "split": {
+        "visible": {
+          "decision_accuracy": 0.9999999999999998,
+          "documented_common_ground_released": 0.1249331166080494,
+          "false_retention": 0.0,
+          "correct_revision": 0.21509936803070975
+        },
+        "erased": {
+          "decision_accuracy": 0.9999999999999998,
+          "documented_common_ground_released": 0.11391083155793087,
+          "false_retention": 0.0,
+          "correct_revision": 0.21514622858711313
+        }
+      }
+    },
+    "oracle": {
+      "overlap": {
+        "visible": {
+          "decision_accuracy": 1.0000000000000002,
+          "documented_common_ground_released": 0.09389950513856415,
+          "false_retention": 0.0,
+          "correct_revision": 0.19439025470400423
+        },
+        "erased": {
+          "decision_accuracy": 0.9999999999999994,
+          "documented_common_ground_released": 0.08287350768707774,
+          "false_retention": 0.0,
+          "correct_revision": 0.1944352594611025
+        }
+      },
+      "split": {
+        "visible": {
+          "decision_accuracy": 0.9999999999999998,
+          "documented_common_ground_released": 0.1249331166080494,
+          "false_retention": 0.0,
+          "correct_revision": 0.21509936803070975
+        },
+        "erased": {
+          "decision_accuracy": 0.9999999999999998,
+          "documented_common_ground_released": 0.11391083155793087,
+          "false_retention": 0.0,
+          "correct_revision": 0.21514622858711313
+        }
+      }
+    }
+  }
+}

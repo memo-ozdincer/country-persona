@@ -1,0 +1,66 @@
+{
+  "physical_request_limit": 6,
+  "reference_requests": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select passage IDs that preserve this speaker's distinct position. Retain the mandate request and the specifics of localization. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"somalia\", \"stage\": \"opening\", \"private_inventory\": [\"somalia\"], \"earlier_attempt\": null, \"heard_question\": null, \"passages\": {\"8\": \"Somalia welcomed adoption as implementing its own two-year handover request.\", \"1\": \"It thanked the UK and past mission staff.\", \"5\": \"It urged local procurement and hiring Somali staff, especially women, during drawdown.\"}}"
+        }
+      ],
+      "max_output_tokens": 72
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select passage IDs that preserve this speaker's distinct position. Retain the position on the transition, ownership, tailored aid, and local procurement. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"china\", \"stage\": \"opening\", \"private_inventory\": [\"china\", \"somalia\", \"us\"], \"earlier_attempt\": null, \"heard_question\": null, \"passages\": {\"4\": \"It praised UNSOM's past political support and coordination of international assistance.\", \"9\": \"China welcomed adoption and called for Somali ownership and support tailored to national priorities.\", \"2\": \"It urged transfer of knowledge and skills to local employees and wider local procurement.\"}}"
+        }
+      ],
+      "max_output_tokens": 72
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select complete passages that preserve the U.S. vote, reason and reporting reservation. Return a JSON array of ID strings. Omit secondary details."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"us\", \"stage\": \"reply\", \"private_inventory\": [\"china\", \"somalia\", \"us\"], \"earlier_attempt\": \"china\", \"heard_question\": \"us\", \"passages\": {\"73\": \"The United States voted yes and welcomed reviewing conditions before each transition phase. It objected to fewer Council reports and briefings.\", \"5\": \"It valued the mission's work on reconciliation and the rule of law.\"}}"
+        }
+      ],
+      "max_output_tokens": 72
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select passage IDs that preserve this speaker's distinct position. Retain the mandate request and the specifics of localization. Return only a JSON array of ID strings ordered by importance. Omit merely secondary detail."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write the 30 October 2024 decision record on the UN mission transition in Somalia. Separate the Council's decision from each speaker's view. Preserve what the speakers agreed on and which issues they emphasized separately.\", \"speaker\": \"somalia\", \"stage\": \"reply\", \"private_inventory\": [\"china\", \"somalia\", \"us\"], \"earlier_attempt\": \"china\", \"heard_question\": null, \"passages\": {\"8\": \"Somalia welcomed adoption as implementing its own two-year handover request.\", \"1\": \"It thanked the UK and past mission staff.\", \"5\": \"It urged local procurement and hiring Somali staff, especially women, during drawdown.\"}}"
+        }
+      ],
+      "max_output_tokens": 72
+    }
+  ],
+  "sha256": {
+    "causal/compounded/structured/structured_live.py": "d44edd0898c81a25fe1a12a9c649082046baaf2a2ba2d26f43b41083bf5dfbad",
+    "causal/compounded/structured/protocol.md": "9ddaba1d4793a86ff3a4959b5037c3735c310939b44ed3f62c96b4a433676e1a",
+    "causal/compounded/structured/passage_codec.py": "3cab0debee4dacd83274e214b7fe022d2cb9848d66ef038b4b31a73e28d1f84f",
+    "causal/compounded/plan.json": "2f5038db05f0ba9e481bcba7084598e19029f1114a607c307ed280c8459897cb",
+    "causal/plan.json": "38476a41305393c8cfdc3d74d333968a8079f132dbf34d7e218513b01d0b3492",
+    "causal/compounded/compound_reply.py": "8afdce21cf42f6acaf9eba5ff57cc387e8b9f7dbca63048a294cf5db0fd0697d",
+    "live_somalia.py": "da06fdede0939fa8ef48dbf28dfe0ca59b8dee7907389758f82db28dce99a6c4"
+  }
+}

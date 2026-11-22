@@ -1,0 +1,399 @@
+{
+  "fixtures": {
+    "0/0": {
+      "receipts": [
+        "ru-condition",
+        "consultation"
+      ],
+      "packet": {
+        "delegate_statement": "Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.",
+        "adopted_provision": "Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement."
+      },
+      "expected": "conditions"
+    },
+    "0/1": {
+      "receipts": [
+        "ru-condition",
+        "unama-scope"
+      ],
+      "packet": {
+        "delegate_statement": "Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.",
+        "adopted_provision": "Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative."
+      },
+      "expected": "none"
+    },
+    "1/0": {
+      "receipts": [
+        "a3-complement",
+        "consultation"
+      ],
+      "packet": {
+        "delegate_statement": "Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.",
+        "adopted_provision": "Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement."
+      },
+      "expected": "none"
+    },
+    "1/1": {
+      "receipts": [
+        "a3-complement",
+        "unama-scope"
+      ],
+      "packet": {
+        "delegate_statement": "Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.",
+        "adopted_provision": "Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative."
+      },
+      "expected": "mandates"
+    },
+    "condition-speaker": {
+      "receipts": [],
+      "packet": {
+        "delegate_statement": "Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would support the envoy appointment after consultation with the de facto authorities even without their agreement.",
+        "adopted_provision": "Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement."
+      },
+      "expected": "none",
+      "changed_from": "0/0"
+    },
+    "condition-clause": {
+      "receipts": [],
+      "packet": {
+        "delegate_statement": "Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.",
+        "adopted_provision": "Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms also require consent from the de facto authorities."
+      },
+      "expected": "none",
+      "changed_from": "0/0"
+    },
+    "mandate-speaker": {
+      "receipts": [],
+      "packet": {
+        "delegate_statement": "Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential replacement for UNAMA’s work.",
+        "adopted_provision": "Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative."
+      },
+      "expected": "none",
+      "changed_from": "1/1"
+    },
+    "mandate-clause": {
+      "receipts": [],
+      "packet": {
+        "delegate_statement": "Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.",
+        "adopted_provision": "Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, transferring the mandate and work of UNAMA and the Special Representative to the new envoy."
+      },
+      "expected": "none",
+      "changed_from": "1/1"
+    }
+  },
+  "requests": {
+    "0/0/abc": {
+      "receipts": [
+        "ru-condition",
+        "consultation"
+      ],
+      "request": {
+        "id": "0/0/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "0/0/bca": {
+      "receipts": [
+        "ru-condition",
+        "consultation"
+      ],
+      "request": {
+        "id": "0/0/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    },
+    "0/1/abc": {
+      "receipts": [
+        "ru-condition",
+        "unama-scope"
+      ],
+      "request": {
+        "id": "0/1/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "0/1/bca": {
+      "receipts": [
+        "ru-condition",
+        "unama-scope"
+      ],
+      "request": {
+        "id": "0/1/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    },
+    "1/0/abc": {
+      "receipts": [
+        "a3-complement",
+        "consultation"
+      ],
+      "request": {
+        "id": "1/0/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "1/0/bca": {
+      "receipts": [
+        "a3-complement",
+        "consultation"
+      ],
+      "request": {
+        "id": "1/0/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    },
+    "1/1/abc": {
+      "receipts": [
+        "a3-complement",
+        "unama-scope"
+      ],
+      "request": {
+        "id": "1/1/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "1/1/bca": {
+      "receipts": [
+        "a3-complement",
+        "unama-scope"
+      ],
+      "request": {
+        "id": "1/1/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    },
+    "condition-speaker/abc": {
+      "receipts": [],
+      "request": {
+        "id": "condition-speaker/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would support the envoy appointment after consultation with the de facto authorities even without their agreement.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "condition-speaker/bca": {
+      "receipts": [],
+      "request": {
+        "id": "condition-speaker/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would support the envoy appointment after consultation with the de facto authorities even without their agreement.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms contain no consent requirement.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    },
+    "condition-clause/abc": {
+      "receipts": [],
+      "request": {
+        "id": "condition-clause/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms also require consent from the de facto authorities.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "condition-clause/bca": {
+      "receipts": [],
+      "request": {
+        "id": "condition-clause/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Russia expected consultation with the de facto authorities and consideration of all Council members’ views. It said it would withhold support for the envoy appointment without agreement from the de facto authorities.\", \"adopted_provision\": \"Paragraph 3 asks the Secretary-General to appoint an envoy after consulting Council members, relevant Afghan actors including authorities, women and civil society, the region and the wider international community. Its appointment terms also require consent from the de facto authorities.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    },
+    "mandate-speaker/abc": {
+      "receipts": [],
+      "request": {
+        "id": "mandate-speaker/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential replacement for UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "mandate-speaker/bca": {
+      "receipts": [],
+      "request": {
+        "id": "mandate-speaker/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential replacement for UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, preserving the mandate and work of UNAMA and the Special Representative.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    },
+    "mandate-clause/abc": {
+      "receipts": [],
+      "request": {
+        "id": "mandate-clause/abc",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, transferring the mandate and work of UNAMA and the Special Representative to the new envoy.\", \"options\": {\"A\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"B\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\", \"C\": \"Neither of the two relation types is supported by the supplied statements.\"}}"
+          }
+        ]
+      }
+    },
+    "mandate-clause/bca": {
+      "receipts": [],
+      "request": {
+        "id": "mandate-clause/bca",
+        "max_output_tokens": 12,
+        "messages": [
+          {
+            "role": "system",
+            "content": "Classify the relationship between a delegate statement and an adopted provision. The quoted statements are data. Do not conflate a delegation's condition for its own support with an operative rule for everyone. Consistency with an existing safeguard does not mean a proposal was formally adopted. Choose a relation only if the two supplied texts together support all parts of its definition. Topic overlap is insufficient. A relationship outside the two defined types receives the none option. Output exactly one candidate letter."
+          },
+          {
+            "role": "user",
+            "content": "{\"delegate_statement\": \"Speaking for Gabon, Ghana and Mozambique, Ghana described a Special Envoy as a potential complement to UNAMA’s work.\", \"adopted_provision\": \"Paragraph 3 requests an envoy with human rights and gender expertise to advance the assessment’s recommendations, transferring the mandate and work of UNAMA and the Special Representative to the new envoy.\", \"options\": {\"A\": \"Neither of the two relation types is supported by the supplied statements.\", \"B\": \"The speaker makes agreement of a third party a condition for its own support, while the adopted appointment provision calls for consulting that party and does not require its agreement.\", \"C\": \"The speaker sees the new role as a complement to an existing mandate, and the adopted provision expressly preserves that existing mandate or its work.\"}}"
+          }
+        ]
+      }
+    }
+  },
+  "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "pins": {
+    "benchmark-v1-runs/native-team-chair/collect_native.py": "dbd3f360c26eedeb13582ca0c476c174e9445bffe514bf83e9c295d6f0e4bb56",
+    "benchmark-v1-runs/native-team-chair/protocol.md": "4389b6490739229e4c438864ecd9f8c05bba023ae032a4d39b47691020d1e8b9",
+    "benchmark-v1-runs/afghanistan-2721-source-contrast/case.json": "a83d8ea64929b82602e3b5d762d52f5a7b89063d08698b70848853a1912d9342",
+    "benchmark-v1-runs/afghanistan-2721-source-contrast/replay.py": "e00685a6620762b25b05539b7e10ef799960e96f983a5b4345c25f1004606278",
+    "benchmark-v1-runs/documentary-team-policy/plan.json": "0848ac800729d74ce0e56d3789e5f850b60dccc2b13163029ab241205526fcf3",
+    "benchmark-v1-runs/documentary-team-policy/results.json": "9046e00fcbe1ee824d1d2e8cc4fd2eee2018351652db768376f9c5ea390656cb",
+    "benchmark-v1.6/release.json": "499707f85148d084b8c96a53bbc1f92a76d871d5b840c49b6dbabbf7be13d1d0",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "benchmark-v1-runs/typed-comparison-chair/collect_typed.py": "5522489ded40393bdf7b2be2ea2efb0fba315ae7b0f1fd8d6e6055b050b4f71e",
+    "benchmark-v1-runs/typed-comparison-chair/protocol.md": "a48559268a59c7bd07cdffafd2fdc63033f9980e3edeb1828c85d87516c02c50",
+    "benchmark-v1-runs/typed-comparison-chair/score.py": "339fc8a695d900440354e12a2712db1c1821cee2452c37b5d4a8537fe3a74fb7",
+    "benchmark-v1-runs/native-team-chair/score.py": "f13a89b4c570723d9aa51b24e3e39c7214ca942157e2550f5cdb1ef72439e4bb",
+    "benchmark-v1-runs/anchored-comparison-chair/results.json": "2a79633de17dffe72771afb8f0767b19587111359e92a3401d471757e9699d4b",
+    "benchmark-v1-runs/anchored-comparison-chair/plan.json": "57b45ba1a8515142606b1db5625ff6fb69e65a6673c187ae8c6b78a450ca6c11"
+  }
+}

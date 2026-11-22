@@ -1,0 +1,990 @@
+{
+  "scope": "Two previously exposed source families and both desk orders. Live peer notes use isolated cards, solo uses both cards every pass, and all final prompts include both cards. Calls and output caps match. Input token counts differ. Exact-span evidence maps are authored by the same assistant. A carried unit is paired with an independent counterfactual, while direct source access remains possible.",
+  "verified_generations": 32,
+  "verified_treatment_pairs": 4,
+  "summary": {
+    "peer": {
+      "episodes": 4,
+      "strict": 0,
+      "points": 184,
+      "correct_disposition": 2,
+      "material_guard_failures": 0,
+      "questions": 2,
+      "opening_source_errors": 2,
+      "reply_source_errors": 1,
+      "reply_new_units": 5,
+      "retained_new_units": 4,
+      "output_tokens": 526,
+      "input_tokens": 3875
+    },
+    "independent": {
+      "episodes": 4,
+      "strict": 0,
+      "points": 160,
+      "correct_disposition": 2,
+      "material_guard_failures": 1,
+      "questions": 2,
+      "opening_source_errors": 2,
+      "reply_source_errors": 2,
+      "reply_new_units": 5,
+      "retained_new_units": 3,
+      "output_tokens": 546,
+      "input_tokens": 3665
+    },
+    "solo": {
+      "episodes": 4,
+      "strict": 0,
+      "points": 140,
+      "correct_disposition": 4,
+      "material_guard_failures": 4,
+      "questions": 1,
+      "opening_source_errors": 1,
+      "reply_source_errors": 2,
+      "reply_new_units": 1,
+      "retained_new_units": 0,
+      "output_tokens": 519,
+      "input_tokens": 4495
+    }
+  },
+  "episodes": {
+    "guinea-S1/peer": {
+      "final_grade": {
+        "review_id": "03",
+        "points": 44,
+        "criteria": {
+          "disposition": 0,
+          "side_1": 0,
+          "side_2": 12,
+          "citations": 10,
+          "fidelity": 12,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "revise",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "China explicitly stated the convention does not govern every maritime issue, contradicting the claim that both delegations agreed it regulates all such issues [S2]",
+          "issue": "",
+          "reason": ""
+        }
+      },
+      "inputs": [
+        "guinea-S1/desk/opening",
+        "guinea-S1/peer/reply",
+        "guinea-S1/peer/final"
+      ],
+      "question": "What did the other delegation actually say about the proposal?",
+      "opening_source_error": true,
+      "reply_source_error": false,
+      "reply_new_units": [
+        "China_treaty_limit"
+      ],
+      "unique_units_by_pass": [
+        0,
+        1,
+        1
+      ],
+      "retained_new_units": [
+        "China_treaty_limit"
+      ],
+      "output_tokens": 127,
+      "input_tokens": 946,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "guinea-S1/independent": {
+      "final_grade": {
+        "review_id": "06",
+        "points": 44,
+        "criteria": {
+          "disposition": 0,
+          "side_1": 0,
+          "side_2": 12,
+          "citations": 10,
+          "fidelity": 12,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "revise",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "China explicitly stated the law of the sea convention does not govern every maritime issue [S2]",
+          "issue": "",
+          "reason": ""
+        }
+      },
+      "inputs": [
+        "guinea-S1/desk/opening",
+        "guinea-S1/independent/reply",
+        "guinea-S1/independent/final"
+      ],
+      "question": "What did the other delegation actually say about the proposal?",
+      "opening_source_error": true,
+      "reply_source_error": false,
+      "reply_new_units": [
+        "China_treaty_limit"
+      ],
+      "unique_units_by_pass": [
+        0,
+        1,
+        1
+      ],
+      "retained_new_units": [
+        "China_treaty_limit"
+      ],
+      "output_tokens": 142,
+      "input_tokens": 898,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "guinea-S1/solo": {
+      "final_grade": {
+        "review_id": "08",
+        "points": 46,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 0,
+          "side_2": 12,
+          "citations": 10,
+          "fidelity": 0,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "revise",
+        "disposition": "revise",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "China explicitly stated it does not govern every maritime issue [S2]",
+          "issue": "Ghana claimed the convention clarifies geographic reach",
+          "reason": "The Ghana card attributes geographic scope to the resolution text and its compromise."
+        }
+      },
+      "inputs": [
+        "guinea-S1/solo/opening",
+        "guinea-S1/solo/reply",
+        "guinea-S1/solo/final"
+      ],
+      "question": "",
+      "opening_source_error": false,
+      "reply_source_error": false,
+      "reply_new_units": [],
+      "unique_units_by_pass": [
+        1,
+        1,
+        1
+      ],
+      "retained_new_units": [],
+      "output_tokens": 114,
+      "input_tokens": 1064,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "guinea-S2/peer": {
+      "final_grade": {
+        "review_id": "10",
+        "points": 56,
+        "criteria": {
+          "disposition": 0,
+          "side_1": 12,
+          "side_2": 12,
+          "citations": 10,
+          "fidelity": 12,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "revise",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "did not assert it regulates every maritime issue, creating an evidence gap regarding China's explicit denial versus Ghana's silence on universal scope [S1][S2]",
+          "s2": "did not assert it regulates every maritime issue, creating an evidence gap regarding China's explicit denial versus Ghana's silence on universal scope [S1][S2]",
+          "issue": "",
+          "reason": ""
+        }
+      },
+      "inputs": [
+        "guinea-S2/desk/opening",
+        "guinea-S2/peer/reply",
+        "guinea-S2/peer/final"
+      ],
+      "question": "I need to know what Ghana actually said about this.",
+      "opening_source_error": false,
+      "reply_source_error": false,
+      "reply_new_units": [
+        "Ghana_compromise",
+        "Ghana_gap"
+      ],
+      "unique_units_by_pass": [
+        1,
+        2,
+        3
+      ],
+      "retained_new_units": [
+        "Ghana_compromise",
+        "Ghana_gap"
+      ],
+      "output_tokens": 150,
+      "input_tokens": 953,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "guinea-S2/independent": {
+      "final_grade": {
+        "review_id": "05",
+        "points": 44,
+        "criteria": {
+          "disposition": 0,
+          "side_1": 0,
+          "side_2": 12,
+          "citations": 10,
+          "fidelity": 12,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "revise",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "China explicitly stated it does not govern every maritime issue; the proposal falsely asserts both agreed on the absolute proposition [S1][S2]",
+          "issue": "",
+          "reason": ""
+        }
+      },
+      "inputs": [
+        "guinea-S2/desk/opening",
+        "guinea-S2/independent/reply",
+        "guinea-S2/independent/final"
+      ],
+      "question": "I need to know what Ghana actually said about this.",
+      "opening_source_error": false,
+      "reply_source_error": true,
+      "reply_new_units": [
+        "Ghana_compromise",
+        "Ghana_gap"
+      ],
+      "unique_units_by_pass": [
+        1,
+        2,
+        2
+      ],
+      "retained_new_units": [
+        "Ghana_compromise"
+      ],
+      "output_tokens": 151,
+      "input_tokens": 902,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "guinea-S2/solo": {
+      "final_grade": {
+        "review_id": "04",
+        "points": 46,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 0,
+          "side_2": 12,
+          "citations": 10,
+          "fidelity": 0,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "revise",
+        "disposition": "revise",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "China explicitly cautioned it does not govern every maritime issue [S1][S2]",
+          "issue": "Ghana claimed the convention clarified geographic reach",
+          "reason": "The source puts the geography qualification on the resolution text."
+        }
+      },
+      "inputs": [
+        "guinea-S2/solo/opening",
+        "guinea-S2/solo/reply",
+        "guinea-S2/solo/final"
+      ],
+      "question": "",
+      "opening_source_error": false,
+      "reply_source_error": true,
+      "reply_new_units": [
+        "Ghana_gap"
+      ],
+      "unique_units_by_pass": [
+        1,
+        2,
+        1
+      ],
+      "retained_new_units": [],
+      "output_tokens": 130,
+      "input_tokens": 1080,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "libya-S1/peer": {
+      "final_grade": {
+        "review_id": "01",
+        "points": 36,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 0,
+          "side_2": 0,
+          "citations": 0,
+          "fidelity": 12,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "withhold",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "",
+          "issue": "",
+          "reason": ""
+        }
+      },
+      "inputs": [
+        "libya-S1/desk/opening",
+        "libya-S1/peer/reply",
+        "libya-S1/peer/final"
+      ],
+      "question": "",
+      "opening_source_error": false,
+      "reply_source_error": false,
+      "reply_new_units": [
+        "Algeria_withdrawal"
+      ],
+      "unique_units_by_pass": [
+        1,
+        1,
+        0
+      ],
+      "retained_new_units": [],
+      "output_tokens": 128,
+      "input_tokens": 1007,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "libya-S1/independent": {
+      "final_grade": {
+        "review_id": "11",
+        "points": 36,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 0,
+          "side_2": 0,
+          "citations": 0,
+          "fidelity": 12,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "withhold",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "",
+          "issue": "",
+          "reason": ""
+        }
+      },
+      "inputs": [
+        "libya-S1/desk/opening",
+        "libya-S1/independent/reply",
+        "libya-S1/independent/final"
+      ],
+      "question": "",
+      "opening_source_error": false,
+      "reply_source_error": false,
+      "reply_new_units": [
+        "Algeria_withdrawal"
+      ],
+      "unique_units_by_pass": [
+        1,
+        1,
+        0
+      ],
+      "retained_new_units": [],
+      "output_tokens": 121,
+      "input_tokens": 934,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "libya-S1/solo": {
+      "final_grade": {
+        "review_id": "09",
+        "points": 24,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 0,
+          "side_2": 0,
+          "citations": 0,
+          "fidelity": 0,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "withhold",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "",
+          "issue": "did not call for foreign force withdrawal",
+          "reason": "The UK source leaves the withdrawal position unverified."
+        }
+      },
+      "inputs": [
+        "libya-S1/solo/opening",
+        "libya-S1/solo/reply",
+        "libya-S1/solo/final"
+      ],
+      "question": "What did the other delegation actually say about the proposal?",
+      "opening_source_error": true,
+      "reply_source_error": false,
+      "reply_new_units": [],
+      "unique_units_by_pass": [
+        1,
+        1,
+        0
+      ],
+      "retained_new_units": [],
+      "output_tokens": 137,
+      "input_tokens": 1182,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "libya-S2/peer": {
+      "final_grade": {
+        "review_id": "12",
+        "points": 48,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 12,
+          "side_2": 0,
+          "citations": 0,
+          "fidelity": 12,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "withhold",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "no UK evidence of withdrawal demands",
+          "s2": "",
+          "issue": "",
+          "reason": ""
+        }
+      },
+      "inputs": [
+        "libya-S2/desk/opening",
+        "libya-S2/peer/reply",
+        "libya-S2/peer/final"
+      ],
+      "question": "",
+      "opening_source_error": true,
+      "reply_source_error": true,
+      "reply_new_units": [
+        "UK_gap"
+      ],
+      "unique_units_by_pass": [
+        1,
+        1,
+        1
+      ],
+      "retained_new_units": [
+        "UK_gap"
+      ],
+      "output_tokens": 121,
+      "input_tokens": 969,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "libya-S2/independent": {
+      "final_grade": {
+        "review_id": "02",
+        "points": 36,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 12,
+          "side_2": 0,
+          "citations": 0,
+          "fidelity": 0,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "withhold",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "did not call for foreign force withdrawal, creating an evidence gap for the proposed joint statement [S1]",
+          "s2": "",
+          "issue": "did not call for foreign force withdrawal",
+          "reason": "The UK source leaves the withdrawal position unverified."
+        }
+      },
+      "inputs": [
+        "libya-S2/desk/opening",
+        "libya-S2/independent/reply",
+        "libya-S2/independent/final"
+      ],
+      "question": "",
+      "opening_source_error": true,
+      "reply_source_error": true,
+      "reply_new_units": [
+        "UK_gap"
+      ],
+      "unique_units_by_pass": [
+        1,
+        1,
+        1
+      ],
+      "retained_new_units": [
+        "UK_gap"
+      ],
+      "output_tokens": 132,
+      "input_tokens": 931,
+      "calls": 3,
+      "max_output_tokens": 262
+    },
+    "libya-S2/solo": {
+      "final_grade": {
+        "review_id": "07",
+        "points": 24,
+        "criteria": {
+          "disposition": 14,
+          "side_1": 0,
+          "side_2": 0,
+          "citations": 0,
+          "fidelity": 0,
+          "format": 10
+        },
+        "strict": false,
+        "expected": "withhold",
+        "disposition": "withhold",
+        "false_action": false,
+        "review": {
+          "s1": "",
+          "s2": "",
+          "issue": "did not call for foreign force withdrawal",
+          "reason": "The UK source leaves the withdrawal position unverified."
+        }
+      },
+      "inputs": [
+        "libya-S2/solo/opening",
+        "libya-S2/solo/reply",
+        "libya-S2/solo/final"
+      ],
+      "question": "",
+      "opening_source_error": false,
+      "reply_source_error": true,
+      "reply_new_units": [],
+      "unique_units_by_pass": [
+        2,
+        0,
+        0
+      ],
+      "retained_new_units": [],
+      "output_tokens": 138,
+      "input_tokens": 1169,
+      "calls": 3,
+      "max_output_tokens": 262
+    }
+  },
+  "peer_vs_independent": {
+    "guinea-S1": {
+      "peer_only_reply_units": [],
+      "peer_only_final_units_from_reply": [],
+      "shared_reply_units_retained_only_by_peer": [],
+      "units_lost_against_independent": [],
+      "points_delta": 0
+    },
+    "guinea-S2": {
+      "peer_only_reply_units": [],
+      "peer_only_final_units_from_reply": [],
+      "shared_reply_units_retained_only_by_peer": [
+        "Ghana_gap"
+      ],
+      "units_lost_against_independent": [],
+      "points_delta": 12
+    },
+    "libya-S1": {
+      "peer_only_reply_units": [],
+      "peer_only_final_units_from_reply": [],
+      "shared_reply_units_retained_only_by_peer": [],
+      "units_lost_against_independent": [],
+      "points_delta": 0
+    },
+    "libya-S2": {
+      "peer_only_reply_units": [],
+      "peer_only_final_units_from_reply": [],
+      "shared_reply_units_retained_only_by_peer": [],
+      "units_lost_against_independent": [],
+      "points_delta": 12
+    }
+  },
+  "review": {
+    "guinea-S1/desk/opening": {
+      "id": "guinea-S1/desk/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "the law of the sea convention clarifies the text's geographic reach",
+      "reason": "Transfers the geographic clarification made by the compromise to the convention.",
+      "question": "What did the other delegation actually say about the proposal?"
+    },
+    "guinea-S1/solo/opening": {
+      "id": "guinea-S1/solo/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S2/desk/opening": {
+      "id": "guinea-S2/desk/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": "I need to know what Ghana actually said about this."
+    },
+    "guinea-S2/solo/opening": {
+      "id": "guinea-S2/solo/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S1/desk/opening": {
+      "id": "libya-S1/desk/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S1/solo/opening": {
+      "id": "libya-S1/solo/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "only the United Kingdom called for the renewal of the UN mission",
+      "reason": "The source states that the UK submitted the draft and welcomed renewal. It does not establish an exclusive call.",
+      "question": "What did the other delegation actually say about the proposal?"
+    },
+    "libya-S2/desk/opening": {
+      "id": "libya-S2/desk/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "The other delegation did not make any statement regarding this proposal.",
+      "reason": "The opening desk has no UK card. It cannot establish an absence of speech.",
+      "question": ""
+    },
+    "libya-S2/solo/opening": {
+      "id": "libya-S2/solo/opening",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S1/peer/reply": {
+      "id": "guinea-S1/peer/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S1/independent/reply": {
+      "id": "guinea-S1/independent/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S1/solo/reply": {
+      "id": "guinea-S1/solo/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S2/peer/reply": {
+      "id": "guinea-S2/peer/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S2/independent/reply": {
+      "id": "guinea-S2/independent/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "The proposed sentence is false because",
+      "reason": "A gap in Ghana's source does not establish a contradiction.",
+      "question": ""
+    },
+    "guinea-S2/solo/reply": {
+      "id": "guinea-S2/solo/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "Ghana stated the convention clarified geographic reach",
+      "reason": "Confuses geographic reach of the draft with the treaty.",
+      "question": ""
+    },
+    "libya-S1/peer/reply": {
+      "id": "libya-S1/peer/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S1/independent/reply": {
+      "id": "libya-S1/independent/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S1/solo/reply": {
+      "id": "libya-S1/solo/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S2/peer/reply": {
+      "id": "libya-S2/peer/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "The United Kingdom did not call for the withdrawal of foreign forces",
+      "reason": "Turns silence in the UK card into a historical claim of no call.",
+      "question": ""
+    },
+    "libya-S2/independent/reply": {
+      "id": "libya-S2/independent/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "it did not call for the immediate withdrawal of all foreign forces",
+      "reason": "Turns silence in the UK card into a historical claim of no call.",
+      "question": ""
+    },
+    "libya-S2/solo/reply": {
+      "id": "libya-S2/solo/reply",
+      "s1": "",
+      "s2": "",
+      "issue": "The United Kingdom did not call for the withdrawal of foreign forces",
+      "reason": "Turns silence in the UK card into a historical claim of no call.",
+      "question": ""
+    },
+    "guinea-S1/peer/final": {
+      "id": "guinea-S1/peer/final",
+      "s1": "",
+      "s2": "China explicitly stated the convention does not govern every maritime issue, contradicting the claim that both delegations agreed it regulates all such issues [S2]",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S1/independent/final": {
+      "id": "guinea-S1/independent/final",
+      "s1": "",
+      "s2": "China explicitly stated the law of the sea convention does not govern every maritime issue [S2]",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S1/solo/final": {
+      "id": "guinea-S1/solo/final",
+      "s1": "",
+      "s2": "China explicitly stated it does not govern every maritime issue [S2]",
+      "issue": "Ghana claimed the convention clarifies geographic reach",
+      "reason": "The Ghana card attributes geographic scope to the resolution text and its compromise.",
+      "question": ""
+    },
+    "guinea-S2/peer/final": {
+      "id": "guinea-S2/peer/final",
+      "s1": "did not assert it regulates every maritime issue, creating an evidence gap regarding China's explicit denial versus Ghana's silence on universal scope [S1][S2]",
+      "s2": "did not assert it regulates every maritime issue, creating an evidence gap regarding China's explicit denial versus Ghana's silence on universal scope [S1][S2]",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S2/independent/final": {
+      "id": "guinea-S2/independent/final",
+      "s1": "",
+      "s2": "China explicitly stated it does not govern every maritime issue; the proposal falsely asserts both agreed on the absolute proposition [S1][S2]",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "guinea-S2/solo/final": {
+      "id": "guinea-S2/solo/final",
+      "s1": "",
+      "s2": "China explicitly cautioned it does not govern every maritime issue [S1][S2]",
+      "issue": "Ghana claimed the convention clarified geographic reach",
+      "reason": "The source puts the geography qualification on the resolution text.",
+      "question": ""
+    },
+    "libya-S1/peer/final": {
+      "id": "libya-S1/peer/final",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S1/independent/final": {
+      "id": "libya-S1/independent/final",
+      "s1": "",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S1/solo/final": {
+      "id": "libya-S1/solo/final",
+      "s1": "",
+      "s2": "",
+      "issue": "did not call for foreign force withdrawal",
+      "reason": "The UK source leaves the withdrawal position unverified.",
+      "question": ""
+    },
+    "libya-S2/peer/final": {
+      "id": "libya-S2/peer/final",
+      "s1": "no UK evidence of withdrawal demands",
+      "s2": "",
+      "issue": "",
+      "reason": "",
+      "question": ""
+    },
+    "libya-S2/independent/final": {
+      "id": "libya-S2/independent/final",
+      "s1": "did not call for foreign force withdrawal, creating an evidence gap for the proposed joint statement [S1]",
+      "s2": "",
+      "issue": "did not call for foreign force withdrawal",
+      "reason": "The UK source leaves the withdrawal position unverified.",
+      "question": ""
+    },
+    "libya-S2/solo/final": {
+      "id": "libya-S2/solo/final",
+      "s1": "",
+      "s2": "",
+      "issue": "did not call for foreign force withdrawal",
+      "reason": "The UK source leaves the withdrawal position unverified.",
+      "question": ""
+    }
+  },
+  "units": {
+    "guinea-S1/desk/opening": {},
+    "guinea-S1/solo/opening": {
+      "China_treaty_limit": "China explicitly stated that the convention does not govern every maritime issue"
+    },
+    "guinea-S2/desk/opening": {
+      "China_treaty_limit": "China explicitly stated the law of the sea convention does not govern every maritime issue"
+    },
+    "guinea-S2/solo/opening": {
+      "China_treaty_limit": "China explicitly stated that the convention does not govern every maritime issue"
+    },
+    "libya-S1/desk/opening": {
+      "UK_gap": "The proposal to withdraw all foreign forces is not supported by the available evidence"
+    },
+    "libya-S1/solo/opening": {
+      "Algeria_withdrawal": "Algeria called for the immediate withdrawal of all foreign forces"
+    },
+    "libya-S2/desk/opening": {
+      "Algeria_withdrawal": "Algeria called for the immediate withdrawal of all foreign forces, foreign fighters, and mercenaries from Libya"
+    },
+    "libya-S2/solo/opening": {
+      "Algeria_withdrawal": "Algeria called for the immediate withdrawal of all foreign forces, foreign fighters, and mercenaries from Libya",
+      "UK_elections": "urged Libyan parties to engage with the UN road map towards inclusive elections"
+    },
+    "guinea-S1/peer/reply": {
+      "China_treaty_limit": "China explicitly stated that the law of the sea convention does not govern every maritime issue"
+    },
+    "guinea-S1/independent/reply": {
+      "China_treaty_limit": "China explicitly stated that the law of the sea convention does not govern every maritime issue"
+    },
+    "guinea-S1/solo/reply": {
+      "China_treaty_limit": "China explicitly stated that the law of the sea convention does not govern every maritime issue"
+    },
+    "guinea-S2/peer/reply": {
+      "Ghana_compromise": "Ghana stated that the compromise preserved agreed language on the law of the sea convention",
+      "Ghana_gap": "There is an evidence gap regarding whether Ghana asserted the convention's universal scope over all maritime matters."
+    },
+    "guinea-S2/independent/reply": {
+      "Ghana_compromise": "Ghana stated that the compromise preserved agreed language on the law of the sea convention",
+      "Ghana_gap": "the delegation's actual position lacks evidence for the absolute proposition that the convention covers all maritime issues"
+    },
+    "guinea-S2/solo/reply": {
+      "China_treaty_limit": "China explicitly cautioned that it does not govern every issue",
+      "Ghana_gap": "The proposition lacks evidence for Ghana's specific stance on"
+    },
+    "libya-S1/peer/reply": {
+      "Algeria_withdrawal": "Algeria (S2) explicitly called for all foreign forces to leave Libya immediately"
+    },
+    "libya-S1/independent/reply": {
+      "Algeria_withdrawal": "Algeria explicitly called for the immediate withdrawal of all foreign forces"
+    },
+    "libya-S1/solo/reply": {
+      "Algeria_withdrawal": "Algeria explicitly called for the immediate withdrawal of all foreign forces"
+    },
+    "libya-S2/peer/reply": {
+      "UK_gap": "There is an evidence gap because the working note confirms Algeria made this proposal, not the UK."
+    },
+    "libya-S2/independent/reply": {
+      "UK_gap": "There is an evidence gap regarding the specific proposition that the UK demanded the withdrawal of foreign forces."
+    },
+    "libya-S2/solo/reply": {},
+    "guinea-S1/peer/final": {
+      "China_treaty_limit": "China explicitly stated the convention does not govern every maritime issue, contradicting the claim that both delegations agreed it regulates all such issues [S2]"
+    },
+    "guinea-S1/independent/final": {
+      "China_treaty_limit": "China explicitly stated the law of the sea convention does not govern every maritime issue [S2]"
+    },
+    "guinea-S1/solo/final": {
+      "China_treaty_limit": "China explicitly stated it does not govern every maritime issue [S2]"
+    },
+    "guinea-S2/peer/final": {
+      "Ghana_compromise": "Ghana claimed the compromise preserved agreed language on the convention",
+      "Ghana_gap": "Ghana's silence on universal scope",
+      "China_treaty_limit": "it regulates every maritime issue, creating an evidence gap regarding China's explicit denial"
+    },
+    "guinea-S2/independent/final": {
+      "Ghana_compromise": "Ghana claimed the compromise preserved agreed language on the convention",
+      "China_treaty_limit": "China explicitly stated it does not govern every maritime issue; the proposal falsely asserts both agreed on the absolute proposition [S1][S2]"
+    },
+    "guinea-S2/solo/final": {
+      "China_treaty_limit": "China explicitly cautioned it does not govern every maritime issue [S1][S2]"
+    },
+    "libya-S1/peer/final": {},
+    "libya-S1/independent/final": {},
+    "libya-S1/solo/final": {},
+    "libya-S2/peer/final": {
+      "UK_gap": "no UK evidence of withdrawal demands"
+    },
+    "libya-S2/independent/final": {
+      "UK_gap": "creating an evidence gap for the proposed joint statement [S1]"
+    },
+    "libya-S2/solo/final": {}
+  },
+  "sha256": {
+    "facilitator_live_peers_score.py": "50c26ef420832a7cbaf379f26530777e55534f0b3410e87ee5f6bcbce0c16457",
+    "facilitator_fresh_brief_score.py": "c5a5dfcbe1495d8026131453124bdadacacfecff9a1407a19eb4e06dd2ebbbe1",
+    "transcript.jsonl": "5711437189b6702f4fc1cf32d89d9e7ca0c7dc4346a1aef3dde75d5d42d4c2d6",
+    "review.tsv": "fc948a069a57eaac6bf274e61c948cd9db9ae0ed391c626c7ed396a4d0f4ff99",
+    "units.tsv": "dafccabb14f4922b355cd07d5d42633280c2ba9dccd835569840b79eaba61298"
+  }
+}

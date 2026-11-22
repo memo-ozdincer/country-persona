@@ -1,0 +1,755 @@
+{
+  "scope": "Unblinded same-assistant comparison with the matched receipt baseline. The original rubric and release rules are reused. Explicitly check off-packet bracket IDs including mixed-case placeholders. No independent review.",
+  "transcript_sha256": "b1316e925320753f442c04ada869905a659827a0d72ef75deae7b43afa5bd779",
+  "receipts": [
+    {
+      "mask": 0,
+      "id": "receipt-0",
+      "raw_points": 23,
+      "met": [
+        "798-content",
+        "instrument",
+        "no-monitoring",
+        "renewal",
+        "tally"
+      ],
+      "reference_ceiling": 42,
+      "input_tokens": 562,
+      "output_tokens": 166,
+      "guard": "clear",
+      "words": 70,
+      "ended": true,
+      "missing_citations_on_met_parts": [
+        "no-monitoring",
+        "renewal"
+      ],
+      "off_packet_citations": [
+        "Algeria",
+        "Authority",
+        "Switzerland"
+      ],
+      "headings": [],
+      "headings_exact": false,
+      "strict_for_packet": false,
+      "eligible_points": 0
+    },
+    {
+      "mask": 1,
+      "id": "receipt-1",
+      "raw_points": 26,
+      "met": [
+        "797-content",
+        "798-content",
+        "instrument",
+        "no-monitoring",
+        "renewal",
+        "tally"
+      ],
+      "reference_ceiling": 56,
+      "input_tokens": 666,
+      "output_tokens": 159,
+      "guard": "uncertain",
+      "words": 64,
+      "ended": true,
+      "missing_citations_on_met_parts": [],
+      "off_packet_citations": [],
+      "headings": [],
+      "headings_exact": false,
+      "strict_for_packet": false,
+      "eligible_points": 0
+    },
+    {
+      "mask": 2,
+      "id": "receipt-2",
+      "raw_points": 36,
+      "met": [
+        "797-content",
+        "798-content",
+        "capacity",
+        "instrument",
+        "no-monitoring",
+        "renewal",
+        "swiss-first",
+        "swiss-second",
+        "tally"
+      ],
+      "reference_ceiling": 56,
+      "input_tokens": 691,
+      "output_tokens": 169,
+      "guard": "uncertain",
+      "words": 62,
+      "ended": true,
+      "missing_citations_on_met_parts": [],
+      "off_packet_citations": [],
+      "headings": [],
+      "headings_exact": false,
+      "strict_for_packet": false,
+      "eligible_points": 0
+    },
+    {
+      "mask": 3,
+      "id": "receipt-3",
+      "raw_points": 33,
+      "met": [
+        "capacity",
+        "continuity",
+        "instrument",
+        "no-monitoring",
+        "nonparticipation",
+        "swiss-first",
+        "swiss-second",
+        "tally"
+      ],
+      "reference_ceiling": 70,
+      "input_tokens": 795,
+      "output_tokens": 194,
+      "guard": "clear",
+      "words": 69,
+      "ended": true,
+      "missing_citations_on_met_parts": [],
+      "off_packet_citations": [],
+      "headings": [
+        "Adoption",
+        "Amendments",
+        "Algeria",
+        "Switzerland",
+        "Authority"
+      ],
+      "headings_exact": true,
+      "strict_for_packet": false,
+      "eligible_points": 33
+    }
+  ],
+  "rollout": [
+    {
+      "reward": "guarded_actual",
+      "prior": "uniform",
+      "loss": 0.0,
+      "arms": {
+        "frozen_buffer": {
+          "net": 14.1125,
+          "record_points": 14.4375,
+          "both_receipts": 0.4375,
+          "mean_deliveries": 1.4375,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 12.075000000000001,
+          "record_points": 12.375,
+          "both_receipts": 0.375,
+          "mean_deliveries": 1.4375,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 10.0125,
+          "record_points": 10.3125,
+          "both_receipts": 0.3125,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 14.137500000000001,
+          "record_points": 14.4375,
+          "both_receipts": 0.4375,
+          "mean_deliveries": 1.3125,
+          "mean_announcements": 0.75
+        }
+      }
+    },
+    {
+      "reward": "guarded_actual",
+      "prior": "uniform",
+      "loss": 0.1,
+      "arms": {
+        "frozen_buffer": {
+          "net": 10.866937500000002,
+          "record_points": 11.193187500000002,
+          "both_receipts": 0.33918750000000003,
+          "mean_deliveries": 1.44375,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 9.555437500000002,
+          "record_points": 9.856687500000001,
+          "both_receipts": 0.29868750000000005,
+          "mean_deliveries": 1.44375,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 8.053125000000001,
+          "record_points": 8.353125000000002,
+          "both_receipts": 0.25312500000000004,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 10.866937500000002,
+          "record_points": 11.193187500000002,
+          "both_receipts": 0.33918750000000003,
+          "mean_deliveries": 1.44375,
+          "mean_announcements": 0.75
+        }
+      }
+    },
+    {
+      "reward": "guarded_actual",
+      "prior": "uniform",
+      "loss": 0.25,
+      "arms": {
+        "frozen_buffer": {
+          "net": 6.9228515625,
+          "record_points": 7.2509765625,
+          "both_receipts": 0.2197265625,
+          "mean_deliveries": 1.453125,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 6.3677734374999995,
+          "record_points": 6.6708984375,
+          "both_receipts": 0.2021484375,
+          "mean_deliveries": 1.453125,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 5.50078125,
+          "record_points": 5.80078125,
+          "both_receipts": 0.17578125,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 6.9228515625,
+          "record_points": 7.2509765625,
+          "both_receipts": 0.2197265625,
+          "mean_deliveries": 1.453125,
+          "mean_announcements": 0.75
+        }
+      }
+    },
+    {
+      "reward": "guarded_actual",
+      "prior": "skew",
+      "loss": 0.0,
+      "arms": {
+        "frozen_buffer": {
+          "net": 22.377,
+          "record_points": 22.77,
+          "both_receipts": 0.69,
+          "mean_deliveries": 1.7400000000000002,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 18.432000000000002,
+          "record_points": 18.810000000000002,
+          "both_receipts": 0.5700000000000001,
+          "mean_deliveries": 1.7400000000000002,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 21.09,
+          "record_points": 21.45,
+          "both_receipts": 0.65,
+          "mean_deliveries": 1.8000000000000003,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 22.400999999999996,
+          "record_points": 22.77,
+          "both_receipts": 0.69,
+          "mean_deliveries": 1.62,
+          "mean_announcements": 0.9000000000000001
+        }
+      }
+    },
+    {
+      "reward": "guarded_actual",
+      "prior": "skew",
+      "loss": 0.1,
+      "arms": {
+        "frozen_buffer": {
+          "net": 17.568360000000002,
+          "record_points": 17.962560000000003,
+          "both_receipts": 0.5443200000000001,
+          "mean_deliveries": 1.7460000000000004,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 14.536140000000003,
+          "record_points": 14.915340000000002,
+          "both_receipts": 0.45198000000000005,
+          "mean_deliveries": 1.7460000000000004,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 17.0145,
+          "record_points": 17.3745,
+          "both_receipts": 0.5265000000000001,
+          "mean_deliveries": 1.8000000000000005,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 17.568360000000002,
+          "record_points": 17.962560000000003,
+          "both_receipts": 0.5443200000000001,
+          "mean_deliveries": 1.7460000000000004,
+          "mean_announcements": 0.9000000000000001
+        }
+      }
+    },
+    {
+      "reward": "guarded_actual",
+      "prior": "skew",
+      "loss": 0.25,
+      "arms": {
+        "frozen_buffer": {
+          "net": 11.576812499999999,
+          "record_points": 11.9728125,
+          "both_receipts": 0.3628125,
+          "mean_deliveries": 1.7550000000000003,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 9.64275,
+          "record_points": 10.02375,
+          "both_receipts": 0.30374999999999996,
+          "mean_deliveries": 1.7550000000000003,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 11.705625000000001,
+          "record_points": 12.065625,
+          "both_receipts": 0.365625,
+          "mean_deliveries": 1.8000000000000003,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 11.988062499999998,
+          "record_points": 12.3440625,
+          "both_receipts": 0.37406249999999996,
+          "mean_deliveries": 1.7550000000000003,
+          "mean_announcements": 0.1
+        }
+      }
+    },
+    {
+      "reward": "raw_actual",
+      "prior": "uniform",
+      "loss": 0.0,
+      "arms": {
+        "frozen_buffer": {
+          "net": 31.674999999999997,
+          "record_points": 32.0,
+          "both_receipts": 0.4375,
+          "mean_deliveries": 1.4375,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 30.6375,
+          "record_points": 30.9375,
+          "both_receipts": 0.375,
+          "mean_deliveries": 1.4375,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 32.55,
+          "record_points": 32.75,
+          "both_receipts": 0.0,
+          "mean_deliveries": 1.0,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 33.0625,
+          "record_points": 33.3125,
+          "both_receipts": 0.0,
+          "mean_deliveries": 1.0,
+          "mean_announcements": 1.0
+        }
+      }
+    },
+    {
+      "reward": "raw_actual",
+      "prior": "uniform",
+      "loss": 0.1,
+      "arms": {
+        "frozen_buffer": {
+          "net": 31.096625000000003,
+          "record_points": 31.422875000000005,
+          "both_receipts": 0.33918750000000003,
+          "mean_deliveries": 1.44375,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 30.106875000000006,
+          "record_points": 30.408125000000005,
+          "both_receipts": 0.29868750000000005,
+          "mean_deliveries": 1.44375,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 31.885000000000005,
+          "record_points": 32.135000000000005,
+          "both_receipts": 0.10125000000000002,
+          "mean_deliveries": 1.2500000000000002,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 32.231625,
+          "record_points": 32.536625,
+          "both_receipts": 0.020250000000000004,
+          "mean_deliveries": 1.2750000000000001,
+          "mean_announcements": 1.0
+        }
+      }
+    },
+    {
+      "reward": "raw_actual",
+      "prior": "uniform",
+      "loss": 0.25,
+      "arms": {
+        "frozen_buffer": {
+          "net": 30.154296875,
+          "record_points": 30.482421875,
+          "both_receipts": 0.2197265625,
+          "mean_deliveries": 1.453125,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 29.235937500000002,
+          "record_points": 29.5390625,
+          "both_receipts": 0.2021484375,
+          "mean_deliveries": 1.453125,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 30.8125,
+          "record_points": 31.0625,
+          "both_receipts": 0.0703125,
+          "mean_deliveries": 1.25,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 30.99609375,
+          "record_points": 31.30859375,
+          "both_receipts": 0.03515625,
+          "mean_deliveries": 1.3125,
+          "mean_announcements": 1.0
+        }
+      }
+    },
+    {
+      "reward": "raw_actual",
+      "prior": "skew",
+      "loss": 0.0,
+      "arms": {
+        "frozen_buffer": {
+          "net": 32.107,
+          "record_points": 32.5,
+          "both_receipts": 0.69,
+          "mean_deliveries": 1.7400000000000002,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 31.082,
+          "record_points": 31.46,
+          "both_receipts": 0.5700000000000001,
+          "mean_deliveries": 1.7400000000000002,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 34.06,
+          "record_points": 34.300000000000004,
+          "both_receipts": 0.030000000000000006,
+          "mean_deliveries": 1.2000000000000002,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 34.30500000000001,
+          "record_points": 34.57000000000001,
+          "both_receipts": 0.0,
+          "mean_deliveries": 1.05,
+          "mean_announcements": 1.1
+        }
+      }
+    },
+    {
+      "reward": "raw_actual",
+      "prior": "skew",
+      "loss": 0.1,
+      "arms": {
+        "frozen_buffer": {
+          "net": 31.61156,
+          "record_points": 32.00576,
+          "both_receipts": 0.5443200000000001,
+          "mean_deliveries": 1.7460000000000004,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 30.638180000000002,
+          "record_points": 31.017380000000003,
+          "both_receipts": 0.45198000000000005,
+          "mean_deliveries": 1.7460000000000004,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 33.227000000000004,
+          "record_points": 33.467000000000006,
+          "both_receipts": 0.02430000000000001,
+          "mean_deliveries": 1.2000000000000002,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 33.27664000000001,
+          "record_points": 33.59984000000001,
+          "both_receipts": 0.041310000000000006,
+          "mean_deliveries": 1.3410000000000002,
+          "mean_announcements": 1.1
+        }
+      }
+    },
+    {
+      "reward": "raw_actual",
+      "prior": "skew",
+      "loss": 0.25,
+      "arms": {
+        "frozen_buffer": {
+          "net": 30.735875,
+          "record_points": 31.131875,
+          "both_receipts": 0.3628125,
+          "mean_deliveries": 1.7550000000000003,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 29.849937500000003,
+          "record_points": 30.230937500000003,
+          "both_receipts": 0.30374999999999996,
+          "mean_deliveries": 1.7550000000000003,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 31.85375,
+          "record_points": 32.09375,
+          "both_receipts": 0.016875000000000005,
+          "mean_deliveries": 1.2000000000000002,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 31.868562499999996,
+          "record_points": 32.1190625,
+          "both_receipts": 0.004218750000000001,
+          "mean_deliveries": 1.1775000000000002,
+          "mean_announcements": 0.30000000000000004
+        }
+      }
+    },
+    {
+      "reward": "reference_ceiling",
+      "prior": "uniform",
+      "loss": 0.0,
+      "arms": {
+        "frozen_buffer": {
+          "net": 60.925,
+          "record_points": 61.25,
+          "both_receipts": 0.4375,
+          "mean_deliveries": 1.4375,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 60.074999999999996,
+          "record_points": 60.375,
+          "both_receipts": 0.375,
+          "mean_deliveries": 1.4375,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 59.2,
+          "record_points": 59.5,
+          "both_receipts": 0.3125,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 60.925,
+          "record_points": 61.25,
+          "both_receipts": 0.4375,
+          "mean_deliveries": 1.4375,
+          "mean_announcements": 0.75
+        }
+      }
+    },
+    {
+      "reward": "reference_ceiling",
+      "prior": "uniform",
+      "loss": 0.1,
+      "arms": {
+        "frozen_buffer": {
+          "net": 58.87275,
+          "record_points": 59.199000000000005,
+          "both_receipts": 0.33918750000000003,
+          "mean_deliveries": 1.44375,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 58.33075,
+          "record_points": 58.632000000000005,
+          "both_receipts": 0.29868750000000005,
+          "mean_deliveries": 1.44375,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 57.76500000000001,
+          "record_points": 58.065000000000005,
+          "both_receipts": 0.25312500000000004,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 58.93237500000001,
+          "record_points": 59.269875000000006,
+          "both_receipts": 0.33918750000000003,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.75
+        }
+      }
+    },
+    {
+      "reward": "reference_ceiling",
+      "prior": "uniform",
+      "loss": 0.25,
+      "arms": {
+        "frozen_buffer": {
+          "net": 55.9453125,
+          "record_points": 56.2734375,
+          "both_receipts": 0.2197265625,
+          "mean_deliveries": 1.453125,
+          "mean_announcements": 0.75
+        },
+        "frozen_additive": {
+          "net": 55.72421875,
+          "record_points": 56.02734375,
+          "both_receipts": 0.2021484375,
+          "mean_deliveries": 1.453125,
+          "mean_announcements": 0.25
+        },
+        "optimal_silence": {
+          "net": 55.48125,
+          "record_points": 55.78125,
+          "both_receipts": 0.17578125,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 56.058984375,
+          "record_points": 56.396484375,
+          "both_receipts": 0.2197265625,
+          "mean_deliveries": 1.5,
+          "mean_announcements": 0.75
+        }
+      }
+    },
+    {
+      "reward": "reference_ceiling",
+      "prior": "skew",
+      "loss": 0.0,
+      "arms": {
+        "frozen_buffer": {
+          "net": 65.12700000000001,
+          "record_points": 65.52000000000001,
+          "both_receipts": 0.69,
+          "mean_deliveries": 1.7400000000000002,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 63.462,
+          "record_points": 63.84,
+          "both_receipts": 0.5700000000000001,
+          "mean_deliveries": 1.7400000000000002,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 64.60000000000001,
+          "record_points": 64.96000000000001,
+          "both_receipts": 0.65,
+          "mean_deliveries": 1.8000000000000003,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 65.12700000000001,
+          "record_points": 65.52000000000001,
+          "both_receipts": 0.69,
+          "mean_deliveries": 1.7400000000000002,
+          "mean_announcements": 0.9000000000000001
+        }
+      }
+    },
+    {
+      "reward": "reference_ceiling",
+      "prior": "skew",
+      "loss": 0.1,
+      "arms": {
+        "frozen_buffer": {
+          "net": 62.65284,
+          "record_points": 63.04704,
+          "both_receipts": 0.5443200000000001,
+          "mean_deliveries": 1.7460000000000004,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 61.37507999999999,
+          "record_points": 61.754279999999994,
+          "both_receipts": 0.45198000000000005,
+          "mean_deliveries": 1.7460000000000004,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 62.5056,
+          "record_points": 62.8656,
+          "both_receipts": 0.5265000000000001,
+          "mean_deliveries": 1.8000000000000005,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 62.71008,
+          "record_points": 63.11508,
+          "both_receipts": 0.5443200000000001,
+          "mean_deliveries": 1.8000000000000005,
+          "mean_announcements": 0.9000000000000001
+        }
+      }
+    },
+    {
+      "reward": "reference_ceiling",
+      "prior": "skew",
+      "loss": 0.25,
+      "arms": {
+        "frozen_buffer": {
+          "net": 59.08650000000001,
+          "record_points": 59.48250000000001,
+          "both_receipts": 0.3628125,
+          "mean_deliveries": 1.7550000000000003,
+          "mean_announcements": 0.9000000000000001
+        },
+        "frozen_additive": {
+          "net": 58.274625000000015,
+          "record_points": 58.655625000000015,
+          "both_receipts": 0.30374999999999996,
+          "mean_deliveries": 1.7550000000000003,
+          "mean_announcements": 0.6
+        },
+        "optimal_silence": {
+          "net": 59.28000000000001,
+          "record_points": 59.64000000000001,
+          "both_receipts": 0.365625,
+          "mean_deliveries": 1.8000000000000003,
+          "mean_announcements": 0.0
+        },
+        "optional_ceiling": {
+          "net": 59.393125000000005,
+          "record_points": 59.75812500000001,
+          "both_receipts": 0.37406249999999996,
+          "mean_deliveries": 1.8000000000000003,
+          "mean_announcements": 0.1
+        }
+      }
+    }
+  ]
+}

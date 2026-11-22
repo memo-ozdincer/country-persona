@@ -1,0 +1,1373 @@
+{
+  "scope": "Post-hoc citation attachment without rewriting or deleting a generated claim. The reference citation sets are derived from the same-assistant review. The source classifier evaluates local relevance and the strict score separately inherits reviewed prose accuracy. The attachment rule does not by itself certify the whole brief.",
+  "rows": [
+    {
+      "id": 0,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [],
+      "source_decisions": {},
+      "arms": {
+        "original": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that China and African members welcomed Kenya's leadership.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that China and African members welcomed Kenya's leadership.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that China and African members welcomed Kenya's leadership.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that China and African members welcomed Kenya's leadership.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 1,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "A3"
+      ],
+      "visible": [
+        "A3"
+      ],
+      "source_decisions": {
+        "A3": [
+          "conflict",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The claim that China welcomed Kenya's leadership is not supported by the provided passage, which only documents the African members' support.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The claim that China welcomed Kenya's leadership is not supported by the provided passage, which only documents the African members' support.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The claim that China welcomed Kenya's leadership is not supported by the provided passage, which only documents the African members' support. [A3]",
+          "added": [
+            "A3"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "The claim that China welcomed Kenya's leadership is not supported by the provided passage, which only documents the African members' support. [A3]",
+          "added": [
+            "A3"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        }
+      }
+    },
+    {
+      "id": 2,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "CHINA"
+      ],
+      "visible": [
+        "CHINA"
+      ],
+      "source_decisions": {
+        "CHINA": [
+          "conflict",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided passage attributes the welcome of Kenya's leadership to China, but the source explicitly states China abstained and only Zhang Jun welcomed the initiative, making the claim unverified for the country as a whole.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided passage attributes the welcome of Kenya's leadership to China, but the source explicitly states China abstained and only Zhang Jun welcomed the initiative, making the claim unverified for the country as a whole.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided passage attributes the welcome of Kenya's leadership to China, but the source explicitly states China abstained and only Zhang Jun welcomed the initiative, making the claim unverified for the country as a whole. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "The provided passage attributes the welcome of Kenya's leadership to China, but the source explicitly states China abstained and only Zhang Jun welcomed the initiative, making the claim unverified for the country as a whole. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        }
+      }
+    },
+    {
+      "id": 3,
+      "expected_disposition": "retain",
+      "required_ids": [
+        "A3",
+        "CHINA"
+      ],
+      "visible": [
+        "A3",
+        "CHINA"
+      ],
+      "source_decisions": {
+        "CHINA": [
+          "cite",
+          "cite"
+        ],
+        "A3": [
+          "cite",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "China and the three African members welcomed Kenya's willingness to lead, as documented in passages CHINA and A3.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3",
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "China and the three African members welcomed Kenya's willingness to lead, as documented in passages CHINA and A3. [A3] [CHINA]",
+          "added": [
+            "A3",
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "China and the three African members welcomed Kenya's willingness to lead, as documented in passages CHINA and A3. [A3] [CHINA]",
+          "added": [
+            "A3",
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "China and the three African members welcomed Kenya's willingness to lead, as documented in passages CHINA and A3. [A3] [CHINA]",
+          "added": [
+            "A3",
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 4,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [],
+      "source_decisions": {},
+      "arms": {
+        "original": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim regarding China's or African members' voting record.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim regarding China's or African members' voting record.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim regarding China's or African members' voting record.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim regarding China's or African members' voting record.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 5,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "A3"
+      ],
+      "visible": [
+        "A3"
+      ],
+      "source_decisions": {
+        "A3": [
+          "no",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided passage only confirms Mozambique spoke for the African members and supported adoption; it does not explicitly state they voted in favor of the authorization.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided passage only confirms Mozambique spoke for the African members and supported adoption; it does not explicitly state they voted in favor of the authorization.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided passage only confirms Mozambique spoke for the African members and supported adoption; it does not explicitly state they voted in favor of the authorization. [A3]",
+          "added": [
+            "A3"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The provided passage only confirms Mozambique spoke for the African members and supported adoption; it does not explicitly state they voted in favor of the authorization. [A3]",
+          "added": [
+            "A3"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 6,
+      "expected_disposition": "revise",
+      "required_ids": [
+        "CHINA"
+      ],
+      "visible": [
+        "CHINA"
+      ],
+      "source_decisions": {
+        "CHINA": [
+          "cite",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "China abstained rather than voting in favor, as documented in S/PV.9430, pp. 3\u20134.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "China abstained rather than voting in favor, as documented in S/PV.9430, pp. 3\u20134. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "China abstained rather than voting in favor, as documented in S/PV.9430, pp. 3\u20134. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "China abstained rather than voting in favor, as documented in S/PV.9430, pp. 3\u20134. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 7,
+      "expected_disposition": "revise",
+      "required_ids": [
+        "CHINA"
+      ],
+      "visible": [
+        "A3",
+        "CHINA"
+      ],
+      "source_decisions": {
+        "CHINA": [
+          "conflict",
+          "cite"
+        ],
+        "A3": [
+          "conflict",
+          null
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "China abstained on the authorization vote, as documented in S/PV.9430, pp. 3\u20134, contradicting the claim that it voted in favor.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "China abstained on the authorization vote, as documented in S/PV.9430, pp. 3\u20134, contradicting the claim that it voted in favor.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "China abstained on the authorization vote, as documented in S/PV.9430, pp. 3\u20134, contradicting the claim that it voted in favor. [A3] [CHINA]",
+          "added": [
+            "A3",
+            "CHINA"
+          ],
+          "excess": [
+            "A3"
+          ],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "China abstained on the authorization vote, as documented in S/PV.9430, pp. 3\u20134, contradicting the claim that it voted in favor. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 8,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [],
+      "source_decisions": {},
+      "arms": {
+        "original": {
+          "brief": "The provided documentary passages are empty, so there is no evidence to support the claim that both sides documented their funding pledges.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "The provided documentary passages are empty, so there is no evidence to support the claim that both sides documented their funding pledges.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "The provided documentary passages are empty, so there is no evidence to support the claim that both sides documented their funding pledges.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The provided documentary passages are empty, so there is no evidence to support the claim that both sides documented their funding pledges.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 9,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "A3"
+      ],
+      "visible": [
+        "A3"
+      ],
+      "source_decisions": {
+        "A3": [
+          null,
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided passage only documents Mozambique's representative speaking on behalf of African Council members regarding Chapter VII support and election processes, offering no evidence of funding pledges or speaker-specific financial commitments.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided passage only documents Mozambique's representative speaking on behalf of African Council members regarding Chapter VII support and election processes, offering no evidence of funding pledges or speaker-specific financial commitments.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided passage only documents Mozambique's representative speaking on behalf of African Council members regarding Chapter VII support and election processes, offering no evidence of funding pledges or speaker-specific financial commitments. [A3]",
+          "added": [
+            "A3"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The provided passage only documents Mozambique's representative speaking on behalf of African Council members regarding Chapter VII support and election processes, offering no evidence of funding pledges or speaker-specific financial commitments. [A3]",
+          "added": [
+            "A3"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 10,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "CHINA"
+      ],
+      "visible": [
+        "CHINA"
+      ],
+      "source_decisions": {
+        "CHINA": [
+          "no",
+          "no"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided China passage details diplomatic positions and abstentions but contains no information regarding funding pledges or speaker confirmations of financial amounts.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided China passage details diplomatic positions and abstentions but contains no information regarding funding pledges or speaker confirmations of financial amounts.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided China passage details diplomatic positions and abstentions but contains no information regarding funding pledges or speaker confirmations of financial amounts. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The provided China passage details diplomatic positions and abstentions but contains no information regarding funding pledges or speaker confirmations of financial amounts. [CHINA]",
+          "added": [
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 11,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "A3",
+        "CHINA"
+      ],
+      "visible": [
+        "A3",
+        "CHINA"
+      ],
+      "source_decisions": {
+        "CHINA": [
+          "no",
+          "cite"
+        ],
+        "A3": [
+          "no",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided passages document voting behavior and general policy positions but contain no specific details regarding the exact funding amounts or financial pledges offered by the speakers.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3",
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided passages document voting behavior and general policy positions but contain no specific details regarding the exact funding amounts or financial pledges offered by the speakers.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "A3",
+            "CHINA"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided passages document voting behavior and general policy positions but contain no specific details regarding the exact funding amounts or financial pledges offered by the speakers. [A3] [CHINA]",
+          "added": [
+            "A3",
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The provided passages document voting behavior and general policy positions but contain no specific details regarding the exact funding amounts or financial pledges offered by the speakers. [A3] [CHINA]",
+          "added": [
+            "A3",
+            "CHINA"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 12,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [],
+      "source_decisions": {},
+      "arms": {
+        "original": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that France and Russia sought an extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that France and Russia sought an extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that France and Russia sought an extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The evidence is insufficient as no documentary passages support the claim that France and Russia sought an extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 13,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "russia"
+      ],
+      "visible": [
+        "russia"
+      ],
+      "source_decisions": {
+        "russia": [
+          "cite",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided Russian passage discusses Mali's transitional government and the Panel of Experts, offering no evidence regarding France's stance or a joint sanction extension.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "russia"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided Russian passage discusses Mali's transitional government and the Panel of Experts, offering no evidence regarding France's stance or a joint sanction extension. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided Russian passage discusses Mali's transitional government and the Panel of Experts, offering no evidence regarding France's stance or a joint sanction extension. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "The provided Russian passage discusses Mali's transitional government and the Panel of Experts, offering no evidence regarding France's stance or a joint sanction extension. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        }
+      }
+    },
+    {
+      "id": 14,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "french-uae"
+      ],
+      "visible": [
+        "french-uae"
+      ],
+      "source_decisions": {
+        "french-uae": [
+          "conflict",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided text only documents France's request for a review of sanctions, not a joint effort with Russia to seek an extension.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "french-uae"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided text only documents France's request for a review of sanctions, not a joint effort with Russia to seek an extension.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "french-uae"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided text only documents France's request for a review of sanctions, not a joint effort with Russia to seek an extension. [french-uae]",
+          "added": [
+            "french-uae"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "The provided text only documents France's request for a review of sanctions, not a joint effort with Russia to seek an extension. [french-uae]",
+          "added": [
+            "french-uae"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        }
+      }
+    },
+    {
+      "id": 15,
+      "expected_disposition": "retain",
+      "required_ids": [
+        "french-uae",
+        "russia"
+      ],
+      "visible": [
+        "french-uae",
+        "russia"
+      ],
+      "source_decisions": {
+        "french-uae": [
+          "cite",
+          "cite"
+        ],
+        "russia": [
+          "cite",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "France and Russia each sought an extension of sanctions, as documented in the French-UAE passage regarding France's request and the Russian passage proposing a final extension. [french-uae], [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "France and Russia each sought an extension of sanctions, as documented in the French-UAE passage regarding France's request and the Russian passage proposing a final extension. [french-uae], [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "France and Russia each sought an extension of sanctions, as documented in the French-UAE passage regarding France's request and the Russian passage proposing a final extension. [french-uae], [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "France and Russia each sought an extension of sanctions, as documented in the French-UAE passage regarding France's request and the Russian passage proposing a final extension. [french-uae], [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 16,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [],
+      "source_decisions": {},
+      "arms": {
+        "original": {
+          "brief": "The provided documentary passages are empty, so there is insufficient evidence to verify the claim that France and Russia proposed keeping the Panel of Experts in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "The provided documentary passages are empty, so there is insufficient evidence to verify the claim that France and Russia proposed keeping the Panel of Experts in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "The provided documentary passages are empty, so there is insufficient evidence to verify the claim that France and Russia proposed keeping the Panel of Experts in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The provided documentary passages are empty, so there is insufficient evidence to verify the claim that France and Russia proposed keeping the Panel of Experts in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 17,
+      "expected_disposition": "revise",
+      "required_ids": [
+        "russia"
+      ],
+      "visible": [
+        "russia"
+      ],
+      "source_decisions": {
+        "russia": [
+          "conflict",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia proposed keeping it in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "russia"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia proposed keeping it in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "russia"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia proposed keeping it in operation. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia proposed keeping it in operation. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 18,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [
+        "french-uae"
+      ],
+      "source_decisions": {
+        "french-uae": [
+          "no",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided French-UAE passage only documents the UAE's position on sanctions and the draft, offering no evidence that France or Russia proposed keeping the Panel of Experts in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided French-UAE passage only documents the UAE's position on sanctions and the draft, offering no evidence that France or Russia proposed keeping the Panel of Experts in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided French-UAE passage only documents the UAE's position on sanctions and the draft, offering no evidence that France or Russia proposed keeping the Panel of Experts in operation. [french-uae]",
+          "added": [
+            "french-uae"
+          ],
+          "excess": [
+            "french-uae"
+          ],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "The provided French-UAE passage only documents the UAE's position on sanctions and the draft, offering no evidence that France or Russia proposed keeping the Panel of Experts in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        }
+      }
+    },
+    {
+      "id": 19,
+      "expected_disposition": "revise",
+      "required_ids": [
+        "russia"
+      ],
+      "visible": [
+        "french-uae",
+        "russia"
+      ],
+      "source_decisions": {
+        "french-uae": [
+          "conflict",
+          "cite"
+        ],
+        "russia": [
+          "conflict",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia sought to keep it in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "russia"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia sought to keep it in operation.",
+          "added": [],
+          "excess": [],
+          "missing": [
+            "russia"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia sought to keep it in operation. [french-uae] [russia]",
+          "added": [
+            "french-uae",
+            "russia"
+          ],
+          "excess": [
+            "french-uae"
+          ],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "Russia proposed dissolving the Panel of Experts, contradicting the claim that both France and Russia sought to keep it in operation. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 20,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [],
+      "source_decisions": {},
+      "arms": {
+        "original": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim that both sides stated this would be the final extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim that both sides stated this would be the final extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim that both sides stated this would be the final extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "Evidence is insufficient as no documentary passages support the claim that both sides stated this would be the final extension of sanctions.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    },
+    {
+      "id": 21,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "russia"
+      ],
+      "visible": [
+        "russia"
+      ],
+      "source_decisions": {
+        "russia": [
+          null,
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The claim that both sides agreed on a final extension is unsupported; only Russia's proposal for a final extension is documented in passage [1].",
+          "added": [],
+          "excess": [
+            "1"
+          ],
+          "missing": [
+            "russia"
+          ],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The claim that both sides agreed on a final extension is unsupported; only Russia's proposal for a final extension is documented in passage [1].",
+          "added": [],
+          "excess": [
+            "1"
+          ],
+          "missing": [
+            "russia"
+          ],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The claim that both sides agreed on a final extension is unsupported; only Russia's proposal for a final extension is documented in passage [1]. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [
+            "1"
+          ],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "The claim that both sides agreed on a final extension is unsupported; only Russia's proposal for a final extension is documented in passage [1]. [russia]",
+          "added": [
+            "russia"
+          ],
+          "excess": [
+            "1"
+          ],
+          "missing": [],
+          "strict": false
+        }
+      }
+    },
+    {
+      "id": 22,
+      "expected_disposition": "withhold",
+      "required_ids": [],
+      "visible": [
+        "french-uae"
+      ],
+      "source_decisions": {
+        "french-uae": [
+          "no",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The provided text only documents the UAE's position on sanctions extension; it contains no evidence of France's statement on this specific matter.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "frozen_source_reader": {
+          "brief": "The provided text only documents the UAE's position on sanctions extension; it contains no evidence of France's statement on this specific matter.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        },
+        "attach_all_received": {
+          "brief": "The provided text only documents the UAE's position on sanctions extension; it contains no evidence of France's statement on this specific matter. [french-uae]",
+          "added": [
+            "french-uae"
+          ],
+          "excess": [
+            "french-uae"
+          ],
+          "missing": [],
+          "strict": false
+        },
+        "reviewed_oracle": {
+          "brief": "The provided text only documents the UAE's position on sanctions extension; it contains no evidence of France's statement on this specific matter.",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": false
+        }
+      }
+    },
+    {
+      "id": 23,
+      "expected_disposition": "withhold",
+      "required_ids": [
+        "french-uae",
+        "russia"
+      ],
+      "visible": [
+        "french-uae",
+        "russia"
+      ],
+      "source_decisions": {
+        "french-uae": [
+          "conflict",
+          "cite"
+        ],
+        "russia": [
+          "conflict",
+          "cite"
+        ]
+      },
+      "arms": {
+        "original": {
+          "brief": "The claim that both sides agreed on a final extension is inaccurate; only Russia explicitly proposed making the extension final, while France and the UAE sought an extension to support implementation. [french-uae] [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "frozen_source_reader": {
+          "brief": "The claim that both sides agreed on a final extension is inaccurate; only Russia explicitly proposed making the extension final, while France and the UAE sought an extension to support implementation. [french-uae] [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "attach_all_received": {
+          "brief": "The claim that both sides agreed on a final extension is inaccurate; only Russia explicitly proposed making the extension final, while France and the UAE sought an extension to support implementation. [french-uae] [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        },
+        "reviewed_oracle": {
+          "brief": "The claim that both sides agreed on a final extension is inaccurate; only Russia explicitly proposed making the extension final, while France and the UAE sought an extension to support implementation. [french-uae] [russia]",
+          "added": [],
+          "excess": [],
+          "missing": [],
+          "strict": true
+        }
+      }
+    }
+  ],
+  "summary": {
+    "original": {
+      "usable": 8,
+      "new_briefs_with_excess_citations": 0,
+      "eligible_revisions": 0,
+      "eligible_retains": 1,
+      "replay": {
+        "overlap": {
+          "visible": {
+            "retain": 0.04694975256928208,
+            "revise": 0,
+            "withhold": 0.16230673976094934,
+            "usable": 0.20925649233023141
+          },
+          "erased": {
+            "retain": 0.04143675384353887,
+            "revise": 0,
+            "withhold": 0.12344572013815673,
+            "usable": 0.1648824739816956
+          }
+        },
+        "split": {
+          "visible": {
+            "retain": 0.0624665583040247,
+            "revise": 0,
+            "withhold": 0.1466696999439141,
+            "usable": 0.2091362582479388
+          },
+          "erased": {
+            "retain": 0.056955415778965436,
+            "revise": 0,
+            "withhold": 0.10781053893007891,
+            "usable": 0.16476595470904434
+          }
+        }
+      }
+    },
+    "frozen_source_reader": {
+      "usable": 10,
+      "new_briefs_with_excess_citations": 0,
+      "eligible_revisions": 1,
+      "eligible_retains": 2,
+      "replay": {
+        "overlap": {
+          "visible": {
+            "retain": 0.09389950513856415,
+            "revise": 0.05370326862394986,
+            "withhold": 0.16230673976094934,
+            "usable": 0.30990951352346335
+          },
+          "erased": {
+            "retain": 0.08287350768707774,
+            "revise": 0.05577544070355315,
+            "withhold": 0.12344572013815673,
+            "usable": 0.2620946685287876
+          }
+        },
+        "split": {
+          "visible": {
+            "retain": 0.1249331166080494,
+            "revise": 0.050608218408681384,
+            "withhold": 0.1466696999439141,
+            "usable": 0.3222110349606449
+          },
+          "erased": {
+            "retain": 0.11391083155793087,
+            "revise": 0.05060983501129319,
+            "withhold": 0.10781053893007891,
+            "usable": 0.27233120549930295
+          }
+        }
+      }
+    },
+    "attach_all_received": {
+      "usable": 15,
+      "new_briefs_with_excess_citations": 4,
+      "eligible_revisions": 2,
+      "eligible_retains": 2,
+      "replay": {
+        "overlap": {
+          "visible": {
+            "retain": 0.09389950513856415,
+            "revise": 0.10049074956544007,
+            "withhold": 0.3565347228371617,
+            "usable": 0.550924977541166
+          },
+          "erased": {
+            "retain": 0.08287350768707774,
+            "revise": 0.11156175177402476,
+            "withhold": 0.33223053682619197,
+            "usable": 0.5266657962872945
+          }
+        },
+        "split": {
+          "visible": {
+            "retain": 0.1249331166080494,
+            "revise": 0.09016625142266037,
+            "withhold": 0.33886054268457816,
+            "usable": 0.5539599107152879
+          },
+          "erased": {
+            "retain": 0.11391083155793087,
+            "revise": 0.10123539702918226,
+            "withhold": 0.3166269137561157,
+            "usable": 0.5317731423432288
+          }
+        }
+      }
+    },
+    "reviewed_oracle": {
+      "usable": 17,
+      "new_briefs_with_excess_citations": 0,
+      "eligible_revisions": 4,
+      "eligible_retains": 2,
+      "replay": {
+        "overlap": {
+          "visible": {
+            "retain": 0.09389950513856415,
+            "revise": 0.19439025470400423,
+            "withhold": 0.3565347228371617,
+            "usable": 0.64482448267973
+          },
+          "erased": {
+            "retain": 0.08287350768707774,
+            "revise": 0.19443525946110252,
+            "withhold": 0.33223053682619197,
+            "usable": 0.6095393039743722
+          }
+        },
+        "split": {
+          "visible": {
+            "retain": 0.1249331166080494,
+            "revise": 0.21509936803070978,
+            "withhold": 0.33886054268457816,
+            "usable": 0.6788930273233373
+          },
+          "erased": {
+            "retain": 0.11391083155793087,
+            "revise": 0.21514622858711313,
+            "withhold": 0.3166269137561157,
+            "usable": 0.6456839739011597
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+# Repair the report format by separating selection from value lookup
+
+The first two roles' free-form report prompts returned package letters in place of numeric grades. Keep those outputs. Rerun only those 16 model calls on the same local private cards, with the existing disclosure conventions and an eight-token ceiling. Require one legal package letter. The sender then fills the numeric grade and speaker fields from its own authorized card. Keep D3's eight admitted verbatim model-written reports unchanged. Reuse both prospective domains, exact public evidence rules, adaptive receivers and scoring from the first run. This is a targeted repair on the same now-exposed interface cases. The model chooses the package, while the sender renders the grade mechanically.

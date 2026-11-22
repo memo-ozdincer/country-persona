@@ -1,0 +1,576 @@
+{
+  "scope": "Same-assistant authored controls from two docket families excluded from the prior role-binding pilot. The generic extraction prompt is unchanged. Field menus and the answer keys were frozen before model inference. This uses known field identities and measures confirmation, with comparison errors and deferrals visible separately.",
+  "counts": {
+    "correct_role_extractions": 23,
+    "direct_supported": 5,
+    "separate_supported": 6,
+    "gate_supported": 5,
+    "direct_unsupported": 5,
+    "direct_changed_tested": 6,
+    "separate_changed_tested": 6,
+    "gate_changed_tested": 6,
+    "direct_withheld_tested": 6,
+    "separate_withheld_tested": 6,
+    "gate_withheld_tested": 6
+  },
+  "records": [
+    {
+      "id": "unifil_permission",
+      "family": "unifil",
+      "question": "What does the text say about prior permission for UNIFIL to carry out mandated tasks?",
+      "values": [
+        "No prior permission required",
+        "Prior permission required",
+        "not stated"
+      ],
+      "source": [
+        "Operative paragraph 1 extended UNIFIL's existing mandate until 31 August 2024. Paragraph 15 reaffirmed its independence in carrying out mandated tasks without prior permission and its continued coordination with Lebanon's Government under the status-of-forces agreement.",
+        "On 31 August 2023 in meeting S/PV.9409, the Council voted on draft S/2023/641 submitted by France. It was adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining. Brazil voted in favour."
+      ],
+      "source_withheld": [
+        "Russia attributed its abstention to contentious late drafting changes and said the final text lost a prior compromise. It continued to support the mission's activities and called for coordination with Lebanon's Government.",
+        "On 31 August 2023 in meeting S/PV.9409, the Council voted on draft S/2023/641 submitted by France. It was adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining. Brazil voted in favour."
+      ],
+      "faithful": [
+        "UNIFIL can carry out its mandated tasks without prior permission."
+      ],
+      "foil": [
+        "UNIFIL must secure prior permission to carry out its mandated tasks."
+      ],
+      "source_witness": "independence in carrying out mandated tasks without prior permission",
+      "fields": {
+        "source": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "source_withheld": {
+          "orders": [
+            2,
+            2
+          ],
+          "stable": 2
+        },
+        "faithful": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "foil": {
+          "orders": [
+            1,
+            1
+          ],
+          "stable": 1
+        }
+      },
+      "comparisons": {
+        "support": {
+          "expected_confirmation": true,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "match",
+          "matched_gate": true
+        },
+        "changed": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "mismatch",
+          "matched_gate": false
+        },
+        "withheld": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              2,
+              2
+            ],
+            "stable": 2
+          },
+          "separate": "defer",
+          "matched_gate": false
+        }
+      }
+    },
+    {
+      "id": "unifil_vote",
+      "family": "unifil",
+      "question": "How did Russia vote on draft S/2023/641, according to the text?",
+      "values": [
+        "Abstained",
+        "Voted in favour",
+        "not stated"
+      ],
+      "source": [
+        "Operative paragraph 1 extended UNIFIL's existing mandate until 31 August 2024. Paragraph 15 reaffirmed its independence in carrying out mandated tasks without prior permission and its continued coordination with Lebanon's Government under the status-of-forces agreement.",
+        "On 31 August 2023 in meeting S/PV.9409, the Council voted on draft S/2023/641 submitted by France. It was adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining. Brazil voted in favour."
+      ],
+      "source_withheld": [
+        "Operative paragraph 1 extended UNIFIL's existing mandate until 31 August 2024. Paragraph 15 reaffirmed its independence in carrying out mandated tasks without prior permission and its continued coordination with Lebanon's Government under the status-of-forces agreement.",
+        "Brazil supported UNIFIL's continuing work. It judged that the French text kept the mandate robust and allowed UNIFIL to operate freely, while addressing some of Lebanon's concerns."
+      ],
+      "faithful": [
+        "The Russian Federation abstained on draft S/2023/641."
+      ],
+      "foil": [
+        "The Russian Federation voted in favour of draft S/2023/641."
+      ],
+      "source_witness": "with China and the Russian Federation abstaining",
+      "fields": {
+        "source": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "source_withheld": {
+          "orders": [
+            2,
+            2
+          ],
+          "stable": 2
+        },
+        "faithful": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "foil": {
+          "orders": [
+            1,
+            1
+          ],
+          "stable": 1
+        }
+      },
+      "comparisons": {
+        "support": {
+          "expected_confirmation": true,
+          "direct": {
+            "orders": [
+              1,
+              0
+            ],
+            "stable": null
+          },
+          "separate": "match",
+          "matched_gate": false
+        },
+        "changed": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              1,
+              1
+            ],
+            "stable": 1
+          },
+          "separate": "mismatch",
+          "matched_gate": false
+        },
+        "withheld": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              2,
+              2
+            ],
+            "stable": 2
+          },
+          "separate": "defer",
+          "matched_gate": false
+        }
+      }
+    },
+    {
+      "id": "unifil_brazil_assessment",
+      "family": "unifil",
+      "question": "Who judged that the French text addressed some of Lebanon's concerns?",
+      "values": [
+        "Brazil",
+        "China",
+        "not stated"
+      ],
+      "source": [
+        "Brazil supported UNIFIL's continuing work. It judged that the French text kept the mandate robust and allowed UNIFIL to operate freely, while addressing some of Lebanon's concerns.",
+        "On 31 August 2023 in meeting S/PV.9409, the Council voted on draft S/2023/641 submitted by France. It was adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining. Brazil voted in favour."
+      ],
+      "source_withheld": [
+        "Operative paragraph 1 extended UNIFIL's existing mandate until 31 August 2024. Paragraph 15 reaffirmed its independence in carrying out mandated tasks without prior permission and its continued coordination with Lebanon's Government under the status-of-forces agreement.",
+        "On 31 August 2023 in meeting S/PV.9409, the Council voted on draft S/2023/641 submitted by France. It was adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining. Brazil voted in favour."
+      ],
+      "faithful": [
+        "Brazil assessed that the French text addressed some Lebanese concerns."
+      ],
+      "foil": [
+        "China assessed that the French text addressed some Lebanese concerns."
+      ],
+      "source_witness": "while addressing some of Lebanon's concerns",
+      "fields": {
+        "source": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "source_withheld": {
+          "orders": [
+            2,
+            0
+          ],
+          "stable": null
+        },
+        "faithful": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "foil": {
+          "orders": [
+            1,
+            1
+          ],
+          "stable": 1
+        }
+      },
+      "comparisons": {
+        "support": {
+          "expected_confirmation": true,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "match",
+          "matched_gate": true
+        },
+        "changed": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "mismatch",
+          "matched_gate": false
+        },
+        "withheld": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              2,
+              2
+            ],
+            "stable": 2
+          },
+          "separate": "defer",
+          "matched_gate": false
+        }
+      }
+    },
+    {
+      "id": "colombia_emc",
+      "family": "colombia",
+      "question": "What did resolution 2704 do about Government–EMC monitoring and verification?",
+      "values": [
+        "Expressed willingness to consider later under conditions",
+        "Granted the Mission immediate authority",
+        "not stated"
+      ],
+      "source": [
+        "S/PV.9461, p. 2. Ghana spoke on behalf of the three African members. The A3 welcomed the unanimous mandate extension, supported Mission monitoring and verification in the EMC case contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people.",
+        "Resolution 2704, final preambular paragraph. Resolution 2694 had already extended the Mission's role to monitoring and verification of the Government–ELN ceasefire. Resolution 2704 expressed willingness to consider Government–EMC monitoring and verification when the Secretary-General confirms a ceasefire with appropriate verification protocols and taking into account his update on implementation of resolution 2694."
+      ],
+      "source_withheld": [
+        "S/PV.9461, p. 2. Ghana spoke on behalf of the three African members. The A3 welcomed the unanimous mandate extension, supported Mission monitoring and verification in the EMC case contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people.",
+        "S/PV.9461, p. 2. On 30 October 2023, the Council voted on United Kingdom draft S/2023/808. All 15 members voted in favour and the Council President announced unanimous adoption as resolution 2704 (2023)."
+      ],
+      "faithful": [
+        "Resolution 2704 expressed willingness to consider monitoring and verification of a Government–EMC ceasefire under conditions."
+      ],
+      "foil": [
+        "Resolution 2704 immediately granted the Mission authority to monitor and verify a Government–EMC ceasefire."
+      ],
+      "source_witness": "expressed willingness to consider Government–EMC monitoring and verification",
+      "fields": {
+        "source": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "source_withheld": {
+          "orders": [
+            2,
+            2
+          ],
+          "stable": 2
+        },
+        "faithful": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "foil": {
+          "orders": [
+            1,
+            1
+          ],
+          "stable": 1
+        }
+      },
+      "comparisons": {
+        "support": {
+          "expected_confirmation": true,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "match",
+          "matched_gate": true
+        },
+        "changed": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              2,
+              1
+            ],
+            "stable": null
+          },
+          "separate": "mismatch",
+          "matched_gate": false
+        },
+        "withheld": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "defer",
+          "matched_gate": false
+        }
+      }
+    },
+    {
+      "id": "colombia_a3",
+      "family": "colombia",
+      "question": "Who spoke on whose behalf when presenting the African members' statement?",
+      "values": [
+        "Ghana spoke for the three African members",
+        "The three African members spoke on behalf of Ghana",
+        "not stated"
+      ],
+      "source": [
+        "S/PV.9461, p. 2. Ghana spoke on behalf of the three African members. The A3 welcomed the unanimous mandate extension, supported Mission monitoring and verification in the EMC case contingent on the Secretary-General's conditions, and pledged to encourage progress on the Ethnic Chapter for Afro-Colombian and Indigenous people.",
+        "S/PV.9461, p. 2. On 30 October 2023, the Council voted on United Kingdom draft S/2023/808. All 15 members voted in favour and the Council President announced unanimous adoption as resolution 2704 (2023)."
+      ],
+      "source_withheld": [
+        "Resolution 2704, operative paragraphs 1 and 2. The Council extended the UN Verification Mission in Colombia until 31 October 2024. It expressed willingness to work with Colombia's Government on further extension of the mandate on the basis of agreement between the parties.",
+        "S/PV.9461, p. 2. On 30 October 2023, the Council voted on United Kingdom draft S/2023/808. All 15 members voted in favour and the Council President announced unanimous adoption as resolution 2704 (2023)."
+      ],
+      "faithful": [
+        "Ghana spoke on behalf of the three African members."
+      ],
+      "foil": [
+        "The three African members spoke on behalf of Ghana."
+      ],
+      "source_witness": "Ghana spoke on behalf of the three African members",
+      "fields": {
+        "source": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "source_withheld": {
+          "orders": [
+            2,
+            2
+          ],
+          "stable": 2
+        },
+        "faithful": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "foil": {
+          "orders": [
+            1,
+            1
+          ],
+          "stable": 1
+        }
+      },
+      "comparisons": {
+        "support": {
+          "expected_confirmation": true,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "match",
+          "matched_gate": true
+        },
+        "changed": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "mismatch",
+          "matched_gate": false
+        },
+        "withheld": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              2,
+              2
+            ],
+            "stable": 2
+          },
+          "separate": "defer",
+          "matched_gate": false
+        }
+      }
+    },
+    {
+      "id": "colombia_brazil_capacity",
+      "family": "colombia",
+      "question": "In what capacity did the representative say the Council should respond to Colombia's priorities?",
+      "values": [
+        "As representative of Brazil",
+        "As Council President speaking for the Council",
+        "not stated"
+      ],
+      "source": [
+        "Resolution 2704, final preambular paragraph. Resolution 2694 had already extended the Mission's role to monitoring and verification of the Government–ELN ceasefire. Resolution 2704 expressed willingness to consider Government–EMC monitoring and verification when the Secretary-General confirms a ceasefire with appropriate verification protocols and taking into account his update on implementation of resolution 2694.",
+        "S/PV.9461, p. 3. The presiding representative switched to speaking for Brazil. He said the Council should respond to Colombia's priorities as expressed by its Government and described the resolution as reflecting Colombia's sovereign will. Brazil supported the Government's total peace strategy and hoped the Council could authorize verification of the EMC ceasefire when sufficiently mature."
+      ],
+      "source_withheld": [
+        "Resolution 2704, final preambular paragraph. Resolution 2694 had already extended the Mission's role to monitoring and verification of the Government–ELN ceasefire. Resolution 2704 expressed willingness to consider Government–EMC monitoring and verification when the Secretary-General confirms a ceasefire with appropriate verification protocols and taking into account his update on implementation of resolution 2694.",
+        "S/PV.9461, p. 2. On 30 October 2023, the Council voted on United Kingdom draft S/2023/808. All 15 members voted in favour and the Council President announced unanimous adoption as resolution 2704 (2023)."
+      ],
+      "faithful": [
+        "The presiding representative said, speaking for Brazil, that the Council should respond to Colombia's priorities."
+      ],
+      "foil": [
+        "The presiding representative said, speaking as Council President for the Council, that the Council should respond to Colombia's priorities."
+      ],
+      "source_witness": "The presiding representative switched to speaking for Brazil",
+      "fields": {
+        "source": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "source_withheld": {
+          "orders": [
+            2,
+            2
+          ],
+          "stable": 2
+        },
+        "faithful": {
+          "orders": [
+            0,
+            0
+          ],
+          "stable": 0
+        },
+        "foil": {
+          "orders": [
+            1,
+            1
+          ],
+          "stable": 1
+        }
+      },
+      "comparisons": {
+        "support": {
+          "expected_confirmation": true,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "match",
+          "matched_gate": true
+        },
+        "changed": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              0,
+              0
+            ],
+            "stable": 0
+          },
+          "separate": "mismatch",
+          "matched_gate": false
+        },
+        "withheld": {
+          "expected_confirmation": false,
+          "direct": {
+            "orders": [
+              2,
+              2
+            ],
+            "stable": 2
+          },
+          "separate": "defer",
+          "matched_gate": false
+        }
+      }
+    }
+  ]
+}

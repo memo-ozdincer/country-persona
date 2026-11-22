@@ -1,0 +1,874 @@
+{
+  "train": [
+    {
+      "id": "synthetic-0-0/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "C",
+        "D"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'format': 'written'}. I can accept C.\", \"Responding reviewer: My full requirement is {'format': 'written'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-0-0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "A",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'format': 'written'}. I can accept C.\", \"Responding reviewer: My full requirement is {'format': 'written'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-0-1/consistent",
+      "kind": "consistent",
+      "endorsed": "D",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'format': 'oral'}. I can accept A.\", \"Responding reviewer: My full requirement is {'format': 'written'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-0-1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "B",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'format': 'oral'}. I can accept A.\", \"Responding reviewer: My full requirement is {'format': 'written'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-0-2/consistent",
+      "kind": "consistent",
+      "endorsed": "A",
+      "supported": [
+        "A"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'format': 'oral'}. I can accept A.\", \"Responding reviewer: My full requirement is {'review': 'one review'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-0-2/contradictory",
+      "kind": "contradictory",
+      "endorsed": "B",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'format': 'oral'}. I can accept A.\", \"Responding reviewer: My full requirement is {'review': 'one review'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-0-3/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "B"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'review': 'two reviews'}. I can accept B.\", \"Responding reviewer: My full requirement is {'format': 'oral'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-0-3/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: format is oral; review is one review\", \"B: format is oral; review is two reviews\", \"C: format is written; review is two reviews\", \"D: format is written; review is one review\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'review': 'two reviews'}. I can accept B.\", \"Responding reviewer: My full requirement is {'format': 'oral'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-0/consistent",
+      "kind": "consistent",
+      "endorsed": "A",
+      "supported": [
+        "A",
+        "D"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'venue': 'online'}. I can accept A.\", \"Responding reviewer: My full requirement is {'venue': 'online'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "B",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'venue': 'online'}. I can accept A.\", \"Responding reviewer: My full requirement is {'venue': 'online'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-1/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'venue': 'online'}. I can accept A.\", \"Responding reviewer: My full requirement is {'venue': 'onsite'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'venue': 'online'}. I can accept A.\", \"Responding reviewer: My full requirement is {'venue': 'onsite'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-2/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "B"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'timing': 'morning'}. I can accept B.\", \"Responding reviewer: My full requirement is {'venue': 'onsite'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-2/contradictory",
+      "kind": "contradictory",
+      "endorsed": "A",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'timing': 'morning'}. I can accept B.\", \"Responding reviewer: My full requirement is {'venue': 'onsite'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-3/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "C"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'venue': 'onsite'}. I can accept B.\", \"Responding reviewer: My full requirement is {'timing': 'afternoon'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-1-3/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: venue is online; timing is afternoon\", \"B: venue is onsite; timing is morning\", \"C: venue is onsite; timing is afternoon\", \"D: venue is online; timing is morning\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'venue': 'onsite'}. I can accept B.\", \"Responding reviewer: My full requirement is {'timing': 'afternoon'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-0/consistent",
+      "kind": "consistent",
+      "endorsed": "A",
+      "supported": [
+        "A",
+        "C"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'retention': 'six weeks'}. I can accept A.\", \"Responding reviewer: My full requirement is {'retention': 'six weeks'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "B",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'retention': 'six weeks'}. I can accept A.\", \"Responding reviewer: My full requirement is {'retention': 'six weeks'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-1/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'retention': 'ten weeks'}. I can accept B.\", \"Responding reviewer: My full requirement is {'retention': 'six weeks'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'retention': 'ten weeks'}. I can accept B.\", \"Responding reviewer: My full requirement is {'retention': 'six weeks'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-2/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "D"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'retention': 'ten weeks'}. I can accept B.\", \"Responding reviewer: My full requirement is {'access': 'open'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-2/contradictory",
+      "kind": "contradictory",
+      "endorsed": "A",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'retention': 'ten weeks'}. I can accept B.\", \"Responding reviewer: My full requirement is {'access': 'open'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-3/consistent",
+      "kind": "consistent",
+      "endorsed": "D",
+      "supported": [
+        "B"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'access': 'registered'}. I can accept A.\", \"Responding reviewer: My full requirement is {'retention': 'ten weeks'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-2-3/contradictory",
+      "kind": "contradictory",
+      "endorsed": "C",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: retention is six weeks; access is registered\", \"B: retention is ten weeks; access is registered\", \"C: retention is six weeks; access is open\", \"D: retention is ten weeks; access is open\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'access': 'registered'}. I can accept A.\", \"Responding reviewer: My full requirement is {'retention': 'ten weeks'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-0/consistent",
+      "kind": "consistent",
+      "endorsed": "A",
+      "supported": [
+        "A",
+        "D"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'reporting': 'monthly'}. I can accept A.\", \"Responding reviewer: My full requirement is {'reporting': 'monthly'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "B",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'reporting': 'monthly'}. I can accept A.\", \"Responding reviewer: My full requirement is {'reporting': 'monthly'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-1/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'reporting': 'monthly'}. I can accept A.\", \"Responding reviewer: My full requirement is {'reporting': 'quarterly'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'reporting': 'monthly'}. I can accept A.\", \"Responding reviewer: My full requirement is {'reporting': 'quarterly'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-2/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "B"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'start': 'May'}. I can accept A.\", \"Responding reviewer: My full requirement is {'reporting': 'quarterly'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-2/contradictory",
+      "kind": "contradictory",
+      "endorsed": "A",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'start': 'May'}. I can accept A.\", \"Responding reviewer: My full requirement is {'reporting': 'quarterly'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-3/consistent",
+      "kind": "consistent",
+      "endorsed": "D",
+      "supported": [
+        "C"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'reporting': 'quarterly'}. I can accept B.\", \"Responding reviewer: My full requirement is {'start': 'October'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "synthetic-3-3/contradictory",
+      "kind": "contradictory",
+      "endorsed": "B",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: reporting is monthly; start is May\", \"B: reporting is quarterly; start is May\", \"C: reporting is quarterly; start is October\", \"D: reporting is monthly; start is October\"], \"public_notes\": [\"Opening reviewer: My full requirement is {'reporting': 'quarterly'}. I can accept B.\", \"Responding reviewer: My full requirement is {'start': 'October'}. One option I could accept is B.\"]}"
+        }
+      ]
+    }
+  ],
+  "held": [
+    {
+      "id": "iraq-overlap/0/consistent",
+      "kind": "consistent",
+      "endorsed": "A",
+      "supported": [
+        "A"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"France workshop delegate: My full requirement is {'term': 'retain'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'documentation': 'public'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "iraq-overlap/0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "B",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"France workshop delegate: My full requirement is {'term': 'retain'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'documentation': 'public'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "iraq-overlap/1/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "A"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'documentation': 'public'}. I can accept A.\", \"France workshop delegate: My full requirement is {'term': 'retain'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "iraq-overlap/1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'documentation': 'public'}. I can accept A.\", \"France workshop delegate: My full requirement is {'term': 'retain'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "iraq-impasse/0/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"France workshop delegate: My full requirement is {'term': 'retain'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'term': 'shorten'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "iraq-impasse/0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "A",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"France workshop delegate: My full requirement is {'term': 'retain'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'term': 'shorten'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "iraq-impasse/1/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'term': 'shorten'}. I can accept C.\", \"France workshop delegate: My full requirement is {'term': 'retain'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "iraq-impasse/1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Keep the adopted mandate and review deadlines. Publish an aggregate consultation summary, with no confidential annex.\", \"B: Keep the adopted mandate and review deadlines. Add a confidential consultation annex and a public aggregate summary.\", \"C: Recommend a future change shortening the mandate term. Add a confidential consultation annex and a public aggregate summary.\", \"D: Recommend a future change shortening the mandate term. Publish an aggregate consultation summary, with no confidential annex.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'term': 'shorten'}. I can accept C.\", \"France workshop delegate: My full requirement is {'term': 'retain'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-overlap/0/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "B"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'checkpoint': 'additional'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-overlap/0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "A",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'checkpoint': 'additional'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-overlap/1/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "B"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'checkpoint': 'additional'}. I can accept B.\", \"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-overlap/1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'checkpoint': 'additional'}. I can accept B.\", \"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. One option I could accept is D.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-impasse/0/consistent",
+      "kind": "consistent",
+      "endorsed": "C",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'duration': 'six'}. One option I could accept is C.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-impasse/0/contradictory",
+      "kind": "contradictory",
+      "endorsed": "A",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. I can accept A.\", \"United Kingdom workshop delegate: My full requirement is {'duration': 'six'}. One option I could accept is A.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-impasse/1/consistent",
+      "kind": "consistent",
+      "endorsed": "B",
+      "supported": [
+        "I"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'duration': 'six'}. I can accept C.\", \"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. One option I could accept is B.\"]}"
+        }
+      ]
+    },
+    {
+      "id": "syria-impasse/1/contradictory",
+      "kind": "contradictory",
+      "endorsed": "D",
+      "supported": [
+        "U"
+      ],
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are the workshop chair. Use only the reported constraints and endorsements. Choose a package only if both roles can accept it. Mark impasse if all packages are ruled out. Use unresolved for incomplete or conflicting evidence. Output exactly one letter from A, B, C, D, I (impasse), U (unresolved)."
+        },
+        {
+          "role": "user",
+          "content": "{\"menu\": [\"A: Recommend nine months, with access through cross-border and cross-line channels and ordinary reporting.\", \"B: Recommend nine months with both access modalities and an extra formal review checkpoint.\", \"C: Recommend six months with both access modalities and an extra formal review checkpoint.\", \"D: Recommend six months with both access modalities and ordinary reporting.\"], \"public_notes\": [\"United Kingdom workshop delegate: My full requirement is {'duration': 'six'}. I can accept C.\", \"Brazil workshop delegate: My full requirement is {'duration': 'nine'}. One option I could accept is D.\"]}"
+        }
+      ]
+    }
+  ]
+}

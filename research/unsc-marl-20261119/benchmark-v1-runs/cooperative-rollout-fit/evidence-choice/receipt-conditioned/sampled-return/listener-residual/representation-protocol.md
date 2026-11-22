@@ -1,0 +1,5 @@
+# Can the three features express the exact 2553 policy?
+
+Use the same two orders, four delivery rates and three priors. Enumerate all 16 legal plans and recompute their release directly from the archived records. For each desk and scenario, when all maximizing plans agree on an action in a given observation, require the signed action-feature margin to be nonnegative. Require it to be strictly positive whenever the chosen action would lose an exact tie to action zero. Ask whether one constant weight vector can satisfy those decisions on every condition. Use bounds of ±1 to fix scale without loss of generality. Evaluate returned feasible weights using the unchanged numerical decoder. If tied maximizing plans leave actions unforced, report the empirical gap of the witness and distinguish necessary constraints from full feasibility. This is an exposed representation audit, with the optimal 2553 actions used directly in its constraints.
+
+As a diagnostic, score the shared historical witness on the existing synthetic training and fresh panels. Reuse both the stochastic objective and greedy deployed score. No synthetic scores enter the witness construction.

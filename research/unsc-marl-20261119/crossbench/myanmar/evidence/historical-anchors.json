@@ -1,0 +1,528 @@
+{
+  "scope": "Assistant-authored fixtures. Exact source and candidate span validation, no model judge calls.",
+  "anchors": [
+    {
+      "request": {
+        "id": "myanmar-correct",
+        "mode": "FINAL",
+        "task": "Write a retrospective record of the Council's 21 December 2022 decision on Myanmar. Identify the draft, decision, representative positions, humanitarian access and ASEAN provisions, and the reporting instruction. Keep the Council president's procedural role separate from India's national statement.",
+        "evidence": [
+          {
+            "id": "vote",
+            "source": "https://digitallibrary.un.org/record/3998419?ln=en",
+            "text": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+          },
+          {
+            "id": "chair",
+            "source": "https://documents.un.org/api/symbol/access?l=en&s=S%2FPV.9231&t=pdf",
+            "text": "India held the Council presidency. The President called the vote and announced adoption. India's representative later explained the national abstention, then resumed the duties of President."
+          },
+          {
+            "id": "uk",
+            "source": "https://documents.un.org/api/symbol/access?l=en&s=S%2FPV.9231&t=pdf",
+            "text": "The United Kingdom submitted the draft and welcomed the result after consultations with Council members, ASEAN members and regional partners. It emphasized ending violence, humanitarian access and support for ASEAN efforts."
+          },
+          {
+            "id": "india",
+            "source": "https://documents.un.org/api/symbol/access?l=en&s=S%2FPV.9231&t=pdf",
+            "text": "India praised the United Kingdom's consultation and noted neighbouring countries' concerns. It advocated quiet, constructive diplomacy and explained its abstention in light of those concerns."
+          },
+          {
+            "id": "mandate",
+            "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+            "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+          }
+        ],
+        "rubric": [
+          {
+            "id": "draft-act",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify the adopted act as resolution 2669 (2022) and link it to draft S/2022/980."
+          },
+          {
+            "id": "vote-count",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give the 12–0–3 result and name the three abstentions."
+          },
+          {
+            "id": "uk",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify the United Kingdom as sponsor and a yes vote. Give its supported rationale."
+          },
+          {
+            "id": "india",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify India's abstention and its preference for quiet, constructive diplomacy or its neighboring-country concerns."
+          },
+          {
+            "id": "role",
+            "category": "final",
+            "weight": 7,
+            "rule": "Separate the President's procedural announcement of adoption from India's national explanation of vote."
+          },
+          {
+            "id": "humanitarian",
+            "category": "final",
+            "weight": 7,
+            "rule": "Record the demands concerning ending violence and enabling humanitarian access."
+          },
+          {
+            "id": "asean",
+            "category": "final",
+            "weight": 7,
+            "rule": "Preserve ASEAN's central role and coordination with the UN."
+          },
+          {
+            "id": "overlap",
+            "category": "final",
+            "weight": 7,
+            "rule": "Record shared attention to ASEAN or regional consultation while preserving the disagreement about the Council's action."
+          },
+          {
+            "id": "reporting",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give the oral report to the Council, the 15 March 2023 deadline, the actor and ASEAN coordination."
+          },
+          {
+            "id": "authority",
+            "category": "final",
+            "weight": 7,
+            "rule": "Keep the adopted resolution, the national positions and hypothetical workshop proposals distinct. A claim of unanimous adoption, Indian support, or a mandatory public aggregate report fails the fabrication guard."
+          }
+        ],
+        "answer": "The Council adopted S/2022/980 as resolution 2669 (2022). The vote was 12–0–3, with China, India and Russia abstaining. The United Kingdom sponsored and supported the text after regional consultations, citing the need to end violence and enable access. India abstained and advocated quiet, constructive diplomacy in view of neighboring countries' concerns. India's representative announced adoption as Council President and later explained the abstention in a national capacity. The resolution demanded an end to violence and called for humanitarian access. It acknowledged ASEAN's central role and called for coordination with the UN. Both delegations drew attention to ASEAN and neighboring countries, while differing on how the Council should act. The Secretary-General or his Special Envoy, coordinating with the ASEAN Special Envoy, was asked to report orally to the Council by 15 March 2023 on support for the Five-Point Consensus. The adopted reporting instruction was an oral briefing to the Council."
+      },
+      "verdict": {
+        "id": "myanmar-correct",
+        "guard": {
+          "status": "clear",
+          "response": "The adopted reporting instruction was an oral briefing to the Council.",
+          "source": [],
+          "reason": "The official reporting requirement is oral and directed to the Council."
+        },
+        "units": [
+          {
+            "id": "draft-act",
+            "status": "met",
+            "response": "The Council adopted S/2022/980 as resolution 2669 (2022).",
+            "source": [
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Identify the adopted act as resolution 2669 (2022) and link it to draft S/2022/980."
+          },
+          {
+            "id": "vote-count",
+            "status": "met",
+            "response": "The vote was 12–0–3, with China, India and Russia abstaining.",
+            "source": [
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Give the 12–0–3 result and name the three abstentions."
+          },
+          {
+            "id": "uk",
+            "status": "met",
+            "response": "The United Kingdom sponsored and supported the text after regional consultations, citing the need to end violence and enable access.",
+            "source": [
+              {
+                "block": "uk",
+                "quote": "The United Kingdom submitted the draft and welcomed the result after consultations with Council members, ASEAN members and regional partners. It emphasized ending violence, humanitarian access and support for ASEAN efforts."
+              },
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Identify the United Kingdom as sponsor and a yes vote. Give its supported rationale."
+          },
+          {
+            "id": "india",
+            "status": "met",
+            "response": "India abstained and advocated quiet, constructive diplomacy in view of neighboring countries' concerns.",
+            "source": [
+              {
+                "block": "india",
+                "quote": "India praised the United Kingdom's consultation and noted neighbouring countries' concerns. It advocated quiet, constructive diplomacy and explained its abstention in light of those concerns."
+              },
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Identify India's abstention and its preference for quiet, constructive diplomacy or its neighboring-country concerns."
+          },
+          {
+            "id": "role",
+            "status": "met",
+            "response": "India's representative announced adoption as Council President and later explained the abstention in a national capacity.",
+            "source": [
+              {
+                "block": "chair",
+                "quote": "India held the Council presidency. The President called the vote and announced adoption. India's representative later explained the national abstention, then resumed the duties of President."
+              }
+            ],
+            "reason": "Separate the President's procedural announcement of adoption from India's national explanation of vote."
+          },
+          {
+            "id": "humanitarian",
+            "status": "met",
+            "response": "The resolution demanded an end to violence and called for humanitarian access.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "Record the demands concerning ending violence and enabling humanitarian access."
+          },
+          {
+            "id": "asean",
+            "status": "met",
+            "response": "It acknowledged ASEAN's central role and called for coordination with the UN.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "Preserve ASEAN's central role and coordination with the UN."
+          },
+          {
+            "id": "overlap",
+            "status": "met",
+            "response": "Both delegations drew attention to ASEAN and neighboring countries, while differing on how the Council should act.",
+            "source": [
+              {
+                "block": "uk",
+                "quote": "The United Kingdom submitted the draft and welcomed the result after consultations with Council members, ASEAN members and regional partners. It emphasized ending violence, humanitarian access and support for ASEAN efforts."
+              },
+              {
+                "block": "india",
+                "quote": "India praised the United Kingdom's consultation and noted neighbouring countries' concerns. It advocated quiet, constructive diplomacy and explained its abstention in light of those concerns."
+              }
+            ],
+            "reason": "Record shared attention to ASEAN or regional consultation while preserving the disagreement about the Council's action."
+          },
+          {
+            "id": "reporting",
+            "status": "met",
+            "response": "The Secretary-General or his Special Envoy, coordinating with the ASEAN Special Envoy, was asked to report orally to the Council by 15 March 2023 on support for the Five-Point Consensus.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "Give the oral report to the Council, the 15 March 2023 deadline, the actor and ASEAN coordination."
+          },
+          {
+            "id": "authority",
+            "status": "met",
+            "response": "The adopted reporting instruction was an oral briefing to the Council.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "Keep the adopted resolution, the national positions and hypothetical workshop proposals distinct. A claim of unanimous adoption, Indian support, or a mandatory public aggregate report fails the fabrication guard."
+          }
+        ]
+      },
+      "score": {
+        "final": {
+          "lower": 70,
+          "upper": 70,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "clear",
+        "strict": true
+      }
+    },
+    {
+      "request": {
+        "id": "myanmar-foil",
+        "mode": "FINAL",
+        "task": "Write a retrospective record of the Council's 21 December 2022 decision on Myanmar. Identify the draft, decision, representative positions, humanitarian access and ASEAN provisions, and the reporting instruction. Keep the Council president's procedural role separate from India's national statement.",
+        "evidence": [
+          {
+            "id": "vote",
+            "source": "https://digitallibrary.un.org/record/3998419?ln=en",
+            "text": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+          },
+          {
+            "id": "chair",
+            "source": "https://documents.un.org/api/symbol/access?l=en&s=S%2FPV.9231&t=pdf",
+            "text": "India held the Council presidency. The President called the vote and announced adoption. India's representative later explained the national abstention, then resumed the duties of President."
+          },
+          {
+            "id": "uk",
+            "source": "https://documents.un.org/api/symbol/access?l=en&s=S%2FPV.9231&t=pdf",
+            "text": "The United Kingdom submitted the draft and welcomed the result after consultations with Council members, ASEAN members and regional partners. It emphasized ending violence, humanitarian access and support for ASEAN efforts."
+          },
+          {
+            "id": "india",
+            "source": "https://documents.un.org/api/symbol/access?l=en&s=S%2FPV.9231&t=pdf",
+            "text": "India praised the United Kingdom's consultation and noted neighbouring countries' concerns. It advocated quiet, constructive diplomacy and explained its abstention in light of those concerns."
+          },
+          {
+            "id": "mandate",
+            "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+            "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+          }
+        ],
+        "rubric": [
+          {
+            "id": "draft-act",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify the adopted act as resolution 2669 (2022) and link it to draft S/2022/980."
+          },
+          {
+            "id": "vote-count",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give the 12–0–3 result and name the three abstentions."
+          },
+          {
+            "id": "uk",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify the United Kingdom as sponsor and a yes vote. Give its supported rationale."
+          },
+          {
+            "id": "india",
+            "category": "final",
+            "weight": 7,
+            "rule": "Identify India's abstention and its preference for quiet, constructive diplomacy or its neighboring-country concerns."
+          },
+          {
+            "id": "role",
+            "category": "final",
+            "weight": 7,
+            "rule": "Separate the President's procedural announcement of adoption from India's national explanation of vote."
+          },
+          {
+            "id": "humanitarian",
+            "category": "final",
+            "weight": 7,
+            "rule": "Record the demands concerning ending violence and enabling humanitarian access."
+          },
+          {
+            "id": "asean",
+            "category": "final",
+            "weight": 7,
+            "rule": "Preserve ASEAN's central role and coordination with the UN."
+          },
+          {
+            "id": "overlap",
+            "category": "final",
+            "weight": 7,
+            "rule": "Record shared attention to ASEAN or regional consultation while preserving the disagreement about the Council's action."
+          },
+          {
+            "id": "reporting",
+            "category": "final",
+            "weight": 7,
+            "rule": "Give the oral report to the Council, the 15 March 2023 deadline, the actor and ASEAN coordination."
+          },
+          {
+            "id": "authority",
+            "category": "final",
+            "weight": 7,
+            "rule": "Keep the adopted resolution, the national positions and hypothetical workshop proposals distinct. A claim of unanimous adoption, Indian support, or a mandatory public aggregate report fails the fabrication guard."
+          }
+        ],
+        "answer": "The Council adopted S/2022/980 as resolution 2669 (2022). The vote was 12–0–3, with China, India and Russia abstaining. The United Kingdom sponsored and supported the text after regional consultations, citing the need to end violence and enable access. India abstained and advocated quiet, constructive diplomacy in view of neighboring countries' concerns. India's representative announced adoption as Council President and later explained the abstention in a national capacity. The resolution demanded an end to violence and called for humanitarian access. It acknowledged ASEAN's central role and called for coordination with the UN. Both delegations drew attention to ASEAN and neighboring countries, while differing on how the Council should act. The Secretary-General or his Special Envoy, coordinating with the ASEAN Special Envoy, was asked to report orally to the Council by 15 March 2023 on support for the Five-Point Consensus. The adopted reporting instruction was an oral briefing to the Council. The resolution also imposed a mandatory public aggregate report."
+      },
+      "verdict": {
+        "id": "myanmar-foil",
+        "guard": {
+          "status": "failed",
+          "response": "The resolution also imposed a mandatory public aggregate report.",
+          "source": [
+            {
+              "block": "mandate",
+              "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+            }
+          ],
+          "reason": "The official reporting requirement is oral and directed to the Council."
+        },
+        "units": [
+          {
+            "id": "draft-act",
+            "status": "met",
+            "response": "The Council adopted S/2022/980 as resolution 2669 (2022).",
+            "source": [
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Identify the adopted act as resolution 2669 (2022) and link it to draft S/2022/980."
+          },
+          {
+            "id": "vote-count",
+            "status": "met",
+            "response": "The vote was 12–0–3, with China, India and Russia abstaining.",
+            "source": [
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Give the 12–0–3 result and name the three abstentions."
+          },
+          {
+            "id": "uk",
+            "status": "met",
+            "response": "The United Kingdom sponsored and supported the text after regional consultations, citing the need to end violence and enable access.",
+            "source": [
+              {
+                "block": "uk",
+                "quote": "The United Kingdom submitted the draft and welcomed the result after consultations with Council members, ASEAN members and regional partners. It emphasized ending violence, humanitarian access and support for ASEAN efforts."
+              },
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Identify the United Kingdom as sponsor and a yes vote. Give its supported rationale."
+          },
+          {
+            "id": "india",
+            "status": "met",
+            "response": "India abstained and advocated quiet, constructive diplomacy in view of neighboring countries' concerns.",
+            "source": [
+              {
+                "block": "india",
+                "quote": "India praised the United Kingdom's consultation and noted neighbouring countries' concerns. It advocated quiet, constructive diplomacy and explained its abstention in light of those concerns."
+              },
+              {
+                "block": "vote",
+                "quote": "The Council adopted draft S/2022/980 as resolution 2669 (2022), by 12 votes in favour, none against and three abstentions. The United Kingdom voted in favour. China, India and Russia abstained."
+              }
+            ],
+            "reason": "Identify India's abstention and its preference for quiet, constructive diplomacy or its neighboring-country concerns."
+          },
+          {
+            "id": "role",
+            "status": "met",
+            "response": "India's representative announced adoption as Council President and later explained the abstention in a national capacity.",
+            "source": [
+              {
+                "block": "chair",
+                "quote": "India held the Council presidency. The President called the vote and announced adoption. India's representative later explained the national abstention, then resumed the duties of President."
+              }
+            ],
+            "reason": "Separate the President's procedural announcement of adoption from India's national explanation of vote."
+          },
+          {
+            "id": "humanitarian",
+            "status": "met",
+            "response": "The resolution demanded an end to violence and called for humanitarian access.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "Record the demands concerning ending violence and enabling humanitarian access."
+          },
+          {
+            "id": "asean",
+            "status": "met",
+            "response": "It acknowledged ASEAN's central role and called for coordination with the UN.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "Preserve ASEAN's central role and coordination with the UN."
+          },
+          {
+            "id": "overlap",
+            "status": "met",
+            "response": "Both delegations drew attention to ASEAN and neighboring countries, while differing on how the Council should act.",
+            "source": [
+              {
+                "block": "uk",
+                "quote": "The United Kingdom submitted the draft and welcomed the result after consultations with Council members, ASEAN members and regional partners. It emphasized ending violence, humanitarian access and support for ASEAN efforts."
+              },
+              {
+                "block": "india",
+                "quote": "India praised the United Kingdom's consultation and noted neighbouring countries' concerns. It advocated quiet, constructive diplomacy and explained its abstention in light of those concerns."
+              }
+            ],
+            "reason": "Record shared attention to ASEAN or regional consultation while preserving the disagreement about the Council's action."
+          },
+          {
+            "id": "reporting",
+            "status": "met",
+            "response": "The Secretary-General or his Special Envoy, coordinating with the ASEAN Special Envoy, was asked to report orally to the Council by 15 March 2023 on support for the Five-Point Consensus.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "Give the oral report to the Council, the 15 March 2023 deadline, the actor and ASEAN coordination."
+          },
+          {
+            "id": "authority",
+            "status": "unmet",
+            "response": "The resolution also imposed a mandatory public aggregate report.",
+            "source": [
+              {
+                "block": "mandate",
+                "quote": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+              }
+            ],
+            "reason": "It attributes an extra reporting requirement to the adopted text."
+          }
+        ]
+      },
+      "score": {
+        "final": {
+          "lower": 63,
+          "upper": 63,
+          "possible": 70
+        },
+        "points": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "arguments": {
+          "lower": 0,
+          "upper": 0,
+          "possible": 0
+        },
+        "guard": "failed",
+        "strict": false
+      }
+    }
+  ]
+}

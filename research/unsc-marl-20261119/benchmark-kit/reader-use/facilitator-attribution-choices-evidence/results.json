@@ -1,0 +1,324 @@
+{
+  "scope": "Three candidate rotations per attribution, with same-assistant body review. Both body arms share the assembled Council block and decision. The only input treatment is the findings field. Cards and opposed prompts are previously exposed or adapted from exposed cases.",
+  "verified_generations": 32,
+  "relations": {
+    "attributions": 8,
+    "strict_stable_correct": 2,
+    "fallback_correct": 5,
+    "order_unstable": 6,
+    "observations_correct": 18,
+    "observations_unparsed": 0
+  },
+  "record_arms": {
+    "body_alone": {
+      "records": 4,
+      "points": 188,
+      "strict": 0,
+      "disposition_correct": 3,
+      "body_format_ok": 4,
+      "fidelity_error": 2,
+      "body_input_tokens": 1200,
+      "body_output_tokens": 196
+    },
+    "with_findings": {
+      "records": 4,
+      "points": 180,
+      "strict": 0,
+      "disposition_correct": 3,
+      "body_format_ok": 4,
+      "fidelity_error": 3,
+      "body_input_tokens": 1276,
+      "body_output_tokens": 208
+    }
+  },
+  "reading_audit": {
+    "gaza-2728/scope/S1": {
+      "expected": "unknown",
+      "observations": [
+        "unknown",
+        "unknown",
+        "supports"
+      ],
+      "stable": null,
+      "fallback": "unknown"
+    },
+    "gaza-2728/scope/S2": {
+      "expected": "contradicts",
+      "observations": [
+        "contradicts",
+        "contradicts",
+        "contradicts"
+      ],
+      "stable": "contradicts",
+      "fallback": "contradicts"
+    },
+    "myanmar-2669/format/S1": {
+      "expected": "supports",
+      "observations": [
+        "unknown",
+        "supports",
+        "supports"
+      ],
+      "stable": null,
+      "fallback": "unknown"
+    },
+    "myanmar-2669/format/S2": {
+      "expected": "unknown",
+      "observations": [
+        "unknown",
+        "unknown",
+        "contradicts"
+      ],
+      "stable": null,
+      "fallback": "unknown"
+    },
+    "somalia-2767/establishment/S1": {
+      "expected": "unknown",
+      "observations": [
+        "unknown",
+        "unknown",
+        "supports"
+      ],
+      "stable": null,
+      "fallback": "unknown"
+    },
+    "somalia-2767/establishment/S2": {
+      "expected": "contradicts",
+      "observations": [
+        "contradicts",
+        "contradicts",
+        "contradicts"
+      ],
+      "stable": "contradicts",
+      "fallback": "contradicts"
+    },
+    "central-african-republic-0/S1": {
+      "expected": "supports",
+      "observations": [
+        "unknown",
+        "supports",
+        "supports"
+      ],
+      "stable": null,
+      "fallback": "unknown"
+    },
+    "central-african-republic-0/S2": {
+      "expected": "supports",
+      "observations": [
+        "unknown",
+        "supports",
+        "supports"
+      ],
+      "stable": null,
+      "fallback": "unknown"
+    }
+  },
+  "records": {
+    "gaza-2728/scope/body_alone/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "revise",
+      "expected": "revise",
+      "disposition": "revise",
+      "points": 50,
+      "criteria": {
+        "disposition": 14,
+        "council": 12,
+        "s1": 0,
+        "s2": 10,
+        "citation": 8,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2728 (2024) by 14 votes in favour, none against and one abstention. It demanded an immediate Ramadan ceasefire and the immediate and unconditional release of hostages. [S0]",
+        "s1": "",
+        "s2": "France voted in favour of resolution 2728 (2024) but stated the Council must remain engaged to work towards a permanent ceasefire [S2]",
+        "issue": "claiming adoption ended further Council work on Gaza [S1]",
+        "reason": "The US source leaves this Council-role assertion unestablished."
+      },
+      "text": "revise | The Security Council adopted resolution 2728 (2024) by 14 votes in favour, none against and one abstention. It demanded an immediate Ramadan ceasefire and the immediate and unconditional release of hostages. [S0] The United States abstained on resolution 2728 (2024) while claiming adoption ended further Council work on Gaza [S1]. France voted in favour of resolution 2728 (2024) but stated the Council must remain engaged to work towards a permanent ceasefire [S2]."
+    },
+    "gaza-2728/scope/with_findings/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "revise",
+      "expected": "revise",
+      "disposition": "revise",
+      "points": 42,
+      "criteria": {
+        "disposition": 14,
+        "council": 12,
+        "s1": 0,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2728 (2024) by 14 votes in favour, none against and one abstention. It demanded an immediate Ramadan ceasefire and the immediate and unconditional release of hostages. [S0]",
+        "s1": "",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "revise | The Security Council adopted resolution 2728 (2024) by 14 votes in favour, none against and one abstention. It demanded an immediate Ramadan ceasefire and the immediate and unconditional release of hostages. [S0] The United States abstained on resolution 2728 (2024) while France voted in favour, leaving the Council's final stance on the resolution's impact open. [S1] [S2]"
+    },
+    "myanmar-2669/format/body_alone/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "withhold",
+      "expected": "withhold",
+      "disposition": "withhold",
+      "points": 60,
+      "criteria": {
+        "disposition": 14,
+        "council": 12,
+        "s1": 10,
+        "s2": 0,
+        "citation": 8,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2669 (2022) by 12 votes in favour, none against and three abstentions. It demanded an immediate end to violence in Myanmar. [S0]",
+        "s1": "China abstained on resolution 2669 (2022) and preferred a presidential statement [S1]",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "withhold | The Security Council adopted resolution 2669 (2022) by 12 votes in favour, none against and three abstentions. It demanded an immediate end to violence in Myanmar. [S0] China abstained on resolution 2669 (2022) and preferred a presidential statement [S1]. Norway voted in favour of resolution 2669 (2022) and welcomed its adoption [S2]."
+    },
+    "myanmar-2669/format/with_findings/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "withhold",
+      "expected": "withhold",
+      "disposition": "withhold",
+      "points": 50,
+      "criteria": {
+        "disposition": 14,
+        "council": 12,
+        "s1": 10,
+        "s2": 0,
+        "citation": 8,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2669 (2022) by 12 votes in favour, none against and three abstentions. It demanded an immediate end to violence in Myanmar. [S0]",
+        "s1": "China abstained on resolution 2669 (2022) while stating a presidential statement would have been more appropriate [S1]",
+        "s2": "",
+        "issue": "Norway voted in favour of resolution 2669 (2022) while noting a presidential statement would have been more appropriate [S2]",
+        "reason": "Norway did not state that instrument preference in the card."
+      },
+      "text": "withhold | The Security Council adopted resolution 2669 (2022) by 12 votes in favour, none against and three abstentions. It demanded an immediate end to violence in Myanmar. [S0] China abstained on resolution 2669 (2022) while stating a presidential statement would have been more appropriate [S1]. Norway voted in favour of resolution 2669 (2022) while noting a presidential statement would have been more appropriate [S2]."
+    },
+    "somalia-2767/establishment/body_alone/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "revise",
+      "expected": "revise",
+      "disposition": "revise",
+      "points": 60,
+      "criteria": {
+        "disposition": 14,
+        "council": 12,
+        "s1": 0,
+        "s2": 10,
+        "citation": 8,
+        "fidelity": 10,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2767 (2024) by 14 votes in favour, none against and one abstention. It established AUSSOM as the successor to ATMIS. [S0]",
+        "s1": "",
+        "s2": "France welcomed the adoption of resolution 2767 (2024) establishing AUSSOM [S2]",
+        "issue": "",
+        "reason": ""
+      },
+      "text": "revise | The Security Council adopted resolution 2767 (2024) by 14 votes in favour, none against and one abstention. It established AUSSOM as the successor to ATMIS. [S0] The United States abstained on resolution 2767 (2024) citing funding concerns [S1]. France welcomed the adoption of resolution 2767 (2024) establishing AUSSOM [S2]."
+    },
+    "somalia-2767/establishment/with_findings/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "revise",
+      "expected": "revise",
+      "disposition": "revise",
+      "points": 60,
+      "criteria": {
+        "disposition": 14,
+        "council": 12,
+        "s1": 10,
+        "s2": 10,
+        "citation": 8,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2767 (2024) by 14 votes in favour, none against and one abstention. It established AUSSOM as the successor to ATMIS. [S0]",
+        "s1": "leaving its opposition to AUSSOM open [S1]",
+        "s2": "France welcomed the adoption of resolution 2767 (2024) establishing AUSSOM, contradicting the US stance [S2]",
+        "issue": "contradicting the US stance",
+        "reason": "The card does not establish US opposition to AUSSOM."
+      },
+      "text": "revise | The Security Council adopted resolution 2767 (2024) by 14 votes in favour, none against and one abstention. It established AUSSOM as the successor to ATMIS. [S0] The United States abstained on resolution 2767 (2024) citing funding concerns, leaving its opposition to AUSSOM open [S1]. France welcomed the adoption of resolution 2767 (2024) establishing AUSSOM, contradicting the US stance [S2]."
+    },
+    "central-african-republic-0/body_alone/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "withhold",
+      "expected": "retain",
+      "disposition": "withhold",
+      "points": 18,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 0,
+        "s2": 0,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2800 (2025) by 14 votes in favour, none against and one abstention. It renewed MINUSCA for one year until 15 November 2026. [S0]",
+        "s1": "",
+        "s2": "",
+        "issue": "leaving the extension status open",
+        "reason": "The mandate was extended. The US also proposed a six-month extension."
+      },
+      "text": "withhold | The Security Council adopted resolution 2800 (2025) by 14 votes in favour, none against and one abstention. It renewed MINUSCA for one year until 15 November 2026. [S0] China supported the MINUSCA mandate extension [S1]. The United States abstained, leaving the extension status open [S2]."
+    },
+    "central-african-republic-0/with_findings/body": {
+      "body_compliant": true,
+      "heading_from_compared_claims": "withhold",
+      "expected": "retain",
+      "disposition": "withhold",
+      "points": 28,
+      "criteria": {
+        "disposition": 0,
+        "council": 12,
+        "s1": 0,
+        "s2": 10,
+        "citation": 0,
+        "fidelity": 0,
+        "format": 6
+      },
+      "strict": false,
+      "review": {
+        "council": "The Security Council adopted resolution 2800 (2025) by 14 votes in favour, none against and one abstention. It renewed MINUSCA for one year until 15 November 2026. [S0]",
+        "s1": "",
+        "s2": "while proposing a six-month extension [S2]",
+        "issue": "leaving the vote open",
+        "reason": "The US abstention was a recorded vote."
+      },
+      "text": "withhold | The Security Council adopted resolution 2800 (2025) by 14 votes in favour, none against and one abstention. It renewed MINUSCA for one year until 15 November 2026. [S0] China supported the MINUSCA mandate extension [S1]. The United States abstained, leaving the vote open, while proposing a six-month extension [S2]."
+    }
+  },
+  "sha256": {
+    "facilitator_attribution_choices_score.py": "dbe118081a03d62952fd40f750a89816d604eff1625e36139c87848e362abebe",
+    "facilitator_verified_brief_score.py": "c23a3688ebef0eb394d0e42f797e149b2509cfadeb6ffd5e1f9c58ef25ceb37c",
+    "review.tsv": "a19c10629094e901d75b000a697f0a7c0d62a9c2ccfc83a8613bd30fe3707722",
+    "transcript.jsonl": "b2d37ed842474d6aa43dc0a69fdd98622aad29d7a2884ebae052dd56d8bfeaf9"
+  }
+}

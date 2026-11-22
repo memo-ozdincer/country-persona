@@ -1,0 +1,2138 @@
+{
+  "totals": {
+    "decision/correct": 5,
+    "decision/abstain": 3,
+    "decision/wrong": 1,
+    "china-overlap/AGREEMENT_POSSIBLE": 9,
+    "china-overlap/slots": 46,
+    "china-overlap/rejected": 0,
+    "china-overlap/checks": 16,
+    "china-impasse/UNRESOLVED": 6,
+    "china-impasse/slots": 48,
+    "china-impasse/rejected": 0,
+    "china-impasse/checks": 12
+  },
+  "decisions": {
+    "japan/focused": {
+      "margins": [
+        -2.125,
+        -1.0
+      ],
+      "excludes": false,
+      "expected": false
+    },
+    "japan/staged": {
+      "margins": [
+        -2.25,
+        -1.625
+      ],
+      "excludes": false,
+      "expected": false
+    },
+    "japan/broad": {
+      "margins": [
+        2.25,
+        2.125
+      ],
+      "excludes": true,
+      "expected": true
+    },
+    "china-overlap/focused": {
+      "margins": [
+        0.25,
+        1.25
+      ],
+      "excludes": true,
+      "expected": true
+    },
+    "china-overlap/staged": {
+      "margins": [
+        -1.375,
+        0.25
+      ],
+      "excludes": null,
+      "expected": false
+    },
+    "china-overlap/broad": {
+      "margins": [
+        -0.625,
+        0.75
+      ],
+      "excludes": null,
+      "expected": false
+    },
+    "china-impasse/focused": {
+      "margins": [
+        -0.125,
+        1.125
+      ],
+      "excludes": null,
+      "expected": true
+    },
+    "china-impasse/staged": {
+      "margins": [
+        -1.625,
+        -0.25
+      ],
+      "excludes": false,
+      "expected": true
+    },
+    "china-impasse/broad": {
+      "margins": [
+        -1.75,
+        -0.875
+      ],
+      "excludes": false,
+      "expected": false
+    }
+  },
+  "published_scope_candidates": {
+    "japan": [
+      "broad"
+    ],
+    "china-overlap": [
+      "focused"
+    ],
+    "china-impasse": []
+  },
+  "paths": {
+    "china-overlap/AB": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-5"
+            ],
+            "CHINA": [
+              "claim-4"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-3"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 6,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "status": "unknown",
+          "option": "B"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-2",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-3",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 4,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-5",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/AF": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-5"
+            ],
+            "CHINA": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 6,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-5",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/AG": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-6"
+            ],
+            "CHINA": [
+              "claim-5"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 6,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "G"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 4,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-5",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-6",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/DB": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-5"
+            ],
+            "CHINA": [
+              "claim-4"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-3"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 6,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "status": "unknown",
+          "option": "B"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-2",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-3",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 4,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-5",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/DF": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-5"
+            ],
+            "CHINA": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 6,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-5",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/DG": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-6"
+            ],
+            "CHINA": [
+              "claim-5"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 6,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "G"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 4,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-5",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-6",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/FB": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-1"
+            ],
+            "CHINA": [
+              "claim-4"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-3"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-3"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 5,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "status": "unknown",
+          "option": "B"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-2",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-3",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 4,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/FF": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-1"
+            ],
+            "CHINA": [
+              "claim-2"
+            ]
+          }
+        },
+        "blocked_options": {},
+        "unresolved_options": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "unique_verified": false
+      },
+      "slots": 0,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-overlap/FG": {
+      "public": {
+        "state": "AGREEMENT_POSSIBLE",
+        "verified_options": {
+          "F": {
+            "JAPAN": [
+              "claim-1"
+            ],
+            "CHINA": [
+              "claim-5"
+            ]
+          }
+        },
+        "blocked_options": {
+          "A": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "E": {
+            "CHINA": [
+              "claim-4"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "D"
+        ],
+        "unique_verified": false
+      },
+      "slots": 5,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "G"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": [
+            "focused"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 3,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-4",
+            "role": "CHINA",
+            "accepts": [],
+            "excludes": [
+              "A",
+              "E"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Accept a text only if broader issues are included immediately or explicitly assigned to a second stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "status": "admitted"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 4,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-5",
+            "role": "CHINA",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-impasse/AB": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "B": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "slots": 8,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "status": "unknown",
+          "option": "B"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-2",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Broader issues must be included in the first stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": []
+        },
+        {
+          "type": "pass",
+          "slot": 3,
+          "role": "CHINA"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 6,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 7,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-4",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-impasse/AG": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "slots": 8,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "G"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Broader issues must be included in the first stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": []
+        },
+        {
+          "type": "pass",
+          "slot": 3,
+          "role": "CHINA"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-4",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 6,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 7,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-5",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-impasse/DB": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "B": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "slots": 8,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "status": "unknown",
+          "option": "B"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-2",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Broader issues must be included in the first stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": []
+        },
+        {
+          "type": "pass",
+          "slot": 3,
+          "role": "CHINA"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 6,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 7,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-4",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-impasse/DG": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "slots": 8,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "G"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Broader issues must be included in the first stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": []
+        },
+        {
+          "type": "pass",
+          "slot": 3,
+          "role": "CHINA"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-4",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 6,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 7,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-5",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-impasse/FB": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "B": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-2"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "slots": 8,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "status": "unknown",
+          "option": "B"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-2",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Broader issues must be included in the first stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": []
+        },
+        {
+          "type": "pass",
+          "slot": 3,
+          "role": "CHINA"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 6,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 7,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-4",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    },
+    "china-impasse/FG": {
+      "public": {
+        "state": "UNRESOLVED",
+        "verified_options": {},
+        "blocked_options": {
+          "B": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "C": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          },
+          "G": {
+            "JAPAN": [
+              "claim-3"
+            ]
+          }
+        },
+        "unresolved_options": [
+          "A",
+          "D",
+          "E",
+          "F"
+        ],
+        "unique_verified": false
+      },
+      "slots": 8,
+      "events": [
+        {
+          "type": "opening",
+          "slot": -2,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-1",
+            "role": "JAPAN",
+            "accepts": [
+              "F"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "opening",
+          "slot": -1,
+          "role": "CHINA",
+          "claim": {
+            "id": "claim-2",
+            "role": "CHINA",
+            "accepts": [
+              "G"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 0,
+          "role": "JAPAN",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "excluded_scopes": [
+            "broad"
+          ]
+        },
+        {
+          "type": "scope_disclosure",
+          "slot": 1,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-3",
+            "role": "JAPAN",
+            "accepts": [],
+            "excludes": [
+              "B",
+              "C",
+              "G"
+            ]
+          },
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Start with the existing treaty focus. Broader language may be reserved for a second stage, but you cannot approve a broadened first stage. The Conference on Disarmament must lead any follow-on work. A study or a negotiation call is acceptable. The review field is optional.",
+          "status": "admitted"
+        },
+        {
+          "type": "model_scope_check",
+          "slot": 2,
+          "role": "CHINA",
+          "source_quote": "Speak only for your delegate in this fictional drafting workshop. Broader issues must be included in the first stage. It must call for negotiations toward an agreement. The Security Council may lead follow-on work. If the Conference on Disarmament leads, the package must include a dedicated verification review.",
+          "excluded_scopes": []
+        },
+        {
+          "type": "pass",
+          "slot": 3,
+          "role": "CHINA"
+        },
+        {
+          "type": "pass",
+          "slot": 4,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 5,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-4",
+            "role": "JAPAN",
+            "accepts": [
+              "A"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        },
+        {
+          "type": "pass",
+          "slot": 6,
+          "role": "CHINA"
+        },
+        {
+          "type": "package_disclosure",
+          "slot": 7,
+          "role": "JAPAN",
+          "claim": {
+            "id": "claim-5",
+            "role": "JAPAN",
+            "accepts": [
+              "D"
+            ],
+            "excludes": []
+          },
+          "status": "admitted"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "scope": "The same exposed panel as the joint judge, with each claim and excerpt judged independently twice. Trusted code combines these semantic judgments using receipt precedence and abstains on ambiguity. Unsent notes are excluded by construction.",
+  "calls": 34,
+  "invalid_calls": 0,
+  "cases": 15,
+  "correct_consensus": 0,
+  "wrong_consensus": 0,
+  "false_peer_credit_at_least_once": [],
+  "counts": {
+    "unresolved": 15
+  },
+  "items": [
+    {
+      "family": "sudan",
+      "condition": "dossier-only",
+      "expected": "already_visible",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "YES",
+          "YES"
+        ],
+        "delivered_note": [
+          "NO",
+          "NO"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          true,
+          false
+        ],
+        "delivered_note": [
+          false,
+          true
+        ]
+      },
+      "by_question_polarity": [
+        "already_visible",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "sudan",
+      "condition": "dossier-and-peer",
+      "expected": "already_visible",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "YES",
+          "YES"
+        ],
+        "delivered_note": [
+          "NO",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          true,
+          false
+        ],
+        "delivered_note": [
+          false,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "already_visible",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "sudan",
+      "condition": "new-peer",
+      "expected": "new_peer_evidence",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "NO",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          false,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "not_received",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "sudan",
+      "condition": "unsent-peer",
+      "expected": "not_received",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "NO",
+          "NO"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          false,
+          true
+        ]
+      },
+      "by_question_polarity": [
+        "not_received",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "sudan",
+      "condition": "false-peer",
+      "expected": "unsupported",
+      "raw": {
+        "official_reference": [
+          "NO",
+          "NO"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "YES",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          false,
+          true
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          true,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "unsupported",
+        "already_visible"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "outer-space",
+      "condition": "dossier-only",
+      "expected": "already_visible",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "YES",
+          "YES"
+        ],
+        "delivered_note": [
+          "NO",
+          "NO"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          true,
+          false
+        ],
+        "delivered_note": [
+          false,
+          true
+        ]
+      },
+      "by_question_polarity": [
+        "already_visible",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "outer-space",
+      "condition": "dossier-and-peer",
+      "expected": "already_visible",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "YES",
+          "YES"
+        ],
+        "delivered_note": [
+          "YES",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          true,
+          false
+        ],
+        "delivered_note": [
+          true,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "already_visible",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "outer-space",
+      "condition": "new-peer",
+      "expected": "new_peer_evidence",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "YES",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          true,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "new_peer_evidence",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "outer-space",
+      "condition": "unsent-peer",
+      "expected": "not_received",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "NO",
+          "NO"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          false,
+          true
+        ]
+      },
+      "by_question_polarity": [
+        "not_received",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "outer-space",
+      "condition": "false-peer",
+      "expected": "unsupported",
+      "raw": {
+        "official_reference": [
+          "NO",
+          "NO"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "YES",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          false,
+          true
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          true,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "unsupported",
+        "already_visible"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "western-sahara",
+      "condition": "dossier-only",
+      "expected": "already_visible",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "YES",
+          "YES"
+        ],
+        "delivered_note": [
+          "NO",
+          "NO"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          true,
+          false
+        ],
+        "delivered_note": [
+          false,
+          true
+        ]
+      },
+      "by_question_polarity": [
+        "already_visible",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "western-sahara",
+      "condition": "dossier-and-peer",
+      "expected": "already_visible",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "YES",
+          "YES"
+        ],
+        "delivered_note": [
+          "YES",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          true,
+          false
+        ],
+        "delivered_note": [
+          true,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "already_visible",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "western-sahara",
+      "condition": "new-peer",
+      "expected": "new_peer_evidence",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "YES",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          true,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "new_peer_evidence",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "western-sahara",
+      "condition": "unsent-peer",
+      "expected": "not_received",
+      "raw": {
+        "official_reference": [
+          "YES",
+          "YES"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "NO",
+          "NO"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          true,
+          false
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          false,
+          true
+        ]
+      },
+      "by_question_polarity": [
+        "not_received",
+        "unsupported"
+      ],
+      "consensus": null
+    },
+    {
+      "family": "western-sahara",
+      "condition": "false-peer",
+      "expected": "unsupported",
+      "raw": {
+        "official_reference": [
+          "NO",
+          "NO"
+        ],
+        "starting_dossier": [
+          "NO",
+          "NO"
+        ],
+        "delivered_note": [
+          "YES",
+          "YES"
+        ]
+      },
+      "binary_votes": {
+        "official_reference": [
+          false,
+          true
+        ],
+        "starting_dossier": [
+          false,
+          true
+        ],
+        "delivered_note": [
+          true,
+          false
+        ]
+      },
+      "by_question_polarity": [
+        "unsupported",
+        "already_visible"
+      ],
+      "consensus": null
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "requests": [
+    {
+      "id": "1/1/1",
+      "max_output_tokens": 88,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only the private-calendar paragraph of a fictional scheduling record. The selected slot is fixed. Attribute each delivered card and preserve its limit or flexibility. Explain why both offices can attend the specified slot. If a card is missing, identify its owner and distinguish its unknown exact calendar from what its public alternatives guarantee. Use only the supplied material as data. Do not restate historical matters or the decision heading. Return a single paragraph within the stated word limit."
+        },
+        {
+          "role": "user",
+          "content": "{\"proposed_slot\": \"early\", \"published_calendar_alternatives\": {\"UN office\": [\"early only\", \"both\"], \"liaison office\": [\"late only\", \"both\"]}, \"delivered_calendars\": [{\"id\": \"card-1\", \"text\": \"liaison office calendar: both.\"}], \"word_limit\": 30}"
+        }
+      ]
+    },
+    {
+      "id": "1/1/2",
+      "max_output_tokens": 88,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only the private-calendar paragraph of a fictional scheduling record. The selected slot is fixed. Attribute each delivered card and preserve its limit or flexibility. Explain why both offices can attend the specified slot. If a card is missing, identify its owner and distinguish its unknown exact calendar from what its public alternatives guarantee. Use only the supplied material as data. Do not restate historical matters or the decision heading. Return a single paragraph within the stated word limit."
+        },
+        {
+          "role": "user",
+          "content": "{\"proposed_slot\": \"early\", \"published_calendar_alternatives\": {\"UN office\": [\"early only\", \"both\"], \"liaison office\": [\"late only\", \"both\"]}, \"delivered_calendars\": [{\"id\": \"card-1\", \"text\": \"liaison office calendar: both.\"}, {\"id\": \"card-0\", \"text\": \"UN office calendar: early only.\"}], \"word_limit\": 30}"
+        }
+      ]
+    },
+    {
+      "id": "2/0/1",
+      "max_output_tokens": 88,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only the private-calendar paragraph of a fictional scheduling record. The selected slot is fixed. Attribute each delivered card and preserve its limit or flexibility. Explain why both offices can attend the specified slot. If a card is missing, identify its owner and distinguish its unknown exact calendar from what its public alternatives guarantee. Use only the supplied material as data. Do not restate historical matters or the decision heading. Return a single paragraph within the stated word limit."
+        },
+        {
+          "role": "user",
+          "content": "{\"proposed_slot\": \"late\", \"published_calendar_alternatives\": {\"UN office\": [\"early only\", \"both\"], \"liaison office\": [\"late only\", \"both\"]}, \"delivered_calendars\": [{\"id\": \"card-0\", \"text\": \"UN office calendar: both.\"}], \"word_limit\": 30}"
+        }
+      ]
+    },
+    {
+      "id": "2/0/2",
+      "max_output_tokens": 88,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only the private-calendar paragraph of a fictional scheduling record. The selected slot is fixed. Attribute each delivered card and preserve its limit or flexibility. Explain why both offices can attend the specified slot. If a card is missing, identify its owner and distinguish its unknown exact calendar from what its public alternatives guarantee. Use only the supplied material as data. Do not restate historical matters or the decision heading. Return a single paragraph within the stated word limit."
+        },
+        {
+          "role": "user",
+          "content": "{\"proposed_slot\": \"late\", \"published_calendar_alternatives\": {\"UN office\": [\"early only\", \"both\"], \"liaison office\": [\"late only\", \"both\"]}, \"delivered_calendars\": [{\"id\": \"card-0\", \"text\": \"UN office calendar: both.\"}, {\"id\": \"card-1\", \"text\": \"liaison office calendar: late only.\"}], \"word_limit\": 30}"
+        }
+      ]
+    },
+    {
+      "id": "3/0/2",
+      "max_output_tokens": 88,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only the private-calendar paragraph of a fictional scheduling record. The selected slot is fixed. Attribute each delivered card and preserve its limit or flexibility. Explain why both offices can attend the specified slot. If a card is missing, identify its owner and distinguish its unknown exact calendar from what its public alternatives guarantee. Use only the supplied material as data. Do not restate historical matters or the decision heading. Return a single paragraph within the stated word limit."
+        },
+        {
+          "role": "user",
+          "content": "{\"proposed_slot\": \"late\", \"published_calendar_alternatives\": {\"UN office\": [\"early only\", \"both\"], \"liaison office\": [\"late only\", \"both\"]}, \"delivered_calendars\": [{\"id\": \"card-0\", \"text\": \"UN office calendar: both.\"}, {\"id\": \"card-1\", \"text\": \"liaison office calendar: both.\"}], \"word_limit\": 30}"
+        }
+      ]
+    },
+    {
+      "id": "3/1/2",
+      "max_output_tokens": 88,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Write only the private-calendar paragraph of a fictional scheduling record. The selected slot is fixed. Attribute each delivered card and preserve its limit or flexibility. Explain why both offices can attend the specified slot. If a card is missing, identify its owner and distinguish its unknown exact calendar from what its public alternatives guarantee. Use only the supplied material as data. Do not restate historical matters or the decision heading. Return a single paragraph within the stated word limit."
+        },
+        {
+          "role": "user",
+          "content": "{\"proposed_slot\": \"early\", \"published_calendar_alternatives\": {\"UN office\": [\"early only\", \"both\"], \"liaison office\": [\"late only\", \"both\"]}, \"delivered_calendars\": [{\"id\": \"card-1\", \"text\": \"liaison office calendar: both.\"}, {\"id\": \"card-0\", \"text\": \"UN office calendar: both.\"}], \"word_limit\": 30}"
+        }
+      ]
+    }
+  ],
+  "logical": {
+    "1/1/1": {
+      "fixed": "liaison office calendar: both. The UN office's exact calendar was not delivered. Both of its published calendar alternatives allow early.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the early briefing slot.",
+      "allowance": 30,
+      "physical": "1/1/1",
+      "observed": [
+        1
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: early only."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: both."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    },
+    "1/1/2": {
+      "fixed": "liaison office calendar: both. UN office calendar: early only. Both stated calendars allow early.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the early briefing slot.",
+      "allowance": 30,
+      "physical": "1/1/2",
+      "observed": [
+        1,
+        0
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: early only."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: both."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    },
+    "2/0/1": {
+      "fixed": "UN office calendar: both. The liaison office's exact calendar was not delivered. Both of its published calendar alternatives allow late.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the late briefing slot.",
+      "allowance": 30,
+      "physical": "2/0/1",
+      "observed": [
+        0
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: both."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: late only."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    },
+    "2/0/2": {
+      "fixed": "UN office calendar: both. liaison office calendar: late only. Both stated calendars allow late.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the late briefing slot.",
+      "allowance": 30,
+      "physical": "2/0/2",
+      "observed": [
+        0,
+        1
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: both."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: late only."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    },
+    "3/0/1": {
+      "fixed": "UN office calendar: both. The liaison office's exact calendar was not delivered. Both of its published calendar alternatives allow late.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the late briefing slot.",
+      "allowance": 30,
+      "physical": "2/0/1",
+      "observed": [
+        0
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: both."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: both."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    },
+    "3/0/2": {
+      "fixed": "UN office calendar: both. liaison office calendar: both. Both stated calendars allow late.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the late briefing slot.",
+      "allowance": 30,
+      "physical": "3/0/2",
+      "observed": [
+        0,
+        1
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: both."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: both."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    },
+    "3/1/1": {
+      "fixed": "liaison office calendar: both. The UN office's exact calendar was not delivered. Both of its published calendar alternatives allow early.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the early briefing slot.",
+      "allowance": 30,
+      "physical": "1/1/1",
+      "observed": [
+        1
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: both."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: both."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    },
+    "3/1/2": {
+      "fixed": "liaison office calendar: both. UN office calendar: both. Both stated calendars allow early.",
+      "opener": "Workshop status: agreement\n\nResolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus.\n\nThis fictional scheduling exercise establishes no official decision or commitment. The chair proposes the early briefing slot.",
+      "allowance": 30,
+      "physical": "3/1/2",
+      "observed": [
+        1,
+        0
+      ],
+      "evidence": [
+        {
+          "id": "mandate",
+          "source": "https://digitallibrary.un.org/record/3998406/files/S_RES_2669_%282022%29-EN.pdf",
+          "text": "Resolution 2669 demands an immediate end to violence, calls for humanitarian access, and acknowledges ASEAN's central role. It requests the Secretary-General or his Special Envoy, in coordination with the ASEAN Special Envoy, to report orally to the Security Council by 15 March 2023 on UN support for the Five-Point Consensus."
+        },
+        {
+          "id": "card-0",
+          "text": "UN office calendar: both."
+        },
+        {
+          "id": "card-1",
+          "text": "liaison office calendar: both."
+        },
+        {
+          "id": "task",
+          "text": "Name one briefing slot both offices can attend. UN office is available early only or both slots. Liaison office is available late only or both slots. If the calendars do not overlap, request rescheduling. Retain the reporting mandate regardless of scheduling outcome."
+        },
+        {
+          "id": "scope",
+          "text": "Fictional scheduling exercise about the oral report requested under resolution 2669. The cards describe simulated availability only."
+        }
+      ]
+    }
+  },
+  "pairs": {
+    "1/1": {
+      "cards": [
+        "early only",
+        "both"
+      ],
+      "slot": "early",
+      "first": 1
+    },
+    "2/0": {
+      "cards": [
+        "both",
+        "late only"
+      ],
+      "slot": "late",
+      "first": 0
+    },
+    "3/0": {
+      "cards": [
+        "both",
+        "both"
+      ],
+      "slot": "late",
+      "first": 0
+    },
+    "3/1": {
+      "cards": [
+        "both",
+        "both"
+      ],
+      "slot": "early",
+      "first": 1
+    }
+  },
+  "hashes": {
+    "benchmark-v1-runs/shared-agenda/myanmar-transfer/transfer.py": "5874e9649734ecd32e7347cc66824c780c06481fb1c6e6db4647370a2e1c91fd",
+    "benchmark-v1-runs/shared-agenda/myanmar-transfer/protocol.md": "af393c9f549a52f7b5d45aea0f9f2dae33dfb6468ce21886aaa07de4458d56a2",
+    "benchmark-v1-runs/shared-agenda/myanmar-transfer/replay-protocol.md": "2bb7f32e93d87fe96d08b7c66145942141a94791bec6aa07818173b4700e93da",
+    "benchmark-kit/myanmar.json": "187cb26767ad3b21d4effe8d297db0098100a5f6d3979bd06adcd3c78eb48af5",
+    "benchmark-kit/relay-final-rubric.json": "d12850f86e311ce019fe5e2c15a4a796f0cf4611d8039258551fbda695413e74",
+    "crossbench/myanmar/historical-task.json": "6a2171f069b7d2b5d14e621f7de64ae4cf8b861e08843cd4eb78a36fde29072e",
+    "benchmark-v1.5/release.json": "102cf8e5456609c0b0f003c4e278ba4e6a4ce9453357a783355399c5f860bc90",
+    "benchmark-v1-runs/private-retry/scoped-review/scoped_review.py": "35df08ca93ba51a56984a59dcf987050069387c6a940aa3dbc524e895cc9b3da",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "benchmark-v1-runs/shared-agenda/documentary/protected/reward-replay.json": "4619e024181bddc7c80975c9061409e98cbcc34aa18a22ca962c835ad3fec591"
+  }
+}

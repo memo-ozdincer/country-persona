@@ -1,0 +1,1478 @@
+{
+  "grades": {
+    "emergency/pair": {
+      "expected_score": 46.0,
+      "expected_guard": "clear",
+      "accepted": true,
+      "grade": 50,
+      "guard": "clear",
+      "met": [
+        "S2-1",
+        "S3-1",
+        "S3-2",
+        "S3-3"
+      ],
+      "coverage": [
+        [
+          1
+        ],
+        [],
+        [],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y",
+        "Y"
+      ],
+      "exact": false
+    },
+    "emergency/control": {
+      "expected_score": 0,
+      "expected_guard": "failed",
+      "accepted": false,
+      "grade": 0,
+      "guard": "failed",
+      "met": [
+        "S3-2",
+        "S3-3"
+      ],
+      "coverage": [
+        [],
+        [
+          -1
+        ],
+        [
+          -1
+        ],
+        [
+          -1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y",
+        "Y",
+        "N"
+      ]
+    },
+    "myanmar/pair": {
+      "expected_score": 63.0,
+      "expected_guard": "clear",
+      "accepted": false,
+      "reason": "invalid JSON"
+    },
+    "myanmar/control": {
+      "expected_score": 70,
+      "expected_guard": "clear",
+      "accepted": true,
+      "grade": 70,
+      "guard": "clear",
+      "met": [
+        "draft-act",
+        "vote-count",
+        "uk",
+        "india",
+        "role",
+        "humanitarian",
+        "asean",
+        "overlap",
+        "reporting",
+        "authority"
+      ],
+      "coverage": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          5
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y",
+        "Y",
+        "Y",
+        "Y"
+      ],
+      "exact": true
+    },
+    "unama/pair": {
+      "expected_score": 46.0,
+      "expected_guard": "clear",
+      "accepted": false,
+      "reason": "invalid JSON"
+    },
+    "unama/control": {
+      "expected_score": 34,
+      "expected_guard": "clear",
+      "accepted": false,
+      "grade": 38,
+      "guard": "clear",
+      "met": [
+        "S3-1"
+      ],
+      "coverage": [
+        [],
+        [],
+        [],
+        [
+          2
+        ],
+        [
+          -1
+        ],
+        [
+          -1
+        ]
+      ],
+      "support": [
+        "Y",
+        "Y"
+      ]
+    }
+  },
+  "criteria": {
+    "myanmar/pair": {
+      "expected_met": [
+        "asean",
+        "authority",
+        "draft-act",
+        "humanitarian",
+        "india",
+        "overlap",
+        "reporting",
+        "uk",
+        "vote-count"
+      ],
+      "observed_met": null
+    },
+    "myanmar/control": {
+      "expected_met": [
+        "asean",
+        "authority",
+        "draft-act",
+        "humanitarian",
+        "india",
+        "overlap",
+        "reporting",
+        "role",
+        "uk",
+        "vote-count"
+      ],
+      "observed_met": [
+        "draft-act",
+        "vote-count",
+        "uk",
+        "india",
+        "role",
+        "humanitarian",
+        "asean",
+        "overlap",
+        "reporting",
+        "authority"
+      ],
+      "missed": [],
+      "extra": []
+    },
+    "emergency/pair": {
+      "expected_met": [
+        "S3-1",
+        "S3-2",
+        "S3-3"
+      ],
+      "observed_met": [
+        "S2-1",
+        "S3-1",
+        "S3-2",
+        "S3-3"
+      ],
+      "missed": [],
+      "extra": [
+        "S2-1"
+      ]
+    },
+    "unama/pair": {
+      "expected_met": [
+        "S2-1",
+        "S2-2",
+        "S2-3"
+      ],
+      "observed_met": null
+    },
+    "unama/control": {
+      "expected_met": [],
+      "observed_met": [
+        "S3-1"
+      ],
+      "missed": [],
+      "extra": [
+        "S3-1"
+      ]
+    }
+  },
+  "criteria_sha256": {
+    "marks.json": "18cbbc56b585638bd343a595151b7381f3f6ae4438c587e7260b175ef203a2f2",
+    "complete-sentences.json": "76d147bf5aec1acde19c622bc781820721e8708c3b77c39b6776e40f862db241",
+    "intact-grades.json": "8409d819ece5edb76b321a1e489ee8b2afcb180d7acbcbb5c6b39928bdc26155"
+  },
+  "summary": {
+    "original": {
+      "net_mean_over_original": 0.0,
+      "wins": 0,
+      "ties": 23,
+      "losses": 0,
+      "below_informed_silence": 10
+    },
+    "numeric": {
+      "net_mean_over_original": 0.03518330160521698,
+      "wins": 11,
+      "ties": 12,
+      "losses": 0,
+      "below_informed_silence": 2
+    },
+    "quoted": {
+      "net_mean_over_original": 0.024357591608695436,
+      "wins": 8,
+      "ties": 15,
+      "losses": 0,
+      "below_informed_silence": 4
+    },
+    "exact_counterfactual": {
+      "net_mean_over_original": 0.04555163248086651,
+      "wins": 10,
+      "ties": 13,
+      "losses": 0,
+      "below_informed_silence": 0
+    },
+    "separated": {
+      "net_mean_over_original": -0.013327571173913656,
+      "wins": 0,
+      "ties": 17,
+      "losses": 6,
+      "below_informed_silence": 16
+    }
+  },
+  "rows": [
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "exact_counterfactual": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "exact_counterfactual": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "exact_counterfactual": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "exact_counterfactual": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 42.6340438,
+        "cost": 0.25055250500000004,
+        "net": 42.383491295,
+        "queries": 0.6913215000000001,
+        "over_informed_fixed": 0.003836429999985569,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 42.600225220000006,
+        "cost": 0.29092528400000006,
+        "net": 42.309299936,
+        "queries": 0.3086785000000001,
+        "over_informed_fixed": -0.07035492900001117,
+        "over_informed_silence_quality": -0.033818579999994824
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.59601538000001,
+        "cost": 0.3208000000000001,
+        "net": 42.27521538000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.058928531499987,
+        "over_informed_silence_quality": 0.0
+      },
+      "exact_counterfactual": {
+        "released": 42.59601538000001,
+        "cost": 0.3208000000000001,
+        "net": 42.27521538000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.058928531499987,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "quoted": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "exact_counterfactual": {
+        "released": 42.59601538000001,
+        "cost": 0.3208000000000001,
+        "net": 42.27521538000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.058928531499987,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "quoted": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "exact_counterfactual": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "numeric": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "quoted": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "exact_counterfactual": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "numeric": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "quoted": {
+        "released": 42.596015380000004,
+        "cost": 0.25179447550000006,
+        "net": 42.344220904500006,
+        "queries": 0.68254965,
+        "over_informed_fixed": 0.01007699300000553,
+        "over_informed_silence_quality": -7.105427357601002e-15
+      },
+      "separated": {
+        "released": 42.555473422000006,
+        "cost": 0.28791256340000004,
+        "net": 42.26756085860001,
+        "queries": 0.31745035,
+        "over_informed_fixed": -0.06658305289999333,
+        "over_informed_silence_quality": -0.04054195800000571
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "exact",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "exact_counterfactual": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "exact",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "exact_counterfactual": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 41.757026020000005,
+        "cost": 0.3032,
+        "net": 41.45382602000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.057693913499996086,
+        "over_informed_silence_quality": 0.0
+      },
+      "exact_counterfactual": {
+        "released": 41.757026020000005,
+        "cost": 0.3032,
+        "net": 41.45382602000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.057693913499996086,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "emergency",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": 34
+      },
+      "original": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "exact_counterfactual": {
+        "released": 41.757026020000005,
+        "cost": 0.3032,
+        "net": 41.45382602000001,
+        "queries": 0.0,
+        "over_informed_fixed": -0.057693913499996086,
+        "over_informed_silence_quality": 0.0
+      },
+      "numeric": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "quoted": {
+        "released": 41.757026020000005,
+        "cost": 0.2453602895,
+        "net": 41.511665730500006,
+        "queries": 0.6270898500000001,
+        "over_informed_fixed": 0.00014579700000183493,
+        "over_informed_silence_quality": 0.0
+      },
+      "separated": {
+        "released": 41.733831238,
+        "cost": 0.2880037886,
+        "net": 41.4458274494,
+        "queries": 0.37291015000000005,
+        "over_informed_fixed": -0.06569248410000483,
+        "over_informed_silence_quality": -0.023194782000004466
+      },
+      "separated_grade": 50
+    },
+    {
+      "case": "myanmar",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": -7,
+      "observed_model_grades": {
+        "numeric": null,
+        "quoted": null
+      },
+      "original": {
+        "released": 56.158819822568404,
+        "cost": 0.5303466235250001,
+        "net": 55.628473199043405,
+        "queries": 0.4654041175000001,
+        "over_informed_fixed": -0.24771594205710556,
+        "over_informed_silence_quality": -0.19110352358159588
+      },
+      "exact_counterfactual": {
+        "released": 56.491764018257406,
+        "cost": 0.49997283747380006,
+        "net": 55.99179118078361,
+        "queries": 0.5332469275,
+        "over_informed_fixed": 0.11560203968309679,
+        "over_informed_silence_quality": 0.14184067210740636
+      },
+      "numeric": {
+        "released": 56.158819822568404,
+        "cost": 0.5303466235250001,
+        "net": 55.628473199043405,
+        "queries": 0.4654041175000001,
+        "over_informed_fixed": -0.24771594205710556,
+        "over_informed_silence_quality": -0.19110352358159588
+      },
+      "quoted": {
+        "released": 56.158819822568404,
+        "cost": 0.5303466235250001,
+        "net": 55.628473199043405,
+        "queries": 0.4654041175000001,
+        "over_informed_fixed": -0.24771594205710556,
+        "over_informed_silence_quality": -0.19110352358159588
+      },
+      "separated": {
+        "released": 56.158819822568404,
+        "cost": 0.5303466235250001,
+        "net": 55.628473199043405,
+        "queries": 0.4654041175000001,
+        "over_informed_fixed": -0.24771594205710556,
+        "over_informed_silence_quality": -0.19110352358159588
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "myanmar",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": -7,
+      "observed_model_grades": {
+        "numeric": null,
+        "quoted": null
+      },
+      "original": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      },
+      "exact_counterfactual": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      },
+      "numeric": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      },
+      "quoted": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      },
+      "separated": {
+        "released": 56.60969328559861,
+        "cost": 0.4809612979788601,
+        "net": 56.12873198761975,
+        "queries": 0.5424420115,
+        "over_informed_fixed": 0.09534941719511636,
+        "over_informed_silence_quality": 0.08724753873359958
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "myanmar",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": -7,
+      "observed_model_grades": {
+        "numeric": null,
+        "quoted": null
+      },
+      "original": {
+        "released": 56.40167761349479,
+        "cost": 0.48686070205201004,
+        "net": 55.91481691144278,
+        "queries": 0.593439888403,
+        "over_informed_fixed": -0.11856565898185778,
+        "over_informed_silence_quality": -0.12076813337021974
+      },
+      "exact_counterfactual": {
+        "released": 56.61282434249149,
+        "cost": 0.49653273864901004,
+        "net": 56.116291603842484,
+        "queries": 0.593439888403,
+        "over_informed_fixed": 0.08290903341784883,
+        "over_informed_silence_quality": 0.09037859562648265
+      },
+      "numeric": {
+        "released": 56.40167761349479,
+        "cost": 0.48686070205201004,
+        "net": 55.91481691144278,
+        "queries": 0.593439888403,
+        "over_informed_fixed": -0.11856565898185778,
+        "over_informed_silence_quality": -0.12076813337021974
+      },
+      "quoted": {
+        "released": 56.40167761349479,
+        "cost": 0.48686070205201004,
+        "net": 55.91481691144278,
+        "queries": 0.593439888403,
+        "over_informed_fixed": -0.11856565898185778,
+        "over_informed_silence_quality": -0.12076813337021974
+      },
+      "separated": {
+        "released": 56.40167761349479,
+        "cost": 0.48686070205201004,
+        "net": 55.91481691144278,
+        "queries": 0.593439888403,
+        "over_informed_fixed": -0.11856565898185778,
+        "over_informed_silence_quality": -0.12076813337021974
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "uniform",
+      "prior_information": "exact",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      },
+      "exact_counterfactual": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      },
+      "numeric": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      },
+      "quoted": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      },
+      "separated": {
+        "released": 49.39302076,
+        "cost": 0.3870408665,
+        "net": 49.0059798935,
+        "queries": 0.89101845,
+        "over_informed_fixed": 0.050653371499990385,
+        "over_informed_silence_quality": 0.10751291999999779
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      },
+      "exact_counterfactual": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      },
+      "numeric": {
+        "released": 49.130497816,
+        "cost": 0.37125655300000004,
+        "net": 48.759241263,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": 0.03631529699999447,
+        "over_informed_silence_quality": 0.030228875999995353
+      },
+      "quoted": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      },
+      "separated": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "uniform",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 49.06577595427001,
+        "cost": 0.429822975945,
+        "net": 48.63595297832501,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": -0.08697298767499717,
+        "over_informed_silence_quality": -0.03449298572999737
+      },
+      "exact_counterfactual": {
+        "released": 49.13049781600001,
+        "cost": 0.40757185000000007,
+        "net": 48.722925966000005,
+        "queries": 0.29305000000000003,
+        "over_informed_fixed": 0.0,
+        "over_informed_silence_quality": 0.030228876000002458
+      },
+      "numeric": {
+        "released": 49.130497816,
+        "cost": 0.37125655300000004,
+        "net": 48.759241263,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": 0.03631529699999447,
+        "over_informed_silence_quality": 0.030228875999995353
+      },
+      "quoted": {
+        "released": 49.06577595427001,
+        "cost": 0.429822975945,
+        "net": 48.63595297832501,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": -0.08697298767499717,
+        "over_informed_silence_quality": -0.03449298572999737
+      },
+      "separated": {
+        "released": 49.06577595427001,
+        "cost": 0.429822975945,
+        "net": 48.63595297832501,
+        "queries": 0.47521900000000006,
+        "over_informed_fixed": -0.08697298767499717,
+        "over_informed_silence_quality": -0.03449298572999737
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "asymmetric",
+      "prior_information": "exact",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "exact_counterfactual": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "numeric": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "quoted": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "separated": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "asymmetric",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "exact_counterfactual": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "numeric": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "quoted": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "separated": {
+        "released": 48.88761067600001,
+        "cost": 0.37854609977500003,
+        "net": 48.50906457622501,
+        "queries": 0.8864832825000002,
+        "over_informed_fixed": 0.04638801902500944,
+        "over_informed_silence_quality": 0.103972167000002
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "correlated_duplicates",
+      "prior_information": "exact",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      },
+      "exact_counterfactual": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      },
+      "numeric": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      },
+      "quoted": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      },
+      "separated": {
+        "released": 48.302349604000014,
+        "cost": 0.379929437225,
+        "net": 47.92242016677501,
+        "queries": 0.8420783175000002,
+        "over_informed_fixed": 0.05714815797499995,
+        "over_informed_silence_quality": 0.14530209300000507
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 0,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "exact_counterfactual": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "numeric": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "quoted": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "separated": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "separated_grade": null
+    },
+    {
+      "case": "unama",
+      "law": "correlated_duplicates",
+      "prior_information": "dominant_only",
+      "offset": 7,
+      "observed_model_grades": {
+        "numeric": 34,
+        "quoted": null
+      },
+      "original": {
+        "released": 48.061100825458006,
+        "cost": 0.4219386060029999,
+        "net": 47.639162219455,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": -0.04920285444499939,
+        "over_informed_silence_quality": -0.02185112554199975
+      },
+      "exact_counterfactual": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "numeric": {
+        "released": 48.10467136390001,
+        "cost": 0.37612139619999996,
+        "net": 47.72854996770001,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": 0.04018489380001,
+        "over_informed_silence_quality": 0.021719412900004897
+      },
+      "quoted": {
+        "released": 48.061100825458006,
+        "cost": 0.4219386060029999,
+        "net": 47.639162219455,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": -0.04920285444499939,
+        "over_informed_silence_quality": -0.02185112554199975
+      },
+      "separated": {
+        "released": 48.061100825458006,
+        "cost": 0.4219386060029999,
+        "net": 47.639162219455,
+        "queries": 0.49308760000000007,
+        "over_informed_fixed": -0.04920285444499939,
+        "over_informed_silence_quality": -0.02185112554199975
+      },
+      "separated_grade": null
+    }
+  ],
+  "sha256": {
+    "live-review/separated/separation_replay.py": "a6fee944c7309b48f16b39687df40c0031d5e64726828309c196c89e5b51b832",
+    "live-review/separated/plan.json": "3e18c611397a5cfc894b74f9aec2b57ca2e11e01d384db64f2cfdcc59a32d108",
+    "live-review/separated/verified.json": "997e464742d95f6226e606ce07125a13f0e54ebfd1c72f5eabd07fb5559c4378",
+    "live-review/results.json": "efed37063ebec359d6613ac295fce100d8cf802ae1f2e57faf1d6a38b9efbf57",
+    "results.json": "450f5f9dba599190032eb84f7d2259d78b7d1996269c74b1f2473fda974f8c0b",
+    "plan.json": "f47ff2c2c8747d7786e24a1876eb20de3e75d0baa048c8d823bce04f19b319fc",
+    "live-review/grade_and_route.py": "75f7f9f2d877ff1c9f75b137ee0ec9c6d43fac7f2e7d4b5a5fde918b81c44d1d"
+  }
+}

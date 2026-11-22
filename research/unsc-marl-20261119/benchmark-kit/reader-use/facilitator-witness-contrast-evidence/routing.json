@@ -1,0 +1,990 @@
+{
+  "scope": "Replay on paired claims from the same meeting, with both assignments and all open/conflict combinations. The literal arm treats all candidate objections as true. A strict objection requires the correct decision and adequate proof for each transmitted conflict. This tests transport of scope judgments and uses no downstream brief writer or new policy fitting.",
+  "packets_per_family": 24,
+  "report": {
+    "somalia": {
+      "split": {
+        "systems": {
+          "frozen": {
+            "literal": {
+              "send_cost": 0.1178391832777036,
+              "receipt_none": 0.051783544162756066,
+              "receipt_slot_1_only": 0.4404572670983771,
+              "receipt_slot_2_only": 0.44045726709837724,
+              "receipt_both": 0.06730192164049004,
+              "decision_payoff": 0.03365096082024502,
+              "brief_payoff": 0.0,
+              "false_action": 0.4572827475084997,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4572827475084997,
+              "usable_withhold": 0.051783544162756066,
+              "decision_net": -0.0841882224574586,
+              "brief_net": -0.11783918327770364
+            },
+            "direct": {
+              "send_cost": 0.029096040515945262,
+              "receipt_none": 0.7509653547335634,
+              "receipt_slot_1_only": 0.1244330710079579,
+              "receipt_slot_2_only": 0.12443307100795782,
+              "receipt_both": 0.00016850325052032865,
+              "decision_payoff": 0.24741606864274823,
+              "brief_payoff": 0.24741606864274823,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.24741606864274823,
+              "usable_withhold": 0.7519487858611683,
+              "decision_net": 0.21832002812680296,
+              "brief_net": 0.21832002812680296
+            },
+            "compare_first": {
+              "send_cost": 0.029096040515945262,
+              "receipt_none": 0.7509653547335634,
+              "receipt_slot_1_only": 0.1244330710079579,
+              "receipt_slot_2_only": 0.12443307100795782,
+              "receipt_both": 0.00016850325052032865,
+              "decision_payoff": 0.24741606864274823,
+              "brief_payoff": 0.24741606864274823,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.24741606864274823,
+              "usable_withhold": 0.7519487858611683,
+              "decision_net": 0.21832002812680296,
+              "brief_net": 0.21832002812680296
+            },
+            "compare_strip": {
+              "send_cost": 0.053181152099365823,
+              "receipt_none": 0.5486599860134472,
+              "receipt_slot_1_only": 0.22274213086766848,
+              "receipt_slot_2_only": 0.22274213086766836,
+              "receipt_both": 0.005855752251215689,
+              "decision_payoff": 0.45014214095055943,
+              "brief_payoff": 0.45014214095055943,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.45014214095055943,
+              "usable_withhold": 0.5495749249667408,
+              "decision_net": 0.3969609888511936,
+              "brief_net": 0.3969609888511936
+            },
+            "typed_compare": {
+              "send_cost": 0.07274020437488003,
+              "receipt_none": 0.39097533629758435,
+              "receipt_slot_1_only": 0.29597674741193136,
+              "receipt_slot_2_only": 0.29597674741193125,
+              "receipt_both": 0.017071168878552895,
+              "decision_payoff": 0.6081782169234334,
+              "brief_payoff": 0.6081782169234334,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6081782169234334,
+              "usable_withhold": 0.39182178307656645,
+              "decision_net": 0.5354380125485534,
+              "brief_net": 0.5354380125485534
+            },
+            "oracle": {
+              "send_cost": 0.07274020437488003,
+              "receipt_none": 0.39097533629758435,
+              "receipt_slot_1_only": 0.29597674741193136,
+              "receipt_slot_2_only": 0.29597674741193125,
+              "receipt_both": 0.017071168878552895,
+              "decision_payoff": 0.6081782169234334,
+              "brief_payoff": 0.6081782169234334,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6081782169234334,
+              "usable_withhold": 0.39182178307656645,
+              "decision_net": 0.5354380125485534,
+              "brief_net": 0.5354380125485534
+            },
+            "mean": {
+              "send_cost": 0.062448804193119996,
+              "receipt_none": 0.4807208187064165,
+              "receipt_slot_1_only": 0.250669839134304,
+              "receipt_slot_2_only": 0.25066983913430396,
+              "receipt_both": 0.017939503024975365,
+              "decision_payoff": 0.36583027881719465,
+              "brief_payoff": 0.3602217853471538,
+              "false_action": 0.07621379125141661,
+              "usable_retain": 0.0,
+              "usable_revise": 0.43643557659857035,
+              "usable_withhold": 0.48148326783416107,
+              "decision_net": 0.3033814746240746,
+              "brief_net": 0.2977729811540338
+            }
+          },
+          "greedy": {
+            "literal": {
+              "send_cost": 0.11774358974358977,
+              "receipt_none": 0.05038461538461537,
+              "receipt_slot_1_only": 0.544846153846154,
+              "receipt_slot_2_only": 0.3383076923076924,
+              "receipt_both": 0.06646153846153845,
+              "decision_payoff": 0.03323076923076923,
+              "brief_payoff": 0.0,
+              "false_action": 0.4581923076923078,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4581923076923078,
+              "usable_withhold": 0.05038461538461537,
+              "decision_net": -0.08451282051282055,
+              "brief_net": -0.11774358974358978
+            },
+            "direct": {
+              "send_cost": 0.028717948717948732,
+              "receipt_none": 0.7519230769230769,
+              "receipt_slot_1_only": 0.12403846153846158,
+              "receipt_slot_2_only": 0.12403846153846161,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.2480769230769232,
+              "brief_payoff": 0.2480769230769232,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.2480769230769232,
+              "usable_withhold": 0.7519230769230769,
+              "decision_net": 0.21935897435897447,
+              "brief_net": 0.21935897435897447
+            },
+            "compare_first": {
+              "send_cost": 0.028717948717948732,
+              "receipt_none": 0.7519230769230769,
+              "receipt_slot_1_only": 0.12403846153846158,
+              "receipt_slot_2_only": 0.12403846153846161,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.2480769230769232,
+              "brief_payoff": 0.2480769230769232,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.2480769230769232,
+              "usable_withhold": 0.7519230769230769,
+              "decision_net": 0.21935897435897447,
+              "brief_net": 0.21935897435897447
+            },
+            "compare_strip": {
+              "send_cost": 0.05288888888888891,
+              "receipt_none": 0.54875,
+              "receipt_slot_1_only": 0.23146153846153852,
+              "receipt_slot_2_only": 0.21425000000000013,
+              "receipt_both": 0.005538461538461537,
+              "decision_payoff": 0.4512500000000002,
+              "brief_payoff": 0.4512500000000002,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4512500000000002,
+              "usable_withhold": 0.54875,
+              "decision_net": 0.39836111111111133,
+              "brief_net": 0.39836111111111133
+            },
+            "typed_compare": {
+              "send_cost": 0.07251282051282054,
+              "receipt_none": 0.39048076923076924,
+              "receipt_slot_1_only": 0.32226923076923086,
+              "receipt_slot_2_only": 0.27063461538461553,
+              "receipt_both": 0.01661538461538461,
+              "decision_payoff": 0.609519230769231,
+              "brief_payoff": 0.609519230769231,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.609519230769231,
+              "usable_withhold": 0.39048076923076924,
+              "decision_net": 0.5370064102564105,
+              "brief_net": 0.5370064102564105
+            },
+            "oracle": {
+              "send_cost": 0.07251282051282054,
+              "receipt_none": 0.39048076923076924,
+              "receipt_slot_1_only": 0.32226923076923086,
+              "receipt_slot_2_only": 0.27063461538461553,
+              "receipt_both": 0.01661538461538461,
+              "decision_payoff": 0.609519230769231,
+              "brief_payoff": 0.609519230769231,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.609519230769231,
+              "usable_withhold": 0.39048076923076924,
+              "decision_net": 0.5370064102564105,
+              "brief_net": 0.5370064102564105
+            },
+            "mean": {
+              "send_cost": 0.0621823361823362,
+              "receipt_none": 0.4806570512820513,
+              "receipt_slot_1_only": 0.27815384615384625,
+              "receipt_slot_2_only": 0.22365064102564114,
+              "receipt_both": 0.017538461538461534,
+              "decision_payoff": 0.3666121794871796,
+              "brief_payoff": 0.3610737179487181,
+              "false_action": 0.07636538461538463,
+              "usable_retain": 0.0,
+              "usable_revise": 0.43743910256410273,
+              "usable_withhold": 0.4806570512820513,
+              "decision_net": 0.3044298433048434,
+              "brief_net": 0.2988913817663819
+            }
+          }
+        },
+        "exact_bounds": {
+          "literal": {
+            "adaptive": 0.0,
+            "independent": 0.0
+          },
+          "direct": {
+            "adaptive": 0.21935897435897436,
+            "independent": 0.21474358974358976
+          },
+          "compare_first": {
+            "adaptive": 0.21935897435897436,
+            "independent": 0.21474358974358976
+          },
+          "compare_strip": {
+            "adaptive": 0.3983611111111112,
+            "independent": 0.3873611111111112
+          },
+          "typed_compare": {
+            "adaptive": 0.5370064102564104,
+            "independent": 0.5178525641025642
+          },
+          "oracle": {
+            "adaptive": 0.5370064102564104,
+            "independent": 0.5178525641025642
+          }
+        }
+      },
+      "overlap": {
+        "systems": {
+          "frozen": {
+            "literal": {
+              "send_cost": 0.11509467493149761,
+              "receipt_none": 0.08273692095216736,
+              "receipt_slot_1_only": 0.4358400106257892,
+              "receipt_slot_2_only": 0.4358400106257894,
+              "receipt_both": 0.04558305779625462,
+              "decision_payoff": 0.0227915288981273,
+              "brief_payoff": 0.0,
+              "false_action": 0.44723577507485296,
+              "usable_retain": 0.0,
+              "usable_revise": 0.44723577507485296,
+              "usable_withhold": 0.08273692095216736,
+              "decision_net": -0.09230314603337027,
+              "brief_net": -0.11509467493149757
+            },
+            "direct": {
+              "send_cost": 0.026347353286913563,
+              "receipt_none": 0.7818980082248331,
+              "receipt_slot_1_only": 0.10897542669107046,
+              "receipt_slot_2_only": 0.10897542669107052,
+              "receipt_both": 0.00015113839302542038,
+              "decision_payoff": 0.21646936521736637,
+              "brief_payoff": 0.21646936521736637,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.21646936521736637,
+              "usable_withhold": 0.7828884569476672,
+              "decision_net": 0.19012201193045283,
+              "brief_net": 0.19012201193045283
+            },
+            "compare_first": {
+              "send_cost": 0.026347353286913563,
+              "receipt_none": 0.7818980082248331,
+              "receipt_slot_1_only": 0.10897542669107046,
+              "receipt_slot_2_only": 0.10897542669107052,
+              "receipt_both": 0.00015113839302542038,
+              "decision_payoff": 0.21646936521736637,
+              "brief_payoff": 0.21646936521736637,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.21646936521736637,
+              "usable_withhold": 0.7828884569476672,
+              "decision_net": 0.19012201193045283,
+              "brief_net": 0.19012201193045283
+            },
+            "compare_strip": {
+              "send_cost": 0.048829406788495185,
+              "receipt_none": 0.5976368242150121,
+              "receipt_slot_1_only": 0.19917130344559972,
+              "receipt_slot_2_only": 0.19917130344559983,
+              "receipt_both": 0.00402056889378809,
+              "decision_payoff": 0.4011426377467024,
+              "brief_payoff": 0.4011426377467024,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4011426377467024,
+              "usable_withhold": 0.5985668316243696,
+              "decision_net": 0.35231323095820716,
+              "brief_net": 0.35231323095820716
+            },
+            "typed_compare": {
+              "send_cost": 0.06793103945245908,
+              "receipt_none": 0.445110616316111,
+              "receipt_slot_1_only": 0.27163649450899646,
+              "receipt_slot_2_only": 0.27163649450899663,
+              "receipt_both": 0.01161639466589588,
+              "decision_payoff": 0.5540198175880079,
+              "brief_payoff": 0.5540198175880079,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5540198175880079,
+              "usable_withhold": 0.44598018241199205,
+              "decision_net": 0.4860887781355488,
+              "brief_net": 0.4860887781355488
+            },
+            "oracle": {
+              "send_cost": 0.06793103945245908,
+              "receipt_none": 0.445110616316111,
+              "receipt_slot_1_only": 0.27163649450899646,
+              "receipt_slot_2_only": 0.27163649450899663,
+              "receipt_both": 0.01161639466589588,
+              "decision_payoff": 0.5540198175880079,
+              "brief_payoff": 0.5540198175880079,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5540198175880079,
+              "usable_withhold": 0.44598018241199205,
+              "decision_net": 0.4860887781355488,
+              "brief_net": 0.4860887781355488
+            },
+            "mean": {
+              "send_cost": 0.058746811199789674,
+              "receipt_none": 0.5223984990415113,
+              "receipt_slot_1_only": 0.23270585941192046,
+              "receipt_slot_2_only": 0.2327058594119206,
+              "receipt_both": 0.012189782134647551,
+              "decision_payoff": 0.3274854220425964,
+              "brief_payoff": 0.3236868338929085,
+              "false_action": 0.07453929584580882,
+              "usable_retain": 0.0,
+              "usable_revise": 0.3982261297387173,
+              "usable_withhold": 0.5231735052159759,
+              "decision_net": 0.2687386108428067,
+              "brief_net": 0.26494002269311884
+            }
+          },
+          "greedy": {
+            "literal": {
+              "send_cost": 0.114974358974359,
+              "receipt_none": 0.08153846153846152,
+              "receipt_slot_1_only": 0.5261538461538462,
+              "receipt_slot_2_only": 0.35076923076923094,
+              "receipt_both": 0.04153846153846153,
+              "decision_payoff": 0.020769230769230762,
+              "brief_payoff": 0.0,
+              "false_action": 0.44884615384615395,
+              "usable_retain": 0.0,
+              "usable_revise": 0.44884615384615395,
+              "usable_withhold": 0.08153846153846152,
+              "decision_net": -0.09420512820512826,
+              "brief_net": -0.11497435897435904
+            },
+            "direct": {
+              "send_cost": 0.025948717948717965,
+              "receipt_none": 0.7830769230769231,
+              "receipt_slot_1_only": 0.10846153846153848,
+              "receipt_slot_2_only": 0.10846153846153851,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.216923076923077,
+              "brief_payoff": 0.216923076923077,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.216923076923077,
+              "usable_withhold": 0.7830769230769231,
+              "decision_net": 0.19097435897435902,
+              "brief_net": 0.19097435897435902
+            },
+            "compare_first": {
+              "send_cost": 0.025948717948717965,
+              "receipt_none": 0.7830769230769231,
+              "receipt_slot_1_only": 0.10846153846153848,
+              "receipt_slot_2_only": 0.10846153846153851,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.216923076923077,
+              "brief_payoff": 0.216923076923077,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.216923076923077,
+              "usable_withhold": 0.7830769230769231,
+              "decision_net": 0.19097435897435902,
+              "brief_net": 0.19097435897435902
+            },
+            "compare_strip": {
+              "send_cost": 0.048504273504273526,
+              "receipt_none": 0.5980769230769231,
+              "receipt_slot_1_only": 0.20653846153846156,
+              "receipt_slot_2_only": 0.191923076923077,
+              "receipt_both": 0.0034615384615384608,
+              "decision_payoff": 0.40192307692307705,
+              "brief_payoff": 0.40192307692307705,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.40192307692307705,
+              "usable_withhold": 0.5980769230769231,
+              "decision_net": 0.3534188034188035,
+              "brief_net": 0.3534188034188035
+            },
+            "typed_compare": {
+              "send_cost": 0.0676666666666667,
+              "receipt_none": 0.445,
+              "receipt_slot_1_only": 0.29423076923076924,
+              "receipt_slot_2_only": 0.2503846153846155,
+              "receipt_both": 0.010384615384615383,
+              "decision_payoff": 0.5550000000000002,
+              "brief_payoff": 0.5550000000000002,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5550000000000002,
+              "usable_withhold": 0.445,
+              "decision_net": 0.48733333333333345,
+              "brief_net": 0.48733333333333345
+            },
+            "oracle": {
+              "send_cost": 0.0676666666666667,
+              "receipt_none": 0.445,
+              "receipt_slot_1_only": 0.29423076923076924,
+              "receipt_slot_2_only": 0.2503846153846155,
+              "receipt_both": 0.010384615384615383,
+              "decision_payoff": 0.5550000000000002,
+              "brief_payoff": 0.5550000000000002,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5550000000000002,
+              "usable_withhold": 0.445,
+              "decision_net": 0.48733333333333345,
+              "brief_net": 0.48733333333333345
+            },
+            "mean": {
+              "send_cost": 0.058451566951566974,
+              "receipt_none": 0.5226282051282051,
+              "receipt_slot_1_only": 0.2563461538461539,
+              "receipt_slot_2_only": 0.21006410256410268,
+              "receipt_both": 0.01096153846153846,
+              "decision_payoff": 0.32775641025641034,
+              "brief_payoff": 0.3242948717948719,
+              "false_action": 0.07480769230769233,
+              "usable_retain": 0.0,
+              "usable_revise": 0.39910256410256423,
+              "usable_withhold": 0.5226282051282051,
+              "decision_net": 0.2693048433048434,
+              "brief_net": 0.2658433048433049
+            }
+          }
+        },
+        "exact_bounds": {
+          "literal": {
+            "adaptive": 0.0,
+            "independent": 0.0
+          },
+          "direct": {
+            "adaptive": 0.19097435897435902,
+            "independent": 0.18358974358974361
+          },
+          "compare_first": {
+            "adaptive": 0.19097435897435902,
+            "independent": 0.18358974358974361
+          },
+          "compare_strip": {
+            "adaptive": 0.3534188034188035,
+            "independent": 0.3380341880341881
+          },
+          "typed_compare": {
+            "adaptive": 0.48733333333333334,
+            "independent": 0.4633333333333334
+          },
+          "oracle": {
+            "adaptive": 0.48733333333333334,
+            "independent": 0.4633333333333334
+          }
+        }
+      }
+    },
+    "western-sahara": {
+      "split": {
+        "systems": {
+          "frozen": {
+            "literal": {
+              "send_cost": 0.1178391832777036,
+              "receipt_none": 0.051783544162756066,
+              "receipt_slot_1_only": 0.4404572670983771,
+              "receipt_slot_2_only": 0.44045726709837724,
+              "receipt_both": 0.06730192164049004,
+              "decision_payoff": 0.03365096082024502,
+              "brief_payoff": 0.0,
+              "false_action": 0.4572827475084997,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4572827475084997,
+              "usable_withhold": 0.051783544162756066,
+              "decision_net": -0.0841882224574586,
+              "brief_net": -0.11783918327770364
+            },
+            "direct": {
+              "send_cost": 0.00048486962461834925,
+              "receipt_none": 0.997891442457933,
+              "receipt_slot_1_only": 0.0010495678327996972,
+              "receipt_slot_2_only": 0.0010495678327996976,
+              "receipt_both": 9.421876466811082e-06,
+              "decision_payoff": 0.0,
+              "brief_payoff": 0.0,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "usable_withhold": 0.9989433657598495,
+              "decision_net": -0.00048486962461834925,
+              "brief_net": -0.00048486962461834925
+            },
+            "compare_first": {
+              "send_cost": 0.029096040515945262,
+              "receipt_none": 0.7509653547335634,
+              "receipt_slot_1_only": 0.1244330710079579,
+              "receipt_slot_2_only": 0.12443307100795782,
+              "receipt_both": 0.00016850325052032865,
+              "decision_payoff": 0.24741606864274823,
+              "brief_payoff": 0.24741606864274823,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.24741606864274823,
+              "usable_withhold": 0.7519487858611683,
+              "decision_net": 0.21832002812680296,
+              "brief_net": 0.21832002812680296
+            },
+            "compare_strip": {
+              "send_cost": 0.053181152099365823,
+              "receipt_none": 0.5486599860134472,
+              "receipt_slot_1_only": 0.22274213086766848,
+              "receipt_slot_2_only": 0.22274213086766836,
+              "receipt_both": 0.005855752251215689,
+              "decision_payoff": 0.45014214095055943,
+              "brief_payoff": 0.45014214095055943,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.45014214095055943,
+              "usable_withhold": 0.5495749249667408,
+              "decision_net": 0.3969609888511936,
+              "brief_net": 0.3969609888511936
+            },
+            "typed_compare": {
+              "send_cost": 0.07274020437488003,
+              "receipt_none": 0.39097533629758435,
+              "receipt_slot_1_only": 0.29597674741193136,
+              "receipt_slot_2_only": 0.29597674741193125,
+              "receipt_both": 0.017071168878552895,
+              "decision_payoff": 0.6081782169234334,
+              "brief_payoff": 0.6081782169234334,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6081782169234334,
+              "usable_withhold": 0.39182178307656645,
+              "decision_net": 0.5354380125485534,
+              "brief_net": 0.5354380125485534
+            },
+            "oracle": {
+              "send_cost": 0.07274020437488003,
+              "receipt_none": 0.39097533629758435,
+              "receipt_slot_1_only": 0.29597674741193136,
+              "receipt_slot_2_only": 0.29597674741193125,
+              "receipt_both": 0.017071168878552895,
+              "decision_payoff": 0.6081782169234334,
+              "brief_payoff": 0.6081782169234334,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.6081782169234334,
+              "usable_withhold": 0.39182178307656645,
+              "decision_net": 0.5354380125485534,
+              "brief_net": 0.5354380125485534
+            },
+            "mean": {
+              "send_cost": 0.05768027571123218,
+              "receipt_none": 0.5218751666604781,
+              "receipt_slot_1_only": 0.2301059219384443,
+              "receipt_slot_2_only": 0.23010592193844426,
+              "receipt_both": 0.01791298946263311,
+              "decision_payoff": 0.3245942673767366,
+              "brief_payoff": 0.31898577390669575,
+              "false_action": 0.07621379125141661,
+              "usable_retain": 0.0,
+              "usable_revise": 0.3951995651581124,
+              "usable_withhold": 0.522649031150608,
+              "decision_net": 0.2669139916655044,
+              "brief_net": 0.26130549819546356
+            }
+          },
+          "greedy": {
+            "literal": {
+              "send_cost": 0.11774358974358977,
+              "receipt_none": 0.05038461538461537,
+              "receipt_slot_1_only": 0.544846153846154,
+              "receipt_slot_2_only": 0.3383076923076924,
+              "receipt_both": 0.06646153846153845,
+              "decision_payoff": 0.03323076923076923,
+              "brief_payoff": 0.0,
+              "false_action": 0.4581923076923078,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4581923076923078,
+              "usable_withhold": 0.05038461538461537,
+              "decision_net": -0.08451282051282055,
+              "brief_net": -0.11774358974358978
+            },
+            "direct": {
+              "send_cost": 0.0,
+              "receipt_none": 1.0,
+              "receipt_slot_1_only": 0.0,
+              "receipt_slot_2_only": 0.0,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.0,
+              "brief_payoff": 0.0,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "usable_withhold": 1.0,
+              "decision_net": 0.0,
+              "brief_net": 0.0
+            },
+            "compare_first": {
+              "send_cost": 0.028717948717948732,
+              "receipt_none": 0.7519230769230769,
+              "receipt_slot_1_only": 0.12403846153846158,
+              "receipt_slot_2_only": 0.12403846153846161,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.2480769230769232,
+              "brief_payoff": 0.2480769230769232,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.2480769230769232,
+              "usable_withhold": 0.7519230769230769,
+              "decision_net": 0.21935897435897447,
+              "brief_net": 0.21935897435897447
+            },
+            "compare_strip": {
+              "send_cost": 0.05288888888888891,
+              "receipt_none": 0.54875,
+              "receipt_slot_1_only": 0.23146153846153852,
+              "receipt_slot_2_only": 0.21425000000000013,
+              "receipt_both": 0.005538461538461537,
+              "decision_payoff": 0.4512500000000002,
+              "brief_payoff": 0.4512500000000002,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4512500000000002,
+              "usable_withhold": 0.54875,
+              "decision_net": 0.39836111111111133,
+              "brief_net": 0.39836111111111133
+            },
+            "typed_compare": {
+              "send_cost": 0.07251282051282054,
+              "receipt_none": 0.39048076923076924,
+              "receipt_slot_1_only": 0.32226923076923086,
+              "receipt_slot_2_only": 0.27063461538461553,
+              "receipt_both": 0.01661538461538461,
+              "decision_payoff": 0.609519230769231,
+              "brief_payoff": 0.609519230769231,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.609519230769231,
+              "usable_withhold": 0.39048076923076924,
+              "decision_net": 0.5370064102564105,
+              "brief_net": 0.5370064102564105
+            },
+            "oracle": {
+              "send_cost": 0.07251282051282054,
+              "receipt_none": 0.39048076923076924,
+              "receipt_slot_1_only": 0.32226923076923086,
+              "receipt_slot_2_only": 0.27063461538461553,
+              "receipt_both": 0.01661538461538461,
+              "decision_payoff": 0.609519230769231,
+              "brief_payoff": 0.609519230769231,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.609519230769231,
+              "usable_withhold": 0.39048076923076924,
+              "decision_net": 0.5370064102564105,
+              "brief_net": 0.5370064102564105
+            },
+            "mean": {
+              "send_cost": 0.05739601139601141,
+              "receipt_none": 0.5220032051282052,
+              "receipt_slot_1_only": 0.2574807692307693,
+              "receipt_slot_2_only": 0.2029775641025642,
+              "receipt_both": 0.017538461538461534,
+              "decision_payoff": 0.32526602564102575,
+              "brief_payoff": 0.31972756410256425,
+              "false_action": 0.07636538461538463,
+              "usable_retain": 0.0,
+              "usable_revise": 0.39609294871794887,
+              "usable_withhold": 0.5220032051282052,
+              "decision_net": 0.26787001424501433,
+              "brief_net": 0.26233155270655284
+            }
+          }
+        },
+        "exact_bounds": {
+          "literal": {
+            "adaptive": 0.0,
+            "independent": 0.0
+          },
+          "direct": {
+            "adaptive": 0.0,
+            "independent": 0.0
+          },
+          "compare_first": {
+            "adaptive": 0.21935897435897436,
+            "independent": 0.21474358974358976
+          },
+          "compare_strip": {
+            "adaptive": 0.3983611111111112,
+            "independent": 0.3873611111111112
+          },
+          "typed_compare": {
+            "adaptive": 0.5370064102564104,
+            "independent": 0.5178525641025642
+          },
+          "oracle": {
+            "adaptive": 0.5370064102564104,
+            "independent": 0.5178525641025642
+          }
+        }
+      },
+      "overlap": {
+        "systems": {
+          "frozen": {
+            "literal": {
+              "send_cost": 0.11509467493149761,
+              "receipt_none": 0.08273692095216736,
+              "receipt_slot_1_only": 0.4358400106257892,
+              "receipt_slot_2_only": 0.4358400106257894,
+              "receipt_both": 0.04558305779625462,
+              "decision_payoff": 0.0227915288981273,
+              "brief_payoff": 0.0,
+              "false_action": 0.44723577507485296,
+              "usable_retain": 0.0,
+              "usable_revise": 0.44723577507485296,
+              "usable_withhold": 0.08273692095216736,
+              "decision_net": -0.09230314603337027,
+              "brief_net": -0.11509467493149757
+            },
+            "direct": {
+              "send_cost": 0.0004848789477142152,
+              "receipt_none": 0.9978941683455739,
+              "receipt_slot_1_only": 0.001048864245408677,
+              "receipt_slot_2_only": 0.0010488642454086778,
+              "receipt_both": 8.103163607871202e-06,
+              "decision_payoff": 0.0,
+              "brief_payoff": 0.0,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "usable_withhold": 0.9989450583818845,
+              "decision_net": -0.0004848789477142152,
+              "brief_net": -0.0004848789477142152
+            },
+            "compare_first": {
+              "send_cost": 0.026347353286913563,
+              "receipt_none": 0.7818980082248331,
+              "receipt_slot_1_only": 0.10897542669107046,
+              "receipt_slot_2_only": 0.10897542669107052,
+              "receipt_both": 0.00015113839302542038,
+              "decision_payoff": 0.21646936521736637,
+              "brief_payoff": 0.21646936521736637,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.21646936521736637,
+              "usable_withhold": 0.7828884569476672,
+              "decision_net": 0.19012201193045283,
+              "brief_net": 0.19012201193045283
+            },
+            "compare_strip": {
+              "send_cost": 0.048829406788495185,
+              "receipt_none": 0.5976368242150121,
+              "receipt_slot_1_only": 0.19917130344559972,
+              "receipt_slot_2_only": 0.19917130344559983,
+              "receipt_both": 0.00402056889378809,
+              "decision_payoff": 0.4011426377467024,
+              "brief_payoff": 0.4011426377467024,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.4011426377467024,
+              "usable_withhold": 0.5985668316243696,
+              "decision_net": 0.35231323095820716,
+              "brief_net": 0.35231323095820716
+            },
+            "typed_compare": {
+              "send_cost": 0.06793103945245908,
+              "receipt_none": 0.445110616316111,
+              "receipt_slot_1_only": 0.27163649450899646,
+              "receipt_slot_2_only": 0.27163649450899663,
+              "receipt_both": 0.01161639466589588,
+              "decision_payoff": 0.5540198175880079,
+              "brief_payoff": 0.5540198175880079,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5540198175880079,
+              "usable_withhold": 0.44598018241199205,
+              "decision_net": 0.4860887781355488,
+              "brief_net": 0.4860887781355488
+            },
+            "oracle": {
+              "send_cost": 0.06793103945245908,
+              "receipt_none": 0.445110616316111,
+              "receipt_slot_1_only": 0.27163649450899646,
+              "receipt_slot_2_only": 0.27163649450899663,
+              "receipt_both": 0.01161639466589588,
+              "decision_payoff": 0.5540198175880079,
+              "brief_payoff": 0.5540198175880079,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5540198175880079,
+              "usable_withhold": 0.44598018241199205,
+              "decision_net": 0.4860887781355488,
+              "brief_net": 0.4860887781355488
+            },
+            "mean": {
+              "send_cost": 0.05443639880992312,
+              "receipt_none": 0.5583978590616347,
+              "receipt_slot_1_only": 0.21471809900431016,
+              "receipt_slot_2_only": 0.21471809900431027,
+              "receipt_both": 0.012165942929744626,
+              "decision_payoff": 0.29140719450636865,
+              "brief_payoff": 0.28760860635668073,
+              "false_action": 0.07453929584580882,
+              "usable_retain": 0.0,
+              "usable_revise": 0.3621479022024896,
+              "usable_withhold": 0.5591829387883455,
+              "decision_net": 0.23697079569644552,
+              "brief_net": 0.2331722075467576
+            }
+          },
+          "greedy": {
+            "literal": {
+              "send_cost": 0.114974358974359,
+              "receipt_none": 0.08153846153846152,
+              "receipt_slot_1_only": 0.5261538461538462,
+              "receipt_slot_2_only": 0.35076923076923094,
+              "receipt_both": 0.04153846153846153,
+              "decision_payoff": 0.020769230769230762,
+              "brief_payoff": 0.0,
+              "false_action": 0.44884615384615395,
+              "usable_retain": 0.0,
+              "usable_revise": 0.44884615384615395,
+              "usable_withhold": 0.08153846153846152,
+              "decision_net": -0.09420512820512826,
+              "brief_net": -0.11497435897435904
+            },
+            "direct": {
+              "send_cost": 0.0,
+              "receipt_none": 1.0,
+              "receipt_slot_1_only": 0.0,
+              "receipt_slot_2_only": 0.0,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.0,
+              "brief_payoff": 0.0,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.0,
+              "usable_withhold": 1.0,
+              "decision_net": 0.0,
+              "brief_net": 0.0
+            },
+            "compare_first": {
+              "send_cost": 0.025948717948717965,
+              "receipt_none": 0.7830769230769231,
+              "receipt_slot_1_only": 0.10846153846153848,
+              "receipt_slot_2_only": 0.10846153846153851,
+              "receipt_both": 0.0,
+              "decision_payoff": 0.216923076923077,
+              "brief_payoff": 0.216923076923077,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.216923076923077,
+              "usable_withhold": 0.7830769230769231,
+              "decision_net": 0.19097435897435902,
+              "brief_net": 0.19097435897435902
+            },
+            "compare_strip": {
+              "send_cost": 0.048504273504273526,
+              "receipt_none": 0.5980769230769231,
+              "receipt_slot_1_only": 0.20653846153846156,
+              "receipt_slot_2_only": 0.191923076923077,
+              "receipt_both": 0.0034615384615384608,
+              "decision_payoff": 0.40192307692307705,
+              "brief_payoff": 0.40192307692307705,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.40192307692307705,
+              "usable_withhold": 0.5980769230769231,
+              "decision_net": 0.3534188034188035,
+              "brief_net": 0.3534188034188035
+            },
+            "typed_compare": {
+              "send_cost": 0.0676666666666667,
+              "receipt_none": 0.445,
+              "receipt_slot_1_only": 0.29423076923076924,
+              "receipt_slot_2_only": 0.2503846153846155,
+              "receipt_both": 0.010384615384615383,
+              "decision_payoff": 0.5550000000000002,
+              "brief_payoff": 0.5550000000000002,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5550000000000002,
+              "usable_withhold": 0.445,
+              "decision_net": 0.48733333333333345,
+              "brief_net": 0.48733333333333345
+            },
+            "oracle": {
+              "send_cost": 0.0676666666666667,
+              "receipt_none": 0.445,
+              "receipt_slot_1_only": 0.29423076923076924,
+              "receipt_slot_2_only": 0.2503846153846155,
+              "receipt_both": 0.010384615384615383,
+              "decision_payoff": 0.5550000000000002,
+              "brief_payoff": 0.5550000000000002,
+              "false_action": 0.0,
+              "usable_retain": 0.0,
+              "usable_revise": 0.5550000000000002,
+              "usable_withhold": 0.445,
+              "decision_net": 0.48733333333333345,
+              "brief_net": 0.48733333333333345
+            },
+            "mean": {
+              "send_cost": 0.05412678062678065,
+              "receipt_none": 0.5587820512820513,
+              "receipt_slot_1_only": 0.2382692307692308,
+              "receipt_slot_2_only": 0.19198717948717958,
+              "receipt_both": 0.01096153846153846,
+              "decision_payoff": 0.2916025641025642,
+              "brief_payoff": 0.2881410256410257,
+              "false_action": 0.07480769230769233,
+              "usable_retain": 0.0,
+              "usable_revise": 0.362948717948718,
+              "usable_withhold": 0.5587820512820513,
+              "decision_net": 0.23747578347578355,
+              "brief_net": 0.23401424501424506
+            }
+          }
+        },
+        "exact_bounds": {
+          "literal": {
+            "adaptive": 0.0,
+            "independent": 0.0
+          },
+          "direct": {
+            "adaptive": 0.0,
+            "independent": 0.0
+          },
+          "compare_first": {
+            "adaptive": 0.19097435897435902,
+            "independent": 0.18358974358974361
+          },
+          "compare_strip": {
+            "adaptive": 0.3534188034188035,
+            "independent": 0.3380341880341881
+          },
+          "typed_compare": {
+            "adaptive": 0.48733333333333334,
+            "independent": 0.4633333333333334
+          },
+          "oracle": {
+            "adaptive": 0.48733333333333334,
+            "independent": 0.4633333333333334
+          }
+        }
+      }
+    }
+  },
+  "sha256": {
+    "facilitator_witness_contrast_route.py": "c1f6fab5e28722f538d62da2aa1c9668bbf0c4f3f250b2e4d43848bb48da1099",
+    "results.json": "6f056d5f9f1c8159aabddf6d594c570b637ea4fb95da0a8410d8f4be4c2e6db7"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "scope": "Frozen reader tested on four selected fields after the broader confirmation pilot. Text pairs and answer values are authored. The model extracts source and candidate roles in separate calls. Host comparison cannot repair a missed or wrong extraction.",
+  "correct_field_reads": 11,
+  "total_field_reads": 12,
+  "fields": {
+    "drc_recipient": {
+      "source": {
+        "reads": [
+          "Council",
+          "Council"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Council",
+        "right": true,
+        "inputs": [
+          "The DRC spoke after the Council vote as the affected state. It welcomed the targeting of nongovernmental entities and individuals in the renewed measures. It assured the Council of government cooperation with the Group of Experts, requested an objective approach and said it had submitted its confidential stock-management report on time.",
+          "The Council extended the Group of Experts mandate to 1 August 2024 and intended to review it and act on a possible further extension by 1 July 2024. It requested a midterm report to the Council after discussion with the Committee by 30 December 2023 and a final report by 15 June 2024. The Group was to send monthly updates to the Committee except in the two report-due months."
+        ]
+      },
+      "faithful_statement": {
+        "reads": [
+          "Council",
+          "Council"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Council",
+        "right": true,
+        "inputs": [
+          "The midterm report was requested for the Council after discussion with the Committee."
+        ]
+      },
+      "changed_statement": {
+        "reads": [
+          "Committee",
+          "Committee"
+        ],
+        "stable": 1,
+        "expected": 1,
+        "value": "Committee",
+        "right": true,
+        "inputs": [
+          "The midterm report was requested for the Committee after discussion with the Council."
+        ]
+      }
+    },
+    "drc_discussion": {
+      "source": {
+        "reads": [
+          "Committee",
+          "Committee"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Committee",
+        "right": true,
+        "inputs": [
+          "The DRC spoke after the Council vote as the affected state. It welcomed the targeting of nongovernmental entities and individuals in the renewed measures. It assured the Council of government cooperation with the Group of Experts, requested an objective approach and said it had submitted its confidential stock-management report on time.",
+          "The Council extended the Group of Experts mandate to 1 August 2024 and intended to review it and act on a possible further extension by 1 July 2024. It requested a midterm report to the Council after discussion with the Committee by 30 December 2023 and a final report by 15 June 2024. The Group was to send monthly updates to the Committee except in the two report-due months."
+        ]
+      },
+      "faithful_statement": {
+        "reads": [
+          "Committee",
+          "Committee"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Committee",
+        "right": true,
+        "inputs": [
+          "The midterm report was requested for the Council after discussion with the Committee."
+        ]
+      },
+      "changed_statement": {
+        "reads": [
+          "not stated",
+          null
+        ],
+        "stable": null,
+        "expected": 1,
+        "value": null,
+        "right": false,
+        "inputs": [
+          "The midterm report was requested for the Committee after discussion with the Council."
+        ]
+      }
+    },
+    "unami_review_recipient": {
+      "source": {
+        "reads": [
+          "Council",
+          "Council"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Council",
+        "right": true,
+        "inputs": [
+          "Resolution 2682, para. 3. The Secretary-General was requested to conduct and provide the Council with an independent strategic review of UNAMI no later than 31 March 2024.",
+          "Resolution 2682, para. 5. The Secretary-General was requested to report to the Council on fulfilment of UNAMI responsibilities every four months."
+        ]
+      },
+      "faithful_statement": {
+        "reads": [
+          "Council",
+          "Council"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Council",
+        "right": true,
+        "inputs": [
+          "The Secretary-General was requested to send the independent UNAMI review to the Council by 31 March 2024."
+        ]
+      },
+      "changed_statement": {
+        "reads": [
+          "Iraqi Government",
+          "Iraqi Government"
+        ],
+        "stable": 1,
+        "expected": 1,
+        "value": "Iraqi Government",
+        "right": true,
+        "inputs": [
+          "The Secretary-General was requested to send the independent UNAMI review to the Iraqi Government by 31 March 2024."
+        ]
+      }
+    },
+    "drc_participation": {
+      "source": {
+        "reads": [
+          "Spoke after the vote as affected state",
+          "Spoke after the vote as affected state"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Spoke after the vote as affected state",
+        "right": true,
+        "inputs": [
+          "Russia voted for the renewal. It argued sanctions should be adjusted or lifted when out of date or when they impede state-building. It welcomed the Council's December 2022 removal of the DRC notification requirement and reiterated its opposition to illegitimate unilateral sanctions.",
+          "The DRC spoke after the Council vote as the affected state. It welcomed the targeting of nongovernmental entities and individuals in the renewed measures. It assured the Council of government cooperation with the Group of Experts, requested an objective approach and said it had submitted its confidential stock-management report on time."
+        ]
+      },
+      "faithful_statement": {
+        "reads": [
+          "Spoke after the vote as affected state",
+          "Spoke after the vote as affected state"
+        ],
+        "stable": 0,
+        "expected": 0,
+        "value": "Spoke after the vote as affected state",
+        "right": true,
+        "inputs": [
+          "The DRC welcomed the targeting of nongovernmental entities and individuals in its statement after the vote."
+        ]
+      },
+      "changed_statement": {
+        "reads": [
+          "Cast a Council vote in favour",
+          "Cast a Council vote in favour"
+        ],
+        "stable": 1,
+        "expected": 1,
+        "value": "Cast a Council vote in favour",
+        "right": true,
+        "inputs": [
+          "The DRC expressed that welcome by casting a Council vote in favour of the draft."
+        ]
+      }
+    }
+  },
+  "comparisons": {
+    "drc_recipient": {
+      "faithful_statement": "match",
+      "changed_statement": "mismatch"
+    },
+    "drc_discussion": {
+      "faithful_statement": "match",
+      "changed_statement": "defer"
+    },
+    "unami_review_recipient": {
+      "faithful_statement": "match",
+      "changed_statement": "mismatch"
+    },
+    "drc_participation": {
+      "faithful_statement": "match",
+      "changed_statement": "mismatch"
+    }
+  }
+}

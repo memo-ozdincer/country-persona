@@ -1,0 +1,45 @@
+{
+  "scope": "Same-assistant review of unique source concepts in delegate notes and their uptake. Concept counts are diagnostics and do not change the role or completeness rubric.",
+  "transcript_sha256": "6448fe84e09f4c7a4a398abd7204606ea4d4ece18c9e71fceebcc18cb170e1a2",
+  "concepts": {
+    "J1": "Japan sought broad support",
+    "J2": "Japan favored complementing existing forums",
+    "J3": "Japan questioned the proposed treaty's verifiability",
+    "C1": "China accepted the underlying Outer Space Treaty content",
+    "C2": "China sought broader measures",
+    "C3": "China sought early work on binding multilateral agreements"
+  },
+  "best-contrast": {
+    "interactive": {
+      "typed_request": "china-reason",
+      "left_note": ["J1", "J2", "J3"],
+      "right_note": ["C1", "C2", "C3"],
+      "distinct_note_concepts": 6,
+      "retained": ["J2", "J3", "C1", "C2", "C3"],
+      "source_backed_peer_uptake": "China supported it, accepting the Outer Space Treaty content while seeking broader measures and early binding multilateral agreements."
+    },
+    "independent": {
+      "typed_request": null,
+      "left_note": ["J1", "J2", "J3"],
+      "right_note": ["J1", "J2", "J3"],
+      "distinct_note_concepts": 3,
+      "retained": ["J1", "J2", "J3"]
+    }
+  },
+  "lowest-contrast": {
+    "interactive": {
+      "typed_request": "china-reason",
+      "left_note": ["J1", "J2", "J3"],
+      "right_note": ["C1", "C2", "C3"],
+      "distinct_note_concepts": 6,
+      "retained": ["J2", "J3", "C1", "C2", "C3"]
+    },
+    "independent": {
+      "typed_request": null,
+      "left_note": ["J1", "J2", "J3"],
+      "right_note": ["C1", "C2", "C3"],
+      "distinct_note_concepts": 6,
+      "retained": ["J2", "J3", "C1", "C2", "C3"]
+    }
+  }
+}

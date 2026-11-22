@@ -1,0 +1,500 @@
+{
+  "seed": 118423,
+  "opening": [
+    "original",
+    "uk-overlap",
+    "AB"
+  ],
+  "package_order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+  ],
+  "immediate": {
+    "result": [
+      false,
+      8,
+      1,
+      1,
+      0,
+      0
+    ],
+    "events": [
+      {
+        "slot": 0,
+        "query": null,
+        "disclosed": [
+          [
+            1,
+            0,
+            4
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "slot": 1,
+        "query": {
+          "asker": 0,
+          "respondent": 1,
+          "slot": 1,
+          "request_set": 66,
+          "target": 2,
+          "lookup": "joint_fields",
+          "reply": true,
+          "admitted": false,
+          "qualified_acceptance": 2,
+          "qualified_exclusions": 32,
+          "retry_action": "immediate",
+          "retry_opportunity": true,
+          "retry_slot": 3,
+          "retry_signs": 0
+        },
+        "disclosed": [
+          [
+            1,
+            1,
+            32
+          ]
+        ]
+      },
+      {
+        "slot": 4,
+        "query": null,
+        "disclosed": [
+          [
+            0,
+            0,
+            64
+          ],
+          [
+            0,
+            1,
+            8
+          ]
+        ]
+      },
+      {
+        "slot": 5,
+        "query": null,
+        "disclosed": [
+          [
+            1,
+            1,
+            64
+          ]
+        ]
+      },
+      {
+        "slot": 6,
+        "query": null,
+        "disclosed": [
+          [
+            1,
+            1,
+            16
+          ]
+        ]
+      },
+      {
+        "slot": 7,
+        "query": null,
+        "disclosed": [
+          [
+            0,
+            0,
+            2
+          ]
+        ]
+      }
+    ],
+    "admitted_signs": [
+      {
+        "id": "m1",
+        "role": "INDIA",
+        "origin": "opening",
+        "slot": -1,
+        "accepts": [
+          "A"
+        ],
+        "excludes": []
+      },
+      {
+        "id": "m2",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 0,
+        "accepts": [
+          "C"
+        ],
+        "excludes": []
+      },
+      {
+        "id": "m3",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 0,
+        "accepts": [],
+        "excludes": [
+          "A"
+        ]
+      },
+      {
+        "id": "m4",
+        "role": "UNITED KINGDOM",
+        "origin": "reply",
+        "slot": 2,
+        "accepts": [],
+        "excludes": [
+          "F"
+        ]
+      },
+      {
+        "id": "m5",
+        "role": "INDIA",
+        "origin": "ordinary",
+        "slot": 4,
+        "accepts": [
+          "G"
+        ],
+        "excludes": []
+      },
+      {
+        "id": "m6",
+        "role": "INDIA",
+        "origin": "ordinary",
+        "slot": 4,
+        "accepts": [],
+        "excludes": [
+          "D"
+        ]
+      },
+      {
+        "id": "m7",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 5,
+        "accepts": [],
+        "excludes": [
+          "G"
+        ]
+      },
+      {
+        "id": "m8",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 6,
+        "accepts": [],
+        "excludes": [
+          "E"
+        ]
+      },
+      {
+        "id": "m9",
+        "role": "INDIA",
+        "origin": "ordinary",
+        "slot": 7,
+        "accepts": [
+          "B"
+        ],
+        "excludes": []
+      }
+    ],
+    "proof": {
+      "state": "UNRESOLVED",
+      "verified_options": {},
+      "blocked_options": {
+        "A": {
+          "UNITED KINGDOM": [
+            "m3"
+          ]
+        },
+        "D": {
+          "INDIA": [
+            "m6"
+          ]
+        },
+        "E": {
+          "UNITED KINGDOM": [
+            "m8"
+          ]
+        },
+        "F": {
+          "UNITED KINGDOM": [
+            "m4"
+          ]
+        },
+        "G": {
+          "UNITED KINGDOM": [
+            "m7"
+          ]
+        }
+      },
+      "unresolved_options": [
+        "B",
+        "C"
+      ],
+      "unique_verified": false
+    }
+  },
+  "learned": {
+    "result": [
+      true,
+      8,
+      1,
+      1,
+      1,
+      0
+    ],
+    "events": [
+      {
+        "slot": 0,
+        "query": null,
+        "disclosed": [
+          [
+            1,
+            0,
+            4
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "slot": 1,
+        "query": {
+          "asker": 0,
+          "respondent": 1,
+          "slot": 1,
+          "request_set": 66,
+          "target": 2,
+          "lookup": "joint_fields",
+          "reply": true,
+          "admitted": true,
+          "qualified_acceptance": 2,
+          "qualified_exclusions": 32,
+          "retry_action": "delayed",
+          "retry_opportunity": true,
+          "handoff_slot": 3,
+          "handoff_role": 0,
+          "handoff_signs": 2,
+          "retry_slot": 4,
+          "retry_signs": 1
+        },
+        "disclosed": [
+          [
+            0,
+            0,
+            64
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            32
+          ]
+        ]
+      },
+      {
+        "slot": 5,
+        "query": null,
+        "disclosed": [
+          [
+            1,
+            1,
+            64
+          ]
+        ]
+      },
+      {
+        "slot": 6,
+        "query": null,
+        "disclosed": [
+          [
+            1,
+            1,
+            16
+          ]
+        ]
+      },
+      {
+        "slot": 7,
+        "query": null,
+        "disclosed": [
+          [
+            0,
+            0,
+            2
+          ]
+        ]
+      }
+    ],
+    "admitted_signs": [
+      {
+        "id": "m1",
+        "role": "INDIA",
+        "origin": "opening",
+        "slot": -1,
+        "accepts": [
+          "A"
+        ],
+        "excludes": []
+      },
+      {
+        "id": "m2",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 0,
+        "accepts": [
+          "C"
+        ],
+        "excludes": []
+      },
+      {
+        "id": "m3",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 0,
+        "accepts": [],
+        "excludes": [
+          "A"
+        ]
+      },
+      {
+        "id": "m4",
+        "role": "UNITED KINGDOM",
+        "origin": "reply",
+        "slot": 2,
+        "accepts": [],
+        "excludes": [
+          "F"
+        ]
+      },
+      {
+        "id": "m5",
+        "role": "INDIA",
+        "origin": "intervening disclosure",
+        "slot": 3,
+        "accepts": [
+          "G"
+        ],
+        "excludes": []
+      },
+      {
+        "id": "m6",
+        "role": "INDIA",
+        "origin": "intervening disclosure",
+        "slot": 3,
+        "accepts": [],
+        "excludes": [
+          "D"
+        ]
+      },
+      {
+        "id": "m7",
+        "role": "UNITED KINGDOM",
+        "origin": "resend",
+        "slot": 4,
+        "accepts": [
+          "B"
+        ],
+        "excludes": []
+      },
+      {
+        "id": "m8",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 5,
+        "accepts": [],
+        "excludes": [
+          "G"
+        ]
+      },
+      {
+        "id": "m9",
+        "role": "UNITED KINGDOM",
+        "origin": "ordinary",
+        "slot": 6,
+        "accepts": [],
+        "excludes": [
+          "E"
+        ]
+      },
+      {
+        "id": "m10",
+        "role": "INDIA",
+        "origin": "ordinary",
+        "slot": 7,
+        "accepts": [
+          "B"
+        ],
+        "excludes": []
+      }
+    ],
+    "proof": {
+      "state": "AGREEMENT_POSSIBLE",
+      "verified_options": {
+        "B": {
+          "INDIA": [
+            "m10"
+          ],
+          "UNITED KINGDOM": [
+            "m7"
+          ]
+        }
+      },
+      "blocked_options": {
+        "A": {
+          "UNITED KINGDOM": [
+            "m3"
+          ]
+        },
+        "D": {
+          "INDIA": [
+            "m6"
+          ]
+        },
+        "E": {
+          "UNITED KINGDOM": [
+            "m9"
+          ]
+        },
+        "F": {
+          "UNITED KINGDOM": [
+            "m4"
+          ]
+        },
+        "G": {
+          "UNITED KINGDOM": [
+            "m8"
+          ]
+        }
+      },
+      "unresolved_options": [
+        "C"
+      ],
+      "unique_verified": false
+    }
+  },
+  "idea_accounting": "A resend counts as another delivery attempt of the same signed proposition. Its first successful receipt can enable a new proof."
+}

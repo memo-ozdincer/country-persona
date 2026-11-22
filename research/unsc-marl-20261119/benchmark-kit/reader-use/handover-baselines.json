@@ -1,0 +1,63 @@
+{
+  "baseline_scores": {
+    "preserve draft": {
+      "correct_fields": 16,
+      "unsupported_confirmations": 32,
+      "complete_handovers": 2
+    },
+    "verify all": {
+      "correct_fields": 32,
+      "unsupported_confirmations": 0,
+      "complete_handovers": 8
+    },
+    "date anywhere": {
+      "correct_fields": 38,
+      "unsupported_confirmations": 10,
+      "complete_handovers": 13
+    },
+    "field and evidence": {
+      "correct_fields": 64,
+      "unsupported_confirmations": 0,
+      "complete_handovers": 32
+    }
+  },
+  "date_anywhere_failures": [
+    {
+      "draft": {
+        "end of existing UNAMI mandate": "31 May 2024",
+        "deadline to deliver the independent strategic review": "31 May 2024"
+      },
+      "available": [
+        "REVIEW"
+      ],
+      "field": "deadline to deliver the independent strategic review",
+      "prediction": "verify",
+      "expected": "correct"
+    },
+    {
+      "draft": {
+        "end of existing UNAMI mandate": "31 May 2024",
+        "deadline to deliver the independent strategic review": "31 May 2024"
+      },
+      "available": [
+        "TERM"
+      ],
+      "field": "deadline to deliver the independent strategic review",
+      "prediction": "confirm",
+      "expected": "verify"
+    },
+    {
+      "draft": {
+        "end of existing UNAMI mandate": "31 May 2024",
+        "deadline to deliver the independent strategic review": "31 May 2024"
+      },
+      "available": [
+        "TERM",
+        "REVIEW"
+      ],
+      "field": "deadline to deliver the independent strategic review",
+      "prediction": "confirm",
+      "expected": "correct"
+    }
+  ]
+}

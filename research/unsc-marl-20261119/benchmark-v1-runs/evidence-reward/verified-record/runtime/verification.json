@@ -1,0 +1,108 @@
+{
+  "delegate_callback_calls": 2,
+  "callback_faults": [
+    "empty_response",
+    "timeout"
+  ],
+  "archived": {
+    "mali": {
+      "decision": "IMPASSE",
+      "released_70": 56,
+      "fault_tests": {
+        "dropped/0": {
+          "queries": 1,
+          "attempts": 1,
+          "statuses": [
+            "dropped"
+          ],
+          "cost": 0.105
+        },
+        "dropped/1": {
+          "queries": 2,
+          "attempts": 2,
+          "statuses": [
+            "attested",
+            "dropped"
+          ],
+          "cost": 0.21
+        },
+        "invalid/0": {
+          "queries": 1,
+          "attempts": 1,
+          "statuses": [
+            "rejected"
+          ],
+          "cost": 0.105
+        },
+        "invalid/1": {
+          "queries": 2,
+          "attempts": 2,
+          "statuses": [
+            "attested",
+            "rejected"
+          ],
+          "cost": 0.21
+        }
+      }
+    },
+    "cyprus": {
+      "decision": "IMPASSE",
+      "released_70": 70,
+      "fault_tests": {
+        "dropped/0": {
+          "queries": 2,
+          "attempts": 1,
+          "statuses": [
+            "dropped",
+            "withheld"
+          ],
+          "cost": 0.18
+        },
+        "dropped/1": {
+          "queries": 2,
+          "attempts": 2,
+          "statuses": [
+            "attested",
+            "dropped"
+          ],
+          "cost": 0.21
+        },
+        "invalid/0": {
+          "queries": 2,
+          "attempts": 1,
+          "statuses": [
+            "rejected",
+            "withheld"
+          ],
+          "cost": 0.18
+        },
+        "invalid/1": {
+          "queries": 2,
+          "attempts": 2,
+          "statuses": [
+            "attested",
+            "rejected"
+          ],
+          "cost": 0.21
+        }
+      }
+    }
+  },
+  "archived_optional": {
+    "reply_counts": [
+      1,
+      2
+    ],
+    "decision": "UNRESOLVED"
+  },
+  "invalid_receipts_rejected": 9,
+  "role_local_request_checks": {
+    "mali": 6,
+    "cyprus": 6
+  },
+  "compiler_state_checks": {
+    "mali": 27,
+    "cyprus": 27,
+    "cyprus-withheld": 27
+  }
+}

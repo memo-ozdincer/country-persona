@@ -1,0 +1,105 @@
+{
+  "requests": [
+    {
+      "id": "normal/0",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"France\", \"capacity\": 1, \"passages\": {\"1\": \"France called on UN Member States to ratify and fully implement the disability convention, linking participation to safety.\", \"2\": \"France linked participation by persons with disabilities to better safety in conflict, humanitarian response and recovery.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "normal/1",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"Russian Federation\", \"capacity\": 2, \"passages\": {\"1\": \"Russia read operative paragraph 11 of the resolution as reaching only Article 11 of the convention.\", \"2\": \"Russia opposed new international legal categories for civilian protection.\", \"3\": \"Russia supported the resolution's humanitarian aims for persons with disabilities.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "normal/2",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"United Kingdom\", \"capacity\": 2, \"passages\": {\"1\": \"The UK backed disability leadership and disability-disaggregated evidence for Council decisions.\", \"2\": \"The UK agreed with Russia on avoiding new legal obligations.\", \"3\": \"The UK thanked Russia and China for voting in favour despite their doubts.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "reversed/0",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"France\", \"capacity\": 1, \"passages\": {\"2\": \"France linked participation by persons with disabilities to better safety in conflict, humanitarian response and recovery.\", \"1\": \"France called on UN Member States to ratify and fully implement the disability convention, linking participation to safety.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "reversed/1",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"Russian Federation\", \"capacity\": 2, \"passages\": {\"3\": \"Russia supported the resolution's humanitarian aims for persons with disabilities.\", \"2\": \"Russia opposed new international legal categories for civilian protection.\", \"1\": \"Russia read operative paragraph 11 of the resolution as reaching only Article 11 of the convention.\"}}"
+        }
+      ]
+    },
+    {
+      "id": "reversed/2",
+      "max_output_tokens": 48,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select exactly the requested number of passages from your desk for the Council record. Prioritize an explicit institutional limit, distinctive reason, or concrete implementation position over a generic statement of support or thanks. Preserve the object of each legal qualification and an actionable rationale. Return only a JSON array of passage IDs."
+        },
+        {
+          "role": "user",
+          "content": "{\"task\": \"Write a dated Council decision record on protecting persons with disabilities in armed conflict. State the action, limits on implementation and the distinctive positions of the delegations whose notes are supplied. Attribute any shared ground or difference explicitly. Use at most 175 words. At most 175 words including any decision line.\", \"desk\": \"United Kingdom\", \"capacity\": 2, \"passages\": {\"3\": \"The UK thanked Russia and China for voting in favour despite their doubts.\", \"2\": \"The UK agreed with Russia on avoiding new legal obligations.\", \"1\": \"The UK backed disability leadership and disability-disaggregated evidence for Council decisions.\"}}"
+        }
+      ]
+    }
+  ],
+  "candidate_counts": [
+    8,
+    48,
+    48,
+    8,
+    48,
+    48
+  ],
+  "sha256": {
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/select_notes.py": "4e89dbc0acab02befaeaef3a0d06df4c3c894126db2e5caccc5d540f1e27dd7a",
+    "benchmark-v1-runs/disability-2475-transfer/native-selection/protocol.md": "9ba2fb5c8b8658bd53ea2122defd4cf9a0287b834afb343661d5267c53335040",
+    "benchmark-v1-runs/disability-2475-transfer/docket.json": "fc8afc7b852511470eec993025acd0f06ce82febd34222dadb24416339e11430",
+    "benchmark-v1-runs/disability-2475-transfer/oracle.json": "c6c3449372e890ce88dd2fad10bbff4e90462bf2be58894e9d2d8a46667ab8e0",
+    "benchmark-v1-runs/evidence-reward/verified-record/historical-routing/reward-fit/family-replay/opposing-contexts/native-writer/source-bound/numbered/somalia2753/live/causal/compounded/structured/whole_message/whole_message.py": "340559b2e62f2f6aa31b03372b7c5b3f80175c2085d53353d23cbc0065ce1497",
+    "benchmark-v1-runs/syria-baseline/collect.py": "8c70008ea30d267efe221c29e59ce9370f235cd6ab8b936ff70dc13eb3cf7d78",
+    "benchmark-v1.4/release.json": "9057f941c23aedfe5819b9f59f2f6ae21b3e5bd3edf6bbade0e34a27e3749a06"
+  }
+}

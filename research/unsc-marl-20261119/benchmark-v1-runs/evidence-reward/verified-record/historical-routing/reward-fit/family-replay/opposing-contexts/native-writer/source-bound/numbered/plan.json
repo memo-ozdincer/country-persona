@@ -1,0 +1,158 @@
+{
+  "requests": [
+    {
+      "part": "brazil",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select only the passage IDs necessary to preserve this delegation's position. Keep mission support, what the text did for operational freedom, and the qualified concern about Lebanon. Prefer fewer IDs when a passage adds only a secondary detail. Return a JSON array of ID strings in order of importance. Return no prose."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write a retrospective Security Council record on the 31 August 2023 UNIFIL mandate renewal. Preserve what the Council adopted and explain the supplied national positions. Distinguish both a point of overlap and a concrete difference when the relevant national sources are available.\", \"delegation\": \"brazil\", \"passages\": {\"8\": \"while addressing some of Lebanon's concerns\", \"3\": \"Brazil supported UNIFIL's continuing work\", \"6\": \"It judged that the French text kept the mandate robust and allowed UNIFIL to operate freely\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      }
+    },
+    {
+      "part": "china",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select only the passage IDs necessary to preserve this delegation's position. Keep mission support, whether the text did enough for Lebanon's concerns, and sovereignty or consent. Prefer fewer IDs when a passage adds only a secondary detail. Return a JSON array of ID strings in order of importance. Return no prose."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write a retrospective Security Council record on the 31 August 2023 UNIFIL mandate renewal. Preserve what the Council adopted and explain the supplied national positions. Distinguish both a point of overlap and a concrete difference when the relevant national sources are available.\", \"delegation\": \"china\", \"passages\": {\"1\": \"supported closer communication between UNIFIL and Lebanon's Government and military\", \"7\": \"China supported UNIFIL's work but said the text did not fully address Lebanon's concerns\", \"5\": \"It stressed host-State sovereignty and consent\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      }
+    },
+    {
+      "part": "russia",
+      "request": {
+        "messages": [
+          {
+            "role": "system",
+            "content": "Select only the passage IDs necessary to preserve this delegation's position. Keep the reason for abstention, what happened to the prior compromise, and Russia's mission position. Prefer fewer IDs when a passage adds only a secondary detail. Return a JSON array of ID strings in order of importance. Return no prose."
+          },
+          {
+            "role": "user",
+            "content": "{\"task\": \"Write a retrospective Security Council record on the 31 August 2023 UNIFIL mandate renewal. Preserve what the Council adopted and explain the supplied national positions. Distinguish both a point of overlap and a concrete difference when the relevant national sources are available.\", \"delegation\": \"russia\", \"passages\": {\"4\": \"called for coordination with Lebanon's Government\", \"9\": \"Russia attributed its abstention to contentious late drafting changes and said the final text lost a prior compromise\", \"2\": \"It continued to support the mission's activities\"}}"
+          }
+        ],
+        "max_output_tokens": 72
+      }
+    }
+  ],
+  "public": [
+    {
+      "block": "vote",
+      "start": 3,
+      "end": 17,
+      "text": "31 August 2023"
+    },
+    {
+      "block": "vote",
+      "start": 61,
+      "end": 97,
+      "text": "draft S/2023/641 submitted by France"
+    },
+    {
+      "block": "vote",
+      "start": 106,
+      "end": 228,
+      "text": "adopted as resolution 2695 (2023) by 13 votes in favour and none against, with China and the Russian Federation abstaining"
+    },
+    {
+      "block": "operative",
+      "start": 22,
+      "end": 77,
+      "text": "extended UNIFIL's existing mandate until 31 August 2024"
+    },
+    {
+      "block": "operative",
+      "start": 107,
+      "end": 175,
+      "text": "independence in carrying out mandated tasks without prior permission"
+    },
+    {
+      "block": "operative",
+      "start": 184,
+      "end": 269,
+      "text": "continued coordination with Lebanon's Government under the status-of-forces agreement"
+    }
+  ],
+  "cards": {
+    "brazil": {
+      "8": {
+        "block": "brazil",
+        "start": 136,
+        "end": 179,
+        "text": "while addressing some of Lebanon's concerns"
+      },
+      "3": {
+        "block": "brazil",
+        "start": 0,
+        "end": 41,
+        "text": "Brazil supported UNIFIL's continuing work"
+      },
+      "6": {
+        "block": "brazil",
+        "start": 43,
+        "end": 134,
+        "text": "It judged that the French text kept the mandate robust and allowed UNIFIL to operate freely"
+      }
+    },
+    "china": {
+      "1": {
+        "block": "china",
+        "start": 157,
+        "end": 240,
+        "text": "supported closer communication between UNIFIL and Lebanon's Government and military"
+      },
+      "7": {
+        "block": "china",
+        "start": 0,
+        "end": 88,
+        "text": "China supported UNIFIL's work but said the text did not fully address Lebanon's concerns"
+      },
+      "5": {
+        "block": "china",
+        "start": 90,
+        "end": 136,
+        "text": "It stressed host-State sovereignty and consent"
+      }
+    },
+    "russia": {
+      "4": {
+        "block": "russia",
+        "start": 172,
+        "end": 221,
+        "text": "called for coordination with Lebanon's Government"
+      },
+      "9": {
+        "block": "russia",
+        "start": 0,
+        "end": 117,
+        "text": "Russia attributed its abstention to contentious late drafting changes and said the final text lost a prior compromise"
+      },
+      "2": {
+        "block": "russia",
+        "start": 119,
+        "end": 167,
+        "text": "It continued to support the mission's activities"
+      }
+    }
+  },
+  "sha256": {
+    "numbered.py": "00457c5885a2fa62c2273722781a1e8e0fe7bcedea584556c33837eedcd88872",
+    "protocol.md": "4d2439f07364c4d0dfa2918984949f3ee1660c20873316ef60201445bb8e70f7",
+    "unifil-record.json": "9385cbbb08938a9c9743c6f2f2823b97d8dc97bc4118fc6847b7278cec05795c",
+    "triplets.json": "4bfbc2cfb61a25b8ed2a16b0cff00f833b3c97e85f56e97c074f059c57c7246b"
+  }
+}

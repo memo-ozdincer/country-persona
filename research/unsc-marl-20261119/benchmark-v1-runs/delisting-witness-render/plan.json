@@ -1,0 +1,160 @@
+{
+  "requests": {
+    "malta/review": {
+      "id": "malta/review",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Malta said the Focal Point would engage with petitioners and gather information from several sources for a report to assist sanctions committees in their deliberations and decisions.\", \"adopted_document\": \"The Council expressed its intention to review the Focal Point’s mandate and work continuously. It established a consensus-based working group whose functions include reviewing the Focal Point’s twice-yearly reports.\"}"
+        }
+      ]
+    },
+    "malta/authority": {
+      "id": "malta/authority",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Malta said the Focal Point would engage with petitioners and gather information from several sources for a report to assist sanctions committees in their deliberations and decisions.\", \"adopted_document\": \"Annex I assigns the Focal Point a confidential factual report without a recommendation. When a relevant State or committee member recommends that delisting proceed, the committee decides under its normal procedures.\"}"
+        }
+      ]
+    },
+    "a3plus/review": {
+      "id": "a3plus/review",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Speaking for the African members and Guyana, Guyana said a time-bound review would have been useful and hoped for full implementation of the text’s continuous review provision.\", \"adopted_document\": \"The Council expressed its intention to review the Focal Point’s mandate and work continuously. It established a consensus-based working group whose functions include reviewing the Focal Point’s twice-yearly reports.\"}"
+        }
+      ]
+    },
+    "a3plus/authority": {
+      "id": "a3plus/authority",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Speaking for the African members and Guyana, Guyana said a time-bound review would have been useful and hoped for full implementation of the text’s continuous review provision.\", \"adopted_document\": \"Annex I assigns the Focal Point a confidential factual report without a recommendation. When a relevant State or committee member recommends that delisting proceed, the committee decides under its normal procedures.\"}"
+        }
+      ]
+    },
+    "switzerland/review": {
+      "id": "switzerland/review",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Switzerland called the independent Ombudsperson mechanism for the 1267 regime an ideal model and welcomed the strengthened Focal Point as progress.\", \"adopted_document\": \"The Council expressed its intention to review the Focal Point’s mandate and work continuously. It established a consensus-based working group whose functions include reviewing the Focal Point’s twice-yearly reports.\"}"
+        }
+      ]
+    },
+    "switzerland/authority": {
+      "id": "switzerland/authority",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Switzerland called the independent Ombudsperson mechanism for the 1267 regime an ideal model and welcomed the strengthened Focal Point as progress.\", \"adopted_document\": \"Annex I assigns the Focal Point a confidential factual report without a recommendation. When a relevant State or committee member recommends that delisting proceed, the committee decides under its normal procedures.\"}"
+        }
+      ]
+    },
+    "control/authority-quoted": {
+      "id": "control/authority-quoted",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"In this fictional alternative, Malta rejected the suggestion that the Focal Point should assemble a factual report for sanctions committees to use in their own decisions. It instead called for decisions by the Focal Point.\", \"adopted_document\": \"Annex I assigns the Focal Point a confidential factual report without a recommendation. When a relevant State or committee member recommends that delisting proceed, the committee decides under its normal procedures.\"}"
+        }
+      ]
+    },
+    "control/authority-reversal": {
+      "id": "control/authority-reversal",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Malta said the Focal Point would engage with petitioners and gather information from several sources for a report to assist sanctions committees in their deliberations and decisions.\", \"adopted_document\": \"In this fictional alternative, an earlier draft assigned a factual report without a recommendation. The adopted annex instead gives the Focal Point the power to recommend a result and decide delisting requests.\"}"
+        }
+      ]
+    },
+    "control/review-quoted": {
+      "id": "control/review-quoted",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"In this fictional alternative, Guyana quoted and rejected someone else's view that a time-bound review would have been useful. The group supports ongoing review only.\", \"adopted_document\": \"The Council expressed its intention to review the Focal Point’s mandate and work continuously. It established a consensus-based working group whose functions include reviewing the Focal Point’s twice-yearly reports.\"}"
+        }
+      ]
+    },
+    "control/review-reversal": {
+      "id": "control/review-reversal",
+      "max_output_tokens": 128,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Select evidence for an explicit comparison in a Council brief. Return exactly NONE unless one of these two relations is supported: authority means the delegate describes a reporting role with the committee deciding and the adopted document sets that same division, with no recommendation from the reporting body; review means the delegate prefers a fixed-time review and the adopted document expresses an intention for continuing review. A rejected, quoted, draft, or merely similar claim does not establish either relation. Read the whole source for each speaker's actual stance. If supported, return only JSON: {\"type\":\"authority or review\",\"delegate\":[\"exact span\"],\"document\":[\"exact span\"]}. Select one or two brief contiguous substrings per source. For authority, show the report's purpose, its lack of recommendation, and who decides. For review, show the preference, the operative verb expressing intention, and continuous timing. Use the shortest exact spans that preserve those details. Across all spans use at most 27 words. Copy the words as they occur, without altering capitalization, spelling or punctuation."
+        },
+        {
+          "role": "user",
+          "content": "{\"delegate_statement\": \"Speaking for the African members and Guyana, Guyana said a time-bound review would have been useful and hoped for full implementation of the text’s continuous review provision.\", \"adopted_document\": \"In this fictional alternative, the Council rejected a proposal to keep the Focal Point's mandate and functions under continuous review. It required one review by a specified deadline instead.\"}"
+        }
+      ]
+    }
+  },
+  "checkpoint_index_sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d",
+  "pins": {
+    "benchmark-v1-runs/delisting-comparison-writer/collect_relation.py": "22803565b7962ec4d5ce0ee19d52d566fd682d4cde633a238a88d6316b498c92",
+    "benchmark-v1-runs/delisting-comparison-writer/protocol.md": "706d7c27395202b3d82b4be4723ae3279aa10b9f3c61c72645412a4c3c9f64db",
+    "benchmark-v1-runs/delisting-comparison-writer/score.py": "9152558c6b71ac3ea951ac890e82d95b5c5818eda7394b3148f3702cfa767bc5",
+    "benchmark-v1-runs/delisting-2744/case.json": "c3bbb71b7d4cdb326182298999258dd7fdb4c639121e6b0618313c3f2607120f",
+    "benchmark-v1-runs/delisting-2744/results.json": "6b8962a2b70f91b90849402d737f75f633c2e3273096c1e8c8cdd4eae2cfda0e",
+    "benchmark-v1-runs/delisting-2744/verified.json": "a7fbdf01c8c2c1485423bd7d7cbb3d00e0a754266d8155e1f8a57b1878c3a415",
+    "benchmark-v1-runs/delisting-native-chair/plan.json": "1160efac964903d3bf1c29936bb3ac54aa005b2fad0b8cfa8230c0474e902103",
+    "benchmark-v1-runs/delisting-native-chair/results.json": "d42245fd6a9fa0a93822e107e783656372f03595a9709739b9085e2a4163f086",
+    "benchmark-v1-runs/delisting-native-chair/collect_chair.py": "de199a1aba1f3d10a2dec03598c1fe80ab8e9784534a9a3e676b6f31f6589287",
+    "benchmark-v1.6/release.json": "499707f85148d084b8c96a53bbc1f92a76d871d5b840c49b6dbabbf7be13d1d0",
+    "benchmark-v1-runs/delisting-witness-render/witness.py": "3bfdd6330c237ed40001eb66171c1afc36c6cfc624061e5db81efcb7dad72cca",
+    "benchmark-v1-runs/delisting-witness-render/protocol.md": "211817cb837a74e84b7be042c72344b065d879c01336ac6c596d37ae4517832a",
+    "benchmark-v1-runs/delisting-comparison-writer/plan.json": "9a35ecfb67352573d9d8ee200c2e001a49b90e2a04611d270e266c7de3799819"
+  }
+}

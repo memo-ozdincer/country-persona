@@ -1,0 +1,110 @@
+{
+  "scope": "Clairvoyant availability bound. It assumes all supported signs can be published within turns. At most one source per role and at most one late package answer total.",
+  "cases": {
+    "uk-overlap": {
+      "initial_and_late": {
+        "india": {
+          "initial": [
+            [
+              "A"
+            ],
+            []
+          ],
+          "later": [
+            [],
+            []
+          ],
+          "scope_excludes": [
+            "C",
+            "D"
+          ]
+        },
+        "uk-overlap": {
+          "initial": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "G"
+            ]
+          ],
+          "later": [
+            [
+              "B"
+            ],
+            []
+          ],
+          "scope_excludes": [
+            "A",
+            "F"
+          ]
+        }
+      },
+      "full_information_possible_proofs": []
+    },
+    "uk-impasse": {
+      "initial_and_late": {
+        "india": {
+          "initial": [
+            [
+              "A"
+            ],
+            []
+          ],
+          "later": [
+            [],
+            []
+          ],
+          "scope_excludes": [
+            "C",
+            "D"
+          ]
+        },
+        "uk-impasse": {
+          "initial": [
+            [
+              "C",
+              "D"
+            ],
+            [
+              "E",
+              "G"
+            ]
+          ],
+          "later": [
+            [],
+            []
+          ],
+          "scope_excludes": [
+            "A",
+            "B",
+            "E",
+            "F",
+            "G"
+          ]
+        }
+      },
+      "full_information_possible_proofs": [
+        {
+          "state": "IMPASSE",
+          "sources": [
+            "scope",
+            "scope"
+          ],
+          "overlap": [],
+          "excluded": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Separate the relations between partner pairs
+
+In Resolution 2553 each desk's two clauses complement different partners. In the first private-opener test, a uniformly generated desk has probability one half of offering one clause that complements both partners. A generated three-desk case has the fully separate relation pattern with probability one eighth. Test one change to the sampled varied-prior fit. Use the same 96 training menus but reverse the clause used by the second neighbor wherever a desk's two relations originally use the same clause. Keep local points, relation weights, receipt rates and opening priors. The opener still sends its one available clause. The change uses the qualitative case structure after the first evaluation and does not use historical reward values, ideal actions or fitted coefficients.
+
+Reuse the first trained weights as controls. Cross the two versions of the 96 fit-excluded menus and replay both exposed UN archive families. Verify the same budgets and that the unchanged generator recreates the original varied-prior panel. Evaluate final weights only.

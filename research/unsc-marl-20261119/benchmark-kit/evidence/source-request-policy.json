@@ -1,0 +1,3028 @@
+{
+  "scope": "Two differentiable table policies share a team reward. Observations carry verified field IDs. Mali uses a different reward profile and previously unseen simulated inventory distributions. The same three-field interface and authored source wrappers are shared across dockets.",
+  "source_hashes": {
+    "benchmark-kit/validity-audit/source-record-minurso.json": "293b49b52715dae9c229d8eda041bd921b0f219d1a10f0047662f4a0c8b2b12e",
+    "benchmark-kit/validity-audit/source-record-dprk-routing.json": "e18d831f0f842c23c4eaafe7571325c9c85d81bff1762ab609e3a855473f5fb5",
+    "crossbench/mali/historical-task.json": "9e4af8023120c95e9f02c7d007b7664252c71ae713b4322a7e073e8785cd62bd",
+    "benchmark-kit/validity-audit/source_request_cases.py": "7928178b6e50c323841e4b3ee9734caf4fd0698747a751521d854825efdc354d",
+    "source_request_policy.py": "03bccec437511b1693f1d81418e464f2700a208e5d1bd50c38c7976b32c01280"
+  },
+  "fields": {
+    "western_sahara": {
+      "weights": [
+        14,
+        6,
+        4
+      ],
+      "joint": [
+        6,
+        4
+      ],
+      "source": "benchmark-kit/validity-audit/source-record-minurso.json",
+      "fields": [
+        {
+          "name": "Algerian monitoring position and non-participation reason",
+          "evidence": [
+            {
+              "block": "DZ-A",
+              "quote": "Speaking for Algeria, Bendjama introduced two amendments concerning human rights. He cited the report documenting the ninth consecutive year without an OHCHR visit and argued that MINURSO should have a human-rights monitoring component, as other missions do."
+            },
+            {
+              "block": "DZ-B",
+              "quote": "After voting, Bendjama explained Algeria's deliberate non-participation on the final resolution and said the penholder had disregarded Algeria's views. He reaffirmed that the Sahrawi people should be free to choose their future."
+            }
+          ]
+        },
+        {
+          "name": "Swiss second amendment vote and continuity rationale",
+          "evidence": [
+            {
+              "block": "CH-A",
+              "quote": "She said Switzerland abstained on S/2024/798 to ensure continuity of MINURSO's work after consensus eluded the negotiations."
+            }
+          ]
+        },
+        {
+          "name": "Swiss first amendment vote and access rationale",
+          "evidence": [
+            {
+              "block": "CH-A",
+              "quote": "After declaring that she was now speaking as Switzerland's representative, Baeriswyl said Switzerland backed S/2024/797 because OHCHR had been unable to visit for nine consecutive years."
+            }
+          ]
+        }
+      ]
+    },
+    "dprk": {
+      "weights": [
+        10,
+        9,
+        5
+      ],
+      "joint": [
+        6,
+        4
+      ],
+      "source": "benchmark-kit/validity-audit/source-record-dprk-routing.json",
+      "fields": [
+        {
+          "name": "Japan's speaking capacity and assessment of the veto",
+          "evidence": [
+            {
+              "block": "JAPAN",
+              "quote": "Council President Yamazaki spoke in his national capacity as Japan’s representative. He regretted Russia’s veto and said it forced the Panel of Experts to end operations. After the statement he resumed the presidency."
+            }
+          ]
+        },
+        {
+          "name": "China's abstention and consultations qualification",
+          "evidence": [
+            {
+              "block": "CHINA",
+              "quote": "He explained that China abstained because Russia’s views were not taken on board and consultation time remained."
+            }
+          ]
+        },
+        {
+          "name": "China's independent Panel and sanctions review positions",
+          "evidence": [
+            {
+              "block": "CHINA",
+              "quote": "China’s Geng Shuang supported the Panel’s independent work and supported Russia’s proposal for a sanctions time limit and periodic reviews."
+            }
+          ]
+        }
+      ]
+    },
+    "mali": {
+      "weights": [
+        12,
+        10,
+        3
+      ],
+      "joint": [
+        3,
+        3
+      ],
+      "source": "crossbench/mali/historical-task.json",
+      "fields": [
+        {
+          "name": "Co-penholders' peace-agreement and drawdown objectives",
+          "evidence": [
+            {
+              "block": "french-uae",
+              "quote": "The United Arab Emirates said it and France sought an extension to support implementation of the peace agreement and an orderly drawdown. It acknowledged the transitional Government's request to lift the sanctions and said the draft allowed review of the continuation of the measures."
+            }
+          ]
+        },
+        {
+          "name": "Russia's final-extension and Panel dissolution position",
+          "evidence": [
+            {
+              "block": "russia",
+              "quote": "Russia said the existing approach had not addressed the concerns of Mali's transitional Government. It proposed dissolving the Panel of Experts and making this the final extension of the regime."
+            }
+          ]
+        },
+        {
+          "name": "France's post-vote objection about the separate draft",
+          "evidence": [
+            {
+              "block": "france-after",
+              "quote": "France regretted the veto and said Russia's separate proposal had not been discussed by Council members. It presented the implementation of the peace agreement as an urgent concern."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "training": {
+    "seed": 784152,
+    "updates": 280,
+    "trace": [
+      {
+        "expected_net": 7.632130661640934,
+        "gradient_norms": [
+          0.5186608420727764,
+          0.42599093763303714
+        ]
+      },
+      {
+        "expected_net": 8.328384455223098,
+        "gradient_norms": [
+          0.49257922232141155,
+          0.40373377599667676
+        ]
+      },
+      {
+        "expected_net": 8.980635172103959,
+        "gradient_norms": [
+          0.4567762006392619,
+          0.37411856900479873
+        ]
+      },
+      {
+        "expected_net": 9.575063612202186,
+        "gradient_norms": [
+          0.4144442690494476,
+          0.3397086161254818
+        ]
+      },
+      {
+        "expected_net": 10.104778489787638,
+        "gradient_norms": [
+          0.36910062646153585,
+          0.3030245499095029
+        ]
+      },
+      {
+        "expected_net": 10.568681670936837,
+        "gradient_norms": [
+          0.32367699398541494,
+          0.26637916730155126
+        ]
+      },
+      {
+        "expected_net": 10.968718557181047,
+        "gradient_norms": [
+          0.280323563215815,
+          0.23176764454556764
+        ]
+      },
+      {
+        "expected_net": 11.309091866059578,
+        "gradient_norms": [
+          0.2404743266374428,
+          0.2004713337888256
+        ]
+      },
+      {
+        "expected_net": 11.59566825004458,
+        "gradient_norms": [
+          0.20488295807759896,
+          0.1728437878088027
+        ]
+      },
+      {
+        "expected_net": 11.834992356851311,
+        "gradient_norms": [
+          0.17379386342885772,
+          0.14873351551597647
+        ]
+      },
+      {
+        "expected_net": 12.033669666766354,
+        "gradient_norms": [
+          0.14718610713144298,
+          0.12786890457863104
+        ]
+      },
+      {
+        "expected_net": 12.19797438610565,
+        "gradient_norms": [
+          0.12497611449145647,
+          0.10997056206805161
+        ]
+      },
+      {
+        "expected_net": 12.333649279121275,
+        "gradient_norms": [
+          0.10712608791520033,
+          0.09479449640501833
+        ]
+      },
+      {
+        "expected_net": 12.4458263345988,
+        "gradient_norms": [
+          0.09364551176846304,
+          0.08211137945721093
+        ]
+      },
+      {
+        "expected_net": 12.539007014059298,
+        "gradient_norms": [
+          0.0844911308082353,
+          0.07166410299721311
+        ]
+      },
+      {
+        "expected_net": 12.617071554312094,
+        "gradient_norms": [
+          0.07940721038689827,
+          0.06314570433217538
+        ]
+      },
+      {
+        "expected_net": 12.683307851037409,
+        "gradient_norms": [
+          0.07782330558906538,
+          0.05621598913429381
+        ]
+      },
+      {
+        "expected_net": 12.740457789084747,
+        "gradient_norms": [
+          0.0789262463524629,
+          0.050546517823585616
+        ]
+      },
+      {
+        "expected_net": 12.790777592315628,
+        "gradient_norms": [
+          0.08186080251779151,
+          0.0458665940939805
+        ]
+      },
+      {
+        "expected_net": 12.836105479059631,
+        "gradient_norms": [
+          0.08589874106079697,
+          0.04198708594111951
+        ]
+      },
+      {
+        "expected_net": 12.877928615302288,
+        "gradient_norms": [
+          0.0904968101168239,
+          0.038796387043582015
+        ]
+      },
+      {
+        "expected_net": 12.917442647652765,
+        "gradient_norms": [
+          0.09527431519024658,
+          0.03623693059846659
+        ]
+      },
+      {
+        "expected_net": 12.95559968814397,
+        "gradient_norms": [
+          0.09996250900642896,
+          0.03427394897187421
+        ]
+      },
+      {
+        "expected_net": 12.993143150834921,
+        "gradient_norms": [
+          0.10435455697850886,
+          0.0328652199116151
+        ]
+      },
+      {
+        "expected_net": 13.030629760478499,
+        "gradient_norms": [
+          0.10826534095632649,
+          0.03193817608364052
+        ]
+      },
+      {
+        "expected_net": 13.06844058017296,
+        "gradient_norms": [
+          0.11150345435089165,
+          0.03138025256446738
+        ]
+      },
+      {
+        "expected_net": 13.106784481676662,
+        "gradient_norms": [
+          0.11385776486416174,
+          0.031046161901758663
+        ]
+      },
+      {
+        "expected_net": 13.145699264595963,
+        "gradient_norms": [
+          0.1151023023888121,
+          0.030780187280552037
+        ]
+      },
+      {
+        "expected_net": 13.18505720745388,
+        "gradient_norms": [
+          0.11502214459921171,
+          0.030445883764341066
+        ]
+      },
+      {
+        "expected_net": 13.224582204737178,
+        "gradient_norms": [
+          0.11345737950383074,
+          0.02995348646856141
+        ]
+      },
+      {
+        "expected_net": 13.263883570015796,
+        "gradient_norms": [
+          0.11035314613357951,
+          0.02927671020867974
+        ]
+      },
+      {
+        "expected_net": 13.302506473872388,
+        "gradient_norms": [
+          0.10579616873124478,
+          0.02845345232263299
+        ]
+      },
+      {
+        "expected_net": 13.33999196330647,
+        "gradient_norms": [
+          0.10001882667595773,
+          0.02756821526399037
+        ]
+      },
+      {
+        "expected_net": 13.375933625139774,
+        "gradient_norms": [
+          0.09336359093550453,
+          0.02671820502508362
+        ]
+      },
+      {
+        "expected_net": 13.410016719764572,
+        "gradient_norms": [
+          0.0862184636708282,
+          0.025970851377088405
+        ]
+      },
+      {
+        "expected_net": 13.442030583072183,
+        "gradient_norms": [
+          0.07894708927354975,
+          0.025327414219888825
+        ]
+      },
+      {
+        "expected_net": 13.471854511053012,
+        "gradient_norms": [
+          0.07183745325374481,
+          0.024710643380924387
+        ]
+      },
+      {
+        "expected_net": 13.499427037446264,
+        "gradient_norms": [
+          0.06508164260736764,
+          0.023987292598482934
+        ]
+      },
+      {
+        "expected_net": 13.524714181502782,
+        "gradient_norms": [
+          0.058784267480517835,
+          0.023019388964101575
+        ]
+      },
+      {
+        "expected_net": 13.54769121921224,
+        "gradient_norms": [
+          0.05298714461776047,
+          0.02172233181331117
+        ]
+      },
+      {
+        "expected_net": 13.568344765470453,
+        "gradient_norms": [
+          0.04769607222399594,
+          0.020103013519248685
+        ]
+      },
+      {
+        "expected_net": 13.586690726042995,
+        "gradient_norms": [
+          0.042900275922801274,
+          0.018259893024589698
+        ]
+      },
+      {
+        "expected_net": 13.602795104803878,
+        "gradient_norms": [
+          0.03858210350941645,
+          0.016346215455378933
+        ]
+      },
+      {
+        "expected_net": 13.6167841818951,
+        "gradient_norms": [
+          0.03471969729949195,
+          0.014516978761473492
+        ]
+      },
+      {
+        "expected_net": 13.628838190742343,
+        "gradient_norms": [
+          0.031286844241720235,
+          0.012886123398870821
+        ]
+      },
+      {
+        "expected_net": 13.639172243076533,
+        "gradient_norms": [
+          0.028252895953084334,
+          0.011509324090423757
+        ]
+      },
+      {
+        "expected_net": 13.648013269262492,
+        "gradient_norms": [
+          0.025583683718924933,
+          0.01039071395845894
+        ]
+      },
+      {
+        "expected_net": 13.655580586111334,
+        "gradient_norms": [
+          0.0232431428884839,
+          0.009501725870602365
+        ]
+      },
+      {
+        "expected_net": 13.662073501437991,
+        "gradient_norms": [
+          0.021195065299146203,
+          0.008800269620292157
+        ]
+      },
+      {
+        "expected_net": 13.667665704633045,
+        "gradient_norms": [
+          0.019404569889859943,
+          0.00824399038860311
+        ]
+      },
+      {
+        "expected_net": 13.672504489632827,
+        "gradient_norms": [
+          0.01783913014025519,
+          0.007796795225838859
+        ]
+      },
+      {
+        "expected_net": 13.676712712125413,
+        "gradient_norms": [
+          0.016469165781316332,
+          0.0074306056538976295
+        ]
+      },
+      {
+        "expected_net": 13.680391921459334,
+        "gradient_norms": [
+          0.01526828339097064,
+          0.0071246646292633265
+        ]
+      },
+      {
+        "expected_net": 13.683625729285112,
+        "gradient_norms": [
+          0.014213268084506101,
+          0.006864015169440587
+        ]
+      },
+      {
+        "expected_net": 13.686482944329583,
+        "gradient_norms": [
+          0.013283917274178011,
+          0.0066379697763812254
+        ]
+      },
+      {
+        "expected_net": 13.689020288874486,
+        "gradient_norms": [
+          0.012462786620737645,
+          0.006438866377173559
+        ]
+      },
+      {
+        "expected_net": 13.691284663753263,
+        "gradient_norms": [
+          0.011734897411408278,
+          0.006261150922930102
+        ]
+      },
+      {
+        "expected_net": 13.693314997388015,
+        "gradient_norms": [
+          0.011087437397095636,
+          0.006100733482443528
+        ]
+      },
+      {
+        "expected_net": 13.695143738642638,
+        "gradient_norms": [
+          0.010509474353207378,
+          0.005954546977928116
+        ]
+      },
+      {
+        "expected_net": 13.696798056111401,
+        "gradient_norms": [
+          0.009991692785332993,
+          0.00582024737763651
+        ]
+      },
+      {
+        "expected_net": 13.69830080036456,
+        "gradient_norms": [
+          0.009526158405696912,
+          0.005696009745318662
+        ]
+      },
+      {
+        "expected_net": 13.699671276804548,
+        "gradient_norms": [
+          0.009106111404911871,
+          0.005580388417992992
+        ]
+      },
+      {
+        "expected_net": 13.700925867917187,
+        "gradient_norms": [
+          0.0087257874418046,
+          0.0054722199820701565
+        ]
+      },
+      {
+        "expected_net": 13.702078535898178,
+        "gradient_norms": [
+          0.008380264156482051,
+          0.005370554937660394
+        ]
+      },
+      {
+        "expected_net": 13.703141230166015,
+        "gradient_norms": [
+          0.008065330516282075,
+          0.005274608765338588
+        ]
+      },
+      {
+        "expected_net": 13.704124219074181,
+        "gradient_norms": [
+          0.0077773761860432085,
+          0.005183726273818038
+        ]
+      },
+      {
+        "expected_net": 13.705036361026576,
+        "gradient_norms": [
+          0.0075132982125918416,
+          0.005097355167096451
+        ]
+      },
+      {
+        "expected_net": 13.705885326978713,
+        "gradient_norms": [
+          0.007270422526070922,
+          0.0050150261106375205
+        ]
+      },
+      {
+        "expected_net": 13.7066777837906,
+        "gradient_norms": [
+          0.007046438024013387,
+          0.004936337452930726
+        ]
+      },
+      {
+        "expected_net": 13.707419545931598,
+        "gradient_norms": [
+          0.006839341279729402,
+          0.004860943336399499
+        ]
+      },
+      {
+        "expected_net": 13.70811570150088,
+        "gradient_norms": [
+          0.006647390182970971,
+          0.004788544315925795
+        ]
+      },
+      {
+        "expected_net": 13.708770717322242,
+        "gradient_norms": [
+          0.006469065066389656,
+          0.004718879861804891
+        ]
+      },
+      {
+        "expected_net": 13.709388526924933,
+        "gradient_norms": [
+          0.006303036091072216,
+          0.004651722300068779
+        ]
+      },
+      {
+        "expected_net": 13.709972604475034,
+        "gradient_norms": [
+          0.006148135857074747,
+          0.004586871864655452
+        ]
+      },
+      {
+        "expected_net": 13.710526027130093,
+        "gradient_norms": [
+          0.0060033363712811575,
+          0.004524152620901757
+        ]
+      },
+      {
+        "expected_net": 13.711051527819771,
+        "gradient_norms": [
+          0.005867729647150535,
+          0.004463409080092416
+        ]
+      },
+      {
+        "expected_net": 13.711551540080274,
+        "gradient_norms": [
+          0.00574051133144703,
+          0.004404503368125548
+        ]
+      },
+      {
+        "expected_net": 13.712028236270235,
+        "gradient_norms": [
+          0.005620966854600323,
+          0.004347312842898864
+        ]
+      },
+      {
+        "expected_net": 13.712483560254704,
+        "gradient_norms": [
+          0.005508459686471291,
+          0.004291728078313799
+        ]
+      },
+      {
+        "expected_net": 13.712919255449677,
+        "gradient_norms": [
+          0.005402421350353326,
+          0.004237651150220896
+        ]
+      },
+      {
+        "expected_net": 13.71333688896241,
+        "gradient_norms": [
+          0.005302342907231937,
+          0.004184994172810736
+        ]
+      },
+      {
+        "expected_net": 13.713737872435354,
+        "gradient_norms": [
+          0.005207767671455574,
+          0.004133678044065685
+        ]
+      },
+      {
+        "expected_net": 13.71412348009795,
+        "gradient_norms": [
+          0.005118284959699104,
+          0.004083631366717849
+        ]
+      },
+      {
+        "expected_net": 13.714494864445491,
+        "gradient_norms": [
+          0.005033524708837281,
+          0.004034789517286608
+        ]
+      },
+      {
+        "expected_net": 13.714853069895273,
+        "gradient_norms": [
+          0.004953152826211131,
+          0.003987093840626399
+        ]
+      },
+      {
+        "expected_net": 13.715199044712955,
+        "gradient_norms": [
+          0.004876867158814593,
+          0.003940490951284511
+        ]
+      },
+      {
+        "expected_net": 13.715533651455395,
+        "gradient_norms": [
+          0.004804393986962439,
+          0.0038949321260817495
+        ]
+      },
+      {
+        "expected_net": 13.715857676137093,
+        "gradient_norms": [
+          0.004735484963691588,
+          0.003850372774866982
+        ]
+      },
+      {
+        "expected_net": 13.716171836295546,
+        "gradient_norms": [
+          0.00466991443417065,
+          0.003806771978455813
+        ]
+      },
+      {
+        "expected_net": 13.716476788103899,
+        "gradient_norms": [
+          0.004607477080058731,
+          0.0037640920844671925
+        ]
+      },
+      {
+        "expected_net": 13.716773132657043,
+        "gradient_norms": [
+          0.004547985842681095,
+          0.003722298353175422
+        ]
+      },
+      {
+        "expected_net": 13.717061421538677,
+        "gradient_norms": [
+          0.004491270086180148,
+          0.0036813586466715132
+        ]
+      },
+      {
+        "expected_net": 13.717342161761406,
+        "gradient_norms": [
+          0.004437173967920015,
+          0.0036412431555973867
+        ]
+      },
+      {
+        "expected_net": 13.717615820158414,
+        "gradient_norms": [
+          0.0043855549884436636,
+          0.003601924158541984
+        ]
+      },
+      {
+        "expected_net": 13.717882827294753,
+        "gradient_norms": [
+          0.004336282697493478,
+          0.0035633758098815196
+        ]
+      },
+      {
+        "expected_net": 13.718143580956397,
+        "gradient_norms": [
+          0.0042892375360963995,
+          0.003525573952430087
+        ]
+      },
+      {
+        "expected_net": 13.718398449267685,
+        "gradient_norms": [
+          0.004244309797635586,
+          0.003488495951764518
+        ]
+      },
+      {
+        "expected_net": 13.718647773480729,
+        "gradient_norms": [
+          0.00420139869327257,
+          0.0034521205495070635
+        ]
+      },
+      {
+        "expected_net": 13.718891870474897,
+        "gradient_norms": [
+          0.004160411509136541,
+          0.003416427733219377
+        ]
+      },
+      {
+        "expected_net": 13.719131034999293,
+        "gradient_norms": [
+          0.004121262844426572,
+          0.0033813986208651166
+        ]
+      },
+      {
+        "expected_net": 13.719365541687202,
+        "gradient_norms": [
+          0.004083873921028971,
+          0.00334701535806034
+        ]
+      },
+      {
+        "expected_net": 13.719595646867639,
+        "gradient_norms": [
+          0.0040481719564963445,
+          0.0033132610265697413
+        ]
+      },
+      {
+        "expected_net": 13.719821590196151,
+        "gradient_norms": [
+          0.004014089593278915,
+          0.003280119562696393
+        ]
+      },
+      {
+        "expected_net": 13.720043596124256,
+        "gradient_norms": [
+          0.003981564378017842,
+          0.0032475756843834067
+        ]
+      },
+      {
+        "expected_net": 13.720261875224704,
+        "gradient_norms": [
+          0.003950538285453486,
+          0.003215614825995486
+        ]
+      },
+      {
+        "expected_net": 13.720476625387434,
+        "gradient_norms": [
+          0.003920957282210347,
+          0.003184223079877299
+        ]
+      },
+      {
+        "expected_net": 13.720688032899716,
+        "gradient_norms": [
+          0.003892770926258176,
+          0.003153387143889531
+        ]
+      },
+      {
+        "expected_net": 13.720896273422131,
+        "gradient_norms": [
+          0.0038659319983848487,
+          0.0031230942742321785
+        ]
+      },
+      {
+        "expected_net": 13.721101512870819,
+        "gradient_norms": [
+          0.0038403961624292335,
+          0.0030933322429335807
+        ]
+      },
+      {
+        "expected_net": 13.72130390821523,
+        "gradient_norms": [
+          0.003816121651437405,
+          0.0030640892994717485
+        ]
+      },
+      {
+        "expected_net": 13.721503608199644,
+        "gradient_norms": [
+          0.003793068977226071,
+          0.003035354136050155
+        ]
+      },
+      {
+        "expected_net": 13.721700753995632,
+        "gradient_norms": [
+          0.0037712006611516635,
+          0.0030071158561058658
+        ]
+      },
+      {
+        "expected_net": 13.721895479792128,
+        "gradient_norms": [
+          0.003750480984159964,
+          0.0029793639456824525
+        ]
+      },
+      {
+        "expected_net": 13.722087913328737,
+        "gradient_norms": [
+          0.0037308757544212996,
+          0.0029520882473420313
+        ]
+      },
+      {
+        "expected_net": 13.722278176377525,
+        "gradient_norms": [
+          0.0037123520910874986,
+          0.002925278936325258
+        ]
+      },
+      {
+        "expected_net": 13.722466385177956,
+        "gradient_norms": [
+          0.003694878222905158,
+          0.002898926498701507
+        ]
+      },
+      {
+        "expected_net": 13.722652650829007,
+        "gradient_norms": [
+          0.0036784233005909047,
+          0.0028730217112917372
+        ]
+      },
+      {
+        "expected_net": 13.722837079642211,
+        "gradient_norms": [
+          0.0036629572220518883,
+          0.0028475556231574344
+        ]
+      },
+      {
+        "expected_net": 13.72301977345896,
+        "gradient_norms": [
+          0.0036484504696717365,
+          0.002822519538481456
+        ]
+      },
+      {
+        "expected_net": 13.723200829935038,
+        "gradient_norms": [
+          0.003634873959023898,
+          0.0027979050006875644
+        ]
+      },
+      {
+        "expected_net": 13.723380342795004,
+        "gradient_norms": [
+          0.00362219889850486,
+          0.0027737037776591218
+        ]
+      },
+      {
+        "expected_net": 13.723558402058972,
+        "gradient_norms": [
+          0.0036103966594787924,
+          0.0027499078479399958
+        ]
+      },
+      {
+        "expected_net": 13.723735094243818,
+        "gradient_norms": [
+          0.0035994386566383938,
+          0.002726509387805344
+        ]
+      },
+      {
+        "expected_net": 13.72391050254096,
+        "gradient_norms": [
+          0.0035892962383689193,
+          0.0027035007591184753
+        ]
+      },
+      {
+        "expected_net": 13.724084706972354,
+        "gradient_norms": [
+          0.003579940586993424,
+          0.0026808744978857085
+        ]
+      },
+      {
+        "expected_net": 13.724257784526475,
+        "gradient_norms": [
+          0.003571342628831943,
+          0.0026586233034437984
+        ]
+      },
+      {
+        "expected_net": 13.724429809275772,
+        "gradient_norms": [
+          0.003563472954079158,
+          0.002636740028217499
+        ]
+      },
+      {
+        "expected_net": 13.724600852476913,
+        "gradient_norms": [
+          0.0035563017465436914,
+          0.002615217667996886
+        ]
+      },
+      {
+        "expected_net": 13.724770982655269,
+        "gradient_norms": [
+          0.0035497987233283003,
+          0.0025940493526933517
+        ]
+      },
+      {
+        "expected_net": 13.724940265674745,
+        "gradient_norms": [
+          0.0035439330845558493,
+          0.0025732283375316154
+        ]
+      },
+      {
+        "expected_net": 13.72510876479414,
+        "gradient_norms": [
+          0.0035386734732526562,
+          0.0025527479946580093
+        ]
+      },
+      {
+        "expected_net": 13.72527654071116,
+        "gradient_norms": [
+          0.0035339879454890774,
+          0.0025326018051336913
+        ]
+      },
+      {
+        "expected_net": 13.72544365159511,
+        "gradient_norms": [
+          0.003529843950878908,
+          0.002512783351299447
+        ]
+      },
+      {
+        "expected_net": 13.725610153109272,
+        "gradient_norms": [
+          0.0035262083234753362,
+          0.0024932863094993753
+        ]
+      },
+      {
+        "expected_net": 13.725776098424024,
+        "gradient_norms": [
+          0.0035230472830842597,
+          0.002474104443153821
+        ]
+      },
+      {
+        "expected_net": 13.725941538221598,
+        "gradient_norms": [
+          0.0035203264469223765,
+          0.0024552315961780175
+        ]
+      },
+      {
+        "expected_net": 13.726106520693454,
+        "gradient_norms": [
+          0.0035180108514969075,
+          0.002436661686746825
+        ]
+      },
+      {
+        "expected_net": 13.726271091531313,
+        "gradient_norms": [
+          0.0035160649844640118,
+          0.002418388701406599
+        ]
+      },
+      {
+        "expected_net": 13.726435293912568,
+        "gradient_norms": [
+          0.0035144528261390603,
+          0.002400406689541744
+        ]
+      },
+      {
+        "expected_net": 13.726599168481318,
+        "gradient_norms": [
+          0.0035131379002033333,
+          0.0023827097581988624
+        ]
+      },
+      {
+        "expected_net": 13.726762753325623,
+        "gradient_norms": [
+          0.0035120833330145786,
+          0.002365292067280302
+        ]
+      },
+      {
+        "expected_net": 13.726926083952197,
+        "gradient_norms": [
+          0.0035112519208245737,
+          0.002348147825117117
+        ]
+      },
+      {
+        "expected_net": 13.727089193259147,
+        "gradient_norms": [
+          0.00351060620402543,
+          0.002331271284423881
+        ]
+      },
+      {
+        "expected_net": 13.727252111507916,
+        "gradient_norms": [
+          0.003510108547449256,
+          0.0023146567386570687
+        ]
+      },
+      {
+        "expected_net": 13.72741486629506,
+        "gradient_norms": [
+          0.0035097212255784907,
+          0.0022982985187734364
+        ]
+      },
+      {
+        "expected_net": 13.727577482524838,
+        "gradient_norms": [
+          0.0035094065114174107,
+          0.0022821909904024453
+        ]
+      },
+      {
+        "expected_net": 13.727739982383271,
+        "gradient_norms": [
+          0.0035091267676670476,
+          0.0022663285514354613
+        ]
+      },
+      {
+        "expected_net": 13.727902385314483,
+        "gradient_norms": [
+          0.003508844538742081,
+          0.002250705630037316
+        ]
+      },
+      {
+        "expected_net": 13.728064707999941,
+        "gradient_norms": [
+          0.0035085226421199475,
+          0.002235316683074691
+        ]
+      },
+      {
+        "expected_net": 13.72822696434119,
+        "gradient_norms": [
+          0.003508124257479244,
+          0.002220156194964459
+        ]
+      },
+      {
+        "expected_net": 13.728389165446627,
+        "gradient_norms": [
+          0.003507613012092227,
+          0.0022052186769311003
+        ]
+      },
+      {
+        "expected_net": 13.728551319622706,
+        "gradient_norms": [
+          0.0035069530609945173,
+          0.0021904986666639453
+        ]
+      },
+      {
+        "expected_net": 13.728713432369958,
+        "gradient_norms": [
+          0.0035061091605510944,
+          0.002175990728360674
+        ]
+      },
+      {
+        "expected_net": 13.728875506383957,
+        "gradient_norms": [
+          0.0035050467341932456,
+          0.002161689453137393
+        ]
+      },
+      {
+        "expected_net": 13.729037541561613,
+        "gradient_norms": [
+          0.003503731929304573,
+          0.0021475894597885307
+        ]
+      },
+      {
+        "expected_net": 13.729199535012514,
+        "gradient_norms": [
+          0.00350213166449283,
+          0.0021336853958652644
+        ]
+      },
+      {
+        "expected_net": 13.729361481075587,
+        "gradient_norms": [
+          0.003500213666778744,
+          0.0021199719390517344
+        ]
+      },
+      {
+        "expected_net": 13.729523371340848,
+        "gradient_norms": [
+          0.0034979464985905075,
+          0.002106443798809128
+        ]
+      },
+      {
+        "expected_net": 13.72968519467591,
+        "gradient_norms": [
+          0.0034952995748357605,
+          0.002093095718255126
+        ]
+      },
+      {
+        "expected_net": 13.729846937257328,
+        "gradient_norms": [
+          0.0034922431707157878,
+          0.0020799224762527734
+        ]
+      },
+      {
+        "expected_net": 13.730008582606253,
+        "gradient_norms": [
+          0.0034887484213856775,
+          0.0020669188896745355
+        ]
+      },
+      {
+        "expected_net": 13.73017011162819,
+        "gradient_norms": [
+          0.003484787314969333,
+          0.0020540798158225375
+        ]
+      },
+      {
+        "expected_net": 13.730331502656698,
+        "gradient_norms": [
+          0.003480332680840207,
+          0.0020414001549688425
+        ]
+      },
+      {
+        "expected_net": 13.73049273150065,
+        "gradient_norms": [
+          0.0034753581754343515,
+          0.002028874853007863
+        ]
+      },
+      {
+        "expected_net": 13.730653771495032,
+        "gradient_norms": [
+          0.003469838268174844,
+          0.0020164989041947037
+        ]
+      },
+      {
+        "expected_net": 13.730814593555102,
+        "gradient_norms": [
+          0.0034637482303100705,
+          0.0020042673539646737
+        ]
+      },
+      {
+        "expected_net": 13.73097516623401,
+        "gradient_norms": [
+          0.003457064129606954,
+          0.001992175301826586
+        ]
+      },
+      {
+        "expected_net": 13.731135455784013,
+        "gradient_norms": [
+          0.003449762833884337,
+          0.0019802179043353803
+        ]
+      },
+      {
+        "expected_net": 13.731295426221621,
+        "gradient_norms": [
+          0.0034418220262687777,
+          0.001968390378146344
+        ]
+      },
+      {
+        "expected_net": 13.731455039397105,
+        "gradient_norms": [
+          0.0034332202348683013,
+          0.0019566880031687364
+        ]
+      },
+      {
+        "expected_net": 13.731614255068948,
+        "gradient_norms": [
+          0.003423936879200885,
+          0.0019451061258385972
+        ]
+      },
+      {
+        "expected_net": 13.731773030984048,
+        "gradient_norms": [
+          0.003413952335267916,
+          0.0019336401625324453
+        ]
+      },
+      {
+        "expected_net": 13.731931322964558,
+        "gradient_norms": [
+          0.0034032480205694582,
+          0.001922285603148317
+        ]
+      },
+      {
+        "expected_net": 13.732089085002183,
+        "gradient_norms": [
+          0.003391806499688831,
+          0.0019110380148850625
+        ]
+      },
+      {
+        "expected_net": 13.732246269361248,
+        "gradient_norms": [
+          0.0033796116102820005,
+          0.0018998930462456513
+        ]
+      },
+      {
+        "expected_net": 13.732402826691356,
+        "gradient_norms": [
+          0.0033666486085153053,
+          0.001888846431290769
+        ]
+      },
+      {
+        "expected_net": 13.732558706150861,
+        "gradient_norms": [
+          0.0033529043321069113,
+          0.0018778939941642347
+        ]
+      },
+      {
+        "expected_net": 13.732713855542112,
+        "gradient_norms": [
+          0.0033383673782989964,
+          0.0018670316539055088
+        ]
+      },
+      {
+        "expected_net": 13.732868221459265,
+        "gradient_norms": [
+          0.0033230282932681385,
+          0.0018562554295540898
+        ]
+      },
+      {
+        "expected_net": 13.733021749449449,
+        "gradient_norms": [
+          0.003306879768741258,
+          0.0018455614455428974
+        ]
+      },
+      {
+        "expected_net": 13.733174384187658,
+        "gradient_norms": [
+          0.0032899168409625808,
+          0.0018349459373668462
+        ]
+      },
+      {
+        "expected_net": 13.733326069665587,
+        "gradient_norms": [
+          0.003272137086664294,
+          0.0018244052574888016
+        ]
+      },
+      {
+        "expected_net": 13.733476749394182,
+        "gradient_norms": [
+          0.0032535408103642324,
+          0.0018139358814525746
+        ]
+      },
+      {
+        "expected_net": 13.733626366619418,
+        "gradient_norms": [
+          0.003234131217192062,
+          0.0018035344141347442
+        ]
+      },
+      {
+        "expected_net": 13.73377486455039,
+        "gradient_norms": [
+          0.003213914565486991,
+          0.0017931975960704819
+        ]
+      },
+      {
+        "expected_net": 13.73392218659832,
+        "gradient_norms": [
+          0.0031929002936936304,
+          0.0017829223097686059
+        ]
+      },
+      {
+        "expected_net": 13.734068276624832,
+        "gradient_norms": [
+          0.0031711011165376085,
+          0.0017727055859198951
+        ]
+      },
+      {
+        "expected_net": 13.7342130791974,
+        "gradient_norms": [
+          0.0031485330861118327,
+          0.001762544609398423
+        ]
+      },
+      {
+        "expected_net": 13.734356539849447,
+        "gradient_norms": [
+          0.003125215614333247,
+          0.001752436724942169
+        ]
+      },
+      {
+        "expected_net": 13.734498605342509,
+        "gradient_norms": [
+          0.0031011714541646102,
+          0.0017423794424039078
+        ]
+      },
+      {
+        "expected_net": 13.734639223927328,
+        "gradient_norms": [
+          0.003076426638059882,
+          0.0017323704414554696
+        ]
+      },
+      {
+        "expected_net": 13.734778345600862,
+        "gradient_norms": [
+          0.003051010373204768,
+          0.0017224075756365849
+        ]
+      },
+      {
+        "expected_net": 13.734915922355999,
+        "gradient_norms": [
+          0.003024954894250277,
+          0.0017124888756469986
+        ]
+      },
+      {
+        "expected_net": 13.735051908420697,
+        "gradient_norms": [
+          0.0029982952753551686,
+          0.0017026125517848132
+        ]
+      },
+      {
+        "expected_net": 13.735186260483509,
+        "gradient_norms": [
+          0.002971069204391265,
+          0.0016927769954537325
+        ]
+      },
+      {
+        "expected_net": 13.735318937902424,
+        "gradient_norms": [
+          0.0029433167231077252,
+          0.001682980779673416
+        ]
+      },
+      {
+        "expected_net": 13.73544990289448,
+        "gradient_norms": [
+          0.0029150799378694927,
+          0.0016732226585415217
+        ]
+      },
+      {
+        "expected_net": 13.735579120703633,
+        "gradient_norms": [
+          0.00288640270622197,
+          0.0016635015656293712
+        ]
+      },
+      {
+        "expected_net": 13.735706559744882,
+        "gradient_norms": [
+          0.002857330305018247,
+          0.0016538166112887813
+        ]
+      },
+      {
+        "expected_net": 13.735832191723134,
+        "gradient_norms": [
+          0.0028279090861236633,
+          0.001644167078893815
+        ]
+      },
+      {
+        "expected_net": 13.735955991725607,
+        "gradient_norms": [
+          0.0027981861258242224,
+          0.0016345524200432943
+        ]
+      },
+      {
+        "expected_net": 13.736077938287105,
+        "gradient_norms": [
+          0.002768208873964292,
+          0.0016249722487723852
+        ]
+      },
+      {
+        "expected_net": 13.736198013428048,
+        "gradient_norms": [
+          0.002738024808619614,
+          0.0016154263348462745
+        ]
+      },
+      {
+        "expected_net": 13.736316202665444,
+        "gradient_norms": [
+          0.0027076811016841307,
+          0.0016059145962111112
+        ]
+      },
+      {
+        "expected_net": 13.736432494997539,
+        "gradient_norms": [
+          0.002677224300253688,
+          0.0015964370907011437
+        ]
+      },
+      {
+        "expected_net": 13.736546882863294,
+        "gradient_norms": [
+          0.002646700028052859,
+          0.001586994007106779
+        ]
+      },
+      {
+        "expected_net": 13.736659362078118,
+        "gradient_norms": [
+          0.002616152710474826,
+          0.0015775856557099664
+        ]
+      },
+      {
+        "expected_net": 13.736769931747592,
+        "gradient_norms": [
+          0.002585625326072599,
+          0.0015682124584096525
+        ]
+      },
+      {
+        "expected_net": 13.736878594161329,
+        "gradient_norms": [
+          0.002555159186585325,
+          0.0015588749385501367
+        ]
+      },
+      {
+        "expected_net": 13.736985354668997,
+        "gradient_norms": [
+          0.0025247937468798353,
+          0.00154957371057
+        ]
+      },
+      {
+        "expected_net": 13.737090221541013,
+        "gradient_norms": [
+          0.0024945664454436647,
+          0.0015403094695836139
+        ]
+      },
+      {
+        "expected_net": 13.737193205816205,
+        "gradient_norms": [
+          0.002464512575466349,
+          0.0015310829810043474
+        ]
+      },
+      {
+        "expected_net": 13.737294321138837,
+        "gradient_norms": [
+          0.0024346651859203975,
+          0.0015218950703079672
+        ]
+      },
+      {
+        "expected_net": 13.737393583587577,
+        "gradient_norms": [
+          0.002405055011564335,
+          0.0015127466130276611
+        ]
+      },
+      {
+        "expected_net": 13.737491011498442,
+        "gradient_norms": [
+          0.002375710430358724,
+          0.0015036385250639056
+        ]
+      },
+      {
+        "expected_net": 13.737586625284187,
+        "gradient_norms": [
+          0.002346657446435243,
+          0.001494571753378118
+        ]
+      },
+      {
+        "expected_net": 13.73768044725206,
+        "gradient_norms": [
+          0.0023179196964955725,
+          0.0014855472671308537
+        ]
+      },
+      {
+        "expected_net": 13.737772501421787,
+        "gradient_norms": [
+          0.002289518477343866,
+          0.0014765660493171054
+        ]
+      },
+      {
+        "expected_net": 13.737862813345636,
+        "gradient_norms": [
+          0.002261472792121491,
+          0.0014676290889331146
+        ]
+      },
+      {
+        "expected_net": 13.73795140993199,
+        "gradient_norms": [
+          0.002233799412804036,
+          0.0014587373737040413
+        ]
+      },
+      {
+        "expected_net": 13.738038319273732,
+        "gradient_norms": [
+          0.002206512956493135,
+          0.0014498918833944355
+        ]
+      },
+      {
+        "expected_net": 13.738123570482632,
+        "gradient_norms": [
+          0.0021796259731398726,
+          0.001441093583707402
+        ]
+      },
+      {
+        "expected_net": 13.738207193530616,
+        "gradient_norms": [
+          0.0021531490424092155,
+          0.0014323434207757814
+        ]
+      },
+      {
+        "expected_net": 13.73828921909875,
+        "gradient_norms": [
+          0.0021270908775528666,
+          0.0014236423162384694
+        ]
+      },
+      {
+        "expected_net": 13.738369678434335,
+        "gradient_norms": [
+          0.002101458434297467,
+          0.0014149911628925517
+        ]
+      },
+      {
+        "expected_net": 13.738448603216753,
+        "gradient_norms": [
+          0.0020762570229575544,
+          0.0014063908208984048
+        ]
+      },
+      {
+        "expected_net": 13.738526025432126,
+        "gradient_norms": [
+          0.0020514904221450164,
+          0.0013978421145249254
+        ]
+      },
+      {
+        "expected_net": 13.738601977257034,
+        "gradient_norms": [
+          0.0020271609926423764,
+          0.0013893458293972464
+        ]
+      },
+      {
+        "expected_net": 13.73867649095127,
+        "gradient_norms": [
+          0.002003269790207486,
+          0.0013809027102308579
+        ]
+      },
+      {
+        "expected_net": 13.738749598759547,
+        "gradient_norms": [
+          0.001979816676237345,
+          0.001372513459012286
+        ]
+      },
+      {
+        "expected_net": 13.738821332821962,
+        "gradient_norms": [
+          0.0019568004254154818,
+          0.0013641787336018537
+        ]
+      },
+      {
+        "expected_net": 13.738891725092977,
+        "gradient_norms": [
+          0.0019342188296137912,
+          0.0013558991467222889
+        ]
+      },
+      {
+        "expected_net": 13.738960807268665,
+        "gradient_norms": [
+          0.0019120687974766809,
+          0.001347675265299716
+        ]
+      },
+      {
+        "expected_net": 13.739028610721764,
+        "gradient_norms": [
+          0.0018903464492520453,
+          0.001339507610129255
+        ]
+      },
+      {
+        "expected_net": 13.739095166444256,
+        "gradient_norms": [
+          0.0018690472065584025,
+          0.0013313966558299527
+        ]
+      },
+      {
+        "expected_net": 13.739160504996958,
+        "gradient_norms": [
+          0.0018481658768735097,
+          0.0013233428310615281
+        ]
+      },
+      {
+        "expected_net": 13.73922465646578,
+        "gradient_norms": [
+          0.0018276967326482482,
+          0.0013153465189680825
+        ]
+      },
+      {
+        "expected_net": 13.73928765042415,
+        "gradient_norms": [
+          0.0018076335850038838,
+          0.001307408057828491
+        ]
+      },
+      {
+        "expected_net": 13.739349515901255,
+        "gradient_norms": [
+          0.0017879698520590424,
+          0.0012995277418829708
+        ]
+      },
+      {
+        "expected_net": 13.739410281355482,
+        "gradient_norms": [
+          0.0017686986219803843,
+          0.0012917058223075569
+        ]
+      },
+      {
+        "expected_net": 13.739469974652879,
+        "gradient_norms": [
+          0.001749812710901016,
+          0.0012839425083233343
+        ]
+      },
+      {
+        "expected_net": 13.739528623049974,
+        "gradient_norms": [
+          0.0017313047158882932,
+          0.0012762379684083088
+        ]
+      },
+      {
+        "expected_net": 13.739586253180756,
+        "gradient_norms": [
+          0.0017131670631638921,
+          0.001268592331600666
+        ]
+      },
+      {
+        "expected_net": 13.73964289104729,
+        "gradient_norms": [
+          0.0016953920518130547,
+          0.001261005688871136
+        ]
+      },
+      {
+        "expected_net": 13.739698562013677,
+        "gradient_norms": [
+          0.0016779718932199029,
+          0.0012534780945493982
+        ]
+      },
+      {
+        "expected_net": 13.739753290803016,
+        "gradient_norms": [
+          0.00166089874648657,
+          0.0012460095677905342
+        ]
+      },
+      {
+        "expected_net": 13.739807101496975,
+        "gradient_norms": [
+          0.0016441647500864346,
+          0.0012386000940676893
+        ]
+      },
+      {
+        "expected_net": 13.739860017537797,
+        "gradient_norms": [
+          0.0016277620500148124,
+          0.0012312496266810816
+        ]
+      },
+      {
+        "expected_net": 13.739912061732332,
+        "gradient_norms": [
+          0.0016116828246816217,
+          0.0012239580882696095
+        ]
+      },
+      {
+        "expected_net": 13.73996325625788,
+        "gradient_norms": [
+          0.001595919306806241,
+          0.001216725372319542
+        ]
+      },
+      {
+        "expected_net": 13.740013622669686,
+        "gradient_norms": [
+          0.001580463802532673,
+          0.0012095513446608549
+        ]
+      },
+      {
+        "expected_net": 13.740063181909736,
+        "gradient_norms": [
+          0.0015653087080237556,
+          0.0012024358449445982
+        ]
+      },
+      {
+        "expected_net": 13.740111954316767,
+        "gradient_norms": [
+          0.0015504465237220534,
+          0.001195378688095289
+        ]
+      },
+      {
+        "expected_net": 13.740159959637195,
+        "gradient_norms": [
+          0.0015358698665118857,
+          0.001188379665733673
+        ]
+      },
+      {
+        "expected_net": 13.740207217036943,
+        "gradient_norms": [
+          0.001521571479961252,
+          0.0011814385475653535
+        ]
+      },
+      {
+        "expected_net": 13.7402537451139,
+        "gradient_norms": [
+          0.001507544242834022,
+          0.0011745550827344455
+        ]
+      },
+      {
+        "expected_net": 13.740299561910872,
+        "gradient_norms": [
+          0.0014937811760438425,
+          0.0011677290011337406
+        ]
+      },
+      {
+        "expected_net": 13.740344684929049,
+        "gradient_norms": [
+          0.0014802754482066765,
+          0.001160960014676121
+        ]
+      },
+      {
+        "expected_net": 13.740389131141715,
+        "gradient_norms": [
+          0.001467020379939743,
+          0.0011542478185211865
+        ]
+      },
+      {
+        "expected_net": 13.740432917008153,
+        "gradient_norms": [
+          0.0014540094470486063,
+          0.0011475920922576883
+        ]
+      },
+      {
+        "expected_net": 13.74047605848775,
+        "gradient_norms": [
+          0.0014412362827172889,
+          0.0011409925010393385
+        ]
+      },
+      {
+        "expected_net": 13.740518571054118,
+        "gradient_norms": [
+          0.0014286946788232206,
+          0.0011344486966773368
+        ]
+      },
+      {
+        "expected_net": 13.740560469709157,
+        "gradient_norms": [
+          0.001416378586485061,
+          0.0011279603186853473
+        ]
+      },
+      {
+        "expected_net": 13.74060176899718,
+        "gradient_norms": [
+          0.001404282115930587,
+          0.0011215269952792738
+        ]
+      },
+      {
+        "expected_net": 13.740642483018796,
+        "gradient_norms": [
+          0.001392399535771911,
+          0.0011151483443319176
+        ]
+      },
+      {
+        "expected_net": 13.740682625444702,
+        "gradient_norms": [
+          0.0013807252717783047,
+          0.0011088239742860534
+        ]
+      },
+      {
+        "expected_net": 13.740722209529276,
+        "gradient_norms": [
+          0.0013692539052031546,
+          0.001102553485018304
+        ]
+      },
+      {
+        "expected_net": 13.740761248123938,
+        "gradient_norms": [
+          0.0013579801707364046,
+          0.0010963364686659579
+        ]
+      },
+      {
+        "expected_net": 13.740799753690258,
+        "gradient_norms": [
+          0.0013468989541408146,
+          0.0010901725104094518
+        ]
+      },
+      {
+        "expected_net": 13.740837738312825,
+        "gradient_norms": [
+          0.0013360052896198473,
+          0.001084061189215046
+        ]
+      },
+      {
+        "expected_net": 13.740875213711785,
+        "gradient_norms": [
+          0.001325294356965894,
+          0.001078002078539161
+        ]
+      },
+      {
+        "expected_net": 13.740912191255145,
+        "gradient_norms": [
+          0.0013147614785277277,
+          0.0010719947469931515
+        ]
+      },
+      {
+        "expected_net": 13.74094868197071,
+        "gradient_norms": [
+          0.001304402116038546,
+          0.0010660387589746677
+        ]
+      },
+      {
+        "expected_net": 13.740984696557723,
+        "gradient_norms": [
+          0.0012942118673316693,
+          0.00106013367525949
+        ]
+      },
+      {
+        "expected_net": 13.741020245398213,
+        "gradient_norms": [
+          0.0012841864629700916,
+          0.0010542790535644534
+        ]
+      },
+      {
+        "expected_net": 13.741055338567994,
+        "gradient_norms": [
+          0.0012743217628288428,
+          0.0010484744490739878
+        ]
+      },
+      {
+        "expected_net": 13.741089985847363,
+        "gradient_norms": [
+          0.0012646137526305167,
+          0.0010427194149371017
+        ]
+      },
+      {
+        "expected_net": 13.74112419673144,
+        "gradient_norms": [
+          0.0012550585404782148,
+          0.0010370135027366707
+        ]
+      },
+      {
+        "expected_net": 13.74115798044025,
+        "gradient_norms": [
+          0.0012456523533794259,
+          0.0010313562629252404
+        ]
+      },
+      {
+        "expected_net": 13.74119134592843,
+        "gradient_norms": [
+          0.0012363915337882554,
+          0.0010257472452405423
+        ]
+      }
+    ],
+    "greedy": {
+      "western_sahara": {
+        "net": 13.714485182000006,
+        "proof_points": 14.101855182000007,
+        "requests": 0.5500000000000002,
+        "deliveries": 1.7993500000000018,
+        "receipt_distribution": [
+          0.03619778500000001,
+          0.23879661750000006,
+          0.16202079900000008,
+          0.36573460200000013,
+          0.04823777700000002,
+          0.048190180500000006,
+          0.10082223900000002,
+          0.0
+        ]
+      },
+      "dprk": {
+        "net": 13.778374670796802,
+        "proof_points": 14.161373070796802,
+        "requests": 0.32,
+        "deliveries": 1.834992000000001,
+        "receipt_distribution": [
+          0.030363344128000003,
+          0.14967281663999996,
+          0.17437771054080003,
+          0.3702275942400001,
+          0.06006400358400002,
+          0.038233451519999996,
+          0.17706107934719997,
+          0.0
+        ]
+      }
+    },
+    "inventory_priors": {
+      "western_sahara": [
+        [
+          0.0100485,
+          0.01507275,
+          0.012281500000000002,
+          0.018422250000000005,
+          0.0072765,
+          0.010914749999999997,
+          0.0088935,
+          0.01334025
+        ],
+        [
+          0.018661500000000004,
+          0.02799225,
+          0.022808500000000006,
+          0.034212750000000014,
+          0.013513500000000001,
+          0.020270249999999997,
+          0.016516500000000003,
+          0.02477475
+        ],
+        [
+          0.008221500000000001,
+          0.01233225,
+          0.010048500000000002,
+          0.015072750000000003,
+          0.0059535000000000005,
+          0.008930249999999997,
+          0.007276500000000001,
+          0.01091475
+        ],
+        [
+          0.015268500000000003,
+          0.022902750000000003,
+          0.018661500000000004,
+          0.02799225000000001,
+          0.011056500000000002,
+          0.01658475,
+          0.013513500000000003,
+          0.020270250000000004
+        ],
+        [
+          0.0100485,
+          0.01507275,
+          0.012281500000000002,
+          0.018422250000000005,
+          0.0072765,
+          0.010914749999999997,
+          0.0088935,
+          0.01334025
+        ],
+        [
+          0.018661500000000004,
+          0.02799225,
+          0.022808500000000006,
+          0.034212750000000014,
+          0.013513500000000001,
+          0.020270249999999997,
+          0.016516500000000003,
+          0.02477475
+        ],
+        [
+          0.008221500000000001,
+          0.01233225,
+          0.010048500000000002,
+          0.015072750000000003,
+          0.0059535000000000005,
+          0.008930249999999997,
+          0.007276500000000001,
+          0.01091475
+        ],
+        [
+          0.015268500000000003,
+          0.022902750000000003,
+          0.018661500000000004,
+          0.02799225000000001,
+          0.011056500000000002,
+          0.01658475,
+          0.013513500000000003,
+          0.020270250000000004
+        ]
+      ],
+      "dprk": [
+        [
+          0.006805708799999998,
+          0.0086618112,
+          0.006805708799999998,
+          0.0086618112,
+          0.011104051199999996,
+          0.014132428799999998,
+          0.011104051199999996,
+          0.014132428799999998
+        ],
+        [
+          0.0073728512,
+          0.009383628800000002,
+          0.0073728512,
+          0.009383628800000002,
+          0.0120293888,
+          0.015310131200000002,
+          0.0120293888,
+          0.015310131200000002
+        ],
+        [
+          0.014462131200000002,
+          0.018406348800000007,
+          0.014462131200000002,
+          0.018406348800000007,
+          0.023596108800000005,
+          0.030031411200000007,
+          0.023596108800000005,
+          0.030031411200000007
+        ],
+        [
+          0.0156673088,
+          0.019940211200000002,
+          0.0156673088,
+          0.019940211200000002,
+          0.025562451200000003,
+          0.0325340288,
+          0.025562451200000003,
+          0.0325340288
+        ],
+        [
+          0.006035251199999998,
+          0.0076812287999999986,
+          0.006035251199999998,
+          0.0076812287999999986,
+          0.009846988799999996,
+          0.012532531199999997,
+          0.009846988799999996,
+          0.012532531199999997
+        ],
+        [
+          0.006538188799999998,
+          0.008321331199999999,
+          0.006538188799999998,
+          0.008321331199999999,
+          0.010667571199999998,
+          0.013576908799999997,
+          0.010667571199999998,
+          0.013576908799999997
+        ],
+        [
+          0.012824908799999998,
+          0.0163226112,
+          0.012824908799999998,
+          0.0163226112,
+          0.020924851199999997,
+          0.026631628799999998,
+          0.020924851199999997,
+          0.026631628799999998
+        ],
+        [
+          0.013893651199999999,
+          0.0176828288,
+          0.013893651199999999,
+          0.0176828288,
+          0.0226685888,
+          0.028850931200000002,
+          0.0226685888,
+          0.028850931200000002
+        ]
+      ]
+    },
+    "request": [
+      1,
+      2,
+      0,
+      0,
+      2,
+      2,
+      0,
+      0
+    ],
+    "left_delivery": [
+      0,
+      1,
+      2,
+      2,
+      3,
+      1,
+      2,
+      2
+    ],
+    "reply": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        2,
+        1
+      ],
+      [
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        3,
+        3,
+        2,
+        3
+      ],
+      [
+        1,
+        1,
+        2,
+        1
+      ]
+    ]
+  },
+  "held_out": {
+    "family": "mali",
+    "conditions": [
+      {
+        "prior": "uniform",
+        "loss": 0.0,
+        "arms": {
+          "learned_request": {
+            "net": 15.843750000000002,
+            "proof_points": 16.21875,
+            "requests": 0.5,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.015625,
+              0.15625,
+              0.140625,
+              0.375,
+              0.0625,
+              0.0625,
+              0.1875,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 14.625,
+            "proof_points": 15.0,
+            "requests": 0.5,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.015625,
+              0.21875,
+              0.140625,
+              0.28125,
+              0.078125,
+              0.125,
+              0.140625,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 15.184375000000001,
+            "proof_points": 15.578125,
+            "requests": 0.875,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.015625,
+              0.28125,
+              0.125,
+              0.296875,
+              0.046875,
+              0.171875,
+              0.0625,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 15.040625,
+            "proof_points": 15.390625,
+            "requests": 0.0,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.015625,
+              0.21875,
+              0.21875,
+              0.3125,
+              0.046875,
+              0.09375,
+              0.09375,
+              0.0
+            ]
+          }
+        }
+      },
+      {
+        "prior": "uniform",
+        "loss": 0.1,
+        "arms": {
+          "learned_request": {
+            "net": 14.148609375,
+            "proof_points": 14.523609375000001,
+            "requests": 0.5,
+            "deliveries": 1.7500000000000062,
+            "receipt_distribution": [
+              0.04515624999999976,
+              0.19153125000000015,
+              0.1815468750000001,
+              0.29615624999999984,
+              0.08184375000000009,
+              0.0556875,
+              0.148078125,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 13.248749999999998,
+            "proof_points": 13.62375,
+            "requests": 0.5,
+            "deliveries": 1.7500000000000062,
+            "receipt_distribution": [
+              0.04515624999999976,
+              0.2446875,
+              0.17015625000000012,
+              0.22781249999999992,
+              0.0970312500000001,
+              0.10125000000000003,
+              0.11390625000000004,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 13.719515624999996,
+            "proof_points": 14.113265624999997,
+            "requests": 0.875,
+            "deliveries": 1.7500000000000062,
+            "receipt_distribution": [
+              0.04515624999999976,
+              0.31781249999999994,
+              0.1500468750000002,
+              0.23667187499999986,
+              0.06426562499999999,
+              0.13542187500000005,
+              0.050625,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 13.668906249999997,
+            "proof_points": 14.018906249999999,
+            "requests": 0.0,
+            "deliveries": 1.7500000000000062,
+            "receipt_distribution": [
+              0.04515624999999976,
+              0.2446875,
+              0.2446875,
+              0.2531249999999999,
+              0.06046874999999998,
+              0.07593750000000002,
+              0.07593750000000002,
+              0.0
+            ]
+          }
+        },
+        "exact_optional": {
+          "net": 14.528578124999996,
+          "proof_points": 14.903578124999997,
+          "requests": 0.5,
+          "deliveries": 1.7500000000000062,
+          "receipt_distribution": [
+            0.04515624999999976,
+            0.21951562500000005,
+            0.14090625000000026,
+            0.2961562499999998,
+            0.07171875000000005,
+            0.148078125,
+            0.07846875,
+            0.0
+          ],
+          "enumerated_requester_maps": 746496
+        }
+      },
+      {
+        "prior": "uniform",
+        "loss": 0.25,
+        "arms": {
+          "learned_request": {
+            "net": 11.666748046875,
+            "proof_points": 12.041748046875,
+            "requests": 0.5,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.1181640625,
+              0.22412109375,
+              0.216064453125,
+              0.19775390625,
+              0.10107421875,
+              0.0439453125,
+              0.098876953125,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 11.1328125,
+            "proof_points": 11.5078125,
+            "requests": 0.5,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.1181640625,
+              0.263671875,
+              0.1962890625,
+              0.158203125,
+              0.1142578125,
+              0.0703125,
+              0.0791015625,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 11.519091796875001,
+            "proof_points": 11.912841796875,
+            "requests": 0.875,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.1181640625,
+              0.345703125,
+              0.170654296875,
+              0.160400390625,
+              0.079833984375,
+              0.090087890625,
+              0.03515625,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 11.5416015625,
+            "proof_points": 11.8916015625,
+            "requests": 0.0,
+            "deliveries": 1.75,
+            "receipt_distribution": [
+              0.1181640625,
+              0.263671875,
+              0.263671875,
+              0.17578125,
+              0.0732421875,
+              0.052734375,
+              0.052734375,
+              0.0
+            ]
+          }
+        }
+      },
+      {
+        "prior": "asymmetric",
+        "loss": 0.0,
+        "arms": {
+          "learned_request": {
+            "net": 17.1931244,
+            "proof_points": 17.587842399999996,
+            "requests": 0.6799999999999997,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.008812188,
+              0.16237379999999996,
+              0.141091412,
+              0.4629199999999999,
+              0.03588156,
+              0.04591223999999999,
+              0.14300880000000002,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 14.733567799999996,
+            "proof_points": 15.128285799999997,
+            "requests": 0.6799999999999997,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.008812188,
+              0.30588779999999993,
+              0.141091412,
+              0.26678419999999997,
+              0.050766012,
+              0.139128,
+              0.087530388,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 17.168972475999997,
+            "proof_points": 17.572298475999997,
+            "requests": 0.8521599999999994,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.008812188,
+              0.2813513999999999,
+              0.07313196,
+              0.436244512,
+              0.028213812,
+              0.11740408800000002,
+              0.05484204,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 17.585726556,
+            "proof_points": 17.946444556,
+            "requests": 0.0,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.008812188,
+              0.20318495999999997,
+              0.12298800000000001,
+              0.48325599999999996,
+              0.028213812,
+              0.058109039999999994,
+              0.09543600000000003,
+              0.0
+            ]
+          }
+        }
+      },
+      {
+        "prior": "asymmetric",
+        "loss": 0.1,
+        "arms": {
+          "learned_request": {
+            "net": 15.261798614764004,
+            "proof_points": 15.656516614764005,
+            "requests": 0.6799999999999997,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.034814772280000024,
+              0.21157466723999993,
+              0.18668029489200008,
+              0.35907820020000014,
+              0.051769297800000016,
+              0.04473939096,
+              0.11134337662800003,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 13.460331298,
+            "proof_points": 13.855049298,
+            "requests": 0.6799999999999997,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.034814772280000024,
+              0.3311091179999998,
+              0.16629954372000008,
+              0.21609520200000007,
+              0.06808806972,
+              0.11269368000000003,
+              0.07089961428000001,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 15.359022775943998,
+            "proof_points": 15.762348775943998,
+            "requests": 0.8521599999999994,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.034814772280000024,
+              0.3313946339999998,
+              0.11198454307200001,
+              0.3424153992480001,
+              0.04138607584800002,
+              0.09358252315200002,
+              0.04442205240000001,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 15.832736390360003,
+            "proof_points": 16.193454390360003,
+            "requests": 0.0,
+            "deliveries": 1.8035899999999985,
+            "receipt_distribution": [
+              0.034814772280000024,
+              0.24094481760000006,
+              0.1685602800000001,
+              0.39143736000000007,
+              0.039871287720000016,
+              0.0470683224,
+              0.07730316000000002,
+              0.0
+            ]
+          }
+        }
+      },
+      {
+        "prior": "asymmetric",
+        "loss": 0.25,
+        "arms": {
+          "learned_request": {
+            "net": 12.502943056187494,
+            "proof_points": 12.897661056187495,
+            "requests": 0.6799999999999997,
+            "deliveries": 1.8035900000000038,
+            "receipt_distribution": [
+              0.10428373075000004,
+              0.25925173687499997,
+              0.2231127928124999,
+              0.23281090312499994,
+              0.06896593687500001,
+              0.03893410125,
+              0.0726407983125,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 11.450646512499997,
+            "proof_points": 11.845364512499998,
+            "requests": 0.6799999999999997,
+            "deliveries": 1.8035900000000038,
+            "receipt_distribution": [
+              0.10428373075000004,
+              0.34568688749999976,
+              0.18772954424999996,
+              0.15006611249999996,
+              0.08473838175000002,
+              0.07825950000000001,
+              0.049235843249999994,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 12.729369445499994,
+            "proof_points": 13.132695445499994,
+            "requests": 0.8521599999999994,
+            "deliveries": 1.8035900000000038,
+            "receipt_distribution": [
+              0.10428373075000004,
+              0.3738851624999997,
+              0.14722814324999997,
+              0.22638987224999993,
+              0.05395448475,
+              0.063409959,
+              0.0308486475,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 13.185895187749997,
+            "proof_points": 13.546613187749998,
+            "requests": 0.0,
+            "deliveries": 1.8035900000000038,
+            "receipt_distribution": [
+              0.10428373075000004,
+              0.27338528999999995,
+              0.21280574999999996,
+              0.27183149999999995,
+              0.05132464425,
+              0.032686335,
+              0.053682749999999994,
+              0.0
+            ]
+          }
+        }
+      },
+      {
+        "prior": "correlated_duplicates",
+        "loss": 0.0,
+        "arms": {
+          "learned_request": {
+            "net": 13.798437499999999,
+            "proof_points": 14.173437499999999,
+            "requests": 0.49999999999999983,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.07578125000000001,
+              0.2078125,
+              0.13203125000000002,
+              0.3062499999999999,
+              0.09687500000000002,
+              0.028125,
+              0.153125,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 13.249999999999998,
+            "proof_points": 13.624999999999998,
+            "requests": 0.49999999999999983,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.07578125000000001,
+              0.23593749999999997,
+              0.13203125000000002,
+              0.2640624999999999,
+              0.10390625000000002,
+              0.05625000000000001,
+              0.13203125,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 11.49765625,
+            "proof_points": 11.89140625,
+            "requests": 0.8750000000000008,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.07578125000000001,
+              0.4015625,
+              0.19375000000000003,
+              0.13359375,
+              0.08984375000000001,
+              0.07734375000000002,
+              0.028125,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 13.274999999999999,
+            "proof_points": 13.624999999999998,
+            "requests": 0.0,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.07578125000000001,
+              0.23593749999999997,
+              0.13203125,
+              0.2640624999999999,
+              0.10390625000000002,
+              0.05625000000000001,
+              0.13203125,
+              0.0
+            ]
+          }
+        }
+      },
+      {
+        "prior": "correlated_duplicates",
+        "loss": 0.1,
+        "arms": {
+          "learned_request": {
+            "net": 12.539936718750004,
+            "proof_points": 12.914936718750004,
+            "requests": 0.49999999999999983,
+            "deliveries": 1.750000000000002,
+            "receipt_distribution": [
+              0.09388281250000038,
+              0.23468906250000005,
+              0.16832109375000015,
+              0.2446453125,
+              0.11107968750000012,
+              0.025059375000000005,
+              0.12232265625000005,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 12.135000000000003,
+            "proof_points": 12.510000000000003,
+            "requests": 0.49999999999999983,
+            "deliveries": 1.750000000000002,
+            "receipt_distribution": [
+              0.09388281250000038,
+              0.2586093749999999,
+              0.1631953125000002,
+              0.21389062500000006,
+              0.11791406250000014,
+              0.045562500000000006,
+              0.10694531250000003,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 10.789657031249996,
+            "proof_points": 11.183407031249995,
+            "requests": 0.8750000000000008,
+            "deliveries": 1.750000000000002,
+            "receipt_distribution": [
+              0.09388281250000038,
+              0.4152656249999994,
+              0.20364609375000017,
+              0.10650234375000006,
+              0.0969820312500001,
+              0.060939843750000014,
+              0.022781250000000003,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 12.214070312499999,
+            "proof_points": 12.564070312499998,
+            "requests": 0.0,
+            "deliveries": 1.750000000000002,
+            "receipt_distribution": [
+              0.09388281250000038,
+              0.258609375,
+              0.2586093749999998,
+              0.22528125000000004,
+              0.09527343750000009,
+              0.034171875000000004,
+              0.034171875000000004,
+              0.0
+            ]
+          }
+        }
+      },
+      {
+        "prior": "correlated_duplicates",
+        "loss": 0.25,
+        "arms": {
+          "learned_request": {
+            "net": 10.599645996093747,
+            "proof_points": 10.974645996093747,
+            "requests": 0.49999999999999983,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.15200195312500053,
+              0.25554199218749996,
+              0.2003540039062498,
+              0.16633300781249996,
+              0.12282714843750009,
+              0.019775390625,
+              0.08316650390625,
+              0.0
+            ]
+          },
+          "learned_no_delivery_of_request": {
+            "net": 10.359374999999993,
+            "proof_points": 10.734374999999993,
+            "requests": 0.49999999999999983,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.15200195312500053,
+              0.27333984374999964,
+              0.1914550781249999,
+              0.14853515625,
+              0.12875976562500005,
+              0.031640625,
+              0.07426757812500001,
+              0.0
+            ]
+          },
+          "scripted_request": {
+            "net": 9.543200683593746,
+            "proof_points": 9.936950683593745,
+            "requests": 0.8750000000000008,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.15200195312500053,
+              0.4133789062499995,
+              0.20570068359375007,
+              0.07218017578125002,
+              0.10037841796875005,
+              0.04053955078125001,
+              0.0158203125,
+              0.0
+            ]
+          },
+          "optimal_independent": {
+            "net": 10.531298828124992,
+            "proof_points": 10.881298828124992,
+            "requests": 0.0,
+            "deliveries": 1.7500000000000018,
+            "receipt_distribution": [
+              0.15200195312500053,
+              0.27333984374999964,
+              0.27333984374999976,
+              0.1564453125,
+              0.09741210937500006,
+              0.02373046875,
+              0.02373046875,
+              0.0
+            ]
+          }
+        }
+      }
+    ],
+    "worked_witnesses": []
+  }
+}

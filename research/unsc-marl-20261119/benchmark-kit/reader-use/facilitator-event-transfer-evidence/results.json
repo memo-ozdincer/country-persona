@@ -1,0 +1,2280 @@
+{
+  "scope": "Two event-family transfer dockets with authored source cards and same-assistant semantic review. The same final answer cap is used for pooled and independent syntheses. Recorded inference costs are separate from simulated send costs. No policy updates.",
+  "inference_totals": {
+    "field": {
+      "calls": 8,
+      "input_tokens": 1756,
+      "output_tokens": 173
+    },
+    "witness": {
+      "calls": 8,
+      "input_tokens": 1844,
+      "output_tokens": 223
+    },
+    "judge": {
+      "calls": 16,
+      "input_tokens": 4606,
+      "output_tokens": 32
+    },
+    "pooled": {
+      "calls": 16,
+      "input_tokens": 4200,
+      "output_tokens": 544
+    },
+    "independent_synthesis": {
+      "calls": 12,
+      "input_tokens": 4077,
+      "output_tokens": 448
+    }
+  },
+  "readings": {
+    "abyei-0/S1": {
+      "quote": "supports",
+      "span": "China regarded UNISFA as important for stability and political progress in Abyei.",
+      "judge": [
+        "supports",
+        "supports"
+      ],
+      "agreement": "supports"
+    },
+    "abyei-0/S2": {
+      "quote": "supports",
+      "span": "Russia abstained on resolution 2760 (2024) while describing UNISFA's work as important and necessary.",
+      "judge": [
+        "unknown",
+        "supports"
+      ],
+      "agreement": "unknown"
+    },
+    "abyei-1/S1": {
+      "quote": "supports",
+      "span": "voted in favour of resolution 2760 (2024)",
+      "judge": [
+        "supports",
+        "supports"
+      ],
+      "agreement": "supports"
+    },
+    "abyei-1/S2": {
+      "quote": "contradicts",
+      "span": "Russia abstained on resolution 2760 (2024)",
+      "judge": [
+        "contradicts",
+        "contradicts"
+      ],
+      "agreement": "contradicts"
+    },
+    "central-african-republic-0/S1": {
+      "quote": "supports",
+      "span": "China welcomed the one-year renewal of MINUSCA in resolution 2800 (2025) and voted in favour.",
+      "judge": [
+        "supports",
+        "supports"
+      ],
+      "agreement": "supports"
+    },
+    "central-african-republic-0/S2": {
+      "quote": "supports",
+      "span": "It proposed extending MINUSCA for six months to assess the implications of elections, and was willing to negotiate a twelve-month renewal if conditions were met.",
+      "judge": [
+        "unknown",
+        "supports"
+      ],
+      "agreement": "unknown"
+    },
+    "central-african-republic-1/S1": {
+      "quote": "supports",
+      "span": "China welcomed the one-year renewal of MINUSCA in resolution 2800 (2025) and voted in favour.",
+      "judge": [
+        "supports",
+        "supports"
+      ],
+      "agreement": "supports"
+    },
+    "central-african-republic-1/S2": {
+      "quote": "contradicts",
+      "span": "The United States abstained on resolution 2800 (2025), saying the one-year extension and troop ceiling did not adequately reflect priorities.",
+      "judge": [
+        "contradicts",
+        "contradicts"
+      ],
+      "agreement": "contradicts"
+    }
+  },
+  "syntheses": {
+    "abyei-1/2/independent": {
+      "review_id": "01",
+      "points": 46,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China voted in favour of resolution 2760 (2024)",
+        "s2": "Russia's position is unverified",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/1/independent": {
+      "review_id": "02",
+      "points": 46,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China's support is unverified",
+        "s2": "the United States abstained and proposed a six-month extension.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/2/pooled": {
+      "review_id": "03",
+      "points": 12,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 0,
+        "format": 0
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": null,
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "the claim about the United States is unverified",
+        "issue": "contradicted by the single documented source",
+        "reason": "The China card establishes the Chinese position and is silent about the United States position."
+      }
+    },
+    "abyei-0/0/pooled": {
+      "review_id": "04",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "Evidence is insufficient",
+        "s2": "Evidence is insufficient",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/1/pooled": {
+      "review_id": "05",
+      "points": 46,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China's stance is unverified",
+        "s2": "Russia's position is documented as regarding UNISFA's work as important and necessary",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/3/independent": {
+      "review_id": "06",
+      "points": 60,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "retain",
+      "disposition": "retain",
+      "false_action": false,
+      "review": {
+        "s1": "China and Russia both regarded UNISFA's work as important in Abyei",
+        "s2": "Russia describing it as necessary while abstaining on the vote. [S1], [S2]",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/2/independent": {
+      "review_id": "07",
+      "points": 44,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 0,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China supported the one-year MINUSCA mandate renewal in resolution 2800 (2025) to facilitate elections and focus resources on pressing tasks [S1].",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/1/independent": {
+      "review_id": "08",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "The source explicitly states Russia abstained",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/2/pooled": {
+      "review_id": "09",
+      "points": 46,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China voted in favour of resolution 2760 (2024)",
+        "s2": "Russia's position remains unverified",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/0/pooled": {
+      "review_id": "10",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "Evidence is insufficient",
+        "s2": "Evidence is insufficient",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/1/pooled": {
+      "review_id": "11",
+      "points": 46,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "with no evidence of Chinese support for the adopted resolution",
+        "s2": "The United States opposed the one-year MINUSCA extension, proposing a six-month term instead",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/1/independent": {
+      "review_id": "12",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "The United States opposed the adopted one-year MINUSCA extension, proposing a six-month renewal instead",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/0/pooled": {
+      "review_id": "13",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "Insufficient evidence",
+        "s2": "Insufficient evidence",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/1/pooled": {
+      "review_id": "14",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "Russia abstained on resolution 2760 (2024)",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/2/independent": {
+      "review_id": "15",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China regarded UNISFA as important for Abyei stability and political progress",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/3/pooled": {
+      "review_id": "16",
+      "points": 12,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 0
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": null,
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/3/pooled": {
+      "review_id": "17",
+      "points": 0,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 0,
+        "format": 0
+      },
+      "strict": false,
+      "expected": "retain",
+      "disposition": null,
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "",
+        "issue": "Evidence is insufficient to support the claim that the United States supported an extension",
+        "reason": "The United States explicitly proposed a six-month extension."
+      }
+    },
+    "central-african-republic-0/3/independent": {
+      "review_id": "18",
+      "points": 36,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 0,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "retain",
+      "disposition": "retain",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/1/pooled": {
+      "review_id": "19",
+      "points": 24,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 0
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": null,
+      "false_action": false,
+      "review": {
+        "s1": "the evidence is insufficient to confirm China's support",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/0/pooled": {
+      "review_id": "20",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "Evidence is insufficient",
+        "s2": "Evidence is insufficient",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/1/independent": {
+      "review_id": "21",
+      "points": 46,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China's position is not documented",
+        "s2": "Russia's view that UNISFA's work is important and necessary",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/2/pooled": {
+      "review_id": "22",
+      "points": 56,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China regarded UNISFA as important for stability and political progress in Abyei, but the claim that Russia shared this view is unverified as no documentary passage supports it. [S1]",
+        "s2": "the claim that Russia shared this view is unverified",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/2/pooled": {
+      "review_id": "23",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "",
+        "s2": "the United States' position is unverified",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/3/independent": {
+      "review_id": "24",
+      "points": 24,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 0
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": null,
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "Russia abstained on resolution 2760 (2024)",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/3/pooled": {
+      "review_id": "25",
+      "points": 24,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 0
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": null,
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "Russia abstained on resolution 2760 (2024)",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/2/independent": {
+      "review_id": "26",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "China welcomed the one-year MINUSCA extension in resolution 2800 (2025) and voted in favour",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/3/pooled": {
+      "review_id": "27",
+      "points": 60,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "retain",
+      "disposition": "retain",
+      "false_action": false,
+      "review": {
+        "s1": "China and Russia both regarded UNISFA's work as important in Abyei",
+        "s2": "Russia describing the work as necessary while abstaining on resolution 2760. [S1], [S2]",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/3/independent": {
+      "review_id": "28",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "retain",
+      "false_action": true,
+      "review": {
+        "s1": "",
+        "s2": "the United States abstained and proposed a six-month renewal instead. [S1], [S2]",
+        "issue": "",
+        "reason": ""
+      }
+    }
+  },
+  "fields": {
+    "abyei-0/S1": {
+      "id": "abyei-0/S1",
+      "supported_span": "China supports UNISFA's mandate renewal for Abyei stability",
+      "issue_span": "",
+      "reason": ""
+    },
+    "abyei-0/S2": {
+      "id": "abyei-0/S2",
+      "supported_span": "",
+      "issue_span": "",
+      "reason": ""
+    },
+    "abyei-1/S1": {
+      "id": "abyei-1/S1",
+      "supported_span": "",
+      "issue_span": "",
+      "reason": ""
+    },
+    "abyei-1/S2": {
+      "id": "abyei-1/S2",
+      "supported_span": "it abstained rather than voting in favor.",
+      "issue_span": "Russia's position is unverified",
+      "reason": "Russia's vote is explicitly documented as an abstention."
+    },
+    "central-african-republic-0/S1": {
+      "id": "central-african-republic-0/S1",
+      "supported_span": "China supports the one-year MINUSCA mandate renewal",
+      "issue_span": "",
+      "reason": ""
+    },
+    "central-african-republic-0/S2": {
+      "id": "central-african-republic-0/S2",
+      "supported_span": "reserving a twelve-month renewal only if conditions are met.",
+      "issue_span": "",
+      "reason": ""
+    },
+    "central-african-republic-1/S1": {
+      "id": "central-african-republic-1/S1",
+      "supported_span": "",
+      "issue_span": "China adopted the one-year MINUSCA extension",
+      "reason": "China welcomed and voted for the extension. The Council adopted it."
+    },
+    "central-african-republic-1/S2": {
+      "id": "central-african-republic-1/S2",
+      "supported_span": "The United States objects that the adopted one-year extension does not reflect priorities and proposes a six-month extension instead.",
+      "issue_span": "",
+      "reason": ""
+    }
+  },
+  "rendered": {
+    "abyei-0/0/withhold": "withhold | The available evidence does not establish the position of China. The available evidence does not establish the position of Russia.",
+    "abyei-0/1/withhold": "withhold | The available evidence does not establish the position of China. Russia objected to UNISFA provisions it deemed unrelated or politicized while urging dialogue. [S2]",
+    "abyei-0/2/withhold": "withhold | China supports UNISFA's mandate renewal for Abyei stability but objects to voting on the draft due to remaining differences. [S1] The available evidence does not establish the position of Russia.",
+    "abyei-0/3/retain": "retain | China supports UNISFA's mandate renewal for Abyei stability but objects to voting on the draft due to remaining differences. [S1] Russia objected to UNISFA provisions it deemed unrelated or politicized while urging dialogue. [S2]",
+    "abyei-0/3/withhold": "withhold | China supports UNISFA's mandate renewal for Abyei stability but objects to voting on the draft due to remaining differences. [S1] Russia objected to UNISFA provisions it deemed unrelated or politicized while urging dialogue. [S2]",
+    "abyei-1/0/withhold": "withhold | The available evidence does not establish the position of China. The available evidence does not establish the position of Russia.",
+    "abyei-1/1/revise": "revise | The available evidence does not establish the position of China. Russia's position is unverified because the source states it abstained rather than voting in favor. [S2]",
+    "abyei-1/2/withhold": "withhold | China supports UNISFA renewal but objects to voting on the draft due to remaining differences. [S1] The available evidence does not establish the position of Russia.",
+    "abyei-1/3/revise": "revise | China supports UNISFA renewal but objects to voting on the draft due to remaining differences. [S1] Russia's position is unverified because the source states it abstained rather than voting in favor. [S2]",
+    "central-african-republic-0/0/withhold": "withhold | The available evidence does not establish the position of China. The available evidence does not establish the position of United States.",
+    "central-african-republic-0/1/withhold": "withhold | The available evidence does not establish the position of China. The United States opposes the one-year extension and troop ceiling, reserving a twelve-month renewal only if conditions are met. [S2]",
+    "central-african-republic-0/2/withhold": "withhold | China supports the one-year MINUSCA mandate renewal to facilitate elections and focus resources on pressing tasks. [S1] The available evidence does not establish the position of United States.",
+    "central-african-republic-0/3/retain": "retain | China supports the one-year MINUSCA mandate renewal to facilitate elections and focus resources on pressing tasks. [S1] The United States opposes the one-year extension and troop ceiling, reserving a twelve-month renewal only if conditions are met. [S2]",
+    "central-african-republic-0/3/withhold": "withhold | China supports the one-year MINUSCA mandate renewal to facilitate elections and focus resources on pressing tasks. [S1] The United States opposes the one-year extension and troop ceiling, reserving a twelve-month renewal only if conditions are met. [S2]",
+    "central-african-republic-1/0/withhold": "withhold | The available evidence does not establish the position of China. The available evidence does not establish the position of United States.",
+    "central-african-republic-1/1/revise": "revise | The available evidence does not establish the position of China. The United States objects that the adopted one-year extension does not reflect priorities and proposes a six-month extension instead. [S2]",
+    "central-african-republic-1/2/withhold": "withhold | China adopted the one-year MINUSCA extension, urging the mission to concentrate limited resources on pressing tasks. [S1] The available evidence does not establish the position of United States.",
+    "central-african-republic-1/3/revise": "revise | China adopted the one-year MINUSCA extension, urging the mission to concentrate limited resources on pressing tasks. [S1] The United States objects that the adopted one-year extension does not reflect priorities and proposes a six-month extension instead. [S2]"
+  },
+  "bound_grades": {
+    "abyei-0/0/withhold": {
+      "review_id": "14",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "The available evidence does not establish the position of Russia.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/1/withhold": {
+      "review_id": "10",
+      "points": 48,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/2/withhold": {
+      "review_id": "15",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "China supports UNISFA's mandate renewal for Abyei stability but objects to voting on the draft due to remaining differences. [S1]",
+        "s2": "The available evidence does not establish the position of Russia.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/3/retain": {
+      "review_id": "16",
+      "points": 48,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "retain",
+      "disposition": "retain",
+      "false_action": false,
+      "review": {
+        "s1": "China supports UNISFA's mandate renewal for Abyei stability but objects to voting on the draft due to remaining differences. [S1]",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-0/3/withhold": {
+      "review_id": "03",
+      "points": 34,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 0,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "retain",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "China supports UNISFA's mandate renewal for Abyei stability but objects to voting on the draft due to remaining differences. [S1]",
+        "s2": "",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/0/withhold": {
+      "review_id": "13",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "The available evidence does not establish the position of Russia.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/1/revise": {
+      "review_id": "09",
+      "points": 58,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 0,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "revise",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "Russia's position is unverified because the source states it abstained rather than voting in favor. [S2]",
+        "issue": "Russia's position is unverified",
+        "reason": "Russia's vote is explicitly documented as an abstention."
+      }
+    },
+    "abyei-1/2/withhold": {
+      "review_id": "01",
+      "points": 48,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "The available evidence does not establish the position of Russia.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "abyei-1/3/revise": {
+      "review_id": "08",
+      "points": 36,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 0,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "revise",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "Russia's position is unverified because the source states it abstained rather than voting in favor. [S2]",
+        "issue": "Russia's position is unverified",
+        "reason": "Russia's vote is explicitly documented as an abstention."
+      }
+    },
+    "central-african-republic-0/0/withhold": {
+      "review_id": "18",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "The available evidence does not establish the position of United States.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/1/withhold": {
+      "review_id": "07",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "The United States opposes the one-year extension and troop ceiling, reserving a twelve-month renewal only if conditions are met. [S2]",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/2/withhold": {
+      "review_id": "02",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "China supports the one-year MINUSCA mandate renewal to facilitate elections and focus resources on pressing tasks. [S1]",
+        "s2": "The available evidence does not establish the position of United States.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/3/retain": {
+      "review_id": "06",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "retain",
+      "disposition": "retain",
+      "false_action": false,
+      "review": {
+        "s1": "China supports the one-year MINUSCA mandate renewal to facilitate elections and focus resources on pressing tasks. [S1]",
+        "s2": "The United States opposes the one-year extension and troop ceiling, reserving a twelve-month renewal only if conditions are met. [S2]",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-0/3/withhold": {
+      "review_id": "12",
+      "points": 56,
+      "criteria": {
+        "disposition": 0,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "retain",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "China supports the one-year MINUSCA mandate renewal to facilitate elections and focus resources on pressing tasks. [S1]",
+        "s2": "The United States opposes the one-year extension and troop ceiling, reserving a twelve-month renewal only if conditions are met. [S2]",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/0/withhold": {
+      "review_id": "05",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "The available evidence does not establish the position of United States.",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/1/revise": {
+      "review_id": "17",
+      "points": 70,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 12,
+        "side_2": 12,
+        "citations": 10,
+        "fidelity": 12,
+        "format": 10
+      },
+      "strict": true,
+      "expected": "revise",
+      "disposition": "revise",
+      "false_action": false,
+      "review": {
+        "s1": "The available evidence does not establish the position of China.",
+        "s2": "The United States objects that the adopted one-year extension does not reflect priorities and proposes a six-month extension instead. [S2]",
+        "issue": "",
+        "reason": ""
+      }
+    },
+    "central-african-republic-1/2/withhold": {
+      "review_id": "04",
+      "points": 36,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 0,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "withhold",
+      "disposition": "withhold",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "The available evidence does not establish the position of United States.",
+        "issue": "China adopted the one-year MINUSCA extension",
+        "reason": "China welcomed and voted for the extension. The Council adopted it."
+      }
+    },
+    "central-african-republic-1/3/revise": {
+      "review_id": "11",
+      "points": 36,
+      "criteria": {
+        "disposition": 14,
+        "side_1": 0,
+        "side_2": 12,
+        "citations": 0,
+        "fidelity": 0,
+        "format": 10
+      },
+      "strict": false,
+      "expected": "revise",
+      "disposition": "revise",
+      "false_action": false,
+      "review": {
+        "s1": "",
+        "s2": "The United States objects that the adopted one-year extension does not reflect priorities and proposes a six-month extension instead. [S2]",
+        "issue": "China adopted the one-year MINUSCA extension",
+        "reason": "China welcomed and voted for the extension. The Council adopted it."
+      }
+    }
+  },
+  "replay": {
+    "overlap": {
+      "full_access_pooled": {
+        "mean": {
+          "send_cost": 0.0,
+          "points": 24.0,
+          "false_action": 0.0,
+          "strict": 0.0,
+          "usable_retain": 0.0,
+          "usable_revise": 0.0,
+          "usable_withhold": 0.0,
+          "net_actionable": 0.0
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.0,
+            "points": 60.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          },
+          "abyei-1": {
+            "send_cost": 0.0,
+            "points": 24.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.0,
+            "points": 0.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.0,
+            "points": 12.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          }
+        }
+      },
+      "same_receipts_pooled": {
+        "mean": {
+          "send_cost": 0.07252536871759721,
+          "points": 51.318470083704675,
+          "false_action": 0.1994528504197243,
+          "strict": 0.42642322034923075,
+          "usable_retain": 0.0,
+          "usable_revise": 0.0,
+          "usable_withhold": 0.42642322034923075,
+          "net_actionable": -0.2719782191373215
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.03374549973283296,
+            "points": 65.77265393701761,
+            "false_action": 0.30119950132367435,
+            "strict": 0.6987098691949003,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6987098691949003,
+            "net_actionable": -0.3349450010565073
+          },
+          "abyei-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 40.86737341581426,
+            "false_action": 0.1963770739952194,
+            "strict": 0.15413657150356125,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": -0.30768231169758087
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.03374549973283296,
+            "points": 59.140827139011236,
+            "false_action": 0.3002348263600035,
+            "strict": 0.6987098691949003,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6987098691949003,
+            "net_actionable": -0.33398032609283645
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 39.4930258429756,
+            "false_action": 0.0,
+            "strict": 0.15413657150356125,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": -0.11130523770236145
+          }
+        }
+      },
+      "same_receipts_independent": {
+        "mean": {
+          "send_cost": 0.07252536871759721,
+          "points": 50.437859665045835,
+          "false_action": 0.27473998881586176,
+          "strict": 0.42642322034923075,
+          "usable_retain": 0.0,
+          "usable_revise": 0.0,
+          "usable_withhold": 0.42642322034923075,
+          "net_actionable": -0.347265357533459
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.03374549973283296,
+            "points": 59.167487757097526,
+            "false_action": 0.30119950132367435,
+            "strict": 0.6987098691949003,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6987098691949003,
+            "net_actionable": -0.3349450010565073
+          },
+          "abyei-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 40.86737341581426,
+            "false_action": 0.1963770739952194,
+            "strict": 0.15413657150356125,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": -0.30768231169758087
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.03374549973283296,
+            "points": 62.16766091314335,
+            "false_action": 0.30119950132367435,
+            "strict": 0.6987098691949003,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6987098691949003,
+            "net_actionable": -0.3349450010565073
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 39.548916574128214,
+            "false_action": 0.300183878620879,
+            "strict": 0.15413657150356125,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": -0.4114891163232404
+          }
+        }
+      },
+      "quote_learned": {
+        "mean": {
+          "send_cost": 0.1130795410977049,
+          "points": 61.046709039113665,
+          "false_action": 0.0,
+          "strict": 0.5861128279165625,
+          "usable_retain": 0.061101340677358264,
+          "usable_revise": 0.13641988746889003,
+          "usable_withhold": 0.38859159977031427,
+          "net_actionable": 0.08444168704854338
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.11485384449304838,
+            "points": 58.79096961323848,
+            "false_action": 0.0,
+            "strict": 0.4904986187835677,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.4904986187835677,
+            "net_actionable": -0.11485384449304838
+          },
+          "abyei-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 55.60211841632605,
+            "false_action": 0.0,
+            "strict": 0.15413657150356125,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": -0.11130523770236145
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.11485384449304838,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 0.9999999999999998,
+            "usable_retain": 0.24440536270943305,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.7555946372905669,
+            "net_actionable": 0.12955151821638466
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 59.793748126890144,
+            "false_action": 0.0,
+            "strict": 0.6998161213791214,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5456795498755601,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": 0.43437431217319866
+          }
+        }
+      },
+      "quote_erased": {
+        "mean": {
+          "send_cost": 0.11683564361307641,
+          "points": 61.54287640393852,
+          "false_action": 0.0,
+          "strict": 0.6087587242254022,
+          "usable_retain": 0.015642318498121206,
+          "usable_revise": 0.136347335432795,
+          "usable_withhold": 0.4567690702944861,
+          "net_actionable": 0.035154010317839796
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.10028691617172099,
+            "points": 60.79056920633056,
+            "false_action": 0.0,
+            "strict": 0.581389509378663,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.581389509378663,
+            "net_actionable": -0.10028691617172099
+          },
+          "abyei-1": {
+            "send_cost": 0.13338437105443185,
+            "points": 55.5973460121034,
+            "false_action": 0.0,
+            "strict": 0.1541280228958834,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.1541280228958834,
+            "net_actionable": -0.13338437105443185
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.10028691617172099,
+            "points": 69.99999999999996,
+            "false_action": 0.0,
+            "strict": 0.9999999999999993,
+            "usable_retain": 0.06256927399248483,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9374307260075145,
+            "net_actionable": -0.03771764217923616
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.13338437105443185,
+            "points": 59.78359039732016,
+            "false_action": 0.0,
+            "strict": 0.6995173646270634,
+            "usable_retain": 0.0,
+            "usable_revise": 0.54538934173118,
+            "usable_withhold": 0.1541280228958834,
+            "net_actionable": 0.4120049706767482
+          }
+        }
+      },
+      "quote_greedy": {
+        "mean": {
+          "send_cost": 0.1325128205128206,
+          "points": 59.57523076923078,
+          "false_action": 0.0,
+          "strict": 0.536846153846154,
+          "usable_retain": 0.06853846153846156,
+          "usable_revise": 0.1315384615384616,
+          "usable_withhold": 0.33676923076923077,
+          "net_actionable": 0.06756410256410256
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.140820512820513,
+            "points": 58.079384615384626,
+            "false_action": 0.0,
+            "strict": 0.4581538461538462,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.4581538461538462,
+            "net_actionable": -0.140820512820513
+          },
+          "abyei-1": {
+            "send_cost": 0.12420512820512822,
+            "points": 53.56000000000002,
+            "false_action": 0.0,
+            "strict": 0.08153846153846152,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.08153846153846152,
+            "net_actionable": -0.12420512820512822
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.140820512820513,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 1.0000000000000002,
+            "usable_retain": 0.27415384615384625,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.7258461538461538,
+            "net_actionable": 0.13333333333333325
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.12420512820512822,
+            "points": 56.66153846153848,
+            "false_action": 0.0,
+            "strict": 0.607692307692308,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5261538461538464,
+            "usable_withhold": 0.08153846153846152,
+            "net_actionable": 0.4019487179487182
+          }
+        }
+      },
+      "agreement_learned": {
+        "mean": {
+          "send_cost": 0.07252536871759721,
+          "points": 63.84252805498604,
+          "false_action": 0.0,
+          "strict": 0.7132016897390402,
+          "usable_retain": 0.0,
+          "usable_revise": 0.13641988746889003,
+          "usable_withhold": 0.5767818022701502,
+          "net_actionable": 0.06389451875129282
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.03374549973283296,
+            "points": 69.97551448946793,
+            "false_action": 0.0,
+            "strict": 0.9989446955549037,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9989446955549037,
+            "net_actionable": -0.03374549973283296
+          },
+          "abyei-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 55.60211841632605,
+            "false_action": 0.0,
+            "strict": 0.15413657150356125,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": -0.11130523770236145
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.03374549973283296,
+            "points": 69.99873118726005,
+            "false_action": 0.0,
+            "strict": 0.9999093705185745,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9999093705185745,
+            "net_actionable": -0.03374549973283296
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 59.793748126890144,
+            "false_action": 0.0,
+            "strict": 0.6998161213791214,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5456795498755601,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": 0.43437431217319866
+          }
+        }
+      },
+      "agreement_erased": {
+        "mean": {
+          "send_cost": 0.08358986663701228,
+          "points": 63.83851642514221,
+          "false_action": 0.0,
+          "strict": 0.7131137941649945,
+          "usable_retain": 0.0,
+          "usable_revise": 0.136347335432795,
+          "usable_withhold": 0.5767664587321994,
+          "net_actionable": 0.05275746879578273
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.03379536221959271,
+            "points": 69.97473012084063,
+            "false_action": 0.0,
+            "strict": 0.9989241341152728,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9989241341152728,
+            "net_actionable": -0.03379536221959271
+          },
+          "abyei-1": {
+            "send_cost": 0.13338437105443185,
+            "points": 55.5973460121034,
+            "false_action": 0.0,
+            "strict": 0.1541280228958834,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.1541280228958834,
+            "net_actionable": -0.13338437105443185
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.03379536221959271,
+            "points": 69.99839917030464,
+            "false_action": 0.0,
+            "strict": 0.9998856550217584,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9998856550217584,
+            "net_actionable": -0.03379536221959271
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.13338437105443185,
+            "points": 59.78359039732016,
+            "false_action": 0.0,
+            "strict": 0.6995173646270634,
+            "usable_retain": 0.0,
+            "usable_revise": 0.54538934173118,
+            "usable_withhold": 0.1541280228958834,
+            "net_actionable": 0.4120049706767482
+          }
+        }
+      },
+      "agreement_greedy": {
+        "mean": {
+          "send_cost": 0.10102564102564104,
+          "points": 62.555384615384625,
+          "false_action": 0.0,
+          "strict": 0.6723076923076924,
+          "usable_retain": 0.0,
+          "usable_revise": 0.1315384615384616,
+          "usable_withhold": 0.5407692307692308,
+          "net_actionable": 0.030512820512820567
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.07784615384615387,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 1.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 1.0,
+            "net_actionable": -0.07784615384615387
+          },
+          "abyei-1": {
+            "send_cost": 0.12420512820512822,
+            "points": 53.56000000000002,
+            "false_action": 0.0,
+            "strict": 0.08153846153846152,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.08153846153846152,
+            "net_actionable": -0.12420512820512822
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.07784615384615387,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 1.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 1.0,
+            "net_actionable": -0.07784615384615387
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.12420512820512822,
+            "points": 56.66153846153848,
+            "false_action": 0.0,
+            "strict": 0.607692307692308,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5261538461538464,
+            "usable_withhold": 0.08153846153846152,
+            "net_actionable": 0.4019487179487182
+          }
+        }
+      },
+      "oracle_learned": {
+        "mean": {
+          "send_cost": 0.1130795410977049,
+          "points": 61.046709039113665,
+          "false_action": 0.0,
+          "strict": 0.5861128279165625,
+          "usable_retain": 0.061101340677358264,
+          "usable_revise": 0.13641988746889003,
+          "usable_withhold": 0.38859159977031427,
+          "net_actionable": 0.08444168704854338
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.11485384449304838,
+            "points": 58.79096961323848,
+            "false_action": 0.0,
+            "strict": 0.4904986187835677,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.4904986187835677,
+            "net_actionable": -0.11485384449304838
+          },
+          "abyei-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 55.60211841632605,
+            "false_action": 0.0,
+            "strict": 0.15413657150356125,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": -0.11130523770236145
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.11485384449304838,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 0.9999999999999998,
+            "usable_retain": 0.24440536270943305,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.7555946372905669,
+            "net_actionable": 0.12955151821638466
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11130523770236145,
+            "points": 59.793748126890144,
+            "false_action": 0.0,
+            "strict": 0.6998161213791214,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5456795498755601,
+            "usable_withhold": 0.15413657150356125,
+            "net_actionable": 0.43437431217319866
+          }
+        }
+      }
+    },
+    "split": {
+      "full_access_pooled": {
+        "mean": {
+          "send_cost": 0.0,
+          "points": 24.0,
+          "false_action": 0.0,
+          "strict": 0.0,
+          "usable_retain": 0.0,
+          "usable_revise": 0.0,
+          "usable_withhold": 0.0,
+          "net_actionable": 0.0
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.0,
+            "points": 60.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          },
+          "abyei-1": {
+            "send_cost": 0.0,
+            "points": 24.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.0,
+            "points": 0.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.0,
+            "points": 12.0,
+            "false_action": 0.0,
+            "strict": 0.0,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.0,
+            "net_actionable": 0.0
+          }
+        }
+      },
+      "same_receipts_pooled": {
+        "mean": {
+          "send_cost": 0.07666110492516455,
+          "points": 50.51034077250211,
+          "false_action": 0.1840365863509203,
+          "strict": 0.4108730233369777,
+          "usable_retain": 0.0,
+          "usable_revise": 0.0,
+          "usable_withhold": 0.4108730233369777,
+          "net_actionable": -0.26069769127608483
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.03376436713494762,
+            "points": 65.77134063995713,
+            "false_action": 0.3013031279192685,
+            "strict": 0.6985541655938845,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6985541655938845,
+            "net_actionable": -0.3350674950542161
+          },
+          "abyei-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 38.38955155079089,
+            "false_action": 0.1344389399956146,
+            "strict": 0.123191881080071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": -0.25399678271099607
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.03376436713494762,
+            "points": 59.13410943652234,
+            "false_action": 0.30040427748879805,
+            "strict": 0.6985541655938845,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6985541655938845,
+            "net_actionable": -0.3341686446237457
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 38.74636146273808,
+            "false_action": 0.0,
+            "strict": 0.123191881080071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": -0.11955784271538149
+          }
+        }
+      },
+      "same_receipts_independent": {
+        "mean": {
+          "send_cost": 0.07666110492516455,
+          "points": 49.53749253982105,
+          "false_action": 0.25933662015841746,
+          "strict": 0.4108730233369777,
+          "usable_retain": 0.0,
+          "usable_revise": 0.0,
+          "usable_withhold": 0.4108730233369777,
+          "net_actionable": -0.33599772508358206
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.03376436713494762,
+            "points": 59.16244653520357,
+            "false_action": 0.3013031279192685,
+            "strict": 0.6985541655938845,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6985541655938845,
+            "net_actionable": -0.3350674950542161
+          },
+          "abyei-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 38.38955155079089,
+            "false_action": 0.1344389399956146,
+            "strict": 0.123191881080071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": -0.25399678271099607
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.03376436713494762,
+            "points": 62.1630643544072,
+            "false_action": 0.3013031279192685,
+            "strict": 0.6985541655938845,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6985541655938845,
+            "net_actionable": -0.3350674950542161
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 38.434907718882556,
+            "false_action": 0.30030128479951834,
+            "strict": 0.123191881080071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": -0.41985912751489984
+          }
+        }
+      },
+      "quote_learned": {
+        "mean": {
+          "send_cost": 0.12271144265606662,
+          "points": 60.48477862916461,
+          "false_action": 0.0,
+          "strict": 0.5655455651215385,
+          "usable_retain": 0.07896447756466358,
+          "usable_revise": 0.14412670853010265,
+          "usable_withhold": 0.3424543790267723,
+          "net_actionable": 0.1003797434386996
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.12586504259675177,
+            "points": 57.66441661252324,
+            "false_action": 0.0,
+            "strict": 0.4392916642056016,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.4392916642056016,
+            "net_actionable": -0.12586504259675177
+          },
+          "abyei-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 54.484941587318815,
+            "false_action": 0.0,
+            "strict": 0.123191881080071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": -0.11955784271538149
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.12586504259675177,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 1.0,
+            "usable_retain": 0.31585791025865434,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6841420897413456,
+            "net_actionable": 0.18999286766190257
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 59.78975631681637,
+            "false_action": 0.0,
+            "strict": 0.6996987152004815,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5765068341204106,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": 0.4569489914050291
+          }
+        }
+      },
+      "quote_erased": {
+        "mean": {
+          "send_cost": 0.11683564361307636,
+          "points": 61.217554706193056,
+          "false_action": 0.0,
+          "strict": 0.5989746150279959,
+          "usable_retain": 0.011873903898063655,
+          "usable_revise": 0.14402813677569504,
+          "usable_withhold": 0.4430725743542372,
+          "net_actionable": 0.03906639706068234
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.1002869161717208,
+            "points": 60.615121069744724,
+            "false_action": 0.0,
+            "strict": 0.5734145940793071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.5734145940793071,
+            "net_actionable": -0.1002869161717208
+          },
+          "abyei-1": {
+            "send_cost": 0.13338437105443193,
+            "points": 54.47895873172478,
+            "false_action": 0.0,
+            "strict": 0.12318565946494849,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.12318565946494849,
+            "net_actionable": -0.13338437105443193
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.1002869161717208,
+            "points": 69.99999999999994,
+            "false_action": 0.0,
+            "strict": 0.9999999999999993,
+            "usable_retain": 0.04749561559225462,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9525043844077448,
+            "net_actionable": -0.052791300579466176
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.13338437105443193,
+            "points": 59.77613902330278,
+            "false_action": 0.0,
+            "strict": 0.6992982065677287,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5761125471027801,
+            "usable_withhold": 0.12318565946494849,
+            "net_actionable": 0.44272817604834824
+          }
+        }
+      },
+      "quote_greedy": {
+        "mean": {
+          "send_cost": 0.14220512820512832,
+          "points": 58.91476923076924,
+          "false_action": 0.0,
+          "strict": 0.5165961538461539,
+          "usable_retain": 0.09346153846153847,
+          "usable_revise": 0.13621153846153852,
+          "usable_withhold": 0.2869230769230769,
+          "net_actionable": 0.08746794871794866
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.151897435897436,
+            "points": 57.25692307692307,
+            "false_action": 0.0,
+            "strict": 0.4207692307692308,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.4207692307692308,
+            "net_actionable": -0.151897435897436
+          },
+          "abyei-1": {
+            "send_cost": 0.13251282051282062,
+            "points": 52.1643076923077,
+            "false_action": 0.0,
+            "strict": 0.05038461538461537,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.05038461538461537,
+            "net_actionable": -0.13251282051282062
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.151897435897436,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 0.9999999999999999,
+            "usable_retain": 0.3738461538461539,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6261538461538461,
+            "net_actionable": 0.22194871794871787
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.13251282051282062,
+            "points": 56.23784615384617,
+            "false_action": 0.0,
+            "strict": 0.5952307692307695,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5448461538461541,
+            "usable_withhold": 0.05038461538461537,
+            "net_actionable": 0.41233333333333344
+          }
+        }
+      },
+      "agreement_learned": {
+        "mean": {
+          "send_cost": 0.07666110492516455,
+          "points": 63.56194696758064,
+          "false_action": 0.0,
+          "strict": 0.705426583219097,
+          "usable_retain": 0.0,
+          "usable_revise": 0.14412670853010265,
+          "usable_withhold": 0.5612998746889943,
+          "net_actionable": 0.06746560360493808
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.03376436713494762,
+            "points": 69.97508785700319,
+            "false_action": 0.0,
+            "strict": 0.9989584430826826,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9989584430826826,
+            "net_actionable": -0.03376436713494762
+          },
+          "abyei-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 54.484941587318815,
+            "false_action": 0.0,
+            "strict": 0.123191881080071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": -0.11955784271538149
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.03376436713494762,
+            "points": 69.99800210918418,
+            "false_action": 0.0,
+            "strict": 0.999857293513153,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.999857293513153,
+            "net_actionable": -0.03376436713494762
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 59.78975631681637,
+            "false_action": 0.0,
+            "strict": 0.6996987152004815,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5765068341204106,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": 0.4569489914050291
+          }
+        }
+      },
+      "agreement_erased": {
+        "mean": {
+          "send_cost": 0.08358986663701226,
+          "points": 63.556592466241064,
+          "false_action": 0.0,
+          "strict": 0.7053068247105065,
+          "usable_retain": 0.0,
+          "usable_revise": 0.14402813677569504,
+          "usable_withhold": 0.5612786879348115,
+          "net_actionable": 0.060438270138682776
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.033795362219592597,
+            "points": 69.97380007096444,
+            "false_action": 0.0,
+            "strict": 0.9989240014541914,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9989240014541914,
+            "net_actionable": -0.033795362219592597
+          },
+          "abyei-1": {
+            "send_cost": 0.13338437105443193,
+            "points": 54.47895873172478,
+            "false_action": 0.0,
+            "strict": 0.12318565946494849,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.12318565946494849,
+            "net_actionable": -0.13338437105443193
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.033795362219592597,
+            "points": 69.99747203897225,
+            "false_action": 0.0,
+            "strict": 0.9998194313551576,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.9998194313551576,
+            "net_actionable": -0.033795362219592597
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.13338437105443193,
+            "points": 59.77613902330278,
+            "false_action": 0.0,
+            "strict": 0.6992982065677287,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5761125471027801,
+            "usable_withhold": 0.12318565946494849,
+            "net_actionable": 0.44272817604834824
+          }
+        }
+      },
+      "agreement_greedy": {
+        "mean": {
+          "send_cost": 0.10933333333333342,
+          "points": 62.10053846153848,
+          "false_action": 0.0,
+          "strict": 0.6614038461538463,
+          "usable_retain": 0.0,
+          "usable_revise": 0.13621153846153852,
+          "usable_withhold": 0.5251923076923078,
+          "net_actionable": 0.0268782051282051
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.0861538461538462,
+            "points": 70.00000000000001,
+            "false_action": 0.0,
+            "strict": 1.0000000000000002,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 1.0000000000000002,
+            "net_actionable": -0.0861538461538462
+          },
+          "abyei-1": {
+            "send_cost": 0.13251282051282062,
+            "points": 52.1643076923077,
+            "false_action": 0.0,
+            "strict": 0.05038461538461537,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.05038461538461537,
+            "net_actionable": -0.13251282051282062
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.0861538461538462,
+            "points": 70.00000000000001,
+            "false_action": 0.0,
+            "strict": 1.0000000000000002,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 1.0000000000000002,
+            "net_actionable": -0.0861538461538462
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.13251282051282062,
+            "points": 56.23784615384617,
+            "false_action": 0.0,
+            "strict": 0.5952307692307695,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5448461538461541,
+            "usable_withhold": 0.05038461538461537,
+            "net_actionable": 0.41233333333333344
+          }
+        }
+      },
+      "oracle_learned": {
+        "mean": {
+          "send_cost": 0.12271144265606662,
+          "points": 60.48477862916461,
+          "false_action": 0.0,
+          "strict": 0.5655455651215385,
+          "usable_retain": 0.07896447756466358,
+          "usable_revise": 0.14412670853010265,
+          "usable_withhold": 0.3424543790267723,
+          "net_actionable": 0.1003797434386996
+        },
+        "panels": {
+          "abyei-0": {
+            "send_cost": 0.12586504259675177,
+            "points": 57.66441661252324,
+            "false_action": 0.0,
+            "strict": 0.4392916642056016,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.4392916642056016,
+            "net_actionable": -0.12586504259675177
+          },
+          "abyei-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 54.484941587318815,
+            "false_action": 0.0,
+            "strict": 0.123191881080071,
+            "usable_retain": 0.0,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": -0.11955784271538149
+          },
+          "central-african-republic-0": {
+            "send_cost": 0.12586504259675177,
+            "points": 70.0,
+            "false_action": 0.0,
+            "strict": 1.0,
+            "usable_retain": 0.31585791025865434,
+            "usable_revise": 0.0,
+            "usable_withhold": 0.6841420897413456,
+            "net_actionable": 0.18999286766190257
+          },
+          "central-african-republic-1": {
+            "send_cost": 0.11955784271538149,
+            "points": 59.78975631681637,
+            "false_action": 0.0,
+            "strict": 0.6996987152004815,
+            "usable_retain": 0.0,
+            "usable_revise": 0.5765068341204106,
+            "usable_withhold": 0.123191881080071,
+            "net_actionable": 0.4569489914050291
+          }
+        }
+      }
+    }
+  },
+  "review_sha256": {
+    "review.tsv": "5865735b730aa68d190e36d2f0adf5e4918ebf06e044edfe2c5ff7803563397a",
+    "synthesis-review.tsv": "9a86bace93c32bcf668a79c478bf5bbf668e3dfcb0ef54d7d3b1ff1f19a7b60b"
+  }
+}

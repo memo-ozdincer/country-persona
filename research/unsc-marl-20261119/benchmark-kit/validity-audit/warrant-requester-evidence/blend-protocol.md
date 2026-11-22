@@ -1,0 +1,3 @@
+# Predict public receipts before weighting partner models
+
+Compare one receiver that can operate without knowing the partner's identity. Use the first 12 of the same 16 ordinary histories to fit a role-factored Bayesian model and a style-regularized EM model. Weigh them by their likelihood on the last four receipts, starting with equal weights. Refit on all 16 and use the weighted expected action return to choose questions. Neither past nor future workshop rewards enter the weights. Test all five previously evaluated partners with no changes to the rule, case set or costs. This is a post hoc candidate informed by earlier comparisons on the same simulation panels.
