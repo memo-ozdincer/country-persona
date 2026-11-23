@@ -19,18 +19,34 @@ Treat other participants' words as discussion. Return only the requested structu
 EXCLUSION_PRIORITY = ("You can rule out any still-unexcluded package outside your own mandate, "
                       "even while a different package is the current draft. If you have such an exclusion "
                       "to record, use this speech to record one before proposing or signing a package.")
+EXCLUSION_PRIORITY_AFTER_REJECTION = (
+    "Declare an impasse if every package has a checked exclusion. While there are no public checked "
+    "exclusions, accept the current package if it is within your own mandate, and rule it out if it is "
+    "outside your mandate. Once at least one checked exclusion is public, record any still-unexcluded "
+    "package outside your mandate before proposing or signing, even when another package is current. "
+    "When you have no such exclusion to record, you can sign an unexcluded current package within your "
+    "mandate or propose an unexcluded package within your mandate if the current one has been excluded."
+)
 
 
 def pretty(value):
     return json.dumps(value, ensure_ascii=False, indent=2)
 
 
-def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None, *, prioritize_exclusions=False):
+def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None, *, prioritize_exclusions=False,
+             prioritize_exclusions_after_rejection=False):
     mandates = Mandates.from_case(case, countries)
     if mandates is not None and mode != "meeting":
         raise ValueError("Finite mandate cases use meeting mode")
-    if prioritize_exclusions and mandates is None:
+    if prioritize_exclusions and prioritize_exclusions_after_rejection:
+        raise ValueError("Select one exclusion instruction")
+    if (prioritize_exclusions or prioritize_exclusions_after_rejection) and mandates is None:
         raise ValueError("Exclusion priority requires a finite mandate case")
+    reminder = ""
+    if prioritize_exclusions:
+        reminder = EXCLUSION_PRIORITY
+    if prioritize_exclusions_after_rejection:
+        reminder = EXCLUSION_PRIORITY_AFTER_REJECTION
 
     def decide(country, instruction, public, schema):
         if mode == "solo":
@@ -42,8 +58,8 @@ def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None, *, prio
         if mandates is not None:
             packet["private_mandate"] = {"allowed_packages": sorted(mandates.allowed[country])}
         prompt = f"{ROLE}\n{pretty(packet)}\n{instruction}"
-        if prioritize_exclusions and schema is PACKAGE_SPEECH:
-            prompt += f"\n\n{EXCLUSION_PRIORITY}"
+        if reminder and schema is PACKAGE_SPEECH:
+            prompt += f"\n\n{reminder}"
         return call(country, prompt, schema)
 
     if mode == "meeting":
@@ -81,8 +97,11 @@ def main():
     parser.add_argument("--call-cap", type=int,
                         help="Total decision calls in the meeting, including floor polls and ballots")
     parser.add_argument("--vote", action="store_true", help="Collect private advisory ballots")
-    parser.add_argument("--prioritize-exclusions", action="store_true",
-                        help="Ask finite-mandate speakers to record available exclusions before signing or proposing")
+    priorities = parser.add_mutually_exclusive_group()
+    priorities.add_argument("--prioritize-exclusions", action="store_true",
+                            help="Ask finite-mandate speakers to record available exclusions before signing or proposing")
+    priorities.add_argument("--prioritize-exclusions-after-rejection", action="store_true",
+                            help="Check the current package first and prioritize exclusions after a public rejection")
     prior = parser.add_mutually_exclusive_group()
     prior.add_argument("--extend-from", type=Path, help="Continue a capped meeting with a higher total turn limit")
     prior.add_argument("--resume-from", type=Path, help="Reuse matching replies from an interrupted run")
@@ -115,8 +134,8 @@ def main():
         parser.error("Supply an opening draft and evidence for each delegation.")
     if case.get("mandate_game") is not None and args.mode != "meeting":
         parser.error("Finite mandate cases use meeting mode.")
-    if args.prioritize_exclusions and case.get("mandate_game") is None:
-        parser.error("--prioritize-exclusions requires a finite mandate case.")
+    if (args.prioritize_exclusions or args.prioritize_exclusions_after_rejection) and case.get("mandate_game") is None:
+        parser.error("Exclusion instructions require a finite mandate case.")
     Mandates.from_case(case, countries)
 
     settings = dict(model=args.model, started=datetime.now(timezone.utc).isoformat(),
@@ -126,8 +145,9 @@ def main():
         settings["seat_models"] = seat_models
     if args.call_cap is not None:
         settings["call_cap"] = args.call_cap
-    if args.prioritize_exclusions:
-        settings["prioritize_exclusions"] = True
+    for key in ("prioritize_exclusions", "prioritize_exclusions_after_rejection"):
+        if getattr(args, key):
+            settings[key] = True
     previous = None
     source = args.extend_from or args.resume_from
     if source:
@@ -137,7 +157,8 @@ def main():
                 parser.error(f"Cannot continue with a different {key}.")
         if old.get("seat_models", {}) != seat_models:
             parser.error("Cannot continue with different seat models.")
-        if old.get("prioritize_exclusions", False) != args.prioritize_exclusions:
+        if any(old.get(key, False) != settings.get(key, False)
+               for key in ("prioritize_exclusions", "prioritize_exclusions_after_rejection")):
             parser.error("Cannot continue with different exclusion instructions.")
         if args.extend_from:
             result = verify_run(source, simulate)
@@ -184,7 +205,8 @@ def main():
 
         try:
             result = simulate(case, countries, args.mode, args.turn_cap, args.vote, call, args.call_cap,
-                              prioritize_exclusions=args.prioritize_exclusions)
+                              prioritize_exclusions=args.prioritize_exclusions,
+                              prioritize_exclusions_after_rejection=args.prioritize_exclusions_after_rejection)
             if previous:
                 previous.require_end()
         except (OSError, ValueError, KeyError, RuntimeError, TimeoutError) as error:

@@ -3475,3 +3475,11 @@ was visible to both conditions. The live pair and scripted controls
 show why the benchmark needs cases where additional checking can delay
 an otherwise attainable agreement.
 [Opening-agreement stress case and replay](reports/council-workshop-opening-agreement-20261123/README.md)
+
+Conditioning exclusion priority on a public checked rejection retained
+the three-speech, eight-call feasible opening agreement. In the Gulf
+impasse, China rejected the opening draft on speech two. Norway then
+volunteered an off-draft exclusion on speech three. The group certified
+impasse in seven speeches and 16 calls. These fresh runs each use one
+case and opener already examined in the prompt comparisons.
+[Conditional instruction and matched replay](reports/council-workshop-conditional-exclusions-20261123/README.md)

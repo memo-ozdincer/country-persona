@@ -17,7 +17,7 @@ from mandates import Mandates
 from meeting import BALLOT, FLOOR, PACKAGE_SPEECH, SPEECH, Meeting, run_meeting
 from replay import replay
 from review import packet as review_packet, report as review_report
-from run import EXCLUSION_PRIORITY, HERE, main, simulate
+from run import EXCLUSION_PRIORITY, EXCLUSION_PRIORITY_AFTER_REJECTION, HERE, main, simulate
 
 
 CASE = json.loads((HERE / "climate.json").read_text())
@@ -261,25 +261,27 @@ class MandateWorkshopTests(unittest.TestCase):
             case.write_text(json.dumps(case_for("guinea", "impasse")))
 
             def decide(prompt, schema):
-                self.assertEqual(prompt.endswith(EXCLUSION_PRIORITY), schema is PACKAGE_SPEECH)
+                self.assertEqual(prompt.endswith(reminder), schema is PACKAGE_SPEECH)
                 packet, _ = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])
                 return checked_exchange(packet["role"], prompt, schema)
 
             provider.return_value.executable = "/test/codex"
             provider.return_value.side_effect = decide
-            out = root / "priority"
             base = ["run.py", "--case", str(case), "--countries", "GHA", "CHN", "NOR", "--model", SOL,
                     "--turn-cap", "10", "--call-cap", "30"]
-            with patch("sys.argv", base + ["--out", str(out), "--prioritize-exclusions"]):
-                main()
-            self.assertEqual(replay(out)["status"], "certified_impasse")
-            with self.assertRaisesRegex(ValueError, "outside the registered model-assignment cells"):
-                score([out])
-            with patch("sys.argv", base + ["--out", str(root / "resume"), "--resume-from", str(out)]), \
-                    patch("argparse.ArgumentParser.error", side_effect=ValueError) as error:
-                with self.assertRaises(ValueError):
+            for flag, reminder in (("--prioritize-exclusions", EXCLUSION_PRIORITY),
+                                   ("--prioritize-exclusions-after-rejection", EXCLUSION_PRIORITY_AFTER_REJECTION)):
+                out = root / flag.removeprefix("--")
+                with patch("sys.argv", base + ["--out", str(out), flag]):
                     main()
-            error.assert_called_once_with("Cannot continue with different exclusion instructions.")
+                self.assertEqual(replay(out)["status"], "certified_impasse")
+                with self.assertRaisesRegex(ValueError, "outside the registered model-assignment cells"):
+                    score([out])
+                with patch("sys.argv", base + ["--out", str(root / "resume"), "--resume-from", str(out)]), \
+                        patch("argparse.ArgumentParser.error", side_effect=ValueError) as error:
+                    with self.assertRaises(ValueError):
+                        main()
+                error.assert_called_once_with("Cannot continue with different exclusion instructions.")
 
     def test_suite_replays_and_distinguishes_two_aborted_cells(self):
         with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:

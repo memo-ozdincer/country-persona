@@ -183,6 +183,11 @@ In the [opening-agreement stress case](../../reports/council-workshop-opening-ag
 the five-speech deadline left time for three opening signatures. The
 priority run recorded three exclusions first and stopped one signature
 short. The scripted controls reproduced the difference.
+The [conditional instruction](../../reports/council-workshop-conditional-exclusions-20261123/README.md)
+uses the current draft until a checked rejection is public. Start it
+with `--prioritize-exclusions-after-rejection`. On the two cases that
+informed the instruction, it matched the standard prompt's three-speech
+opening agreement and certified the Gulf impasse in seven speeches.
 
 Run the offline checks from the repo root:
 
