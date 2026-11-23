@@ -141,6 +141,8 @@ def score(directories, trace=False):
         family, world, data, order = identify(settings)
         if settings.get("prioritize_exclusions") or settings.get("prioritize_exclusions_after_rejection"):
             raise ValueError(f"Prompt intervention is outside the registered model-assignment cells in {directory}")
+        if settings.get("auto_certify_impasse"):
+            raise ValueError(f"Automatic certification is outside the registered model-assignment cells in {directory}")
         if (settings["mode"], settings["vote"], settings["turn_cap"], settings.get("call_cap")) != (
                 "meeting", False, data["turn_cap"], data["call_cap"]):
             raise ValueError(f"Unregistered meeting budgets or mode in {directory}")

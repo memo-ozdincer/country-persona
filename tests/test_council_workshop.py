@@ -254,6 +254,33 @@ class ClauseReviewTests(unittest.TestCase):
 
 
 class MandateWorkshopTests(unittest.TestCase):
+    def test_moderator_certificate_replays_without_an_extra_speech(self):
+        with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
+            root = Path(temp)
+            case = root / "case.json"
+            case.write_text(json.dumps(case_for("guinea", "impasse")))
+
+            def decide(prompt, schema):
+                view, _ = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])
+                return checked_exchange(view["role"], prompt, schema)
+
+            provider.return_value.executable = "/test/codex"
+            provider.return_value.side_effect = decide
+            base = ["run.py", "--case", str(case), "--countries", "GHA", "CHN", "NOR", "--model", SOL,
+                    "--turn-cap", "10", "--call-cap", "30"]
+            standard, automatic = root / "standard", root / "automatic"
+            for path, flags in ((standard, []), (automatic, ["--auto-certify-impasse"])):
+                with patch("sys.argv", base + ["--out", str(path)] + flags):
+                    main()
+            original, moderator = replay(standard), replay(automatic)
+            self.assertEqual(moderator["mandate_score"], original["mandate_score"])
+            self.assertEqual(moderator["history"], original["history"][:-1])
+            self.assertEqual(moderator["history"][-1]["action"], "rule_out")
+            self.assertEqual(moderator["certificate_source"], "moderator")
+            self.assertLess(moderator["calls"], original["calls"])
+            with self.assertRaisesRegex(ValueError, "Automatic certification is outside"):
+                score([automatic])
+
     def test_prompt_priority_replays_without_altering_floor_prompts_or_registered_scores(self):
         with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
             root = Path(temp)

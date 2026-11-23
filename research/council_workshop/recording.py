@@ -44,7 +44,8 @@ def decision_request(settings, country, prompt, schema):
 
 
 def simulation_options(settings):
-    return {key: settings[key] for key in ("call_cap", "prioritize_exclusions", "prioritize_exclusions_after_rejection")
+    return {key: settings[key] for key in ("call_cap", "prioritize_exclusions", "prioritize_exclusions_after_rejection",
+                                           "auto_certify_impasse")
             if key in settings}
 
 

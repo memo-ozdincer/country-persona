@@ -8,7 +8,7 @@ import sys
 from codex_runner import CodexRunner, MODELS
 from mandates import Mandates
 from meeting import BALLOT, DRAFT, PACKAGE_SPEECH, run_meeting
-from recording import Recording, decision_request, verify_run
+from recording import Recording, decision_request, simulation_options, verify_run
 
 
 HERE = Path(__file__).resolve().parent
@@ -34,7 +34,7 @@ def pretty(value):
 
 
 def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None, *, prioritize_exclusions=False,
-             prioritize_exclusions_after_rejection=False):
+             prioritize_exclusions_after_rejection=False, auto_certify_impasse=False):
     mandates = Mandates.from_case(case, countries)
     if mandates is not None and mode != "meeting":
         raise ValueError("Finite mandate cases use meeting mode")
@@ -42,6 +42,8 @@ def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None, *, prio
         raise ValueError("Select one exclusion instruction")
     if (prioritize_exclusions or prioritize_exclusions_after_rejection) and mandates is None:
         raise ValueError("Exclusion priority requires a finite mandate case")
+    if auto_certify_impasse and mandates is None:
+        raise ValueError("Automatic certification requires a finite mandate case")
     reminder = ""
     if prioritize_exclusions:
         reminder = EXCLUSION_PRIORITY
@@ -63,7 +65,8 @@ def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None, *, prio
         return call(country, prompt, schema)
 
     if mode == "meeting":
-        return run_meeting(case, countries, turn_cap, decide, vote, call_cap)
+        return run_meeting(case, countries, turn_cap, decide, vote, call_cap,
+                           auto_certify_impasse=auto_certify_impasse)
     public = {"draft": case["draft"], "version": 1}
     if mode == "solo":
         actors = ["analyst"]
@@ -97,6 +100,8 @@ def main():
     parser.add_argument("--call-cap", type=int,
                         help="Total decision calls in the meeting, including floor polls and ballots")
     parser.add_argument("--vote", action="store_true", help="Collect private advisory ballots")
+    parser.add_argument("--auto-certify-impasse", action="store_true",
+                        help="Let the facilitator close a finite case as soon as all exclusions are on record")
     priorities = parser.add_mutually_exclusive_group()
     priorities.add_argument("--prioritize-exclusions", action="store_true",
                             help="Ask finite-mandate speakers to record available exclusions before signing or proposing")
@@ -136,6 +141,8 @@ def main():
         parser.error("Finite mandate cases use meeting mode.")
     if (args.prioritize_exclusions or args.prioritize_exclusions_after_rejection) and case.get("mandate_game") is None:
         parser.error("Exclusion instructions require a finite mandate case.")
+    if args.auto_certify_impasse and case.get("mandate_game") is None:
+        parser.error("Automatic certification requires a finite mandate case.")
     Mandates.from_case(case, countries)
 
     settings = dict(model=args.model, started=datetime.now(timezone.utc).isoformat(),
@@ -145,7 +152,7 @@ def main():
         settings["seat_models"] = seat_models
     if args.call_cap is not None:
         settings["call_cap"] = args.call_cap
-    for key in ("prioritize_exclusions", "prioritize_exclusions_after_rejection"):
+    for key in ("prioritize_exclusions", "prioritize_exclusions_after_rejection", "auto_certify_impasse"):
         if getattr(args, key):
             settings[key] = True
     previous = None
@@ -160,6 +167,8 @@ def main():
         if any(old.get(key, False) != settings.get(key, False)
                for key in ("prioritize_exclusions", "prioritize_exclusions_after_rejection")):
             parser.error("Cannot continue with different exclusion instructions.")
+        if old.get("auto_certify_impasse", False) != args.auto_certify_impasse:
+            parser.error("Cannot continue with different automatic certification settings.")
         if args.extend_from:
             result = verify_run(source, simulate)
             previous_limits = {"turn_cap": old["turn_cap"], "call_cap": old.get("call_cap")}
@@ -204,9 +213,7 @@ def main():
             return answer
 
         try:
-            result = simulate(case, countries, args.mode, args.turn_cap, args.vote, call, args.call_cap,
-                              prioritize_exclusions=args.prioritize_exclusions,
-                              prioritize_exclusions_after_rejection=args.prioritize_exclusions_after_rejection)
+            result = simulate(case, countries, args.mode, args.turn_cap, args.vote, call, **simulation_options(settings))
             if previous:
                 previous.require_end()
         except (OSError, ValueError, KeyError, RuntimeError, TimeoutError) as error:

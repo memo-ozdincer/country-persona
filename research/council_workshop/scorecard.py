@@ -38,6 +38,20 @@ def caps(settings):
     return {"turn_cap": settings["turn_cap"], "call_cap": settings.get("call_cap")}
 
 
+def registered_paths():
+    held = report("held-pilot")
+    paths = [held / name for name in (
+        "all-sol", "feasible-all-sol", "sol-with-astra-norway", "feasible-sol-with-astra-norway",
+    )]
+    paths.extend(report("iraq-pilot") / name for name in ("all-sol", "sol-with-astra-uae-resumed"))
+    paths.append(report("exclusion-policy") / "iraq-feasible-standard")
+    paths.extend(report("norway-opening") / name for name in ("all-sol", "sol-with-astra-norway-resumed"))
+    paths.extend(report("all-sol-matrix") / name for name in (
+        "guinea-norway-feasible", "iraq-uae-impasse", "iraq-uae-feasible",
+    ))
+    return paths
+
+
 def build():
     clauses = {}
     for name in ("astra", "sol"):
@@ -65,17 +79,7 @@ def build():
     climate_caps = {case: caps(json.loads((climate / directory / "settings.json").read_text()))
                     for case, directory in (("feasible", "feasible"), ("impasse", "impasse"),
                                             ("feasible_continuations", "feasible-extended"))}
-    held = report("held-pilot")
-    registered_runs = [held / name for name in (
-        "all-sol", "feasible-all-sol", "sol-with-astra-norway", "feasible-sol-with-astra-norway",
-    )]
-    registered_runs.extend(report("iraq-pilot") / name for name in ("all-sol", "sol-with-astra-uae-resumed"))
-    registered_runs.append(report("exclusion-policy") / "iraq-feasible-standard")
-    registered_runs.extend(report("norway-opening") / name for name in ("all-sol", "sol-with-astra-norway-resumed"))
-    registered_runs.extend(report("all-sol-matrix") / name for name in (
-        "guinea-norway-feasible", "iraq-uae-impasse", "iraq-uae-feasible",
-    ))
-    registered = score(registered_runs)
+    registered = score(registered_paths())
     registered["caps_by_family"] = {name: caps(family) for name, family in FAMILIES.items()}
     scripted = audit()
     if scripted != json.loads((HERE / "held-control-audit.json").read_text()):
@@ -88,6 +92,8 @@ def build():
                        }}
     matrix = report("all-sol-matrix")
     extra_call = verified_json(matrix / "continuation.json", matrix / "verify-continuation.py")
+    moderator = report("moderator-certificate")
+    stops = verified_json(moderator / "results.json", moderator / "replay-stop.py")
 
     experiments = (("iraq", "exclusion-policy", "readout"), ("gulf", "exclusion-transfer", "transfer"),
                    ("conditional", "conditional-exclusions", "readout"),
@@ -124,6 +130,11 @@ def build():
         "registered_all_sol_impasse_continuation": {
             "original": endpoint(extra_call["original"]), "continuation": endpoint(extra_call["continuation"]),
             "reused_calls": extra_call["reused_calls"], "extra_call": extra_call["extra_call"],
+        },
+        "moderator_certificate_replay": {
+            "meetings": len(stops["meetings"]), "new_successes": stops["new_successes"],
+            "total_calls_saved": stops["total_calls_saved"],
+            "certificates_by_moderator": sum(row["automatic_certificate"] for row in stops["meetings"]),
         },
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},
         "matched_prompt_comparisons": prompts,

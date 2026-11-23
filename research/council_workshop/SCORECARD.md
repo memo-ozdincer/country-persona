@@ -59,6 +59,12 @@ with one additional call and is excluded from registered coverage.
 [Iraq comparison and interruption traces](../../reports/council-workshop-iraq-pilot-20261123/README.md) ·
 [Completed all-Sol slice](../../reports/council-workshop-all-sol-matrix-20261123/README.md)
 
+Automatic moderator certification on the same archived decisions
+recovers the UAE-opening Iraq impasse and closes the Norway-opening
+Gulf impasse earlier. It saves four calls across the eight traces. This
+is a replay of a different termination rule, separate from the standard
+coverage table. [Moderator replay](../../reports/council-workshop-moderator-certificate-20261123/README.md)
+
 ## Prompt and budget controls
 
 | Case | Standard | Exclusions first | Exclusions after a checked rejection |

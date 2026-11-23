@@ -178,6 +178,10 @@ covers both openers in both families. All four feasible cells agreed,
 and one impasse was certified within the registered limits. The
 UAE-opening Iraq impasse obtained its certificate in a separate
 continuation with one extra call.
+The [moderator certification replay](../../reports/council-workshop-moderator-certificate-20261123/README.md)
+closes the case when every package has a checked exclusion. Opt in with
+`--auto-certify-impasse` in finite-mandate meetings. It records a moderator
+certificate and is scored separately from the standard prompt matrix.
 The [prompt comparison](../../reports/council-workshop-exclusion-prompt-20261123/README.md)
 finds that explicitly prioritizing an available exclusion changed the
 action at France’s last turn. A live continuation with the other seats

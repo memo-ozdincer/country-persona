@@ -86,7 +86,7 @@ class Meeting:
                                  resulting_version=self.version, text=text))
 
 
-def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap=None):
+def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap=None, *, auto_certify_impasse=False):
     """decide(country, instruction, public_state, schema) returns a structured action."""
     ballot_count = len(countries) if collect_votes else 0
     discussion_cap = call_cap - ballot_count if call_cap is not None else None
@@ -101,6 +101,8 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap
         return decide(country, instruction, public, schema)
 
     mandates = Mandates.from_case(case, countries)
+    if auto_certify_impasse and mandates is None:
+        raise ValueError("Automatic certification requires a finite mandate case")
     meeting = Meeting(countries, case["draft"], mandates=mandates)
     instruction, schema = (SPEAK_INSTRUCTION, SPEECH) if mandates is None else (
         PACKAGE_INSTRUCTION, PACKAGE_SPEECH)
@@ -108,6 +110,9 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap
     for turn in range(1, turn_cap + 1):
         action = ask(speaker, instruction, meeting.view(), schema)
         meeting.apply(speaker, action)
+        if (auto_certify_impasse and action["action"] == "rule_out"
+                and meeting.exclusions.keys() == mandates.options.keys()):
+            meeting.status = "certified_impasse"
         if meeting.status != "open":
             break
         if turn == turn_cap:
@@ -151,6 +156,8 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap
         result["calls"] = calls
     if mandates is not None:
         result["mandate_score"] = mandates.score(meeting.status, meeting.draft)
+    if meeting.status == "certified_impasse" and meeting.history[-1]["action"] == "rule_out":
+        result["certificate_source"] = "moderator"
     return result
 
 

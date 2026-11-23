@@ -3533,3 +3533,12 @@ UAE-opening Iraq run recorded all four exclusions but spent its last
 call on the floor poll. One call on the exact archived prefix let Brazil
 certify at speech 16. The original cell remains unresolved in the
 registered score. [Completed all-Sol slice and continuation](reports/council-workshop-all-sol-matrix-20261123/README.md)
+
+Replaying the eight all-Sol prefixes with automatic moderator
+certification lets the UAE-opening Iraq run close after the final
+verified exclusion at 53 calls. It also saves two calls in the
+Norway-opening Gulf impasse. The other six traces are unchanged. The
+registered matrix keeps delegate declaration as its closing rule, and
+the moderator replay shows how much the terminal procedure changes the
+score without any new model replies.
+[Moderator rule and replay results](reports/council-workshop-moderator-certificate-20261123/README.md)
