@@ -179,6 +179,10 @@ uses the same instruction in a three-seat workshop. It produced a
 certified impasse where the archived standard run remained unresolved.
 In the feasible twin, both runs agreed, with one additional speech and
 call in the priority run.
+In the [opening-agreement stress case](../../reports/council-workshop-opening-agreement-20261123/README.md),
+the five-speech deadline left time for three opening signatures. The
+priority run recorded three exclusions first and stopped one signature
+short. The scripted controls reproduced the difference.
 
 Run the offline checks from the repo root:
 

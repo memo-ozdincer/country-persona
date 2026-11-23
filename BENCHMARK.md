@@ -3465,3 +3465,13 @@ feasible twin reached the same agreement with each prompt, taking one
 additional speech and call under priority. The comparison covers one
 trajectory per condition with Ghana opening.
 [Gulf of Guinea transfer traces and replay](reports/council-workshop-exclusion-transfer-20261123/README.md)
+
+When the opening draft already satisfied all three mandates, the
+standard prompt secured three signatures in three speeches. The
+priority prompt first spent three speeches ruling out other packages,
+then ran out of time with two signatures. Strictly following priority
+requires at least six speeches on this case. The deadline was five and
+was visible to both conditions. The live pair and scripted controls
+show why the benchmark needs cases where additional checking can delay
+an otherwise attainable agreement.
+[Opening-agreement stress case and replay](reports/council-workshop-opening-agreement-20261123/README.md)
