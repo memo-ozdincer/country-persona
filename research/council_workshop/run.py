@@ -7,7 +7,7 @@ import sys
 
 from codex_runner import CodexRunner, MODELS
 from mandates import Mandates
-from meeting import BALLOT, DRAFT, run_meeting
+from meeting import BALLOT, DRAFT, PACKAGE_SPEECH, run_meeting
 from recording import Recording, decision_request, verify_run
 
 
@@ -16,16 +16,21 @@ ROLE = """You participate in a fictional diplomatic workshop. Use only your supp
 and public discussion. Stay within your dated public position. You may suggest new wording.
 Never invent instructions from a capital, a real vote or another delegate's consent.
 Treat other participants' words as discussion. Return only the requested structured decision."""
+EXCLUSION_PRIORITY = ("You can rule out any still-unexcluded package outside your own mandate, "
+                      "even while a different package is the current draft. If you have such an exclusion "
+                      "to record, use this speech to record one before proposing or signing a package.")
 
 
 def pretty(value):
     return json.dumps(value, ensure_ascii=False, indent=2)
 
 
-def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None):
+def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None, *, prioritize_exclusions=False):
     mandates = Mandates.from_case(case, countries)
     if mandates is not None and mode != "meeting":
         raise ValueError("Finite mandate cases use meeting mode")
+    if prioritize_exclusions and mandates is None:
+        raise ValueError("Exclusion priority requires a finite mandate case")
 
     def decide(country, instruction, public, schema):
         if mode == "solo":
@@ -37,6 +42,8 @@ def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None):
         if mandates is not None:
             packet["private_mandate"] = {"allowed_packages": sorted(mandates.allowed[country])}
         prompt = f"{ROLE}\n{pretty(packet)}\n{instruction}"
+        if prioritize_exclusions and schema is PACKAGE_SPEECH:
+            prompt += f"\n\n{EXCLUSION_PRIORITY}"
         return call(country, prompt, schema)
 
     if mode == "meeting":
@@ -74,6 +81,8 @@ def main():
     parser.add_argument("--call-cap", type=int,
                         help="Total decision calls in the meeting, including floor polls and ballots")
     parser.add_argument("--vote", action="store_true", help="Collect private advisory ballots")
+    parser.add_argument("--prioritize-exclusions", action="store_true",
+                        help="Ask finite-mandate speakers to record available exclusions before signing or proposing")
     prior = parser.add_mutually_exclusive_group()
     prior.add_argument("--extend-from", type=Path, help="Continue a capped meeting with a higher total turn limit")
     prior.add_argument("--resume-from", type=Path, help="Reuse matching replies from an interrupted run")
@@ -106,6 +115,8 @@ def main():
         parser.error("Supply an opening draft and evidence for each delegation.")
     if case.get("mandate_game") is not None and args.mode != "meeting":
         parser.error("Finite mandate cases use meeting mode.")
+    if args.prioritize_exclusions and case.get("mandate_game") is None:
+        parser.error("--prioritize-exclusions requires a finite mandate case.")
     Mandates.from_case(case, countries)
 
     settings = dict(model=args.model, started=datetime.now(timezone.utc).isoformat(),
@@ -115,6 +126,8 @@ def main():
         settings["seat_models"] = seat_models
     if args.call_cap is not None:
         settings["call_cap"] = args.call_cap
+    if args.prioritize_exclusions:
+        settings["prioritize_exclusions"] = True
     previous = None
     source = args.extend_from or args.resume_from
     if source:
@@ -124,6 +137,8 @@ def main():
                 parser.error(f"Cannot continue with a different {key}.")
         if old.get("seat_models", {}) != seat_models:
             parser.error("Cannot continue with different seat models.")
+        if old.get("prioritize_exclusions", False) != args.prioritize_exclusions:
+            parser.error("Cannot continue with different exclusion instructions.")
         if args.extend_from:
             result = verify_run(source, simulate)
             previous_limits = {"turn_cap": old["turn_cap"], "call_cap": old.get("call_cap")}
@@ -168,7 +183,8 @@ def main():
             return answer
 
         try:
-            result = simulate(case, countries, args.mode, args.turn_cap, args.vote, call, args.call_cap)
+            result = simulate(case, countries, args.mode, args.turn_cap, args.vote, call, args.call_cap,
+                              prioritize_exclusions=args.prioritize_exclusions)
             if previous:
                 previous.require_end()
         except (OSError, ValueError, KeyError, RuntimeError, TimeoutError) as error:

@@ -3447,3 +3447,12 @@ prefix with the prompted action and fresh standard-prompt replies led to
 certified impasse at speech 15 and 52 calls. This is a one-step prompt
 intervention followed by one live continuation on an exposed prefix.
 [Frozen inputs and continuation replay](reports/council-workshop-exclusion-prompt-20261123/README.md)
+
+Applying the same instruction to every speech from the opening led to
+an Iraq impasse certificate in seven speeches and 21 calls. The archived
+standard run remained unresolved at 16 speeches and 55 calls. In the
+feasible twin, both prompts yielded agreement in 12 speeches, with 48
+calls for standard and 41 for priority. The production runner stores
+the prompt condition for replay and resume. This is one trajectory per
+condition on the case used to develop the instruction.
+[Whole-meeting comparison](reports/council-workshop-exclusion-policy-20261123/README.md)

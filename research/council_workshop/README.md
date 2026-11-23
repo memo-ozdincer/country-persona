@@ -169,6 +169,11 @@ The [prompt comparison](../../reports/council-workshop-exclusion-prompt-20261123
 finds that explicitly prioritizing an available exclusion changed the
 action at France’s last turn. A live continuation with the other seats
 on the original instructions certified the impasse within the cap.
+Use `run.py --prioritize-exclusions` on a finite-mandate meeting to append
+that instruction to each speaking prompt. These runs save the setting for
+replay and resume. The registered model-assignment score uses standard
+prompts. The [whole-meeting report](../../reports/council-workshop-exclusion-policy-20261123/README.md)
+compares the two instructions in the Iraq workshop.
 
 Run the offline checks from the repo root:
 

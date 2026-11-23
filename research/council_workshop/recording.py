@@ -43,6 +43,10 @@ def decision_request(settings, country, prompt, schema):
     return request
 
 
+def simulation_options(settings):
+    return {key: settings[key] for key in ("call_cap", "prioritize_exclusions") if key in settings}
+
+
 def verify_run(directory, simulate):
     settings = json.loads((directory / "settings.json").read_text())
     recorded = Recording(directory)
@@ -54,9 +58,8 @@ def verify_run(directory, simulate):
             raise ValueError(f"Missing response for {country}")
         return answer
 
-    limits = {"call_cap": settings["call_cap"]} if "call_cap" in settings else {}
     result = simulate(settings["case"], settings["countries"], settings["mode"],
-                      settings["turn_cap"], settings["vote"], call, **limits)
+                      settings["turn_cap"], settings["vote"], call, **simulation_options(settings))
     recorded.require_end()
     if result != json.loads((directory / "result.json").read_text()):
         raise ValueError("Replayed outcome differs from saved result")
@@ -89,7 +92,7 @@ def verify_aborted_run(directory, settings, simulate):
 
     try:
         simulate(settings["case"], settings["countries"], settings["mode"],
-                 settings["turn_cap"], settings["vote"], call, call_cap=settings.get("call_cap"))
+                 settings["turn_cap"], settings["vote"], call, **simulation_options(settings))
     except UnansweredRequest:
         if records[-2] != last_request:
             raise ValueError("Call error did not follow the replayed request") from None
