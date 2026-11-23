@@ -71,6 +71,11 @@ six in the Ghana-opening Gulf run and speech 13 in the France-opening
 Iraq run. The UAE-opening Iraq trace lost its remaining call budget
 after speech 15 with a complete certificate. [Per-speech audit and scripted recovery](../../reports/council-workshop-budget-headroom-20261123/README.md)
 
+An exact queue search confirms those cutoffs. It finds a scripted
+way to finish the UAE-opening Iraq case within 55 calls by having
+France join the queue earlier, which saves a redundant poll.
+[Exact impasse search and witnesses](../../reports/council-workshop-exact-impasse-reachability-20261123/README.md)
+
 On a live continuation at the Gulf cutoff, the priority prompt let
 the delegates record all four exclusions by the last speech. The
 automatic moderator replay turned that evidence into a certificate.

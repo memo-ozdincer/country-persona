@@ -3552,6 +3552,12 @@ France's last exclusion after speech 13. In UAE-opening Iraq, two calls
 remained when two floor polls and one declaration were still required.
 [Budget bounds and verified recovery](reports/council-workshop-budget-headroom-20261123/README.md)
 
+An exact search over floor requests and admissible exclusions confirms
+the three impasse cutoffs. In UAE-opening Iraq, a scripted witness
+changes France's floor response at call 52, skips its next poll, and
+certifies on call 55 within the original budget. The live score is
+unchanged. [Exact replay and queue witness](reports/council-workshop-exact-impasse-reachability-20261123/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

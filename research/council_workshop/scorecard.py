@@ -96,6 +96,8 @@ def build():
     stops = verified_json(moderator / "results.json", moderator / "replay-stop.py")
     headroom = report("budget-headroom")
     budget = verified_json(headroom / "results.json", headroom / "audit.py")
+    exact = report("exact-impasse-reachability")
+    reachability = verified_json(exact / "results.json", exact / "search.py")
     gulf_cutoff = report("gulf-cutoff")
     moderation = verified_json(gulf_cutoff / "moderator.json", gulf_cutoff / "paired.py", "moderator")
     gulf_continuations = {}
@@ -151,6 +153,11 @@ def build():
         "first_proven_all_sol_budget_failures": [
             {"family": row["family"], "order": row["order"], **row["first_proven_budget_failure"]}
             for row in budget["meetings"] if row["first_proven_budget_failure"] is not None
+        ],
+        "exact_all_sol_impasse_reachability": [
+            {"family": row["family"], "order": row["order"], "first_unreachable_speech": row["first_unreachable_speech"],
+             "last_open_witness": endpoint(row["last_open_witness"])}
+            for row in reachability["meetings"]
         ],
         "gulf_last_turn_live_continuations": gulf_continuations,
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},
