@@ -78,7 +78,8 @@ result after the meeting. Ballots remain advisory.
 ```sh
 python3 research/council_workshop/run.py \
   --case research/council_workshop/climate-packages-feasible.json \
-  --seat-model IND=gpt-6.2-sol --turn-cap 20 --call-cap 50 --out runs/packages
+  --countries KEN GBR IND FRA BRA --model gpt-6.1-sol --seat-model KEN=gpt-6-astra \
+  --turn-cap 10 --call-cap 50 --out runs/packages
 python3 -B research/council_workshop/mandate_smoke.py
 ```
 
@@ -105,6 +106,8 @@ The [live mixed-model pilot](../../reports/council-workshop-live-crossplay-20261
 uses GPT-6-Astra for one seat and GPT-6.1-Sol for the other four.
 It records a certified impasse and a valid agreement after a
 one-speech continuation.
+The [matched all-Sol control](../../reports/council-workshop-sol-control-20261123/README.md)
+changes Kenya's model and compares both cases at the original budget.
 
 Run the offline checks from the repo root:
 

@@ -3398,3 +3398,19 @@ on the exposed 2417 docket with a registered writer. It gives no
 incremental gain from calibration and no basis for automatic release
 on unregistered pairs.
 [Protocol, frozen actions and audit](research/unsc-marl-20261119/benchmark-v1-runs/relative-routing-transfer/README.md)
+
+### Interactive Council workshop and model assignment
+
+The workshop separates source-backed clause review from verified
+decision outcomes on fictional private mandates. In the five-seat matched
+pilot, replacing Kenya's GPT-6-Astra with GPT-6.1-Sol left both public
+speech-action sequences and both nine-speech outcomes unchanged. Both
+rosters certified impasse in seven speeches. Both had four signatures
+at the feasible cap and completed agreement with one more speech. A
+seat-local checked-exchange script attained both endpoints at the
+original cap, so the cutoff exposed a difference in negotiation procedure
+even though it revealed no difference between the two live assignments.
+Report endpoint counts, calls, signatures and verified exclusions, with
+continuations identified separately. The live pair is one exposed case
+family with one opener and no repeated samples.
+[Workshop protocol](research/council_workshop/README.md) · [Matched runs and replay](reports/council-workshop-sol-control-20261123/README.md)
