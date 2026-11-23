@@ -46,6 +46,17 @@ Use `--mode independent` for one draft per country from its own packet, or `--mo
 
 `result.json` contains the outcome and turn-by-turn text. `settings.json` stores the case and run configuration. `calls.jsonl` preserves each prompt and structured reply, including floor requests. To recover from a timeout, repeat the same flags with `--resume-from runs/partial --out runs/retry`. The runner compares the case, settings and each full prompt before reusing a reply. Only missing decisions consume another call. Slow responses can be given more time with `--call-timeout SECONDS` (default 360). Both logs are preserved. Replay checks prompts, speakers, decision schemas and the reconstructed final state without contacting Codex.
 
+## Review the final clause
+
+The meeting records acceptance and advisory ballots. The clause reviewer separately grades the exact final wording for source-backed coverage. It exports the clause, dated excerpts and criteria without the model, speaking order, ballots or meeting outcome. Give the exported request to a reviewer and save their JSON verdict. The scoring command replays the original meeting, checks exact quotes and allowed sources for each criterion, then reports the 70-point score range alongside the procedural outcome.
+
+```sh
+python3 research/council_workshop/review.py runs/mixed > /tmp/clause-review.json
+python3 research/council_workshop/review.py runs/mixed --verdict /tmp/verdict.json
+```
+
+The bundled climate rubric covers the three-country roster. Supply `--rubric` with a case- and roster-matched rubric for another workshop. Freeze its criteria before using them for a new comparison. The [retrospective Astra and Sol review](../../reports/council-workshop-clause-review-20261123/README.md) includes exact source and clause spans.
+
 Run the offline checks from the repo root:
 
 ```sh

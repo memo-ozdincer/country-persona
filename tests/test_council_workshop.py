@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research" / "counc
 from codex_runner import CodexRunner, MODELS, failure_detail
 from meeting import BALLOT, FLOOR, SPEECH, Meeting, run_meeting
 from replay import replay
+from review import packet as review_packet, report as review_report
 from run import HERE, main, simulate
 
 
@@ -214,6 +215,37 @@ class RecoveryTests(unittest.TestCase):
             log.write_text(log.read_text().replace("You have the floor", "Different prompt", 1))
             with self.assertRaisesRegex(ValueError, "Saved request differs"):
                 replay(resumed)
+
+
+class ClauseReviewTests(unittest.TestCase):
+    def test_blind_packet_keeps_exact_draft_and_excludes_meeting_metadata(self):
+        root = HERE.parents[1] / "reports/council-workshop-20-20261123/astra"
+        result = replay(root)
+        settings = json.loads((root / "settings.json").read_text())
+        rubric = json.loads((HERE / "climate-review.json").read_text())
+        packet = review_packet(settings, result, rubric)
+        self.assertEqual(set(packet), {"id", "mode", "task", "evidence", "rubric", "answer"})
+        self.assertEqual(packet["answer"], result["draft"])
+        self.assertEqual(packet, review_packet(
+            settings | {"model": "hidden", "countries": list(reversed(COUNTRIES))},
+            result | {"ballots": {}, "status": "walkout"}, rubric,
+        ))
+        self.assertNotEqual(packet["id"],
+                            review_packet(settings, result | {"draft": "New wording."}, rubric)["id"])
+
+    def test_quote_must_come_from_criterion_scope(self):
+        root = HERE.parents[1] / "reports/council-workshop-20-20261123/astra"
+        result = replay(root)
+        settings = json.loads((root / "settings.json").read_text())
+        rubric = json.loads((HERE / "climate-review.json").read_text())
+        packet = review_packet(settings, result, rubric)
+        review = HERE.parents[1] / "reports/council-workshop-clause-review-20261123"
+        verdict = json.loads((review / "astra-verdict.json").read_text())
+        self.assertEqual(review_report(packet, verdict, result)["released_points"], 35)
+        wrong_source = next(row for row in packet["evidence"] if row["id"] == "FRA-2")
+        verdict["units"][0]["source"] = [{"block": wrong_source["id"], "quote": wrong_source["text"]}]
+        with self.assertRaisesRegex(ValueError, "Evidence outside the allowed scope"):
+            review_report(packet, verdict, result)
 
 
 class SubscriptionTests(unittest.TestCase):
