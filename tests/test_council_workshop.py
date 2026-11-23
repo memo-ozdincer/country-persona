@@ -1,0 +1,193 @@
+import json
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import unittest
+from unittest.mock import patch
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research" / "council_workshop"))
+
+from codex_runner import CodexRunner, MODELS, failure_detail
+from meeting import BALLOT, FLOOR, SPEECH, Meeting, run_meeting
+from replay import replay
+from run import HERE, main, simulate
+
+
+CASE = json.loads((HERE / "climate.json").read_text())
+COUNTRIES = list(CASE["delegations"])
+
+
+def speech(action, version=1, text="Because of the wording."):
+    return {"action": action, "version": version, "text": text}
+
+
+class WorkshopTests(unittest.TestCase):
+    def test_revision_clears_acceptances_and_requires_current_version(self):
+        m = Meeting(COUNTRIES, CASE["draft"])
+        m.apply("GBR", speech("accept"))
+        m.apply("IND", speech("propose", text="Invite voluntary reports."))
+        self.assertEqual(m.accepted, [])
+        with self.assertRaisesRegex(ValueError, "stale"):
+            m.apply("FRA", speech("accept", version=1))
+        for country in COUNTRIES:
+            m.apply(country, speech("accept", version=2))
+        self.assertEqual(m.status, "unanimous_acceptance")
+
+    def test_same_poll_snapshot_and_queue_priority(self):
+        polls, speakers = [], []
+
+        def decide(country, instruction, public, schema):
+            if schema is FLOOR:
+                polls.append((country, public["queue"].copy(), len(public["history"])))
+                return {"action": "request_floor"}
+            self.assertIs(schema, SPEECH)
+            speakers.append(country)
+            return speech("reply")
+
+        result = run_meeting(CASE, COUNTRIES, 5, decide)
+        self.assertEqual(speakers, ["GBR", "IND", "FRA", "GBR", "IND"])
+        self.assertEqual(polls[:3], [("IND", [], 1), ("FRA", [], 1), ("GBR", [], 1)])
+        self.assertEqual(result["status"], "turn_cap")
+
+    def test_passes_end_discussion_and_ballots_are_private(self):
+        def decide(country, instruction, public, schema):
+            if schema is FLOOR:
+                return {"action": "pass"}
+            if schema is BALLOT:
+                self.assertNotIn("ballots", public)
+                return {"version": 1, "vote": "no", "reason": "Funding is unclear."}
+            return speech("ask")
+
+        result = run_meeting(CASE, COUNTRIES, 6, decide, True)
+        self.assertEqual(result["status"], "all_passed")
+        self.assertEqual(list(result["ballots"]), COUNTRIES)
+        self.assertEqual(result["accepted"], [])
+
+    def test_walkout_ends_discussion(self):
+        result = run_meeting(CASE, COUNTRIES, 5, lambda *args: speech("walk_away"))
+        self.assertEqual(result["status"], "walkout")
+        self.assertEqual(len(result["history"]), 1)
+
+    def test_solo_and_independent_information_boundaries(self):
+        def decide(country, prompt, schema):
+            for role, quotes in CASE["delegations"].items():
+                self.assertEqual(quotes[0] in prompt, role == country or country == "analyst")
+            return {"text": "Invite contributions.", "reason": "Voluntary participation."}
+
+        for mode, count in (("independent", 3), ("solo", 1)):
+            result = simulate(CASE, COUNTRIES, mode, 1, False, decide)
+            self.assertEqual(len(result["drafts"]), count)
+
+    def test_delegate_prompt_contains_only_own_source_packet(self):
+        def decide(country, prompt, schema):
+            for role, quotes in CASE["delegations"].items():
+                self.assertEqual(quotes[0] in prompt, role == country)
+            return speech("reply") if schema is SPEECH else {"action": "pass"}
+
+        simulate(CASE, COUNTRIES, "meeting", 2, False, decide)
+
+    def test_each_excerpt_comes_from_its_named_speaker(self):
+        text = (HERE.parent / "scenario-role-sft-20261017-v1/sources/record-8923.txt").read_text()
+        receipt = HERE.parents[1] / "reports/role-contrast-design-20261019-v1.json"
+        spans = {r["country"]: r["full_source_span"]
+                 for r in json.loads(receipt.read_text())["source"]["statements"]}
+        start = text.index("Mr. De Rivière (France) (spoke in French):")
+        spans["FRA"] = (start, text.index("Mr. De la Fuente Ramírez (Mexico)", start))
+        for country, quotes in CASE["delegations"].items():
+            start, end = spans[country]
+            for quote in quotes:
+                self.assertIn(quote, text[start:end])
+
+
+class RecoveryTests(unittest.TestCase):
+    def test_extend_carries_public_turn_and_collects_new_private_ballots(self):
+        with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
+            first, longer = Path(temp) / "first", Path(temp) / "longer"
+            runner = provider.return_value
+            runner.executable = "/test/codex"
+            old_vote = {"version": 1, "vote": "no", "reason": "Pilot ballot only."}
+            runner.side_effect = [speech("reply"), *[old_vote for _ in COUNTRIES]]
+            with patch("sys.argv", ["run.py", "--turn-cap", "1", "--vote", "--out", str(first)]):
+                main()
+
+            def new_decision(prompt, schema):
+                self.assertNotIn("Pilot ballot only.", prompt)
+                if schema is FLOOR:
+                    return {"action": "pass"}
+                self.assertIs(schema, BALLOT)
+                return {"version": 1, "vote": "abstain", "reason": "Final position."}
+
+            runner.side_effect = new_decision
+            args = ["run.py", "--extend-from", str(first), "--turn-cap", "2", "--vote", "--out", str(longer)]
+            with patch("sys.argv", args):
+                main()
+            result = replay(longer)
+            self.assertEqual(result["history"], replay(first)["history"])
+            self.assertEqual(result["status"], "all_passed")
+            self.assertTrue(all(b["vote"] == "abstain" for b in result["ballots"].values()))
+
+    def test_resume_preserves_completed_decisions_and_replays_exactly(self):
+        with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
+            root = Path(temp)
+            runner = provider.return_value
+            runner.executable = "/test/codex"
+            runner.side_effect = [speech("reply"), RuntimeError("provider timeout")]
+            first = root / "partial"
+            args = ["run.py", "--out", str(first)]
+            with patch("sys.argv", args), self.assertRaisesRegex(RuntimeError, "timeout"):
+                main()
+            original = (first / "calls.jsonl").read_bytes()
+            self.assertFalse((first / "result.json").exists())
+
+            resumed = root / "resumed"
+            runner.side_effect = [{"action": "pass"} for _ in COUNTRIES]
+            args = ["run.py", "--resume-from", str(first), "--out", str(resumed)]
+            with patch("sys.argv", args):
+                main()
+            self.assertEqual(runner.call_count, 2 + len(COUNTRIES))
+            self.assertEqual((first / "calls.jsonl").read_bytes(), original)
+            self.assertEqual(replay(resumed)["status"], "all_passed")
+
+            log = resumed / "calls.jsonl"
+            log.write_text(log.read_text().replace("You have the floor", "Different prompt", 1))
+            with self.assertRaisesRegex(ValueError, "Saved request differs"):
+                replay(resumed)
+
+
+class SubscriptionTests(unittest.TestCase):
+    def test_timeout_preserves_provider_error_with_partial_last_event(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "events.jsonl").write_text(
+                '{"type":"error","message":"model unavailable"}\n{"type":'
+            )
+            self.assertEqual(failure_detail(root, ""), "model unavailable")
+
+    @patch("codex_runner.subprocess.run")
+    def test_refuses_api_login_before_generation(self, run):
+        run.return_value = subprocess.CompletedProcess([], 0, "", "Logged in using API key")
+        with self.assertRaisesRegex(RuntimeError, "ChatGPT"):
+            CodexRunner(MODELS[0], "/path/to/codex")
+        self.assertEqual(run.call_count, 1)
+
+    @patch.dict("os.environ", {"OPENAI_API_KEY": "unused", "CODEX_API_KEY": "unused"})
+    @patch("codex_runner.subprocess.run")
+    def test_subscription_invocation(self, run):
+        def fake(command, **kwargs):
+            self.assertNotIn("OPENAI_API_KEY", kwargs["env"])
+            self.assertNotIn("CODEX_API_KEY", kwargs["env"])
+            if "login" in command:
+                return subprocess.CompletedProcess(command, 0, "", "Logged in using ChatGPT")
+            self.assertIn('forced_login_method="chatgpt"', command)
+            self.assertIn(MODELS[1], command)
+            Path(kwargs["cwd"], "answer.json").write_text('{"action":"pass"}')
+            return subprocess.CompletedProcess(command, 0, "", "")
+
+        run.side_effect = fake
+        runner = CodexRunner(MODELS[1], "/path/to/codex")
+        self.assertEqual(runner("Choose", FLOOR), {"action": "pass"})
+
+
+if __name__ == "__main__":
+    unittest.main()
