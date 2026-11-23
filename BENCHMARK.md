@@ -3437,3 +3437,13 @@ provider rate limit interrupted the mixed arm twice, leaving its outcome
 unmeasured. The scorer's `--trace` view exposes which delegate could
 make each exclusion and when that package was on the floor.
 [Iraq traces and exact-prefix replay](reports/council-workshop-iraq-pilot-20261123/README.md)
+
+On the exact archived input for France’s last speech, a fresh original
+prompt and a permission-only reminder both yielded a local signature.
+Explicitly prioritizing a valid exclusion instead yielded the missing
+`closed` veto. The same instruction left Norway able to sign in the
+feasible Gulf case where it had no exclusion to make. Replaying the Iraq
+prefix with the prompted action and fresh standard-prompt replies led to
+certified impasse at speech 15 and 52 calls. This is a one-step prompt
+intervention followed by one live continuation on an exposed prefix.
+[Frozen inputs and continuation replay](reports/council-workshop-exclusion-prompt-20261123/README.md)
