@@ -148,6 +148,10 @@ rejection scores zero. A recorded call with no model reply stays in the
 coverage report with no reward, and pairs involving that call are excluded
 from reward comparisons. An unfinished log without a recorded error
 cannot be scored.
+Add `--trace` after `score` to see which seats alone could exclude a
+package, their speeches before disclosure, and proposals for packages
+that had already been excluded. It separates all opportunities to rule
+out a package from turns when that package was already the current draft.
 The [scripted audit](held-control-audit.json) verifies that the correct
 outcome is reachable for all eight case and order combinations under
 the registered budgets. The matrix has 32 live cells. A partial pilot
@@ -157,6 +161,10 @@ covers both Gulf of Guinea variants. Both rosters reached agreement in
 five speeches when Norway's mandate allowed it. In the impasse variant,
 the Astra seat supplied both required exclusions and the Sol seat
 supplied one within the ten-speech cap.
+The [six-seat Iraq report](../../reports/council-workshop-iraq-pilot-20261123/README.md)
+shows an unresolved all-Sol impasse and a scripted replay that certifies
+it within the original cap. Both mixed-roster attempts ended on a
+provider rate limit.
 
 Run the offline checks from the repo root:
 

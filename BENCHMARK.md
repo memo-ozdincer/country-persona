@@ -3426,3 +3426,14 @@ the feasible twin. The live evidence covers two of eight registered
 case and opener combinations. The full design crosses homogeneous and reciprocal mixed
 assignments without treating an opener rotation as a new case.
 [Registered suite and paired replay](reports/council-workshop-held-pilot-20261123/README.md)
+
+The six-seat Iraq case shows a separate bottleneck. The all-Sol team
+recorded three of four exclusions by the original cap. France could
+have ruled out the last package earlier, but it reached the floor as the
+current draft only after France's last speech. Switching to a scripted
+policy just before that speech certified impasse at speech 15. A switch
+just after it left France behind the queue when the budget expired. A
+provider rate limit interrupted the mixed arm twice, leaving its outcome
+unmeasured. The scorer's `--trace` view exposes which delegate could
+make each exclusion and when that package was on the floor.
+[Iraq traces and exact-prefix replay](reports/council-workshop-iraq-pilot-20261123/README.md)

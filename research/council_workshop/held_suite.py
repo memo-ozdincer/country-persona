@@ -64,6 +64,40 @@ def metrics(result, case):
     }
 
 
+def exclusion_trace(result, case, order):
+    """Trace public disclosures back to the seats that could make them."""
+    mandates = Mandates.from_case(case, order)
+    current = next(package for package, text in mandates.options.items() if text == case["draft"])
+    turns = {seat: [] for seat in order}
+    disclosures = {}
+    excluded_proposals = []
+    for speech_number, speech in enumerate(result["history"], 1):
+        seat, action, text = speech["country"], speech["action"], speech["text"]
+        turns[seat].append((speech_number, current))
+        if action == "rule_out":
+            disclosures[text] = (speech_number, current)
+        elif action == "propose":
+            if text in disclosures:
+                excluded_proposals.append({"speech": speech_number, "seat": seat, "package": text,
+                                           "excluded_on_speech": disclosures[text][0]})
+            current = text
+
+    unique = {}
+    for package in mandates.options:
+        holders = [seat for seat in order if package not in mandates.allowed[seat]]
+        if len(holders) != 1:
+            continue
+        holder, = holders
+        disclosed, draft_at_disclosure = disclosures.get(package, (None, None))
+        earlier = [(turn, draft) for turn, draft in turns[holder] if disclosed is None or turn < disclosed]
+        unique[package] = {"holder": holder, "disclosed_on_speech": disclosed,
+                           "current_package_at_disclosure": draft_at_disclosure,
+                           "earlier_holder_speeches": [turn for turn, _ in earlier],
+                           "earlier_speeches_with_package_current": [turn for turn, draft in earlier
+                                                                    if draft == package]}
+    return {"sole_holder_exclusions": unique, "proposals_after_exclusion": excluded_proposals}
+
+
 def audit():
     rows = []
     for family, data in FAMILIES.items():
@@ -98,7 +132,7 @@ def identify(settings):
     raise ValueError("Case and opening order do not match a registered cell")
 
 
-def score(directories):
+def score(directories, trace=False):
     rows = {}
     completed = Counter()
     aborted = Counter()
@@ -133,6 +167,8 @@ def score(directories):
         rows[key] = {"family": family, "world": world, "order": order, "arm": arm,
                      "seat_models": {seat: overrides.get(seat, default) for seat in order},
                      **metrics(result, settings["case"]), **failure}
+        if trace:
+            rows[key]["exclusion_trace"] = exclusion_trace(result, settings["case"], order)
 
     pairs = []
     for family, world, opener, arm in sorted(rows):
@@ -163,13 +199,14 @@ def main():
     commands.add_parser("audit")
     grading = commands.add_parser("score")
     grading.add_argument("directories", nargs="+", type=Path)
+    grading.add_argument("--trace", action="store_true", help="Include exclusion and opportunity timing.")
     args = parser.parse_args()
     if args.command == "case":
         output = case_for(args.family, args.world)
     elif args.command == "audit":
         output = audit()
     else:
-        output = score(args.directories)
+        output = score(args.directories, trace=args.trace)
     print(pretty(output))
 
 

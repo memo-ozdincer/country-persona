@@ -310,6 +310,17 @@ class MandateWorkshopTests(unittest.TestCase):
             self.assertEqual(score([mixed])["matched_focus_swaps"], [])
             paired = score([all_sol, mixed])["matched_focus_swaps"]
             self.assertEqual([(row["baseline"], row["reward_delta"]) for row in paired], [("all-sol", 0)])
+            trace = score([all_sol], trace=True)["meetings"][0]["exclusion_trace"]
+            self.assertEqual(trace["sole_holder_exclusions"]["briefing"], {
+                "holder": "NOR", "disclosed_on_speech": 3, "earlier_holder_speeches": [],
+                "current_package_at_disclosure": "coastal",
+                "earlier_speeches_with_package_current": [],
+            })
+            self.assertEqual(trace["sole_holder_exclusions"]["regional"], {
+                "holder": "NOR", "disclosed_on_speech": 6, "earlier_holder_speeches": [3],
+                "current_package_at_disclosure": "regional",
+                "earlier_speeches_with_package_current": [],
+            })
             with self.assertRaisesRegex(ValueError, "Duplicate evaluation cell"):
                 score([all_sol, all_sol])
             settings_path = mixed / "settings.json"
