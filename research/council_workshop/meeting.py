@@ -1,6 +1,8 @@
 """Public protocol for a fictional, unanimous clause-negotiation workshop."""
 from dataclasses import dataclass, field
 
+from mandates import Mandates
+
 
 def response_schema(**properties):
     return {"type": "object", "properties": properties, "required": list(properties),
@@ -19,6 +21,11 @@ SPEECH = response_schema(
 )
 BALLOT = response_schema(vote=choice("yes", "no", "abstain"), version={"type": "integer"}, reason=TEXT)
 DRAFT = response_schema(text=TEXT, reason=TEXT)
+PACKAGE_SPEECH = response_schema(
+    action=choice("ask", "reply", "propose", "accept", "walk_away", "yield_floor",
+                  "rule_out", "declare_impasse"),
+    version={"type": "integer"}, text=TEXT,
+)
 
 
 @dataclass
@@ -30,22 +37,32 @@ class Meeting:
     queue: list[str] = field(default_factory=list)
     history: list[dict] = field(default_factory=list)
     status: str = "open"
+    mandates: Mandates | None = None
+    exclusions: dict[str, str] = field(default_factory=dict)
 
     def view(self):
-        return dict(draft=self.draft, version=self.version, accepted=self.accepted.copy(),
-                    queue=self.queue.copy(), history=self.history.copy())
+        public = dict(draft=self.draft, version=self.version, accepted=self.accepted.copy(),
+                      queue=self.queue.copy(), history=self.history.copy())
+        if self.mandates is not None:
+            public.update(options=self.mandates.options.copy(), exclusions=self.exclusions.copy())
+        return public
 
     def apply(self, country, action):
+        if country not in self.countries:
+            raise ValueError(f"{country} is not seated at this meeting")
         name, version, text = action["action"], action["version"], action["text"].strip()
         if type(version) is not int or version != self.version:
             raise ValueError(f"{country} acted on stale or invalid draft {version}")
         if not text or len(text.split()) > 120:
             raise ValueError(f"{country} must supply 1–120 words")
         if name == "propose":
-            if text == self.draft:
+            if self.mandates is not None and text not in self.mandates.options:
+                raise ValueError("A package proposal must name an option from the menu")
+            draft = self.mandates.options[text] if self.mandates is not None else text
+            if draft == self.draft:
                 raise ValueError("A revision must change the wording")
             self.version += 1
-            self.draft = text
+            self.draft = draft
             self.accepted.clear()
         elif name == "accept":
             if country not in self.accepted:
@@ -54,6 +71,15 @@ class Meeting:
                 self.status = "unanimous_acceptance"
         elif name == "walk_away":
             self.status = "walkout"
+        elif name == "rule_out" and self.mandates is not None:
+            if (text not in self.mandates.options or text in self.mandates.allowed[country]
+                    or text in self.exclusions):
+                raise ValueError("A rule-out must name an unexcluded package outside the speaker's mandate")
+            self.exclusions[text] = country
+        elif name == "declare_impasse" and self.mandates is not None:
+            if self.exclusions.keys() != self.mandates.options.keys():
+                raise ValueError("An impasse requires a verified rule-out for every package")
+            self.status = "certified_impasse"
         elif name not in ("ask", "reply", "yield_floor"):
             raise ValueError(f"Unknown action: {name}")
         self.history.append(dict(country=country, action=name, version=version,
@@ -74,10 +100,13 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap
         calls += 1
         return decide(country, instruction, public, schema)
 
-    meeting = Meeting(countries, case["draft"])
+    mandates = Mandates.from_case(case, countries)
+    meeting = Meeting(countries, case["draft"], mandates=mandates)
+    instruction, schema = (SPEAK_INSTRUCTION, SPEECH) if mandates is None else (
+        PACKAGE_INSTRUCTION, PACKAGE_SPEECH)
     speaker = countries[0]
     for turn in range(1, turn_cap + 1):
-        action = ask(speaker, SPEAK_INSTRUCTION, meeting.view(), SPEECH)
+        action = ask(speaker, instruction, meeting.view(), schema)
         meeting.apply(speaker, action)
         if meeting.status != "open":
             break
@@ -120,6 +149,8 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap
     result = dict(**meeting.view(), status=meeting.status, ballots=ballots)
     if call_cap is not None:
         result["calls"] = calls
+    if mandates is not None:
+        result["mandate_score"] = mandates.score(meeting.status, meeting.draft)
     return result
 
 
@@ -132,3 +163,10 @@ FLOOR_INSTRUCTION = """Request the floor if you have a question, reply, edit or 
 Pass if you have nothing to add. All newly polled delegates see the same public state."""
 VOTE_INSTRUCTION = """Cast a private advisory vote on the current version and give one brief reason.
 This records your position separately from public acceptance. It is a workshop vote."""
+PACKAGE_INSTRUCTION = """You have the floor. Use the current version for every action.
+For propose, put only a different package label in text. It replaces the draft and clears all
+acceptances. For rule_out, put only a package label absent from your own allowed list and not
+already excluded. This places a checked rejection in the public record. Use declare_impasse
+once every option has a checked rejection. Use accept only for the exact current package.
+Ask and reply are public remarks. yield_floor gives up the turn. walk_away ends the meeting
+without a certified decision. Give a brief reason for accept or declare_impasse. Use 1–120 words."""

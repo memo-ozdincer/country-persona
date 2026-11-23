@@ -57,6 +57,34 @@ python3 research/council_workshop/review.py runs/mixed --verdict /tmp/verdict.js
 
 The bundled climate rubric covers the three-country roster. Supply `--rubric` with a case- and roster-matched rubric for another workshop. Freeze its criteria before using them for a new comparison. The [retrospective Astra and Sol review](../../reports/council-workshop-clause-review-20261123/README.md) includes exact source and clause spans.
 
+## Test feasible agreements and impasses
+
+The finite package cases use the same meeting, floor and replay protocol.
+Each delegate sees the common menu and only its own fictional list of
+allowed packages. The five-seat [feasible case](climate-packages-feasible.json)
+has one valid package. Changing one private list produces the
+[impasse case](climate-packages-impasse.json) with zero valid packages.
+The mandates are fictional and carry no claims about historical national
+positions.
+
+A delegate can `rule_out` an option outside its mandate. The engine
+checks the exclusion and records the package and speaker publicly.
+`declare_impasse` requires one verified exclusion for every package.
+The terminal reward is one for a unanimously accepted feasible option
+or a certified impasse. Invalid agreement, a walkout, all passing and the
+budget stops earn zero. The full feasibility set appears in the scored
+result after the meeting. Ballots remain advisory.
+
+```sh
+python3 research/council_workshop/run.py \
+  --case research/council_workshop/climate-packages-feasible.json \
+  --seat-model IND=gpt-6.2-sol --turn-cap 20 --call-cap 50 --out runs/packages
+python3 -B research/council_workshop/mandate_smoke.py
+```
+
+The finite cases run in meeting mode. The [offline baseline report](../../reports/council-workshop-mandates-20261123/README.md)
+records all five opener rotations under each of three scripts.
+
 Run the offline checks from the repo root:
 
 ```sh

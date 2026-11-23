@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 
 from codex_runner import CodexRunner, MODELS
+from mandates import Mandates
 from meeting import BALLOT, DRAFT, run_meeting
 from recording import Recording, decision_request, verify_run
 
@@ -22,6 +23,10 @@ def pretty(value):
 
 
 def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None):
+    mandates = Mandates.from_case(case, countries)
+    if mandates is not None and mode != "meeting":
+        raise ValueError("Finite mandate cases use meeting mode")
+
     def decide(country, instruction, public, schema):
         if mode == "solo":
             evidence = {c: case["delegations"][c] for c in countries}
@@ -29,6 +34,8 @@ def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None):
             evidence = {country: case["delegations"][country]}
         packet = dict(workshop=case["title"], task=case["brief"], source=case["source"],
                       participants=countries, role=country, evidence=evidence, public=public)
+        if mandates is not None:
+            packet["private_mandate"] = {"allowed_packages": sorted(mandates.allowed[country])}
         prompt = f"{ROLE}\n{pretty(packet)}\n{instruction}"
         return call(country, prompt, schema)
 
@@ -97,6 +104,9 @@ def main():
         seat_models[seat] = model
     if not case["draft"].strip() or not all(case["delegations"][c] for c in countries):
         parser.error("Supply an opening draft and evidence for each delegation.")
+    if case.get("mandate_game") is not None and args.mode != "meeting":
+        parser.error("Finite mandate cases use meeting mode.")
+    Mandates.from_case(case, countries)
 
     settings = dict(model=args.model, started=datetime.now(timezone.utc).isoformat(),
                     case=case, countries=countries, mode=args.mode, turn_cap=args.turn_cap, vote=args.vote,

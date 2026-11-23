@@ -9,6 +9,8 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research" / "council_workshop"))
 
 from codex_runner import CodexRunner, MODELS, failure_detail
+from mandate_smoke import policy
+from mandates import Mandates
 from meeting import BALLOT, FLOOR, SPEECH, Meeting, run_meeting
 from replay import replay
 from review import packet as review_packet, report as review_report
@@ -246,6 +248,51 @@ class ClauseReviewTests(unittest.TestCase):
         verdict["units"][0]["source"] = [{"block": wrong_source["id"], "quote": wrong_source["text"]}]
         with self.assertRaisesRegex(ValueError, "Evidence outside the allowed scope"):
             review_report(packet, verdict, result)
+
+
+class MandateWorkshopTests(unittest.TestCase):
+    def test_certificate_requires_checked_public_exclusion_for_every_option(self):
+        case = json.loads((HERE / "climate-packages-impasse.json").read_text())
+        seats = list(case["delegations"])
+        meeting = Meeting(seats, case["draft"], mandates=Mandates.from_case(case, seats))
+        with self.assertRaisesRegex(ValueError, "every package"):
+            meeting.apply("KEN", speech("declare_impasse"))
+        with self.assertRaisesRegex(ValueError, "outside the speaker's mandate"):
+            meeting.apply("KEN", speech("rule_out", text="assessment"))
+        meeting.apply("KEN", speech("rule_out", text="context"))
+        meeting.apply("KEN", speech("rule_out", text="convention"))
+        meeting.apply("IND", speech("rule_out", text="assessment"))
+        meeting.apply("GBR", speech("declare_impasse"))
+        self.assertEqual(meeting.status, "certified_impasse")
+
+    def test_private_mandates_and_scoring_survive_logged_replay(self):
+        with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
+            directory = Path(temp) / "run"
+            case_path = HERE / "climate-packages-feasible.json"
+            case = json.loads(case_path.read_text())
+            decide = policy("checked_exchange")
+
+            def scripted(prompt, schema):
+                packet = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])[0]
+                country = packet["role"]
+                self.assertEqual(packet["private_mandate"],
+                                 {"allowed_packages": sorted(case["mandate_game"]["allowed"][country])})
+                self.assertEqual(set(packet["evidence"]), {country})
+                self.assertNotIn("allowed", packet["public"])
+                self.assertNotIn("mandate_score", packet["public"])
+                return decide(country, prompt, schema)
+
+            provider.return_value.executable = "/test/codex"
+            provider.return_value.side_effect = scripted
+            args = ["run.py", "--case", str(case_path), "--turn-cap", "20", "--call-cap", "50",
+                    "--out", str(directory)]
+            with patch("sys.argv", args):
+                main()
+            result = replay(directory)
+            self.assertEqual(result["mandate_score"], {
+                "feasible_packages": ["context"], "selected_package": "context",
+                "outcome": "valid_agreement", "reward": 1,
+            })
 
 
 class SubscriptionTests(unittest.TestCase):
