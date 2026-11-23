@@ -98,6 +98,9 @@ through the production engine.
 The [budget-aware policy study](../../reports/council-workshop-budget-policy-20261123/README.md)
 measures transfer across speech limits and checks a local mandate guard
 against the same learned policy.
+The [partner study](../../reports/council-workshop-crossplay-20261123/README.md)
+rotates visibly different scripted partners through every seat and
+compares two moderator responses to an incompatible signature.
 
 Run the offline checks from the repo root:
 
