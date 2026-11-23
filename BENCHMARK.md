@@ -3421,7 +3421,8 @@ supplies two exclusions that no other seat can record. Ghana uses both
 in its certified decision. The all-Sol
 trace supplies one of those exclusions and remains unresolved at the
 same ten-speech cap. The scripted baseline succeeds in seven speeches.
-The live evidence covers one of eight registered case and opener
-combinations. The full design crosses homogeneous and reciprocal mixed
+Both rosters signed the same permissible package in five speeches in
+the feasible twin. The live evidence covers two of eight registered
+case and opener combinations. The full design crosses homogeneous and reciprocal mixed
 assignments without treating an opener rotation as a new case.
 [Registered suite and paired replay](reports/council-workshop-held-pilot-20261123/README.md)

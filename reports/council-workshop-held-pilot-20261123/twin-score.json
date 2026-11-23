@@ -1,0 +1,165 @@
+{
+  "registered_cells": 32,
+  "completed_by_arm": {
+    "all-sol": 2,
+    "sol-with-focus-swap": 2
+  },
+  "meetings": [
+    {
+      "family": "guinea",
+      "world": "feasible",
+      "order": [
+        "GHA",
+        "CHN",
+        "NOR"
+      ],
+      "arm": "all-sol",
+      "seat_models": {
+        "GHA": "gpt-6.1-sol",
+        "CHN": "gpt-6.1-sol",
+        "NOR": "gpt-6.1-sol"
+      },
+      "feasible_packages": [
+        "briefing",
+        "regional"
+      ],
+      "selected_package": "briefing",
+      "outcome": "valid_agreement",
+      "reward": 1,
+      "status": "unanimous_acceptance",
+      "speeches": 5,
+      "calls": 13,
+      "signatures": [
+        "NOR",
+        "GHA",
+        "CHN"
+      ],
+      "exclusions": {},
+      "queue": [],
+      "incompatible_signatures": []
+    },
+    {
+      "family": "guinea",
+      "world": "feasible",
+      "order": [
+        "GHA",
+        "CHN",
+        "NOR"
+      ],
+      "arm": "sol-with-focus-swap",
+      "seat_models": {
+        "GHA": "gpt-6.1-sol",
+        "CHN": "gpt-6.1-sol",
+        "NOR": "gpt-6-astra"
+      },
+      "feasible_packages": [
+        "briefing",
+        "regional"
+      ],
+      "selected_package": "briefing",
+      "outcome": "valid_agreement",
+      "reward": 1,
+      "status": "unanimous_acceptance",
+      "speeches": 5,
+      "calls": 13,
+      "signatures": [
+        "NOR",
+        "GHA",
+        "CHN"
+      ],
+      "exclusions": {},
+      "queue": [],
+      "incompatible_signatures": []
+    },
+    {
+      "family": "guinea",
+      "world": "impasse",
+      "order": [
+        "GHA",
+        "CHN",
+        "NOR"
+      ],
+      "arm": "all-sol",
+      "seat_models": {
+        "GHA": "gpt-6.1-sol",
+        "CHN": "gpt-6.1-sol",
+        "NOR": "gpt-6.1-sol"
+      },
+      "feasible_packages": [],
+      "selected_package": "briefing",
+      "outcome": "unresolved",
+      "reward": 0,
+      "status": "turn_cap",
+      "speeches": 10,
+      "calls": 24,
+      "signatures": [],
+      "exclusions": {
+        "coastal": "CHN",
+        "review": "GHA",
+        "regional": "NOR"
+      },
+      "queue": [
+        "CHN",
+        "NOR"
+      ],
+      "incompatible_signatures": []
+    },
+    {
+      "family": "guinea",
+      "world": "impasse",
+      "order": [
+        "GHA",
+        "CHN",
+        "NOR"
+      ],
+      "arm": "sol-with-focus-swap",
+      "seat_models": {
+        "GHA": "gpt-6.1-sol",
+        "CHN": "gpt-6.1-sol",
+        "NOR": "gpt-6-astra"
+      },
+      "feasible_packages": [],
+      "selected_package": "regional",
+      "outcome": "certified_impasse",
+      "reward": 1,
+      "status": "certified_impasse",
+      "speeches": 10,
+      "calls": 25,
+      "signatures": [
+        "CHN"
+      ],
+      "exclusions": {
+        "coastal": "CHN",
+        "review": "GHA",
+        "briefing": "NOR",
+        "regional": "NOR"
+      },
+      "queue": [
+        "CHN"
+      ],
+      "incompatible_signatures": []
+    }
+  ],
+  "matched_focus_swaps": [
+    {
+      "family": "guinea",
+      "world": "feasible",
+      "opener": "GHA",
+      "arm": "sol-with-focus-swap",
+      "baseline": "all-sol",
+      "reward_delta": 0,
+      "speech_delta": 0,
+      "call_delta": 0
+    },
+    {
+      "family": "guinea",
+      "world": "impasse",
+      "opener": "GHA",
+      "arm": "sol-with-focus-swap",
+      "baseline": "all-sol",
+      "reward_delta": 1,
+      "speech_delta": 0,
+      "call_delta": 1
+    }
+  ]
+}

@@ -61,3 +61,48 @@ def verify_run(directory, simulate):
     if result != json.loads((directory / "result.json").read_text()):
         raise ValueError("Replayed outcome differs from saved result")
     return result
+
+
+def verify_aborted_run(directory, settings, simulate):
+    """Replay a terminal failure and distinguish a rejected reply from a missing reply."""
+    records = [json.loads(line) for line in (directory / "calls.jsonl").read_text().splitlines()]
+    if not records or records[-1].get("event") != "error":
+        raise ValueError(f"No recorded terminal error in {directory}")
+    detail = records[-1]["message"]
+    recording = Recording(directory)
+    last_request = None
+    calls = 0
+
+    class UnansweredRequest(Exception):
+        pass
+
+    def call(country, prompt, schema):
+        nonlocal last_request, calls
+        last_request = None
+        request = decision_request(settings, country, prompt, schema)
+        reply = recording.take(request)
+        last_request = request
+        calls += 1
+        if reply is None:
+            raise UnansweredRequest
+        return reply
+
+    try:
+        simulate(settings["case"], settings["countries"], settings["mode"],
+                 settings["turn_cap"], settings["vote"], call, call_cap=settings.get("call_cap"))
+    except UnansweredRequest:
+        if records[-2] != last_request:
+            raise ValueError("Call error did not follow the replayed request") from None
+        status = "call_error"
+    except (KeyError, ValueError) as error:
+        if not (last_request and records[-3] == last_request and str(error) == detail):
+            raise ValueError("Recorded protocol error did not reproduce") from error
+        if next(recording.events, None) != records[-1]:
+            raise ValueError("Unexpected decisions before the recorded protocol error") from error
+        status = "protocol_error"
+    else:
+        raise ValueError("Meeting completed during replay of an aborted run")
+    recording.require_end()
+    prompt = last_request["prompt"]
+    packet, _ = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])
+    return status, detail, calls, packet["public"]

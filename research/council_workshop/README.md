@@ -143,13 +143,20 @@ For the matched swap, add `--seat-model NOR=gpt-6-astra` and a fresh
 output directory. Pass both run directories to `score`. It replays each
 meeting, checks registration and reports coverage, endpoint, calls,
 speeches, signatures, checked exclusions and incompatible signatures.
+Pass archived aborted runs to `score` as well. A replayed protocol
+rejection scores zero. A recorded call with no model reply stays in the
+coverage report with no reward, and pairs involving that call are excluded
+from reward comparisons. An unfinished log without a recorded error
+cannot be scored.
 The [scripted audit](held-control-audit.json) verifies that the correct
 outcome is reachable for all eight case and order combinations under
 the registered budgets. The matrix has 32 live cells. A partial pilot
 reports only its completed cells and explicitly matched swaps.
-The [first held-case live pair](../../reports/council-workshop-held-pilot-20261123/README.md)
-records a certified Gulf of Guinea impasse with Astra in Norway's seat
-and an unresolved outcome with Sol in that seat.
+The [first held-case live comparison](../../reports/council-workshop-held-pilot-20261123/README.md)
+covers both Gulf of Guinea variants. Both rosters reached agreement in
+five speeches when Norway's mandate allowed it. In the impasse variant,
+the Astra seat supplied both required exclusions and the Sol seat
+supplied one within the ten-speech cap.
 
 Run the offline checks from the repo root:
 

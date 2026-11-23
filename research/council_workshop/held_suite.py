@@ -7,6 +7,7 @@ from pathlib import Path
 
 from mandates import Mandates
 from meeting import FLOOR
+from recording import verify_aborted_run
 from replay import replay
 from run import HERE, pretty, simulate
 from train_mandates import candidates, scripted
@@ -99,6 +100,8 @@ def identify(settings):
 
 def score(directories):
     rows = {}
+    completed = Counter()
+    aborted = Counter()
     for directory in directories:
         settings = json.loads((directory / "settings.json").read_text())
         family, world, data, order = identify(settings)
@@ -115,10 +118,21 @@ def score(directories):
         key = (family, world, order[0], arm)
         if key in rows:
             raise ValueError(f"Duplicate evaluation cell {key}")
-        result = replay(directory)
+        failure = {}
+        if (directory / "result.json").is_file():
+            result = replay(directory)
+            completed[arm] += 1
+        else:
+            status, error, calls, public = verify_aborted_run(directory, settings, simulate)
+            mandates = Mandates.from_case(settings["case"], order)
+            terminal = mandates.score(status, public["draft"])
+            terminal.update(outcome=status, reward=0 if status == "protocol_error" else None)
+            result = dict(public, status=status, calls=calls, mandate_score=terminal)
+            failure = {"recorded_error": error}
+            aborted[arm] += 1
         rows[key] = {"family": family, "world": world, "order": order, "arm": arm,
                      "seat_models": {seat: overrides.get(seat, default) for seat in order},
-                     **metrics(result, settings["case"])}
+                     **metrics(result, settings["case"]), **failure}
 
     pairs = []
     for family, world, opener, arm in sorted(rows):
@@ -128,12 +142,15 @@ def score(directories):
         if baseline in rows:
             swapped = rows[(family, world, opener, arm)]
             reference = rows[baseline]
+            if swapped["reward"] is None or reference["reward"] is None:
+                continue
             pairs.append({"family": family, "world": world, "opener": opener, "arm": arm,
                           "baseline": reference["arm"], "reward_delta": swapped["reward"] - reference["reward"],
                           "speech_delta": swapped["speeches"] - reference["speeches"],
                           "call_delta": swapped["calls"] - reference["calls"]})
     return {"registered_cells": sum(len(data["orders"]) for data in FAMILIES.values()) * len(WORLDS) * 4,
-            "completed_by_arm": dict(sorted(Counter(row["arm"] for row in rows.values()).items())),
+            "completed_by_arm": dict(sorted(completed.items())),
+            **({"aborted_by_arm": dict(sorted(aborted.items()))} if aborted else {}),
             "meetings": [rows[key] for key in sorted(rows)], "matched_focus_swaps": pairs}
 
 

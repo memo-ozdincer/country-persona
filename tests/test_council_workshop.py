@@ -254,6 +254,40 @@ class ClauseReviewTests(unittest.TestCase):
 
 
 class MandateWorkshopTests(unittest.TestCase):
+    def test_suite_replays_and_distinguishes_two_aborted_cells(self):
+        with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
+            root = Path(temp)
+            case = root / "case.json"
+            case.write_text(json.dumps(case_for("guinea", "impasse")))
+            provider.return_value.executable = "/test/codex"
+            all_sol, mixed = root / "all-sol", root / "mixed"
+            base = ["run.py", "--case", str(case), "--countries", "GHA", "CHN", "NOR", "--model", SOL,
+                    "--turn-cap", "10", "--call-cap", "30"]
+            provider.return_value.return_value = speech("declare_impasse")
+            with patch("sys.argv", base + ["--out", str(all_sol)]):
+                with self.assertRaisesRegex(ValueError, "requires a verified rule-out"):
+                    main()
+            provider.return_value.side_effect = [speech("accept"), RuntimeError("Provider did not respond")]
+            with patch("sys.argv", base + ["--seat-model", f"NOR={ASTRA}", "--out", str(mixed)]):
+                with self.assertRaisesRegex(RuntimeError, "Provider did not respond"):
+                    main()
+
+            results = score([all_sol, mixed])
+            self.assertEqual(results["completed_by_arm"], {})
+            self.assertEqual(results["aborted_by_arm"], {"all-sol": 1, "sol-with-focus-swap": 1})
+            self.assertEqual(results["matched_focus_swaps"], [])
+            self.assertEqual([(r["status"], r["reward"], r["speeches"], r["calls"]) for r in results["meetings"]],
+                             [("protocol_error", 0, 0, 1), ("call_error", None, 1, 2)])
+
+            log = all_sol / "calls.jsonl"
+            lines = log.read_text().splitlines()
+            log.write_text("\n".join(lines[:-1]) + "\n")
+            with self.assertRaisesRegex(ValueError, "No recorded terminal error"):
+                score([all_sol])
+            log.write_text("\n".join(lines[:-1] + ['{"event":"error","message":"Different failure"}']) + "\n")
+            with self.assertRaisesRegex(ValueError, "Recorded protocol error did not reproduce"):
+                score([all_sol])
+
     def test_suite_pairs_only_registered_replayed_cells(self):
         with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
             root = Path(temp)
