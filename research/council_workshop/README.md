@@ -188,6 +188,12 @@ uses the current draft until a checked rejection is public. Start it
 with `--prioritize-exclusions-after-rejection`. On the two cases that
 informed the instruction, it matched the standard prompt's three-speech
 opening agreement and certified the Gulf impasse in seven speeches.
+The [rejected-opening test](../../reports/council-workshop-rejected-opening-20261123/README.md)
+changes only the opening draft of the five-speech case. The standard run
+found the feasible replacement and secured all three signatures. The
+conditional run recorded all exclusions first and reached the deadline
+with one signature. A scripted replacement-first witness also succeeds
+after the first checked rejection.
 
 Run the offline checks from the repo root:
 

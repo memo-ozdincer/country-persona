@@ -3483,3 +3483,13 @@ volunteered an off-draft exclusion on speech three. The group certified
 impasse in seven speeches and 16 calls. These fresh runs each use one
 case and opener already examined in the prompt comparisons.
 [Conditional instruction and matched replay](reports/council-workshop-conditional-exclusions-20261123/README.md)
+
+Changing only the opening draft in the five-speech case exposes a limit
+of using a checked rejection to trigger exclusion priority. The standard
+run proposed the sole feasible replacement immediately and agreed in four
+speeches. The conditional run recorded three exclusions and reached the
+same proposal on speech four, leaving one signing turn. The scripted
+control keeps the first rejection and still agrees by proposing on speech
+two. The contrast separates the cost of further exclusions from the cost
+of acknowledging that the opening draft is incompatible.
+[Rejected-opening case and scripted witnesses](reports/council-workshop-rejected-opening-20261123/README.md)

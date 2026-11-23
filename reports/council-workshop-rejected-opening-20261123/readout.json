@@ -1,0 +1,226 @@
+{
+  "opening": "review",
+  "feasible_packages": [
+    "briefing"
+  ],
+  "turn_cap": 5,
+  "call_cap": 24,
+  "repair_after_one_exclusion_minimum_speeches": 5,
+  "exclusions_first_minimum_speeches": 7,
+  "scripted": {
+    "repair_first": {
+      "feasible_packages": [
+        "briefing"
+      ],
+      "selected_package": "briefing",
+      "outcome": "valid_agreement",
+      "reward": 1,
+      "status": "unanimous_acceptance",
+      "speeches": 5,
+      "calls": 11,
+      "signatures": [
+        "NOR",
+        "GHA",
+        "CHN"
+      ],
+      "exclusions": {
+        "review": "GHA"
+      },
+      "queue": [
+        "NOR",
+        "GHA"
+      ],
+      "incompatible_signatures": [],
+      "speech_actions": [
+        {
+          "seat": "GHA",
+          "action": "rule_out",
+          "version": 1,
+          "text": "review"
+        },
+        {
+          "seat": "CHN",
+          "action": "propose",
+          "version": 2,
+          "text": "briefing"
+        },
+        {
+          "seat": "NOR",
+          "action": "accept",
+          "version": 2,
+          "text": "Accept the current draft."
+        },
+        {
+          "seat": "GHA",
+          "action": "accept",
+          "version": 2,
+          "text": "Accept the current draft."
+        },
+        {
+          "seat": "CHN",
+          "action": "accept",
+          "version": 2,
+          "text": "Accept the current draft."
+        }
+      ]
+    },
+    "after_rejection": {
+      "feasible_packages": [
+        "briefing"
+      ],
+      "selected_package": "briefing",
+      "outcome": "unresolved",
+      "reward": 0,
+      "status": "turn_cap",
+      "speeches": 5,
+      "calls": 11,
+      "signatures": [
+        "CHN"
+      ],
+      "exclusions": {
+        "review": "GHA",
+        "coastal": "CHN",
+        "regional": "NOR"
+      },
+      "queue": [
+        "NOR",
+        "GHA"
+      ],
+      "incompatible_signatures": [],
+      "speech_actions": [
+        {
+          "seat": "GHA",
+          "action": "rule_out",
+          "version": 1,
+          "text": "review"
+        },
+        {
+          "seat": "CHN",
+          "action": "rule_out",
+          "version": 1,
+          "text": "coastal"
+        },
+        {
+          "seat": "NOR",
+          "action": "rule_out",
+          "version": 1,
+          "text": "regional"
+        },
+        {
+          "seat": "GHA",
+          "action": "propose",
+          "version": 2,
+          "text": "briefing"
+        },
+        {
+          "seat": "CHN",
+          "action": "accept",
+          "version": 2,
+          "text": "Record the checked decision."
+        }
+      ]
+    }
+  },
+  "live": {
+    "standard": {
+      "feasible_packages": [
+        "briefing"
+      ],
+      "selected_package": "briefing",
+      "outcome": "valid_agreement",
+      "reward": 1,
+      "status": "unanimous_acceptance",
+      "speeches": 4,
+      "calls": 10,
+      "signatures": [
+        "CHN",
+        "NOR",
+        "GHA"
+      ],
+      "exclusions": {},
+      "queue": [],
+      "incompatible_signatures": [],
+      "speech_actions": [
+        {
+          "seat": "GHA",
+          "action": "propose",
+          "version": 2,
+          "text": "briefing"
+        },
+        {
+          "seat": "CHN",
+          "action": "accept",
+          "version": 2,
+          "text": "CHN accepts the current joint briefing co-hosted by a regional coordination office and coastal offices, as it falls within our fictional mandate."
+        },
+        {
+          "seat": "NOR",
+          "action": "accept",
+          "version": 2,
+          "text": "NOR accepts the current joint briefing co-hosted by a regional coordination office and coastal offices, which is within our fictional mandate."
+        },
+        {
+          "seat": "GHA",
+          "action": "accept",
+          "version": 2,
+          "text": "GHA accepts the current joint briefing co-hosted by a regional coordination office and coastal offices, which is within our fictional mandate."
+        }
+      ]
+    },
+    "after-rejection": {
+      "feasible_packages": [
+        "briefing"
+      ],
+      "selected_package": "briefing",
+      "outcome": "unresolved",
+      "reward": 0,
+      "status": "turn_cap",
+      "speeches": 5,
+      "calls": 11,
+      "signatures": [
+        "CHN"
+      ],
+      "exclusions": {
+        "review": "GHA",
+        "coastal": "CHN",
+        "regional": "NOR"
+      },
+      "queue": [
+        "NOR"
+      ],
+      "incompatible_signatures": [],
+      "speech_actions": [
+        {
+          "seat": "GHA",
+          "action": "rule_out",
+          "version": 1,
+          "text": "review"
+        },
+        {
+          "seat": "CHN",
+          "action": "rule_out",
+          "version": 1,
+          "text": "coastal"
+        },
+        {
+          "seat": "NOR",
+          "action": "rule_out",
+          "version": 1,
+          "text": "regional"
+        },
+        {
+          "seat": "GHA",
+          "action": "propose",
+          "version": 2,
+          "text": "briefing"
+        },
+        {
+          "seat": "CHN",
+          "action": "accept",
+          "version": 2,
+          "text": "I accept the current briefing package. A joint briefing co-hosted by a regional coordination office and coastal offices is within my fictional mandate and has no checked exclusion."
+        }
+      ]
+    }
+  }
+}
