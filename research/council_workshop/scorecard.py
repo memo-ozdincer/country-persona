@@ -70,6 +70,7 @@ def build():
     )]
     registered_runs.extend(report("iraq-pilot") / name for name in ("all-sol", "sol-with-astra-uae-resumed"))
     registered_runs.append(report("exclusion-policy") / "iraq-feasible-standard")
+    registered_runs.extend(report("norway-opening") / name for name in ("all-sol", "sol-with-astra-norway-resumed"))
     registered = score(registered_runs)
     registered["caps_by_family"] = {name: caps(family) for name, family in FAMILIES.items()}
     scripted = audit()

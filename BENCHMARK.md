@@ -3517,3 +3517,12 @@ turn with a checked exclusion and regenerating the three following
 speeches completed the certificate. The trace keeps the fixed routing,
 shared model reply and substituted action visible.
 [Live six-speech results and substitution replay](reports/council-workshop-live-rejection-fork-20261123/README.md)
+
+Rotating the registered Gulf impasse from Ghana to Norway opening
+changed the all-Sol result from unresolved to certified in nine
+speeches. Norway supplied the previously missed `briefing` exclusion
+on speech four and a second exclusion on speech seven. A provider limit
+interrupted the matched Astra-seat arm and its resume on the same floor
+request. The completed pair with Ghana opening therefore covers one
+order, while the all-Sol outcome varies across the two observed orders.
+[Order comparison and archived attempts](reports/council-workshop-norway-opening-20261123/README.md)

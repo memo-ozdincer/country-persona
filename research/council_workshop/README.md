@@ -166,6 +166,9 @@ covers both Gulf of Guinea variants. Both rosters reached agreement in
 five speeches when Norway's mandate allowed it. In the impasse variant,
 the Astra seat supplied both required exclusions and the Sol seat
 supplied one within the ten-speech cap.
+The [Norway-opening rotation](../../reports/council-workshop-norway-opening-20261123/README.md)
+certified impasse with all Sol. The provider interrupted both attempts
+to complete the matched Astra-seat arm.
 The [six-seat Iraq report](../../reports/council-workshop-iraq-pilot-20261123/README.md)
 shows an unresolved all-Sol impasse and a scripted replay that certifies
 it within the original cap. Both mixed-roster attempts ended on a

@@ -29,8 +29,8 @@ after the factual guard failed. [Blinded regrade and control](../../reports/coun
 A valid unanimous agreement or a certified impasse earns one point.
 A cap, walkout, or invalid agreement earns zero. A provider interruption
 before a model reply has no outcome score. The held standard-prompt
-matrix has 32 cells. **Six meetings are complete**, one cell has a
-provider-interrupted attempt, and 25 cells have no archived attempt.
+matrix has 32 cells. **Seven meetings are complete**, two cells have
+provider-interrupted attempts, and 23 cells have no archived attempt.
 The eight drafted case and order combinations all have a successful
 scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](held-control-audit.json)
 
@@ -39,15 +39,18 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Five-seat climate, feasible, nine-speech cap | Unresolved | Unresolved |
 | Five-seat climate, impasse | Certified in 7 | Certified in 7 |
 | Gulf of Guinea, feasible | Agreement in 5 | Agreement in 5 |
-| Gulf of Guinea, impasse | Unresolved in 10 | Certified in 10 |
+| Gulf of Guinea, impasse, Ghana opening | Unresolved in 10 | Certified in 10 |
+| Gulf of Guinea, impasse, Norway opening | Certified in 9 | Provider interrupted |
 | Iraq, feasible | Agreement in 12 | Unrun |
 | Iraq, impasse | Unresolved in 16 | Provider interrupted |
 
 Climate is a separate exposed comparison. Both climate continuations
 agreed with a tenth speech. The model assignments in the table use
-GPT-6.1-Sol and GPT-6-Astra. Each comparison uses one seat order and one
-completed trajectory per cell where available. [Climate control](../../reports/council-workshop-sol-control-20261123/README.md) ·
+GPT-6.1-Sol and GPT-6-Astra. Both registered Gulf impasse opening orders
+have an all-Sol trajectory. Each completed cell has one meeting.
+[Climate control](../../reports/council-workshop-sol-control-20261123/README.md) ·
 [Gulf comparison](../../reports/council-workshop-held-pilot-20261123/README.md) ·
+[Norway opening and interruption traces](../../reports/council-workshop-norway-opening-20261123/README.md) ·
 [Iraq comparison and interruption traces](../../reports/council-workshop-iraq-pilot-20261123/README.md)
 
 ## Prompt and budget controls
