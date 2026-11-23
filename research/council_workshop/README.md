@@ -91,6 +91,10 @@ Both runs ended after the first floor poll. Its report includes the
 exact model inputs, scoring traces and replay commands.
 The [floor diagnostic](../../reports/council-workshop-floor-diagnostic-20261123/README.md)
 swaps the floor labels and tests the same opening under a fixed rotation.
+The [shared-policy training experiment](../../reports/council-workshop-mandate-training-20261123/README.md)
+compares true terminal reward and unanimity reward under the same speech
+rotation. It includes held-roster transfer, mandate contrasts, and a replay
+through the production engine.
 
 Run the offline checks from the repo root:
 

@@ -1,0 +1,723 @@
+{
+  "plan": {
+    "seed": 20261123,
+    "training_episodes_per_arm": 16384,
+    "speech_cap": 9,
+    "train_profiles": [
+      [
+        [
+          1,
+          3,
+          6
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          1,
+          1,
+          6
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          6,
+          6
+        ],
+        [
+          3,
+          5,
+          6
+        ]
+      ],
+      [
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          3,
+          3,
+          5
+        ],
+        [
+          7,
+          7,
+          7
+        ],
+        [
+          1,
+          3,
+          7
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          1,
+          7,
+          7
+        ],
+        [
+          3,
+          7,
+          7
+        ],
+        [
+          1,
+          1,
+          3
+        ],
+        [
+          3,
+          5,
+          7
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    ],
+    "held_three_seat_profiles": [
+      [
+        [
+          1,
+          6,
+          7
+        ],
+        [
+          1,
+          2,
+          7
+        ]
+      ],
+      [
+        [
+          3,
+          3,
+          3
+        ],
+        [
+          1,
+          3,
+          3
+        ],
+        [
+          3,
+          3,
+          7
+        ]
+      ]
+    ],
+    "features": [
+      "bias",
+      "target_allowed",
+      "target_excluded",
+      "target_is_draft",
+      "already_accepted",
+      "accepted_fraction",
+      "remaining_fraction"
+    ],
+    "action_kinds": [
+      "accept",
+      "propose",
+      "rule_out",
+      "declare_impasse",
+      "yield_floor",
+      "walk_away"
+    ]
+  },
+  "fits": {
+    "verified": {
+      "weights": [
+        [
+          -0.10215071751975606,
+          2.4779120369656593,
+          -2.6412121432292777,
+          -0.10215071751975606,
+          -0.1991983678838602,
+          0.4422533645886814,
+          0.49423128472964434
+        ],
+        [
+          -0.5250804772561427,
+          1.052382681678532,
+          -2.227212539103523,
+          0.0,
+          -0.003319075429963172,
+          -0.43395486511871684,
+          -0.5716649755188161
+        ],
+        [
+          2.903959873811912,
+          0.0,
+          0.0,
+          1.4326163791228852,
+          0.1716210957963843,
+          0.4415614397852807,
+          1.8037575154493304
+        ],
+        [
+          0.7577192628697429,
+          0.35065161685627916,
+          0.7577192628697429,
+          0.7577192628697429,
+          0.08904186999156243,
+          0.1638718612570107,
+          0.0
+        ],
+        [
+          -0.9313679677725742,
+          -0.6405774060425734,
+          -0.4081169432141933,
+          -0.9313679677725742,
+          0.005455221657470986,
+          -0.3107460651900195,
+          -0.46232111056025965
+        ],
+        [
+          -2.103079974133171,
+          -0.9139295175212632,
+          -0.9145065321762386,
+          -2.103079974133171,
+          -0.0636007441315947,
+          -0.3029857353222376,
+          -1.2640027140999168
+        ]
+      ],
+      "trace": [
+        {
+          "through_episode": 1024,
+          "outcomes": {
+            "certified_impasse": 16,
+            "invalid_agreement": 114,
+            "unresolved": 849,
+            "valid_agreement": 45
+          }
+        },
+        {
+          "through_episode": 2048,
+          "outcomes": {
+            "certified_impasse": 7,
+            "invalid_agreement": 553,
+            "unresolved": 249,
+            "valid_agreement": 215
+          }
+        },
+        {
+          "through_episode": 3072,
+          "outcomes": {
+            "certified_impasse": 92,
+            "invalid_agreement": 377,
+            "unresolved": 312,
+            "valid_agreement": 243
+          }
+        },
+        {
+          "through_episode": 4096,
+          "outcomes": {
+            "certified_impasse": 408,
+            "invalid_agreement": 64,
+            "unresolved": 257,
+            "valid_agreement": 295
+          }
+        },
+        {
+          "through_episode": 5120,
+          "outcomes": {
+            "certified_impasse": 487,
+            "invalid_agreement": 33,
+            "unresolved": 156,
+            "valid_agreement": 348
+          }
+        },
+        {
+          "through_episode": 6144,
+          "outcomes": {
+            "certified_impasse": 494,
+            "invalid_agreement": 16,
+            "unresolved": 112,
+            "valid_agreement": 402
+          }
+        },
+        {
+          "through_episode": 7168,
+          "outcomes": {
+            "certified_impasse": 495,
+            "invalid_agreement": 15,
+            "unresolved": 87,
+            "valid_agreement": 427
+          }
+        },
+        {
+          "through_episode": 8192,
+          "outcomes": {
+            "certified_impasse": 509,
+            "invalid_agreement": 8,
+            "unresolved": 69,
+            "valid_agreement": 438
+          }
+        },
+        {
+          "through_episode": 9216,
+          "outcomes": {
+            "certified_impasse": 508,
+            "invalid_agreement": 12,
+            "unresolved": 57,
+            "valid_agreement": 447
+          }
+        },
+        {
+          "through_episode": 10240,
+          "outcomes": {
+            "certified_impasse": 509,
+            "invalid_agreement": 4,
+            "unresolved": 55,
+            "valid_agreement": 456
+          }
+        },
+        {
+          "through_episode": 11264,
+          "outcomes": {
+            "certified_impasse": 505,
+            "invalid_agreement": 8,
+            "unresolved": 43,
+            "valid_agreement": 468
+          }
+        },
+        {
+          "through_episode": 12288,
+          "outcomes": {
+            "certified_impasse": 505,
+            "invalid_agreement": 5,
+            "unresolved": 45,
+            "valid_agreement": 469
+          }
+        },
+        {
+          "through_episode": 13312,
+          "outcomes": {
+            "certified_impasse": 507,
+            "invalid_agreement": 6,
+            "unresolved": 31,
+            "valid_agreement": 480
+          }
+        },
+        {
+          "through_episode": 14336,
+          "outcomes": {
+            "certified_impasse": 511,
+            "invalid_agreement": 3,
+            "unresolved": 46,
+            "valid_agreement": 464
+          }
+        },
+        {
+          "through_episode": 15360,
+          "outcomes": {
+            "certified_impasse": 508,
+            "invalid_agreement": 7,
+            "unresolved": 34,
+            "valid_agreement": 475
+          }
+        },
+        {
+          "through_episode": 16384,
+          "outcomes": {
+            "certified_impasse": 504,
+            "invalid_agreement": 5,
+            "unresolved": 39,
+            "valid_agreement": 476
+          }
+        }
+      ]
+    },
+    "unanimity_proxy": {
+      "weights": [
+        [
+          1.7162067894024273,
+          0.8107153614708368,
+          0.17668727654883193,
+          1.7162067894024273,
+          0.0184348798083108,
+          0.4872985782261908,
+          1.5711886593794016
+        ],
+        [
+          -0.37137594571141347,
+          -0.1985605034824909,
+          -0.0656321023711606,
+          0.0,
+          -0.04746799405224123,
+          -0.15594726968219574,
+          -0.2994010854377717
+        ],
+        [
+          -0.058797758947568175,
+          0.0,
+          0.0,
+          -0.027982652837313028,
+          0.013699554032800685,
+          -0.04176139952081898,
+          -0.051423754910153816
+        ],
+        [
+          -0.0005745078747778362,
+          0.0005540332012777552,
+          -0.0005745078747778362,
+          -0.0005745078747778362,
+          -0.0008316577837033029,
+          -0.000793755252399997,
+          0.0
+        ],
+        [
+          -0.10414255535534735,
+          -0.04713977671307752,
+          -0.014722284753517846,
+          -0.10414255535534735,
+          0.02938011575463152,
+          -0.06009522920916239,
+          -0.08410881259783698
+        ],
+        [
+          -1.1813160215132885,
+          -0.5232095777504965,
+          -0.06958559010522043,
+          -1.1813160215132885,
+          -0.013214897759798559,
+          -0.2287009245615982,
+          -1.1362550064336208
+        ]
+      ],
+      "trace": [
+        {
+          "through_episode": 1024,
+          "outcomes": {
+            "certified_impasse": 3,
+            "invalid_agreement": 517,
+            "unresolved": 348,
+            "valid_agreement": 156
+          }
+        },
+        {
+          "through_episode": 2048,
+          "outcomes": {
+            "invalid_agreement": 800,
+            "unresolved": 11,
+            "valid_agreement": 213
+          }
+        },
+        {
+          "through_episode": 3072,
+          "outcomes": {
+            "invalid_agreement": 808,
+            "unresolved": 2,
+            "valid_agreement": 214
+          }
+        },
+        {
+          "through_episode": 4096,
+          "outcomes": {
+            "invalid_agreement": 803,
+            "unresolved": 1,
+            "valid_agreement": 220
+          }
+        },
+        {
+          "through_episode": 5120,
+          "outcomes": {
+            "invalid_agreement": 812,
+            "valid_agreement": 212
+          }
+        },
+        {
+          "through_episode": 6144,
+          "outcomes": {
+            "invalid_agreement": 801,
+            "unresolved": 1,
+            "valid_agreement": 222
+          }
+        },
+        {
+          "through_episode": 7168,
+          "outcomes": {
+            "invalid_agreement": 792,
+            "unresolved": 1,
+            "valid_agreement": 231
+          }
+        },
+        {
+          "through_episode": 8192,
+          "outcomes": {
+            "invalid_agreement": 794,
+            "valid_agreement": 230
+          }
+        },
+        {
+          "through_episode": 9216,
+          "outcomes": {
+            "invalid_agreement": 805,
+            "unresolved": 1,
+            "valid_agreement": 218
+          }
+        },
+        {
+          "through_episode": 10240,
+          "outcomes": {
+            "invalid_agreement": 800,
+            "unresolved": 1,
+            "valid_agreement": 223
+          }
+        },
+        {
+          "through_episode": 11264,
+          "outcomes": {
+            "invalid_agreement": 814,
+            "valid_agreement": 210
+          }
+        },
+        {
+          "through_episode": 12288,
+          "outcomes": {
+            "invalid_agreement": 804,
+            "unresolved": 3,
+            "valid_agreement": 217
+          }
+        },
+        {
+          "through_episode": 13312,
+          "outcomes": {
+            "invalid_agreement": 807,
+            "unresolved": 1,
+            "valid_agreement": 216
+          }
+        },
+        {
+          "through_episode": 14336,
+          "outcomes": {
+            "invalid_agreement": 815,
+            "valid_agreement": 209
+          }
+        },
+        {
+          "through_episode": 15360,
+          "outcomes": {
+            "invalid_agreement": 790,
+            "unresolved": 2,
+            "valid_agreement": 232
+          }
+        },
+        {
+          "through_episode": 16384,
+          "outcomes": {
+            "invalid_agreement": 805,
+            "valid_agreement": 219
+          }
+        }
+      ]
+    }
+  },
+  "held": {
+    "new_3_seat": {
+      "verified": {
+        "feasible": {
+          "speeches": 319,
+          "valid_agreement": 64
+        },
+        "infeasible": {
+          "certified_impasse": 64,
+          "speeches": 363
+        }
+      },
+      "unanimity_proxy": {
+        "feasible": {
+          "invalid_agreement": 31,
+          "speeches": 192,
+          "valid_agreement": 33
+        },
+        "infeasible": {
+          "invalid_agreement": 64,
+          "speeches": 192
+        }
+      },
+      "script": {
+        "feasible": {
+          "speeches": 319,
+          "valid_agreement": 64
+        },
+        "infeasible": {
+          "certified_impasse": 64,
+          "speeches": 363
+        }
+      },
+      "always_accept": {
+        "feasible": {
+          "invalid_agreement": 31,
+          "speeches": 192,
+          "valid_agreement": 33
+        },
+        "infeasible": {
+          "invalid_agreement": 64,
+          "speeches": 192
+        }
+      }
+    },
+    "new_5_seat": {
+      "verified": {
+        "feasible": {
+          "speeches": 536,
+          "unresolved": 13,
+          "valid_agreement": 51
+        },
+        "infeasible": {
+          "certified_impasse": 64,
+          "speeches": 355
+        }
+      },
+      "unanimity_proxy": {
+        "feasible": {
+          "invalid_agreement": 44,
+          "speeches": 320,
+          "valid_agreement": 20
+        },
+        "infeasible": {
+          "invalid_agreement": 64,
+          "speeches": 320
+        }
+      },
+      "script": {
+        "feasible": {
+          "speeches": 536,
+          "unresolved": 13,
+          "valid_agreement": 51
+        },
+        "infeasible": {
+          "certified_impasse": 64,
+          "speeches": 355
+        }
+      },
+      "always_accept": {
+        "feasible": {
+          "invalid_agreement": 44,
+          "speeches": 320,
+          "valid_agreement": 20
+        },
+        "infeasible": {
+          "invalid_agreement": 64,
+          "speeches": 320
+        }
+      }
+    },
+    "four_packages": {
+      "verified": {
+        "feasible": {
+          "speeches": 563,
+          "unresolved": 27,
+          "valid_agreement": 37
+        },
+        "infeasible": {
+          "certified_impasse": 60,
+          "speeches": 401,
+          "unresolved": 4
+        }
+      },
+      "unanimity_proxy": {
+        "feasible": {
+          "invalid_agreement": 42,
+          "speeches": 320,
+          "valid_agreement": 22
+        },
+        "infeasible": {
+          "invalid_agreement": 64,
+          "speeches": 320
+        }
+      },
+      "script": {
+        "feasible": {
+          "speeches": 563,
+          "unresolved": 27,
+          "valid_agreement": 37
+        },
+        "infeasible": {
+          "certified_impasse": 60,
+          "speeches": 401,
+          "unresolved": 4
+        }
+      },
+      "always_accept": {
+        "feasible": {
+          "invalid_agreement": 42,
+          "speeches": 320,
+          "valid_agreement": 22
+        },
+        "infeasible": {
+          "invalid_agreement": 64,
+          "speeches": 320
+        }
+      }
+    },
+    "climate": {
+      "verified": {
+        "feasible": {
+          "speeches": 8,
+          "valid_agreement": 1
+        },
+        "infeasible": {
+          "certified_impasse": 1,
+          "speeches": 6
+        }
+      },
+      "unanimity_proxy": {
+        "feasible": {
+          "invalid_agreement": 1,
+          "speeches": 5
+        },
+        "infeasible": {
+          "invalid_agreement": 1,
+          "speeches": 5
+        }
+      },
+      "script": {
+        "feasible": {
+          "speeches": 8,
+          "valid_agreement": 1
+        },
+        "infeasible": {
+          "certified_impasse": 1,
+          "speeches": 6
+        }
+      },
+      "always_accept": {
+        "feasible": {
+          "invalid_agreement": 1,
+          "speeches": 5
+        },
+        "infeasible": {
+          "invalid_agreement": 1,
+          "speeches": 5
+        }
+      }
+    }
+  }
+}
