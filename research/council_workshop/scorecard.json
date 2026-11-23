@@ -146,7 +146,7 @@
   "registered_standard_prompt_cells": {
     "registered_cells": 32,
     "completed_by_arm": {
-      "all-sol": 5,
+      "all-sol": 8,
       "sol-with-focus-swap": 2
     },
     "aborted_by_arm": {
@@ -210,6 +210,39 @@
         "status": "unanimous_acceptance",
         "speeches": 5,
         "calls": 13,
+        "signatures": [
+          "NOR",
+          "GHA",
+          "CHN"
+        ],
+        "exclusions": {},
+        "queue": [],
+        "incompatible_signatures": []
+      },
+      {
+        "family": "guinea",
+        "world": "feasible",
+        "order": [
+          "NOR",
+          "GHA",
+          "CHN"
+        ],
+        "arm": "all-sol",
+        "seat_models": {
+          "NOR": "gpt-6.1-sol",
+          "GHA": "gpt-6.1-sol",
+          "CHN": "gpt-6.1-sol"
+        },
+        "feasible_packages": [
+          "briefing",
+          "regional"
+        ],
+        "selected_package": "briefing",
+        "outcome": "valid_agreement",
+        "reward": 1,
+        "status": "unanimous_acceptance",
+        "speeches": 6,
+        "calls": 17,
         "signatures": [
           "NOR",
           "GHA",
@@ -356,6 +389,47 @@
         "family": "iraq",
         "world": "feasible",
         "order": [
+          "ARE",
+          "FRA",
+          "GBR",
+          "BRA",
+          "JPN",
+          "GHA"
+        ],
+        "arm": "all-sol",
+        "seat_models": {
+          "ARE": "gpt-6.1-sol",
+          "FRA": "gpt-6.1-sol",
+          "GBR": "gpt-6.1-sol",
+          "BRA": "gpt-6.1-sol",
+          "JPN": "gpt-6.1-sol",
+          "GHA": "gpt-6.1-sol"
+        },
+        "feasible_packages": [
+          "hybrid"
+        ],
+        "selected_package": "hybrid",
+        "outcome": "valid_agreement",
+        "reward": 1,
+        "status": "unanimous_acceptance",
+        "speeches": 12,
+        "calls": 53,
+        "signatures": [
+          "ARE",
+          "FRA",
+          "GBR",
+          "BRA",
+          "JPN",
+          "GHA"
+        ],
+        "exclusions": {},
+        "queue": [],
+        "incompatible_signatures": []
+      },
+      {
+        "family": "iraq",
+        "world": "feasible",
+        "order": [
           "FRA",
           "GBR",
           "BRA",
@@ -393,6 +467,50 @@
           "public": "GHA"
         },
         "queue": [],
+        "incompatible_signatures": []
+      },
+      {
+        "family": "iraq",
+        "world": "impasse",
+        "order": [
+          "ARE",
+          "FRA",
+          "GBR",
+          "BRA",
+          "JPN",
+          "GHA"
+        ],
+        "arm": "all-sol",
+        "seat_models": {
+          "ARE": "gpt-6.1-sol",
+          "FRA": "gpt-6.1-sol",
+          "GBR": "gpt-6.1-sol",
+          "BRA": "gpt-6.1-sol",
+          "JPN": "gpt-6.1-sol",
+          "GHA": "gpt-6.1-sol"
+        },
+        "feasible_packages": [],
+        "selected_package": "aggregate",
+        "outcome": "unresolved",
+        "reward": 0,
+        "status": "call_cap",
+        "speeches": 15,
+        "calls": 55,
+        "signatures": [
+          "FRA"
+        ],
+        "exclusions": {
+          "hybrid": "ARE",
+          "closed": "FRA",
+          "public": "GHA",
+          "aggregate": "GBR"
+        },
+        "queue": [
+          "BRA",
+          "JPN",
+          "GHA",
+          "ARE"
+        ],
         "incompatible_signatures": []
       },
       {
@@ -515,6 +633,46 @@
       "iraq": {
         "turn_cap": 16,
         "call_cap": 55
+      }
+    }
+  },
+  "registered_all_sol_summary": {
+    "planned": 8,
+    "scored": 8,
+    "outcomes_by_world": {
+      "feasible": {
+        "valid_agreement": 4
+      },
+      "impasse": {
+        "certified_impasse": 1,
+        "unresolved": 3
+      }
+    }
+  },
+  "registered_all_sol_impasse_continuation": {
+    "original": {
+      "outcome": "unresolved",
+      "reward": 0,
+      "speeches": 15,
+      "calls": 55,
+      "signature_count": 1,
+      "exclusion_count": 4
+    },
+    "continuation": {
+      "outcome": "certified_impasse",
+      "reward": 1,
+      "speeches": 16,
+      "calls": 56,
+      "signature_count": 1,
+      "exclusion_count": 4
+    },
+    "reused_calls": 55,
+    "extra_call": {
+      "seat": "BRA",
+      "reply": {
+        "action": "declare_impasse",
+        "version": 4,
+        "text": "Every package has a checked rejection in the public record: hybrid by ARE, closed by FRA, public by GHA, and aggregate by GBR. BRA therefore declares an impasse on the recording format. The official mandate and review deadlines remain untouched."
       }
     }
   },

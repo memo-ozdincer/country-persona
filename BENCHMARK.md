@@ -3526,3 +3526,10 @@ interrupted the matched Astra-seat arm and its resume on the same floor
 request. The completed pair with Ghana opening therefore covers one
 order, while the all-Sol outcome varies across the two observed orders.
 [Order comparison and archived attempts](reports/council-workshop-norway-opening-20261123/README.md)
+
+All eight standard-prompt all-Sol cells are complete. All four feasible
+cells agreed, and one of four impasse cells reached a certificate. The
+UAE-opening Iraq run recorded all four exclusions but spent its last
+call on the floor poll. One call on the exact archived prefix let Brazil
+certify at speech 16. The original cell remains unresolved in the
+registered score. [Completed all-Sol slice and continuation](reports/council-workshop-all-sol-matrix-20261123/README.md)

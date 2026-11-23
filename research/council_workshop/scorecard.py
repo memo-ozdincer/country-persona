@@ -1,5 +1,6 @@
 """Rebuild the workshop scorecard from archived traces without model calls."""
 
+from collections import Counter
 import json
 import subprocess
 import sys
@@ -71,11 +72,22 @@ def build():
     registered_runs.extend(report("iraq-pilot") / name for name in ("all-sol", "sol-with-astra-uae-resumed"))
     registered_runs.append(report("exclusion-policy") / "iraq-feasible-standard")
     registered_runs.extend(report("norway-opening") / name for name in ("all-sol", "sol-with-astra-norway-resumed"))
+    registered_runs.extend(report("all-sol-matrix") / name for name in (
+        "guinea-norway-feasible", "iraq-uae-impasse", "iraq-uae-feasible",
+    ))
     registered = score(registered_runs)
     registered["caps_by_family"] = {name: caps(family) for name, family in FAMILIES.items()}
     scripted = audit()
     if scripted != json.loads((HERE / "held-control-audit.json").read_text()):
         raise ValueError("The scripted reachability audit differs from its archive")
+    all_sol = [row for row in registered["meetings"] if row["arm"] == "all-sol"]
+    all_sol_summary = {"planned": len(scripted), "scored": sum(row["reward"] is not None for row in all_sol),
+                       "outcomes_by_world": {
+                           world: dict(sorted(Counter(r["outcome"] for r in all_sol if r["world"] == world).items()))
+                           for world in ("feasible", "impasse")
+                       }}
+    matrix = report("all-sol-matrix")
+    extra_call = verified_json(matrix / "continuation.json", matrix / "verify-continuation.py")
 
     experiments = (("iraq", "exclusion-policy", "readout"), ("gulf", "exclusion-transfer", "transfer"),
                    ("conditional", "conditional-exclusions", "readout"),
@@ -108,6 +120,11 @@ def build():
         "five_seat_climate": {case: {"caps": climate_caps[case], "arms": {arm: endpoint(row) for arm, row in arms.items()}}
                               for case, arms in pair.items()},
         "registered_standard_prompt_cells": registered,
+        "registered_all_sol_summary": all_sol_summary,
+        "registered_all_sol_impasse_continuation": {
+            "original": endpoint(extra_call["original"]), "continuation": endpoint(extra_call["continuation"]),
+            "reused_calls": extra_call["reused_calls"], "extra_call": extra_call["extra_call"],
+        },
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},
         "matched_prompt_comparisons": prompts,
         "shared_observation_fork": {

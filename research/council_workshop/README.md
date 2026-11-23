@@ -173,6 +173,11 @@ The [six-seat Iraq report](../../reports/council-workshop-iraq-pilot-20261123/RE
 shows an unresolved all-Sol impasse and a scripted replay that certifies
 it within the original cap. Both mixed-roster attempts ended on a
 provider rate limit.
+The [all-Sol matrix](../../reports/council-workshop-all-sol-matrix-20261123/README.md)
+covers both openers in both families. All four feasible cells agreed,
+and one impasse was certified within the registered limits. The
+UAE-opening Iraq impasse obtained its certificate in a separate
+continuation with one extra call.
 The [prompt comparison](../../reports/council-workshop-exclusion-prompt-20261123/README.md)
 finds that explicitly prioritizing an available exclusion changed the
 action at France’s last turn. A live continuation with the other seats
