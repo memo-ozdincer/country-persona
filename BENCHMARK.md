@@ -3503,3 +3503,13 @@ different actions and each preserved one endpoint. With six speeches,
 a shared scripted policy proposes first and branches on Norway's public
 response, attaining both endpoints under the same call cap.
 [Matched cases, frozen inputs and budget witnesses](reports/council-workshop-rejection-fork-20261123/README.md)
+
+With six speeches and controlled routing, China proposed `briefing`
+from the shared observation. Norway signed in the feasible world and
+offered a counterproposal in the infeasible one. Agreement completed
+in five speeches. The counterproposal left too few speeches to collect
+the remaining exclusions and certify impasse. Replacing that single
+turn with a checked exclusion and regenerating the three following
+speeches completed the certificate. The trace keeps the fixed routing,
+shared model reply and substituted action visible.
+[Live six-speech results and substitution replay](reports/council-workshop-live-rejection-fork-20261123/README.md)

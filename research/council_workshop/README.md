@@ -199,6 +199,11 @@ holds China's second-speech prompt fixed while changing a permission in
 Norway's mandate. Under five speeches, that shared decision can preserve
 agreement or impasse, depending on the hidden world. A six-speech
 scripted policy succeeds in both by branching on Norway's public reply.
+The [live six-speech trial](../../reports/council-workshop-live-rejection-fork-20261123/README.md)
+holds the opening and speaker routing fixed. Sol agreed in the feasible
+world and missed the impasse after Norway made a counterproposal. A
+scripted substitution at that speech let the remaining live delegates
+complete the certificate within the cap.
 
 Run the offline checks from the repo root:
 
