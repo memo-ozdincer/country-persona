@@ -1,4 +1,4 @@
-"""Replay the whole-meeting prompt comparison on the registered Iraq cases."""
+"""Replay and compare matched whole-meeting prompt conditions."""
 
 import json
 from pathlib import Path
@@ -13,10 +13,10 @@ from replay import replay
 from run import EXCLUSION_PRIORITY, pretty
 
 
-def load(path, world, priority):
+def load(path, family, world, priority):
     settings = json.loads((path / "settings.json").read_text())
     assert settings.get("prioritize_exclusions", False) is priority
-    assert identify(settings)[:2] == ("iraq", world)
+    assert identify(settings)[:2] == (family, world)
     original_plan = HERE.parent / "council-workshop-exclusion-prompt-20261123" / "plan.json"
     probes = json.loads(original_plan.read_text())
     assert probes["iraq-priority"]["prompt"] == probes["iraq-original"]["prompt"] + "\n\n" + EXCLUSION_PRIORITY
@@ -30,9 +30,9 @@ def load(path, world, priority):
     return settings, {**metrics(result, settings["case"]), "exclusion_trace": trace}
 
 
-def compare(world, reference):
-    baseline, control = load(reference, world, False)
-    treatment, intervention = load(HERE / f"iraq-{world}-priority", world, True)
+def compare(family, world, reference, intervention_path):
+    baseline, control = load(reference, family, world, False)
+    treatment, intervention = load(intervention_path, family, world, True)
     remove = {"started", "prioritize_exclusions"}
     assert {k: v for k, v in baseline.items() if k not in remove} == {
         k: v for k, v in treatment.items() if k not in remove
@@ -42,5 +42,6 @@ def compare(world, reference):
 
 if __name__ == "__main__":
     original = HERE.parent / "council-workshop-iraq-pilot-20261123" / "all-sol"
-    print(pretty({"impasse": compare("impasse", original),
-                  "feasible": compare("feasible", HERE / "iraq-feasible-standard")}))
+    print(pretty({"impasse": compare("iraq", "impasse", original, HERE / "iraq-impasse-priority"),
+                  "feasible": compare("iraq", "feasible", HERE / "iraq-feasible-standard",
+                                      HERE / "iraq-feasible-priority")}))

@@ -174,6 +174,11 @@ that instruction to each speaking prompt. These runs save the setting for
 replay and resume. The registered model-assignment score uses standard
 prompts. The [whole-meeting report](../../reports/council-workshop-exclusion-policy-20261123/README.md)
 compares the two instructions in the Iraq workshop.
+The [Gulf of Guinea transfer](../../reports/council-workshop-exclusion-transfer-20261123/README.md)
+uses the same instruction in a three-seat workshop. It produced a
+certified impasse where the archived standard run remained unresolved.
+In the feasible twin, both runs agreed, with one additional speech and
+call in the priority run.
 
 Run the offline checks from the repo root:
 

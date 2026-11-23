@@ -3456,3 +3456,12 @@ calls for standard and 41 for priority. The production runner stores
 the prompt condition for replay and resume. This is one trajectory per
 condition on the case used to develop the instruction.
 [Whole-meeting comparison](reports/council-workshop-exclusion-policy-20261123/README.md)
+
+The exact instruction transferred to the three-seat Gulf of Guinea
+workshop. Norway supplied the missing off-draft exclusion on its first
+turn and the team certified impasse in seven speeches and 17 calls. The
+archived standard run was unresolved at ten speeches and 24 calls. The
+feasible twin reached the same agreement with each prompt, taking one
+additional speech and call under priority. The comparison covers one
+trajectory per condition with Ghana opening.
+[Gulf of Guinea transfer traces and replay](reports/council-workshop-exclusion-transfer-20261123/README.md)
