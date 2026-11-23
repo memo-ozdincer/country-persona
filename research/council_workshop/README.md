@@ -186,6 +186,9 @@ The [per-speech budget audit](../../reports/council-workshop-budget-headroom-202
 checks when the existing queue or remaining budget first blocks a
 valid outcome. A scripted suffix confirms the Ghana-opening Gulf
 impasse was still reachable just before the first proven failure.
+The [live comparison at that turn](../../reports/council-workshop-gulf-cutoff-20261123/README.md)
+reuses the same 14-call prefix. The priority arm collected all four
+exclusions by the cap and certified with automatic moderator replay.
 The [prompt comparison](../../reports/council-workshop-exclusion-prompt-20261123/README.md)
 finds that explicitly prioritizing an available exclusion changed the
 action at France’s last turn. A live continuation with the other seats

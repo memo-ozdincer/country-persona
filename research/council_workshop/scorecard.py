@@ -96,6 +96,16 @@ def build():
     stops = verified_json(moderator / "results.json", moderator / "replay-stop.py")
     headroom = report("budget-headroom")
     budget = verified_json(headroom / "results.json", headroom / "audit.py")
+    gulf_cutoff = report("gulf-cutoff")
+    moderation = verified_json(gulf_cutoff / "moderator.json", gulf_cutoff / "paired.py", "moderator")
+    gulf_continuations = {}
+    for arm in ("standard", "priority"):
+        row = verified_json(gulf_cutoff / f"{arm}-result.json", gulf_cutoff / "paired.py", "replay", arm)
+        gulf_continuations[arm] = endpoint(row) | {
+            "first_fresh_speech": row["fresh_speeches"][0],
+            "reused_calls": row["reused_calls"], "fresh_calls": row["fresh_calls"],
+            "moderator_replay": endpoint(moderation[arm]),
+        }
 
     experiments = (("iraq", "exclusion-policy", "readout"), ("gulf", "exclusion-transfer", "transfer"),
                    ("conditional", "conditional-exclusions", "readout"),
@@ -142,6 +152,7 @@ def build():
             {"family": row["family"], "order": row["order"], **row["first_proven_budget_failure"]}
             for row in budget["meetings"] if row["first_proven_budget_failure"] is not None
         ],
+        "gulf_last_turn_live_continuations": gulf_continuations,
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},
         "matched_prompt_comparisons": prompts,
         "shared_observation_fork": {

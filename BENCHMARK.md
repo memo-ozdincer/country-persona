@@ -3551,3 +3551,10 @@ in ten speeches and 23 calls. The France-opening Iraq queue blocks
 France's last exclusion after speech 13. In UAE-opening Iraq, two calls
 remained when two floor polls and one declaration were still required.
 [Budget bounds and verified recovery](reports/council-workshop-budget-headroom-20261123/README.md)
+
+Starting before the Gulf loss, a fresh standard continuation again
+missed Norway's `briefing` exclusion. A priority reminder at that one
+turn recovered it, and the later live delegates completed the evidence
+on speech ten. Both live branches remained unresolved under delegate
+declaration. Automatic moderator replay certified only the completed
+priority branch. [Matched prompt and closing-rule comparison](reports/council-workshop-gulf-cutoff-20261123/README.md)

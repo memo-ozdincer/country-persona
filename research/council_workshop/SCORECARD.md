@@ -71,6 +71,12 @@ six in the Ghana-opening Gulf run and speech 13 in the France-opening
 Iraq run. The UAE-opening Iraq trace lost its remaining call budget
 after speech 15 with a complete certificate. [Per-speech audit and scripted recovery](../../reports/council-workshop-budget-headroom-20261123/README.md)
 
+On a live continuation at the Gulf cutoff, the priority prompt let
+the delegates record all four exclusions by the last speech. The
+automatic moderator replay turned that evidence into a certificate.
+The standard continuation stayed one exclusion short under either
+closing rule. [Matched live continuations](../../reports/council-workshop-gulf-cutoff-20261123/README.md)
+
 ## Prompt and budget controls
 
 | Case | Standard | Exclusions first | Exclusions after a checked rejection |
