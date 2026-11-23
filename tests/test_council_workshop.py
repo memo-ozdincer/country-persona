@@ -9,6 +9,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research" / "council_workshop"))
 
 from codex_runner import CodexRunner, MODELS, failure_detail
+from local_baseline import input_for
 from mandate_smoke import policy
 from mandates import Mandates
 from meeting import BALLOT, FLOOR, SPEECH, Meeting, run_meeting
@@ -251,6 +252,20 @@ class ClauseReviewTests(unittest.TestCase):
 
 
 class MandateWorkshopTests(unittest.TestCase):
+    def test_local_choice_table_only_offers_checkable_exclusions(self):
+        case = json.loads((HERE / "climate-packages-feasible.json").read_text())
+        seats = ["IND", "GBR", "FRA", "BRA", "KEN"]
+
+        def inspect(country, prompt, schema):
+            options, _ = input_for(prompt, schema)
+            rule_outs = [row["text"] for row in options.values() if row["action"] == "rule_out"]
+            self.assertEqual(rule_outs, ["assessment"])
+            self.assertNotIn("declare_impasse", {row["action"] for row in options.values()})
+            return next(row for row in options.values() if row["action"] == "accept")
+
+        result = simulate(case, seats, "meeting", 1, False, inspect, call_cap=1)
+        self.assertEqual(result["mandate_score"]["reward"], 0)
+
     def test_certificate_requires_checked_public_exclusion_for_every_option(self):
         case = json.loads((HERE / "climate-packages-impasse.json").read_text())
         seats = list(case["delegations"])

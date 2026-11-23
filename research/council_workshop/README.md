@@ -85,6 +85,11 @@ python3 -B research/council_workshop/mandate_smoke.py
 The finite cases run in meeting mode. The [offline baseline report](../../reports/council-workshop-mandates-20261123/README.md)
 records all five opener rotations under each of three scripts.
 
+The [frozen Qwen baseline](../../reports/council-workshop-qwen-20261123/README.md)
+uses native token scores over structured actions in the same engine.
+Both runs ended after the first floor poll. Its report includes the
+exact model inputs, scoring traces and replay commands.
+
 Run the offline checks from the repo root:
 
 ```sh
