@@ -7,7 +7,7 @@ import subprocess
 import tempfile
 
 
-MODELS = ("gpt-6.2-astra", "gpt-6.2-sol")
+MODELS = ("gpt-6.2-astra", "gpt-6.2-sol", "gpt-6-astra", "gpt-6.1-sol")
 
 
 def subscription_env():

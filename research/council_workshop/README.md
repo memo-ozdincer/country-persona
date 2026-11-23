@@ -101,6 +101,10 @@ against the same learned policy.
 The [partner study](../../reports/council-workshop-crossplay-20261123/README.md)
 rotates visibly different scripted partners through every seat and
 compares two moderator responses to an incompatible signature.
+The [live mixed-model pilot](../../reports/council-workshop-live-crossplay-20261123/README.md)
+uses GPT-6-Astra for one seat and GPT-6.1-Sol for the other four.
+It records a certified impasse and a valid agreement after a
+one-speech continuation.
 
 Run the offline checks from the repo root:
 
