@@ -3,6 +3,9 @@
 Two or more delegates negotiate one clause. Each sees its own dated source excerpts, the public discussion and the current draft. Python manages the floor and records decisions. The bundled case imagines a UK, India and France workshop on 10 December 2021 using statements from the previous day. The opening clause and any resulting agreement are fictional. [Official meeting record](https://docs.un.org/en/S/PV.8923)
 
 The [first live run and transcripts](../../reports/council-workshop-20261123/README.md) show how the queue, revisions and final ballots behaved.
+The [benchmark scorecard](SCORECARD.md) consolidates verified results,
+registered coverage, clause scores and the information ceiling with a
+single offline rebuild command.
 
 ## Run it
 
