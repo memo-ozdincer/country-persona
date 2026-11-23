@@ -252,6 +252,31 @@ class ClauseReviewTests(unittest.TestCase):
 
 
 class MandateWorkshopTests(unittest.TestCase):
+    @unittest.skipUnless(sys.version_info >= (3, 12), "The local Qwen replay uses Python 3.12")
+    def test_floor_diagnostic_preserves_view_and_rotates_request(self):
+        from floor_diagnostic import reversed_floor, scheduled_floor
+
+        case = json.loads((HERE / "climate-packages-feasible.json").read_text())
+        seats = list(case["delegations"])
+        floor = []
+
+        def decide(country, prompt, schema):
+            if schema is FLOOR:
+                original, messages = input_for(prompt, schema)
+                swapped, changed = reversed_floor({"prompt": prompt})
+                self.assertEqual(swapped, {"A": original["B"], "B": original["A"]})
+                self.assertEqual(json.loads(messages[1]["content"])["meeting"],
+                                 json.loads(changed[1]["content"])["meeting"])
+                answer = scheduled_floor({"countries": seats}, country, prompt)
+                floor.append((country, answer["action"]))
+                return answer
+            return speech("yield_floor")
+
+        result = simulate(case, seats, "meeting", 2, False, decide, call_cap=7)
+        self.assertEqual([entry["country"] for entry in result["history"]], seats[:2])
+        self.assertEqual([country for country, action in floor if action == "request_floor"], [seats[1]])
+        self.assertEqual(result["calls"], 7)
+
     def test_local_choice_table_only_offers_checkable_exclusions(self):
         case = json.loads((HERE / "climate-packages-feasible.json").read_text())
         seats = ["IND", "GBR", "FRA", "BRA", "KEN"]

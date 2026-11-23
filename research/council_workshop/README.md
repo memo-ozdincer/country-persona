@@ -89,6 +89,8 @@ The [frozen Qwen baseline](../../reports/council-workshop-qwen-20261123/README.m
 uses native token scores over structured actions in the same engine.
 Both runs ended after the first floor poll. Its report includes the
 exact model inputs, scoring traces and replay commands.
+The [floor diagnostic](../../reports/council-workshop-floor-diagnostic-20261123/README.md)
+swaps the floor labels and tests the same opening under a fixed rotation.
 
 Run the offline checks from the repo root:
 
