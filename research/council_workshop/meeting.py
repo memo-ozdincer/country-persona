@@ -60,12 +60,24 @@ class Meeting:
                                  resulting_version=self.version, text=text))
 
 
-def run_meeting(case, countries, turn_cap, decide, collect_votes=False):
+def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap=None):
     """decide(country, instruction, public_state, schema) returns a structured action."""
+    ballot_count = len(countries) if collect_votes else 0
+    discussion_cap = call_cap - ballot_count if call_cap is not None else None
+    if discussion_cap is not None and discussion_cap < 1:
+        raise ValueError("Call cap must cover the opening speech and all requested ballots")
+
+    calls = 0
+
+    def ask(country, instruction, public, schema):
+        nonlocal calls
+        calls += 1
+        return decide(country, instruction, public, schema)
+
     meeting = Meeting(countries, case["draft"])
     speaker = countries[0]
     for turn in range(1, turn_cap + 1):
-        action = decide(speaker, SPEAK_INSTRUCTION, meeting.view(), SPEECH)
+        action = ask(speaker, SPEAK_INSTRUCTION, meeting.view(), SPEECH)
         meeting.apply(speaker, action)
         if meeting.status != "open":
             break
@@ -75,12 +87,14 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False):
 
         # Existing requests retain priority. New ties start after the last speaker.
         start = countries.index(speaker) + 1
-        poll_order = countries[start:] + countries[:start]
+        poll_order = [country for country in countries[start:] + countries[:start]
+                      if country not in meeting.queue]
+        if discussion_cap is not None and calls + len(poll_order) > discussion_cap:
+            meeting.status = "call_cap"
+            break
         public = meeting.view()
         for country in poll_order:
-            if country in meeting.queue:
-                continue
-            request = decide(country, FLOOR_INSTRUCTION, public, FLOOR)["action"]
+            request = ask(country, FLOOR_INSTRUCTION, public, FLOOR)["action"]
             if request == "request_floor":
                 meeting.queue.append(country)
             elif request != "pass":
@@ -88,19 +102,25 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False):
         if not meeting.queue:
             meeting.status = "all_passed"
             break
+        if discussion_cap is not None and calls == discussion_cap:
+            meeting.status = "call_cap"
+            break
         speaker = meeting.queue.pop(0)
 
     # These are advisory ballots. All voters see the same pre-ballot state.
     ballots = {}
     if collect_votes:
         for country in countries:
-            ballot = decide(country, VOTE_INSTRUCTION, meeting.view(), BALLOT)
+            ballot = ask(country, VOTE_INSTRUCTION, meeting.view(), BALLOT)
             if type(ballot["version"]) is not int or ballot["version"] != meeting.version:
                 raise ValueError(f"{country} voted on the wrong version")
             if ballot["vote"] not in ("yes", "no", "abstain") or not ballot["reason"].strip():
                 raise ValueError(f"Invalid ballot from {country}")
             ballots[country] = ballot
-    return dict(**meeting.view(), status=meeting.status, ballots=ballots)
+    result = dict(**meeting.view(), status=meeting.status, ballots=ballots)
+    if call_cap is not None:
+        result["calls"] = calls
+    return result
 
 
 SPEAK_INSTRUCTION = """You have the floor. Choose one action. Use the CURRENT version for every

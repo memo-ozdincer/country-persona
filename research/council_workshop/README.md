@@ -29,7 +29,18 @@ Each decision is a fresh Codex call. The program reconstructs the delegate's vie
 
 ## Compare runs
 
-Use `--countries IND GBR FRA` to change the opener, or `--countries GBR IND` to test the same dispute without France. Add a country by including its ID and sourced excerpts in a copy of `climate.json` and passing `--case`.
+Use `--countries IND GBR FRA` to change the opener, or `--countries GBR IND` to test the same dispute without France. Add a country by including its ID and sourced excerpts in a copy of `climate.json` and passing `--case`. Repeat `--seat-model COUNTRY=MODEL` to assign a different model to a seat. Remaining seats use `--model`. Each request in a mixed-model run records its assigned model.
+
+For an equal-call comparison, set the same `--call-cap` and `--turn-cap` in every arm. The call budget covers speeches, floor polls and ballots, including decisions reused from an earlier run. When voting is enabled, the runner reserves one call per participant for the final ballots. The budget must cover those calls and the opening speech. If the remaining discussion budget cannot cover the next complete floor poll, the meeting ends with `call_cap` and preserves the recorded queue. A capped result records actual calls consumed. Token usage is a separate comparison.
+
+```sh
+python3 research/council_workshop/run.py --model gpt-6.2-astra \
+  --seat-model IND=gpt-6.2-sol --turn-cap 20 --call-cap 40 --vote --out runs/mixed
+```
+
+You can extend a call-capped meeting by increasing `--call-cap`. Keep the
+same seat assignments and keep or increase the other budget. An extension
+reuses discussion decisions and collects fresh advisory ballots.
 
 Use `--mode independent` for one draft per country from its own packet, or `--mode solo` for one analyst drafting from all selected packets. These are one-pass drafting comparisons with different call budgets. Compare models within the same mode, country order and turn cap. For qualitative review, hide model names, check each position against its source, and trace whether a particular objection changed the actual clause.
 

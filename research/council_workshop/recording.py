@@ -36,19 +36,27 @@ class Recording:
             raise ValueError("Unexpected events after the last decision")
 
 
+def decision_request(settings, country, prompt, schema):
+    request = dict(event="request", country=country, prompt=prompt, schema=schema)
+    if "seat_models" in settings:
+        request["model"] = settings["seat_models"].get(country, settings["model"])
+    return request
+
+
 def verify_run(directory, simulate):
     settings = json.loads((directory / "settings.json").read_text())
     recorded = Recording(directory)
 
     def call(country, prompt, schema):
-        request = dict(event="request", country=country, prompt=prompt, schema=schema)
+        request = decision_request(settings, country, prompt, schema)
         answer = recorded.take(request)
         if answer is None:
             raise ValueError(f"Missing response for {country}")
         return answer
 
+    limits = {"call_cap": settings["call_cap"]} if "call_cap" in settings else {}
     result = simulate(settings["case"], settings["countries"], settings["mode"],
-                      settings["turn_cap"], settings["vote"], call)
+                      settings["turn_cap"], settings["vote"], call, **limits)
     recorded.require_end()
     if result != json.loads((directory / "result.json").read_text()):
         raise ValueError("Replayed outcome differs from saved result")

@@ -7,7 +7,7 @@ import sys
 
 from codex_runner import CodexRunner, MODELS
 from meeting import BALLOT, DRAFT, run_meeting
-from recording import Recording, verify_run
+from recording import Recording, decision_request, verify_run
 
 
 HERE = Path(__file__).resolve().parent
@@ -21,7 +21,7 @@ def pretty(value):
     return json.dumps(value, ensure_ascii=False, indent=2)
 
 
-def simulate(case, countries, mode, turn_cap, vote, call):
+def simulate(case, countries, mode, turn_cap, vote, call, call_cap=None):
     def decide(country, instruction, public, schema):
         if mode == "solo":
             evidence = {c: case["delegations"][c] for c in countries}
@@ -33,7 +33,7 @@ def simulate(case, countries, mode, turn_cap, vote, call):
         return call(country, prompt, schema)
 
     if mode == "meeting":
-        return run_meeting(case, countries, turn_cap, decide, vote)
+        return run_meeting(case, countries, turn_cap, decide, vote, call_cap)
     public = {"draft": case["draft"], "version": 1}
     if mode == "solo":
         actors = ["analyst"]
@@ -58,10 +58,14 @@ def main():
     parser.add_argument("--case", type=Path, default=HERE / "climate.json")
     parser.add_argument("--countries", nargs="+", help="Country IDs in tie-break order; first opens")
     parser.add_argument("--model", choices=MODELS, default=MODELS[0])
+    parser.add_argument("--seat-model", action="append", default=[], metavar="COUNTRY=MODEL",
+                        help="Override the default model for one delegation, repeat for more seats")
     parser.add_argument("--codex", help="Path to a subscription-capable Codex executable")
     parser.add_argument("--call-timeout", type=int, default=360, help="Seconds allowed per model call")
     parser.add_argument("--mode", choices=("meeting", "independent", "solo"), default="meeting")
     parser.add_argument("--turn-cap", type=int, default=6)
+    parser.add_argument("--call-cap", type=int,
+                        help="Total decision calls in the meeting, including floor polls and ballots")
     parser.add_argument("--vote", action="store_true", help="Collect private advisory ballots")
     prior = parser.add_mutually_exclusive_group()
     prior.add_argument("--extend-from", type=Path, help="Continue a capped meeting with a higher total turn limit")
@@ -78,13 +82,29 @@ def main():
         parser.error("--call-timeout must be positive.")
     if args.vote and args.mode != "meeting":
         parser.error("--vote applies to meeting mode.")
+    if args.call_cap is not None:
+        if args.mode != "meeting":
+            parser.error("--call-cap applies to meeting mode.")
+        if args.call_cap < 1 + (len(countries) if args.vote else 0):
+            parser.error("--call-cap must cover the opening speech and all requested ballots.")
+    if args.seat_model and args.mode == "solo":
+        parser.error("Use --model to select the pooled solo analyst.")
+    seat_models = {}
+    for entry in args.seat_model:
+        seat, _, model = entry.partition("=")
+        if seat not in countries or seat in seat_models or model not in MODELS:
+            parser.error(f"Invalid or duplicate --seat-model {entry!r}. Use COUNTRY=MODEL for an active seat.")
+        seat_models[seat] = model
     if not case["draft"].strip() or not all(case["delegations"][c] for c in countries):
         parser.error("Supply an opening draft and evidence for each delegation.")
 
-    runner = CodexRunner(args.model, args.codex, args.call_timeout)
-    settings = dict(model=args.model, codex=runner.executable, started=datetime.now(timezone.utc).isoformat(),
+    settings = dict(model=args.model, started=datetime.now(timezone.utc).isoformat(),
                     case=case, countries=countries, mode=args.mode, turn_cap=args.turn_cap, vote=args.vote,
                     call_timeout=args.call_timeout)
+    if seat_models:
+        settings["seat_models"] = seat_models
+    if args.call_cap is not None:
+        settings["call_cap"] = args.call_cap
     previous = None
     source = args.extend_from or args.resume_from
     if source:
@@ -92,18 +112,34 @@ def main():
         for key in ("model", "case", "countries", "mode"):
             if old[key] != settings[key]:
                 parser.error(f"Cannot continue with a different {key}.")
+        if old.get("seat_models", {}) != seat_models:
+            parser.error("Cannot continue with different seat models.")
         if args.extend_from:
             result = verify_run(source, simulate)
-            if (old["mode"] != "meeting" or result["status"] != "turn_cap"
-                    or args.turn_cap <= old["turn_cap"]):
-                parser.error("Extend a completed, capped meeting using a higher total turn limit.")
+            previous_limits = {"turn_cap": old["turn_cap"], "call_cap": old.get("call_cap")}
+            limits = {"turn_cap": args.turn_cap, "call_cap": args.call_cap}
+            exhausted = result.get("status")
+            shrank_limit = any(
+                (limit is None) != (previous_limits[name] is None)
+                or (limit is not None and limit < previous_limits[name])
+                for name, limit in limits.items()
+            )
+            if (exhausted not in limits or shrank_limit
+                    or limits[exhausted] <= previous_limits[exhausted]):
+                parser.error("Increase the exhausted budget and preserve the other limit when extending a meeting.")
             previous = Recording(source, stop_before_schema=BALLOT)
             settings["extended_from"] = str(source)
         else:
-            if (source / "result.json").exists() or any(old[k] != settings[k] for k in ("turn_cap", "vote")):
-                parser.error("Resume an unfinished run with the same turn cap and vote setting.")
+            if (source / "result.json").exists() or any(
+                old.get(k) != settings.get(k) for k in ("turn_cap", "call_cap", "vote")
+            ):
+                parser.error("Resume an unfinished run with the same budgets and vote setting.")
             previous = Recording(source)
             settings["resumed_from"] = str(source)
+    actors = ("analyst",) if args.mode == "solo" else countries
+    models = dict.fromkeys(seat_models.get(actor, args.model) for actor in actors)
+    runners = {model: CodexRunner(model, args.codex, args.call_timeout) for model in models}
+    settings["codex"] = next(iter(runners.values())).executable
     args.out.mkdir(parents=True, exist_ok=False)
     (args.out / "settings.json").write_text(pretty(settings) + "\n")
     with (args.out / "calls.jsonl").open("x") as log:
@@ -112,17 +148,17 @@ def main():
             log.flush()
 
         def call(country, prompt, schema):
-            request = dict(event="request", country=country, prompt=prompt, schema=schema)
+            request = decision_request(settings, country, prompt, schema)
             record(request)
             answer = previous.take(request) if previous else None
             reused = answer is not None
             if not reused:
-                answer = runner(prompt, schema)
+                answer = runners[seat_models.get(country, args.model)](prompt, schema)
             record(dict(event="response", country=country, answer=answer, reused=reused))
             return answer
 
         try:
-            result = simulate(case, countries, args.mode, args.turn_cap, args.vote, call)
+            result = simulate(case, countries, args.mode, args.turn_cap, args.vote, call, args.call_cap)
             if previous:
                 previous.require_end()
         except (OSError, ValueError, KeyError, RuntimeError, TimeoutError) as error:

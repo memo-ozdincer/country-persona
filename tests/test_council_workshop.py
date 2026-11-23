@@ -69,6 +69,25 @@ class WorkshopTests(unittest.TestCase):
         self.assertEqual(result["status"], "walkout")
         self.assertEqual(len(result["history"]), 1)
 
+    def test_call_cap_reserves_ballots_and_keeps_floor_rounds_intact(self):
+        for cap, expected_floor_count in ((6, 0), (7, 3)):
+            schemas = []
+
+            def decide(country, instruction, public, schema):
+                schemas.append(schema)
+                if schema is FLOOR:
+                    return {"action": "request_floor"}
+                if schema is BALLOT:
+                    return {"version": 1, "vote": "yes", "reason": "Approved."}
+                return speech("reply")
+
+            with self.subTest(cap=cap):
+                result = run_meeting(CASE, COUNTRIES, 6, decide, True, cap)
+                self.assertEqual(result["status"], "call_cap")
+                self.assertEqual(result["calls"], 4 + expected_floor_count)
+                self.assertEqual(schemas, [SPEECH] + [FLOOR] * expected_floor_count + [BALLOT] * 3)
+                self.assertEqual(result["queue"], ["IND", "FRA", "GBR"] if expected_floor_count else [])
+
     def test_solo_and_independent_information_boundaries(self):
         def decide(country, prompt, schema):
             for role, quotes in CASE["delegations"].items():
@@ -101,6 +120,48 @@ class WorkshopTests(unittest.TestCase):
 
 
 class RecoveryTests(unittest.TestCase):
+    def test_mixed_model_run_and_call_cap_extension_replay(self):
+        with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
+            first, longer = Path(temp) / "first", Path(temp) / "longer"
+            calls = []
+
+            def factory(model, executable, timeout):
+                def runner(prompt, schema):
+                    packet = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])[0]
+                    calls.append((packet["role"], model, schema))
+                    if schema is FLOOR:
+                        return {"action": "pass"}
+                    if schema is BALLOT:
+                        return {"version": 1, "vote": "yes", "reason": "Approved."}
+                    return speech("reply")
+                runner.executable = "/test/codex"
+                return runner
+
+            provider.side_effect = factory
+            settings = ["run.py", "--seat-model", f"IND={MODELS[1]}", "--vote"]
+            with patch("sys.argv", [*settings, "--call-cap", "4", "--out", str(first)]):
+                main()
+            self.assertEqual(replay(first)["status"], "call_cap")
+            self.assertEqual(calls, [("GBR", MODELS[0], SPEECH)] + [
+                (c, MODELS[int(c == "IND")], BALLOT) for c in COUNTRIES
+            ])
+
+            calls.clear()
+            with patch("sys.argv", [*settings, "--extend-from", str(first), "--call-cap", "7",
+                                   "--out", str(longer)]):
+                main()
+            result = replay(longer)
+            self.assertEqual(result["status"], "all_passed")
+            self.assertEqual(result["calls"], 7)
+            self.assertEqual(len(calls), 6)
+            self.assertEqual(calls[0], ("IND", MODELS[1], FLOOR))
+            settings_path = longer / "settings.json"
+            data = json.loads(settings_path.read_text())
+            data["seat_models"]["IND"] = MODELS[0]
+            settings_path.write_text(json.dumps(data))
+            with self.assertRaisesRegex(ValueError, "Saved request differs for IND"):
+                replay(longer)
+
     def test_extend_carries_public_turn_and_collects_new_private_ballots(self):
         with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
             first, longer = Path(temp) / "first", Path(temp) / "longer"
