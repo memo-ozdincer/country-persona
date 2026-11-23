@@ -1,0 +1,150 @@
+"""Export held workshop cases, audit their controls, and score saved meetings."""
+
+import argparse
+from collections import Counter
+import json
+from pathlib import Path
+
+from mandates import Mandates
+from meeting import FLOOR
+from replay import replay
+from run import HERE, pretty, simulate
+from train_mandates import candidates, scripted
+
+
+FAMILIES = json.loads((HERE / "held-cases.json").read_text())
+WORLDS = ("feasible", "impasse")
+SOL = "gpt-6.1-sol"
+ASTRA = "gpt-6-astra"
+
+
+def case_for(family, world):
+    data = FAMILIES[family]
+    allowed = data["allowed"].copy()
+    if world == "impasse":
+        allowed[data["focus_seat"]] = data["changed_mandate"]
+    return {
+        "title": data["title"], "source": data["source"],
+        "brief": (f'{data["topic"]} Choose a package every participant can accept, or establish an '
+                  "impasse by recording a checked exclusion for every package. All packages and "
+                  "private mandates are fictional and carry no official commitments."),
+        "draft": data["options"][data["opening"]],
+        "delegations": {seat: ["Use this seat's fictional mandate."] for seat in data["allowed"]},
+        "mandate_game": {"options": data["options"], "allowed": allowed},
+    }
+
+
+def checked_exchange(seat, prompt, schema):
+    if schema is FLOOR:
+        return {"action": "request_floor"}
+    packet, _ = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])
+    public = packet["public"]
+    allowed = set(packet["private_mandate"]["allowed_packages"])
+    rows, selected = candidates(public, seat, allowed)
+    action, target = scripted(rows, selected, public, seat)
+    text = target if action in ("propose", "rule_out") else "Record the checked decision."
+    return {"action": action, "version": public["version"], "text": text}
+
+
+def metrics(result):
+    return {
+        **result["mandate_score"], "status": result["status"],
+        "speeches": len(result["history"]), "calls": result["calls"],
+        "signatures": result["accepted"], "exclusions": result["exclusions"],
+        "queue": result["queue"],
+    }
+
+
+def audit():
+    rows = []
+    for family, data in FAMILIES.items():
+        for world in WORLDS:
+            case = case_for(family, world)
+            for order in data["orders"]:
+                assert len(set(order)) == len(order) and set(order) == set(data["allowed"])
+                mandates = Mandates.from_case(case, order)
+                expected = data["expected_feasible"] if world == "feasible" else []
+                expected_vetoes = {option: [seat for seat in order if option not in mandates.allowed[seat]]
+                                   for option in mandates.options}
+                assert sorted(option for option, vetoes in expected_vetoes.items() if not vetoes) == expected
+                result = simulate(case, order, "meeting", data["turn_cap"], False,
+                                  checked_exchange, call_cap=data["call_cap"])
+                assert result["mandate_score"]["feasible_packages"] == expected
+                assert result["mandate_score"]["reward"] == 1
+                rows.append({"family": family, "world": world, "order": order,
+                             "veto_holders": expected_vetoes, **metrics(result)})
+    return rows
+
+
+def identify(settings):
+    for family, data in FAMILIES.items():
+        order = settings["countries"]
+        if order not in data["orders"]:
+            continue
+        for world in WORLDS:
+            if settings["case"] == case_for(family, world):
+                return family, world, data, order
+    raise ValueError("Case and opening order do not match a registered cell")
+
+
+def score(directories):
+    rows = {}
+    for directory in directories:
+        settings = json.loads((directory / "settings.json").read_text())
+        family, world, data, order = identify(settings)
+        if (settings["mode"], settings["vote"], settings["turn_cap"], settings.get("call_cap")) != (
+                "meeting", False, data["turn_cap"], data["call_cap"]):
+            raise ValueError(f"Unregistered meeting budgets or mode in {directory}")
+        default = settings["model"]
+        other = {SOL: ASTRA, ASTRA: SOL}.get(default)
+        overrides = settings.get("seat_models", {})
+        if other is None or overrides not in ({}, {data["focus_seat"]: other}):
+            raise ValueError(f"Unregistered model assignment in {directory}")
+        assignment = "sol" if default == SOL else "astra"
+        arm = f"{assignment}-with-focus-swap" if overrides else f"all-{assignment}"
+        key = (family, world, order[0], arm)
+        if key in rows:
+            raise ValueError(f"Duplicate evaluation cell {key}")
+        result = replay(directory)
+        rows[key] = {"family": family, "world": world, "order": order, "arm": arm,
+                     "seat_models": {seat: overrides.get(seat, default) for seat in order},
+                     **metrics(result)}
+
+    pairs = []
+    for family, world, opener, arm in sorted(rows):
+        if not arm.endswith("-with-focus-swap"):
+            continue
+        baseline = (family, world, opener, f"all-{arm.split('-', 1)[0]}")
+        if baseline in rows:
+            swapped = rows[(family, world, opener, arm)]
+            reference = rows[baseline]
+            pairs.append({"family": family, "world": world, "opener": opener, "arm": arm,
+                          "baseline": reference["arm"], "reward_delta": swapped["reward"] - reference["reward"],
+                          "speech_delta": swapped["speeches"] - reference["speeches"],
+                          "call_delta": swapped["calls"] - reference["calls"]})
+    return {"registered_cells": sum(len(data["orders"]) for data in FAMILIES.values()) * len(WORLDS) * 4,
+            "completed_by_arm": dict(sorted(Counter(row["arm"] for row in rows.values()).items())),
+            "meetings": [rows[key] for key in sorted(rows)], "matched_focus_swaps": pairs}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    commands = parser.add_subparsers(dest="command", required=True)
+    export = commands.add_parser("case")
+    export.add_argument("family", choices=FAMILIES)
+    export.add_argument("world", choices=WORLDS)
+    commands.add_parser("audit")
+    grading = commands.add_parser("score")
+    grading.add_argument("directories", nargs="+", type=Path)
+    args = parser.parse_args()
+    if args.command == "case":
+        output = case_for(args.family, args.world)
+    elif args.command == "audit":
+        output = audit()
+    else:
+        output = score(args.directories)
+    print(pretty(output))
+
+
+if __name__ == "__main__":
+    main()

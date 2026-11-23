@@ -1,0 +1,51 @@
+{
+  "guinea": {
+    "title": "Gulf of Guinea maritime briefing workshop (fictional)",
+    "source": "https://digitallibrary.un.org/record/3975658",
+    "topic": "Agree on a format for a simulated regional maritime briefing.",
+    "orders": [["GHA", "CHN", "NOR"], ["NOR", "GHA", "CHN"]],
+    "focus_seat": "NOR",
+    "turn_cap": 10,
+    "call_cap": 30,
+    "opening": "coastal",
+    "options": {
+      "coastal": "Use a joint briefing delivered by the participating coastal offices.",
+      "briefing": "Use a joint briefing co-hosted by a regional coordination office and coastal offices.",
+      "regional": "Use a briefing delivered by the regional coordination office, with coastal offices submitting written inputs.",
+      "review": "Commission a single written review and hold no briefing this cycle."
+    },
+    "allowed": {
+      "GHA": ["coastal", "briefing", "regional"],
+      "CHN": ["briefing", "regional", "review"],
+      "NOR": ["coastal", "briefing", "regional", "review"]
+    },
+    "changed_mandate": ["coastal", "review"],
+    "expected_feasible": ["briefing", "regional"]
+  },
+  "iraq": {
+    "title": "Iraq consultation summary workshop (fictional)",
+    "source": "https://digitallibrary.un.org/record/4012265",
+    "topic": "Agree on a format for recording a simulated consultation about a mission review. The workshop leaves the official mandate and review deadlines untouched.",
+    "orders": [["FRA", "GBR", "BRA", "JPN", "GHA", "ARE"], ["ARE", "FRA", "GBR", "BRA", "JPN", "GHA"]],
+    "focus_seat": "ARE",
+    "turn_cap": 16,
+    "call_cap": 55,
+    "opening": "public",
+    "options": {
+      "public": "Publish attributed consultation summaries and a consolidated note.",
+      "aggregate": "Publish only a consolidated note with no attributed submissions.",
+      "hybrid": "Publish a consolidated note and send an attributed annex to the consultation participants only.",
+      "closed": "Send attributed summaries to participants only and publish no consolidated note."
+    },
+    "allowed": {
+      "FRA": ["public", "aggregate", "hybrid"],
+      "GBR": ["public", "hybrid", "closed"],
+      "BRA": ["public", "aggregate", "hybrid", "closed"],
+      "JPN": ["public", "aggregate", "hybrid", "closed"],
+      "GHA": ["aggregate", "hybrid", "closed"],
+      "ARE": ["public", "aggregate", "hybrid", "closed"]
+    },
+    "changed_mandate": ["public", "aggregate", "closed"],
+    "expected_feasible": ["hybrid"]
+  }
+}
