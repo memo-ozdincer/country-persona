@@ -3493,3 +3493,13 @@ control keeps the first rejection and still agrees by proposing on speech
 two. The contrast separates the cost of further exclusions from the cost
 of acknowledging that the opening draft is incompatible.
 [Rejected-opening case and scripted witnesses](reports/council-workshop-rejected-opening-20261123/README.md)
+
+The matched rejection fork removes one permission from Norway's mandate.
+China sees exactly the same prompt after Ghana's checked rejection. To
+finish in five speeches it must propose in the feasible world or record
+its unique exclusion in the infeasible one. This gives an exact 50%
+success ceiling under an equal prior. The two prompt variants chose
+different actions and each preserved one endpoint. With six speeches,
+a shared scripted policy proposes first and branches on Norway's public
+response, attaining both endpoints under the same call cap.
+[Matched cases, frozen inputs and budget witnesses](reports/council-workshop-rejection-fork-20261123/README.md)

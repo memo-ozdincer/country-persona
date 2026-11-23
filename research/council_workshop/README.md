@@ -194,6 +194,11 @@ found the feasible replacement and secured all three signatures. The
 conditional run recorded all exclusions first and reached the deadline
 with one signature. A scripted replacement-first witness also succeeds
 after the first checked rejection.
+The [matched rejection fork](../../reports/council-workshop-rejection-fork-20261123/README.md)
+holds China's second-speech prompt fixed while changing a permission in
+Norway's mandate. Under five speeches, that shared decision can preserve
+agreement or impasse, depending on the hidden world. A six-speech
+scripted policy succeeds in both by branching on Norway's public reply.
 
 Run the offline checks from the repo root:
 

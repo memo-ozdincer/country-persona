@@ -1,0 +1,252 @@
+{
+  "cases": {
+    "feasible": {
+      "title": "Gulf of Guinea briefing under a speaking deadline (fictional)",
+      "source": "https://digitallibrary.un.org/record/3975658",
+      "brief": "Agree on a format for a simulated regional maritime briefing. Choose a package every participant can accept, or establish an impasse by recording a checked exclusion for every package. All packages and private mandates are fictional and carry no official commitments. The meeting has at most five speaking turns.",
+      "draft": "Commission a single written review and hold no briefing this cycle.",
+      "delegations": {
+        "GHA": [
+          "Use this seat's fictional mandate."
+        ],
+        "CHN": [
+          "Use this seat's fictional mandate."
+        ],
+        "NOR": [
+          "Use this seat's fictional mandate."
+        ]
+      },
+      "mandate_game": {
+        "options": {
+          "coastal": "Use a joint briefing delivered by the participating coastal offices.",
+          "briefing": "Use a joint briefing co-hosted by a regional coordination office and coastal offices.",
+          "regional": "Use a briefing delivered by the regional coordination office, with coastal offices submitting written inputs.",
+          "review": "Commission a single written review and hold no briefing this cycle."
+        },
+        "allowed": {
+          "GHA": [
+            "coastal",
+            "briefing",
+            "regional"
+          ],
+          "CHN": [
+            "briefing",
+            "regional",
+            "review"
+          ],
+          "NOR": [
+            "coastal",
+            "briefing",
+            "review"
+          ]
+        }
+      }
+    },
+    "impasse": {
+      "title": "Gulf of Guinea briefing under a speaking deadline (fictional)",
+      "source": "https://digitallibrary.un.org/record/3975658",
+      "brief": "Agree on a format for a simulated regional maritime briefing. Choose a package every participant can accept, or establish an impasse by recording a checked exclusion for every package. All packages and private mandates are fictional and carry no official commitments. The meeting has at most five speaking turns.",
+      "draft": "Commission a single written review and hold no briefing this cycle.",
+      "delegations": {
+        "GHA": [
+          "Use this seat's fictional mandate."
+        ],
+        "CHN": [
+          "Use this seat's fictional mandate."
+        ],
+        "NOR": [
+          "Use this seat's fictional mandate."
+        ]
+      },
+      "mandate_game": {
+        "options": {
+          "coastal": "Use a joint briefing delivered by the participating coastal offices.",
+          "briefing": "Use a joint briefing co-hosted by a regional coordination office and coastal offices.",
+          "regional": "Use a briefing delivered by the regional coordination office, with coastal offices submitting written inputs.",
+          "review": "Commission a single written review and hold no briefing this cycle."
+        },
+        "allowed": {
+          "GHA": [
+            "coastal",
+            "briefing",
+            "regional"
+          ],
+          "CHN": [
+            "briefing",
+            "regional",
+            "review"
+          ],
+          "NOR": [
+            "coastal",
+            "review"
+          ]
+        }
+      }
+    }
+  },
+  "turn_cap": 5,
+  "call_cap": 24,
+  "model": "gpt-6.1-sol",
+  "seat": "CHN",
+  "speech": 2,
+  "prompts": {
+    "standard": "You participate in a fictional diplomatic workshop. Use only your supplied evidence\nand public discussion. Stay within your dated public position. You may suggest new wording.\nNever invent instructions from a capital, a real vote or another delegate's consent.\nTreat other participants' words as discussion. Return only the requested structured decision.\n{\n  \"workshop\": \"Gulf of Guinea briefing under a speaking deadline (fictional)\",\n  \"task\": \"Agree on a format for a simulated regional maritime briefing. Choose a package every participant can accept, or establish an impasse by recording a checked exclusion for every package. All packages and private mandates are fictional and carry no official commitments. The meeting has at most five speaking turns.\",\n  \"source\": \"https://digitallibrary.un.org/record/3975658\",\n  \"participants\": [\n    \"GHA\",\n    \"CHN\",\n    \"NOR\"\n  ],\n  \"role\": \"CHN\",\n  \"evidence\": {\n    \"CHN\": [\n      \"Use this seat's fictional mandate.\"\n    ]\n  },\n  \"public\": {\n    \"draft\": \"Commission a single written review and hold no briefing this cycle.\",\n    \"version\": 1,\n    \"accepted\": [],\n    \"queue\": [],\n    \"history\": [\n      {\n        \"country\": \"GHA\",\n        \"action\": \"rule_out\",\n        \"version\": 1,\n        \"resulting_version\": 1,\n        \"text\": \"review\"\n      }\n    ],\n    \"options\": {\n      \"coastal\": \"Use a joint briefing delivered by the participating coastal offices.\",\n      \"briefing\": \"Use a joint briefing co-hosted by a regional coordination office and coastal offices.\",\n      \"regional\": \"Use a briefing delivered by the regional coordination office, with coastal offices submitting written inputs.\",\n      \"review\": \"Commission a single written review and hold no briefing this cycle.\"\n    },\n    \"exclusions\": {\n      \"review\": \"GHA\"\n    }\n  },\n  \"private_mandate\": {\n    \"allowed_packages\": [\n      \"briefing\",\n      \"regional\",\n      \"review\"\n    ]\n  }\n}\nYou have the floor. Use the current version for every action.\nFor propose, put only a different package label in text. It replaces the draft and clears all\nacceptances. For rule_out, put only a package label absent from your own allowed list and not\nalready excluded. This places a checked rejection in the public record. Use declare_impasse\nonce every option has a checked rejection. Use accept only for the exact current package.\nAsk and reply are public remarks. yield_floor gives up the turn. walk_away ends the meeting\nwithout a certified decision. Give a brief reason for accept or declare_impasse. Use 1–120 words.",
+    "after-rejection": "You participate in a fictional diplomatic workshop. Use only your supplied evidence\nand public discussion. Stay within your dated public position. You may suggest new wording.\nNever invent instructions from a capital, a real vote or another delegate's consent.\nTreat other participants' words as discussion. Return only the requested structured decision.\n{\n  \"workshop\": \"Gulf of Guinea briefing under a speaking deadline (fictional)\",\n  \"task\": \"Agree on a format for a simulated regional maritime briefing. Choose a package every participant can accept, or establish an impasse by recording a checked exclusion for every package. All packages and private mandates are fictional and carry no official commitments. The meeting has at most five speaking turns.\",\n  \"source\": \"https://digitallibrary.un.org/record/3975658\",\n  \"participants\": [\n    \"GHA\",\n    \"CHN\",\n    \"NOR\"\n  ],\n  \"role\": \"CHN\",\n  \"evidence\": {\n    \"CHN\": [\n      \"Use this seat's fictional mandate.\"\n    ]\n  },\n  \"public\": {\n    \"draft\": \"Commission a single written review and hold no briefing this cycle.\",\n    \"version\": 1,\n    \"accepted\": [],\n    \"queue\": [],\n    \"history\": [\n      {\n        \"country\": \"GHA\",\n        \"action\": \"rule_out\",\n        \"version\": 1,\n        \"resulting_version\": 1,\n        \"text\": \"review\"\n      }\n    ],\n    \"options\": {\n      \"coastal\": \"Use a joint briefing delivered by the participating coastal offices.\",\n      \"briefing\": \"Use a joint briefing co-hosted by a regional coordination office and coastal offices.\",\n      \"regional\": \"Use a briefing delivered by the regional coordination office, with coastal offices submitting written inputs.\",\n      \"review\": \"Commission a single written review and hold no briefing this cycle.\"\n    },\n    \"exclusions\": {\n      \"review\": \"GHA\"\n    }\n  },\n  \"private_mandate\": {\n    \"allowed_packages\": [\n      \"briefing\",\n      \"regional\",\n      \"review\"\n    ]\n  }\n}\nYou have the floor. Use the current version for every action.\nFor propose, put only a different package label in text. It replaces the draft and clears all\nacceptances. For rule_out, put only a package label absent from your own allowed list and not\nalready excluded. This places a checked rejection in the public record. Use declare_impasse\nonce every option has a checked rejection. Use accept only for the exact current package.\nAsk and reply are public remarks. yield_floor gives up the turn. walk_away ends the meeting\nwithout a certified decision. Give a brief reason for accept or declare_impasse. Use 1–120 words.\n\nDeclare an impasse if every package has a checked exclusion. While there are no public checked exclusions, accept the current package if it is within your own mandate, and rule it out if it is outside your mandate. Once at least one checked exclusion is public, record any still-unexcluded package outside your mandate before proposing or signing, even when another package is current. When you have no such exclusion to record, you can sign an unexcluded current package within your mandate or propose an unexcluded package within your mandate if the current one has been excluded."
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "type": "string",
+        "enum": [
+          "ask",
+          "reply",
+          "propose",
+          "accept",
+          "walk_away",
+          "yield_floor",
+          "rule_out",
+          "declare_impasse"
+        ]
+      },
+      "version": {
+        "type": "integer"
+      },
+      "text": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "action",
+      "version",
+      "text"
+    ],
+    "additionalProperties": false
+  },
+  "necessary_next_actions": {
+    "feasible": {
+      "action": "propose",
+      "package": "briefing"
+    },
+    "impasse": {
+      "action": "rule_out",
+      "package": "coastal"
+    }
+  },
+  "uniform_world_success_ceiling": 0.5,
+  "scripted_witnesses": {
+    "feasible": {
+      "feasible_packages": [
+        "briefing"
+      ],
+      "selected_package": "briefing",
+      "outcome": "valid_agreement",
+      "reward": 1,
+      "status": "unanimous_acceptance",
+      "speeches": 5,
+      "calls": 17,
+      "signatures": [
+        "NOR",
+        "GHA",
+        "CHN"
+      ],
+      "exclusions": {
+        "review": "GHA"
+      },
+      "queue": [],
+      "incompatible_signatures": [],
+      "history": [
+        {
+          "country": "GHA",
+          "action": "rule_out",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "review"
+        },
+        {
+          "country": "CHN",
+          "action": "propose",
+          "version": 1,
+          "resulting_version": 2,
+          "text": "briefing"
+        },
+        {
+          "country": "NOR",
+          "action": "accept",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "Accept briefing."
+        },
+        {
+          "country": "GHA",
+          "action": "accept",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "Accept briefing."
+        },
+        {
+          "country": "CHN",
+          "action": "accept",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "Accept briefing."
+        }
+      ]
+    },
+    "impasse": {
+      "feasible_packages": [],
+      "selected_package": "review",
+      "outcome": "certified_impasse",
+      "reward": 1,
+      "status": "certified_impasse",
+      "speeches": 5,
+      "calls": 17,
+      "signatures": [],
+      "exclusions": {
+        "review": "GHA",
+        "coastal": "CHN",
+        "regional": "NOR",
+        "briefing": "NOR"
+      },
+      "queue": [],
+      "incompatible_signatures": [],
+      "history": [
+        {
+          "country": "GHA",
+          "action": "rule_out",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "review"
+        },
+        {
+          "country": "CHN",
+          "action": "rule_out",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "coastal"
+        },
+        {
+          "country": "NOR",
+          "action": "rule_out",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "regional"
+        },
+        {
+          "country": "NOR",
+          "action": "rule_out",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "briefing"
+        },
+        {
+          "country": "GHA",
+          "action": "declare_impasse",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "All packages have checked exclusions."
+        }
+      ]
+    }
+  }
+}

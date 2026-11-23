@@ -1,0 +1,127 @@
+{
+  "speech_cap": 6,
+  "call_cap": 24,
+  "shared_policy_success": 1.0,
+  "worlds": {
+    "feasible": {
+      "feasible_packages": [
+        "briefing"
+      ],
+      "selected_package": "briefing",
+      "outcome": "valid_agreement",
+      "reward": 1,
+      "status": "unanimous_acceptance",
+      "speeches": 5,
+      "calls": 17,
+      "signatures": [
+        "NOR",
+        "GHA",
+        "CHN"
+      ],
+      "exclusions": {
+        "review": "GHA"
+      },
+      "queue": [],
+      "incompatible_signatures": [],
+      "history": [
+        {
+          "country": "GHA",
+          "action": "rule_out",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "review"
+        },
+        {
+          "country": "CHN",
+          "action": "propose",
+          "version": 1,
+          "resulting_version": 2,
+          "text": "briefing"
+        },
+        {
+          "country": "NOR",
+          "action": "accept",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "Accept briefing."
+        },
+        {
+          "country": "GHA",
+          "action": "accept",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "Accept briefing."
+        },
+        {
+          "country": "CHN",
+          "action": "accept",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "Accept briefing."
+        }
+      ]
+    },
+    "impasse": {
+      "feasible_packages": [],
+      "selected_package": "briefing",
+      "outcome": "certified_impasse",
+      "reward": 1,
+      "status": "certified_impasse",
+      "speeches": 6,
+      "calls": 21,
+      "signatures": [],
+      "exclusions": {
+        "review": "GHA",
+        "briefing": "NOR",
+        "coastal": "CHN",
+        "regional": "NOR"
+      },
+      "queue": [],
+      "incompatible_signatures": [],
+      "history": [
+        {
+          "country": "GHA",
+          "action": "rule_out",
+          "version": 1,
+          "resulting_version": 1,
+          "text": "review"
+        },
+        {
+          "country": "CHN",
+          "action": "propose",
+          "version": 1,
+          "resulting_version": 2,
+          "text": "briefing"
+        },
+        {
+          "country": "NOR",
+          "action": "rule_out",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "briefing"
+        },
+        {
+          "country": "CHN",
+          "action": "rule_out",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "coastal"
+        },
+        {
+          "country": "NOR",
+          "action": "rule_out",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "regional"
+        },
+        {
+          "country": "GHA",
+          "action": "declare_impasse",
+          "version": 2,
+          "resulting_version": 2,
+          "text": "All packages have checked exclusions."
+        }
+      ]
+    }
+  }
+}
