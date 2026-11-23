@@ -100,15 +100,18 @@ def scripted(rows, selected, public, country):
     return "accept", selected
 
 
-def rollout(instance, choose, collect=False):
+def rollout(instance, choose, collect=False, *, turn_cap=TURN_CAP, context=None):
     seats, draft, mandates = instance
     meeting = Meeting(seats, draft, mandates=mandates)
     observations = []
-    for turn in range(TURN_CAP):
+    for turn in range(turn_cap):
         seat = seats[turn % len(seats)]
         public, allowed = meeting.view(), mandates.allowed[seat]
         rows, selected = candidates(public, seat, allowed)
         feats = features(rows, selected, public, seat, allowed, len(seats))
+        if context is not None:
+            upcoming = [seats[i % len(seats)] for i in range(turn+1, turn_cap)]
+            feats = [a+b for a, b in zip(feats, context(rows, public, seat, upcoming, seats), strict=True)]
         choice, probabilities = choose(rows, selected, public, seat, feats)
         kind, label = choice
         if collect:
@@ -123,9 +126,19 @@ def rollout(instance, choose, collect=False):
     return score | {"status": meeting.status, "turns": len(meeting.history)}, observations
 
 
-def train(train_pools, objective):
+def policy_update(weights, log, advantage, step):
+    for rows, feats, choice, probs in log:
+        for row, feat, prob in zip(rows, feats, probs, strict=True):
+            delta = step*advantage*(int(row == choice)-prob)/len(log)
+            w = weights[KINDS.index(row[0])]
+            for i, value in enumerate(feat):
+                w[i] += delta*value
+
+
+def train(train_pools, objective, *, turn_caps=(TURN_CAP,), context=None, extra_width=0):
     world_rng, action_rng = Random(SEED+1), Random(SEED+2)
-    weights = [[0.]*len(FEATURES) for _ in KINDS]
+    budget_rng = Random(SEED+4)
+    weights = [[0.]*(len(FEATURES)+extra_width) for _ in KINDS]
     mean = 0.
     trace = []
     block = Counter()
@@ -136,17 +149,12 @@ def train(train_pools, objective):
             p = policy(rows, feats, weights)
             return action_rng.choices(rows, weights=p, k=1)[0], p
 
-        end, log = rollout(instance, choose, True)
+        end, log = rollout(instance, choose, True, turn_cap=budget_rng.choice(turn_caps), context=context)
         reward = end["reward"] if objective == "verified" else int(end["status"] == "unanimous_acceptance")
         advantage = reward - mean
         mean += 0.02*(reward - mean)
         step = 0.05 / (1 + episode/TRAIN_EPISODES)**0.5
-        for rows, feats, choice, probs in log:
-            for row, feat, prob in zip(rows, feats, probs, strict=True):
-                delta = step*advantage*(int(row == choice)-prob)/len(log)
-                w = weights[KINDS.index(row[0])]
-                for i, value in enumerate(feat):
-                    w[i] += delta*value
+        policy_update(weights, log, advantage, step)
         block[end["outcome"]] += 1
         if (episode+1) % 1024 == 0:
             trace.append({"through_episode": episode+1, "outcomes": dict(sorted(block.items()))})
@@ -154,8 +162,8 @@ def train(train_pools, objective):
     return {"weights": weights, "trace": trace}
 
 
-def held_worlds(held):
-    rng = Random(SEED+3)
+def held_worlds(held, seed=SEED+3):
+    rng = Random(seed)
     cohorts = {name: [] for name in ("new_3_seat", "new_5_seat", "four_packages")}
     for feasible in (False, True):
         for _ in range(64):

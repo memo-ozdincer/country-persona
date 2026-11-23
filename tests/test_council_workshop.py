@@ -8,6 +8,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research" / "council_workshop"))
 
+from budget_policy import budget_features
 from codex_runner import CodexRunner, MODELS, failure_detail
 from local_baseline import input_for
 from mandate_smoke import policy
@@ -252,6 +253,13 @@ class ClauseReviewTests(unittest.TestCase):
 
 
 class MandateWorkshopTests(unittest.TestCase):
+    def test_budget_features_treat_proposal_as_clearing_prior_acceptances(self):
+        public = {"draft": "Initial clause.", "options": {"a": "Initial clause.", "b": "Alternative."},
+                  "accepted": ["GBR", "IND"], "exclusions": {"b": "IND"}}
+        features = budget_features([("accept", "a"), ("propose", "b"), ("yield_floor", "a")],
+                                   public, "FRA", [], COUNTRIES)
+        self.assertEqual(features, [(1., 1., 0., 0.), (0., 0., 0., 0.), (0., 0., 0., 0.)])
+
     @unittest.skipUnless(sys.version_info >= (3, 12), "The local Qwen replay uses Python 3.12")
     def test_floor_diagnostic_preserves_view_and_rotates_request(self):
         from floor_diagnostic import reversed_floor, scheduled_floor

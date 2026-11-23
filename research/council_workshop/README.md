@@ -95,6 +95,9 @@ The [shared-policy training experiment](../../reports/council-workshop-mandate-t
 compares true terminal reward and unanimity reward under the same speech
 rotation. It includes held-roster transfer, mandate contrasts, and a replay
 through the production engine.
+The [budget-aware policy study](../../reports/council-workshop-budget-policy-20261123/README.md)
+measures transfer across speech limits and checks a local mandate guard
+against the same learned policy.
 
 Run the offline checks from the repo root:
 
