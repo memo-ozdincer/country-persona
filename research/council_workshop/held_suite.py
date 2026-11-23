@@ -46,12 +46,20 @@ def checked_exchange(seat, prompt, schema):
     return {"action": action, "version": public["version"], "text": text}
 
 
-def metrics(result):
+def metrics(result, case):
+    game = case["mandate_game"]
+    package = next(label for label, text in game["options"].items() if text == case["draft"])
+    incompatible = []
+    for speech in result["history"]:
+        if speech["action"] == "propose":
+            package = speech["text"].strip()
+        elif speech["action"] == "accept" and package not in game["allowed"][speech["country"]]:
+            incompatible.append({"seat": speech["country"], "package": package, "version": speech["version"]})
     return {
         **result["mandate_score"], "status": result["status"],
         "speeches": len(result["history"]), "calls": result["calls"],
         "signatures": result["accepted"], "exclusions": result["exclusions"],
-        "queue": result["queue"],
+        "queue": result["queue"], "incompatible_signatures": incompatible,
     }
 
 
@@ -72,7 +80,7 @@ def audit():
                 assert result["mandate_score"]["feasible_packages"] == expected
                 assert result["mandate_score"]["reward"] == 1
                 rows.append({"family": family, "world": world, "order": order,
-                             "veto_holders": expected_vetoes, **metrics(result)})
+                             "veto_holders": expected_vetoes, **metrics(result, case)})
     return rows
 
 
@@ -82,7 +90,9 @@ def identify(settings):
         if order not in data["orders"]:
             continue
         for world in WORLDS:
-            if settings["case"] == case_for(family, world):
+            case = settings["case"]
+            if (case == case_for(family, world)
+                    and list(case["mandate_game"]["options"]) == list(data["options"])):
                 return family, world, data, order
     raise ValueError("Case and opening order do not match a registered cell")
 
@@ -108,7 +118,7 @@ def score(directories):
         result = replay(directory)
         rows[key] = {"family": family, "world": world, "order": order, "arm": arm,
                      "seat_models": {seat: overrides.get(seat, default) for seat in order},
-                     **metrics(result)}
+                     **metrics(result, settings["case"])}
 
     pairs = []
     for family, world, opener, arm in sorted(rows):

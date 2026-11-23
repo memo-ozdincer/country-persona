@@ -109,6 +109,48 @@ one-speech continuation.
 The [matched all-Sol control](../../reports/council-workshop-sol-control-20261123/README.md)
 changes Kenya's model and compares both cases at the original budget.
 
+## Evaluate on additional case families
+
+The [held-case suite](held-cases.json) adds three-seat Gulf of Guinea and
+six-seat Iraq workshops. Each has a feasible and an infeasible version
+that differ in one seat's private mandate. The Gulf of Guinea feasible
+case allows two choices. In its twin, one seat holds the only exclusions
+for both. The Iraq twin changes a single private permission. The cases
+use fictional tasks and packages. Their topics come from the project's
+existing benchmark joins. [Gulf of Guinea vote join](../unsc-marl-20261119/benchmark-kit/reader-use/facilitator-new-meetings-evidence/provenance.json) ·
+[Iraq scenario and joins](../unsc-marl-20261119/benchmark-v1.7/cases.json)
+
+For each case, the plan fixes two opening orders and four model
+assignments. Use all-Sol and all-Astra teams as the references. Swap the
+model only in the seat whose mandate changes to produce two mixed
+teams. Compare each swap to its matching reference. The two orders
+put the same seat first or last. They reuse one case and count as
+order comparisons. The case families were held from the workshop policy
+fits. Their source records appeared in earlier drafting evaluations.
+
+```sh
+set -o pipefail
+kit=research/council_workshop
+python3 -B "$kit/held_suite.py" audit | cmp "$kit/held-control-audit.json" -
+python3 -B "$kit/held_suite.py" case guinea impasse > /tmp/council-guinea-impasse.json
+python3 -B "$kit/run.py" --case /tmp/council-guinea-impasse.json \
+  --countries GHA CHN NOR --model gpt-6.1-sol --turn-cap 10 --call-cap 30 \
+  --call-timeout 90 --out runs/guinea-impasse-sol
+python3 -B "$kit/held_suite.py" score runs/guinea-impasse-sol
+```
+
+For the matched swap, add `--seat-model NOR=gpt-6-astra` and a fresh
+output directory. Pass both run directories to `score`. It replays each
+meeting, checks registration and reports coverage, endpoint, calls,
+speeches, signatures, checked exclusions and incompatible signatures.
+The [scripted audit](held-control-audit.json) verifies that the correct
+outcome is reachable for all eight case and order combinations under
+the registered budgets. The matrix has 32 live cells. A partial pilot
+reports only its completed cells and explicitly matched swaps.
+The [first held-case live pair](../../reports/council-workshop-held-pilot-20261123/README.md)
+records a certified Gulf of Guinea impasse with Astra in Norway's seat
+and an unresolved outcome with Sol in that seat.
+
 Run the offline checks from the repo root:
 
 ```sh

@@ -3414,3 +3414,14 @@ Report endpoint counts, calls, signatures and verified exclusions, with
 continuations identified separately. The live pair is one exposed case
 family with one opener and no repeated samples.
 [Workshop protocol](research/council_workshop/README.md) · [Matched runs and replay](reports/council-workshop-sol-control-20261123/README.md)
+
+The held workshop suite adds a three-seat Gulf of Guinea briefing and a
+six-seat Iraq consultation summary. In the mixed impasse trace, Norway
+supplies two exclusions that no other seat can record. Ghana uses both
+in its certified decision. The all-Sol
+trace supplies one of those exclusions and remains unresolved at the
+same ten-speech cap. The scripted baseline succeeds in seven speeches.
+The live evidence covers one of eight registered case and opener
+combinations. The full design crosses homogeneous and reciprocal mixed
+assignments without treating an opener rotation as a new case.
+[Registered suite and paired replay](reports/council-workshop-held-pilot-20261123/README.md)

@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "research" / "counc
 
 from budget_policy import budget_features
 from codex_runner import CodexRunner, MODELS, failure_detail
+from held_suite import ASTRA, SOL, case_for, checked_exchange, score
 from local_baseline import input_for
 from mandate_smoke import policy
 from mandates import Mandates
@@ -253,6 +254,43 @@ class ClauseReviewTests(unittest.TestCase):
 
 
 class MandateWorkshopTests(unittest.TestCase):
+    def test_suite_pairs_only_registered_replayed_cells(self):
+        with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
+            root = Path(temp)
+            case = root / "case.json"
+            case.write_text(json.dumps(case_for("guinea", "impasse")))
+
+            def decide(prompt, schema):
+                packet, _ = json.JSONDecoder().raw_decode(prompt[prompt.index("{"):])
+                return checked_exchange(packet["role"], prompt, schema)
+
+            provider.return_value.executable = "/test/codex"
+            provider.return_value.side_effect = decide
+            all_sol, mixed = root / "all-sol", root / "mixed"
+            base = ["run.py", "--case", str(case), "--countries", "GHA", "CHN", "NOR", "--model", SOL,
+                    "--turn-cap", "10", "--call-cap", "30"]
+            for directory, flags in ((all_sol, []), (mixed, ["--seat-model", f"NOR={ASTRA}"])):
+                with patch("sys.argv", base + flags + ["--out", str(directory)]):
+                    main()
+
+            self.assertEqual(score([mixed])["matched_focus_swaps"], [])
+            paired = score([all_sol, mixed])["matched_focus_swaps"]
+            self.assertEqual([(row["baseline"], row["reward_delta"]) for row in paired], [("all-sol", 0)])
+            with self.assertRaisesRegex(ValueError, "Duplicate evaluation cell"):
+                score([all_sol, all_sol])
+            settings_path = mixed / "settings.json"
+            settings = json.loads(settings_path.read_text())
+            settings["turn_cap"] = 11
+            settings_path.write_text(json.dumps(settings))
+            with self.assertRaisesRegex(ValueError, "Unregistered meeting budgets"):
+                score([all_sol, mixed])
+            settings["turn_cap"] = 10
+            menu = settings["case"]["mandate_game"]
+            menu["options"] = dict(reversed(list(menu["options"].items())))
+            settings_path.write_text(json.dumps(settings))
+            with self.assertRaisesRegex(ValueError, "Case and opening order"):
+                score([all_sol, mixed])
+
     def test_budget_features_treat_proposal_as_clearing_prior_acceptances(self):
         public = {"draft": "Initial clause.", "options": {"a": "Initial clause.", "b": "Alternative."},
                   "accepted": ["GBR", "IND"], "exclusions": {"b": "IND"}}
