@@ -59,6 +59,8 @@ python3 research/council_workshop/review.py runs/mixed --verdict /tmp/verdict.js
 ```
 
 The bundled climate rubric covers the three-country roster. Supply `--rubric` with a case- and roster-matched rubric for another workshop. Freeze its criteria before using them for a new comparison. The [retrospective Astra and Sol review](../../reports/council-workshop-clause-review-20261123/README.md) includes exact source and clause spans.
+The [blinded model regrade](../../reports/council-workshop-blind-judge-20261123/README.md)
+reproduced the archived labels and withheld points on a false-adoption control.
 
 ## Test feasible agreements and impasses
 

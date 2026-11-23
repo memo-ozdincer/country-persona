@@ -49,6 +49,16 @@ def build():
         clauses[settings["model"]] = {**caps(settings), "outcome": result["status"], "speeches": len(result["history"]),
                                       "coverage": review["semantic_points"], "review": "retrospective_assistant"}
 
+    blind = report("blind-judge")
+    judgments = verified_json(blind / "score.json", blind / "blind-review.py", "score")
+    for model, record in (("gpt-6.2-sol", "record-01"), ("gpt-6.2-astra", "record-02")):
+        row = judgments[record]
+        clauses[model]["blinded_model_regrade"] = {
+            "coverage": row["model_review"]["semantic_points"], "matching_criteria": row["criterion_agreement"],
+            "guard": row["model_review"]["guard"],
+        }
+    anchor = judgments["guard-control"]
+
     climate = report("sol-control")
     pair = verified_json(climate / "comparison.json", climate / "compare.py")
     climate_caps = {case: caps(json.loads((climate / directory / "settings.json").read_text()))
@@ -90,6 +100,10 @@ def build():
 
     return {
         "source_clause_case": clauses,
+        "source_clause_guard_control": {
+            "reviewer": "gpt-6.1-sol", "caught_authored_false_claim": anchor["caught_authored_false_claim"],
+            "coverage": anchor["model_review"]["semantic_points"], "released_points": anchor["model_review"]["released_points"],
+        },
         "five_seat_climate": {case: {"caps": climate_caps[case], "arms": {arm: endpoint(row) for arm, row in arms.items()}}
                               for case, arms in pair.items()},
         "registered_standard_prompt_cells": registered,

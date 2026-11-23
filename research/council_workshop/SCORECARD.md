@@ -19,6 +19,11 @@ The coverage range comes from an uncertain item in the archived Astra
 annotation. These are retrospective assistant grades on one workshop.
 [Blinded rubric export, verdicts and exact replay](../../reports/council-workshop-clause-review-20261123/README.md)
 
+A GPT-6.1-Sol regrade reproduced all 12 criterion labels without seeing
+the generating model or meeting outcome. An authored false adoption
+claim kept its policy score of 40/70 and received zero released points
+after the factual guard failed. [Blinded regrade and control](../../reports/council-workshop-blind-judge-20261123/README.md)
+
 ## Verified decisions on fictional mandates
 
 A valid unanimous agreement or a certified impasse earns one point.

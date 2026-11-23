@@ -10,7 +10,16 @@
         "upper": 40,
         "possible": 70
       },
-      "review": "retrospective_assistant"
+      "review": "retrospective_assistant",
+      "blinded_model_regrade": {
+        "coverage": {
+          "lower": 35,
+          "upper": 40,
+          "possible": 70
+        },
+        "matching_criteria": 6,
+        "guard": "clear"
+      }
     },
     "gpt-6.2-sol": {
       "turn_cap": 20,
@@ -22,8 +31,27 @@
         "upper": 40,
         "possible": 70
       },
-      "review": "retrospective_assistant"
+      "review": "retrospective_assistant",
+      "blinded_model_regrade": {
+        "coverage": {
+          "lower": 40,
+          "upper": 40,
+          "possible": 70
+        },
+        "matching_criteria": 6,
+        "guard": "clear"
+      }
     }
+  },
+  "source_clause_guard_control": {
+    "reviewer": "gpt-6.1-sol",
+    "caught_authored_false_claim": true,
+    "coverage": {
+      "lower": 40,
+      "upper": 40,
+      "possible": 70
+    },
+    "released_points": 0
   },
   "five_seat_climate": {
     "feasible": {

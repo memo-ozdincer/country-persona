@@ -2,6 +2,8 @@
 
 **Council negotiation scorecard.** The [replayable scorecard](research/council_workshop/SCORECARD.md) collects the interactive workshop outcomes, source-coverage grades, registered coverage and information ceilings. Its offline rebuild checks the archived traces.
 
+**Blinded clause regrade.** A fresh model matched all 12 archived criterion labels across the two workshop clauses. The false-adoption control retained 40/70 policy coverage and received zero released points after the factual guard failed. [Inputs, verdicts and replay](reports/council-workshop-blind-judge-20261123/README.md)
+
 **Final release.** [UN Deliberation Benchmark v1.7](research/unsc-marl-20261119/benchmark-v1.7/README.md) freezes five UN event families, 11 episodes and 66 scored conditions. Run independent drafts, peer-informed notes and pooled solo in both desk orders. The headline is the difference in released final-record points between peer-informed and independent drafts, averaged by family and reported separately for historical reconstruction and workshop decisions. The final record is worth 70 points. Key points, arguments and interactions each have a separate 10-point scale.
 
 [Download the verified v1.7 archive](research/unsc-marl-20261119/un-deliberation-benchmark-v1.7.zip) · [Read the MARL handoff](research/unsc-marl-20261119/MARL_HANDOFF.md)
