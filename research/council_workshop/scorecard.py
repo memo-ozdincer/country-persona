@@ -94,6 +94,8 @@ def build():
     extra_call = verified_json(matrix / "continuation.json", matrix / "verify-continuation.py")
     moderator = report("moderator-certificate")
     stops = verified_json(moderator / "results.json", moderator / "replay-stop.py")
+    headroom = report("budget-headroom")
+    budget = verified_json(headroom / "results.json", headroom / "audit.py")
 
     experiments = (("iraq", "exclusion-policy", "readout"), ("gulf", "exclusion-transfer", "transfer"),
                    ("conditional", "conditional-exclusions", "readout"),
@@ -136,6 +138,10 @@ def build():
             "total_calls_saved": stops["total_calls_saved"],
             "certificates_by_moderator": sum(row["automatic_certificate"] for row in stops["meetings"]),
         },
+        "first_proven_all_sol_budget_failures": [
+            {"family": row["family"], "order": row["order"], **row["first_proven_budget_failure"]}
+            for row in budget["meetings"] if row["first_proven_budget_failure"] is not None
+        ],
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},
         "matched_prompt_comparisons": prompts,
         "shared_observation_fork": {

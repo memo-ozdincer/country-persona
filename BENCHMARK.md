@@ -3542,3 +3542,12 @@ registered matrix keeps delegate declaration as its closing rule, and
 the moderator replay shows how much the terminal procedure changes the
 score without any new model replies.
 [Moderator rule and replay results](reports/council-workshop-moderator-certificate-20261123/README.md)
+
+The per-speech budget audit proves two losses before the raw speech
+counts alone expose them. After speech six in the Ghana-opening Gulf
+run, Norway could no longer deliver both required exclusions before the
+cap. A scripted suffix from just before that speech certified impasse
+in ten speeches and 23 calls. The France-opening Iraq queue blocks
+France's last exclusion after speech 13. In UAE-opening Iraq, two calls
+remained when two floor polls and one declaration were still required.
+[Budget bounds and verified recovery](reports/council-workshop-budget-headroom-20261123/README.md)

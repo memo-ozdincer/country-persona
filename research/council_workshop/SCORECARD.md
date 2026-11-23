@@ -65,6 +65,12 @@ Gulf impasse earlier. It saves four calls across the eight traces. This
 is a replay of a different termination rule, separate from the standard
 coverage table. [Moderator replay](../../reports/council-workshop-moderator-certificate-20261123/README.md)
 
+The budget audit locates the first proven loss on each unresolved
+all-Sol trace. The floor queue blocked a required holder after speech
+six in the Ghana-opening Gulf run and speech 13 in the France-opening
+Iraq run. The UAE-opening Iraq trace lost its remaining call budget
+after speech 15 with a complete certificate. [Per-speech audit and scripted recovery](../../reports/council-workshop-budget-headroom-20261123/README.md)
+
 ## Prompt and budget controls
 
 | Case | Standard | Exclusions first | Exclusions after a checked rejection |

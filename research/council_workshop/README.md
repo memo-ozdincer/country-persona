@@ -182,6 +182,10 @@ The [moderator certification replay](../../reports/council-workshop-moderator-ce
 closes the case when every package has a checked exclusion. Opt in with
 `--auto-certify-impasse` in finite-mandate meetings. It records a moderator
 certificate and is scored separately from the standard prompt matrix.
+The [per-speech budget audit](../../reports/council-workshop-budget-headroom-20261123/README.md)
+checks when the existing queue or remaining budget first blocks a
+valid outcome. A scripted suffix confirms the Ghana-opening Gulf
+impasse was still reachable just before the first proven failure.
 The [prompt comparison](../../reports/council-workshop-exclusion-prompt-20261123/README.md)
 finds that explicitly prioritizing an available exclusion changed the
 action at France’s last turn. A live continuation with the other seats
