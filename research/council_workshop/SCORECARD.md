@@ -29,8 +29,9 @@ after the factual guard failed. [Blinded regrade and control](../../reports/coun
 A valid unanimous agreement or a certified impasse earns one point.
 A cap, walkout, or invalid agreement earns zero. A provider interruption
 before a model reply has no outcome score. The held standard-prompt
-matrix has 32 cells. **Eleven meetings are complete**, one cell remains
-provider-interrupted, and 20 cells have no archived attempt.
+matrix has 32 cells. **Twelve meetings are complete** and 20 cells
+have no archived attempt. Earlier provider interruptions are preserved
+in the dated reports.
 The eight drafted case and order combinations all have a successful
 scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](held-control-audit.json)
 
@@ -44,7 +45,7 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Gulf of Guinea, impasse, Norway opening | Certified in 9 | Unresolved in 10 |
 | Iraq, feasible, France opening | Agreement in 12 | Unrun |
 | Iraq, feasible, UAE opening | Agreement in 12 | Unrun |
-| Iraq, impasse, France opening | Unresolved in 16 | Provider interrupted |
+| Iraq, impasse, France opening | Unresolved in 16 | Certified in 14 |
 | Iraq, impasse, UAE opening | Unresolved in 15 | Unrun |
 
 Climate is a separate exposed comparison. Both climate continuations
@@ -67,6 +68,12 @@ Sol as Norway ruled out `regional`, while Astra as Norway proposed
 `review`. Astra ruled out `regional` on speech ten, leaving no speech
 for a declaration. Each pair uses one trajectory per assignment.
 [Exact resume and comparison](../../reports/council-workshop-norway-focus-resume-20261124/README.md)
+
+In France-opening Iraq, the mixed team certified in 14 speeches and
+48 calls. All-Sol finished with three of four exclusions in 16
+speeches and 55 calls. The trajectories first differed when Ghana
+took speech five, before Astra as the UAE had its first speech.
+[Iraq comparison and exact resume](../../reports/council-workshop-iraq-focus-resume-20261124/README.md)
 
 Automatic moderator certification on the same archived decisions
 recovers the UAE-opening Iraq impasse and closes the Norway-opening

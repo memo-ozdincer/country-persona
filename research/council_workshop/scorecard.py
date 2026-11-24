@@ -13,6 +13,7 @@ from run import HERE, pretty
 ROOT = HERE.parents[1]
 REPORTS = ROOT / "reports"
 NORWAY_RESUME = REPORTS / "council-workshop-norway-focus-resume-20261124"
+IRAQ_RESUME = REPORTS / "council-workshop-iraq-focus-resume-20261124"
 
 
 def report(name):
@@ -39,15 +40,16 @@ def caps(settings):
     return {"turn_cap": settings["turn_cap"], "call_cap": settings.get("call_cap")}
 
 
-def registered_paths(*, before_norway_focus_resume=False):
+def registered_paths(*, floor_audit_snapshot=False):
     held = report("held-pilot")
     paths = [held / name for name in (
         "all-sol", "feasible-all-sol", "sol-with-astra-norway", "feasible-sol-with-astra-norway",
     )]
-    paths.extend(report("iraq-pilot") / name for name in ("all-sol", "sol-with-astra-uae-resumed"))
+    paths.append(report("iraq-pilot") / "all-sol")
+    paths.append(report("iraq-pilot") / "sol-with-astra-uae-resumed" if floor_audit_snapshot else IRAQ_RESUME / "mixed")
     paths.append(report("exclusion-policy") / "iraq-feasible-standard")
     paths.append(report("norway-opening") / "all-sol")
-    paths.append(report("norway-opening") / "sol-with-astra-norway-resumed" if before_norway_focus_resume else
+    paths.append(report("norway-opening") / "sol-with-astra-norway-resumed" if floor_audit_snapshot else
                  NORWAY_RESUME / "mixed-final")
     paths.extend(report("all-sol-matrix") / name for name in (
         "guinea-norway-feasible", "iraq-uae-impasse", "iraq-uae-feasible",
@@ -83,6 +85,9 @@ def build():
                     for case, directory in (("feasible", "feasible"), ("impasse", "impasse"),
                                             ("feasible_continuations", "feasible-extended"))}
     registered = score(registered_paths())
+    iraq_verifier = IRAQ_RESUME / "verify-resume.py"
+    verified_json(IRAQ_RESUME / "plan.json", iraq_verifier, "plan")
+    iraq_focus = verified_json(IRAQ_RESUME / "score.json", iraq_verifier, "score")
     norway_pair = NORWAY_RESUME / "paired.py"
     verified_json(NORWAY_RESUME / "plan.json", norway_pair, "plan")
     norway_focus = verified_json(NORWAY_RESUME / "score.json", norway_pair, "score")
@@ -164,6 +169,10 @@ def build():
         "five_seat_climate": {case: {"caps": climate_caps[case], "arms": {arm: endpoint(row) for arm, row in arms.items()}}
                               for case, arms in pair.items()},
         "registered_standard_prompt_cells": registered,
+        "iraq_france_opening_focus_resume": {
+            "reused_replies": iraq_focus["reused_replies"], "fresh_replies": iraq_focus["fresh_replies"],
+            "first_structured_difference": iraq_focus["first_structured_difference"],
+        },
         "norway_opening_focus_resume": {
             "reused_replies": norway_focus["reused_replies"], "fresh_replies": norway_focus["fresh_replies"],
             "matching_structured_decisions": norway_focus["matching_structured_decisions"],

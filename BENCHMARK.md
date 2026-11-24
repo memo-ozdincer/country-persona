@@ -3596,6 +3596,13 @@ The offline audit and the fresh final reply both show that gathering
 the last exclusion at that point leaves no turn for a declaration.
 [Matched comparison and prefix replay](reports/council-workshop-norway-focus-resume-20261124/README.md)
 
+In the France-opening Iraq impasse, the mixed run certified in
+14 speeches and 48 calls. All-Sol remained unresolved at 16 and
+55. Ghana's response on speech five was the first structured
+decision to differ, before the UAE took its first speech in either
+arm. The comparison records one trajectory per assignment.
+[Registered comparison and exact resume](reports/council-workshop-iraq-focus-resume-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

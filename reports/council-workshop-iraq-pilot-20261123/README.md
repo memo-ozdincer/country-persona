@@ -42,6 +42,10 @@ records an unscored call error. The mixed arm’s meeting outcome remains
 unmeasured. Counting the Gulf of Guinea pilot, five of 32 registered
 live cells have completed meetings.
 
+The [later exact resume](../council-workshop-iraq-focus-resume-20261124/README.md)
+completed the mixed cell with a certified impasse in 14 speeches and
+48 calls.
+
 [All-Sol trace](all-sol/calls.jsonl) · [First mixed attempt](sol-with-astra-uae/calls.jsonl) ·
 [Resumed mixed attempt](sol-with-astra-uae-resumed/calls.jsonl)
 

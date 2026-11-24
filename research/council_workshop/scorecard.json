@@ -147,10 +147,7 @@
     "registered_cells": 32,
     "completed_by_arm": {
       "all-sol": 8,
-      "sol-with-focus-swap": 3
-    },
-    "aborted_by_arm": {
-      "sol-with-focus-swap": 1
+      "sol-with-focus-swap": 4
     },
     "meetings": [
       {
@@ -578,30 +575,28 @@
           "ARE": "gpt-6-astra"
         },
         "feasible_packages": [],
-        "selected_package": "public",
-        "outcome": "call_error",
-        "reward": null,
-        "status": "call_error",
-        "speeches": 5,
-        "calls": 26,
+        "selected_package": "closed",
+        "outcome": "certified_impasse",
+        "reward": 1,
+        "status": "certified_impasse",
+        "speeches": 14,
+        "calls": 48,
         "signatures": [
-          "FRA",
-          "GBR",
+          "JPN",
+          "GHA",
+          "ARE"
+        ],
+        "exclusions": {
+          "public": "GHA",
+          "hybrid": "ARE",
+          "aggregate": "GBR",
+          "closed": "FRA"
+        },
+        "queue": [
           "BRA",
           "JPN"
         ],
-        "exclusions": {
-          "public": "GHA"
-        },
-        "queue": [
-          "FRA",
-          "GBR",
-          "BRA",
-          "JPN",
-          "GHA"
-        ],
-        "incompatible_signatures": [],
-        "recorded_error": "Codex failed for gpt-6-astra: exceeded retry limit, last status: 429 Too Many Requests"
+        "incompatible_signatures": []
       }
     ],
     "matched_focus_swaps": [
@@ -634,6 +629,16 @@
         "reward_delta": -1,
         "speech_delta": 1,
         "call_delta": 3
+      },
+      {
+        "family": "iraq",
+        "world": "impasse",
+        "opener": "FRA",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": 1,
+        "speech_delta": -2,
+        "call_delta": -7
       }
     ],
     "caps_by_family": {
@@ -644,6 +649,25 @@
       "iraq": {
         "turn_cap": 16,
         "call_cap": 55
+      }
+    }
+  },
+  "iraq_france_opening_focus_resume": {
+    "reused_replies": 25,
+    "fresh_replies": 23,
+    "first_structured_difference": {
+      "call": 20,
+      "all_sol": {
+        "seat": "GHA",
+        "action": "propose",
+        "version": 1,
+        "package": "hybrid"
+      },
+      "mixed": {
+        "seat": "GHA",
+        "action": "rule_out",
+        "version": 1,
+        "package": "public"
       }
     }
   },
