@@ -12,6 +12,7 @@ from run import HERE, pretty
 
 ROOT = HERE.parents[1]
 REPORTS = ROOT / "reports"
+NORWAY_RESUME = REPORTS / "council-workshop-norway-focus-resume-20261124"
 
 
 def report(name):
@@ -47,7 +48,7 @@ def registered_paths(*, before_norway_focus_resume=False):
     paths.append(report("exclusion-policy") / "iraq-feasible-standard")
     paths.append(report("norway-opening") / "all-sol")
     paths.append(report("norway-opening") / "sol-with-astra-norway-resumed" if before_norway_focus_resume else
-                 REPORTS / "council-workshop-norway-focus-resume-20261124" / "mixed")
+                 NORWAY_RESUME / "mixed-final")
     paths.extend(report("all-sol-matrix") / name for name in (
         "guinea-norway-feasible", "iraq-uae-impasse", "iraq-uae-feasible",
     ))
@@ -82,9 +83,14 @@ def build():
                     for case, directory in (("feasible", "feasible"), ("impasse", "impasse"),
                                             ("feasible_continuations", "feasible-extended"))}
     registered = score(registered_paths())
-    norway_resume = REPORTS / "council-workshop-norway-focus-resume-20261124"
-    verified_json(norway_resume / "plan.json", norway_resume / "paired.py", "plan")
-    norway_focus = verified_json(norway_resume / "score.json", norway_resume / "paired.py", "score")
+    norway_pair = NORWAY_RESUME / "paired.py"
+    verified_json(NORWAY_RESUME / "plan.json", norway_pair, "plan")
+    norway_focus = verified_json(NORWAY_RESUME / "score.json", norway_pair, "score")
+    verified_json(NORWAY_RESUME / "followup-plan.json", norway_pair, "plan", "--followup")
+    norway_followup = verified_json(NORWAY_RESUME / "followup-score.json", norway_pair, "score", "--followup")
+    verified_json(NORWAY_RESUME / "final-plan.json", norway_pair, "plan", "--final")
+    norway_final_audit = verified_json(NORWAY_RESUME / "final-speech-audit.json", NORWAY_RESUME / "final-speech.py")
+    norway_final = verified_json(NORWAY_RESUME / "final-score.json", norway_pair, "score", "--final")
     registered["caps_by_family"] = {name: caps(family) for name, family in FAMILIES.items()}
     scripted = audit()
     if scripted != json.loads((HERE / "held-control-audit.json").read_text()):
@@ -161,6 +167,14 @@ def build():
         "norway_opening_focus_resume": {
             "reused_replies": norway_focus["reused_replies"], "fresh_replies": norway_focus["fresh_replies"],
             "matching_structured_decisions": norway_focus["matching_structured_decisions"],
+        },
+        "norway_opening_focus_followup": {
+            "reused_replies": norway_followup["reused_replies"], "fresh_replies": norway_followup["fresh_replies"],
+            "first_structured_difference": norway_followup["first_structured_difference"],
+            "final_speech_audit": norway_final_audit,
+        },
+        "norway_opening_focus_final": {
+            "reused_replies": norway_final["reused_replies"], "fresh_replies": norway_final["fresh_replies"],
         },
         "registered_all_sol_summary": all_sol_summary,
         "registered_all_sol_impasse_continuation": {

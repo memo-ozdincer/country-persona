@@ -147,10 +147,10 @@
     "registered_cells": 32,
     "completed_by_arm": {
       "all-sol": 8,
-      "sol-with-focus-swap": 2
+      "sol-with-focus-swap": 3
     },
     "aborted_by_arm": {
-      "sol-with-focus-swap": 2
+      "sol-with-focus-swap": 1
     },
     "meetings": [
       {
@@ -368,22 +368,23 @@
           "CHN": "gpt-6.1-sol"
         },
         "feasible_packages": [],
-        "selected_package": "briefing",
-        "outcome": "call_error",
-        "reward": null,
-        "status": "call_error",
-        "speeches": 4,
-        "calls": 13,
+        "selected_package": "regional",
+        "outcome": "unresolved",
+        "reward": 0,
+        "status": "turn_cap",
+        "speeches": 10,
+        "calls": 25,
         "signatures": [],
         "exclusions": {
-          "briefing": "NOR"
+          "briefing": "NOR",
+          "coastal": "CHN",
+          "review": "GHA",
+          "regional": "NOR"
         },
         "queue": [
-          "GHA",
-          "CHN"
+          "GHA"
         ],
-        "incompatible_signatures": [],
-        "recorded_error": "Codex failed for gpt-6-astra: exceeded retry limit, last status: 429 Too Many Requests"
+        "incompatible_signatures": []
       },
       {
         "family": "iraq",
@@ -623,6 +624,16 @@
         "reward_delta": 1,
         "speech_delta": 0,
         "call_delta": 1
+      },
+      {
+        "family": "guinea",
+        "world": "impasse",
+        "opener": "NOR",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": -1,
+        "speech_delta": 1,
+        "call_delta": 3
       }
     ],
     "caps_by_family": {
@@ -640,6 +651,103 @@
     "reused_replies": 5,
     "fresh_replies": 7,
     "matching_structured_decisions": 12
+  },
+  "norway_opening_focus_followup": {
+    "reused_replies": 12,
+    "fresh_replies": 12,
+    "first_structured_difference": {
+      "call": 18,
+      "all_sol": [
+        "NOR",
+        "rule_out",
+        3,
+        "regional"
+      ],
+      "mixed": [
+        "NOR",
+        "propose",
+        3,
+        "review"
+      ]
+    },
+    "final_speech_audit": {
+      "seat": "NOR",
+      "call": 25,
+      "speech": 10,
+      "missing_exclusions": [
+        "regional"
+      ],
+      "best_possible_reward": 0,
+      "actions": [
+        {
+          "action": "accept",
+          "package": null,
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 3
+        },
+        {
+          "action": "yield_floor",
+          "package": null,
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 3
+        },
+        {
+          "action": "walk_away",
+          "package": null,
+          "status": "walkout",
+          "reward": 0,
+          "exclusion_count": 3
+        },
+        {
+          "action": "propose",
+          "package": "coastal",
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 3
+        },
+        {
+          "action": "propose",
+          "package": "briefing",
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 3
+        },
+        {
+          "action": "propose",
+          "package": "review",
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 3
+        },
+        {
+          "action": "rule_out",
+          "package": "regional",
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 4
+        },
+        {
+          "action": "ask",
+          "package": null,
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 3
+        },
+        {
+          "action": "reply",
+          "package": null,
+          "status": "turn_cap",
+          "reward": 0,
+          "exclusion_count": 3
+        }
+      ]
+    }
+  },
+  "norway_opening_focus_final": {
+    "reused_replies": 24,
+    "fresh_replies": 1
   },
   "registered_all_sol_summary": {
     "planned": 8,

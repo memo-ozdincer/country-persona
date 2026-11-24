@@ -29,8 +29,8 @@ after the factual guard failed. [Blinded regrade and control](../../reports/coun
 A valid unanimous agreement or a certified impasse earns one point.
 A cap, walkout, or invalid agreement earns zero. A provider interruption
 before a model reply has no outcome score. The held standard-prompt
-matrix has 32 cells. **Ten meetings are complete**, two cells have
-provider-interrupted attempts, and 20 cells have no archived attempt.
+matrix has 32 cells. **Eleven meetings are complete**, one cell remains
+provider-interrupted, and 20 cells have no archived attempt.
 The eight drafted case and order combinations all have a successful
 scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](held-control-audit.json)
 
@@ -41,7 +41,7 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Gulf of Guinea, feasible, Ghana opening | Agreement in 5 | Agreement in 5 |
 | Gulf of Guinea, feasible, Norway opening | Agreement in 6 | Unrun |
 | Gulf of Guinea, impasse, Ghana opening | Unresolved in 10 | Certified in 10 |
-| Gulf of Guinea, impasse, Norway opening | Certified in 9 | Provider interrupted after 4 speeches |
+| Gulf of Guinea, impasse, Norway opening | Certified in 9 | Unresolved in 10 |
 | Iraq, feasible, France opening | Agreement in 12 | Unrun |
 | Iraq, feasible, UAE opening | Agreement in 12 | Unrun |
 | Iraq, impasse, France opening | Unresolved in 16 | Provider interrupted |
@@ -59,10 +59,13 @@ with one additional call and is excluded from registered coverage.
 [Iraq comparison and interruption traces](../../reports/council-workshop-iraq-pilot-20261123/README.md) ·
 [Completed all-Sol slice](../../reports/council-workshop-all-sol-matrix-20261123/README.md)
 
-A later Norway-opening focus-swap resume recovered seven replies.
-Astra as Norway recorded the same checked `briefing` exclusion on
-speech four as all-Sol. The provider stopped at call 13, during
-Norway's next floor poll, leaving the mixed outcome unscored.
+The completed Gulf impasse pairs show opposite outcomes across
+openers. The Astra seat swap recovered a certificate with Ghana
+opening and lost it with Norway opening. With Norway opening, the
+first 17 decisions matched on structured fields. On speech seven,
+Sol as Norway ruled out `regional`, while Astra as Norway proposed
+`review`. Astra ruled out `regional` on speech ten, leaving no speech
+for a declaration. Each pair uses one trajectory per assignment.
 [Exact resume and comparison](../../reports/council-workshop-norway-focus-resume-20261124/README.md)
 
 Automatic moderator certification on the same archived decisions
@@ -94,7 +97,8 @@ the original cap of 55. Brazil received the same prompt and schema
 as in the recorded call 56 continuation.
 [Direct handoff experiment](../../reports/council-workshop-certificate-floor-20261124/README.md)
 
-Across all ten completed registered meetings, seven were identical
+Across the ten registered meetings completed at the time of the
+floor-rule audit, seven were identical
 under direct handoff and a Norway-opening Gulf meeting replayed a
 certificate one call sooner. The two remaining meetings needed a
 fresh reply. In addition to Iraq, the mixed Ghana-opening Gulf
