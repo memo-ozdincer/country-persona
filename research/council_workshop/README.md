@@ -84,7 +84,7 @@ The opt-in `--skip-poll-after-certificate` rule gives the floor to
 the next queued delegate once every option has a checked public
 exclusion. The delegate still chooses whether to declare an impasse.
 The flag is recorded and replayed as a separate protocol from the
-registered matrix. [Iraq continuation and exact replay](../../reports/council-workshop-certificate-floor-20261124/README.md)
+registered matrix. [Replay audit and live continuations](../../reports/council-workshop-floor-rule-audit-20261124/README.md)
 
 ```sh
 python3 research/council_workshop/run.py \

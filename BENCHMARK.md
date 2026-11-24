@@ -3573,6 +3573,18 @@ the two intervening floor polls. This is a controlled follow-up on
 one prefix, outside the registered matrix.
 [Protocol, fresh reply and exact replay](reports/council-workshop-certificate-floor-20261124/README.md)
 
+Across the ten completed registered meetings, direct handoff had no
+effect on seven, replayed an all-Sol Gulf certificate one call faster,
+and needed a decision absent from the registered log in each of the
+other two. The Iraq continuation
+above recovered a certificate. In the mixed Gulf continuation, the
+skipped poll had recorded a real request from China. Ghana still
+declared the impasse on the final speech after seeing the shorter
+queue, finishing at 23 calls instead of 25. Keep the floor rule
+fixed across model assignments and report any alternate rule as a
+separate protocol comparison.
+[Full replay audit and live Gulf continuation](reports/council-workshop-floor-rule-audit-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

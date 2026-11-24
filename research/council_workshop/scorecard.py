@@ -107,6 +107,10 @@ def build():
     certificate_floor = REPORTS / "council-workshop-certificate-floor-20261124"
     floor_plan = verified_json(certificate_floor / "plan.json", certificate_floor / "study.py", "plan")
     direct_floor = verified_json(certificate_floor / "live-result.json", certificate_floor / "study.py", "replay")
+    audit_floor = REPORTS / "council-workshop-floor-rule-audit-20261124"
+    floor_sensitivity = verified_json(audit_floor / "results.json", audit_floor / "audit.py")
+    verified_json(audit_floor / "gulf-plan.json", audit_floor / "gulf.py", "plan")
+    floor_gulf = verified_json(audit_floor / "gulf-result.json", audit_floor / "gulf.py", "replay")
     gulf_cutoff = report("gulf-cutoff")
     moderation = verified_json(gulf_cutoff / "moderator.json", gulf_cutoff / "paired.py", "moderator")
     gulf_continuations = {}
@@ -180,6 +184,7 @@ def build():
                 "reused_calls": direct_floor["reused_calls"], "new_decisions": direct_floor["new_decisions"],
             },
         },
+        "certificate_floor_rule_sensitivity": floor_sensitivity | {"gulf_live_continuation": floor_gulf},
         "gulf_last_turn_live_continuations": gulf_continuations,
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},
         "matched_prompt_comparisons": prompts,

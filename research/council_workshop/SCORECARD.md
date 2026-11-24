@@ -88,6 +88,14 @@ the original cap of 55. Brazil received the same prompt and schema
 as in the recorded call 56 continuation.
 [Direct handoff experiment](../../reports/council-workshop-certificate-floor-20261124/README.md)
 
+Across all ten completed registered meetings, seven were identical
+under direct handoff and a Norway-opening Gulf meeting replayed a
+certificate one call sooner. The two remaining meetings needed a
+fresh reply. In addition to Iraq, the mixed Ghana-opening Gulf
+meeting certified at call 23, two calls earlier, even though bypassing
+the poll removed China's request from Ghana's public queue.
+[Full floor-rule audit](../../reports/council-workshop-floor-rule-audit-20261124/README.md)
+
 On a live continuation at the Gulf cutoff, the priority prompt let
 the delegates record all four exclusions by the last speech. The
 automatic moderator replay turned that evidence into a certificate.
