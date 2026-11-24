@@ -41,7 +41,7 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Gulf of Guinea, feasible, Ghana opening | Agreement in 5 | Agreement in 5 |
 | Gulf of Guinea, feasible, Norway opening | Agreement in 6 | Unrun |
 | Gulf of Guinea, impasse, Ghana opening | Unresolved in 10 | Certified in 10 |
-| Gulf of Guinea, impasse, Norway opening | Certified in 9 | Provider interrupted |
+| Gulf of Guinea, impasse, Norway opening | Certified in 9 | Provider interrupted after 4 speeches |
 | Iraq, feasible, France opening | Agreement in 12 | Unrun |
 | Iraq, feasible, UAE opening | Agreement in 12 | Unrun |
 | Iraq, impasse, France opening | Unresolved in 16 | Provider interrupted |
@@ -58,6 +58,12 @@ with one additional call and is excluded from registered coverage.
 [Norway opening and interruption traces](../../reports/council-workshop-norway-opening-20261123/README.md) ·
 [Iraq comparison and interruption traces](../../reports/council-workshop-iraq-pilot-20261123/README.md) ·
 [Completed all-Sol slice](../../reports/council-workshop-all-sol-matrix-20261123/README.md)
+
+A later Norway-opening focus-swap resume recovered seven replies.
+Astra as Norway recorded the same checked `briefing` exclusion on
+speech four as all-Sol. The provider stopped at call 13, during
+Norway's next floor poll, leaving the mixed outcome unscored.
+[Exact resume and comparison](../../reports/council-workshop-norway-focus-resume-20261124/README.md)
 
 Automatic moderator certification on the same archived decisions
 recovers the UAE-opening Iraq impasse and closes the Norway-opening

@@ -38,14 +38,16 @@ def caps(settings):
     return {"turn_cap": settings["turn_cap"], "call_cap": settings.get("call_cap")}
 
 
-def registered_paths():
+def registered_paths(*, before_norway_focus_resume=False):
     held = report("held-pilot")
     paths = [held / name for name in (
         "all-sol", "feasible-all-sol", "sol-with-astra-norway", "feasible-sol-with-astra-norway",
     )]
     paths.extend(report("iraq-pilot") / name for name in ("all-sol", "sol-with-astra-uae-resumed"))
     paths.append(report("exclusion-policy") / "iraq-feasible-standard")
-    paths.extend(report("norway-opening") / name for name in ("all-sol", "sol-with-astra-norway-resumed"))
+    paths.append(report("norway-opening") / "all-sol")
+    paths.append(report("norway-opening") / "sol-with-astra-norway-resumed" if before_norway_focus_resume else
+                 REPORTS / "council-workshop-norway-focus-resume-20261124" / "mixed")
     paths.extend(report("all-sol-matrix") / name for name in (
         "guinea-norway-feasible", "iraq-uae-impasse", "iraq-uae-feasible",
     ))
@@ -80,6 +82,9 @@ def build():
                     for case, directory in (("feasible", "feasible"), ("impasse", "impasse"),
                                             ("feasible_continuations", "feasible-extended"))}
     registered = score(registered_paths())
+    norway_resume = REPORTS / "council-workshop-norway-focus-resume-20261124"
+    verified_json(norway_resume / "plan.json", norway_resume / "paired.py", "plan")
+    norway_focus = verified_json(norway_resume / "score.json", norway_resume / "paired.py", "score")
     registered["caps_by_family"] = {name: caps(family) for name, family in FAMILIES.items()}
     scripted = audit()
     if scripted != json.loads((HERE / "held-control-audit.json").read_text()):
@@ -153,6 +158,10 @@ def build():
         "five_seat_climate": {case: {"caps": climate_caps[case], "arms": {arm: endpoint(row) for arm, row in arms.items()}}
                               for case, arms in pair.items()},
         "registered_standard_prompt_cells": registered,
+        "norway_opening_focus_resume": {
+            "reused_replies": norway_focus["reused_replies"], "fresh_replies": norway_focus["fresh_replies"],
+            "matching_structured_decisions": norway_focus["matching_structured_decisions"],
+        },
         "registered_all_sol_summary": all_sol_summary,
         "registered_all_sol_impasse_continuation": {
             "original": endpoint(extra_call["original"]), "continuation": endpoint(extra_call["continuation"]),

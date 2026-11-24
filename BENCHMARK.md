@@ -3585,6 +3585,15 @@ fixed across model assignments and report any alternate rule as a
 separate protocol comparison.
 [Full replay audit and live Gulf continuation](reports/council-workshop-floor-rule-audit-20261124/README.md)
 
+Under the registered floor procedure, the Norway-opening mixed Gulf
+run resumed with the original five replies and received seven more.
+All twelve structured decisions matched across assignments, including
+Norway's `briefing` exclusion on speech four.
+The mixed run lost the next floor reply to a provider 429, so the
+final outcome remains unmeasured. Preserve the partial trace and
+count this as one interrupted cell.
+[Matched comparison and prefix replay](reports/council-workshop-norway-focus-resume-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

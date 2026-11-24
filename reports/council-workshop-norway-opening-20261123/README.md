@@ -29,6 +29,9 @@ Sol's different outcomes demonstrate sensitivity to the opening order in
 these two trajectories. The mixed comparison has a completed pair only
 with Ghana opening.
 
+A [later exact resume](../council-workshop-norway-focus-resume-20261124/README.md)
+reached four speeches before another provider interruption.
+
 [All-Sol trace](all-sol/calls.jsonl) · [Mixed attempt](sol-with-astra-norway/calls.jsonl) ·
 [Resumed attempt](sol-with-astra-norway-resumed/calls.jsonl) · [Matched readout](score.json)
 

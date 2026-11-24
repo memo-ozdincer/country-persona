@@ -87,7 +87,7 @@ def compare(directory, settings, respond=None):
 def audit():
     completed = []
     interrupted = []
-    for path in registered_paths():
+    for path in registered_paths(before_norway_focus_resume=True):
         settings = json.loads((path / "settings.json").read_text())
         if (path / "result.json").is_file():
             completed.append(compare(path, settings))
