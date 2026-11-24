@@ -104,6 +104,9 @@ def build():
     budget_trial = verified_json(budget_cue / "priority-result.json", floor_recovery / "paired-floor.py", "budget-replay")
     budget_reply = json.loads((budget_cue / "priority.jsonl").read_text().splitlines()[1])["answer"]
     floor_trials["budget_cue"] = budget_trial | {"first_fresh_reply": budget_reply}
+    certificate_floor = REPORTS / "council-workshop-certificate-floor-20261124"
+    floor_plan = verified_json(certificate_floor / "plan.json", certificate_floor / "study.py", "plan")
+    direct_floor = verified_json(certificate_floor / "live-result.json", certificate_floor / "study.py", "replay")
     gulf_cutoff = report("gulf-cutoff")
     moderation = verified_json(gulf_cutoff / "moderator.json", gulf_cutoff / "paired.py", "moderator")
     gulf_continuations = {}
@@ -169,6 +172,13 @@ def build():
             arm: endpoint(row) | {"first_fresh_reply": row["first_fresh_reply"], "reused_calls": row["reused_calls"],
                                   "fresh_calls": row["fresh_calls"]}
             for arm, row in floor_trials.items()
+        },
+        "iraq_certificate_floor_handoff": {
+            "call_cap": floor_plan["call_cap"], "skipped_passes": floor_plan["skipped_passes"],
+            "archived_reply_replay": endpoint(floor_plan["archived_reply_replay"]),
+            "live_continuation": endpoint(direct_floor) | {
+                "reused_calls": direct_floor["reused_calls"], "new_decisions": direct_floor["new_decisions"],
+            },
         },
         "gulf_last_turn_live_continuations": gulf_continuations,
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},

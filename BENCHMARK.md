@@ -3565,6 +3565,14 @@ one poll later in the reminder arm, after the cost had been incurred.
 All runs stopped with four exclusions and no declaration.
 [Matched live floor decisions and replay](reports/council-workshop-live-floor-recovery-20261124/README.md)
 
+The same Iraq prefix did close within budget when the moderator gave
+Brazil the floor directly after the last checked exclusion. A fresh
+Sol reply declared the impasse on call 54 under the cap of 55.
+The handoff used Brazil's exact archived call 56 prompt and skipped
+the two intervening floor polls. This is a controlled follow-up on
+one prefix, outside the registered matrix.
+[Protocol, fresh reply and exact replay](reports/council-workshop-certificate-floor-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

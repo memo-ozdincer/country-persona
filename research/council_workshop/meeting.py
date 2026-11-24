@@ -86,7 +86,8 @@ class Meeting:
                                  resulting_version=self.version, text=text))
 
 
-def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap=None, *, auto_certify_impasse=False):
+def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap=None, *, auto_certify_impasse=False,
+                skip_poll_after_certificate=False):
     """decide(country, instruction, public_state, schema) returns a structured action."""
     ballot_count = len(countries) if collect_votes else 0
     discussion_cap = call_cap - ballot_count if call_cap is not None else None
@@ -103,6 +104,8 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap
     mandates = Mandates.from_case(case, countries)
     if auto_certify_impasse and mandates is None:
         raise ValueError("Automatic certification requires a finite mandate case")
+    if skip_poll_after_certificate and mandates is None:
+        raise ValueError("The certificate floor rule requires a finite mandate case")
     meeting = Meeting(countries, case["draft"], mandates=mandates)
     instruction, schema = (SPEAK_INSTRUCTION, SPEECH) if mandates is None else (
         PACKAGE_INSTRUCTION, PACKAGE_SPEECH)
@@ -123,6 +126,9 @@ def run_meeting(case, countries, turn_cap, decide, collect_votes=False, call_cap
         start = countries.index(speaker) + 1
         poll_order = [country for country in countries[start:] + countries[:start]
                       if country not in meeting.queue]
+        if (skip_poll_after_certificate and meeting.queue
+                and meeting.exclusions.keys() == mandates.options.keys()):
+            poll_order = []
         if discussion_cap is not None and calls + len(poll_order) > discussion_cap:
             meeting.status = "call_cap"
             break

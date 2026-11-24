@@ -80,6 +80,12 @@ or a certified impasse. Invalid agreement, a walkout, all passing and the
 budget stops earn zero. The full feasibility set appears in the scored
 result after the meeting. Ballots remain advisory.
 
+The opt-in `--skip-poll-after-certificate` rule gives the floor to
+the next queued delegate once every option has a checked public
+exclusion. The delegate still chooses whether to declare an impasse.
+The flag is recorded and replayed as a separate protocol from the
+registered matrix. [Iraq continuation and exact replay](../../reports/council-workshop-certificate-floor-20261124/README.md)
+
 ```sh
 python3 research/council_workshop/run.py \
   --case research/council_workshop/climate-packages-feasible.json \

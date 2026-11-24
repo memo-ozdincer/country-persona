@@ -81,6 +81,13 @@ decisive poll, including a reminder with the exact calls remaining.
 All gathered the full evidence and stopped at 55 calls before a
 declaration. [Live floor reminder comparison](../../reports/council-workshop-live-floor-recovery-20261124/README.md)
 
+An opt-in direct handoff bypassed the two late floor polls after all
+exclusions were public on the same Iraq prefix. In one fresh
+continuation, Sol as Brazil declared the impasse on call 54 within
+the original cap of 55. Brazil received the same prompt and schema
+as in the recorded call 56 continuation.
+[Direct handoff experiment](../../reports/council-workshop-certificate-floor-20261124/README.md)
+
 On a live continuation at the Gulf cutoff, the priority prompt let
 the delegates record all four exclusions by the last speech. The
 automatic moderator replay turned that evidence into a certificate.

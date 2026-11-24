@@ -268,8 +268,9 @@ class MandateWorkshopTests(unittest.TestCase):
             provider.return_value.side_effect = decide
             base = ["run.py", "--case", str(case), "--countries", "GHA", "CHN", "NOR", "--model", SOL,
                     "--turn-cap", "10", "--call-cap", "30"]
-            standard, automatic = root / "standard", root / "automatic"
-            for path, flags in ((standard, []), (automatic, ["--auto-certify-impasse"])):
+            standard, automatic, direct = root / "standard", root / "automatic", root / "direct"
+            for path, flags in ((standard, []), (automatic, ["--auto-certify-impasse"]),
+                                (direct, ["--skip-poll-after-certificate"])):
                 with patch("sys.argv", base + ["--out", str(path)] + flags):
                     main()
             original, moderator = replay(standard), replay(automatic)
@@ -280,6 +281,13 @@ class MandateWorkshopTests(unittest.TestCase):
             self.assertLess(moderator["calls"], original["calls"])
             with self.assertRaisesRegex(ValueError, "Automatic certification is outside"):
                 score([automatic])
+            routed = replay(direct)
+            self.assertEqual(routed["status"], "certified_impasse")
+            self.assertEqual(routed["history"], original["history"])
+            self.assertNotIn("certificate_source", routed)
+            self.assertLess(routed["calls"], original["calls"])
+            with self.assertRaisesRegex(ValueError, "certificate floor rule is outside"):
+                score([direct])
 
     def test_prompt_priority_replays_without_altering_floor_prompts_or_registered_scores(self):
         with tempfile.TemporaryDirectory() as temp, patch("run.CodexRunner") as provider:
