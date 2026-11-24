@@ -3636,6 +3636,12 @@ on the final speech, so the same trajectory ties all-Sol under the
 moderator rule. The other five paired reward deltas stayed fixed.
 [Closing-rule comparison and exact replay](reports/council-workshop-closing-rule-comparison-20261124/README.md)
 
+The next UAE-opening Iraq continuation lifted the matched prefix
+to 22 structured decisions. Japan supplied the fifth signature
+on the opening package before the provider interrupted the
+UK floor poll on call 23. The terminal outcome remains unscored.
+[Exact prefix and scorecard input](reports/council-workshop-iraq-uae-opening-focus-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

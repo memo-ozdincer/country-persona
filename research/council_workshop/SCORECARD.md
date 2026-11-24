@@ -46,7 +46,7 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Iraq, feasible, France opening | Agreement in 12 | Agreement in 11 |
 | Iraq, feasible, UAE opening | Agreement in 12 | Unrun |
 | Iraq, impasse, France opening | Unresolved in 16 | Certified in 14 |
-| Iraq, impasse, UAE opening | Unresolved in 15 | Provider interrupted after 4 speeches |
+| Iraq, impasse, UAE opening | Unresolved in 15 | Provider interrupted after 5 speeches |
 
 Climate is a separate exposed comparison. Both climate continuations
 agreed with a tenth speech. The model assignments in the table use
@@ -89,9 +89,8 @@ of this matched comparison.
 [Feasible run and paired scores](../../reports/council-workshop-iraq-feasible-focus-20261124/README.md)
 
 The UAE-opening mixed impasse run matched all-Sol on its first
-15 structured decisions. The latest resume recovered the UK poll
-and Brazil's opening signature, then a provider rate limit
-interrupted the UAE floor poll at call 16.
+22 structured decisions. Japan added the fifth opening signature.
+A provider rate limit interrupted the UK floor poll at call 23.
 [UAE-opening attempts and matched pairs](../../reports/council-workshop-iraq-uae-opening-focus-20261124/README.md)
 
 Automatic moderator certification on the same archived decisions

@@ -27,13 +27,13 @@ def structured_replies(log):
             yield row["country"], action, answer.get("version"), package
 
 
-def check(followup=False):
-    if followup:
-        initial, resumed = HERE / "resumed", HERE / "followup"
-        expected_call, expected_speeches, expected_seat = 14, 3, "GBR"
-    else:
-        initial, resumed = HERE / "mixed", HERE / "resumed"
-        expected_call, expected_speeches, expected_seat = 9, 2, "ARE"
+def check(stage="resumed"):
+    source, expected_call, expected_speeches, expected_seat = {
+        "resumed": ("mixed", 9, 2, "ARE"),
+        "followup": ("resumed", 14, 3, "GBR"),
+        "continuation": ("followup", 16, 4, "ARE"),
+    }[stage]
+    initial, resumed = HERE / source, HERE / stage
     old, new = (json.loads((path / "settings.json").read_text()) for path in (initial, resumed))
     ignored = {"started", "codex", "resumed_from"}
     assert {key: value for key, value in old.items() if key not in ignored} == {
@@ -55,7 +55,7 @@ def check(followup=False):
     pairs = list(zip(structured_replies(records(reference)), structured_replies(after)))
     result = {"reused_replies": call - 1, "fresh_replies": len(fresh), "first_fresh_seat": request["country"],
               "matching_structured_decisions": sum(a == b for a, b in pairs)}
-    if followup:
+    if stage != "resumed":
         result["first_structured_difference"] = next(
             ({"call": index, "all_sol": baseline, "mixed": mixed}
              for index, (baseline, mixed) in enumerate(pairs, 1) if baseline != mixed),
@@ -66,5 +66,8 @@ def check(followup=False):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--followup", action="store_true")
-    print(pretty(check(parser.parse_args().followup)))
+    stages = parser.add_mutually_exclusive_group()
+    stages.add_argument("--followup", dest="stage", action="store_const", const="followup")
+    stages.add_argument("--continuation", dest="stage", action="store_const", const="continuation")
+    parser.set_defaults(stage="resumed")
+    print(pretty(check(parser.parse_args().stage)))
