@@ -3558,6 +3558,13 @@ changes France's floor response at call 52, skips its next poll, and
 certifies on call 55 within the original budget. The live score is
 unchanged. [Exact replay and queue witness](reports/council-workshop-exact-impasse-reachability-20261123/README.md)
 
+The same Iraq floor decision was tested live with the original prompt,
+a queue reminder, and a follow-up showing the exact remaining call
+budget. France passed at call 52 in all three. It requested the floor
+one poll later in the reminder arm, after the cost had been incurred.
+All runs stopped with four exclusions and no declaration.
+[Matched live floor decisions and replay](reports/council-workshop-live-floor-recovery-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

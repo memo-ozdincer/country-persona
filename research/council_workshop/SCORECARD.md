@@ -76,6 +76,11 @@ way to finish the UAE-opening Iraq case within 55 calls by having
 France join the queue earlier, which saves a redundant poll.
 [Exact impasse search and witnesses](../../reports/council-workshop-exact-impasse-reachability-20261123/README.md)
 
+Three live continuations of that Iraq prefix kept France's pass at the
+decisive poll, including a reminder with the exact calls remaining.
+All gathered the full evidence and stopped at 55 calls before a
+declaration. [Live floor reminder comparison](../../reports/council-workshop-live-floor-recovery-20261124/README.md)
+
 On a live continuation at the Gulf cutoff, the priority prompt let
 the delegates record all four exclusions by the last speech. The
 automatic moderator replay turned that evidence into a certificate.

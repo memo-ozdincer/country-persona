@@ -98,6 +98,12 @@ def build():
     budget = verified_json(headroom / "results.json", headroom / "audit.py")
     exact = report("exact-impasse-reachability")
     reachability = verified_json(exact / "results.json", exact / "search.py")
+    floor_recovery = REPORTS / "council-workshop-live-floor-recovery-20261124"
+    floor_trials = verified_json(floor_recovery / "score.json", floor_recovery / "paired-floor.py", "score")
+    budget_cue = floor_recovery / "budget-cue"
+    budget_trial = verified_json(budget_cue / "priority-result.json", floor_recovery / "paired-floor.py", "budget-replay")
+    budget_reply = json.loads((budget_cue / "priority.jsonl").read_text().splitlines()[1])["answer"]
+    floor_trials["budget_cue"] = budget_trial | {"first_fresh_reply": budget_reply}
     gulf_cutoff = report("gulf-cutoff")
     moderation = verified_json(gulf_cutoff / "moderator.json", gulf_cutoff / "paired.py", "moderator")
     gulf_continuations = {}
@@ -159,6 +165,11 @@ def build():
              "last_open_witness": endpoint(row["last_open_witness"])}
             for row in reachability["meetings"]
         ],
+        "iraq_live_floor_continuations": {
+            arm: endpoint(row) | {"first_fresh_reply": row["first_fresh_reply"], "reused_calls": row["reused_calls"],
+                                  "fresh_calls": row["fresh_calls"]}
+            for arm, row in floor_trials.items()
+        },
         "gulf_last_turn_live_continuations": gulf_continuations,
         "scripted_case_and_order_controls": {"successful": sum(r["reward"] for r in scripted), "total": len(scripted)},
         "matched_prompt_comparisons": prompts,

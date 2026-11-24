@@ -38,9 +38,9 @@ def plan():
             "archived_action": archived["history"][cut["speech"] - 1]}
 
 
-def continue_meeting(arm, design, respond, *, auto_certify=False):
-    settings = read(SOURCE / "settings.json")
-    archived = Recording(SOURCE)
+def continue_meeting(arm, design, respond, *, auto_certify=False, source=SOURCE):
+    settings = read(source / "settings.json")
+    archived = Recording(source)
     reused = 0
     fresh = 0
 
@@ -70,9 +70,9 @@ def continue_meeting(arm, design, respond, *, auto_certify=False):
     return output
 
 
-def run(arm, design):
+def run(arm, design, *, source=SOURCE, directory=HERE):
     runner = CodexRunner(design["model"], timeout=90)
-    with (HERE / f"{arm}.jsonl").open("x") as handle:
+    with (directory / f"{arm}.jsonl").open("x") as handle:
         def record(request):
             handle.write(json.dumps(request, ensure_ascii=False) + "\n")
             handle.flush()
@@ -85,14 +85,14 @@ def run(arm, design):
             handle.flush()
             return reply
 
-        result = continue_meeting(arm, design, record)
-    with (HERE / f"{arm}-result.json").open("x") as handle:
+        result = continue_meeting(arm, design, record, source=source)
+    with (directory / f"{arm}-result.json").open("x") as handle:
         handle.write(pretty(result) + "\n")
     return result
 
 
-def replay_arm(arm, design, *, auto_certify=False):
-    events = iter(map(json.loads, (HERE / f"{arm}.jsonl").read_text().splitlines()))
+def replay_arm(arm, design, *, auto_certify=False, source=SOURCE, directory=HERE):
+    events = iter(map(json.loads, (directory / f"{arm}.jsonl").read_text().splitlines()))
 
     def record(request):
         assert next(events) == request
@@ -100,9 +100,9 @@ def replay_arm(arm, design, *, auto_certify=False):
         assert reply["event"] == "response"
         return reply["answer"]
 
-    result = continue_meeting(arm, design, record, auto_certify=auto_certify)
+    result = continue_meeting(arm, design, record, auto_certify=auto_certify, source=source)
     if not auto_certify:
-        assert next(events, None) is None and result == read(HERE / f"{arm}-result.json")
+        assert next(events, None) is None and result == read(directory / f"{arm}-result.json")
     return result
 
 
