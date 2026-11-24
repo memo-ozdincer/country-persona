@@ -2,12 +2,29 @@
 
 Two or more delegates negotiate one clause. Each sees its own dated source excerpts, the public discussion and the current draft. Python manages the floor and records decisions. The bundled case imagines a UK, India and France workshop on 10 December 2021 using statements from the previous day. The opening clause and any resulting agreement are fictional. [Official meeting record](https://docs.un.org/en/S/PV.8923)
 
-The [first live run and transcripts](../../reports/council-workshop-20261123/README.md) show how the queue, revisions and final ballots behaved.
-The [benchmark scorecard](SCORECARD.md) consolidates verified results,
-registered coverage, clause scores and the information ceiling with a
-single offline rebuild command.
+The benchmark pairs a source-grounded clause task with finite-package
+workshops that have exact agreement and impasse scores. The clause
+task uses a blinded, evidence-citing rubric. The package workshops
+vary the opening order, private mandates and model assignments.
+The [scorecard](SCORECARD.md) links the strategy, experiments, results
+and full decision logs. [First live run and transcripts](../../reports/council-workshop-20261123/README.md)
 
-## Run it
+## Reproduce the published results
+
+From a checkout of this branch, run these commands at the repository
+root with Python 3.11 or later. Both commands run offline.
+
+```sh
+set -o pipefail
+python3 -B research/council_workshop/scorecard.py | cmp - research/council_workshop/scorecard.json
+python3 -B -m unittest discover -s tests -p test_council_workshop.py
+```
+
+The scorecard rebuild checks the archived model requests against the
+simulation, replays the recorded decisions and recomputes the reported
+metrics. Fresh model generations use the separate commands below.
+
+## Run a fresh meeting
 
 From the repo root, with Python 3.11+ and Codex signed in through ChatGPT:
 
