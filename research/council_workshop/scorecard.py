@@ -15,6 +15,7 @@ REPORTS = ROOT / "reports"
 NORWAY_RESUME = REPORTS / "council-workshop-norway-focus-resume-20261124"
 IRAQ_RESUME = REPORTS / "council-workshop-iraq-focus-resume-20261124"
 IRAQ_FEASIBLE_FOCUS = REPORTS / "council-workshop-iraq-feasible-focus-20261124"
+GULF_FEASIBLE_FOCUS = REPORTS / "council-workshop-gulf-feasible-focus-20261124"
 
 
 def report(name):
@@ -50,7 +51,7 @@ def registered_paths(*, floor_audit_snapshot=False):
     paths.append(report("iraq-pilot") / "sol-with-astra-uae-resumed" if floor_audit_snapshot else IRAQ_RESUME / "mixed")
     paths.append(report("exclusion-policy") / "iraq-feasible-standard")
     if not floor_audit_snapshot:
-        paths.append(IRAQ_FEASIBLE_FOCUS / "mixed")
+        paths.extend((IRAQ_FEASIBLE_FOCUS / "mixed", GULF_FEASIBLE_FOCUS / "mixed"))
     paths.append(report("norway-opening") / "all-sol")
     paths.append(report("norway-opening") / "sol-with-astra-norway-resumed" if floor_audit_snapshot else
                  NORWAY_RESUME / "mixed-final")
@@ -94,6 +95,9 @@ def build():
     iraq_feasible_compare = IRAQ_FEASIBLE_FOCUS / "compare.py"
     iraq_feasible_design = verified_json(IRAQ_FEASIBLE_FOCUS / "plan.json", iraq_feasible_compare, "plan")
     iraq_twins = verified_json(IRAQ_FEASIBLE_FOCUS / "score.json", iraq_feasible_compare, "score")
+    gulf_compare = GULF_FEASIBLE_FOCUS / "compare.py"
+    gulf_design = verified_json(GULF_FEASIBLE_FOCUS / "plan.json", gulf_compare, "plan")
+    gulf_focus = verified_json(GULF_FEASIBLE_FOCUS / "score.json", gulf_compare, "score")
     norway_pair = NORWAY_RESUME / "paired.py"
     verified_json(NORWAY_RESUME / "plan.json", norway_pair, "plan")
     norway_focus = verified_json(NORWAY_RESUME / "score.json", norway_pair, "score")
@@ -183,6 +187,10 @@ def build():
             "case_delta": iraq_feasible_design["case_delta"],
             "worlds": {world: {row["arm"]: endpoint(row) for row in iraq_twins["meetings"] if row["world"] == world}
                        for world in iraq_feasible_design["feasible_packages"]},
+        },
+        "gulf_feasibility_by_opener": {
+            "case_delta": gulf_design["case_delta"],
+            "matched_focus_swaps": gulf_focus["matched_focus_swaps"],
         },
         "norway_opening_focus_resume": {
             "reused_replies": norway_focus["reused_replies"], "fresh_replies": norway_focus["fresh_replies"],

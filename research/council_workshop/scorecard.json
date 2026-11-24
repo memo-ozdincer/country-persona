@@ -147,7 +147,7 @@
     "registered_cells": 32,
     "completed_by_arm": {
       "all-sol": 8,
-      "sol-with-focus-swap": 5
+      "sol-with-focus-swap": 6
     },
     "meetings": [
       {
@@ -246,6 +246,41 @@
           "CHN"
         ],
         "exclusions": {},
+        "queue": [],
+        "incompatible_signatures": []
+      },
+      {
+        "family": "guinea",
+        "world": "feasible",
+        "order": [
+          "NOR",
+          "GHA",
+          "CHN"
+        ],
+        "arm": "sol-with-focus-swap",
+        "seat_models": {
+          "NOR": "gpt-6-astra",
+          "GHA": "gpt-6.1-sol",
+          "CHN": "gpt-6.1-sol"
+        },
+        "feasible_packages": [
+          "briefing",
+          "regional"
+        ],
+        "selected_package": "briefing",
+        "outcome": "valid_agreement",
+        "reward": 1,
+        "status": "unanimous_acceptance",
+        "speeches": 7,
+        "calls": 19,
+        "signatures": [
+          "GHA",
+          "CHN",
+          "NOR"
+        ],
+        "exclusions": {
+          "coastal": "CHN"
+        },
         "queue": [],
         "incompatible_signatures": []
       },
@@ -653,6 +688,16 @@
       },
       {
         "family": "guinea",
+        "world": "feasible",
+        "opener": "NOR",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": 0,
+        "speech_delta": 1,
+        "call_delta": 2
+      },
+      {
+        "family": "guinea",
         "world": "impasse",
         "opener": "GHA",
         "arm": "sol-with-focus-swap",
@@ -766,6 +811,56 @@
         }
       }
     }
+  },
+  "gulf_feasibility_by_opener": {
+    "case_delta": {
+      "NOR": [
+        "briefing",
+        "regional"
+      ]
+    },
+    "matched_focus_swaps": [
+      {
+        "family": "guinea",
+        "world": "feasible",
+        "opener": "GHA",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": 0,
+        "speech_delta": 0,
+        "call_delta": 0
+      },
+      {
+        "family": "guinea",
+        "world": "feasible",
+        "opener": "NOR",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": 0,
+        "speech_delta": 1,
+        "call_delta": 2
+      },
+      {
+        "family": "guinea",
+        "world": "impasse",
+        "opener": "GHA",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": 1,
+        "speech_delta": 0,
+        "call_delta": 1
+      },
+      {
+        "family": "guinea",
+        "world": "impasse",
+        "opener": "NOR",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": -1,
+        "speech_delta": 1,
+        "call_delta": 3
+      }
+    ]
   },
   "norway_opening_focus_resume": {
     "reused_replies": 5,

@@ -3610,6 +3610,14 @@ roster recorded the correct outcomes on both sides of the
 feasibility contrast. The four cells each contain one trajectory.
 [Fixed-roster feasibility contrast](reports/council-workshop-iraq-feasible-focus-20261124/README.md)
 
+The Gulf comparison now has all eight cells for the all-Sol and
+Astra-at-Norway assignments across the two openers and mandate
+variants. All four feasible runs agreed on `briefing`. With Norway
+opening, the mixed roster took seven speeches and 19 calls, and
+all-Sol took six and 17. Each roster certified one of its two
+impasses, with different openers and one trajectory per cell.
+[Full Gulf comparison and replay](reports/council-workshop-gulf-feasible-focus-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

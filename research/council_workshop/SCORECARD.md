@@ -29,7 +29,7 @@ after the factual guard failed. [Blinded regrade and control](../../reports/coun
 A valid unanimous agreement or a certified impasse earns one point.
 A cap, walkout, or invalid agreement earns zero. A provider interruption
 before a model reply has no outcome score. The held standard-prompt
-matrix has 32 cells. **Thirteen meetings are complete** and 19 cells
+matrix has 32 cells. **Fourteen meetings are complete** and 18 cells
 have no archived attempt. Earlier provider interruptions are preserved
 in the dated reports.
 The eight drafted case and order combinations all have a successful
@@ -40,7 +40,7 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Five-seat climate, feasible, nine-speech cap | Unresolved | Unresolved |
 | Five-seat climate, impasse | Certified in 7 | Certified in 7 |
 | Gulf of Guinea, feasible, Ghana opening | Agreement in 5 | Agreement in 5 |
-| Gulf of Guinea, feasible, Norway opening | Agreement in 6 | Unrun |
+| Gulf of Guinea, feasible, Norway opening | Agreement in 6 | Agreement in 7 |
 | Gulf of Guinea, impasse, Ghana opening | Unresolved in 10 | Certified in 10 |
 | Gulf of Guinea, impasse, Norway opening | Certified in 9 | Unresolved in 10 |
 | Iraq, feasible, France opening | Agreement in 12 | Agreement in 11 |
@@ -68,6 +68,12 @@ Sol as Norway ruled out `regional`, while Astra as Norway proposed
 `review`. Astra ruled out `regional` on speech ten, leaving no speech
 for a declaration. Each pair uses one trajectory per assignment.
 [Exact resume and comparison](../../reports/council-workshop-norway-focus-resume-20261124/README.md)
+
+All four feasible Gulf trajectories agreed on `briefing`. With
+Norway opening, the mixed roster took seven speeches and 19 calls,
+compared with six and 17 for all-Sol. The two rosters each certified
+one of their two Gulf impasses.
+[Gulf results across both openers and worlds](../../reports/council-workshop-gulf-feasible-focus-20261124/README.md)
 
 In France-opening Iraq, the mixed team certified in 14 speeches and
 48 calls. All-Sol finished with three of four exclusions in 16
