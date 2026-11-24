@@ -52,7 +52,7 @@ def registered_paths(*, floor_audit_snapshot=False):
     paths.append(report("iraq-pilot") / "sol-with-astra-uae-resumed" if floor_audit_snapshot else IRAQ_RESUME / "mixed")
     paths.append(report("exclusion-policy") / "iraq-feasible-standard")
     if not floor_audit_snapshot:
-        paths.extend((IRAQ_FEASIBLE_FOCUS / "mixed", GULF_FEASIBLE_FOCUS / "mixed", IRAQ_UAE_FOCUS / "resumed"))
+        paths.extend((IRAQ_FEASIBLE_FOCUS / "mixed", GULF_FEASIBLE_FOCUS / "mixed", IRAQ_UAE_FOCUS / "followup"))
     paths.append(report("norway-opening") / "all-sol")
     paths.append(report("norway-opening") / "sol-with-astra-norway-resumed" if floor_audit_snapshot else
                  NORWAY_RESUME / "mixed-final")
@@ -104,12 +104,19 @@ def build():
         IRAQ_UAE_FOCUS / "initial-score.json", HERE / "held_suite.py", "score", "--trace",
         *iraq_impasse_controls, IRAQ_UAE_FOCUS / "mixed",
     )
-    iraq_impasses = verified_json(
+    verified_json(
         IRAQ_UAE_FOCUS / "score.json", HERE / "held_suite.py", "score", "--trace",
         *iraq_impasse_controls, IRAQ_UAE_FOCUS / "resumed",
     )
+    iraq_impasses = verified_json(
+        IRAQ_UAE_FOCUS / "followup-score.json", HERE / "held_suite.py", "score", "--trace",
+        *iraq_impasse_controls, IRAQ_UAE_FOCUS / "followup",
+    )
     iraq_uae_resume = verified_json(
         IRAQ_UAE_FOCUS / "resume.json", IRAQ_UAE_FOCUS / "verify-resume.py",
+    )
+    iraq_uae_followup = verified_json(
+        IRAQ_UAE_FOCUS / "followup.json", IRAQ_UAE_FOCUS / "verify-resume.py", "--followup",
     )
     gulf_compare = GULF_FEASIBLE_FOCUS / "compare.py"
     gulf_design = verified_json(GULF_FEASIBLE_FOCUS / "plan.json", gulf_compare, "plan")
@@ -206,6 +213,7 @@ def build():
         },
         "iraq_impasse_by_opener": {
             "matched_focus_swaps": iraq_impasses["matched_focus_swaps"], "uae_opening_resume": iraq_uae_resume,
+            "uae_opening_followup": iraq_uae_followup,
         },
         "gulf_feasibility_by_opener": {
             "case_delta": gulf_design["case_delta"],

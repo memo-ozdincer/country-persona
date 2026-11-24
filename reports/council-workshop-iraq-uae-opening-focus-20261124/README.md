@@ -16,13 +16,19 @@ rate-limited on its floor poll at call 14, after three speeches.
 The first 13 successful replies matched the all-Sol reference on
 speaker, action, draft version and any package proposed or
 excluded. The mixed team had three signatures on the opening
-package and zero checked exclusions. The scorecard records one
-provider-interrupted cell without a terminal reward.
+package and zero checked exclusions.
+
+The follow-up reused all 13 replies and recovered two more.
+The UK passed on the unanswered poll, and Brazil signed the
+opening package on speech four. These choices also matched
+the all-Sol reference. The UAE's next Astra floor poll returned
+HTTP 429 at call 16. The scorecard records the longest prefix as
+one provider-interrupted cell without a terminal reward.
 
 | Opener | All Sol | Astra in the UAE seat |
 | --- | --- | --- |
 | France | Unresolved in 16 speeches, 55 calls | Certified in 14 speeches, 48 calls |
-| UAE | Unresolved in 15 speeches, 55 calls | Provider interruption after 3 speeches and 14 attempted calls |
+| UAE | Unresolved in 15 speeches, 55 calls | Provider interruption after 4 speeches and 16 attempted calls |
 
 ## Offline verification
 
@@ -31,13 +37,14 @@ set -o pipefail
 out=reports/council-workshop-iraq-uae-opening-focus-20261124
 kit=research/council_workshop
 python3 -B "$out/verify-resume.py" | cmp "$out/resume.json" -
+python3 -B "$out/verify-resume.py" --followup | cmp "$out/followup.json" -
 python3 -B "$kit/held_suite.py" score --trace \
   reports/council-workshop-iraq-pilot-20261123/all-sol \
   reports/council-workshop-iraq-focus-resume-20261124/mixed \
   reports/council-workshop-all-sol-matrix-20261123/iraq-uae-impasse \
-  "$out/resumed" | cmp "$out/score.json" -
+  "$out/followup" | cmp "$out/followup-score.json" -
 ```
 
 [Original attempt](mixed/calls.jsonl) · [Resumed decisions](resumed/calls.jsonl) ·
-[Initial scores](initial-score.json) · [Paired scores](score.json) ·
+[Follow-up decisions](followup/calls.jsonl) · [Paired scores](followup-score.json) ·
 [Completed France-opening pair](../council-workshop-iraq-focus-resume-20261124/README.md)
