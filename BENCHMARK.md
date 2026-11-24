@@ -3618,6 +3618,12 @@ all-Sol took six and 17. Each roster certified one of its two
 impasses, with different openers and one trajectory per cell.
 [Full Gulf comparison and replay](reports/council-workshop-gulf-feasible-focus-20261124/README.md)
 
+In the UAE-opening mixed Iraq impasse, the resumed trace matched all-Sol
+on the first 13 structured decisions. The provider rate-limited the
+UK floor poll at call 14. The scorecard records the longer trace as
+one interrupted cell with no terminal reward.
+[UAE-opening attempt and exact resume](reports/council-workshop-iraq-uae-opening-focus-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence

@@ -149,6 +149,9 @@
       "all-sol": 8,
       "sol-with-focus-swap": 6
     },
+    "aborted_by_arm": {
+      "sol-with-focus-swap": 1
+    },
     "meetings": [
       {
         "family": "guinea",
@@ -591,6 +594,47 @@
         "family": "iraq",
         "world": "impasse",
         "order": [
+          "ARE",
+          "FRA",
+          "GBR",
+          "BRA",
+          "JPN",
+          "GHA"
+        ],
+        "arm": "sol-with-focus-swap",
+        "seat_models": {
+          "ARE": "gpt-6-astra",
+          "FRA": "gpt-6.1-sol",
+          "GBR": "gpt-6.1-sol",
+          "BRA": "gpt-6.1-sol",
+          "JPN": "gpt-6.1-sol",
+          "GHA": "gpt-6.1-sol"
+        },
+        "feasible_packages": [],
+        "selected_package": "public",
+        "outcome": "call_error",
+        "reward": null,
+        "status": "call_error",
+        "speeches": 3,
+        "calls": 14,
+        "signatures": [
+          "ARE",
+          "FRA",
+          "GBR"
+        ],
+        "exclusions": {},
+        "queue": [
+          "BRA",
+          "JPN",
+          "GHA"
+        ],
+        "incompatible_signatures": [],
+        "recorded_error": "Codex failed for gpt-6.1-sol: exceeded retry limit, last status: 429 Too Many Requests"
+      },
+      {
+        "family": "iraq",
+        "world": "impasse",
+        "order": [
           "FRA",
           "GBR",
           "BRA",
@@ -810,6 +854,26 @@
           "exclusion_count": 4
         }
       }
+    }
+  },
+  "iraq_impasse_by_opener": {
+    "matched_focus_swaps": [
+      {
+        "family": "iraq",
+        "world": "impasse",
+        "opener": "FRA",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": 1,
+        "speech_delta": -2,
+        "call_delta": -7
+      }
+    ],
+    "uae_opening_resume": {
+      "reused_replies": 8,
+      "fresh_replies": 5,
+      "first_fresh_seat": "ARE",
+      "matching_structured_decisions": 13
     }
   },
   "gulf_feasibility_by_opener": {

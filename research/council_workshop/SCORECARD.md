@@ -29,8 +29,8 @@ after the factual guard failed. [Blinded regrade and control](../../reports/coun
 A valid unanimous agreement or a certified impasse earns one point.
 A cap, walkout, or invalid agreement earns zero. A provider interruption
 before a model reply has no outcome score. The held standard-prompt
-matrix has 32 cells. **Fourteen meetings are complete** and 18 cells
-have no archived attempt. Earlier provider interruptions are preserved
+matrix has 32 cells. **Fourteen meetings are complete**, one cell is
+provider-interrupted, and 17 cells have no archived attempt. Earlier interruptions are preserved
 in the dated reports.
 The eight drafted case and order combinations all have a successful
 scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](held-control-audit.json)
@@ -46,7 +46,7 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Iraq, feasible, France opening | Agreement in 12 | Agreement in 11 |
 | Iraq, feasible, UAE opening | Agreement in 12 | Unrun |
 | Iraq, impasse, France opening | Unresolved in 16 | Certified in 14 |
-| Iraq, impasse, UAE opening | Unresolved in 15 | Unrun |
+| Iraq, impasse, UAE opening | Unresolved in 15 | Provider interrupted after 3 speeches |
 
 Climate is a separate exposed comparison. Both climate continuations
 agreed with a tenth speech. The model assignments in the table use
@@ -87,6 +87,11 @@ speeches and 46 calls, compared with 12 and 48 for all-Sol.
 The mixed team thus reached the correct outcome in both worlds
 of this matched comparison.
 [Feasible run and paired scores](../../reports/council-workshop-iraq-feasible-focus-20261124/README.md)
+
+The UAE-opening mixed impasse run matched all-Sol on its first
+13 structured decisions. A provider rate limit interrupted the
+UK floor poll at call 14, leaving the mixed outcome unscored.
+[UAE-opening attempts and matched pairs](../../reports/council-workshop-iraq-uae-opening-focus-20261124/README.md)
 
 Automatic moderator certification on the same archived decisions
 recovers the UAE-opening Iraq impasse and closes the Norway-opening
