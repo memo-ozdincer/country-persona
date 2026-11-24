@@ -143,6 +143,8 @@ def build():
     extra_call = verified_json(matrix / "continuation.json", matrix / "verify-continuation.py")
     moderator = report("moderator-certificate")
     stops = verified_json(moderator / "results.json", moderator / "replay-stop.py")
+    closing_report = REPORTS / "council-workshop-closing-rule-comparison-20261124"
+    closing = verified_json(closing_report / "results.json", closing_report / "compare.py")
     headroom = report("budget-headroom")
     budget = verified_json(headroom / "results.json", headroom / "audit.py")
     exact = report("exact-impasse-reachability")
@@ -202,6 +204,9 @@ def build():
         "five_seat_climate": {case: {"caps": climate_caps[case], "arms": {arm: endpoint(row) for arm, row in arms.items()}}
                               for case, arms in pair.items()},
         "registered_standard_prompt_cells": registered,
+        "closing_rule_comparison": {key: closing[key] for key in (
+            "completed", "interrupted", "successes", "calls_saved", "matches",
+        )},
         "iraq_france_opening_focus_resume": {
             "reused_replies": iraq_focus["reused_replies"], "fresh_replies": iraq_focus["fresh_replies"],
             "first_structured_difference": iraq_focus["first_structured_difference"],

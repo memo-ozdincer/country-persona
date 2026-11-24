@@ -100,6 +100,13 @@ Gulf impasse earlier. It saves four calls across the eight traces. This
 is a replay of a different termination rule, separate from the standard
 coverage table. [Moderator replay](../../reports/council-workshop-moderator-certificate-20261123/README.md)
 
+Across all 14 completed registered meetings in the later snapshot,
+moderator closing raises the replayed success count from 10 to 12.
+It ties the Norway-opening Gulf pair by certifying the mixed run
+on its final speech and recovers the call-capped UAE-opening all-Sol
+run. The other two unresolved traces still lack checked exclusions.
+[Full stopping-rule audit and paired deltas](../../reports/council-workshop-closing-rule-comparison-20261124/README.md)
+
 The budget audit locates the first proven loss on each unresolved
 all-Sol trace. The floor queue blocked a required holder after speech
 six in the Ghana-opening Gulf run and speech 13 in the France-opening

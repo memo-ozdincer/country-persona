@@ -3629,6 +3629,13 @@ signature. The first 15 structured decisions matched all-Sol.
 The provider rate-limited Astra at the next UAE floor poll
 on call 16. The registered outcome remains unscored.
 
+Replaying the 14 completed registered meetings with automatic
+certification increased the success count from 10 to 12 and saved
+12 calls. The Norway-opening mixed Gulf run completed its evidence
+on the final speech, so the same trajectory ties all-Sol under the
+moderator rule. The other five paired reward deltas stayed fixed.
+[Closing-rule comparison and exact replay](reports/council-workshop-closing-rule-comparison-20261124/README.md)
+
 Starting before the Gulf loss, a fresh standard continuation again
 missed Norway's `briefing` exclusion. A priority reminder at that one
 turn recovered it, and the later live delegates completed the evidence
