@@ -147,7 +147,7 @@
     "registered_cells": 32,
     "completed_by_arm": {
       "all-sol": 8,
-      "sol-with-focus-swap": 4
+      "sol-with-focus-swap": 5
     },
     "meetings": [
       {
@@ -469,6 +469,47 @@
       },
       {
         "family": "iraq",
+        "world": "feasible",
+        "order": [
+          "FRA",
+          "GBR",
+          "BRA",
+          "JPN",
+          "GHA",
+          "ARE"
+        ],
+        "arm": "sol-with-focus-swap",
+        "seat_models": {
+          "FRA": "gpt-6.1-sol",
+          "GBR": "gpt-6.1-sol",
+          "BRA": "gpt-6.1-sol",
+          "JPN": "gpt-6.1-sol",
+          "GHA": "gpt-6.1-sol",
+          "ARE": "gpt-6-astra"
+        },
+        "feasible_packages": [
+          "hybrid"
+        ],
+        "selected_package": "hybrid",
+        "outcome": "valid_agreement",
+        "reward": 1,
+        "status": "unanimous_acceptance",
+        "speeches": 11,
+        "calls": 46,
+        "signatures": [
+          "ARE",
+          "FRA",
+          "GBR",
+          "BRA",
+          "JPN",
+          "GHA"
+        ],
+        "exclusions": {},
+        "queue": [],
+        "incompatible_signatures": []
+      },
+      {
+        "family": "iraq",
         "world": "impasse",
         "order": [
           "ARE",
@@ -632,6 +673,16 @@
       },
       {
         "family": "iraq",
+        "world": "feasible",
+        "opener": "FRA",
+        "arm": "sol-with-focus-swap",
+        "baseline": "all-sol",
+        "reward_delta": 0,
+        "speech_delta": -1,
+        "call_delta": -2
+      },
+      {
+        "family": "iraq",
         "world": "impasse",
         "opener": "FRA",
         "arm": "sol-with-focus-swap",
@@ -668,6 +719,51 @@
         "action": "rule_out",
         "version": 1,
         "package": "public"
+      }
+    }
+  },
+  "iraq_france_opening_feasibility_twins": {
+    "case_delta": {
+      "ARE": [
+        "hybrid"
+      ]
+    },
+    "worlds": {
+      "feasible": {
+        "all-sol": {
+          "outcome": "valid_agreement",
+          "reward": 1,
+          "speeches": 12,
+          "calls": 48,
+          "signature_count": 6,
+          "exclusion_count": 1
+        },
+        "sol-with-focus-swap": {
+          "outcome": "valid_agreement",
+          "reward": 1,
+          "speeches": 11,
+          "calls": 46,
+          "signature_count": 6,
+          "exclusion_count": 0
+        }
+      },
+      "impasse": {
+        "all-sol": {
+          "outcome": "unresolved",
+          "reward": 0,
+          "speeches": 16,
+          "calls": 55,
+          "signature_count": 1,
+          "exclusion_count": 3
+        },
+        "sol-with-focus-swap": {
+          "outcome": "certified_impasse",
+          "reward": 1,
+          "speeches": 14,
+          "calls": 48,
+          "signature_count": 3,
+          "exclusion_count": 4
+        }
       }
     }
   },

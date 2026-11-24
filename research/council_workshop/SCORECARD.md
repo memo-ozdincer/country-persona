@@ -29,7 +29,7 @@ after the factual guard failed. [Blinded regrade and control](../../reports/coun
 A valid unanimous agreement or a certified impasse earns one point.
 A cap, walkout, or invalid agreement earns zero. A provider interruption
 before a model reply has no outcome score. The held standard-prompt
-matrix has 32 cells. **Twelve meetings are complete** and 20 cells
+matrix has 32 cells. **Thirteen meetings are complete** and 19 cells
 have no archived attempt. Earlier provider interruptions are preserved
 in the dated reports.
 The eight drafted case and order combinations all have a successful
@@ -43,7 +43,7 @@ scripted reachability check. [Held cases](held-cases.json) · [Scripted audit](h
 | Gulf of Guinea, feasible, Norway opening | Agreement in 6 | Unrun |
 | Gulf of Guinea, impasse, Ghana opening | Unresolved in 10 | Certified in 10 |
 | Gulf of Guinea, impasse, Norway opening | Certified in 9 | Unresolved in 10 |
-| Iraq, feasible, France opening | Agreement in 12 | Unrun |
+| Iraq, feasible, France opening | Agreement in 12 | Agreement in 11 |
 | Iraq, feasible, UAE opening | Agreement in 12 | Unrun |
 | Iraq, impasse, France opening | Unresolved in 16 | Certified in 14 |
 | Iraq, impasse, UAE opening | Unresolved in 15 | Unrun |
@@ -74,6 +74,13 @@ In France-opening Iraq, the mixed team certified in 14 speeches and
 speeches and 55 calls. The trajectories first differed when Ghana
 took speech five, before Astra as the UAE had its first speech.
 [Iraq comparison and exact resume](../../reports/council-workshop-iraq-focus-resume-20261124/README.md)
+
+On the feasible twin, both France-opening teams agreed on
+`hybrid`. The mixed team collected all six signatures in 11
+speeches and 46 calls, compared with 12 and 48 for all-Sol.
+The mixed team thus reached the correct outcome in both worlds
+of this matched comparison.
+[Feasible run and paired scores](../../reports/council-workshop-iraq-feasible-focus-20261124/README.md)
 
 Automatic moderator certification on the same archived decisions
 recovers the UAE-opening Iraq impasse and closes the Norway-opening
